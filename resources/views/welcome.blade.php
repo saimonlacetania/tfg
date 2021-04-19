@@ -42,6 +42,7 @@
 
             .content {
                 text-align: center;
+                margin-top: -530px;
             }
 
             .title {
@@ -81,7 +82,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Mercat <small class="text-monospace">digital</small>
                 </div>
 
                 <div class="links">
