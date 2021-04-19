@@ -2,17 +2,11 @@
 
 namespace App\Models;
 
-<<<<<<< HEAD
-=======
 use Illuminate\Database\Eloquent\Factories\HasFactory;
->>>>>>> develop
 use Illuminate\Database\Eloquent\Model;
 
 class Comentari extends Model
 {
-<<<<<<< HEAD
-    //
-=======
     use HasFactory;
 
     //taula
@@ -28,7 +22,6 @@ class Comentari extends Model
     //un comentari un producte
     public function producte()
     {
-        return $this->belongsTo("App\Models\User", "id_producte");
+        return $this->belongsTo("App\Models\Producte", "id_producte");
     }
->>>>>>> develop
 }
