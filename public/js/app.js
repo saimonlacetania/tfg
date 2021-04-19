@@ -6391,7 +6391,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nhtml,\nbody {\n  background-color: #fff;\n  color: #636b6f;\n  font-family: \"Nunito\", sans-serif;\n  font-weight: 200;\n  height: 100vh;\n  margin: 0;\n}\n.full-height {\n  height: 100vh;\n}\n.flex-center {\n  align-items: center;\n  display: flex;\n  justify-content: center;\n}\n.position-ref {\n  position: relative;\n}\n.top-right {\n  position: absolute;\n  right: 10px;\n  top: 18px;\n}\n.content {\n  text-align: center;\n  margin-top: -530px;\n}\n.title {\n  font-size: 84px;\n}\n.links > a {\n  color: #636b6f;\n  padding: 0 25px;\n  font-size: 13px;\n  font-weight: 600;\n  letter-spacing: 0.1rem;\n  text-decoration: none;\n  text-transform: uppercase;\n}\n.m-b-md {\n  margin-bottom: 30px;\n}\n", ""]);
+exports.push([module.i, "\nhtml,\r\nbody {\r\n  background-color: #fff;\r\n  color: #636b6f;\r\n  font-family: \"Nunito\", sans-serif;\r\n  font-weight: 200;\r\n  height: 100vh;\r\n  margin: 0;\n}\n.full-height {\r\n  height: 100vh;\n}\n.flex-center {\r\n  align-items: center;\r\n  display: flex;\r\n  justify-content: center;\n}\n.position-ref {\r\n  position: relative;\n}\n.top-right {\r\n  position: absolute;\r\n  right: 10px;\r\n  top: 18px;\n}\n.content {\r\n  text-align: center;\r\n  margin-top: -530px;\n}\n.title {\r\n  font-size: 84px;\n}\n.links > a {\r\n  color: #636b6f;\r\n  padding: 0 25px;\r\n  font-size: 13px;\r\n  font-weight: 600;\r\n  letter-spacing: 0.1rem;\r\n  text-decoration: none;\r\n  text-transform: uppercase;\n}\n.m-b-md {\r\n  margin-bottom: 30px;\n}\r\n", ""]);
 
 // exports
 
@@ -50650,8 +50650,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/Tfg_informatica/tfg_informatica/tfg/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/Tfg_informatica/tfg_informatica/tfg/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\simon\Desktop\projecte\tfg\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\simon\Desktop\projecte\tfg\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
