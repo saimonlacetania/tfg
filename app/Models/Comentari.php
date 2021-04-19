@@ -12,6 +12,10 @@ class Comentari extends Model
     //taula
     protected $table = 'comentaris';
 
+    protected $fillable = [
+        'descripcio', 'valoracio'
+    ];
+
     //mètodes
     //un comentari un usuari
     public function user()

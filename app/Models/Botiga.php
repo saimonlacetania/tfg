@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Botiga extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'nom','descripcio', 'telf_1', 'telf_2', 'direccio', 'cp', 'poblacio', 'provincia', 'email', 'instagram', 'facebook', 'twitter', 'nif', 'cif'
+    ];
+
     //taula
     protected $table = 'botigues';
 

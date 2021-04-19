@@ -9,6 +9,10 @@ class Producte extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'ref', 'nom', 'descripcio', 'preu', 'stock', 'actiu', 'id_categoria'
+    ];
+
     //taula
     protected $table = 'productes';
 
