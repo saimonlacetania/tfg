@@ -2026,7 +2026,1017 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-<<<<<<< HEAD
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log("Component mounted.");
@@ -2044,1013 +3054,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-=======
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
->>>>>>> d0b4032bfd8cadb0ababe5a7c37949f317d49e9b
 //
 //
 //
@@ -38733,76 +38736,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-<<<<<<< HEAD
-    return _c(
-      "aside",
-      { staticClass: "main-sidebar sidebar-dark-primary elevation-4" },
-      [
-        _c("a", { staticClass: "brand-link", attrs: { href: "index3.html" } }, [
-          _c("img", {
-            staticClass: "brand-image img-circle elevation-3",
-            staticStyle: { opacity: "0.8" },
-            attrs: { src: "dist/img/AdminLTELogo.png", alt: "AdminLTE Logo" }
-          }),
-          _vm._v(" "),
-          _c("span", { staticClass: "brand-text font-weight-light" }, [
-            _vm._v("AdminLTE 3")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "sidebar" }, [
-          _c("div", { staticClass: "user-panel mt-3 pb-3 mb-3 d-flex" }, [
-            _c("div", { staticClass: "image" }, [
-              _c("img", {
-                staticClass: "img-circle elevation-2",
-                attrs: { src: "dist/img/user2-160x160.jpg", alt: "User Image" }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "info" }, [
-              _c("a", { staticClass: "d-block", attrs: { href: "#" } }, [
-                _vm._v("Alexander Pierce")
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("nav", { staticClass: "mt-2" }, [
-            _c(
-              "ul",
-              {
-                staticClass: "nav nav-pills nav-sidebar flex-column",
-                attrs: { "data-widget": "treeview", role: "menu" }
-              },
-              [
-                _c("li", { staticClass: "nav-item menu-open" }, [
-                  _c(
-                    "a",
-                    { staticClass: "nav-link active", attrs: { href: "#" } },
-                    [
-                      _c("i", {
-                        staticClass: "nav-icon fas fa-tachometer-alt"
-                      }),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v("\n              Starter Pages\n              "),
-                        _c("i", { staticClass: "right fas fa-angle-left" })
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("ul", { staticClass: "nav nav-treeview" }, [
-                    _c("li", { staticClass: "nav-item" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "nav-link active",
-                          attrs: { href: "#" }
-                        },
-                        [
-                          _c("i", { staticClass: "far fa-circle nav-icon" }),
-                          _vm._v(" "),
-                          _c("p", [_vm._v("Active Page")])
-=======
     return _c("div", { staticClass: "wrapper" }, [
       _c(
         "nav",
@@ -38937,7 +38870,7 @@ var staticRenderFns = [
                         _c("div", { staticClass: "media-body" }, [
                           _c("h3", { staticClass: "dropdown-item-title" }, [
                             _vm._v(
-                              "\n                  Brad Diesel\n                  "
+                              "\r\n                  Brad Diesel\r\n                  "
                             ),
                             _c(
                               "span",
@@ -38979,7 +38912,7 @@ var staticRenderFns = [
                         _c("div", { staticClass: "media-body" }, [
                           _c("h3", { staticClass: "dropdown-item-title" }, [
                             _vm._v(
-                              "\n                  John Pierce\n                  "
+                              "\r\n                  John Pierce\r\n                  "
                             ),
                             _c(
                               "span",
@@ -39019,7 +38952,7 @@ var staticRenderFns = [
                         _c("div", { staticClass: "media-body" }, [
                           _c("h3", { staticClass: "dropdown-item-title" }, [
                             _vm._v(
-                              "\n                  Nora Silvester\n                  "
+                              "\r\n                  Nora Silvester\r\n                  "
                             ),
                             _c(
                               "span",
@@ -39093,7 +39026,7 @@ var staticRenderFns = [
                     { staticClass: "dropdown-item", attrs: { href: "#" } },
                     [
                       _c("i", { staticClass: "fas fa-envelope mr-2" }),
-                      _vm._v(" 4 new messages\n            "),
+                      _vm._v(" 4 new messages\r\n            "),
                       _c(
                         "span",
                         { staticClass: "float-right text-muted text-sm" },
@@ -39109,7 +39042,7 @@ var staticRenderFns = [
                     { staticClass: "dropdown-item", attrs: { href: "#" } },
                     [
                       _c("i", { staticClass: "fas fa-users mr-2" }),
-                      _vm._v(" 8 friend requests\n            "),
+                      _vm._v(" 8 friend requests\r\n            "),
                       _c(
                         "span",
                         { staticClass: "float-right text-muted text-sm" },
@@ -39125,7 +39058,7 @@ var staticRenderFns = [
                     { staticClass: "dropdown-item", attrs: { href: "#" } },
                     [
                       _c("i", { staticClass: "fas fa-file mr-2" }),
-                      _vm._v(" 3 new reports\n            "),
+                      _vm._v(" 3 new reports\r\n            "),
                       _c(
                         "span",
                         { staticClass: "float-right text-muted text-sm" },
@@ -39273,7 +39206,7 @@ var staticRenderFns = [
                         _vm._v(" "),
                         _c("p", [
                           _vm._v(
-                            "\n                Dashboard\n                "
+                            "\r\n                Dashboard\r\n                "
                           ),
                           _c("i", { staticClass: "right fas fa-angle-left" })
                         ])
@@ -39339,7 +39272,9 @@ var staticRenderFns = [
                         _c("i", { staticClass: "nav-icon fas fa-th" }),
                         _vm._v(" "),
                         _c("p", [
-                          _vm._v("\n                Widgets\n                "),
+                          _vm._v(
+                            "\r\n                Widgets\r\n                "
+                          ),
                           _c(
                             "span",
                             { staticClass: "right badge badge-danger" },
@@ -39356,7 +39291,7 @@ var staticRenderFns = [
                       _vm._v(" "),
                       _c("p", [
                         _vm._v(
-                          "\n                Layout Options\n                "
+                          "\r\n                Layout Options\r\n                "
                         ),
                         _c("i", { staticClass: "fas fa-angle-left right" }),
                         _vm._v(" "),
@@ -39501,7 +39436,9 @@ var staticRenderFns = [
                       _c("i", { staticClass: "nav-icon fas fa-chart-pie" }),
                       _vm._v(" "),
                       _c("p", [
-                        _vm._v("\n                Charts\n                "),
+                        _vm._v(
+                          "\r\n                Charts\r\n                "
+                        ),
                         _c("i", { staticClass: "right fas fa-angle-left" })
                       ])
                     ]),
@@ -39575,7 +39512,7 @@ var staticRenderFns = [
                       _vm._v(" "),
                       _c("p", [
                         _vm._v(
-                          "\n                UI Elements\n                "
+                          "\r\n                UI Elements\r\n                "
                         ),
                         _c("i", { staticClass: "fas fa-angle-left right" })
                       ])
@@ -39709,7 +39646,7 @@ var staticRenderFns = [
                       _c("i", { staticClass: "nav-icon fas fa-edit" }),
                       _vm._v(" "),
                       _c("p", [
-                        _vm._v("\n                Forms\n                "),
+                        _vm._v("\r\n                Forms\r\n                "),
                         _c("i", { staticClass: "fas fa-angle-left right" })
                       ])
                     ]),
@@ -39782,7 +39719,9 @@ var staticRenderFns = [
                       _c("i", { staticClass: "nav-icon fas fa-table" }),
                       _vm._v(" "),
                       _c("p", [
-                        _vm._v("\n                Tables\n                "),
+                        _vm._v(
+                          "\r\n                Tables\r\n                "
+                        ),
                         _c("i", { staticClass: "fas fa-angle-left right" })
                       ])
                     ]),
@@ -39851,7 +39790,7 @@ var staticRenderFns = [
                         _vm._v(" "),
                         _c("p", [
                           _vm._v(
-                            "\n                Calendar\n                "
+                            "\r\n                Calendar\r\n                "
                           ),
                           _c(
                             "span",
@@ -39874,7 +39813,9 @@ var staticRenderFns = [
                         _c("i", { staticClass: "nav-icon far fa-image" }),
                         _vm._v(" "),
                         _c("p", [
-                          _vm._v("\n                Gallery\n              ")
+                          _vm._v(
+                            "\r\n                Gallery\r\n              "
+                          )
                         ])
                       ]
                     )
@@ -39892,7 +39833,7 @@ var staticRenderFns = [
                         _vm._v(" "),
                         _c("p", [
                           _vm._v(
-                            "\n                Kanban Board\n              "
+                            "\r\n                Kanban Board\r\n              "
                           )
                         ])
                       ]
@@ -39904,7 +39845,9 @@ var staticRenderFns = [
                       _c("i", { staticClass: "nav-icon far fa-envelope" }),
                       _vm._v(" "),
                       _c("p", [
-                        _vm._v("\n                Mailbox\n                "),
+                        _vm._v(
+                          "\r\n                Mailbox\r\n                "
+                        ),
                         _c("i", { staticClass: "fas fa-angle-left right" })
                       ])
                     ]),
@@ -39962,7 +39905,7 @@ var staticRenderFns = [
                       _c("i", { staticClass: "nav-icon fas fa-book" }),
                       _vm._v(" "),
                       _c("p", [
-                        _vm._v("\n                Pages\n                "),
+                        _vm._v("\r\n                Pages\r\n                "),
                         _c("i", { staticClass: "fas fa-angle-left right" })
                       ])
                     ]),
@@ -40127,7 +40070,9 @@ var staticRenderFns = [
                       _c("i", { staticClass: "nav-icon far fa-plus-square" }),
                       _vm._v(" "),
                       _c("p", [
-                        _vm._v("\n                Extras\n                "),
+                        _vm._v(
+                          "\r\n                Extras\r\n                "
+                        ),
                         _c("i", { staticClass: "fas fa-angle-left right" })
                       ])
                     ]),
@@ -40142,7 +40087,7 @@ var staticRenderFns = [
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                    Login & Register v1\n                    "
+                                "\r\n                    Login & Register v1\r\n                    "
                               ),
                               _c("i", {
                                 staticClass: "fas fa-angle-left right"
@@ -40235,7 +40180,7 @@ var staticRenderFns = [
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                    Login & Register v2\n                    "
+                                "\r\n                    Login & Register v2\r\n                    "
                               ),
                               _c("i", {
                                 staticClass: "fas fa-angle-left right"
@@ -40451,7 +40396,9 @@ var staticRenderFns = [
                       _c("i", { staticClass: "nav-icon fas fa-search" }),
                       _vm._v(" "),
                       _c("p", [
-                        _vm._v("\n                Search\n                "),
+                        _vm._v(
+                          "\r\n                Search\r\n                "
+                        ),
                         _c("i", { staticClass: "fas fa-angle-left right" })
                       ])
                     ]),
@@ -40540,7 +40487,9 @@ var staticRenderFns = [
                       _c("i", { staticClass: "nav-icon fas fa-circle" }),
                       _vm._v(" "),
                       _c("p", [
-                        _vm._v("\n                Level 1\n                "),
+                        _vm._v(
+                          "\r\n                Level 1\r\n                "
+                        ),
                         _c("i", { staticClass: "right fas fa-angle-left" })
                       ])
                     ]),
@@ -40567,7 +40516,7 @@ var staticRenderFns = [
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\n                    Level 2\n                    "
+                                "\r\n                    Level 2\r\n                    "
                               ),
                               _c("i", {
                                 staticClass: "right fas fa-angle-left"
@@ -40743,47 +40692,16 @@ var staticRenderFns = [
                         [
                           _c("span", { staticClass: "text-success" }, [
                             _c("i", { staticClass: "fas fa-arrow-up" }),
-                            _vm._v(" 12.5%\n                    ")
+                            _vm._v(" 12.5%\r\n                    ")
                           ]),
                           _vm._v(" "),
                           _c("span", { staticClass: "text-muted" }, [
                             _vm._v("Since last week")
                           ])
->>>>>>> d0b4032bfd8cadb0ababe5a7c37949f317d49e9b
                         ]
                       )
                     ]),
                     _vm._v(" "),
-<<<<<<< HEAD
-                    _c("li", { staticClass: "nav-item" }, [
-                      _c(
-                        "a",
-                        { staticClass: "nav-link", attrs: { href: "#" } },
-                        [
-                          _c("i", { staticClass: "far fa-circle nav-icon" }),
-                          _vm._v(" "),
-                          _c("p", [_vm._v("Inactive Page")])
-                        ]
-                      )
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "nav-item" }, [
-                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                    _c("i", { staticClass: "nav-icon fas fa-th" }),
-                    _vm._v(" "),
-                    _c("p", [
-                      _vm._v("\n              Simple Link\n              "),
-                      _c("span", { staticClass: "right badge badge-danger" }, [
-                        _vm._v("New")
-                      ])
-                    ])
-                  ])
-                ])
-              ]
-            )
-=======
                     _c("div", { staticClass: "position-relative mb-4" }, [
                       _c("canvas", {
                         attrs: { id: "visitors-chart", height: "200" }
@@ -40798,12 +40716,12 @@ var staticRenderFns = [
                           _c("i", {
                             staticClass: "fas fa-square text-primary"
                           }),
-                          _vm._v(" This Week\n                  ")
+                          _vm._v(" This Week\r\n                  ")
                         ]),
                         _vm._v(" "),
                         _c("span", [
                           _c("i", { staticClass: "fas fa-square text-gray" }),
-                          _vm._v(" Last Week\n                  ")
+                          _vm._v(" Last Week\r\n                  ")
                         ])
                       ]
                     )
@@ -40867,7 +40785,7 @@ var staticRenderFns = [
                                 }
                               }),
                               _vm._v(
-                                "\n                      Some Product\n                    "
+                                "\r\n                      Some Product\r\n                    "
                               )
                             ]),
                             _vm._v(" "),
@@ -40880,12 +40798,12 @@ var staticRenderFns = [
                                 [
                                   _c("i", { staticClass: "fas fa-arrow-up" }),
                                   _vm._v(
-                                    "\n                        12%\n                      "
+                                    "\r\n                        12%\r\n                      "
                                   )
                                 ]
                               ),
                               _vm._v(
-                                "\n                      12,000 Sold\n                    "
+                                "\r\n                      12,000 Sold\r\n                    "
                               )
                             ]),
                             _vm._v(" "),
@@ -40911,7 +40829,7 @@ var staticRenderFns = [
                                 }
                               }),
                               _vm._v(
-                                "\n                      Another Product\n                    "
+                                "\r\n                      Another Product\r\n                    "
                               )
                             ]),
                             _vm._v(" "),
@@ -40924,12 +40842,12 @@ var staticRenderFns = [
                                 [
                                   _c("i", { staticClass: "fas fa-arrow-down" }),
                                   _vm._v(
-                                    "\n                        0.5%\n                      "
+                                    "\r\n                        0.5%\r\n                      "
                                   )
                                 ]
                               ),
                               _vm._v(
-                                "\n                      123,234 Sold\n                    "
+                                "\r\n                      123,234 Sold\r\n                    "
                               )
                             ]),
                             _vm._v(" "),
@@ -40955,7 +40873,7 @@ var staticRenderFns = [
                                 }
                               }),
                               _vm._v(
-                                "\n                      Amazing Product\n                    "
+                                "\r\n                      Amazing Product\r\n                    "
                               )
                             ]),
                             _vm._v(" "),
@@ -40965,11 +40883,11 @@ var staticRenderFns = [
                               _c("small", { staticClass: "text-danger mr-1" }, [
                                 _c("i", { staticClass: "fas fa-arrow-down" }),
                                 _vm._v(
-                                  "\n                        3%\n                      "
+                                  "\r\n                        3%\r\n                      "
                                 )
                               ]),
                               _vm._v(
-                                "\n                      198 Sold\n                    "
+                                "\r\n                      198 Sold\r\n                    "
                               )
                             ]),
                             _vm._v(" "),
@@ -40995,7 +40913,7 @@ var staticRenderFns = [
                                 }
                               }),
                               _vm._v(
-                                "\n                      Perfect Item\n                      "
+                                "\r\n                      Perfect Item\r\n                      "
                               ),
                               _c("span", { staticClass: "badge bg-danger" }, [
                                 _vm._v("NEW")
@@ -41011,12 +40929,12 @@ var staticRenderFns = [
                                 [
                                   _c("i", { staticClass: "fas fa-arrow-up" }),
                                   _vm._v(
-                                    "\n                        63%\n                      "
+                                    "\r\n                        63%\r\n                      "
                                   )
                                 ]
                               ),
                               _vm._v(
-                                "\n                      87 Sold\n                    "
+                                "\r\n                      87 Sold\r\n                    "
                               )
                             ]),
                             _vm._v(" "),
@@ -41074,7 +40992,7 @@ var staticRenderFns = [
                         [
                           _c("span", { staticClass: "text-success" }, [
                             _c("i", { staticClass: "fas fa-arrow-up" }),
-                            _vm._v(" 33.1%\n                    ")
+                            _vm._v(" 33.1%\r\n                    ")
                           ]),
                           _vm._v(" "),
                           _c("span", { staticClass: "text-muted" }, [
@@ -41098,12 +41016,12 @@ var staticRenderFns = [
                           _c("i", {
                             staticClass: "fas fa-square text-primary"
                           }),
-                          _vm._v(" This year\n                  ")
+                          _vm._v(" This year\r\n                  ")
                         ]),
                         _vm._v(" "),
                         _c("span", [
                           _c("i", { staticClass: "fas fa-square text-gray" }),
-                          _vm._v(" Last year\n                  ")
+                          _vm._v(" Last year\r\n                  ")
                         ])
                       ]
                     )
@@ -41158,7 +41076,7 @@ var staticRenderFns = [
                                 staticClass:
                                   "ion ion-android-arrow-up text-success"
                               }),
-                              _vm._v(" 12%\n                    ")
+                              _vm._v(" 12%\r\n                    ")
                             ]),
                             _vm._v(" "),
                             _c("span", { staticClass: "text-muted" }, [
@@ -41189,7 +41107,7 @@ var staticRenderFns = [
                                 staticClass:
                                   "ion ion-android-arrow-up text-warning"
                               }),
-                              _vm._v(" 0.8%\n                    ")
+                              _vm._v(" 0.8%\r\n                    ")
                             ]),
                             _vm._v(" "),
                             _c("span", { staticClass: "text-muted" }, [
@@ -41220,7 +41138,7 @@ var staticRenderFns = [
                                 staticClass:
                                   "ion ion-android-arrow-down text-danger"
                               }),
-                              _vm._v(" 1%\n                    ")
+                              _vm._v(" 1%\r\n                    ")
                             ]),
                             _vm._v(" "),
                             _c("span", { staticClass: "text-muted" }, [
@@ -41234,11 +41152,10 @@ var staticRenderFns = [
                 ])
               ])
             ])
->>>>>>> d0b4032bfd8cadb0ababe5a7c37949f317d49e9b
           ])
         ])
-      ]
-    )
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -53516,6 +53433,7 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
  * allows your team to easily build robust real-time web applications.
  */
 // import Echo from 'laravel-echo';
+// comment
 // window.Pusher = require('pusher-js');
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
@@ -53682,8 +53600,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/Tfg_informatica/tfg_informatica/tfg/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/Tfg_informatica/tfg_informatica/tfg/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\abram\Documents\GitHub\tfg\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\abram\Documents\GitHub\tfg\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
