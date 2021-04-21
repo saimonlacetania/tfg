@@ -38937,7 +38937,7 @@ var staticRenderFns = [
                         _c("div", { staticClass: "media-body" }, [
                           _c("h3", { staticClass: "dropdown-item-title" }, [
                             _vm._v(
-                              "\r\n                  Brad Diesel\r\n                  "
+                              "\n                  Brad Diesel\n                  "
                             ),
                             _c(
                               "span",
@@ -38979,7 +38979,7 @@ var staticRenderFns = [
                         _c("div", { staticClass: "media-body" }, [
                           _c("h3", { staticClass: "dropdown-item-title" }, [
                             _vm._v(
-                              "\r\n                  John Pierce\r\n                  "
+                              "\n                  John Pierce\n                  "
                             ),
                             _c(
                               "span",
@@ -39019,7 +39019,7 @@ var staticRenderFns = [
                         _c("div", { staticClass: "media-body" }, [
                           _c("h3", { staticClass: "dropdown-item-title" }, [
                             _vm._v(
-                              "\r\n                  Nora Silvester\r\n                  "
+                              "\n                  Nora Silvester\n                  "
                             ),
                             _c(
                               "span",
@@ -39093,7 +39093,7 @@ var staticRenderFns = [
                     { staticClass: "dropdown-item", attrs: { href: "#" } },
                     [
                       _c("i", { staticClass: "fas fa-envelope mr-2" }),
-                      _vm._v(" 4 new messages\r\n            "),
+                      _vm._v(" 4 new messages\n            "),
                       _c(
                         "span",
                         { staticClass: "float-right text-muted text-sm" },
@@ -39109,7 +39109,7 @@ var staticRenderFns = [
                     { staticClass: "dropdown-item", attrs: { href: "#" } },
                     [
                       _c("i", { staticClass: "fas fa-users mr-2" }),
-                      _vm._v(" 8 friend requests\r\n            "),
+                      _vm._v(" 8 friend requests\n            "),
                       _c(
                         "span",
                         { staticClass: "float-right text-muted text-sm" },
@@ -39125,7 +39125,7 @@ var staticRenderFns = [
                     { staticClass: "dropdown-item", attrs: { href: "#" } },
                     [
                       _c("i", { staticClass: "fas fa-file mr-2" }),
-                      _vm._v(" 3 new reports\r\n            "),
+                      _vm._v(" 3 new reports\n            "),
                       _c(
                         "span",
                         { staticClass: "float-right text-muted text-sm" },
@@ -39273,7 +39273,7 @@ var staticRenderFns = [
                         _vm._v(" "),
                         _c("p", [
                           _vm._v(
-                            "\r\n                Dashboard\r\n                "
+                            "\n                Dashboard\n                "
                           ),
                           _c("i", { staticClass: "right fas fa-angle-left" })
                         ])
@@ -39339,9 +39339,7 @@ var staticRenderFns = [
                         _c("i", { staticClass: "nav-icon fas fa-th" }),
                         _vm._v(" "),
                         _c("p", [
-                          _vm._v(
-                            "\r\n                Widgets\r\n                "
-                          ),
+                          _vm._v("\n                Widgets\n                "),
                           _c(
                             "span",
                             { staticClass: "right badge badge-danger" },
@@ -39358,7 +39356,7 @@ var staticRenderFns = [
                       _vm._v(" "),
                       _c("p", [
                         _vm._v(
-                          "\r\n                Layout Options\r\n                "
+                          "\n                Layout Options\n                "
                         ),
                         _c("i", { staticClass: "fas fa-angle-left right" }),
                         _vm._v(" "),
@@ -39503,9 +39501,7 @@ var staticRenderFns = [
                       _c("i", { staticClass: "nav-icon fas fa-chart-pie" }),
                       _vm._v(" "),
                       _c("p", [
-                        _vm._v(
-                          "\r\n                Charts\r\n                "
-                        ),
+                        _vm._v("\n                Charts\n                "),
                         _c("i", { staticClass: "right fas fa-angle-left" })
                       ])
                     ]),
@@ -39579,7 +39575,7 @@ var staticRenderFns = [
                       _vm._v(" "),
                       _c("p", [
                         _vm._v(
-                          "\r\n                UI Elements\r\n                "
+                          "\n                UI Elements\n                "
                         ),
                         _c("i", { staticClass: "fas fa-angle-left right" })
                       ])
@@ -39713,7 +39709,7 @@ var staticRenderFns = [
                       _c("i", { staticClass: "nav-icon fas fa-edit" }),
                       _vm._v(" "),
                       _c("p", [
-                        _vm._v("\r\n                Forms\r\n                "),
+                        _vm._v("\n                Forms\n                "),
                         _c("i", { staticClass: "fas fa-angle-left right" })
                       ])
                     ]),
@@ -39786,9 +39782,7 @@ var staticRenderFns = [
                       _c("i", { staticClass: "nav-icon fas fa-table" }),
                       _vm._v(" "),
                       _c("p", [
-                        _vm._v(
-                          "\r\n                Tables\r\n                "
-                        ),
+                        _vm._v("\n                Tables\n                "),
                         _c("i", { staticClass: "fas fa-angle-left right" })
                       ])
                     ]),
@@ -39857,7 +39851,7 @@ var staticRenderFns = [
                         _vm._v(" "),
                         _c("p", [
                           _vm._v(
-                            "\r\n                Calendar\r\n                "
+                            "\n                Calendar\n                "
                           ),
                           _c(
                             "span",
@@ -39880,9 +39874,7 @@ var staticRenderFns = [
                         _c("i", { staticClass: "nav-icon far fa-image" }),
                         _vm._v(" "),
                         _c("p", [
-                          _vm._v(
-                            "\r\n                Gallery\r\n              "
-                          )
+                          _vm._v("\n                Gallery\n              ")
                         ])
                       ]
                     )
@@ -39900,7 +39892,7 @@ var staticRenderFns = [
                         _vm._v(" "),
                         _c("p", [
                           _vm._v(
-                            "\r\n                Kanban Board\r\n              "
+                            "\n                Kanban Board\n              "
                           )
                         ])
                       ]
@@ -39912,9 +39904,7 @@ var staticRenderFns = [
                       _c("i", { staticClass: "nav-icon far fa-envelope" }),
                       _vm._v(" "),
                       _c("p", [
-                        _vm._v(
-                          "\r\n                Mailbox\r\n                "
-                        ),
+                        _vm._v("\n                Mailbox\n                "),
                         _c("i", { staticClass: "fas fa-angle-left right" })
                       ])
                     ]),
@@ -39972,7 +39962,7 @@ var staticRenderFns = [
                       _c("i", { staticClass: "nav-icon fas fa-book" }),
                       _vm._v(" "),
                       _c("p", [
-                        _vm._v("\r\n                Pages\r\n                "),
+                        _vm._v("\n                Pages\n                "),
                         _c("i", { staticClass: "fas fa-angle-left right" })
                       ])
                     ]),
@@ -40137,9 +40127,7 @@ var staticRenderFns = [
                       _c("i", { staticClass: "nav-icon far fa-plus-square" }),
                       _vm._v(" "),
                       _c("p", [
-                        _vm._v(
-                          "\r\n                Extras\r\n                "
-                        ),
+                        _vm._v("\n                Extras\n                "),
                         _c("i", { staticClass: "fas fa-angle-left right" })
                       ])
                     ]),
@@ -40154,7 +40142,7 @@ var staticRenderFns = [
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\r\n                    Login & Register v1\r\n                    "
+                                "\n                    Login & Register v1\n                    "
                               ),
                               _c("i", {
                                 staticClass: "fas fa-angle-left right"
@@ -40247,7 +40235,7 @@ var staticRenderFns = [
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\r\n                    Login & Register v2\r\n                    "
+                                "\n                    Login & Register v2\n                    "
                               ),
                               _c("i", {
                                 staticClass: "fas fa-angle-left right"
@@ -40463,9 +40451,7 @@ var staticRenderFns = [
                       _c("i", { staticClass: "nav-icon fas fa-search" }),
                       _vm._v(" "),
                       _c("p", [
-                        _vm._v(
-                          "\r\n                Search\r\n                "
-                        ),
+                        _vm._v("\n                Search\n                "),
                         _c("i", { staticClass: "fas fa-angle-left right" })
                       ])
                     ]),
@@ -40554,9 +40540,7 @@ var staticRenderFns = [
                       _c("i", { staticClass: "nav-icon fas fa-circle" }),
                       _vm._v(" "),
                       _c("p", [
-                        _vm._v(
-                          "\r\n                Level 1\r\n                "
-                        ),
+                        _vm._v("\n                Level 1\n                "),
                         _c("i", { staticClass: "right fas fa-angle-left" })
                       ])
                     ]),
@@ -40583,7 +40567,7 @@ var staticRenderFns = [
                             _vm._v(" "),
                             _c("p", [
                               _vm._v(
-                                "\r\n                    Level 2\r\n                    "
+                                "\n                    Level 2\n                    "
                               ),
                               _c("i", {
                                 staticClass: "right fas fa-angle-left"
@@ -40759,7 +40743,7 @@ var staticRenderFns = [
                         [
                           _c("span", { staticClass: "text-success" }, [
                             _c("i", { staticClass: "fas fa-arrow-up" }),
-                            _vm._v(" 12.5%\r\n                    ")
+                            _vm._v(" 12.5%\n                    ")
                           ]),
                           _vm._v(" "),
                           _c("span", { staticClass: "text-muted" }, [
@@ -40814,12 +40798,12 @@ var staticRenderFns = [
                           _c("i", {
                             staticClass: "fas fa-square text-primary"
                           }),
-                          _vm._v(" This Week\r\n                  ")
+                          _vm._v(" This Week\n                  ")
                         ]),
                         _vm._v(" "),
                         _c("span", [
                           _c("i", { staticClass: "fas fa-square text-gray" }),
-                          _vm._v(" Last Week\r\n                  ")
+                          _vm._v(" Last Week\n                  ")
                         ])
                       ]
                     )
@@ -40883,7 +40867,7 @@ var staticRenderFns = [
                                 }
                               }),
                               _vm._v(
-                                "\r\n                      Some Product\r\n                    "
+                                "\n                      Some Product\n                    "
                               )
                             ]),
                             _vm._v(" "),
@@ -40896,12 +40880,12 @@ var staticRenderFns = [
                                 [
                                   _c("i", { staticClass: "fas fa-arrow-up" }),
                                   _vm._v(
-                                    "\r\n                        12%\r\n                      "
+                                    "\n                        12%\n                      "
                                   )
                                 ]
                               ),
                               _vm._v(
-                                "\r\n                      12,000 Sold\r\n                    "
+                                "\n                      12,000 Sold\n                    "
                               )
                             ]),
                             _vm._v(" "),
@@ -40927,7 +40911,7 @@ var staticRenderFns = [
                                 }
                               }),
                               _vm._v(
-                                "\r\n                      Another Product\r\n                    "
+                                "\n                      Another Product\n                    "
                               )
                             ]),
                             _vm._v(" "),
@@ -40940,12 +40924,12 @@ var staticRenderFns = [
                                 [
                                   _c("i", { staticClass: "fas fa-arrow-down" }),
                                   _vm._v(
-                                    "\r\n                        0.5%\r\n                      "
+                                    "\n                        0.5%\n                      "
                                   )
                                 ]
                               ),
                               _vm._v(
-                                "\r\n                      123,234 Sold\r\n                    "
+                                "\n                      123,234 Sold\n                    "
                               )
                             ]),
                             _vm._v(" "),
@@ -40971,7 +40955,7 @@ var staticRenderFns = [
                                 }
                               }),
                               _vm._v(
-                                "\r\n                      Amazing Product\r\n                    "
+                                "\n                      Amazing Product\n                    "
                               )
                             ]),
                             _vm._v(" "),
@@ -40981,11 +40965,11 @@ var staticRenderFns = [
                               _c("small", { staticClass: "text-danger mr-1" }, [
                                 _c("i", { staticClass: "fas fa-arrow-down" }),
                                 _vm._v(
-                                  "\r\n                        3%\r\n                      "
+                                  "\n                        3%\n                      "
                                 )
                               ]),
                               _vm._v(
-                                "\r\n                      198 Sold\r\n                    "
+                                "\n                      198 Sold\n                    "
                               )
                             ]),
                             _vm._v(" "),
@@ -41011,7 +40995,7 @@ var staticRenderFns = [
                                 }
                               }),
                               _vm._v(
-                                "\r\n                      Perfect Item\r\n                      "
+                                "\n                      Perfect Item\n                      "
                               ),
                               _c("span", { staticClass: "badge bg-danger" }, [
                                 _vm._v("NEW")
@@ -41027,12 +41011,12 @@ var staticRenderFns = [
                                 [
                                   _c("i", { staticClass: "fas fa-arrow-up" }),
                                   _vm._v(
-                                    "\r\n                        63%\r\n                      "
+                                    "\n                        63%\n                      "
                                   )
                                 ]
                               ),
                               _vm._v(
-                                "\r\n                      87 Sold\r\n                    "
+                                "\n                      87 Sold\n                    "
                               )
                             ]),
                             _vm._v(" "),
@@ -41090,7 +41074,7 @@ var staticRenderFns = [
                         [
                           _c("span", { staticClass: "text-success" }, [
                             _c("i", { staticClass: "fas fa-arrow-up" }),
-                            _vm._v(" 33.1%\r\n                    ")
+                            _vm._v(" 33.1%\n                    ")
                           ]),
                           _vm._v(" "),
                           _c("span", { staticClass: "text-muted" }, [
@@ -41114,12 +41098,12 @@ var staticRenderFns = [
                           _c("i", {
                             staticClass: "fas fa-square text-primary"
                           }),
-                          _vm._v(" This year\r\n                  ")
+                          _vm._v(" This year\n                  ")
                         ]),
                         _vm._v(" "),
                         _c("span", [
                           _c("i", { staticClass: "fas fa-square text-gray" }),
-                          _vm._v(" Last year\r\n                  ")
+                          _vm._v(" Last year\n                  ")
                         ])
                       ]
                     )
@@ -41174,7 +41158,7 @@ var staticRenderFns = [
                                 staticClass:
                                   "ion ion-android-arrow-up text-success"
                               }),
-                              _vm._v(" 12%\r\n                    ")
+                              _vm._v(" 12%\n                    ")
                             ]),
                             _vm._v(" "),
                             _c("span", { staticClass: "text-muted" }, [
@@ -41205,7 +41189,7 @@ var staticRenderFns = [
                                 staticClass:
                                   "ion ion-android-arrow-up text-warning"
                               }),
-                              _vm._v(" 0.8%\r\n                    ")
+                              _vm._v(" 0.8%\n                    ")
                             ]),
                             _vm._v(" "),
                             _c("span", { staticClass: "text-muted" }, [
@@ -41236,7 +41220,7 @@ var staticRenderFns = [
                                 staticClass:
                                   "ion ion-android-arrow-down text-danger"
                               }),
-                              _vm._v(" 1%\r\n                    ")
+                              _vm._v(" 1%\n                    ")
                             ]),
                             _vm._v(" "),
                             _c("span", { staticClass: "text-muted" }, [
@@ -53698,8 +53682,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\simon\Desktop\projecte\tfg\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\simon\Desktop\projecte\tfg\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/Tfg_informatica/tfg_informatica/tfg/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/Tfg_informatica/tfg_informatica/tfg/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
