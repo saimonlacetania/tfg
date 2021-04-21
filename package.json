@@ -25,8 +25,11 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+<<<<<<< HEAD
+=======
         "@fortawesome/fontawesome-svg-core": "^1.2.35",
         "@fortawesome/free-solid-svg-icons": "^5.15.3",
+>>>>>>> d0b4032bfd8cadb0ababe5a7c37949f317d49e9b
         "admin-lte": "^3.1.0",
         "ionicons": "^5.5.1"
     }

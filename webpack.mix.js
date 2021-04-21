@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
 
 /*
  |--------------------------------------------------------------------------
@@ -11,9 +11,18 @@ const mix = require('laravel-mix');
  |
  */
 
+<<<<<<< HEAD
+mix.js("resources/js/app.js", "public/js")
+    .sass("resources/sass/app.scss", "public/css")
+    .copy(
+        "node_modules/@fortawesome/fontawesome-free/webfonts",
+        "public/webfonts"
+    );
+=======
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .copy(
         'node_modules/@fortawesome/fontawesome-free/webfonts',
         'public/webfonts'
     );
+>>>>>>> d0b4032bfd8cadb0ababe5a7c37949f317d49e9b
