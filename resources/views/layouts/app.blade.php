@@ -21,10 +21,7 @@
 
 <body class="hold-transition sidebar-mini">
     <div id="app">
-
-
         @yield('content')
-
     </div>
 </body>
 
