@@ -34,6 +34,7 @@
 =======
 <body class="hold-transition sidebar-mini">
     <div id="app">
+<<<<<<< HEAD
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">Mercat Virtual</a>
@@ -87,6 +88,9 @@
         <main class="py-4">
             @yield('content')
         </main>
+=======
+        @yield('content')
+>>>>>>> origin/saimon
     </div>
 </body>
 
