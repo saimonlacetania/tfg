@@ -29,6 +29,11 @@ Vue.component(
 );
 
 Vue.component(
+    "perfil-component",
+    require("./components/PerfilComponent.vue").default
+);
+
+Vue.component(
     "register-component",
     require("./components/RegisterComponent.vue")
 );

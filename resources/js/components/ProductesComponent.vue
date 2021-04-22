@@ -32,7 +32,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-12 card-deck mb-4">
-            <div class="card">
+            <div class="card zoom">
               <img class="card-img-top p-4" src="../../../node_modules/admin-lte/dist/img/prod-1.jpg" alt="Card image cap">
               <div class="card-header border-0 mt-4">
                 <div class="d-flex justify-content-between">
@@ -201,6 +201,16 @@
   </div>
   <!-- /.contingut pagina -->
 </template>
+
+<style>
+.zoom {
+  transition: transform .2s; /* Animation */
+}
+
+.zoom:hover {
+  transform: scale(1.05); /* (150% zoom)*/
+}
+</style>
 
 <script>
 export default {

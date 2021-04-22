@@ -51,56 +51,16 @@
                with font-awesome or any other icon font library -->
           <li class="nav-header">MENÚ PRINCIPAL</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" v-on:click="mostrarPerfil" class="nav-link">
               <i class="nav-icon far fa-user-circle"></i>
-              <p>El meu perfil<i class="right fas fa-angle-left"></i></p>
+              <p>El meu perfil</p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./index.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
-                </a>
-              </li>
-            </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" v-on:click="mostrarProductes" class="nav-link">
               <i class="nav-icon fas fa-shopping-cart"></i>
-              <p>Comprar<i class="right fas fa-angle-left"></i></p>
+              <p>Comprar</p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="./index.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
-                </a>
-              </li>
-            </ul>
           </li>
           <li class="nav-item fixed-bottom">
             <a href="#" class="nav-link">
@@ -116,17 +76,37 @@
   </aside>
 
   <!-- PAGINA PRODUCTES -->
+  <div id="productes">
    <productes-component></productes-component>
+  </div>
   <!-- /. pagina productes -->
+  <div id="perfil" style="display:none;">
+  <perfil-component></perfil-component>
+  </div>
 </div>
 </template>
 
 <script>
+import PerfilComponent from './PerfilComponent.vue';
 import ProductesComponent from './ProductesComponent.vue';
 export default {
-  components: { ProductesComponent },
+  components: { ProductesComponent, PerfilComponent },
   mounted() {
     console.log("Component mounted.");
+  },
+  methods: {
+    mostrarPerfil: function (event) {
+      var prod = document.getElementById("productes");
+      var perf = document.getElementById("perfil");
+      prod.style.display = "none";
+      perf.style.display = "block";
+    },
+    mostrarProductes: function (event) {
+      var prod = document.getElementById("productes");
+      var perf = document.getElementById("perfil");
+      prod.style.display = "block";
+      perf.style.display = "none";
+    },
   },
 };
 </script>
