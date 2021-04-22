@@ -24,6 +24,11 @@ Vue.component(
 );
 
 Vue.component(
+    "productes-component",
+    require("./components/ProductesComponent.vue").default
+);
+
+Vue.component(
     "register-component",
     require("./components/RegisterComponent.vue")
 );
