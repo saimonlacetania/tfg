@@ -2736,54 +2736,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log("Component mounted.");
@@ -40289,161 +40241,155 @@ var staticRenderFns = [
           _c("div", { staticClass: "container-fluid" }, [
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col-lg-12 card-deck mb-4" }, [
-                _c("div", { staticClass: "card zoom" }, [
-                  _c("img", {
-                    staticClass: "card-img-top p-4",
-                    attrs: {
-                      src: __webpack_require__(/*! ../../../node_modules/admin-lte/dist/img/prod-1.jpg */ "./node_modules/admin-lte/dist/img/prod-1.jpg"),
-                      alt: "Card image cap"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card-header border-0 mt-4" }, [
-                    _c(
-                      "div",
-                      { staticClass: "d-flex justify-content-between" },
-                      [
-                        _c("h3", { staticClass: "card-title" }, [
-                          _vm._v("La botigueta del muntanyaire")
-                        ])
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card-body" }, [
-                    _c("div", { staticClass: "d-flex" }, [
-                      _c("p", { staticClass: "d-flex flex-column" }, [
-                        _c("span", { staticClass: "text-bold text-lg" }, [
-                          _vm._v("820")
-                        ]),
-                        _vm._v(" "),
-                        _c("span", [_vm._v("Visitors Over Time")])
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "p",
-                        {
-                          staticClass: "ml-auto d-flex flex-column text-right"
-                        },
-                        [
-                          _c("span", { staticClass: "text-success" }, [
-                            _c("i", { staticClass: "fas fa-arrow-up" }),
-                            _vm._v(" 12.5%\n                  ")
-                          ]),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "text-muted" }, [
-                            _vm._v("Since last week")
-                          ])
-                        ]
-                      )
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
                 _c(
                   "div",
-                  {
-                    staticClass: "card",
-                    staticStyle: { width: "20rem", height: "20rem" }
-                  },
+                  { staticClass: "card card-primary text-center zoom" },
                   [
-                    _c("div", { staticClass: "card-header border-0" }, [
-                      _c(
-                        "div",
-                        { staticClass: "d-flex justify-content-between" },
-                        [
-                          _c("h3", { staticClass: "card-title" }, [
-                            _vm._v("Online Store Visitors")
-                          ]),
-                          _vm._v(" "),
-                          _c("a", { attrs: { href: "javascript:void(0);" } }, [
-                            _vm._v("View Report")
-                          ])
-                        ]
-                      )
-                    ]),
+                    _c("img", {
+                      staticClass: "card-img-top p-4",
+                      attrs: {
+                        src: __webpack_require__(/*! ../../../node_modules/admin-lte/dist/img/prod-1.jpg */ "./node_modules/admin-lte/dist/img/prod-1.jpg"),
+                        alt: "Card image cap"
+                      }
+                    }),
                     _vm._v(" "),
                     _c("div", { staticClass: "card-body" }, [
-                      _c("div", { staticClass: "d-flex" }, [
-                        _c("p", { staticClass: "d-flex flex-column" }, [
-                          _c("span", { staticClass: "text-bold text-lg" }, [
-                            _vm._v("820")
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Visitors Over Time")])
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "p",
-                          {
-                            staticClass: "ml-auto d-flex flex-column text-right"
-                          },
-                          [
-                            _c("span", { staticClass: "text-success" }, [
-                              _c("i", { staticClass: "fas fa-arrow-up" }),
-                              _vm._v(" 12.5%\n                  ")
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "text-muted" }, [
-                              _vm._v("Since last week")
-                            ])
-                          ]
+                      _c(
+                        "div",
+                        { staticClass: "card-title font-weight-bold" },
+                        [_vm._v("Botes d'alta muntanya")]
+                      ),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "badge badge-warning badge-sm text-uppercase"
+                        },
+                        [_vm._v("La botigueta del muntanyaire")]
+                      ),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v(
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                         )
                       ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-footer" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "btn btn-outline-secondary btn-icon-right",
+                          attrs: { href: "#" }
+                        },
+                        [_c("span", [_vm._v("Saber més")])]
+                      )
                     ])
                   ]
                 ),
                 _vm._v(" "),
                 _c(
                   "div",
-                  {
-                    staticClass: "card",
-                    staticStyle: { width: "20rem", height: "20rem" }
-                  },
+                  { staticClass: "card card-primary text-center zoom" },
                   [
-                    _c("div", { staticClass: "card-header border-0" }, [
-                      _c(
-                        "div",
-                        { staticClass: "d-flex justify-content-between" },
-                        [
-                          _c("h3", { staticClass: "card-title" }, [
-                            _vm._v("Online Store Visitors")
-                          ]),
-                          _vm._v(" "),
-                          _c("a", { attrs: { href: "javascript:void(0);" } }, [
-                            _vm._v("View Report")
-                          ])
-                        ]
-                      )
-                    ]),
+                    _c("img", {
+                      staticClass: "card-img-top p-4",
+                      attrs: {
+                        src: __webpack_require__(/*! ../../../node_modules/admin-lte/dist/img/prod-1.jpg */ "./node_modules/admin-lte/dist/img/prod-1.jpg"),
+                        alt: "Card image cap"
+                      }
+                    }),
                     _vm._v(" "),
                     _c("div", { staticClass: "card-body" }, [
-                      _c("div", { staticClass: "d-flex" }, [
-                        _c("p", { staticClass: "d-flex flex-column" }, [
-                          _c("span", { staticClass: "text-bold text-lg" }, [
-                            _vm._v("820")
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Visitors Over Time")])
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "p",
-                          {
-                            staticClass: "ml-auto d-flex flex-column text-right"
-                          },
-                          [
-                            _c("span", { staticClass: "text-success" }, [
-                              _c("i", { staticClass: "fas fa-arrow-up" }),
-                              _vm._v(" 12.5%\n                  ")
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "text-muted" }, [
-                              _vm._v("Since last week")
-                            ])
-                          ]
+                      _c(
+                        "div",
+                        { staticClass: "card-title font-weight-bold" },
+                        [_vm._v("Botes d'alta muntanya")]
+                      ),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "badge badge-warning badge-sm text-uppercase"
+                        },
+                        [_vm._v("La botigueta del muntanyaire")]
+                      ),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v(
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                         )
                       ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-footer" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "btn btn-outline-secondary btn-icon-right",
+                          attrs: { href: "#" }
+                        },
+                        [_c("span", [_vm._v("Saber més")])]
+                      )
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "card card-primary text-center zoom" },
+                  [
+                    _c("img", {
+                      staticClass: "card-img-top p-4",
+                      attrs: {
+                        src: __webpack_require__(/*! ../../../node_modules/admin-lte/dist/img/prod-1.jpg */ "./node_modules/admin-lte/dist/img/prod-1.jpg"),
+                        alt: "Card image cap"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" }, [
+                      _c(
+                        "div",
+                        { staticClass: "card-title font-weight-bold" },
+                        [_vm._v("Botes d'alta muntanya")]
+                      ),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "badge badge-warning badge-sm text-uppercase"
+                        },
+                        [_vm._v("La botigueta del muntanyaire")]
+                      ),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v(
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-footer" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "btn btn-outline-secondary btn-icon-right",
+                          attrs: { href: "#" }
+                        },
+                        [_c("span", [_vm._v("Saber més")])]
+                      )
                     ])
                   ]
                 )
@@ -40458,162 +40404,153 @@ var staticRenderFns = [
               _c("div", { staticClass: "col-lg-12 card-deck mb-4" }, [
                 _c(
                   "div",
-                  {
-                    staticClass: "card",
-                    staticStyle: { width: "20rem", height: "20rem" }
-                  },
+                  { staticClass: "card card-primary text-center zoom" },
                   [
-                    _c("div", { staticClass: "card-header border-0" }, [
-                      _c(
-                        "div",
-                        { staticClass: "d-flex justify-content-between" },
-                        [
-                          _c("h3", { staticClass: "card-title" }, [
-                            _vm._v("Online Store Visitors")
-                          ]),
-                          _vm._v(" "),
-                          _c("a", { attrs: { href: "javascript:void(0);" } }, [
-                            _vm._v("View Report")
-                          ])
-                        ]
-                      )
-                    ]),
+                    _c("img", {
+                      staticClass: "card-img-top p-4",
+                      attrs: {
+                        src: __webpack_require__(/*! ../../../node_modules/admin-lte/dist/img/prod-1.jpg */ "./node_modules/admin-lte/dist/img/prod-1.jpg"),
+                        alt: "Card image cap"
+                      }
+                    }),
                     _vm._v(" "),
                     _c("div", { staticClass: "card-body" }, [
-                      _c("div", { staticClass: "d-flex" }, [
-                        _c("p", { staticClass: "d-flex flex-column" }, [
-                          _c("span", { staticClass: "text-bold text-lg" }, [
-                            _vm._v("820")
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Visitors Over Time")])
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "p",
-                          {
-                            staticClass: "ml-auto d-flex flex-column text-right"
-                          },
-                          [
-                            _c("span", { staticClass: "text-success" }, [
-                              _c("i", { staticClass: "fas fa-arrow-up" }),
-                              _vm._v(" 12.5%\n                  ")
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "text-muted" }, [
-                              _vm._v("Since last week")
-                            ])
-                          ]
+                      _c(
+                        "div",
+                        { staticClass: "card-title font-weight-bold" },
+                        [_vm._v("Botes d'alta muntanya")]
+                      ),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "badge badge-warning badge-sm text-uppercase"
+                        },
+                        [_vm._v("La botigueta del muntanyaire")]
+                      ),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v(
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                         )
                       ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-footer" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "btn btn-outline-secondary btn-icon-right",
+                          attrs: { href: "#" }
+                        },
+                        [_c("span", [_vm._v("Saber més")])]
+                      )
                     ])
                   ]
                 ),
                 _vm._v(" "),
                 _c(
                   "div",
-                  {
-                    staticClass: "card",
-                    staticStyle: { width: "20rem", height: "20rem" }
-                  },
+                  { staticClass: "card card-primary text-center zoom" },
                   [
-                    _c("div", { staticClass: "card-header border-0" }, [
-                      _c(
-                        "div",
-                        { staticClass: "d-flex justify-content-between" },
-                        [
-                          _c("h3", { staticClass: "card-title" }, [
-                            _vm._v("Online Store Visitors")
-                          ]),
-                          _vm._v(" "),
-                          _c("a", { attrs: { href: "javascript:void(0);" } }, [
-                            _vm._v("View Report")
-                          ])
-                        ]
-                      )
-                    ]),
+                    _c("img", {
+                      staticClass: "card-img-top p-4",
+                      attrs: {
+                        src: __webpack_require__(/*! ../../../node_modules/admin-lte/dist/img/prod-1.jpg */ "./node_modules/admin-lte/dist/img/prod-1.jpg"),
+                        alt: "Card image cap"
+                      }
+                    }),
                     _vm._v(" "),
                     _c("div", { staticClass: "card-body" }, [
-                      _c("div", { staticClass: "d-flex" }, [
-                        _c("p", { staticClass: "d-flex flex-column" }, [
-                          _c("span", { staticClass: "text-bold text-lg" }, [
-                            _vm._v("820")
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Visitors Over Time")])
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "p",
-                          {
-                            staticClass: "ml-auto d-flex flex-column text-right"
-                          },
-                          [
-                            _c("span", { staticClass: "text-success" }, [
-                              _c("i", { staticClass: "fas fa-arrow-up" }),
-                              _vm._v(" 12.5%\n                  ")
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "text-muted" }, [
-                              _vm._v("Since last week")
-                            ])
-                          ]
+                      _c(
+                        "div",
+                        { staticClass: "card-title font-weight-bold" },
+                        [_vm._v("Botes d'alta muntanya")]
+                      ),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "badge badge-warning badge-sm text-uppercase"
+                        },
+                        [_vm._v("La botigueta del muntanyaire")]
+                      ),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v(
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                         )
                       ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-footer" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "btn btn-outline-secondary btn-icon-right",
+                          attrs: { href: "#" }
+                        },
+                        [_c("span", [_vm._v("Saber més")])]
+                      )
                     ])
                   ]
                 ),
                 _vm._v(" "),
                 _c(
                   "div",
-                  {
-                    staticClass: "card",
-                    staticStyle: { width: "20rem", height: "20rem" }
-                  },
+                  { staticClass: "card card-primary text-center zoom" },
                   [
-                    _c("div", { staticClass: "card-header border-0" }, [
-                      _c(
-                        "div",
-                        { staticClass: "d-flex justify-content-between" },
-                        [
-                          _c("h3", { staticClass: "card-title" }, [
-                            _vm._v("Online Store Visitors")
-                          ]),
-                          _vm._v(" "),
-                          _c("a", { attrs: { href: "javascript:void(0);" } }, [
-                            _vm._v("View Report")
-                          ])
-                        ]
-                      )
-                    ]),
+                    _c("img", {
+                      staticClass: "card-img-top p-4",
+                      attrs: {
+                        src: __webpack_require__(/*! ../../../node_modules/admin-lte/dist/img/prod-1.jpg */ "./node_modules/admin-lte/dist/img/prod-1.jpg"),
+                        alt: "Card image cap"
+                      }
+                    }),
                     _vm._v(" "),
                     _c("div", { staticClass: "card-body" }, [
-                      _c("div", { staticClass: "d-flex" }, [
-                        _c("p", { staticClass: "d-flex flex-column" }, [
-                          _c("span", { staticClass: "text-bold text-lg" }, [
-                            _vm._v("820")
-                          ]),
-                          _vm._v(" "),
-                          _c("span", [_vm._v("Visitors Over Time")])
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "p",
-                          {
-                            staticClass: "ml-auto d-flex flex-column text-right"
-                          },
-                          [
-                            _c("span", { staticClass: "text-success" }, [
-                              _c("i", { staticClass: "fas fa-arrow-up" }),
-                              _vm._v(" 12.5%\n                  ")
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "text-muted" }, [
-                              _vm._v("Since last week")
-                            ])
-                          ]
+                      _c(
+                        "div",
+                        { staticClass: "card-title font-weight-bold" },
+                        [_vm._v("Botes d'alta muntanya")]
+                      ),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "badge badge-warning badge-sm text-uppercase"
+                        },
+                        [_vm._v("La botigueta del muntanyaire")]
+                      ),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v(
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                         )
                       ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-footer" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "btn btn-outline-secondary btn-icon-right",
+                          attrs: { href: "#" }
+                        },
+                        [_c("span", [_vm._v("Saber més")])]
+                      )
                     ])
                   ]
                 )
