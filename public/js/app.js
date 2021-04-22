@@ -39096,24 +39096,20 @@ var staticRenderFns = [
         "aside",
         { staticClass: "main-sidebar sidebar-dark-primary elevation-4" },
         [
-          _c(
-            "a",
-            { staticClass: "brand-link", attrs: { href: "index3.html" } },
-            [
-              _c("img", {
-                staticClass: "brand-image img-circle elevation-3",
-                staticStyle: { opacity: ".8" },
-                attrs: {
-                  src: __webpack_require__(/*! ../../../node_modules/admin-lte/dist/img/AdminLTELogo.png */ "./node_modules/admin-lte/dist/img/AdminLTELogo.png"),
-                  alt: ""
-                }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "brand-text font-weight-light" }, [
-                _vm._v("AdminLTE 3")
-              ])
-            ]
-          ),
+          _c("a", { staticClass: "brand-link", attrs: { href: "" } }, [
+            _c("img", {
+              staticClass: "brand-image img-circle elevation-3",
+              staticStyle: { opacity: ".8" },
+              attrs: {
+                src: __webpack_require__(/*! ../../../node_modules/admin-lte/dist/img/AdminLTELogo.png */ "./node_modules/admin-lte/dist/img/AdminLTELogo.png"),
+                alt: ""
+              }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "brand-text font-weight-light" }, [
+              _vm._v("Mercat Virtual")
+            ])
+          ]),
           _vm._v(" "),
           _c("div", { staticClass: "sidebar" }, [
             _c("div", { staticClass: "user-panel mt-3 pb-3 mb-3 d-flex" }, [
