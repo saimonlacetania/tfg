@@ -86,28 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/admin-lte/dist/img/AdminLTELogo.png":
-/*!**********************************************************!*\
-  !*** ./node_modules/admin-lte/dist/img/AdminLTELogo.png ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/vendor/admin-lte/dist/AdminLTELogo.png?ca1dcf584d7506f8fa1bfa0f4c3cad40";
-
-/***/ }),
-
-/***/ "./node_modules/admin-lte/dist/img/user2-160x160.jpg":
-/*!***********************************************************!*\
-  !*** ./node_modules/admin-lte/dist/img/user2-160x160.jpg ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/vendor/admin-lte/dist/user2-160x160.jpg?afa8997596e29b5f81218768444c4f10";
-
-/***/ }),
-
 /***/ "./node_modules/admin-lte/dist/js/adminlte.min.js":
 /*!********************************************************!*\
   !*** ./node_modules/admin-lte/dist/js/adminlte.min.js ***!
@@ -1947,6 +1925,250 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -37821,440 +38043,8 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "wrapper" }, [
-      _c(
-        "nav",
-        {
-          staticClass:
-            "main-header navbar navbar-expand navbar-white navbar-light"
-        },
-        [
-          _c("ul", { staticClass: "navbar-nav" }, [
-            _c("li", { staticClass: "nav-item" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "nav-link",
-                  attrs: {
-                    "data-widget": "pushmenu",
-                    href: "#",
-                    role: "button"
-                  }
-                },
-                [_c("i", { staticClass: "fas fa-bars" })]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("ul", { staticClass: "navbar-nav ml-auto" }, [
-            _c("li", { staticClass: "nav-item dropdown" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "nav-link",
-                  attrs: { "data-toggle": "dropdown", href: "#" }
-                },
-                [
-                  _c("i", { staticClass: "far fa-comments" }),
-                  _vm._v(" "),
-                  _c(
-                    "span",
-                    { staticClass: "badge badge-danger navbar-badge" },
-                    [_vm._v("3")]
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "dropdown-menu dropdown-menu-lg dropdown-menu-right"
-                },
-                [
-                  _c(
-                    "a",
-                    { staticClass: "dropdown-item", attrs: { href: "#" } },
-                    [
-                      _c("div", { staticClass: "media" }, [
-                        _c("img", {
-                          staticClass: "img-size-50 mr-3 img-circle",
-                          attrs: {
-                            src: "dist/img/user1-128x128.jpg",
-                            alt: "User Avatar"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "media-body" }, [
-                          _c("h3", { staticClass: "dropdown-item-title" }, [
-                            _vm._v(
-                              "\r\n                  Brad Diesel\r\n                  "
-                            ),
-                            _c(
-                              "span",
-                              {
-                                staticClass: "float-right text-sm text-danger"
-                              },
-                              [_c("i", { staticClass: "fas fa-star" })]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "text-sm" }, [
-                            _vm._v("Call me whenever you can...")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "text-sm text-muted" }, [
-                            _c("i", { staticClass: "far fa-clock mr-1" }),
-                            _vm._v(" 4 Hours Ago")
-                          ])
-                        ])
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "dropdown-divider" }),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    { staticClass: "dropdown-item", attrs: { href: "#" } },
-                    [
-                      _c("div", { staticClass: "media" }, [
-                        _c("img", {
-                          staticClass: "img-size-50 img-circle mr-3",
-                          attrs: {
-                            src: "dist/img/user8-128x128.jpg",
-                            alt: "User Avatar"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "media-body" }, [
-                          _c("h3", { staticClass: "dropdown-item-title" }, [
-                            _vm._v(
-                              "\r\n                  John Pierce\r\n                  "
-                            ),
-                            _c(
-                              "span",
-                              { staticClass: "float-right text-sm text-muted" },
-                              [_c("i", { staticClass: "fas fa-star" })]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "text-sm" }, [
-                            _vm._v("I got your message bro")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "text-sm text-muted" }, [
-                            _c("i", { staticClass: "far fa-clock mr-1" }),
-                            _vm._v(" 4 Hours Ago")
-                          ])
-                        ])
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "dropdown-divider" }),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    { staticClass: "dropdown-item", attrs: { href: "#" } },
-                    [
-                      _c("div", { staticClass: "media" }, [
-                        _c("img", {
-                          staticClass: "img-size-50 img-circle mr-3",
-                          attrs: {
-                            src: "dist/img/user3-128x128.jpg",
-                            alt: "User Avatar"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "media-body" }, [
-                          _c("h3", { staticClass: "dropdown-item-title" }, [
-                            _vm._v(
-                              "\r\n                  Nora Silvester\r\n                  "
-                            ),
-                            _c(
-                              "span",
-                              {
-                                staticClass: "float-right text-sm text-warning"
-                              },
-                              [_c("i", { staticClass: "fas fa-star" })]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "text-sm" }, [
-                            _vm._v("The subject goes here")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "text-sm text-muted" }, [
-                            _c("i", { staticClass: "far fa-clock mr-1" }),
-                            _vm._v(" 4 Hours Ago")
-                          ])
-                        ])
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "dropdown-divider" }),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "dropdown-item dropdown-footer",
-                      attrs: { href: "#" }
-                    },
-                    [_vm._v("See All Messages")]
-                  )
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "nav-item dropdown" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "nav-link",
-                  attrs: { "data-toggle": "dropdown", href: "#" }
-                },
-                [
-                  _c("i", { staticClass: "far fa-bell" }),
-                  _vm._v(" "),
-                  _c(
-                    "span",
-                    { staticClass: "badge badge-warning navbar-badge" },
-                    [_vm._v("15")]
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "dropdown-menu dropdown-menu-lg dropdown-menu-right"
-                },
-                [
-                  _c("span", { staticClass: "dropdown-item dropdown-header" }, [
-                    _vm._v("15 Notifications")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "dropdown-divider" }),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    { staticClass: "dropdown-item", attrs: { href: "#" } },
-                    [
-                      _c("i", { staticClass: "fas fa-envelope mr-2" }),
-                      _vm._v(" 4 new messages\r\n            "),
-                      _c(
-                        "span",
-                        { staticClass: "float-right text-muted text-sm" },
-                        [_vm._v("3 mins")]
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "dropdown-divider" }),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    { staticClass: "dropdown-item", attrs: { href: "#" } },
-                    [
-                      _c("i", { staticClass: "fas fa-users mr-2" }),
-                      _vm._v(" 8 friend requests\r\n            "),
-                      _c(
-                        "span",
-                        { staticClass: "float-right text-muted text-sm" },
-                        [_vm._v("12 hours")]
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "dropdown-divider" }),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    { staticClass: "dropdown-item", attrs: { href: "#" } },
-                    [
-                      _c("i", { staticClass: "fas fa-file mr-2" }),
-                      _vm._v(" 3 new reports\r\n            "),
-                      _c(
-                        "span",
-                        { staticClass: "float-right text-muted text-sm" },
-                        [_vm._v("2 days")]
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "dropdown-divider" }),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "dropdown-item dropdown-footer",
-                      attrs: { href: "#" }
-                    },
-                    [_vm._v("See All Notifications")]
-                  )
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "nav-item" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "nav-link",
-                  attrs: {
-                    "data-widget": "fullscreen",
-                    href: "#",
-                    role: "button"
-                  }
-                },
-                [_c("i", { staticClass: "fas fa-expand-arrows-alt" })]
-              )
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "nav-item" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "nav-link",
-                  attrs: {
-                    "data-widget": "control-sidebar",
-                    "data-slide": "true",
-                    href: "#",
-                    role: "button"
-                  }
-                },
-                [_c("i", { staticClass: "fas fa-th-large" })]
-              )
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "aside",
-        { staticClass: "main-sidebar sidebar-dark-primary elevation-4" },
-        [
-          _c(
-            "a",
-            { staticClass: "brand-link", attrs: { href: "index3.html" } },
-            [
-              _c("img", {
-                staticClass: "brand-image img-circle elevation-3",
-                staticStyle: { opacity: ".8" },
-                attrs: {
-                  src: __webpack_require__(/*! ../../../node_modules/admin-lte/dist/img/AdminLTELogo.png */ "./node_modules/admin-lte/dist/img/AdminLTELogo.png"),
-                  alt: ""
-                }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "brand-text font-weight-light" }, [
-                _vm._v("Mercat Virtual")
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "sidebar" }, [
-            _c("div", { staticClass: "user-panel mt-3 pb-3 mb-3 d-flex" }, [
-              _c("div", { staticClass: "image" }, [
-                _c("img", {
-                  staticClass: "img-circle elevation-2",
-                  attrs: {
-                    src: __webpack_require__(/*! ../../../node_modules/admin-lte/dist/img/user2-160x160.jpg */ "./node_modules/admin-lte/dist/img/user2-160x160.jpg"),
-                    alt: "User Image"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "info" }, [
-                _c("a", { staticClass: "d-block", attrs: { href: "#" } }, [
-                  _vm._v("Abraham Villar")
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("nav", { staticClass: "mt-2" }, [
-              _c(
-                "ul",
-                {
-                  staticClass: "nav nav-pills nav-sidebar flex-column",
-                  attrs: {
-                    "data-widget": "treeview",
-                    role: "menu",
-                    "data-accordion": "false"
-                  }
-                },
-                [
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-link",
-                        attrs: { href: "pages/widgets.html" }
-                      },
-                      [
-                        _c("p", [
-                          _vm._v(
-                            "\r\n                Comprar\r\n              "
-                          )
-                        ])
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                      _c("p", [
-                        _vm._v(
-                          "\r\n                Les meves compres\r\n              "
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item fixed-bottom" }, [
-                    _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                      _c("p", [
-                        _c("i", { staticClass: "nav-icon fas fa-power-off" }),
-                        _vm._v("\r\n                Sortir\r\n              ")
-                      ])
-                    ])
-                  ])
-                ]
-              )
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "content-wrapper" }, [
-        _c("div", { staticClass: "content" }, [
-          _c("div", { staticClass: "container-fluid" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-lg-6" }, [
-                _c("h2", [_vm._v("Contingut de la botiga...")])
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
-  }
-]
-render._withStripped = true
+var render = function () {}
+var staticRenderFns = []
 
 
 
