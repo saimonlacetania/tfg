@@ -18,16 +18,16 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-                            <body class="hold-transition sidebar-mini">
-                                <div id="app">
-                                    @yield('content')
+    <body class="hold-transition sidebar-mini">
+        <div id="app">
+            @yield('content')
 
-                                </div>
-                            </body>
+        </div>
+    </body>
 
-                            <!-- Scripts -->
-                            <script src="{{ asset('js/app.js') }}" defer></script>
-                            <script src="../../../node_modules/admin-lte/dist/js/adminlte.js"></script>
-                            <script src="../../../node_modules/admin-lte/plugins/chart.js/Chart.min.js"></script>
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="../../../node_modules/admin-lte/dist/js/adminlte.js"></script>
+    <script src="../../../node_modules/admin-lte/plugins/chart.js/Chart.min.js"></script>
 
 </html>
