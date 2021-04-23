@@ -28,6 +28,7 @@
         "@fortawesome/fontawesome-svg-core": "^1.2.35",
         "@fortawesome/free-solid-svg-icons": "^5.15.3",
         "admin-lte": "^3.1.0",
-        "ionicons": "^5.5.1"
+        "ionicons": "^5.5.1",
+        "vue-router": "^3.5.1"
     }
 }
