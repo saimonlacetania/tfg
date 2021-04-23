@@ -159,7 +159,7 @@ module.exports = "/images/vendor/admin-lte/dist/prod-1.jpg?029a911740713b4dbe07b
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/vendor/admin-lte/dist/user2-160x160.jpg?afa8997596e29b5f81218768444c4f10";
+module.exports = "/images/vendor/admin-lte/dist/user2-160x160.jpg?b88fb2c09479316f5458d9c7ee58c731";
 
 /***/ }),
 
@@ -53162,8 +53162,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\abram\Documents\GitHub\tfg\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\abram\Documents\GitHub\tfg\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\i5-7600k\Documents\GitHub\tfg\tfg\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\i5-7600k\Documents\GitHub\tfg\tfg\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
