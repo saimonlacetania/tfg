@@ -1,4 +1,3 @@
-import Home from "./components/Home";
 import About from "./components/About";
 import Register from "./components/Register";
 import Login from "./components/Login";
@@ -16,8 +15,18 @@ export default {
         },
         {
             path: "/",
-            component: Home,
-            name: "Home"
+            component: Example,
+            name: "Home",
+            beforeEnter: (to, form, next) => {
+                axios
+                    .get("/api/athenticated")
+                    .then(() => {
+                        next();
+                    })
+                    .catch(() => {
+                        return next({ name: "Login" });
+                    });
+            }
         },
         {
             path: "/about",
@@ -32,11 +41,7 @@ export default {
             component: Login,
             name: "Login"
         },
-        {
-            path: "/exemple",
-            component: Example,
-            name: "exemple"
-        },
+
         {
             path: "/dashboard",
             name: "Dashboard",

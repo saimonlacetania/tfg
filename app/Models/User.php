@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class User extends Authenticatable
 {
@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nom', 'cognoms', 'email', 'telefon', 'password', 'direccio', 'cp', 'poblacio', 'provincia', 'data_naix'
+        'nom', 'cognoms', 'email', 'telefon', 'password', 'direccio', 'cp', 'poblacio', 'provincia', 'data_naix',
     ];
 
     /**
@@ -38,5 +38,5 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    
+
 }
