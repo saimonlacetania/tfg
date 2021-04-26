@@ -56,9 +56,11 @@
             />
           </div>
           <div class="info">
-            <p>{{ this.user.nom }}</p>
+            <a href="#" class="d-block">Hola! {{ this.user.nom }}</a>
           </div>
         </div>
+
+        <!-- Sidebar Menu -->
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
@@ -72,17 +74,70 @@
                with font-awesome or any other icon font library -->
             <li class="nav-header">MENÚ PRINCIPAL</li>
             <li class="nav-item">
-              <a href="#" v-on:click="mostrarPerfil" class="nav-link">
-                <i class="nav-icon far fa-user-circle"></i>
-                <p>El meu perfil</p>
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-user"></i>
+                <p>
+                  El meu perfil
+                  <i class="right fas fa-angle-left"></i>
+                </p>
               </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <router-link class="nav-link" :to="'profile'">
+                    <i class="nav-icon far fa-user-circle"></i>
+                    <p>Veure perfil</p>
+                  </router-link>
+                </li>
+                <li class="nav-item">
+                  <a href="../../index.html" class="nav-link">
+                    <i class="fas fa-shopping-basket nav-icon"></i>
+                    <p>Les meves compres</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="" class="nav-link">
+                    <i class="fas fa-cogs nav-icon"></i>
+                    <p>Configuració</p>
+                  </a>
+                </li>
+              </ul>
             </li>
             <li class="nav-item">
-              <a href="#" v-on:click="mostrarProductes" class="nav-link">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-store-alt"></i>
+                <p>
+                  La meva botiga
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="../../index.html" class="nav-link">
+                    <i class="fas fa-feather-alt nav-icon"></i>
+                    <p>Perfil</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="../../index.html" class="nav-link">
+                    <i class="fas fa-tag nav-icon"></i>
+                    <p>Productes</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="../../index.html" class="nav-link">
+                    <i class="fas fa-chart-line nav-icon"></i>
+                    <p>Estadístiques</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" :to="'productes'">
                 <i class="nav-icon fas fa-shopping-cart"></i>
                 <p>Comprar</p>
-              </a>
+              </router-link>
             </li>
+
             <li class="nav-item fixed-bottom">
               <a @click.prevent="logout" href="#" class="nav-link">
                 <i class="nav-icon fas fa-power-off"></i>
@@ -97,13 +152,7 @@
     </aside>
 
     <!-- PAGINA PRODUCTES -->
-    <div id="productes">
-      <productes-component></productes-component>
-    </div>
-    <!-- /. pagina productes -->
-    <div id="perfil" style="display: none">
-      <perfil-component></perfil-component>
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 

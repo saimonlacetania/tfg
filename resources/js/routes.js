@@ -1,9 +1,9 @@
-import About from "./components/About";
 import Register from "./components/Register";
 import Login from "./components/Login";
-import Dashboard from "./components/Dashboard";
 import NotFound from "./components/NotFound";
 import Example from "./components/ExampleComponent";
+import Perfil from "./components/PerfilComponent";
+import Productes from "./components/ProductesComponent";
 
 export default {
     mode: "history",
@@ -17,20 +17,38 @@ export default {
             path: "/",
             component: Example,
             name: "Home",
-            beforeEnter: (to, form, next) => {
-                axios
-                    .get("/api/athenticated")
-                    .then(() => {
-                        next();
-                    })
-                    .catch(() => {
-                        return next({ name: "Login" });
-                    });
-            }
-        },
-        {
-            path: "/about",
-            component: About
+            children: [
+                {
+                    // UserProfile will be rendered inside User's <router-view>
+                    // when /user/:id/profile is matched
+                    path: "profile",
+                    component: Perfil,
+                    name: "Profile",
+                    beforeEnter: (to, form, next) => {
+                        axios
+                            .get("/api/athenticated")
+                            .then(() => {
+                                next();
+                            })
+                            .catch(() => {
+                                return next({ name: "Login" });
+                            });
+                    }
+                },
+                {
+                    // UserPosts will be rendered inside User's <router-view>
+                    // when /user/:id/posts is matched
+                    path: "",
+                    component: Productes
+                },
+                {
+                    // UserPosts will be rendered inside User's <router-view>
+                    // when /user/:id/posts is matched
+                    path: "/productes",
+                    component: Productes,
+                    name: "Productes"
+                }
+            ]
         },
         {
             path: "/register",
@@ -40,22 +58,6 @@ export default {
             path: "/login",
             component: Login,
             name: "Login"
-        },
-
-        {
-            path: "/dashboard",
-            name: "Dashboard",
-            component: Dashboard,
-            beforeEnter: (to, form, next) => {
-                axios
-                    .get("/api/athenticated")
-                    .then(() => {
-                        next();
-                    })
-                    .catch(() => {
-                        return next({ name: "Login" });
-                    });
-            }
         }
     ]
 };

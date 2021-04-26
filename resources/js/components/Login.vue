@@ -51,7 +51,7 @@ export default {
       axios
         .post("/api/login", this.form)
         .then((res) => {
-          this.$router.push({ name: "Home" });
+          this.$router.push({ name: "Productes" });
         })
         .catch((error) => {
           this.errors = error.response.data.errors;

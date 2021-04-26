@@ -5,13 +5,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Profile</h1>
-                    </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">User Profile</li>
-                        </ol>
+                        <h1>El meu perfil</h1>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -22,7 +16,7 @@
                     <div class="col-md-3">
 
                         <!-- Profile Image -->
-                        <div class="card card-primary card-outline">
+                        <div class="card card-dark card-outline">
                             <div class="card-body box-profile">
                                 <div class="text-center">
                                     <img class="profile-user-img img-fluid img-circle"
@@ -30,7 +24,7 @@
                                         alt="User profile picture">
                                 </div>
 
-                                <h3 class="profile-username text-center">Nina Mcintire</h3>
+                                <h3 class="profile-username text-center">Nom login</h3>
 
                                 <p class="text-muted text-center">Software Engineer</p>
 
@@ -53,7 +47,7 @@
                         <!-- /.card -->
 
                         <!-- About Me Box -->
-                        <div class="card card-primary">
+                        <div class="card card-dark">
                             <div class="card-header">
                                 <h3 class="card-title">About Me</h3>
                             </div>
@@ -96,15 +90,15 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-md-9">
-                        <div class="card">
+                        <div class="card card-dark">
                             <div class="card-header p-2">
                                 <ul class="nav nav-pills">
                                     <li class="nav-item"><a class="nav-link active" href="#activity"
-                                            data-toggle="tab">Activity</a></li>
+                                            data-toggle="tab">Les meves comandes</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#timeline"
-                                            data-toggle="tab">Timeline</a></li>
+                                            data-toggle="tab">Tornar a comprar</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#settings"
-                                            data-toggle="tab">Settings</a></li>
+                                            data-toggle="tab">Llista de desitjos</a></li>
                                 </ul>
                             </div><!-- /.card-header -->
                             <div class="card-body">
@@ -350,60 +344,75 @@
                                     </div>
                                     <!-- /.tab-pane -->
 
+                                    <!-- grid llista desitjos -->
                                     <div class="tab-pane" id="settings">
-                                        <form class="form-horizontal">
-                                            <div class="form-group row">
-                                                <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-                                                <div class="col-sm-10">
-                                                    <input type="email" class="form-control" id="inputName"
-                                                        placeholder="Name">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="card">
+                                                <div class="card-header">
+                                                    <h3 class="card-title">Les meves llistes</h3>
                                                 </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                                                <div class="col-sm-10">
-                                                    <input type="email" class="form-control" id="inputEmail"
-                                                        placeholder="Email">
+                                                <!-- /.card-header -->
+                                                <div class="card-body table-responsive p-0" style="height: 300px;">
+                                                    <table class="table table-head-fixed text-nowrap">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Nom llista</th>
+                                                                <th>Rol</th>
+                                                                <th>Creada</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>183</td>
+                                                                <td>John Doe</td>
+                                                                <td>11-7-2014</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>219</td>
+                                                                <td>Alexander Pierce</td>
+                                                                <td>11-7-2014</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>657</td>
+                                                                <td>Bob Doe</td>
+                                                                <td>11-7-2014</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>175</td>
+                                                                <td>Mike Doe</td>
+                                                                <td>11-7-2014</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>134</td>
+                                                                <td>Jim Doe</td>
+                                                                <td>11-7-2014</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>494</td>
+                                                                <td>Victoria Doe</td>
+                                                                <td>11-7-2014</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>832</td>
+                                                                <td>Michael Doe</td>
+                                                                <td>11-7-2014</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>982</td>
+                                                                <td>Rocky Doe</td>
+                                                                <td>11-7-2014</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
                                                 </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputName2" class="col-sm-2 col-form-label">Name</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputName2"
-                                                        placeholder="Name">
+                                                <!-- /.card-body -->
                                                 </div>
+                                                <!-- /.card -->
                                             </div>
-                                            <div class="form-group row">
-                                                <label for="inputExperience"
-                                                    class="col-sm-2 col-form-label">Experience</label>
-                                                <div class="col-sm-10">
-                                                    <textarea class="form-control" id="inputExperience"
-                                                        placeholder="Experience"></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputSkills" class="col-sm-2 col-form-label">Skills</label>
-                                                <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="inputSkills"
-                                                        placeholder="Skills">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="offset-sm-2 col-sm-10">
-                                                    <div class="checkbox">
-                                                        <label>
-                                                            <input type="checkbox"> I agree to the <a href="#">terms and
-                                                                conditions</a>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="offset-sm-2 col-sm-10">
-                                                    <button type="submit" class="btn btn-danger">Submit</button>
-                                                </div>
-                                            </div>
-                                        </form>
+                                        </div>
+                                            <!-- /.row -->
+
                                     </div>
                                     <!-- /.tab-pane -->
                                 </div>

@@ -169,6 +169,7 @@ export default {
         .post("/api/register", that.form)
         .then(() => {
           console.log("saved");
+          this.$router.push({ name: "Home" });
         })
         .catch((error) => {
           that.errors = error.response.data.errors;
