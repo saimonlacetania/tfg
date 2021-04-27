@@ -157,19 +157,18 @@
 </template>
 
 <script>
-import PerfilComponent from "./PerfilComponent.vue";
-import ProductesComponent from "./ProductesComponent.vue";
+
 export default {
   data() {
     return {
       user: "",
     };
   },
-  components: { ProductesComponent, PerfilComponent },
+
   mounted() {
     axios.get("/api/user").then((res) => {
       this.user = res.data;
-      console.log(user.nom);
+      console.log(this.user);
     });
   },
   methods: {

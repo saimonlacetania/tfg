@@ -1925,8 +1925,6 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _PerfilComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PerfilComponent.vue */ "./resources/js/components/PerfilComponent.vue");
-/* harmony import */ var _ProductesComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProductesComponent.vue */ "./resources/js/components/ProductesComponent.vue");
 //
 //
 //
@@ -2085,24 +2083,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       user: ""
     };
   },
-  components: {
-    ProductesComponent: _ProductesComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    PerfilComponent: _PerfilComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
   mounted: function mounted() {
     var _this = this;
 
     axios.get("/api/user").then(function (res) {
       _this.user = res.data;
-      console.log(user.nom);
+      console.log(_this.user);
     });
   },
   methods: {
@@ -2775,7 +2767,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
-    console.log("Component mounted.");
+    console.log("Perfil mounted.");
   }
 });
 
@@ -3034,7 +3026,7 @@ __webpack_require__.r(__webpack_exports__);
     CercaComponent: _CercaComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   mounted: function mounted() {
-    console.log("Component mounted.");
+    console.log("Productes mounted.");
   },
   methods: {
     mostrarCerca: function mostrarCerca(event) {
@@ -7759,7 +7751,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#registre {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    height: 100vh;\n}\n.register-box {\n    width: 30%;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\ninput[type=\"date\"]::-webkit-inner-spin-button {\n    display: none;\n}\n", ""]);
+exports.push([module.i, "\n#registre {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\ninput[type=\"date\"]::-webkit-inner-spin-button {\n    display: none;\n}\n", ""]);
 
 // exports
 
@@ -57437,6 +57429,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"](_routes__WEB
 Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
 var app = new Vue({
   el: "#app",
+  mode: 'history',
   router: router
 });
 
@@ -58049,14 +58042,14 @@ __webpack_require__.r(__webpack_exports__);
       path: "/productes",
       component: _components_ProductesComponent__WEBPACK_IMPORTED_MODULE_5__["default"],
       name: "Productes"
+    }, {
+      path: "/register",
+      component: _components_Register__WEBPACK_IMPORTED_MODULE_0__["default"]
+    }, {
+      path: "/login",
+      component: _components_Login__WEBPACK_IMPORTED_MODULE_1__["default"],
+      name: "Login"
     }]
-  }, {
-    path: "/register",
-    component: _components_Register__WEBPACK_IMPORTED_MODULE_0__["default"]
-  }, {
-    path: "/login",
-    component: _components_Login__WEBPACK_IMPORTED_MODULE_1__["default"],
-    name: "Login"
   }]
 });
 

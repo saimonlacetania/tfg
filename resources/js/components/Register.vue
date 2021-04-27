@@ -230,9 +230,7 @@ export default {
     justify-content: center;
     height: 100vh;
 }
-.register-box {
-    width: 30%;
-}
+
 input[type="date"]::-webkit-calendar-picker-indicator,
 input[type="date"]::-webkit-inner-spin-button {
     display: none;

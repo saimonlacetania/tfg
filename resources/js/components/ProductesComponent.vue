@@ -241,7 +241,7 @@ import CercaComponent from "./CercaComponent.vue";
 export default {
   components: { CercaComponent },
   mounted() {
-    console.log("Component mounted.");
+    console.log("Productes mounted.");
   },
   methods: {
     mostrarCerca: function (event) {
