@@ -96,84 +96,7 @@
             </div>
           </div>
 
-          <div class="input-group mb-3">
-            <div class="input-group mb-3" v-if="errors.provincia">
-              <label class="col-form-label" for="number"
-                ><i class="far fa-times-circle"></i>
-                {{ errors.provincia[0] }}</label
-              >
-              <br />
-            </div>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Provincia"
-              name="provincia"
-              v-model="form.provincia"
-            />
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-city"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="input-group mb-3">
-            <span class="w-full text-red-500" v-if="errors.cp">{{
-              errors.cp[0]
-            }}</span>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Codi postal"
-              name="cp"
-              v-model="form.cp"
-            />
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-map-marked"></span>
-              </div>
-            </div>
-            <span>&nbsp;&nbsp;</span>
-            <span class="w-full text-red-500" v-if="errors.poblacio">{{
-              errors.poblacio[0]
-            }}</span>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Població"
-              name="poblacio"
-              v-model="form.poblacio"
-            />
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-building"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="input-group mb-3">
-            <div class="input-group mb-3" v-if="errors.direccio">
-              <label class="col-form-label" for="number"
-                ><i class="far fa-times-circle"></i>
-                {{ errors.direccio[0] }}</label
-              >
-              <br />
-            </div>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Direcció"
-              name="direccio"
-              v-model="form.direccio"
-            />
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-home"></span>
-              </div>
-            </div>
-          </div>
-
+         
           <div class="input-group mb-3">
             <div class="input-group mb-3" v-if="errors.data_naix">
               <label class="col-form-label" for="number"
@@ -270,10 +193,6 @@ export default {
         cognoms: "",
         email: "",
         telefon: "",
-        direccio: "",
-        cp: "",
-        poblacio: "",
-        provincia: "",
         data_naix: "",
         password: "",
         password_confirmation: "",

@@ -86,28 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/admin-lte/dist/img/logo_mercat.png":
-/*!*********************************************************!*\
-  !*** ./node_modules/admin-lte/dist/img/logo_mercat.png ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/vendor/admin-lte/dist/logo_mercat.png?235cfe9b4bb4c9a7364766230d1b2fc2";
-
-/***/ }),
-
-/***/ "./node_modules/admin-lte/dist/img/user2-160x160.jpg":
-/*!***********************************************************!*\
-  !*** ./node_modules/admin-lte/dist/img/user2-160x160.jpg ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/vendor/admin-lte/dist/user2-160x160.jpg?b88fb2c09479316f5458d9c7ee58c731";
-
-/***/ }),
-
 /***/ "./node_modules/admin-lte/dist/js/adminlte.min.js":
 /*!********************************************************!*\
   !*** ./node_modules/admin-lte/dist/js/adminlte.min.js ***!
@@ -3235,83 +3213,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3320,10 +3221,6 @@ __webpack_require__.r(__webpack_exports__);
         cognoms: "",
         email: "",
         telefon: "",
-        direccio: "",
-        cp: "",
-        poblacio: "",
-        provincia: "",
         data_naix: "",
         password: "",
         password_confirmation: ""
@@ -40000,7 +39897,7 @@ var staticRenderFns = [
         staticClass: "brand-image img-circle elevation-3",
         staticStyle: { opacity: "0.8" },
         attrs: {
-          src: __webpack_require__(/*! ../../../node_modules/admin-lte/dist/img/logo_mercat.png */ "./node_modules/admin-lte/dist/img/logo_mercat.png"),
+          src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/logo_mercat.png */ "./public/images/vendor/admin-lte/dist/logo_mercat.png"),
           alt: ""
         }
       }),
@@ -40018,7 +39915,7 @@ var staticRenderFns = [
       _c("img", {
         staticClass: "img-circle elevation-2",
         attrs: {
-          src: __webpack_require__(/*! ../../../node_modules/admin-lte/dist/img/user2-160x160.jpg */ "./node_modules/admin-lte/dist/img/user2-160x160.jpg"),
+          src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/user2-160x160.jpg */ "./public/images/vendor/admin-lte/dist/user2-160x160.jpg"),
           alt: "User Image"
         }
       })
@@ -41727,168 +41624,6 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "input-group mb-3" }, [
-            _vm.errors.provincia
-              ? _c("div", { staticClass: "input-group mb-3" }, [
-                  _c(
-                    "label",
-                    { staticClass: "col-form-label", attrs: { for: "number" } },
-                    [
-                      _c("i", { staticClass: "far fa-times-circle" }),
-                      _vm._v(
-                        "\n              " + _vm._s(_vm.errors.provincia[0])
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("br")
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.provincia,
-                  expression: "form.provincia"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: {
-                type: "text",
-                placeholder: "Provincia",
-                name: "provincia"
-              },
-              domProps: { value: _vm.form.provincia },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.form, "provincia", $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _vm._m(5)
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "input-group mb-3" }, [
-            _vm.errors.cp
-              ? _c("span", { staticClass: "w-full text-red-500" }, [
-                  _vm._v(_vm._s(_vm.errors.cp[0]))
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.cp,
-                  expression: "form.cp"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: { type: "text", placeholder: "Codi postal", name: "cp" },
-              domProps: { value: _vm.form.cp },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.form, "cp", $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _vm._m(6),
-            _vm._v(" "),
-            _c("span", [_vm._v("  ")]),
-            _vm._v(" "),
-            _vm.errors.poblacio
-              ? _c("span", { staticClass: "w-full text-red-500" }, [
-                  _vm._v(_vm._s(_vm.errors.poblacio[0]))
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.poblacio,
-                  expression: "form.poblacio"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: {
-                type: "text",
-                placeholder: "Població",
-                name: "poblacio"
-              },
-              domProps: { value: _vm.form.poblacio },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.form, "poblacio", $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _vm._m(7)
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "input-group mb-3" }, [
-            _vm.errors.direccio
-              ? _c("div", { staticClass: "input-group mb-3" }, [
-                  _c(
-                    "label",
-                    { staticClass: "col-form-label", attrs: { for: "number" } },
-                    [
-                      _c("i", { staticClass: "far fa-times-circle" }),
-                      _vm._v(
-                        "\n              " + _vm._s(_vm.errors.direccio[0])
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("br")
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.form.direccio,
-                  expression: "form.direccio"
-                }
-              ],
-              staticClass: "form-control",
-              attrs: {
-                type: "text",
-                placeholder: "Direcció",
-                name: "direccio"
-              },
-              domProps: { value: _vm.form.direccio },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(_vm.form, "direccio", $event.target.value)
-                }
-              }
-            }),
-            _vm._v(" "),
-            _vm._m(8)
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "input-group mb-3" }, [
             _vm.errors.data_naix
               ? _c("div", { staticClass: "input-group mb-3" }, [
                   _c(
@@ -41933,7 +41668,7 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _vm._m(9)
+            _vm._m(5)
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "input-group mb-3" }, [
@@ -41980,7 +41715,7 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _vm._m(10)
+            _vm._m(6)
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "input-group mb-3" }, [
@@ -42014,7 +41749,7 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _vm._m(11)
+            _vm._m(7)
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "row" }, [
@@ -42040,7 +41775,7 @@ var render = function() {
           _vm._v(" "),
           _c("hr"),
           _vm._v(" "),
-          _vm._m(12)
+          _vm._m(8)
         ])
       ])
     ])
@@ -42095,46 +41830,6 @@ var staticRenderFns = [
     return _c("div", { staticClass: "input-group-append" }, [
       _c("div", { staticClass: "input-group-text" }, [
         _c("span", { staticClass: "fas fa-phone" })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "input-group-append" }, [
-      _c("div", { staticClass: "input-group-text" }, [
-        _c("span", { staticClass: "fas fa-city" })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "input-group-append" }, [
-      _c("div", { staticClass: "input-group-text" }, [
-        _c("span", { staticClass: "fas fa-map-marked" })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "input-group-append" }, [
-      _c("div", { staticClass: "input-group-text" }, [
-        _c("span", { staticClass: "fas fa-building" })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "input-group-append" }, [
-      _c("div", { staticClass: "input-group-text" }, [
-        _c("span", { staticClass: "fas fa-home" })
       ])
     ])
   },
@@ -57499,6 +57194,17 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./public/images/vendor/admin-lte/dist/logo_mercat.png":
+/*!*************************************************************!*\
+  !*** ./public/images/vendor/admin-lte/dist/logo_mercat.png ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/logo_mercat.png?235cfe9b4bb4c9a7364766230d1b2fc2";
+
+/***/ }),
+
 /***/ "./public/images/vendor/admin-lte/dist/photo1.png":
 /*!********************************************************!*\
   !*** ./public/images/vendor/admin-lte/dist/photo1.png ***!
@@ -57574,17 +57280,23 @@ module.exports = "/images/user2-160x160.jpg?b88fb2c09479316f5458d9c7ee58c731";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes */ "./resources/js/routes.js");
+/* harmony import */ var _components_ExampleComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./routes */ "./resources/js/routes.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
 
-Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+Vue.component('example', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue"));
+Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var app = new Vue({
   el: "#app",
-  router: new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"](_routes__WEBPACK_IMPORTED_MODULE_1__["default"])
+  components: {
+    "example": __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")
+  },
+  router: new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"](_routes__WEBPACK_IMPORTED_MODULE_2__["default"])
 });
 
 /***/ }),
@@ -58227,8 +57939,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/tfg/tfg/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/tfg/tfg/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/ian/Escritorio/tfg/tfg/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/ian/Escritorio/tfg/tfg/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
