@@ -178,18 +178,7 @@ export default {
         this.$router.push({ name: "Login" });
       });
     },
-    mostrarPerfil: function (event) {
-      var prod = document.getElementById("productes");
-      var perf = document.getElementById("perfil");
-      prod.style.display = "none";
-      perf.style.display = "block";
-    },
-    mostrarProductes: function (event) {
-      var prod = document.getElementById("productes");
-      var perf = document.getElementById("perfil");
-      prod.style.display = "block";
-      perf.style.display = "none";
-    },
+   
   },
 };
 </script>

@@ -1,62 +1,110 @@
 <template>
-  <div class="flex flex-wrap w-full justify-center items-center pt-56">
-    <div class="flex flex-wrap max-w-xl">
-      <div class="p-2 text-2xl text-gray-800 font-semibold">
-        <h1>Login to your account</h1>
-      </div>
-      <div class="p-2 w-full">
-        <label for="email">Your e-mail</label>
-        <input
-          class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2"
-          placeholder="Email"
-          type="email"
-          v-model="form.email"
-        />
-      </div>
-      <div class="p-2 w-full">
-        <label for="password">Password</label>
-        <input
-          class="w-full bg-gray-100 rounded border border-gray-400 focus:outline-none focus:border-indigo-500 text-base px-4 py-2"
-          placeholder="Password"
-          type="password"
-          v-model="form.password"
-          name="password"
-        />
-      </div>
-      <div class="p-2 w-full mt-4">
-        <button
-          @click.prevent="loginUser"
-          type="submit"
-          class="flex text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-        >
-          Login
-        </button>
-      </div>
+    <div id="registre">
+        <div class="register-box">
+            <div class="register-logo">
+                <a href="../../index2.html"><b>Mercat </b>Virtual</a>
+            </div>
+
+            <div class="card">
+              <form>
+                <div class="card-body register-card-body">
+                    <p class="login-box-msg">Accedeix aquí!</p>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group mb-3" v-if="errors.email">
+                            <label class="col-form-label" for="number"
+                                ><i class="far fa-times-circle"></i>
+                                {{ errors.email[0] }}</label
+                            >
+                            <br />
+                        </div>
+                        <input
+                            type="email"
+                            class="form-control"
+                            placeholder="Email"
+                            name="email"
+                            v-model="form.email"
+                        />
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group mb-3" v-if="errors.password">
+                            <label class="col-form-label" for="number"
+                                ><i class="far fa-times-circle"></i>
+                                {{ errors.password[0] }}</label
+                            >
+                            <br />
+                        </div>
+                        <input
+                            type="password"
+                            class="form-control"
+                            name="password"
+                            placeholder="Contrasenya"
+                            v-model="form.password"
+                        />
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- /.col -->
+                        <div class="col text-center">
+                            <button
+                                @click.prevent="loginUser"
+                                type="submit"
+                                class="btn btn-secondary"
+                            >
+                                Accedir!
+                            </button>
+                        </div>
+                        <!-- /.col -->
+                        <br />
+                    </div>
+                    <hr />
+                    <p class="text-center">
+                        Encara no tens un compte creat? Fes click
+                        <router-link :to="'register'">
+                            aquí!
+                        </router-link>
+                    </p>
+                </div>
+                <!-- /.form-box -->
+            </form>
+            </div>
+            <!-- /.card -->
+        </div>
     </div>
-  </div>
 </template>
 <script>
 export default {
-  data() {
-    return {
-      form: {
-        email: "",
-        password: "",
-      },
-      errors: [],
-    };
-  },
-  methods: {
-    loginUser() {
-      axios
-        .post("/api/login", this.form)
-        .then((res) => {
-          this.$router.push({ name: "Productes" });
-        })
-        .catch((error) => {
-          this.errors = error.response.data.errors;
-        });
+    data() {
+        return {
+            form: {
+                email: "",
+                password: ""
+            },
+            errors: []
+        };
     },
-  },
+    methods: {
+        loginUser() {
+            axios
+                .post("/api/login", this.form)
+                .then(res => {
+                    this.$router.push({ name: "Productes" });
+                })
+                .catch(error => {
+                    this.errors = error.response.data.errors;
+                });
+        }
+    }
 };
 </script>

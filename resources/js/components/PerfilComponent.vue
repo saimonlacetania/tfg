@@ -400,10 +400,7 @@
                           </h3>
 
                           <div class="timeline-body">
-                            <img src="https://placehold.it/150x100" alt="..." />
-                            <img src="https://placehold.it/150x100" alt="..." />
-                            <img src="https://placehold.it/150x100" alt="..." />
-                            <img src="https://placehold.it/150x100" alt="..." />
+                         
                           </div>
                         </div>
                       </div>
