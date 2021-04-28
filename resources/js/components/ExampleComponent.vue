@@ -74,13 +74,13 @@
                with font-awesome or any other icon font library -->
             <li class="nav-header">MENÚ PRINCIPAL</li>
             <li class="nav-item">
-              <span class="nav-link">
+              <a class="nav-link">
                 <i class="nav-icon fas fa-user"></i>
                 <p>
                   El meu perfil
                   <i class="right fas fa-angle-left"></i>
                 </p>
-              </span>
+              </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <router-link class="nav-link" :to="'profile'">
