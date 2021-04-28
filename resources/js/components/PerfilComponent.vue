@@ -13,14 +13,31 @@
 
 
 <template>
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1>El meu perfil</h1>
-                    </div>
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>El meu perfil</h1>
+          </div>
+        </div>
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+            <!-- Profile Image -->
+            <div class="card card-dark card-outline">
+              <div class="card-body box-profile">
+                <div class="text-center">
+                  <img
+                    class="profile-user-img img-fluid img-circle"
+                    src="../../../public/images/vendor/admin-lte/dist/user2-160x160.jpg"
+                    alt="User profile picture"
+                  />
                 </div>
             </div><!-- /.container-fluid -->
         </section>
@@ -44,9 +61,33 @@
 
                                 <a href="#" class="btn btn-secondary btn-block"><b>Configuració</b></a>
                             </div>
-                            <!-- /.card-body -->
+                            <!-- /.col -->
+                          </div>
+                          <!-- /.row -->
                         </div>
-                        <!-- /.card -->
+                        <!-- /.col -->
+                      </div>
+                      <!-- /.row -->
+
+                      <p>
+                        <a href="#" class="link-black text-sm mr-2"
+                          ><i class="fas fa-share mr-1"></i> Share</a
+                        >
+                        <a href="#" class="link-black text-sm"
+                          ><i class="far fa-thumbs-up mr-1"></i> Like</a
+                        >
+                        <span class="float-right">
+                          <a href="#" class="link-black text-sm">
+                            <i class="far fa-comments mr-1"></i> Comments (5)
+                          </a>
+                        </span>
+                      </p>
+
+                      <input
+                        class="form-control form-control-sm"
+                        type="text"
+                        placeholder="Type a comment"
+                      />
                     </div>
                     <!-- /.col -->
                     <div class="col-md-9">
@@ -191,22 +232,33 @@
                             </div><!-- /.card-body -->
                         </div>
                         <!-- /.card -->
+                      </div>
                     </div>
-                    <!-- /.col -->
+                    <!-- /.row -->
+                  </div>
+                  <!-- /.tab-pane -->
                 </div>
-                <!-- /.row -->
-            </div><!-- /.container-fluid -->
-        </section>
-    </div>
+                <!-- /.tab-content -->
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+  </div>
 </template>
 
 
 
 <script>
-    export default {
-        mounted() {
-            console.log("Component mounted.");
-        },
-    };
-
+export default {
+  mounted() {
+    console.log("Perfil mounted.");
+  },
+};
 </script>
