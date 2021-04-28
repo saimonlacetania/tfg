@@ -1,16 +1,26 @@
+<style>
+
+.main-header{
+  color:#C22847 !important;
+}
+
+
+</style>
+
+
 <template>
   <div class="wrapper">
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-dark">
+    <nav class="main-header navbar navbar-expand navbar-light">
       <!-- Left navbar links -->
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"
-            ><i class="fas fa-bars"></i
+            ><i class="fas fa-bars" style="color:#ff6565;"></i
           ></a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block">
-          <a href="index3.html" class="nav-link">Inici</a>
+        <li class="nav-item d-none d-sm-inline-block" >
+          <a href="index3.html" class="nav-link" style="color:#ff6565 !important; text-decoration:none !important;">Inici</a>
         </li>
       </ul>
       <!-- Right navbar links -->
@@ -23,8 +33,8 @@
             href="#"
             aria-expanded="false"
           >
-            <i class="fas fa-shopping-cart"></i>
-            <span class="font-weight-light">Cistella</span>
+            <i class="fas fa-shopping-cart" style="color:#ff6565;"></i>
+            <span class="font-weight-light" style="color:#ff6565;">Cistella</span>
           </a>
         </li>
       </ul>
@@ -32,14 +42,14 @@
     <!-- /.navbar -->
 
     <!-- MENÚ ESQUERRA -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <aside class="main-sidebar sidebar-light elevation-4">
       <!-- Logo -->
       <a href="" class="brand-link">
         <img
           src="../../../node_modules/admin-lte/dist/img/logo_mercat.png"
           alt=""
           class="brand-image img-circle elevation-3"
-          style="opacity: 0.8"
+          style="opacity: 0.8; background: #ff6565;"
         />
         <span class="brand-text font-weight-light">Mercat Virtual</span>
       </a>
@@ -56,7 +66,7 @@
             />
           </div>
           <div class="info">
-            <a href="#" class="d-block">Hola! {{ this.user.nom }}</a>
+            <a href="#" class="d-block text-dark">Hola! {{ this.user.nom }}</a>
           </div>
         </div>
 
@@ -65,18 +75,18 @@
         <!-- Sidebar Menu -->
         <nav class="mt-2">
           <ul
-            class="nav nav-pills nav-sidebar flex-column"
+            class="nav nav-pills nav-sidebar flex-column nav-child-indent"
             data-widget="treeview"
             role="menu"
             data-accordion="false"
           >
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-            <li class="nav-header">MENÚ PRINCIPAL</li>
+            <li class="nav-header text-dark">MENÚ PRINCIPAL</li>
             <li class="nav-item">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-user"></i>
-                <p>
+                <i class="nav-icon fas fa-user text-dark"></i>
+                <p class="text-dark">
                   El meu perfil
                   <i class="right fas fa-angle-left"></i>
                 </p>
@@ -84,37 +94,37 @@
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <router-link class="nav-link" :to="'profile'">
-                    <i class="nav-icon far fa-user-circle"></i>
-                    <p>Veure perfil</p>
+                    <i class="nav-icon far fa-user-circle text-dark"></i>
+                    <p class="text-dark">Veure perfil</p>
                   </router-link>
                 </li>
                 <li class="nav-item">
                   <a href="../../index.html" class="nav-link">
-                    <i class="fas fa-shopping-basket nav-icon"></i>
-                    <p>Les meves compres</p>
+                    <i class="fas fa-shopping-basket nav-icon text-dark"></i>
+                    <p class="text-dark">Les meves compres</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="" class="nav-link">
-                    <i class="fas fa-cogs nav-icon"></i>
-                    <p>Configuració</p>
+                    <i class="fas fa-cogs nav-icon text-dark"></i>
+                    <p class="text-dark">Configuració</p>
                   </a>
                 </li>
               </ul>
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-store-alt"></i>
-                <p>
+                <i class="nav-icon fas fa-store-alt text-dark"></i>
+                <p class="text-dark">
                   La meva botiga
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
-              <ul class="nav nav-treeview">
+              <ul class="nav nav-treeview nav-child-indent">
                 <li class="nav-item">
                   <a href="../../index.html" class="nav-link">
-                    <i class="fas fa-feather-alt nav-icon"></i>
-                    <p>Perfil</p>
+                    <i class="fas fa-feather-alt nav-icon text-dark"></i>
+                    <p class="text-dark">Perfil</p>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -138,7 +148,7 @@
               </router-link>
             </li>
 
-            <li class="nav-item fixed-bottom">
+            <li class="nav-item fixed-bottom ml-2">
               <a @click.prevent="logout" href="#" class="nav-link">
                 <i class="nav-icon fas fa-power-off"></i>
                 <p>Sortir</p>
