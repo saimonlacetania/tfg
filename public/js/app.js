@@ -86,6 +86,17 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/admin-lte/dist/img/logo_mercat.png":
+/*!*********************************************************!*\
+  !*** ./node_modules/admin-lte/dist/img/logo_mercat.png ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/vendor/admin-lte/dist/logo_mercat.png?235cfe9b4bb4c9a7364766230d1b2fc2";
+
+/***/ }),
+
 /***/ "./node_modules/admin-lte/dist/img/user2-160x160.jpg":
 /*!***********************************************************!*\
   !*** ./node_modules/admin-lte/dist/img/user2-160x160.jpg ***!
@@ -1936,6 +1947,8 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PerfilComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PerfilComponent.vue */ "./resources/js/components/PerfilComponent.vue");
+/* harmony import */ var _ProductesComponent_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProductesComponent.vue */ "./resources/js/components/ProductesComponent.vue");
 //
 //
 //
@@ -2094,18 +2107,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       user: ""
     };
   },
+  components: {
+    ProductesComponent: _ProductesComponent_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    PerfilComponent: _PerfilComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   mounted: function mounted() {
     var _this = this;
 
     axios.get("/api/user").then(function (res) {
       _this.user = res.data;
-      console.log(_this.user);
+      console.log(user.nom);
     });
   },
   methods: {
@@ -39685,7 +39704,7 @@ var staticRenderFns = [
         staticClass: "brand-image img-circle elevation-3",
         staticStyle: { opacity: "0.8" },
         attrs: {
-          src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/logo_mercat.png */ "./public/images/vendor/admin-lte/dist/logo_mercat.png"),
+          src: __webpack_require__(/*! ../../../node_modules/admin-lte/dist/img/logo_mercat.png */ "./node_modules/admin-lte/dist/img/logo_mercat.png"),
           alt: ""
         }
       }),
@@ -39703,7 +39722,7 @@ var staticRenderFns = [
       _c("img", {
         staticClass: "img-circle elevation-2",
         attrs: {
-          src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/user2-160x160.jpg */ "./public/images/vendor/admin-lte/dist/user2-160x160.jpg"),
+          src: __webpack_require__(/*! ../../../node_modules/admin-lte/dist/img/user2-160x160.jpg */ "./node_modules/admin-lte/dist/img/user2-160x160.jpg"),
           alt: "User Image"
         }
       })
@@ -39713,7 +39732,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "nav-link" }, [
+    return _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
       _c("i", { staticClass: "nav-icon fas fa-user" }),
       _vm._v(" "),
       _c("p", [
@@ -39727,11 +39746,15 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "nav-item" }, [
-      _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-        _c("i", { staticClass: "fas fa-shopping-basket nav-icon" }),
-        _vm._v(" "),
-        _c("p", [_vm._v("Les meves compres")])
-      ])
+      _c(
+        "a",
+        { staticClass: "nav-link", attrs: { href: "../../index.html" } },
+        [
+          _c("i", { staticClass: "fas fa-shopping-basket nav-icon" }),
+          _vm._v(" "),
+          _c("p", [_vm._v("Les meves compres")])
+        ]
+      )
     ])
   },
   function() {
@@ -39762,27 +39785,39 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("ul", { staticClass: "nav nav-treeview" }, [
         _c("li", { staticClass: "nav-item" }, [
-          _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-            _c("i", { staticClass: "fas fa-feather-alt nav-icon" }),
-            _vm._v(" "),
-            _c("p", [_vm._v("Perfil")])
-          ])
+          _c(
+            "a",
+            { staticClass: "nav-link", attrs: { href: "../../index.html" } },
+            [
+              _c("i", { staticClass: "fas fa-feather-alt nav-icon" }),
+              _vm._v(" "),
+              _c("p", [_vm._v("Perfil")])
+            ]
+          )
         ]),
         _vm._v(" "),
         _c("li", { staticClass: "nav-item" }, [
-          _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-            _c("i", { staticClass: "fas fa-tag nav-icon" }),
-            _vm._v(" "),
-            _c("p", [_vm._v("Productes")])
-          ])
+          _c(
+            "a",
+            { staticClass: "nav-link", attrs: { href: "../../index.html" } },
+            [
+              _c("i", { staticClass: "fas fa-tag nav-icon" }),
+              _vm._v(" "),
+              _c("p", [_vm._v("Productes")])
+            ]
+          )
         ]),
         _vm._v(" "),
         _c("li", { staticClass: "nav-item" }, [
-          _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-            _c("i", { staticClass: "fas fa-chart-line nav-icon" }),
-            _vm._v(" "),
-            _c("p", [_vm._v("Estadístiques")])
-          ])
+          _c(
+            "a",
+            { staticClass: "nav-link", attrs: { href: "../../index.html" } },
+            [
+              _c("i", { staticClass: "fas fa-chart-line nav-icon" }),
+              _vm._v(" "),
+              _c("p", [_vm._v("Estadístiques")])
+            ]
+          )
         ])
       ])
     ])
@@ -56582,17 +56617,6 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./public/images/vendor/admin-lte/dist/logo_mercat.png":
-/*!*************************************************************!*\
-  !*** ./public/images/vendor/admin-lte/dist/logo_mercat.png ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/logo_mercat.png?235cfe9b4bb4c9a7364766230d1b2fc2";
-
-/***/ }),
-
 /***/ "./public/images/vendor/admin-lte/dist/prod-1.jpg":
 /*!********************************************************!*\
   !*** ./public/images/vendor/admin-lte/dist/prod-1.jpg ***!
@@ -56601,17 +56625,6 @@ module.exports = "/images/logo_mercat.png?235cfe9b4bb4c9a7364766230d1b2fc2";
 /***/ (function(module, exports) {
 
 module.exports = "/images/prod-1.jpg?029a911740713b4dbe07b838aeb241e7";
-
-/***/ }),
-
-/***/ "./public/images/vendor/admin-lte/dist/user2-160x160.jpg":
-/*!***************************************************************!*\
-  !*** ./public/images/vendor/admin-lte/dist/user2-160x160.jpg ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/user2-160x160.jpg?b88fb2c09479316f5458d9c7ee58c731";
 
 /***/ }),
 
