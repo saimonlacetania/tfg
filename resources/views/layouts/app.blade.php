@@ -1,4 +1,4 @@
-<!doctype html>
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -26,10 +26,4 @@
 
     </div>
 </body>
-
-<!-- Scripts -->
-<script src="{{ asset('js/app.js') }}" defer></script>
-<script src="../../../node_modules/admin-lte/dist/js/adminlte.js"></script>
-<script src="../../../node_modules/admin-lte/plugins/chart.js/Chart.min.js"></script>
-
 </html>

@@ -16,12 +16,11 @@ export default {
         {
             path: "/",
             component: Example,
-            name: "Home",
             children: [
                 {
                     // UserProfile will be rendered inside User's <router-view>
                     // when /user/:id/profile is matched
-                    path: "profile",
+                    path: "/profile",
                     component: Perfil,
                     name: "Profile",
                     beforeEnter: (to, form, next) => {
@@ -38,7 +37,7 @@ export default {
                 {
                     // UserPosts will be rendered inside User's <router-view>
                     // when /user/:id/posts is matched
-                    path: "",
+                    path: "/",
                     component: Productes
                 },
                 {

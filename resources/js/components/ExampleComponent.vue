@@ -74,13 +74,13 @@
                with font-awesome or any other icon font library -->
             <li class="nav-header">MENÚ PRINCIPAL</li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <span class="nav-link">
                 <i class="nav-icon fas fa-user"></i>
                 <p>
                   El meu perfil
                   <i class="right fas fa-angle-left"></i>
                 </p>
-              </a>
+              </span>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <router-link class="nav-link" :to="'profile'">
@@ -89,7 +89,7 @@
                   </router-link>
                 </li>
                 <li class="nav-item">
-                  <a href="../../index.html" class="nav-link">
+                  <a href="#" class="nav-link">
                     <i class="fas fa-shopping-basket nav-icon"></i>
                     <p>Les meves compres</p>
                   </a>
@@ -112,19 +112,19 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="../../index.html" class="nav-link">
+                  <a href="#" class="nav-link">
                     <i class="fas fa-feather-alt nav-icon"></i>
                     <p>Perfil</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="../../index.html" class="nav-link">
+                  <a href="#" class="nav-link">
                     <i class="fas fa-tag nav-icon"></i>
                     <p>Productes</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="../../index.html" class="nav-link">
+                  <a href="#" class="nav-link">
                     <i class="fas fa-chart-line nav-icon"></i>
                     <p>Estadístiques</p>
                   </a>
@@ -169,7 +169,6 @@ export default {
   mounted() {
     axios.get("/api/user").then((res) => {
       this.user = res.data;
-      console.log(user.nom);
     });
   },
   methods: {
@@ -177,18 +176,6 @@ export default {
       axios.post("/api/logout").then(() => {
         this.$router.push({ name: "Login" });
       });
-    },
-    mostrarPerfil: function (event) {
-      var prod = document.getElementById("productes");
-      var perf = document.getElementById("perfil");
-      prod.style.display = "none";
-      perf.style.display = "block";
-    },
-    mostrarProductes: function (event) {
-      var prod = document.getElementById("productes");
-      var perf = document.getElementById("perfil");
-      prod.style.display = "block";
-      perf.style.display = "none";
     },
   },
 };
