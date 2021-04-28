@@ -20,7 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini control-sidebar-slide-open layout-fixed layout-navbar-fixed">
     <div id="app">
         @yield('content')
         <router-view></router-view>

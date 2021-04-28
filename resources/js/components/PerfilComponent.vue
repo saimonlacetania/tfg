@@ -38,9 +38,11 @@
                                         alt="User profile picture">
                                 </div>
 
-                                <h3 class="profile-username text-center">Nom login</h3>
+                                <h3 class="profile-username text-center">{{this.user.nom}}</h3>
 
-                                <p class="text-muted text-center"><i class="fas fa-map-marker-alt"></i> Població</p>
+                                <p class="text-muted text-center"><i class="fas fa-map-marker-alt"></i> {{this.user.poblacio}}</p>
+
+                                <p class="text-muted text-center">{{this.user.email}}</p>
 
                                 <a href="#" class="btn btn-secondary btn-block"><b>Configuració</b></a>
                             </div>
@@ -203,10 +205,17 @@
 
 
 <script>
-    export default {
-        mounted() {
-            console.log("Component mounted.");
-        },
-    };
+  export default {
+      data() {
+        return {
+          user: "",
+        };
+    },
+    mounted() {
+      axios.get("/api/user").then((res) => {
+        this.user = res.data;
+      });
+    },
+  }
 
 </script>

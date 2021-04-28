@@ -100,9 +100,13 @@ export default {
                 .post("/api/login", this.form)
                 .then(res => {
                     this.$router.push({ name: "Productes" });
+                    location.reload();
+                    return false;
                 })
                 .catch(error => {
                     this.errors = error.response.data.errors;
+                    location.reload();
+                    return false;
                 });
         }
     }

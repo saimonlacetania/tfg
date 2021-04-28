@@ -1,7 +1,15 @@
+<style>
+.wrapper {
+  height: 100%;
+}
+body, html {
+  height: 100%;
+}
+</style>
 <template>
   <div class="wrapper">
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-dark">
+    <nav class="main-header navbar navbar-expand navbar-light">
       <!-- Left navbar links -->
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -32,7 +40,7 @@
     <!-- /.navbar -->
 
     <!-- MENÚ ESQUERRA -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <aside class="main-sidebar sidebar-light-primary elevation-4">
       <!-- Logo -->
       <a href="" class="brand-link">
         <img
@@ -43,9 +51,10 @@
         />
         <span class="brand-text font-weight-light">Mercat Virtual</span>
       </a>
-
+      
       <!-- Sidebar -->
-      <div class="sidebar">
+      
+      <div class="sidebar fixed-left">
         <!-- Sidebar usuari (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
@@ -175,6 +184,8 @@ export default {
     logout() {
       axios.post("/api/logout").then(() => {
         this.$router.push({ name: "Login" });
+        location.reload();
+        return false;
       });
     },
    
