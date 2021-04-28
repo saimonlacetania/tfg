@@ -56,7 +56,7 @@
             />
           </div>
           <div class="info">
-            <a href="#" class="d-block">Hola! {{ this.user.nom }}</a>
+            <a href="#" class="d-block">Hola! {{ this.user }}</a>
           </div>
         </div>
 
@@ -157,7 +157,6 @@
 </template>
 
 <script>
-
 export default {
   data() {
     return {
@@ -167,7 +166,7 @@ export default {
 
   mounted() {
     axios.get("/api/user").then((res) => {
-      this.user = res.data;
+      this.user = res.data.nom;
       console.log(this.user);
     });
   },
@@ -175,9 +174,9 @@ export default {
     logout() {
       axios.post("/api/logout").then(() => {
         this.$router.push({ name: "Login" });
+        location.reload();
       });
     },
-   
   },
 };
 </script>

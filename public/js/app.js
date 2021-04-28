@@ -2093,7 +2093,7 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios.get("/api/user").then(function (res) {
-      _this.user = res.data;
+      _this.user = res.data.nom;
       console.log(_this.user);
     });
   },
@@ -2105,6 +2105,8 @@ __webpack_require__.r(__webpack_exports__);
         _this2.$router.push({
           name: "Login"
         });
+
+        location.reload();
       });
     }
   }
@@ -2121,8 +2123,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
 //
 //
 //
@@ -2224,6 +2224,8 @@ __webpack_require__.r(__webpack_exports__);
         _this.$router.push({
           name: "Productes"
         });
+
+        location.reload();
       })["catch"](function (error) {
         _this.errors = error.response.data.errors;
       });
@@ -39756,7 +39758,7 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "info" }, [
                 _c("a", { staticClass: "d-block", attrs: { href: "#" } }, [
-                  _vm._v("Hola! " + _vm._s(this.user.nom))
+                  _vm._v("Hola! " + _vm._s(this.user))
                 ])
               ])
             ]),
@@ -40089,8 +40091,7 @@ var render = function() {
                       [
                         _c("i", { staticClass: "far fa-times-circle" }),
                         _vm._v(
-                          "\n                            " +
-                            _vm._s(_vm.errors.email[0])
+                          "\n                " + _vm._s(_vm.errors.email[0])
                         )
                       ]
                     ),
@@ -40136,8 +40137,7 @@ var render = function() {
                       [
                         _c("i", { staticClass: "far fa-times-circle" }),
                         _vm._v(
-                          "\n                            " +
-                            _vm._s(_vm.errors.password[0])
+                          "\n                " + _vm._s(_vm.errors.password[0])
                         )
                       ]
                     ),
@@ -40189,11 +40189,7 @@ var render = function() {
                       }
                     }
                   },
-                  [
-                    _vm._v(
-                      "\n                            Accedir!\n                        "
-                    )
-                  ]
+                  [_vm._v("\n                Accedir!\n              ")]
                 )
               ]),
               _vm._v(" "),
@@ -40207,12 +40203,10 @@ var render = function() {
               { staticClass: "text-center" },
               [
                 _vm._v(
-                  "\n                    Encara no tens un compte creat? Fes click\n                    "
+                  "\n            Encara no tens un compte creat? Fes click\n            "
                 ),
                 _c("router-link", { attrs: { to: "register" } }, [
-                  _vm._v(
-                    "\n                        aquí!\n                    "
-                  )
+                  _vm._v(" aquí! ")
                 ])
               ],
               1
@@ -58073,8 +58067,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/ian/Escritorio/tfg/tfg/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/ian/Escritorio/tfg/tfg/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/tfg/tfg/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/tfg/tfg/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

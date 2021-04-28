@@ -8,7 +8,8 @@ import Productes from "./components/ProductesComponent";
 export default {
     mode: "history",
     linkActiveClass: "font-semibold",
-    routes: [{
+    routes: [
+        {
             path: "*",
             component: NotFound
         },
@@ -16,7 +17,8 @@ export default {
             path: "/",
             component: Example,
             name: "Home",
-            children: [{
+            children: [
+                {
                     // UserProfile will be rendered inside User's <router-view>
                     // when /user/:id/profile is matched
                     path: "profile",
@@ -55,10 +57,7 @@ export default {
                     component: Login,
                     name: "Login"
                 }
-
             ]
-        },
-
-
+        }
     ]
 };
