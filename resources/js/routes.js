@@ -4,6 +4,7 @@ import NotFound from "./components/NotFound";
 import Example from "./components/ExampleComponent";
 import Perfil from "./components/PerfilComponent";
 import Productes from "./components/ProductesComponent";
+import EditarPerfil from "./components/EditarPerfilComponent";
 
 export default {
     mode: "history",
@@ -34,6 +35,13 @@ export default {
                                 return next({ name: "Login" });
                             });
                     }
+                },
+                {
+                    // UserPosts will be rendered inside User's <router-view>
+                    // when /user/:id/posts is matched
+                    path: "/editarPerfil",
+                    component: EditarPerfil,
+                    name: "EditarPerfil"
                 },
                 {
                     // UserPosts will be rendered inside User's <router-view>

@@ -1,3 +1,8 @@
+<style>
+.main-sidebar {
+  background-color: #ff6565 !important ;
+}
+</style>
 <template>
   <div class="wrapper">
     <!-- Navbar -->
@@ -95,10 +100,10 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="" class="nav-link">
+                  <router-link class="nav-link" :to="'editarPerfil'">
                     <i class="fas fa-cogs nav-icon"></i>
                     <p>Configuració</p>
-                  </a>
+                  </router-link>
                 </li>
               </ul>
             </li>
