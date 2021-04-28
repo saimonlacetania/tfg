@@ -17,10 +17,6 @@ class RegisterController extends Controller
             'password' => ['required', 'min:6', 'confirmed'],
             'cognoms' => ['required'],
             'telefon' => ['required', 'unique:users'],
-            'direccio' => ['required'],
-            'cp' => ['required'],
-            'poblacio' => ['required'],
-            'provincia' => ['required'],
             'data_naix' => ['required'],
         ]);
 
@@ -30,10 +26,6 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
             'cognoms' => $request->cognoms,
             'telefon' => $request->telefon,
-            'direccio' => $request->direccio,
-            'cp' => $request->cp,
-            'poblacio' => $request->poblacio,
-            'provincia' => $request->provincia,
             'data_naix' => $request->data_naix,
         ]);
     }

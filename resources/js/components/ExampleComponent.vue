@@ -36,7 +36,7 @@
       <!-- Logo -->
       <a href="" class="brand-link">
         <img
-          src="../../../node_modules/admin-lte/dist/img/logo_mercat.png"
+          src="../../../public/images/vendor/admin-lte/dist/logo_mercat.png"
           alt=""
           class="brand-image img-circle elevation-3"
           style="opacity: 0.8"
@@ -50,7 +50,7 @@
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
             <img
-              src="../../../node_modules/admin-lte/dist/img/user2-160x160.jpg"
+              src="../../../public/images/vendor/admin-lte/dist/user2-160x160.jpg"
               class="img-circle elevation-2"
               alt="User Image"
             />
@@ -157,18 +157,18 @@
 </template>
 
 <script>
-import PerfilComponent from "./PerfilComponent.vue";
-import ProductesComponent from "./ProductesComponent.vue";
+
 export default {
   data() {
     return {
       user: "",
     };
   },
-  components: { ProductesComponent, PerfilComponent },
+
   mounted() {
     axios.get("/api/user").then((res) => {
       this.user = res.data;
+      console.log(this.user);
     });
   },
   methods: {
@@ -177,6 +177,7 @@ export default {
         this.$router.push({ name: "Login" });
       });
     },
+   
   },
 };
 </script>

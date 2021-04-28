@@ -8,16 +8,15 @@ import Productes from "./components/ProductesComponent";
 export default {
     mode: "history",
     linkActiveClass: "font-semibold",
-    routes: [
-        {
+    routes: [{
             path: "*",
             component: NotFound
         },
         {
             path: "/",
             component: Example,
-            children: [
-                {
+            name: "Home",
+            children: [{
                     // UserProfile will be rendered inside User's <router-view>
                     // when /user/:id/profile is matched
                     path: "/profile",
@@ -46,17 +45,20 @@ export default {
                     path: "/productes",
                     component: Productes,
                     name: "Productes"
+                },
+                {
+                    path: "/register",
+                    component: Register
+                },
+                {
+                    path: "/login",
+                    component: Login,
+                    name: "Login"
                 }
+
             ]
         },
-        {
-            path: "/register",
-            component: Register
-        },
-        {
-            path: "/login",
-            component: Login,
-            name: "Login"
-        }
+
+
     ]
 };
