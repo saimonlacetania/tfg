@@ -1,8 +1,9 @@
 <style>
-.main-sidebar {
-  background-color: #ff6565 !important ;
+.main-header{
+  color:#C22847 !important;
 }
 </style>
+
 <template>
   <div class="wrapper">
     <!-- Navbar -->

@@ -2218,6 +2218,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -7869,7 +7870,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.main-sidebar {\n  background-color: #ff6565 !important ;\n}\n", ""]);
+exports.push([module.i, "\n.main-header{\n  color:#C22847 !important;\n}\n", ""]);
 
 // exports
 
