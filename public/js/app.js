@@ -2000,91 +2000,48 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["id", "nom"],
   mounted: function mounted() {
-    console.log("Editar Perfil mounted.");
+    var _this = this;
+
+    axios.get("/api/user").then(function (res) {
+      _this.user = res.data;
+      _this.form["id"] = _this.user.id;
+      _this.form["nom"] = _this.user.nom;
+      _this.form["cognoms"] = _this.user.cognoms;
+      _this.form["provincia"] = _this.user.provincia;
+      _this.form["poblacio"] = _this.user.poblacio;
+      _this.form["cp"] = _this.user.cp;
+      _this.form["direccio"] = _this.user.direccio;
+      console.log(_this.user);
+    });
+  },
+  data: function data() {
+    return {
+      user: "",
+      form: {
+        id: "",
+        nom: "",
+        cognoms: "",
+        provincia: "",
+        poblacio: "",
+        cp: "",
+        direccio: ""
+      }
+    };
+  },
+  methods: {
+    modifyUser: function modifyUser() {
+      var that = this;
+      console.log(that.form);
+      axios.post("/api/modifyUser", that.form).then(function (res) {
+        console.log(res);
+      })["catch"](function (error) {
+        that.errors = error.response.data.errors;
+        console.log(that.errors);
+      });
+    }
   }
 });
 
@@ -39968,236 +39925,186 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "content-wrapper" }, [
-      _c("section", { staticClass: "content-header" }, [
-        _c("div", { staticClass: "container-fluid" }, [
-          _c("div", { staticClass: "row mb-2" }, [
-            _c("div", { staticClass: "col-sm-6" }, [
-              _c("h1", [_vm._v("General Form")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-sm-6" }, [
-              _c("ol", { staticClass: "breadcrumb float-sm-right" }, [
-                _c("li", { staticClass: "breadcrumb-item" }, [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Home")])
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "breadcrumb-item active" }, [
-                  _vm._v("Editar Perfil")
-                ])
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-5" }, [
-          _c("div", { staticClass: "card card-primary" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _c("h3", { staticClass: "card-title" }, [_vm._v("Quick Example")])
-            ]),
-            _vm._v(" "),
-            _c("form", { attrs: { role: "form" } }, [
-              _c("div", { staticClass: "card-body" }, [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", { attrs: { for: "exampleInputEmail1" } }, [
-                    _vm._v("Email address")
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "email",
-                      id: "exampleInputEmail1",
-                      placeholder: "Enter email"
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", { attrs: { for: "exampleInputPassword1" } }, [
-                    _vm._v("Password")
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "password",
-                      id: "exampleInputPassword1",
-                      placeholder: "Password"
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", { attrs: { for: "exampleInputFile" } }, [
-                    _vm._v("File input")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("div", { staticClass: "custom-file" }, [
-                      _c("input", {
-                        staticClass: "custom-file-input",
-                        attrs: { type: "file", id: "exampleInputFile" }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "label",
-                        {
-                          staticClass: "custom-file-label",
-                          attrs: { for: "exampleInputFile" }
-                        },
-                        [_vm._v("Choose file")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "input-group-append" }, [
-                      _c(
-                        "span",
-                        { staticClass: "input-group-text", attrs: { id: "" } },
-                        [_vm._v("Upload")]
-                      )
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-check" }, [
-                  _c("input", {
-                    staticClass: "form-check-input",
-                    attrs: { type: "checkbox", id: "exampleCheck1" }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    {
-                      staticClass: "form-check-label",
-                      attrs: { for: "exampleCheck1" }
-                    },
-                    [_vm._v("Check me out")]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-footer" }, [
-                _c(
-                  "button",
-                  { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-                  [_vm._v("Submit")]
-                )
-              ])
-            ])
-          ])
+  return _c("div", { staticClass: "content-wrapper" }, [
+    _c("form", [
+      _c("div", { staticClass: "card-body" }, [
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { attrs: { for: "nom" } }, [_vm._v("Nom")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.$data.form.nom,
+                expression: "$data.form.nom"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { type: "text", id: "nom", name: "nom" },
+            domProps: { value: _vm.$data.form.nom },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.$data.form, "nom", $event.target.value)
+              }
+            }
+          })
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-md-6" }, [
-          _c("div", { staticClass: "card card-primary" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _c("h3", { staticClass: "card-title" }, [_vm._v("Quick Example")])
-            ]),
-            _vm._v(" "),
-            _c("form", { attrs: { role: "form" } }, [
-              _c("div", { staticClass: "card-body" }, [
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", { attrs: { for: "exampleInputEmail1" } }, [
-                    _vm._v("Email address")
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "email",
-                      id: "exampleInputEmail1",
-                      placeholder: "Enter email"
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", { attrs: { for: "exampleInputPassword1" } }, [
-                    _vm._v("Password")
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "password",
-                      id: "exampleInputPassword1",
-                      placeholder: "Password"
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group" }, [
-                  _c("label", { attrs: { for: "exampleInputFile" } }, [
-                    _vm._v("File input")
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "input-group" }, [
-                    _c("div", { staticClass: "custom-file" }, [
-                      _c("input", {
-                        staticClass: "custom-file-input",
-                        attrs: { type: "file", id: "exampleInputFile" }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "label",
-                        {
-                          staticClass: "custom-file-label",
-                          attrs: { for: "exampleInputFile" }
-                        },
-                        [_vm._v("Choose file")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "input-group-append" }, [
-                      _c(
-                        "span",
-                        { staticClass: "input-group-text", attrs: { id: "" } },
-                        [_vm._v("Upload")]
-                      )
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-check" }, [
-                  _c("input", {
-                    staticClass: "form-check-input",
-                    attrs: { type: "checkbox", id: "exampleCheck1" }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    {
-                      staticClass: "form-check-label",
-                      attrs: { for: "exampleCheck1" }
-                    },
-                    [_vm._v("Check me out")]
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-footer" }, [
-                _c(
-                  "button",
-                  { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-                  [_vm._v("Submit")]
-                )
-              ])
-            ])
-          ])
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { attrs: { for: "cognoms" } }, [_vm._v("Cognoms")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.$data.form.cognoms,
+                expression: "$data.form.cognoms"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { type: "text", id: "cognoms" },
+            domProps: { value: _vm.$data.form.cognoms },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.$data.form, "cognoms", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { attrs: { for: "provincia" } }, [_vm._v("Provincia")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.$data.form.provincia,
+                expression: "$data.form.provincia"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { type: "text", id: "provincia" },
+            domProps: { value: _vm.$data.form.provincia },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.$data.form, "provincia", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { attrs: { for: "poblacio" } }, [_vm._v("Població")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.$data.form.poblacio,
+                expression: "$data.form.poblacio"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { type: "text", id: "poblacio" },
+            domProps: { value: _vm.$data.form.poblacio },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.$data.form, "poblacio", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { attrs: { for: "cp" } }, [_vm._v("Codi postal")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.$data.form.cp,
+                expression: "$data.form.cp"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { type: "text", id: "cp" },
+            domProps: { value: _vm.$data.form.cp },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.$data.form, "cp", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", { attrs: { for: "direccio" } }, [_vm._v("Direcció")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.$data.form.direccio,
+                expression: "$data.form.direccio"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { type: "text", id: "direccio" },
+            domProps: { value: _vm.$data.form.direccio },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.$data.form, "direccio", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col text-center" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-secondary",
+              attrs: { type: "submit" },
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.modifyUser($event)
+                }
+              }
+            },
+            [_vm._v("\n              Modifica les meves dades\n            ")]
+          )
         ])
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -58604,7 +58511,16 @@ __webpack_require__.r(__webpack_exports__);
       // when /user/:id/posts is matched
       path: "/editarPerfil",
       component: _components_EditarPerfilComponent__WEBPACK_IMPORTED_MODULE_6__["default"],
-      name: "EditarPerfil"
+      name: "EditarPerfil",
+      beforeEnter: function beforeEnter(to, form, next) {
+        axios.get("/api/athenticated").then(function () {
+          next();
+        })["catch"](function () {
+          return next({
+            name: "Login"
+          });
+        });
+      }
     }, {
       // UserPosts will be rendered inside User's <router-view>
       // when /user/:id/posts is matched
@@ -58647,8 +58563,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/tfg/tfg/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/tfg/tfg/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/ian/Escritorio/tfg/tfg/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/ian/Escritorio/tfg/tfg/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -9,8 +9,7 @@ import EditarPerfil from "./components/EditarPerfilComponent";
 export default {
     mode: "history",
     linkActiveClass: "font-semibold",
-    routes: [
-        {
+    routes: [{
             path: "*",
             component: NotFound
         },
@@ -18,8 +17,7 @@ export default {
             path: "/",
             component: Example,
             name: "Home",
-            children: [
-                {
+            children: [{
                     // UserProfile will be rendered inside User's <router-view>
                     // when /user/:id/profile is matched
                     path: "profile",
@@ -41,7 +39,17 @@ export default {
                     // when /user/:id/posts is matched
                     path: "/editarPerfil",
                     component: EditarPerfil,
-                    name: "EditarPerfil"
+                    name: "EditarPerfil",
+                    beforeEnter: (to, form, next) => {
+                        axios
+                            .get("/api/athenticated")
+                            .then(() => {
+                                next();
+                            })
+                            .catch(() => {
+                                return next({ name: "Login" });
+                            });
+                    }
                 },
                 {
                     // UserPosts will be rendered inside User's <router-view>
