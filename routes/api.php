@@ -20,6 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware('auth:sanctum')->get('/athenticated', function () {
     return true;
 });
+Route::get('productes', 'ProductesController@productes');
 Route::post('register', 'RegisterController@register');
 Route::post('login', 'LoginController@login');
 Route::post('logout', 'LoginController@logout');

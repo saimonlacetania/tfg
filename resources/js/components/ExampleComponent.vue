@@ -177,7 +177,6 @@ export default {
   mounted() {
     axios.get("/api/user").then((res) => {
       this.user = res.data;
-      console.log(this.user);
     });
   },
   methods: {

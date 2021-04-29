@@ -2114,7 +2114,6 @@ __webpack_require__.r(__webpack_exports__);
 
     axios.get("/api/user").then(function (res) {
       _this.user = res.data;
-      console.log(_this.user);
     });
   },
   methods: {
@@ -2614,157 +2613,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      productes: ""
+    };
+  },
   components: {
     CercaComponent: _CercaComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   mounted: function mounted() {
-    console.log("Productes mounted.");
+    var _this = this;
+
+    axios.get("/api/productes").then(function (res) {
+      console.log(res);
+      _this.productes = res.data;
+    });
   },
   methods: {
     mostrarCerca: function mostrarCerca(event) {
@@ -40503,9 +40368,74 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm._m(2),
-      _vm._v(" "),
-      _vm._m(3)
+      _c("div", { staticClass: "content" }, [
+        _c("div", { staticClass: "container-fluid" }, [
+          _c(
+            "div",
+            { staticClass: "row" },
+            _vm._l(_vm.productes, function(producte) {
+              return _c(
+                "div",
+                { key: producte.id, class: "col-md-4 card-deck mb-4" },
+                [
+                  _c("div", { class: "card card-primary text-center zoom" }, [
+                    _c("img", {
+                      class: "card-img-top p-3",
+                      attrs: { src: "/images/" + producte.imatge }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { class: "card-body" }, [
+                      _c("div", { class: "card-title font-weight-bold" }, [
+                        _vm._v(
+                          "\n                  " +
+                            _vm._s(producte.nom) +
+                            "\n                  "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          class: "badge badge-warning badge-sm text-uppercase"
+                        },
+                        [
+                          _vm._v(
+                            "\n                    " +
+                              _vm._s(producte.ref) +
+                              "\n                  "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("p", { class: "card-text" }, [
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(producte.descripcio) +
+                            "\n                  "
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { class: "card-footer" }, [
+                      _c(
+                        "a",
+                        {
+                          class: "btn btn-outline-secondary btn-icon-right",
+                          attrs: { href: "#" }
+                        },
+                        [_c("span", [_vm._v("Saber més")])]
+                      )
+                    ])
+                  ])
+                ]
+              )
+            }),
+            0
+          )
+        ])
+      ])
     ]
   )
 }
@@ -40526,321 +40456,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-sm-12 text-center" }, [
       _c("h1", [_vm._v("Novetats")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "content" }, [
-      _c("div", { staticClass: "container-fluid" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-lg-12 card-deck mb-4" }, [
-            _c("div", { staticClass: "card card-primary text-center zoom" }, [
-              _c("img", {
-                staticClass: "card-img-top p-4",
-                attrs: {
-                  src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/prod-1.jpg */ "./public/images/vendor/admin-lte/dist/prod-1.jpg"),
-                  alt: "Card image cap"
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("div", { staticClass: "card-title font-weight-bold" }, [
-                  _vm._v(
-                    "\n                Botes d'alta muntanya\n              "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "badge badge-warning badge-sm text-uppercase"
-                  },
-                  [
-                    _vm._v(
-                      "\n                La botigueta del muntanyaire\n              "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v(
-                    "\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\n                do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n              "
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-footer" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "btn btn-outline-secondary btn-icon-right",
-                    attrs: { href: "#" }
-                  },
-                  [_c("span", [_vm._v("Saber més")])]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card card-primary text-center zoom" }, [
-              _c("img", {
-                staticClass: "card-img-top p-4",
-                attrs: {
-                  src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/prod-1.jpg */ "./public/images/vendor/admin-lte/dist/prod-1.jpg"),
-                  alt: "Card image cap"
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("div", { staticClass: "card-title font-weight-bold" }, [
-                  _vm._v(
-                    "\n                Botes d'alta muntanya\n              "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "badge badge-warning badge-sm text-uppercase"
-                  },
-                  [
-                    _vm._v(
-                      "\n                La botigueta del muntanyaire\n              "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v(
-                    "\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\n                do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n              "
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-footer" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "btn btn-outline-secondary btn-icon-right",
-                    attrs: { href: "#" }
-                  },
-                  [_c("span", [_vm._v("Saber més")])]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card card-primary text-center zoom" }, [
-              _c("img", {
-                staticClass: "card-img-top p-4",
-                attrs: {
-                  src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/prod-1.jpg */ "./public/images/vendor/admin-lte/dist/prod-1.jpg"),
-                  alt: "Card image cap"
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("div", { staticClass: "card-title font-weight-bold" }, [
-                  _vm._v(
-                    "\n                Botes d'alta muntanya\n              "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "badge badge-warning badge-sm text-uppercase"
-                  },
-                  [
-                    _vm._v(
-                      "\n                La botigueta del muntanyaire\n              "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v(
-                    "\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\n                do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n              "
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-footer" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "btn btn-outline-secondary btn-icon-right",
-                    attrs: { href: "#" }
-                  },
-                  [_c("span", [_vm._v("Saber més")])]
-                )
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "content" }, [
-      _c("div", { staticClass: "container-fluid" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-lg-12 card-deck mb-4" }, [
-            _c(
-              "div",
-              {
-                staticClass: "card",
-                staticStyle: { width: "20rem", height: "20rem" }
-              },
-              [
-                _c("div", { staticClass: "card-header border-0" }, [
-                  _c("div", { staticClass: "d-flex justify-content-between" }, [
-                    _c("h3", { staticClass: "card-title" }, [
-                      _vm._v("Online Store Visitors")
-                    ]),
-                    _vm._v(" "),
-                    _c("a", { attrs: { href: "javascript:void(0);" } }, [
-                      _vm._v("View Report")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "d-flex" }, [
-                    _c("p", { staticClass: "d-flex flex-column" }, [
-                      _c("span", { staticClass: "text-bold text-lg" }, [
-                        _vm._v("820")
-                      ]),
-                      _vm._v(" "),
-                      _c("span", [_vm._v("Visitors Over Time")])
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "p",
-                      { staticClass: "ml-auto d-flex flex-column text-right" },
-                      [
-                        _c("span", { staticClass: "text-success" }, [
-                          _c("i", { staticClass: "fas fa-arrow-up" }),
-                          _vm._v(" 12.5%\n                  ")
-                        ]),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "text-muted" }, [
-                          _vm._v("Since last week")
-                        ])
-                      ]
-                    )
-                  ])
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "card",
-                staticStyle: { width: "20rem", height: "20rem" }
-              },
-              [
-                _c("div", { staticClass: "card-header border-0" }, [
-                  _c("div", { staticClass: "d-flex justify-content-between" }, [
-                    _c("h3", { staticClass: "card-title" }, [
-                      _vm._v("Online Store Visitors")
-                    ]),
-                    _vm._v(" "),
-                    _c("a", { attrs: { href: "javascript:void(0);" } }, [
-                      _vm._v("View Report")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "d-flex" }, [
-                    _c("p", { staticClass: "d-flex flex-column" }, [
-                      _c("span", { staticClass: "text-bold text-lg" }, [
-                        _vm._v("820")
-                      ]),
-                      _vm._v(" "),
-                      _c("span", [_vm._v("Visitors Over Time")])
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "p",
-                      { staticClass: "ml-auto d-flex flex-column text-right" },
-                      [
-                        _c("span", { staticClass: "text-success" }, [
-                          _c("i", { staticClass: "fas fa-arrow-up" }),
-                          _vm._v(" 12.5%\n                  ")
-                        ]),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "text-muted" }, [
-                          _vm._v("Since last week")
-                        ])
-                      ]
-                    )
-                  ])
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "card",
-                staticStyle: { width: "20rem", height: "20rem" }
-              },
-              [
-                _c("div", { staticClass: "card-header border-0" }, [
-                  _c("div", { staticClass: "d-flex justify-content-between" }, [
-                    _c("h3", { staticClass: "card-title" }, [
-                      _vm._v("Online Store Visitors")
-                    ]),
-                    _vm._v(" "),
-                    _c("a", { attrs: { href: "javascript:void(0);" } }, [
-                      _vm._v("View Report")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "d-flex" }, [
-                    _c("p", { staticClass: "d-flex flex-column" }, [
-                      _c("span", { staticClass: "text-bold text-lg" }, [
-                        _vm._v("820")
-                      ]),
-                      _vm._v(" "),
-                      _c("span", [_vm._v("Visitors Over Time")])
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "p",
-                      { staticClass: "ml-auto d-flex flex-column text-right" },
-                      [
-                        _c("span", { staticClass: "text-success" }, [
-                          _c("i", { staticClass: "fas fa-arrow-up" }),
-                          _vm._v(" 12.5%\n                  ")
-                        ]),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "text-muted" }, [
-                          _vm._v("Since last week")
-                        ])
-                      ]
-                    )
-                  ])
-                ])
-              ]
-            )
-          ])
-        ])
-      ])
     ])
   }
 ]
@@ -56667,17 +56282,6 @@ module.exports = function(module) {
 /***/ (function(module, exports) {
 
 module.exports = "/images/logo_mercat.png?235cfe9b4bb4c9a7364766230d1b2fc2";
-
-/***/ }),
-
-/***/ "./public/images/vendor/admin-lte/dist/prod-1.jpg":
-/*!********************************************************!*\
-  !*** ./public/images/vendor/admin-lte/dist/prod-1.jpg ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/prod-1.jpg?029a911740713b4dbe07b838aeb241e7";
 
 /***/ }),
 
