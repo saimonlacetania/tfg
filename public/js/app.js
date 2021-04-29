@@ -86,6 +86,17 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/admin-lte/dist/img/user2-160x160.jpg":
+/*!***********************************************************!*\
+  !*** ./node_modules/admin-lte/dist/img/user2-160x160.jpg ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/vendor/admin-lte/dist/user2-160x160.jpg?b88fb2c09479316f5458d9c7ee58c731";
+
+/***/ }),
+
 /***/ "./node_modules/admin-lte/dist/js/adminlte.min.js":
 /*!********************************************************!*\
   !*** ./node_modules/admin-lte/dist/js/adminlte.min.js ***!
@@ -2604,308 +2615,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
-    console.log("Perfil mounted.");
+    console.log("Component mounted.");
   }
 });
 
@@ -2921,6 +2633,99 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CercaComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CercaComponent.vue */ "./resources/js/components/CercaComponent.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -7871,6 +7676,25 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, "\n.main-header{\n  color:#C22847 !important;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PerfilComponent.vue?vue&type=style&index=0&lang=css&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/PerfilComponent.vue?vue&type=style&index=0&lang=css& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.nav-link.active{\n    background-color: #ff6565 !important;\n    color: white !important;\n}\n.nav-link {\n    text-decoration:none !important;\n    color: white !important;\n}\n\n\n\n", ""]);
 
 // exports
 
@@ -39161,6 +38985,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PerfilComponent.vue?vue&type=style&index=0&lang=css&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/PerfilComponent.vue?vue&type=style&index=0&lang=css& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./PerfilComponent.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PerfilComponent.vue?vue&type=style&index=0&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProductesComponent.vue?vue&type=style&index=0&lang=css&":
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ProductesComponent.vue?vue&type=style&index=0&lang=css& ***!
@@ -40132,136 +39986,141 @@ var render = function() {
     [
       _vm._m(0),
       _vm._v(" "),
-      _c(
-        "aside",
-        { staticClass: "main-sidebar sidebar-dark-primary elevation-4" },
-        [
-          _vm._m(1),
-          _vm._v(" "),
-          _c("div", { staticClass: "sidebar" }, [
-            _c("div", { staticClass: "user-panel mt-3 pb-3 mb-3 d-flex" }, [
-              _vm._m(2),
-              _vm._v(" "),
-              _c("div", { staticClass: "info" }, [
-                _c("a", { staticClass: "d-block", attrs: { href: "#" } }, [
-                  _vm._v("Hola! " + _vm._s(this.user))
-                ])
-              ])
-            ]),
+      _c("aside", { staticClass: "main-sidebar sidebar-light elevation-4" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _c("div", { staticClass: "sidebar" }, [
+          _c("div", { staticClass: "user-panel mt-3 pb-3 mb-3 d-flex" }, [
+            _vm._m(2),
             _vm._v(" "),
-            _c("nav", { staticClass: "mt-2" }, [
-              _c(
-                "ul",
-                {
-                  staticClass: "nav nav-pills nav-sidebar flex-column",
-                  attrs: {
-                    "data-widget": "treeview",
-                    role: "menu",
-                    "data-accordion": "false"
-                  }
-                },
-                [
-                  _c("li", { staticClass: "nav-header" }, [
-                    _vm._v("MENÚ PRINCIPAL")
-                  ]),
+            _c("div", { staticClass: "info" }, [
+              _c("a", { staticClass: "d-block", attrs: { href: "#" } }, [
+                _vm._v("Hola! " + _vm._s(this.user))
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("nav", { staticClass: "mt-2" }, [
+            _c(
+              "ul",
+              {
+                staticClass:
+                  "nav nav-pills nav-sidebar flex-column nav-child-indent",
+                attrs: {
+                  "data-widget": "treeview",
+                  role: "menu",
+                  "data-accordion": "false"
+                }
+              },
+              [
+                _c("li", { staticClass: "nav-header text-dark" }, [
+                  _vm._v("MENÚ PRINCIPAL")
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item" }, [
+                  _vm._m(3),
                   _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _vm._m(3),
-                    _vm._v(" "),
-                    _c("ul", { staticClass: "nav nav-treeview" }, [
-                      _c(
-                        "li",
-                        { staticClass: "nav-item" },
-                        [
-                          _c(
-                            "router-link",
-                            {
-                              staticClass: "nav-link",
-                              attrs: { to: "profile" }
-                            },
-                            [
-                              _c("i", {
-                                staticClass: "nav-icon far fa-user-circle"
-                              }),
-                              _vm._v(" "),
-                              _c("p", [_vm._v("Veure perfil")])
-                            ]
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _vm._m(4),
-                      _vm._v(" "),
-                      _c(
-                        "li",
-                        { staticClass: "nav-item" },
-                        [
-                          _c(
-                            "router-link",
-                            {
-                              staticClass: "nav-link",
-                              attrs: { to: "editarPerfil" }
-                            },
-                            [
-                              _c("i", { staticClass: "fas fa-cogs nav-icon" }),
-                              _vm._v(" "),
-                              _c("p", [_vm._v("Configuració")])
-                            ]
-                          )
-                        ],
-                        1
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _vm._m(5),
-                  _vm._v(" "),
-                  _c(
-                    "li",
-                    { staticClass: "nav-item" },
-                    [
-                      _c(
-                        "router-link",
-                        { staticClass: "nav-link", attrs: { to: "productes" } },
-                        [
-                          _c("i", {
-                            staticClass: "nav-icon fas fa-shopping-cart"
-                          }),
-                          _vm._v(" "),
-                          _c("p", [_vm._v("Comprar")])
-                        ]
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item fixed-bottom" }, [
+                  _c("ul", { staticClass: "nav nav-treeview" }, [
                     _c(
-                      "a",
-                      {
-                        staticClass: "nav-link",
-                        attrs: { href: "#" },
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            return _vm.logout($event)
-                          }
-                        }
-                      },
+                      "li",
+                      { staticClass: "nav-item" },
                       [
-                        _c("i", { staticClass: "nav-icon fas fa-power-off" }),
-                        _vm._v(" "),
-                        _c("p", [_vm._v("Sortir")])
-                      ]
+                        _c(
+                          "router-link",
+                          { staticClass: "nav-link", attrs: { to: "profile" } },
+                          [
+                            _c("i", {
+                              staticClass:
+                                "nav-icon far fa-user-circle text-dark"
+                            }),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "text-dark" }, [
+                              _vm._v("Veure perfil")
+                            ])
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _vm._m(4),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "nav-link",
+                            attrs: { to: "editarPerfil" }
+                          },
+                          [
+                            _c("i", {
+                              staticClass: "fas fa-cogs nav-icon text-dark"
+                            }),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "text-dark" }, [
+                              _vm._v("Configuració")
+                            ])
+                          ]
+                        )
+                      ],
+                      1
                     )
                   ])
-                ]
-              )
-            ])
+                ]),
+                _vm._v(" "),
+                _vm._m(5),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c(
+                      "router-link",
+                      { staticClass: "nav-link", attrs: { to: "productes" } },
+                      [
+                        _c("i", {
+                          staticClass: "nav-icon fas fa-shopping-cart text-dark"
+                        }),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "text-dark" }, [
+                          _vm._v("Comprar")
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item fixed-bottom ml-2" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "nav-link",
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.logout($event)
+                        }
+                      }
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "nav-icon fas fa-power-off text-dark"
+                      }),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "text-dark" }, [_vm._v("Sortir")])
+                    ]
+                  )
+                ])
+              ]
+            )
           ])
-        ]
-      ),
+        ])
+      ]),
       _vm._v(" "),
       _c("router-view")
     ],
@@ -40275,7 +40134,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "nav",
-      { staticClass: "main-header navbar navbar-expand navbar-dark" },
+      { staticClass: "main-header navbar navbar-expand navbar-light" },
       [
         _c("ul", { staticClass: "navbar-nav" }, [
           _c("li", { staticClass: "nav-item" }, [
@@ -40285,17 +40144,33 @@ var staticRenderFns = [
                 staticClass: "nav-link",
                 attrs: { "data-widget": "pushmenu", href: "#", role: "button" }
               },
-              [_c("i", { staticClass: "fas fa-bars" })]
+              [
+                _c("i", {
+                  staticClass: "fas fa-bars",
+                  staticStyle: { color: "#ff6565" }
+                })
+              ]
             )
           ]),
           _vm._v(" "),
-          _c("li", { staticClass: "nav-item d-none d-sm-inline-block" }, [
-            _c(
-              "a",
-              { staticClass: "nav-link", attrs: { href: "index3.html" } },
-              [_vm._v("Inici")]
-            )
-          ])
+          _c(
+            "li",
+            { staticClass: "nav-item d-none d-sm-inline-block text-dark" },
+            [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link text-dark",
+                  staticStyle: {
+                    color: "#343a40 !important",
+                    "text-decoration": "none !important"
+                  },
+                  attrs: { href: "index3.html" }
+                },
+                [_vm._v("Inici")]
+              )
+            ]
+          )
         ]),
         _vm._v(" "),
         _c("ul", { staticClass: "navbar-nav ml-auto" }, [
@@ -40311,9 +40186,12 @@ var staticRenderFns = [
                 }
               },
               [
-                _c("i", { staticClass: "fas fa-shopping-cart" }),
+                _c("i", {
+                  staticClass: "fas fa-shopping-cart",
+                  staticStyle: { color: "#ff6565" }
+                }),
                 _vm._v(" "),
-                _c("span", { staticClass: "font-weight-light" }, [
+                _c("span", { staticClass: "font-weight-light text-dark" }, [
                   _vm._v("Cistella")
                 ])
               ]
@@ -40330,9 +40208,9 @@ var staticRenderFns = [
     return _c("a", { staticClass: "brand-link", attrs: { href: "" } }, [
       _c("img", {
         staticClass: "brand-image img-circle elevation-3",
-        staticStyle: { opacity: "0.8" },
+        staticStyle: { opacity: "0.8", background: "#ff6565" },
         attrs: {
-          src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/logo_mercat.png */ "./public/images/vendor/admin-lte/dist/logo_mercat.png"),
+          src: __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module '../../../node_modules/admin-lte/dist/img/logo_mercat.png'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())),
           alt: ""
         }
       }),
@@ -40350,7 +40228,7 @@ var staticRenderFns = [
       _c("img", {
         staticClass: "img-circle elevation-2",
         attrs: {
-          src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/user2-160x160.jpg */ "./public/images/vendor/admin-lte/dist/user2-160x160.jpg"),
+          src: __webpack_require__(/*! ../../../node_modules/admin-lte/dist/img/user2-160x160.jpg */ "./node_modules/admin-lte/dist/img/user2-160x160.jpg"),
           alt: "User Image"
         }
       })
@@ -40361,9 +40239,9 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-      _c("i", { staticClass: "nav-icon fas fa-user" }),
+      _c("i", { staticClass: "nav-icon fas fa-user text-dark" }),
       _vm._v(" "),
-      _c("p", [
+      _c("p", { staticClass: "text-dark" }, [
         _vm._v("\n                El meu perfil\n                "),
         _c("i", { staticClass: "right fas fa-angle-left" })
       ])
@@ -40378,9 +40256,9 @@ var staticRenderFns = [
         "a",
         { staticClass: "nav-link", attrs: { href: "../../index.html" } },
         [
-          _c("i", { staticClass: "fas fa-shopping-basket nav-icon" }),
+          _c("i", { staticClass: "fas fa-shopping-basket nav-icon text-dark" }),
           _vm._v(" "),
-          _c("p", [_vm._v("Les meves compres")])
+          _c("p", { staticClass: "text-dark" }, [_vm._v("Les meves compres")])
         ]
       )
     ])
@@ -40391,23 +40269,23 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "nav-item" }, [
       _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-        _c("i", { staticClass: "nav-icon fas fa-store-alt" }),
+        _c("i", { staticClass: "nav-icon fas fa-store-alt text-dark" }),
         _vm._v(" "),
-        _c("p", [
+        _c("p", { staticClass: "text-dark" }, [
           _vm._v("\n                La meva botiga\n                "),
           _c("i", { staticClass: "right fas fa-angle-left" })
         ])
       ]),
       _vm._v(" "),
-      _c("ul", { staticClass: "nav nav-treeview" }, [
+      _c("ul", { staticClass: "nav nav-treeview nav-child-indent" }, [
         _c("li", { staticClass: "nav-item" }, [
           _c(
             "a",
             { staticClass: "nav-link", attrs: { href: "../../index.html" } },
             [
-              _c("i", { staticClass: "fas fa-feather-alt nav-icon" }),
+              _c("i", { staticClass: "fas fa-feather-alt nav-icon text-dark" }),
               _vm._v(" "),
-              _c("p", [_vm._v("Perfil")])
+              _c("p", { staticClass: "text-dark" }, [_vm._v("Perfil")])
             ]
           )
         ]),
@@ -40417,9 +40295,9 @@ var staticRenderFns = [
             "a",
             { staticClass: "nav-link", attrs: { href: "../../index.html" } },
             [
-              _c("i", { staticClass: "fas fa-tag nav-icon" }),
+              _c("i", { staticClass: "fas fa-tag nav-icon text-dark" }),
               _vm._v(" "),
-              _c("p", [_vm._v("Productes")])
+              _c("p", { staticClass: "text-dark" }, [_vm._v("Productes")])
             ]
           )
         ]),
@@ -40429,9 +40307,9 @@ var staticRenderFns = [
             "a",
             { staticClass: "nav-link", attrs: { href: "../../index.html" } },
             [
-              _c("i", { staticClass: "fas fa-chart-line nav-icon" }),
+              _c("i", { staticClass: "fas fa-chart-line nav-icon text-dark" }),
               _vm._v(" "),
-              _c("p", [_vm._v("Estadístiques")])
+              _c("p", { staticClass: "text-dark" }, [_vm._v("Estadístiques")])
             ]
           )
         ])
@@ -40735,7 +40613,7 @@ var staticRenderFns = [
                     _c("img", {
                       staticClass: "profile-user-img img-fluid img-circle",
                       attrs: {
-                        src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/user2-160x160.jpg */ "./public/images/vendor/admin-lte/dist/user2-160x160.jpg"),
+                        src: __webpack_require__(/*! ../../../node_modules/admin-lte/dist/img/user2-160x160.jpg */ "./node_modules/admin-lte/dist/img/user2-160x160.jpg"),
                         alt: "User profile picture"
                       }
                     })
@@ -40746,117 +40624,18 @@ var staticRenderFns = [
                   ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "text-muted text-center" }, [
-                    _vm._v("Software Engineer")
+                    _c("i", { staticClass: "fas fa-map-marker-alt" }),
+                    _vm._v(" Població")
                   ]),
-                  _vm._v(" "),
-                  _c(
-                    "ul",
-                    { staticClass: "list-group list-group-unbordered mb-3" },
-                    [
-                      _c("li", { staticClass: "list-group-item" }, [
-                        _c("b", [_vm._v("Followers")]),
-                        _vm._v(" "),
-                        _c("a", { staticClass: "float-right" }, [
-                          _vm._v("1,322")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "list-group-item" }, [
-                        _c("b", [_vm._v("Following")]),
-                        _vm._v(" "),
-                        _c("a", { staticClass: "float-right" }, [_vm._v("543")])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "list-group-item" }, [
-                        _c("b", [_vm._v("Friends")]),
-                        _vm._v(" "),
-                        _c("a", { staticClass: "float-right" }, [
-                          _vm._v("13,287")
-                        ])
-                      ])
-                    ]
-                  ),
                   _vm._v(" "),
                   _c(
                     "a",
                     {
-                      staticClass: "btn btn-primary btn-block",
+                      staticClass: "btn btn-secondary btn-block",
                       attrs: { href: "#" }
                     },
-                    [_c("b", [_vm._v("Follow")])]
+                    [_c("b", [_vm._v("Configuració")])]
                   )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card card-dark" }, [
-                _c("div", { staticClass: "card-header" }, [
-                  _c("h3", { staticClass: "card-title" }, [_vm._v("About Me")])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("strong", [
-                    _c("i", { staticClass: "fas fa-book mr-1" }),
-                    _vm._v(" Education")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-muted" }, [
-                    _vm._v(
-                      "\n                B.S. in Computer Science from the University of Tennessee at\n                Knoxville\n              "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("hr"),
-                  _vm._v(" "),
-                  _c("strong", [
-                    _c("i", { staticClass: "fas fa-map-marker-alt mr-1" }),
-                    _vm._v(" Location")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-muted" }, [
-                    _vm._v("Malibu, California")
-                  ]),
-                  _vm._v(" "),
-                  _c("hr"),
-                  _vm._v(" "),
-                  _c("strong", [
-                    _c("i", { staticClass: "fas fa-pencil-alt mr-1" }),
-                    _vm._v(" Skills")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-muted" }, [
-                    _c("span", { staticClass: "tag tag-danger" }, [
-                      _vm._v("UI Design")
-                    ]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "tag tag-success" }, [
-                      _vm._v("Coding")
-                    ]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "tag tag-info" }, [
-                      _vm._v("Javascript")
-                    ]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "tag tag-warning" }, [
-                      _vm._v("PHP")
-                    ]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "tag tag-primary" }, [
-                      _vm._v("Node.js")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("hr"),
-                  _vm._v(" "),
-                  _c("strong", [
-                    _c("i", { staticClass: "far fa-file-alt mr-1" }),
-                    _vm._v(" Notes")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-muted" }, [
-                    _vm._v(
-                      "\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam\n                fermentum enim neque.\n              "
-                    )
-                  ])
                 ])
               ])
             ]),
@@ -40885,17 +40664,6 @@ var staticRenderFns = [
                         },
                         [_vm._v("Tornar a comprar")]
                       )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", { staticClass: "nav-item" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "nav-link",
-                          attrs: { href: "#settings", "data-toggle": "tab" }
-                        },
-                        [_vm._v("Llista de desitjos")]
-                      )
                     ])
                   ])
                 ]),
@@ -40909,303 +40677,84 @@ var staticRenderFns = [
                         attrs: { id: "activity" }
                       },
                       [
-                        _c("div", { staticClass: "post" }, [
-                          _c("div", { staticClass: "user-block" }, [
-                            _c("img", {
-                              staticClass: "img-circle img-bordered-sm",
-                              attrs: {
-                                src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/user2-160x160.jpg */ "./public/images/vendor/admin-lte/dist/user2-160x160.jpg"),
-                                alt: "user image"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "username" }, [
-                              _c("a", { attrs: { href: "#" } }, [
-                                _vm._v("Jonathan Burke Jr.")
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "float-right btn-tool",
-                                  attrs: { href: "#" }
-                                },
-                                [_c("i", { staticClass: "fas fa-times" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "description" }, [
-                              _vm._v("Shared publicly - 7:30 PM today")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                      Lorem ipsum represents a long-held tradition for\n                      designers, typographers and the like. Some people hate\n                      it and argue for its demise, but others ignore the hate\n                      as they create awesome tools to help create filler text\n                      for everyone from bacon lovers to Charlie Sheen fans.\n                    "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "link-black text-sm mr-2",
-                                attrs: { href: "#" }
-                              },
-                              [
-                                _c("i", { staticClass: "fas fa-share mr-1" }),
-                                _vm._v(" Share")
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "a",
-                              {
-                                staticClass: "link-black text-sm",
-                                attrs: { href: "#" }
-                              },
-                              [
-                                _c("i", {
-                                  staticClass: "far fa-thumbs-up mr-1"
-                                }),
-                                _vm._v(" Like")
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "float-right" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "link-black text-sm",
-                                  attrs: { href: "#" }
-                                },
-                                [
-                                  _c("i", {
-                                    staticClass: "far fa-comments mr-1"
-                                  }),
-                                  _vm._v(
-                                    " Comments (5)\n                        "
-                                  )
-                                ]
-                              )
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("input", {
-                            staticClass: "form-control form-control-sm",
-                            attrs: {
-                              type: "text",
-                              placeholder: "Type a comment"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "post clearfix" }, [
-                          _c("div", { staticClass: "user-block" }, [
-                            _c("img", {
-                              staticClass: "img-circle img-bordered-sm",
-                              attrs: {
-                                src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/user2-160x160.jpg */ "./public/images/vendor/admin-lte/dist/user2-160x160.jpg"),
-                                alt: "User Image"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "username" }, [
-                              _c("a", { attrs: { href: "#" } }, [
-                                _vm._v("Sarah Ross")
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "float-right btn-tool",
-                                  attrs: { href: "#" }
-                                },
-                                [_c("i", { staticClass: "fas fa-times" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "description" }, [
-                              _vm._v("Sent you a message - 3 days ago")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "\n                      Lorem ipsum represents a long-held tradition for\n                      designers, typographers and the like. Some people hate\n                      it and argue for its demise, but others ignore the hate\n                      as they create awesome tools to help create filler text\n                      for everyone from bacon lovers to Charlie Sheen fans.\n                    "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("form", { staticClass: "form-horizontal" }, [
-                            _c(
-                              "div",
-                              {
-                                staticClass: "input-group input-group-sm mb-0"
-                              },
-                              [
-                                _c("input", {
-                                  staticClass: "form-control form-control-sm",
-                                  attrs: { placeholder: "Response" }
-                                }),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  { staticClass: "input-group-append" },
-                                  [
-                                    _c(
-                                      "button",
-                                      {
-                                        staticClass: "btn btn-danger",
-                                        attrs: { type: "submit" }
-                                      },
-                                      [
-                                        _vm._v(
-                                          "\n                            Send\n                          "
-                                        )
-                                      ]
-                                    )
-                                  ]
-                                )
-                              ]
-                            )
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "post" }, [
-                          _c("div", { staticClass: "user-block" }, [
-                            _c("img", {
-                              staticClass: "img-circle img-bordered-sm",
-                              attrs: {
-                                src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/user2-160x160.jpg */ "./public/images/vendor/admin-lte/dist/user2-160x160.jpg"),
-                                alt: "User Image"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "username" }, [
-                              _c("a", { attrs: { href: "#" } }, [
-                                _vm._v("Adam Jones")
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "float-right btn-tool",
-                                  attrs: { href: "#" }
-                                },
-                                [_c("i", { staticClass: "fas fa-times" })]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "description" }, [
-                              _vm._v("Posted 5 photos - 5 days ago")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "row mb-3" }, [
-                            _c("div", { staticClass: "col-sm-6" }, [
+                        _c("div", { staticClass: "card mb-3" }, [
+                          _c("div", { staticClass: "row g-0" }, [
+                            _c("div", { staticClass: "col-md-4" }, [
                               _c("img", {
-                                staticClass: "img-fluid",
+                                staticClass: "img-fluid p-1 ml-4",
+                                staticStyle: {
+                                  height: "150px",
+                                  width: "150px",
+                                  "border-radius": "150px"
+                                },
                                 attrs: {
-                                  src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/photo1.png */ "./public/images/vendor/admin-lte/dist/photo1.png"),
-                                  alt: "Photo"
+                                  src:
+                                    "https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg",
+                                  alt: "..."
                                 }
                               })
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-sm-6" }, [
-                              _c("div", { staticClass: "row" }, [
-                                _c("div", { staticClass: "col-sm-6" }, [
-                                  _c("img", {
-                                    staticClass: "img-fluid mb-3",
-                                    attrs: {
-                                      src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/photo2.png */ "./public/images/vendor/admin-lte/dist/photo2.png"),
-                                      alt: "Photo"
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("img", {
-                                    staticClass: "img-fluid",
-                                    attrs: {
-                                      src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/photo3.jpg */ "./public/images/vendor/admin-lte/dist/photo3.jpg"),
-                                      alt: "Photo"
-                                    }
-                                  })
+                            _c("div", { staticClass: "col-md-8" }, [
+                              _c("div", { staticClass: "card-body" }, [
+                                _c("h5", { staticClass: "card-title" }, [
+                                  _vm._v("Producte")
                                 ]),
                                 _vm._v(" "),
-                                _c("div", { staticClass: "col-sm-6" }, [
-                                  _c("img", {
-                                    staticClass: "img-fluid mb-3",
-                                    attrs: {
-                                      src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/photo4.jpg */ "./public/images/vendor/admin-lte/dist/photo4.jpg"),
-                                      alt: "Photo"
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("img", {
-                                    staticClass: "img-fluid",
-                                    attrs: {
-                                      src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/photo1.png */ "./public/images/vendor/admin-lte/dist/photo1.png"),
-                                      alt: "Photo"
-                                    }
-                                  })
+                                _c("p", { staticClass: "card-text" }, [
+                                  _vm._v(
+                                    "\n                                                    This is a wider card with supporting text below as a natural lead-in to\n                                                    additional content. This content is a little bit longer.\n                                                    "
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "card-text" }, [
+                                  _c("small", { staticClass: "text-muted" }, [
+                                    _vm._v("Comprat el 26/04/2021")
+                                  ])
                                 ])
                               ])
                             ])
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "link-black text-sm mr-2",
-                                attrs: { href: "#" }
-                              },
-                              [
-                                _c("i", { staticClass: "fas fa-share mr-1" }),
-                                _vm._v(" Share")
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "a",
-                              {
-                                staticClass: "link-black text-sm",
-                                attrs: { href: "#" }
-                              },
-                              [
-                                _c("i", {
-                                  staticClass: "far fa-thumbs-up mr-1"
-                                }),
-                                _vm._v(" Like")
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("span", { staticClass: "float-right" }, [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "link-black text-sm",
-                                  attrs: { href: "#" }
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "card mb-3" }, [
+                          _c("div", { staticClass: "row" }, [
+                            _c("div", { staticClass: "col-md-4" }, [
+                              _c("img", {
+                                staticClass: "img-fluid p-1 ml-4",
+                                staticStyle: {
+                                  height: "150px",
+                                  width: "150px",
+                                  "border-radius": "150px"
                                 },
-                                [
-                                  _c("i", {
-                                    staticClass: "far fa-comments mr-1"
-                                  }),
+                                attrs: {
+                                  src:
+                                    "https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg",
+                                  alt: "..."
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-md-8" }, [
+                              _c("div", { staticClass: "card-body" }, [
+                                _c("h5", { staticClass: "card-title" }, [
+                                  _vm._v("Producte")
+                                ]),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "card-text" }, [
                                   _vm._v(
-                                    " Comments (5)\n                        "
+                                    "\n                                                    This is a wider card with supporting text below as a natural lead-in to\n                                                    additional content. This content is a little bit longer.\n                                                    "
                                   )
-                                ]
-                              )
+                                ]),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "card-text" }, [
+                                  _c("small", { staticClass: "text-muted" }, [
+                                    _vm._v("Comprat el 26/04/2021")
+                                  ])
+                                ])
+                              ])
                             ])
-                          ]),
-                          _vm._v(" "),
-                          _c("input", {
-                            staticClass: "form-control form-control-sm",
-                            attrs: {
-                              type: "text",
-                              placeholder: "Type a comment"
-                            }
-                          })
+                          ])
                         ])
                       ]
                     ),
@@ -41219,272 +40768,108 @@ var staticRenderFns = [
                           { staticClass: "timeline timeline-inverse" },
                           [
                             _c("div", { staticClass: "time-label" }, [
-                              _c("span", { staticClass: "bg-danger" }, [
-                                _vm._v(" 10 Feb. 2014 ")
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("div", [
-                              _c("i", {
-                                staticClass: "fas fa-envelope bg-primary"
-                              }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "timeline-item" }, [
-                                _c("span", { staticClass: "time" }, [
-                                  _c("i", { staticClass: "far fa-clock" }),
-                                  _vm._v(" 12:05")
-                                ]),
-                                _vm._v(" "),
-                                _c("h3", { staticClass: "timeline-header" }, [
-                                  _c("a", { attrs: { href: "#" } }, [
-                                    _vm._v("Support Team")
-                                  ]),
-                                  _vm._v(
-                                    " sent you an email\n                        "
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "timeline-body" }, [
-                                  _vm._v(
-                                    "\n                          Etsy doostang zoodles disqus groupon greplin oooj\n                          voxy zoodles, weebly ning heekya handango imeem\n                          plugg dopplr jibjab, movity jajah plickers sifteo\n                          edmodo ifttt zimbra. Babblely odeo kaboodle quora\n                          plaxo ideeli hulu weebly balihoo...\n                        "
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "timeline-footer" }, [
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass: "btn btn-primary btn-sm",
-                                      attrs: { href: "#" }
-                                    },
-                                    [_vm._v("Read more")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass: "btn btn-danger btn-sm",
-                                      attrs: { href: "#" }
-                                    },
-                                    [_vm._v("Delete")]
-                                  )
-                                ])
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("div", [
-                              _c("i", { staticClass: "fas fa-user bg-info" }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "timeline-item" }, [
-                                _c("span", { staticClass: "time" }, [
-                                  _c("i", { staticClass: "far fa-clock" }),
-                                  _vm._v(" 5 mins ago")
-                                ]),
-                                _vm._v(" "),
-                                _c(
-                                  "h3",
-                                  { staticClass: "timeline-header border-0" },
-                                  [
-                                    _c("a", { attrs: { href: "#" } }, [
-                                      _vm._v("Sarah Young")
-                                    ]),
-                                    _vm._v(
-                                      "\n                          accepted your friend request\n                        "
-                                    )
-                                  ]
+                              _c("span", { staticClass: "bg-secondary" }, [
+                                _c("i", { staticClass: "far fa-calendar-alt" }),
+                                _vm._v(
+                                  "\n                                                26/04/2021\n                                            "
                                 )
                               ])
                             ]),
                             _vm._v(" "),
                             _c("div", [
-                              _c("i", {
-                                staticClass: "fas fa-comments bg-warning"
-                              }),
+                              _c("i", { staticClass: "fas fa-gift bg-maroon" }),
                               _vm._v(" "),
                               _c("div", { staticClass: "timeline-item" }, [
                                 _c("span", { staticClass: "time" }, [
-                                  _c("i", { staticClass: "far fa-clock" }),
-                                  _vm._v(" 27 mins ago")
+                                  _c("i", { staticClass: "fas fa-store-alt" }),
+                                  _c("a", { attrs: { href: "#" } }, [
+                                    _vm._v(" Nom Botiga")
+                                  ])
                                 ]),
                                 _vm._v(" "),
                                 _c("h3", { staticClass: "timeline-header" }, [
+                                  _vm._v("Nom del producte")
+                                ]),
+                                _vm._v(" "),
+                                _c("small", { staticClass: "timeline-body" }, [
+                                  _vm._v("Descripcio producte")
+                                ])
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "timeline-item" }, [
+                                _c("span", { staticClass: "time" }, [
+                                  _c("i", { staticClass: "fas fa-store-alt" }),
                                   _c("a", { attrs: { href: "#" } }, [
-                                    _vm._v("Jay White")
-                                  ]),
-                                  _vm._v(
-                                    " commented on your post\n                        "
-                                  )
+                                    _vm._v(" Nom Botiga")
+                                  ])
                                 ]),
                                 _vm._v(" "),
-                                _c("div", { staticClass: "timeline-body" }, [
-                                  _vm._v(
-                                    "\n                          Take me to your leader! Switzerland is small and\n                          neutral! We are more like Germany, ambitious and\n                          misunderstood!\n                        "
-                                  )
+                                _c("h3", { staticClass: "timeline-header" }, [
+                                  _vm._v("Nom del producte")
                                 ]),
                                 _vm._v(" "),
-                                _c("div", { staticClass: "timeline-footer" }, [
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass:
-                                        "btn btn-warning btn-flat btn-sm",
-                                      attrs: { href: "#" }
-                                    },
-                                    [_vm._v("View comment")]
-                                  )
+                                _c("small", { staticClass: "timeline-body" }, [
+                                  _vm._v("Descripcio producte")
+                                ])
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("div", [
+                              _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "timeline-item" }, [
+                                _c("span", { staticClass: "time" }, [
+                                  _c("i", { staticClass: "fas fa-store-alt" }),
+                                  _c("a", { attrs: { href: "#" } }, [
+                                    _vm._v(" Nom Botiga")
+                                  ])
+                                ]),
+                                _vm._v(" "),
+                                _c("h3", { staticClass: "timeline-header" }, [
+                                  _vm._v("Nom del producte")
+                                ]),
+                                _vm._v(" "),
+                                _c("small", { staticClass: "timeline-body" }, [
+                                  _vm._v("Descripcio producte")
                                 ])
                               ])
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "time-label" }, [
-                              _c("span", { staticClass: "bg-success" }, [
-                                _vm._v(" 3 Jan. 2014 ")
+                              _c("span", { staticClass: "bg-secondary" }, [
+                                _c("i", { staticClass: "far fa-calendar-alt" }),
+                                _vm._v(
+                                  "\n                                                27/10/2020\n                                            "
+                                )
                               ])
                             ]),
                             _vm._v(" "),
                             _c("div", [
-                              _c("i", {
-                                staticClass: "fas fa-camera bg-purple"
-                              }),
+                              _c("i", { staticClass: "fas fa-gift bg-maroon" }),
                               _vm._v(" "),
                               _c("div", { staticClass: "timeline-item" }, [
                                 _c("span", { staticClass: "time" }, [
-                                  _c("i", { staticClass: "far fa-clock" }),
-                                  _vm._v(" 2 days ago")
+                                  _c("i", { staticClass: "fas fa-store-alt" }),
+                                  _c("a", { attrs: { href: "#" } }, [
+                                    _vm._v(" Nom Botiga")
+                                  ])
                                 ]),
                                 _vm._v(" "),
                                 _c("h3", { staticClass: "timeline-header" }, [
-                                  _c("a", { attrs: { href: "#" } }, [
-                                    _vm._v("Mina Lee")
-                                  ]),
-                                  _vm._v(
-                                    " uploaded new photos\n                        "
-                                  )
+                                  _vm._v("Nom del producte")
                                 ]),
                                 _vm._v(" "),
-                                _c("div", { staticClass: "timeline-body" })
+                                _c("small", { staticClass: "timeline-body" }, [
+                                  _vm._v("Descripcio producte")
+                                ])
                               ])
-                            ]),
-                            _vm._v(" "),
-                            _c("div", [
-                              _c("i", { staticClass: "far fa-clock bg-gray" })
                             ])
                           ]
                         )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "tab-pane", attrs: { id: "settings" } },
-                      [
-                        _c("div", { staticClass: "row" }, [
-                          _c("div", { staticClass: "col-12" }, [
-                            _c("div", { staticClass: "card" }, [
-                              _c("div", { staticClass: "card-header" }, [
-                                _c("h3", { staticClass: "card-title" }, [
-                                  _vm._v("Les meves llistes")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "card-body table-responsive p-0",
-                                  staticStyle: { height: "300px" }
-                                },
-                                [
-                                  _c(
-                                    "table",
-                                    {
-                                      staticClass:
-                                        "table table-head-fixed text-nowrap"
-                                    },
-                                    [
-                                      _c("thead", [
-                                        _c("tr", [
-                                          _c("th", [_vm._v("Nom llista")]),
-                                          _vm._v(" "),
-                                          _c("th", [_vm._v("Rol")]),
-                                          _vm._v(" "),
-                                          _c("th", [_vm._v("Creada")])
-                                        ])
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("tbody", [
-                                        _c("tr", [
-                                          _c("td", [_vm._v("183")]),
-                                          _vm._v(" "),
-                                          _c("td", [_vm._v("John Doe")]),
-                                          _vm._v(" "),
-                                          _c("td", [_vm._v("11-7-2014")])
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("tr", [
-                                          _c("td", [_vm._v("219")]),
-                                          _vm._v(" "),
-                                          _c("td", [
-                                            _vm._v("Alexander Pierce")
-                                          ]),
-                                          _vm._v(" "),
-                                          _c("td", [_vm._v("11-7-2014")])
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("tr", [
-                                          _c("td", [_vm._v("657")]),
-                                          _vm._v(" "),
-                                          _c("td", [_vm._v("Bob Doe")]),
-                                          _vm._v(" "),
-                                          _c("td", [_vm._v("11-7-2014")])
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("tr", [
-                                          _c("td", [_vm._v("175")]),
-                                          _vm._v(" "),
-                                          _c("td", [_vm._v("Mike Doe")]),
-                                          _vm._v(" "),
-                                          _c("td", [_vm._v("11-7-2014")])
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("tr", [
-                                          _c("td", [_vm._v("134")]),
-                                          _vm._v(" "),
-                                          _c("td", [_vm._v("Jim Doe")]),
-                                          _vm._v(" "),
-                                          _c("td", [_vm._v("11-7-2014")])
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("tr", [
-                                          _c("td", [_vm._v("494")]),
-                                          _vm._v(" "),
-                                          _c("td", [_vm._v("Victoria Doe")]),
-                                          _vm._v(" "),
-                                          _c("td", [_vm._v("11-7-2014")])
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("tr", [
-                                          _c("td", [_vm._v("832")]),
-                                          _vm._v(" "),
-                                          _c("td", [_vm._v("Michael Doe")]),
-                                          _vm._v(" "),
-                                          _c("td", [_vm._v("11-7-2014")])
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("tr", [
-                                          _c("td", [_vm._v("982")]),
-                                          _vm._v(" "),
-                                          _c("td", [_vm._v("Rocky Doe")]),
-                                          _vm._v(" "),
-                                          _c("td", [_vm._v("11-7-2014")])
-                                        ])
-                                      ])
-                                    ]
-                                  )
-                                ]
-                              )
-                            ])
-                          ])
-                        ])
                       ]
                     )
                   ])
@@ -41518,55 +40903,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "content-wrapper", attrs: { id: "contingut" } },
-    [
-      _c("div", { staticClass: "content-header" }, [
-        _c("div", { staticClass: "container-fluid" }, [
-          _c("div", { staticClass: "row mb-2" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c("form", { attrs: { action: "simple-results.html" } }, [
-                _c("div", { staticClass: "input-group" }, [
-                  _c("input", {
-                    staticClass: "form-control form-control-lg text-right",
-                    attrs: { type: "search", placeholder: "¿Què vols buscar?" }
-                  }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "input-group-append" }, [
-                    _vm._m(0),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-lg btn-secondary",
-                        attrs: { type: "button", "aria-expanded": "true" },
-                        on: { click: _vm.mostrarCerca }
-                      },
-                      [_c("i", { staticClass: "fa fa-arrow-down" })]
-                    )
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticStyle: { display: "none" }, attrs: { id: "cerca" } },
-            [_c("cerca-component")],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(1)
-        ])
-      ]),
-      _vm._v(" "),
-      _vm._m(2),
-      _vm._v(" "),
-      _vm._m(3)
-    ]
-  )
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function() {
@@ -41574,333 +40911,586 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "button",
-      { staticClass: "btn btn-lg btn-secondary", attrs: { type: "submit" } },
-      [_c("i", { staticClass: "fa fa-search" })]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm-12 text-center" }, [
-      _c("h1", [_vm._v("Novetats")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "content" }, [
-      _c("div", { staticClass: "container-fluid" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-lg-12 card-deck mb-4" }, [
-            _c("div", { staticClass: "card card-primary text-center zoom" }, [
-              _c("img", {
-                staticClass: "card-img-top p-4",
-                attrs: {
-                  src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/prod-1.jpg */ "./public/images/vendor/admin-lte/dist/prod-1.jpg"),
-                  alt: "Card image cap"
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("div", { staticClass: "card-title font-weight-bold" }, [
-                  _vm._v(
-                    "\n                Botes d'alta muntanya\n              "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
+      "div",
+      { staticClass: "content-wrapper", attrs: { id: "contingut" } },
+      [
+        _c("div", { staticClass: "content-header" }, [
+          _c("div", { staticClass: "container-fluid" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-12" }, [
                 _c(
                   "div",
                   {
-                    staticClass: "badge badge-warning badge-sm text-uppercase"
+                    staticClass: "card bg-dark text-white",
+                    staticStyle: { border: "none" }
                   },
                   [
-                    _vm._v(
-                      "\n                La botigueta del muntanyaire\n              "
-                    )
+                    _c("img", {
+                      staticClass: "card-img",
+                      attrs: {
+                        src: __webpack_require__(/*! ../../../public/images/agro_1.jpg */ "./public/images/agro_1.jpg"),
+                        alt: "..."
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-img-overlay" }, [
+                      _c("h3", { staticClass: "card-header text-center" }, [
+                        _vm._v("Benvinguts al Mercat Virtual")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-4 mt-5" }),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-lg btn-secondary col-md-4 text-center mt-5",
+                            staticStyle: { "background-color": "#ff6565" },
+                            attrs: { type: "submit" }
+                          },
+                          [
+                            _c("i", { staticClass: "fa fa-search" }),
+                            _vm._v(
+                              "\n                  Descobreix-lo!\n                "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-4" })
+                      ])
+                    ])
                   ]
-                ),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v(
-                    "\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\n                do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n              "
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-footer" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "btn btn-outline-secondary btn-icon-right",
-                    attrs: { href: "#" }
-                  },
-                  [_c("span", [_vm._v("Saber més")])]
                 )
               ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "card card-primary text-center zoom" }, [
-              _c("img", {
-                staticClass: "card-img-top p-4",
-                attrs: {
-                  src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/prod-1.jpg */ "./public/images/vendor/admin-lte/dist/prod-1.jpg"),
-                  alt: "Card image cap"
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("div", { staticClass: "card-title font-weight-bold" }, [
-                  _vm._v(
-                    "\n                Botes d'alta muntanya\n              "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "badge badge-warning badge-sm text-uppercase"
-                  },
-                  [
-                    _vm._v(
-                      "\n                La botigueta del muntanyaire\n              "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v(
-                    "\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\n                do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n              "
-                  )
-                ])
+            _c("br"),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-12 mt-4" }, [
+              _c("h1", { staticClass: "text-center" }, [
+                _vm._v("El KM0 més a prop que mai")
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "card-footer" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "btn btn-outline-secondary btn-icon-right",
-                    attrs: { href: "#" }
-                  },
-                  [_c("span", [_vm._v("Saber més")])]
-                )
+              _c("h4", { staticClass: "text-center" }, [
+                _vm._v("Productes únics de professionals locals")
               ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "card card-primary text-center zoom" }, [
-              _c("img", {
-                staticClass: "card-img-top p-4",
-                attrs: {
-                  src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/prod-1.jpg */ "./public/images/vendor/admin-lte/dist/prod-1.jpg"),
-                  alt: "Card image cap"
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("div", { staticClass: "card-title font-weight-bold" }, [
-                  _vm._v(
-                    "\n                Botes d'alta muntanya\n              "
-                  )
+            _c("br"),
+            _c("br"),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "card-deck" }, [
+                _c("div", { staticClass: "card" }, [
+                  _c("img", {
+                    staticClass: "card-img-top",
+                    attrs: {
+                      src: __webpack_require__(/*! ../../../public/images/grapes.jpg */ "./public/images/grapes.jpg"),
+                      alt: "Card image cap"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("h5", { staticClass: "card-title" }, [_vm._v("Fresc")]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _vm._v(
+                        "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _c("small", { staticClass: "text-muted" }, [
+                        _vm._v("Last updated 3 mins ago")
+                      ])
+                    ])
+                  ])
                 ]),
                 _vm._v(" "),
-                _c("br"),
+                _c("div", { staticClass: "card" }, [
+                  _c("img", {
+                    staticClass: "card-img-top",
+                    attrs: {
+                      src: __webpack_require__(/*! ../../../public/images/ovella.jpg */ "./public/images/ovella.jpg"),
+                      alt: "Card image cap"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("h5", { staticClass: "card-title" }, [
+                      _vm._v("Ecològic")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _vm._v(
+                        "This card has supporting text below as a natural lead-in to additional content."
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _c("small", { staticClass: "text-muted" }, [
+                        _vm._v("Last updated 3 mins ago")
+                      ])
+                    ])
+                  ])
+                ]),
                 _vm._v(" "),
+                _c("div", { staticClass: "card" }, [
+                  _c("img", {
+                    staticClass: "card-img-top",
+                    attrs: {
+                      src: __webpack_require__(/*! ../../../public/images/roba.jpg */ "./public/images/roba.jpg"),
+                      alt: "Card image cap"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("h5", { staticClass: "card-title" }, [
+                      _vm._v("Sostenible")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _vm._v(
+                        "This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action."
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _c("small", { staticClass: "text-muted" }, [
+                        _vm._v("Last updated 3 mins ago")
+                      ])
+                    ])
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-4" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
                 _c(
-                  "div",
+                  "button",
                   {
-                    staticClass: "badge badge-warning badge-sm text-uppercase"
+                    staticClass: "btn btn-block text-center mt-5",
+                    staticStyle: { "background-color": "#ff6565" },
+                    attrs: { type: "submit" }
                   },
                   [
-                    _vm._v(
-                      "\n                La botigueta del muntanyaire\n              "
-                    )
+                    _c("i", { staticClass: "fa fa-search" }),
+                    _vm._v("\n            Descobreix-lo!\n          ")
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" })
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
+        _c("div", { staticClass: "content mt-4" }, [
+          _c("div", { staticClass: "container-fluid" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-lg-12 card-deck mb-4" }, [
+                _c(
+                  "div",
+                  { staticClass: "card card-primary text-center zoom" },
+                  [
+                    _c("img", {
+                      staticClass: "card-img-top p-4",
+                      attrs: {
+                        src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/prod-1.jpg */ "./public/images/vendor/admin-lte/dist/prod-1.jpg"),
+                        alt: "Card image cap"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" }, [
+                      _c(
+                        "div",
+                        { staticClass: "card-title font-weight-bold" },
+                        [
+                          _vm._v(
+                            "\n                Botes d'alta muntanya\n              "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "badge badge-sm text-uppercase",
+                          staticStyle: {
+                            background: "#ff6565",
+                            color: "white",
+                            "border-radius": "10px"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                La botigueta del muntanyaire\n              "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v(
+                          "\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\n                do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n              "
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-footer" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "btn btn-outline-secondary btn-icon-right",
+                          attrs: { href: "#" }
+                        },
+                        [_c("span", [_vm._v("Saber més")])]
+                      )
+                    ])
                   ]
                 ),
                 _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v(
-                    "\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\n                do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n              "
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-footer" }, [
                 _c(
-                  "a",
-                  {
-                    staticClass: "btn btn-outline-secondary btn-icon-right",
-                    attrs: { href: "#" }
-                  },
-                  [_c("span", [_vm._v("Saber més")])]
+                  "div",
+                  { staticClass: "card card-primary text-center zoom" },
+                  [
+                    _c("img", {
+                      staticClass: "card-img-top p-4",
+                      attrs: {
+                        src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/prod-1.jpg */ "./public/images/vendor/admin-lte/dist/prod-1.jpg"),
+                        alt: "Card image cap"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" }, [
+                      _c(
+                        "div",
+                        { staticClass: "card-title font-weight-bold" },
+                        [
+                          _vm._v(
+                            "\n                Botes d'alta muntanya\n              "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "badge badge-sm text-uppercase",
+                          staticStyle: {
+                            background: "#ff6565",
+                            color: "white",
+                            "border-radius": "10px"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                La botigueta del muntanyaire\n              "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v(
+                          "\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\n                do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n              "
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-footer" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "btn btn-outline-secondary btn-icon-right",
+                          attrs: { href: "#" }
+                        },
+                        [_c("span", [_vm._v("Saber més")])]
+                      )
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "card card-primary text-center zoom" },
+                  [
+                    _c("img", {
+                      staticClass: "card-img-top p-4",
+                      attrs: {
+                        src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/prod-1.jpg */ "./public/images/vendor/admin-lte/dist/prod-1.jpg"),
+                        alt: "Card image cap"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" }, [
+                      _c(
+                        "div",
+                        { staticClass: "card-title font-weight-bold" },
+                        [
+                          _vm._v(
+                            "\n                Botes d'alta muntanya\n              "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "badge badge-sm text-uppercase",
+                          staticStyle: {
+                            background: "#ff6565",
+                            color: "white",
+                            "border-radius": "10px"
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                La botigueta del muntanyaire\n              "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v(
+                          "\n                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed\n                do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n              "
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-footer" }, [
+                      _c(
+                        "a",
+                        {
+                          staticClass:
+                            "btn btn-outline-secondary btn-icon-right",
+                          attrs: { href: "#" }
+                        },
+                        [_c("span", [_vm._v("Saber més")])]
+                      )
+                    ])
+                  ]
                 )
               ])
             ])
           ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "content" }, [
-      _c("div", { staticClass: "container-fluid" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-lg-12 card-deck mb-4" }, [
-            _c(
-              "div",
-              {
-                staticClass: "card",
-                staticStyle: { width: "20rem", height: "20rem" }
-              },
-              [
-                _c("div", { staticClass: "card-header border-0" }, [
-                  _c("div", { staticClass: "d-flex justify-content-between" }, [
-                    _c("h3", { staticClass: "card-title" }, [
-                      _vm._v("Online Store Visitors")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "content" }, [
+          _c("div", { staticClass: "container-fluid" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-lg-12 card-deck mb-4" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "card",
+                    staticStyle: { width: "20rem", height: "20rem" }
+                  },
+                  [
+                    _c("div", { staticClass: "card-header border-0" }, [
+                      _c(
+                        "div",
+                        { staticClass: "d-flex justify-content-between" },
+                        [
+                          _c("h3", { staticClass: "card-title" }, [
+                            _vm._v("Online Store Visitors")
+                          ]),
+                          _vm._v(" "),
+                          _c("a", { attrs: { href: "javascript:void(0);" } }, [
+                            _vm._v("View Report")
+                          ])
+                        ]
+                      )
                     ]),
                     _vm._v(" "),
-                    _c("a", { attrs: { href: "javascript:void(0);" } }, [
-                      _vm._v("View Report")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "d-flex" }, [
-                    _c("p", { staticClass: "d-flex flex-column" }, [
-                      _c("span", { staticClass: "text-bold text-lg" }, [
-                        _vm._v("820")
-                      ]),
-                      _vm._v(" "),
-                      _c("span", [_vm._v("Visitors Over Time")])
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "p",
-                      { staticClass: "ml-auto d-flex flex-column text-right" },
-                      [
-                        _c("span", { staticClass: "text-success" }, [
-                          _c("i", { staticClass: "fas fa-arrow-up" }),
-                          _vm._v(" 12.5%\n                  ")
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("div", { staticClass: "d-flex" }, [
+                        _c("p", { staticClass: "d-flex flex-column" }, [
+                          _c("span", { staticClass: "text-bold text-lg" }, [
+                            _vm._v("820")
+                          ]),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("Visitors Over Time")])
                         ]),
                         _vm._v(" "),
-                        _c("span", { staticClass: "text-muted" }, [
-                          _vm._v("Since last week")
+                        _c(
+                          "p",
+                          {
+                            staticClass: "ml-auto d-flex flex-column text-right"
+                          },
+                          [
+                            _c("span", { staticClass: "text-success" }, [
+                              _c("i", { staticClass: "fas fa-arrow-up" }),
+                              _vm._v(" 12.5%\n                  ")
+                            ]),
+                            _vm._v(" "),
+                            _c("span", { staticClass: "text-muted" }, [
+                              _vm._v("Since last week")
+                            ])
+                          ]
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "card",
+                    staticStyle: { width: "20rem", height: "20rem" }
+                  },
+                  [
+                    _c("div", { staticClass: "card-header border-0" }, [
+                      _c(
+                        "div",
+                        { staticClass: "d-flex justify-content-between" },
+                        [
+                          _c("h3", { staticClass: "card-title" }, [
+                            _vm._v("Online Store Visitors")
+                          ]),
+                          _vm._v(" "),
+                          _c("a", { attrs: { href: "javascript:void(0);" } }, [
+                            _vm._v("View Report")
+                          ])
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("div", { staticClass: "d-flex" }, [
+                        _c("p", { staticClass: "d-flex flex-column" }, [
+                          _c("span", { staticClass: "text-bold text-lg" }, [
+                            _vm._v("820")
+                          ]),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("Visitors Over Time")])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          {
+                            staticClass: "ml-auto d-flex flex-column text-right"
+                          },
+                          [
+                            _c("span", { staticClass: "text-success" }, [
+                              _c("i", { staticClass: "fas fa-arrow-up" }),
+                              _vm._v(" 12.5%\n                  ")
+                            ]),
+                            _vm._v(" "),
+                            _c("span", { staticClass: "text-muted" }, [
+                              _vm._v("Since last week")
+                            ])
+                          ]
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "card",
+                    staticStyle: { width: "20rem", height: "20rem" }
+                  },
+                  [
+                    _c("div", { staticClass: "card-header border-0" }, [
+                      _c(
+                        "div",
+                        { staticClass: "d-flex justify-content-between" },
+                        [
+                          _c("h3", { staticClass: "card-title" }, [
+                            _vm._v("Online Store Visitors")
+                          ]),
+                          _vm._v(" "),
+                          _c("a", { attrs: { href: "javascript:void(0);" } }, [
+                            _vm._v("View Report")
+                          ])
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("div", { staticClass: "d-flex" }, [
+                        _c("p", { staticClass: "d-flex flex-column" }, [
+                          _c("span", { staticClass: "text-bold text-lg" }, [
+                            _vm._v("820")
+                          ]),
+                          _vm._v(" "),
+                          _c("span", [_vm._v("Visitors Over Time")])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          {
+                            staticClass: "ml-auto d-flex flex-column text-right"
+                          },
+                          [
+                            _c("span", { staticClass: "text-success" }, [
+                              _c("i", { staticClass: "fas fa-arrow-up" }),
+                              _vm._v(" 12.5%\n                  ")
+                            ]),
+                            _vm._v(" "),
+                            _c("span", { staticClass: "text-muted" }, [
+                              _vm._v("Since last week")
+                            ])
+                          ]
+                        )
+                      ])
+                    ])
+                  ]
+                )
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
+        _c("div", { staticClass: "content" }, [
+          _c("div", { staticClass: "container-fluid" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-12" }, [
+                _c("div", { staticClass: "card" }, [
+                  _c("div", { staticClass: "card-header border-0" }, [
+                    _c(
+                      "div",
+                      { staticClass: "d-flex justify-content-between" },
+                      [
+                        _c("h3", { staticClass: "card-title" }, [
+                          _vm._v("Online Store Visitors")
+                        ]),
+                        _vm._v(" "),
+                        _c("a", { attrs: { href: "javascript:void(0);" } }, [
+                          _vm._v("View Report")
                         ])
                       ]
                     )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("p", [_vm._v("Holee")])
                   ])
                 ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "card",
-                staticStyle: { width: "20rem", height: "20rem" }
-              },
-              [
-                _c("div", { staticClass: "card-header border-0" }, [
-                  _c("div", { staticClass: "d-flex justify-content-between" }, [
-                    _c("h3", { staticClass: "card-title" }, [
-                      _vm._v("Online Store Visitors")
-                    ]),
-                    _vm._v(" "),
-                    _c("a", { attrs: { href: "javascript:void(0);" } }, [
-                      _vm._v("View Report")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "d-flex" }, [
-                    _c("p", { staticClass: "d-flex flex-column" }, [
-                      _c("span", { staticClass: "text-bold text-lg" }, [
-                        _vm._v("820")
-                      ]),
-                      _vm._v(" "),
-                      _c("span", [_vm._v("Visitors Over Time")])
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "p",
-                      { staticClass: "ml-auto d-flex flex-column text-right" },
-                      [
-                        _c("span", { staticClass: "text-success" }, [
-                          _c("i", { staticClass: "fas fa-arrow-up" }),
-                          _vm._v(" 12.5%\n                  ")
-                        ]),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "text-muted" }, [
-                          _vm._v("Since last week")
-                        ])
-                      ]
-                    )
-                  ])
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "card",
-                staticStyle: { width: "20rem", height: "20rem" }
-              },
-              [
-                _c("div", { staticClass: "card-header border-0" }, [
-                  _c("div", { staticClass: "d-flex justify-content-between" }, [
-                    _c("h3", { staticClass: "card-title" }, [
-                      _vm._v("Online Store Visitors")
-                    ]),
-                    _vm._v(" "),
-                    _c("a", { attrs: { href: "javascript:void(0);" } }, [
-                      _vm._v("View Report")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "d-flex" }, [
-                    _c("p", { staticClass: "d-flex flex-column" }, [
-                      _c("span", { staticClass: "text-bold text-lg" }, [
-                        _vm._v("820")
-                      ]),
-                      _vm._v(" "),
-                      _c("span", [_vm._v("Visitors Over Time")])
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "p",
-                      { staticClass: "ml-auto d-flex flex-column text-right" },
-                      [
-                        _c("span", { staticClass: "text-success" }, [
-                          _c("i", { staticClass: "fas fa-arrow-up" }),
-                          _vm._v(" 12.5%\n                  ")
-                        ]),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "text-muted" }, [
-                          _vm._v("Since last week")
-                        ])
-                      ]
-                    )
-                  ])
-                ])
-              ]
-            )
+              ])
+            ])
           ])
         ])
-      ])
-    ])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -57718,58 +57308,47 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./public/images/vendor/admin-lte/dist/logo_mercat.png":
-/*!*************************************************************!*\
-  !*** ./public/images/vendor/admin-lte/dist/logo_mercat.png ***!
-  \*************************************************************/
+/***/ "./public/images/agro_1.jpg":
+/*!**********************************!*\
+  !*** ./public/images/agro_1.jpg ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/logo_mercat.png?235cfe9b4bb4c9a7364766230d1b2fc2";
+module.exports = "/images/agro_1.jpg?e70ccb44865e9ed3defe7932fd6d7971";
 
 /***/ }),
 
-/***/ "./public/images/vendor/admin-lte/dist/photo1.png":
-/*!********************************************************!*\
-  !*** ./public/images/vendor/admin-lte/dist/photo1.png ***!
-  \********************************************************/
+/***/ "./public/images/grapes.jpg":
+/*!**********************************!*\
+  !*** ./public/images/grapes.jpg ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/photo1.png?c6d8d24b223b9691a80c529424e3fda4";
+module.exports = "/images/grapes.jpg?c956e01fc09b38be52894ef449091586";
 
 /***/ }),
 
-/***/ "./public/images/vendor/admin-lte/dist/photo2.png":
-/*!********************************************************!*\
-  !*** ./public/images/vendor/admin-lte/dist/photo2.png ***!
-  \********************************************************/
+/***/ "./public/images/ovella.jpg":
+/*!**********************************!*\
+  !*** ./public/images/ovella.jpg ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/photo2.png?07aae7ca700a5ce2271b55f9325022e9";
+module.exports = "/images/ovella.jpg?b8542a608b347d95bcb4c81b64f0b370";
 
 /***/ }),
 
-/***/ "./public/images/vendor/admin-lte/dist/photo3.jpg":
-/*!********************************************************!*\
-  !*** ./public/images/vendor/admin-lte/dist/photo3.jpg ***!
-  \********************************************************/
+/***/ "./public/images/roba.jpg":
+/*!********************************!*\
+  !*** ./public/images/roba.jpg ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/images/photo3.jpg?f8dc8643bb521316dcadb0b20fb3e6a0";
-
-/***/ }),
-
-/***/ "./public/images/vendor/admin-lte/dist/photo4.jpg":
-/*!********************************************************!*\
-  !*** ./public/images/vendor/admin-lte/dist/photo4.jpg ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/photo4.jpg?564eeb900a41772da0a1042dc5d505d6";
+module.exports = "/images/roba.jpg?74d82df25504422359230695152a3f5f";
 
 /***/ }),
 
@@ -57781,17 +57360,6 @@ module.exports = "/images/photo4.jpg?564eeb900a41772da0a1042dc5d505d6";
 /***/ (function(module, exports) {
 
 module.exports = "/images/prod-1.jpg?029a911740713b4dbe07b838aeb241e7";
-
-/***/ }),
-
-/***/ "./public/images/vendor/admin-lte/dist/user2-160x160.jpg":
-/*!***************************************************************!*\
-  !*** ./public/images/vendor/admin-lte/dist/user2-160x160.jpg ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/user2-160x160.jpg?b88fb2c09479316f5458d9c7ee58c731";
 
 /***/ }),
 
@@ -58226,7 +57794,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _PerfilComponent_vue_vue_type_template_id_85951714___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PerfilComponent.vue?vue&type=template&id=85951714& */ "./resources/js/components/PerfilComponent.vue?vue&type=template&id=85951714&");
 /* harmony import */ var _PerfilComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PerfilComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/PerfilComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _PerfilComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PerfilComponent.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/PerfilComponent.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -58234,7 +57804,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _PerfilComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _PerfilComponent_vue_vue_type_template_id_85951714___WEBPACK_IMPORTED_MODULE_0__["render"],
   _PerfilComponent_vue_vue_type_template_id_85951714___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -58263,6 +57833,22 @@ component.options.__file = "resources/js/components/PerfilComponent.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./PerfilComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PerfilComponent.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/PerfilComponent.vue?vue&type=style&index=0&lang=css&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/PerfilComponent.vue?vue&type=style&index=0&lang=css& ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./PerfilComponent.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PerfilComponent.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
 
 /***/ }),
 
@@ -58494,7 +58080,7 @@ __webpack_require__.r(__webpack_exports__);
     children: [{
       // UserProfile will be rendered inside User's <router-view>
       // when /user/:id/profile is matched
-      path: "profile",
+      path: "/profile",
       component: _components_PerfilComponent__WEBPACK_IMPORTED_MODULE_4__["default"],
       name: "Profile",
       beforeEnter: function beforeEnter(to, form, next) {

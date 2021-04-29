@@ -20,7 +20,7 @@ export default {
             children: [{
                     // UserProfile will be rendered inside User's <router-view>
                     // when /user/:id/profile is matched
-                    path: "profile",
+                    path: "/profile",
                     component: Perfil,
                     name: "Profile",
                     beforeEnter: (to, form, next) => {
