@@ -75,7 +75,6 @@
 
 <script>
 export default {
-    props:["id","nom"],
     mounted() {
         axios.get("/api/user").then(res => {
             this.user = res.data;
