@@ -27,9 +27,4 @@
     </div>
 </body>
 
-<!-- Scripts -->
-
-<script src="../../../node_modules/admin-lte/dist/js/adminlte.js"></script>
-<script src="../../../node_modules/admin-lte/plugins/chart.js/Chart.min.js"></script>
-
 </html>

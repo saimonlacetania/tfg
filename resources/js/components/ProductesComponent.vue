@@ -3,8 +3,31 @@
     <!-- cerca -->
     <div class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2">
+
+        <div class="row">
           <div class="col-md-12">
+            <div class="card bg-dark text-white">
+              <img src="../../../public/images/agro_1.jpg" class="card-img" alt="...">
+              <div class="card-img-overlay">
+                <h3 class="card-header text-center">Benvinguts al Mercat Virtual</h3>
+                <div class="row">
+                  <div class="col-md-4 mt-5"></div>
+                  <button type="submit" class="btn btn-lg btn-secondary col-md-4 text-center mt-5" style="background-color:#ff6565; margin-top:250px;">
+                    <i class="fa fa-search"></i>
+                    Descobreix-lo!
+                  </button>
+                  <div class="col-md-4"></div>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+          <br>
+
+          <!-- cerca -->
+          <!--<div class="col-md-12">
             <form action="simple-results.html">
               <div class="input-group">
                 <input
@@ -13,7 +36,7 @@
                   placeholder="¿Què vols buscar?"
                 />
                 <div class="input-group-append">
-                  <button type="submit" class="btn btn-lg btn-secondary">
+                  <button type="submit" class="btn btn-lg btn-secondary" style="background-color:#ff6565;">
                     <i class="fa fa-search"></i>
                   </button>
                   <button
@@ -21,6 +44,7 @@
                     class="btn btn-lg btn-secondary"
                     aria-expanded="true"
                     v-on:click="mostrarCerca"
+                    style="background-color:#ff6565;"
                   >
                     <i class="fa fa-arrow-down"></i>
                   </button>
@@ -29,22 +53,24 @@
             </form>
           </div>
           <!-- /.col -->
-        </div>
-        <!-- /.row -->
+
         <!-- cerca avançada -->
-        <div id="cerca" style="display: none">
+        <!--<div id="cerca" style="display: none">
           <cerca-component></cerca-component>
-        </div>
-        <div class="col-sm-12 text-center">
-          <h1>Novetats</h1>
+        </div> -->
+        <div class="col-sm-12 mt-4">
+          <h1 class="text-center">Descobreix el KM0</h1>
+          <h4 class="text-center">Productes únics de professionals locals</h4>
         </div>
       </div>
       <!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
+                                
+    <hr>
 
     <!-- tarjetes -->
-    <div class="content">
+    <div class="content mt-4">
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-12 card-deck mb-4">
@@ -59,7 +85,7 @@
                   Botes d'alta muntanya
                 </div>
                 <br />
-                <div class="badge badge-warning badge-sm text-uppercase">
+                <div class="badge badge-sm text-uppercase" style="background: #ff6565; color:white; border-radius:10px;">
                   La botigueta del muntanyaire
                 </div>
                 <p class="card-text">
@@ -86,7 +112,7 @@
                   Botes d'alta muntanya
                 </div>
                 <br />
-                <div class="badge badge-warning badge-sm text-uppercase">
+                <div class="badge badge-sm text-uppercase" style="background: #ff6565; color:white; border-radius:10px;">
                   La botigueta del muntanyaire
                 </div>
                 <p class="card-text">
@@ -113,7 +139,7 @@
                   Botes d'alta muntanya
                 </div>
                 <br />
-                <div class="badge badge-warning badge-sm text-uppercase">
+                <div class="badge badge-sm text-uppercase" style="background: #ff6565; color:white; border-radius:10px;">
                   La botigueta del muntanyaire
                 </div>
                 <p class="card-text">
@@ -221,6 +247,28 @@
       <!-- /.container-fluid -->
     </div>
     <!-- /.tarjetes -->
+
+    <hr>
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header border-0">
+                <div class="d-flex justify-content-between">
+                  <h3 class="card-title">Online Store Visitors</h3>
+                  <a href="javascript:void(0);">View Report</a>
+                </div>
+              </div>
+              <div class="card-body">
+              <p>Holee</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
   <!-- /.contingut pagina -->
 </template>

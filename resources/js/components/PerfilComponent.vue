@@ -1,7 +1,7 @@
 <style>
 
 .nav-link.active{
-    background-color: #e22f53 !important;
+    background-color: #ff6565 !important;
     color: white !important;
 }
 .nav-link {

@@ -15,12 +15,12 @@
       <!-- Left navbar links -->
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" data-widget="pushmenu" href="#" role="button"
-            ><i class="fas fa-bars" style="color:#ff6565;"></i
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button">
+          <i class="fas fa-bars" style="color:#ff6565;"></i
           ></a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block" >
-          <a href="index3.html" class="nav-link" style="color:#ff6565 !important; text-decoration:none !important;">Inici</a>
+        <li class="nav-item d-none d-sm-inline-block text-dark">
+          <a href="index3.html" class="nav-link text-dark" style="color: #343a40 !important;text-decoration:none !important;">Inici</a>
         </li>
       </ul>
       <!-- Right navbar links -->
@@ -34,7 +34,7 @@
             aria-expanded="false"
           >
             <i class="fas fa-shopping-cart" style="color:#ff6565;"></i>
-            <span class="font-weight-light" style="color:#ff6565;">Cistella</span>
+            <span class="font-weight-light text-dark">Cistella</span>
           </a>
         </li>
       </ul>
@@ -129,29 +129,29 @@
                 </li>
                 <li class="nav-item">
                   <a href="../../index.html" class="nav-link">
-                    <i class="fas fa-tag nav-icon"></i>
-                    <p>Productes</p>
+                    <i class="fas fa-tag nav-icon text-dark"></i>
+                    <p class="text-dark">Productes</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="../../index.html" class="nav-link">
-                    <i class="fas fa-chart-line nav-icon"></i>
-                    <p>Estadístiques</p>
+                    <i class="fas fa-chart-line nav-icon text-dark"></i>
+                    <p class="text-dark">Estadístiques</p>
                   </a>
                 </li>
               </ul>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" :to="'productes'">
-                <i class="nav-icon fas fa-shopping-cart"></i>
-                <p>Comprar</p>
+                <i class="nav-icon fas fa-shopping-cart text-dark"></i>
+                <p class="text-dark">Comprar</p>
               </router-link>
             </li>
 
             <li class="nav-item fixed-bottom ml-2">
               <a @click.prevent="logout" href="#" class="nav-link">
-                <i class="nav-icon fas fa-power-off"></i>
-                <p>Sortir</p>
+                <i class="nav-icon fas fa-power-off text-dark"></i>
+                <p class="text-dark">Sortir</p>
               </a>
             </li>
           </ul>
