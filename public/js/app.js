@@ -2854,6 +2854,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -40617,53 +40637,149 @@ var staticRenderFns = [
                   [
                     _c("img", {
                       staticClass: "card-img",
-                      attrs: {
-                        src: __webpack_require__(/*! ../../../public/images/agro_1.jpg */ "./public/images/agro_1.jpg"),
-                        alt: "..."
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "card-img-overlay" }, [
-                      _c("h3", { staticClass: "card-header text-center" }, [
-                        _vm._v("Benvinguts al Mercat Virtual")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-md-4 mt-5" }),
-                        _vm._v(" "),
-                        _c(
-                          "button",
-                          {
-                            staticClass:
-                              "btn btn-lg btn-secondary col-md-4 text-center mt-5",
-                            staticStyle: { "background-color": "#ff6565" },
-                            attrs: { type: "submit" }
-                          },
-                          [
-                            _c("i", { staticClass: "fa fa-search" }),
-                            _vm._v(
-                              "\n                  Descobreix-lo!\n                "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-4" })
-                      ])
-                    ])
+                      attrs: { src: "/images/welcome.jpg", alt: "..." }
+                    })
                   ]
                 )
               ])
             ]),
             _vm._v(" "),
             _c("br"),
+            _c("br"),
             _vm._v(" "),
             _c("div", { staticClass: "col-sm-12 mt-4" }, [
               _c("h1", { staticClass: "text-center" }, [
-                _vm._v("El KM0 més a prop que mai")
-              ]),
+                _vm._v("¿Perquè Mercat Virtual?")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("br"),
+            _c("br"),
+            _vm._v(" "),
+            _c("div", { staticClass: "row ml-2" }, [
+              _c("div", { staticClass: "col-md-1" }),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "card",
+                  staticStyle: {
+                    width: "18rem",
+                    background: "transparent !important",
+                    border: "none",
+                    "box-shadow": "none"
+                  }
+                },
+                [
+                  _c("img", {
+                    staticClass: "float-left ml-5",
+                    staticStyle: {
+                      width: "200px",
+                      height: "200px",
+                      "border-radius": "250px"
+                    },
+                    attrs: { src: "images/granja.png", alt: "..." }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body text-center" }, [
+                    _c("h5", { staticClass: "card-title" }, [
+                      _vm._v("Empoderem el petit productor")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _vm._v(
+                        "Some quick example text to build on the card title and make up the bulk of the card's content."
+                      )
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "card",
+                  staticStyle: {
+                    width: "18rem",
+                    background: "transparent !important",
+                    border: "none",
+                    "box-shadow": "none"
+                  }
+                },
+                [
+                  _c("img", {
+                    staticClass: "float-left ml-5",
+                    staticStyle: {
+                      width: "200px",
+                      height: "200px",
+                      "border-radius": "250px"
+                    },
+                    attrs: { src: "images/market.png", alt: "..." }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body text-center" }, [
+                    _c("h5", { staticClass: "card-title" }, [
+                      _vm._v("Recuperem el mercat")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _vm._v(
+                        "Some quick example text to build on the card title and make up the bulk of the card's content."
+                      )
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "card",
+                  staticStyle: {
+                    width: "18rem",
+                    background: "transparent !important",
+                    border: "none",
+                    "box-shadow": "none"
+                  }
+                },
+                [
+                  _c("img", {
+                    staticClass: "float-left ml-5",
+                    staticStyle: {
+                      width: "200px",
+                      height: "200px",
+                      "border-radius": "250px"
+                    },
+                    attrs: { src: "images/hands.png", alt: "..." }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body text-center" }, [
+                    _c("h5", { staticClass: "card-title" }, [
+                      _vm._v("Creem sinergia")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _vm._v(
+                        "Some quick example text to build on the card title and make up the bulk of the card's content."
+                      )
+                    ])
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-12 mt-4" }, [
+              _c(
+                "h1",
+                {
+                  staticClass: "text-center",
+                  staticStyle: { color: "#ff6565" }
+                },
+                [_vm._v("El KM0 més a prop que mai")]
+              ),
               _vm._v(" "),
               _c("h4", { staticClass: "text-center" }, [
-                _vm._v("Productes únics de professionals locals")
+                _vm._v("productes únics de professionals locals")
               ])
             ]),
             _vm._v(" "),
@@ -40675,10 +40791,7 @@ var staticRenderFns = [
                 _c("div", { staticClass: "card" }, [
                   _c("img", {
                     staticClass: "card-img-top",
-                    attrs: {
-                      src: __webpack_require__(/*! ../../../public/images/grapes.jpg */ "./public/images/grapes.jpg"),
-                      alt: "Card image cap"
-                    }
+                    attrs: { src: "/images/grapes.jpg", alt: "Card image cap" }
                   }),
                   _vm._v(" "),
                   _c("div", { staticClass: "card-body" }, [
@@ -40701,10 +40814,7 @@ var staticRenderFns = [
                 _c("div", { staticClass: "card" }, [
                   _c("img", {
                     staticClass: "card-img-top",
-                    attrs: {
-                      src: __webpack_require__(/*! ../../../public/images/ovella.jpg */ "./public/images/ovella.jpg"),
-                      alt: "Card image cap"
-                    }
+                    attrs: { src: "/images/ovella.jpg", alt: "Card image cap" }
                   }),
                   _vm._v(" "),
                   _c("div", { staticClass: "card-body" }, [
@@ -40729,10 +40839,7 @@ var staticRenderFns = [
                 _c("div", { staticClass: "card" }, [
                   _c("img", {
                     staticClass: "card-img-top",
-                    attrs: {
-                      src: __webpack_require__(/*! ../../../public/images/roba.jpg */ "./public/images/roba.jpg"),
-                      alt: "Card image cap"
-                    }
+                    attrs: { src: "/images/roba.jpg", alt: "Card image cap" }
                   }),
                   _vm._v(" "),
                   _c("div", { staticClass: "card-body" }, [
@@ -40763,19 +40870,21 @@ var staticRenderFns = [
                 _c(
                   "button",
                   {
-                    staticClass: "btn btn-block text-center mt-5",
+                    staticClass: "btn btn-block text-center mt-5 text-light",
                     staticStyle: { "background-color": "#ff6565" },
                     attrs: { type: "submit" }
                   },
                   [
-                    _c("i", { staticClass: "fa fa-search" }),
+                    _c("i", { staticClass: "fa fa-heart" }),
                     _vm._v("\n            Descobreix-lo!\n          ")
                   ]
                 )
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "col-md-4" })
-            ])
+            ]),
+            _vm._v(" "),
+            _c("br")
           ])
         ]),
         _vm._v(" "),
@@ -40792,7 +40901,7 @@ var staticRenderFns = [
                     _c("img", {
                       staticClass: "card-img-top p-4",
                       attrs: {
-                        src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/prod-1.jpg */ "./public/images/vendor/admin-lte/dist/prod-1.jpg"),
+                        src: "/images/vendor/admin-lte/dist/prod-1.jpg",
                         alt: "Card image cap"
                       }
                     }),
@@ -40855,7 +40964,7 @@ var staticRenderFns = [
                     _c("img", {
                       staticClass: "card-img-top p-4",
                       attrs: {
-                        src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/prod-1.jpg */ "./public/images/vendor/admin-lte/dist/prod-1.jpg"),
+                        src: "/images/vendor/admin-lte/dist/prod-1.jpg",
                         alt: "Card image cap"
                       }
                     }),
@@ -40918,7 +41027,7 @@ var staticRenderFns = [
                     _c("img", {
                       staticClass: "card-img-top p-4",
                       attrs: {
-                        src: __webpack_require__(/*! ../../../public/images/vendor/admin-lte/dist/prod-1.jpg */ "./public/images/vendor/admin-lte/dist/prod-1.jpg"),
+                        src: "/images/vendor/admin-lte/dist/prod-1.jpg",
                         alt: "Card image cap"
                       }
                     }),
@@ -56995,61 +57104,6 @@ module.exports = function(module) {
 	return module;
 };
 
-
-/***/ }),
-
-/***/ "./public/images/agro_1.jpg":
-/*!**********************************!*\
-  !*** ./public/images/agro_1.jpg ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/agro_1.jpg?e70ccb44865e9ed3defe7932fd6d7971";
-
-/***/ }),
-
-/***/ "./public/images/grapes.jpg":
-/*!**********************************!*\
-  !*** ./public/images/grapes.jpg ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/grapes.jpg?c956e01fc09b38be52894ef449091586";
-
-/***/ }),
-
-/***/ "./public/images/ovella.jpg":
-/*!**********************************!*\
-  !*** ./public/images/ovella.jpg ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/ovella.jpg?b8542a608b347d95bcb4c81b64f0b370";
-
-/***/ }),
-
-/***/ "./public/images/roba.jpg":
-/*!********************************!*\
-  !*** ./public/images/roba.jpg ***!
-  \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/roba.jpg?74d82df25504422359230695152a3f5f";
-
-/***/ }),
-
-/***/ "./public/images/vendor/admin-lte/dist/prod-1.jpg":
-/*!********************************************************!*\
-  !*** ./public/images/vendor/admin-lte/dist/prod-1.jpg ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/prod-1.jpg?029a911740713b4dbe07b838aeb241e7";
 
 /***/ }),
 
