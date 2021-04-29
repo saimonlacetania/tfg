@@ -2809,6 +2809,51 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -40563,46 +40608,50 @@ var staticRenderFns = [
           _c("div", { staticClass: "container-fluid" }, [
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "col-md-12" }, [
-                _c("div", { staticClass: "card bg-dark text-white" }, [
-                  _c("img", {
-                    staticClass: "card-img",
-                    attrs: {
-                      src: __webpack_require__(/*! ../../../public/images/agro_1.jpg */ "./public/images/agro_1.jpg"),
-                      alt: "..."
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card-img-overlay" }, [
-                    _c("h3", { staticClass: "card-header text-center" }, [
-                      _vm._v("Benvinguts al Mercat Virtual")
-                    ]),
+                _c(
+                  "div",
+                  {
+                    staticClass: "card bg-dark text-white",
+                    staticStyle: { border: "none" }
+                  },
+                  [
+                    _c("img", {
+                      staticClass: "card-img",
+                      attrs: {
+                        src: __webpack_require__(/*! ../../../public/images/agro_1.jpg */ "./public/images/agro_1.jpg"),
+                        alt: "..."
+                      }
+                    }),
                     _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-4 mt-5" }),
+                    _c("div", { staticClass: "card-img-overlay" }, [
+                      _c("h3", { staticClass: "card-header text-center" }, [
+                        _vm._v("Benvinguts al Mercat Virtual")
+                      ]),
                       _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-lg btn-secondary col-md-4 text-center mt-5",
-                          staticStyle: {
-                            "background-color": "#ff6565",
-                            "margin-bottom": "250px"
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-4 mt-5" }),
+                        _vm._v(" "),
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-lg btn-secondary col-md-4 text-center mt-5",
+                            staticStyle: { "background-color": "#ff6565" },
+                            attrs: { type: "submit" }
                           },
-                          attrs: { type: "submit" }
-                        },
-                        [
-                          _c("i", { staticClass: "fa fa-search" }),
-                          _vm._v(
-                            "\n                  Descobreix-lo!\n                "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-4" })
+                          [
+                            _c("i", { staticClass: "fa fa-search" }),
+                            _vm._v(
+                              "\n                  Descobreix-lo!\n                "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-4" })
+                      ])
                     ])
-                  ])
-                ])
+                  ]
+                )
               ])
             ]),
             _vm._v(" "),
@@ -40610,12 +40659,122 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("div", { staticClass: "col-sm-12 mt-4" }, [
               _c("h1", { staticClass: "text-center" }, [
-                _vm._v("Descobreix el KM0")
+                _vm._v("El KM0 més a prop que mai")
               ]),
               _vm._v(" "),
               _c("h4", { staticClass: "text-center" }, [
                 _vm._v("Productes únics de professionals locals")
               ])
+            ]),
+            _vm._v(" "),
+            _c("br"),
+            _c("br"),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "card-deck" }, [
+                _c("div", { staticClass: "card" }, [
+                  _c("img", {
+                    staticClass: "card-img-top",
+                    attrs: {
+                      src: __webpack_require__(/*! ../../../public/images/grapes.jpg */ "./public/images/grapes.jpg"),
+                      alt: "Card image cap"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("h5", { staticClass: "card-title" }, [_vm._v("Fresc")]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _vm._v(
+                        "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _c("small", { staticClass: "text-muted" }, [
+                        _vm._v("Last updated 3 mins ago")
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card" }, [
+                  _c("img", {
+                    staticClass: "card-img-top",
+                    attrs: {
+                      src: __webpack_require__(/*! ../../../public/images/ovella.jpg */ "./public/images/ovella.jpg"),
+                      alt: "Card image cap"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("h5", { staticClass: "card-title" }, [
+                      _vm._v("Ecològic")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _vm._v(
+                        "This card has supporting text below as a natural lead-in to additional content."
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _c("small", { staticClass: "text-muted" }, [
+                        _vm._v("Last updated 3 mins ago")
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card" }, [
+                  _c("img", {
+                    staticClass: "card-img-top",
+                    attrs: {
+                      src: __webpack_require__(/*! ../../../public/images/roba.jpg */ "./public/images/roba.jpg"),
+                      alt: "Card image cap"
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("h5", { staticClass: "card-title" }, [
+                      _vm._v("Sostenible")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _vm._v(
+                        "This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action."
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _c("small", { staticClass: "text-muted" }, [
+                        _vm._v("Last updated 3 mins ago")
+                      ])
+                    ])
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-4" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-block text-center mt-5",
+                    staticStyle: { "background-color": "#ff6565" },
+                    attrs: { type: "submit" }
+                  },
+                  [
+                    _c("i", { staticClass: "fa fa-search" }),
+                    _vm._v("\n            Descobreix-lo!\n          ")
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" })
             ])
           ])
         ]),
@@ -56847,6 +57006,39 @@ module.exports = function(module) {
 /***/ (function(module, exports) {
 
 module.exports = "/images/agro_1.jpg?e70ccb44865e9ed3defe7932fd6d7971";
+
+/***/ }),
+
+/***/ "./public/images/grapes.jpg":
+/*!**********************************!*\
+  !*** ./public/images/grapes.jpg ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/grapes.jpg?c956e01fc09b38be52894ef449091586";
+
+/***/ }),
+
+/***/ "./public/images/ovella.jpg":
+/*!**********************************!*\
+  !*** ./public/images/ovella.jpg ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/ovella.jpg?b8542a608b347d95bcb4c81b64f0b370";
+
+/***/ }),
+
+/***/ "./public/images/roba.jpg":
+/*!********************************!*\
+  !*** ./public/images/roba.jpg ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/roba.jpg?74d82df25504422359230695152a3f5f";
 
 /***/ }),
 

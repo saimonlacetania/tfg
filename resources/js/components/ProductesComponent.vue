@@ -6,13 +6,13 @@
 
         <div class="row">
           <div class="col-md-12">
-            <div class="card bg-dark text-white">
+            <div class="card bg-dark text-white" style="border:none;">
               <img src="../../../public/images/agro_1.jpg" class="card-img" alt="...">
               <div class="card-img-overlay">
                 <h3 class="card-header text-center">Benvinguts al Mercat Virtual</h3>
                 <div class="row">
                   <div class="col-md-4 mt-5"></div>
-                  <button type="submit" class="btn btn-lg btn-secondary col-md-4 text-center mt-5" style="background-color:#ff6565; margin-top:250px;">
+                  <button type="submit" class="btn btn-lg btn-secondary col-md-4 text-center mt-5" style="background-color:#ff6565;">
                     <i class="fa fa-search"></i>
                     Descobreix-lo!
                   </button>
@@ -59,9 +59,54 @@
           <cerca-component></cerca-component>
         </div> -->
         <div class="col-sm-12 mt-4">
-          <h1 class="text-center">Descobreix el KM0</h1>
+          <h1 class="text-center">El KM0 més a prop que mai</h1>
           <h4 class="text-center">Productes únics de professionals locals</h4>
         </div>
+
+        <br><br>
+
+        <div class="row">
+          <div class="card-deck">
+            <div class="card">
+              <img class="card-img-top" src="../../../public/images/grapes.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Fresc</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="../../../public/images/ovella.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Ecològic</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="../../../public/images/roba.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Sostenible</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <button type="submit" class="btn btn-block text-center mt-5" style="background-color:#ff6565;">
+              <i class="fa fa-search"></i>
+              Descobreix-lo!
+            </button>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+
+
+
       </div>
       <!-- /.container-fluid -->
     </div>
