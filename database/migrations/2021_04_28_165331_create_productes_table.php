@@ -19,6 +19,7 @@ class CreateProductesTable extends Migration
             $table->foreignId('id_botiga')->constrained('botigues');
             $table->string('nom');
             $table->string('descripcio');
+            $table->string('imatge');
             $table->string('preu');
             $table->string('stock');
             $table->string('actiu');
