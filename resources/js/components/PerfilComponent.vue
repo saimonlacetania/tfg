@@ -36,7 +36,7 @@
                             <div class="card-body box-profile">
                                 <div class="text-center">
                                     <img class="profile-user-img img-fluid img-circle"
-                                        src="../../../node_modules/admin-lte/dist/img/user2-160x160.jpg"
+                                        src="/images/user2-160x160.jpg"
                                         alt="User profile picture">
                                 </div>
 

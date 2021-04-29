@@ -7,7 +7,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="card bg-dark text-white" style="border:none;">
-              <img src="../../../public/images/agro_1.jpg" class="card-img" alt="...">
+              <img src="/images/agro_1.jpg" class="card-img" alt="...">
               <div class="card-img-overlay">
                 <h3 class="card-header text-center">Benvinguts al Mercat Virtual</h3>
                 <div class="row">
@@ -27,7 +27,7 @@
           <br>
 
           <!-- cerca -->
-          <!--<div class="col-md-12">
+          <div class="col-md-12">
             <form action="simple-results.html">
               <div class="input-group">
                 <input
@@ -55,9 +55,9 @@
           <!-- /.col -->
 
         <!-- cerca avançada -->
-        <!--<div id="cerca" style="display: none">
+        <div id="cerca" style="display: none">
           <cerca-component></cerca-component>
-        </div> -->
+        </div>
         <div class="col-sm-12 mt-4">
           <h1 class="text-center">El KM0 més a prop que mai</h1>
           <h4 class="text-center">Productes únics de professionals locals</h4>
@@ -68,7 +68,7 @@
         <div class="row">
           <div class="card-deck">
             <div class="card">
-              <img class="card-img-top" src="../../../public/images/grapes.jpg" alt="Card image cap">
+              <img class="card-img-top" src="/images/grapes.jpg" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Fresc</h5>
                 <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -76,7 +76,7 @@
               </div>
             </div>
             <div class="card">
-              <img class="card-img-top" src="../../../public/images/ovella.jpg" alt="Card image cap">
+              <img class="card-img-top" src="/images/ovella.jpg" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Ecològic</h5>
                 <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
@@ -84,7 +84,7 @@
               </div>
             </div>
             <div class="card">
-              <img class="card-img-top" src="../../../public/images/roba.jpg" alt="Card image cap">
+              <img class="card-img-top" src="/images/roba.jpg" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Sostenible</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
@@ -122,7 +122,7 @@
             <div class="card card-primary text-center zoom">
               <img
                 class="card-img-top p-4"
-                src="../../../public/images/vendor/admin-lte/dist/prod-1.jpg"
+                src="/images/vendor/admin-lte/dist/prod-1.jpg"
                 alt="Card image cap"
               />
               <div class="card-body">
@@ -149,7 +149,7 @@
             <div class="card card-primary text-center zoom">
               <img
                 class="card-img-top p-4"
-                src="../../../public/images/vendor/admin-lte/dist/prod-1.jpg"
+                src="/images/vendor/admin-lte/dist/prod-1.jpg"
                 alt="Card image cap"
               />
               <div class="card-body">
@@ -176,7 +176,7 @@
             <div class="card card-primary text-center zoom">
               <img
                 class="card-img-top p-4"
-                src="../../../public/images/vendor/admin-lte/dist/prod-1.jpg"
+                src="/vendor/admin-lte/dist/prod-1.jpg"
                 alt="Card image cap"
               />
               <div class="card-body">
