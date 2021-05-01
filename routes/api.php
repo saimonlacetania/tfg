@@ -23,5 +23,6 @@ Route::middleware('auth:sanctum')->get('/athenticated', function () {
 Route::post('register', 'RegisterController@register');
 Route::post('login', 'LoginController@login');
 Route::post('modifyUser', 'UserController@modify');
+Route::post('modifyPassword', 'UserController@modifyPassword');
 Route::post('logout', 'LoginController@logout');
 Route::get('productes', 'ProductesController@productes');

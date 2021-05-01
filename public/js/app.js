@@ -2000,6 +2000,144 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     var _this = this;
@@ -2007,6 +2145,7 @@ __webpack_require__.r(__webpack_exports__);
     axios.get("/api/user").then(function (res) {
       _this.user = res.data;
       _this.form["id"] = _this.user.id;
+      _this.form2["id"] = _this.user.id;
       _this.form["nom"] = _this.user.nom;
       _this.form["cognoms"] = _this.user.cognoms;
       _this.form["provincia"] = _this.user.provincia;
@@ -2027,15 +2166,43 @@ __webpack_require__.r(__webpack_exports__);
         poblacio: "",
         cp: "",
         direccio: ""
+      },
+      form2: {
+        id: "",
+        password: "",
+        new_password: "",
+        confirm_password: ""
       }
     };
   },
   methods: {
     modifyUser: function modifyUser() {
+      var _this2 = this;
+
       var that = this;
       console.log(that.form);
       axios.post("/api/modifyUser", that.form).then(function (res) {
         console.log(res);
+
+        _this2.$router.push({
+          name: "Profile"
+        });
+      })["catch"](function (error) {
+        that.errors = error.response.data.errors;
+        console.log(that.errors);
+      });
+    },
+    modifyPassword: function modifyPassword() {
+      var _this3 = this;
+
+      var that = this;
+      console.log(that.form2);
+      axios.post("/api/modifyPassword", that.form2).then(function (res) {
+        console.log(res);
+
+        _this3.$router.push({
+          name: "Profile"
+        });
       })["catch"](function (error) {
         that.errors = error.response.data.errors;
         console.log(that.errors);
@@ -2604,9 +2771,125 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      user: ""
+    };
+  },
   mounted: function mounted() {
-    console.log("Component mounted.");
+    var _this = this;
+
+    axios.get("/api/user").then(function (res) {
+      _this.user = res.data;
+      console.log(_this.user);
+    });
   }
 });
 
@@ -7547,7 +7830,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.nav-link.active{\n    background-color: #ff6565 !important;\n    color: white !important;\n}\n.nav-link {\n    text-decoration:none !important;\n    color: white !important;\n}\n\n\n\n", ""]);
+exports.push([module.i, "\n.nav-link.active {\n    background-color: #ff6565 !important;\n    color: white !important;\n}\n.nav-link {\n    text-decoration: none !important;\n    color: white !important;\n}\n", ""]);
 
 // exports
 
@@ -39633,185 +39916,533 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "content-wrapper" }, [
-    _c("form", [
-      _c("div", { staticClass: "card-body" }, [
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "nom" } }, [_vm._v("Nom")]),
+    _vm._m(0),
+    _vm._v(" "),
+    _c("section", { staticClass: "content" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-4" }, [
+            _c("div", { staticClass: "card card-dark card-outline" }, [
+              _c("div", { staticClass: "card-body" }, [
+                _c(
+                  "form",
+                  {
+                    on: {
+                      submit: function($event) {
+                        $event.preventDefault()
+                        return _vm.modifyPassword($event)
+                      }
+                    }
+                  },
+                  [
+                    _vm._m(1),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { attrs: { for: "nom" } }, [_vm._v("Nom")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.$data.form.nom,
+                            expression: "$data.form.nom"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          id: "nom",
+                          name: "nom",
+                          required: ""
+                        },
+                        domProps: { value: _vm.$data.form.nom },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.$data.form, "nom", $event.target.value)
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { attrs: { for: "cognoms" } }, [
+                        _vm._v("Cognoms")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.$data.form.cognoms,
+                            expression: "$data.form.cognoms"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "text", id: "cognoms", required: "" },
+                        domProps: { value: _vm.$data.form.cognoms },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.$data.form,
+                              "cognoms",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(2)
+                  ]
+                )
+              ])
+            ])
+          ]),
           _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.$data.form.nom,
-                expression: "$data.form.nom"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "text", id: "nom", name: "nom" },
-            domProps: { value: _vm.$data.form.nom },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.$data.form, "nom", $event.target.value)
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "cognoms" } }, [_vm._v("Cognoms")]),
+          _c("div", { staticClass: "col-md-4" }, [
+            _c("div", { staticClass: "card card-dark card-outline" }, [
+              _c("div", { staticClass: "card-body" }, [
+                _c(
+                  "form",
+                  {
+                    on: {
+                      submit: function($event) {
+                        $event.preventDefault()
+                        return _vm.modifyPassword($event)
+                      }
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { attrs: { for: "password" } }, [
+                        _vm._v("Contrasenya actual")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.$data.form2.password,
+                            expression: "$data.form2.password"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "password",
+                          id: "password",
+                          name: "password",
+                          required: ""
+                        },
+                        domProps: { value: _vm.$data.form2.password },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.$data.form2,
+                              "password",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { attrs: { for: "new_password" } }, [
+                        _vm._v("Nova contrasenya")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.$data.form2.new_password,
+                            expression: "$data.form2.new_password"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "password",
+                          id: "new_password",
+                          name: "new_password",
+                          required: ""
+                        },
+                        domProps: { value: _vm.$data.form2.new_password },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.$data.form2,
+                              "new_password",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { attrs: { for: "confirm_password" } }, [
+                        _vm._v(
+                          "Torna a escriure la nova\n                                        contrasenya"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.$data.form2.confirm_password,
+                            expression:
+                              "\n                                            $data.form2.confirm_password\n                                        "
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "password",
+                          id: "confirm_password",
+                          name: "confirm_password",
+                          required: ""
+                        },
+                        domProps: { value: _vm.$data.form2.confirm_password },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.$data.form2,
+                              "confirm_password",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(3)
+                  ]
+                )
+              ])
+            ])
+          ]),
           _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.$data.form.cognoms,
-                expression: "$data.form.cognoms"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "text", id: "cognoms" },
-            domProps: { value: _vm.$data.form.cognoms },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.$data.form, "cognoms", $event.target.value)
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "provincia" } }, [_vm._v("Provincia")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.$data.form.provincia,
-                expression: "$data.form.provincia"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "text", id: "provincia" },
-            domProps: { value: _vm.$data.form.provincia },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.$data.form, "provincia", $event.target.value)
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "poblacio" } }, [_vm._v("Població")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.$data.form.poblacio,
-                expression: "$data.form.poblacio"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "text", id: "poblacio" },
-            domProps: { value: _vm.$data.form.poblacio },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.$data.form, "poblacio", $event.target.value)
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "cp" } }, [_vm._v("Codi postal")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.$data.form.cp,
-                expression: "$data.form.cp"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "text", id: "cp" },
-            domProps: { value: _vm.$data.form.cp },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.$data.form, "cp", $event.target.value)
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "direccio" } }, [_vm._v("Direcció")]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.$data.form.direccio,
-                expression: "$data.form.direccio"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "text", id: "direccio" },
-            domProps: { value: _vm.$data.form.direccio },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.$data.form, "direccio", $event.target.value)
-              }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col text-center" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-secondary",
-              attrs: { type: "submit" },
-              on: {
-                click: function($event) {
-                  $event.preventDefault()
-                  return _vm.modifyUser($event)
-                }
-              }
-            },
-            [_vm._v("\n              Modifica les meves dades\n            ")]
-          )
+          _c("div", { staticClass: "col-md-4" }, [
+            _c("div", { staticClass: "card card-dark card-outline" }, [
+              _c("div", { staticClass: "card-body" }, [
+                _c(
+                  "form",
+                  {
+                    on: {
+                      submit: function($event) {
+                        $event.preventDefault()
+                        return _vm.modifyUser($event)
+                      }
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { attrs: { for: "nom" } }, [_vm._v("Nom")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.$data.form.nom,
+                            expression: "$data.form.nom"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          id: "nom",
+                          name: "nom",
+                          required: ""
+                        },
+                        domProps: { value: _vm.$data.form.nom },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.$data.form, "nom", $event.target.value)
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { attrs: { for: "cognoms" } }, [
+                        _vm._v("Cognoms")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.$data.form.cognoms,
+                            expression: "$data.form.cognoms"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "text", id: "cognoms", required: "" },
+                        domProps: { value: _vm.$data.form.cognoms },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.$data.form,
+                              "cognoms",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { attrs: { for: "provincia" } }, [
+                        _vm._v("Provincia")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.$data.form.provincia,
+                            expression: "$data.form.provincia"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "text", id: "provincia" },
+                        domProps: { value: _vm.$data.form.provincia },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.$data.form,
+                              "provincia",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { attrs: { for: "poblacio" } }, [
+                        _vm._v("Població")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.$data.form.poblacio,
+                            expression: "$data.form.poblacio"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "text", id: "poblacio" },
+                        domProps: { value: _vm.$data.form.poblacio },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.$data.form,
+                              "poblacio",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { attrs: { for: "cp" } }, [
+                        _vm._v("Codi postal")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.$data.form.cp,
+                            expression: "$data.form.cp"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "text", id: "cp" },
+                        domProps: { value: _vm.$data.form.cp },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(_vm.$data.form, "cp", $event.target.value)
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { attrs: { for: "direccio" } }, [
+                        _vm._v("Direcció")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.$data.form.direccio,
+                            expression: "$data.form.direccio"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "text", id: "direccio", required: "" },
+                        domProps: { value: _vm.$data.form.direccio },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.$data.form,
+                              "direccio",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _vm._m(4)
+                  ]
+                )
+              ])
+            ])
+          ])
         ])
       ])
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "content-header" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row mb-2" }, [
+          _c("div", { staticClass: "col-sm-6" }, [
+            _c("h1", [_vm._v("Configura el teu perfil")])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("label", { attrs: { for: "cognoms" } }, [_vm._v("Foto de perfil")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "text-center" }, [
+        _c("img", {
+          staticClass: "profile-user-img img-fluid img-circle",
+          attrs: {
+            src: "/images/user2-160x160.jpg",
+            alt: "User profile picture"
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("hr"),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control-file",
+        attrs: { type: "file", id: "arxiu", required: "" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col text-center" }, [
+      _c(
+        "button",
+        { staticClass: "btn btn-secondary", attrs: { type: "submit" } },
+        [
+          _vm._v(
+            "\n                                        Modifica el meu avatar\n                                    "
+          )
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col text-center" }, [
+      _c(
+        "button",
+        { staticClass: "btn btn-secondary", attrs: { type: "submit" } },
+        [
+          _vm._v(
+            "\n                                        Modifica la meva contrasenya\n                                    "
+          )
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col text-center" }, [
+      _c(
+        "button",
+        { staticClass: "btn btn-secondary", attrs: { type: "submit" } },
+        [
+          _vm._v(
+            "\n                                        Modifica les meves dades\n                                    "
+          )
+        ]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -40432,293 +41063,342 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "content-wrapper" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("section", { staticClass: "content" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-3" }, [
+            _c("div", { staticClass: "card card-dark card-outline" }, [
+              _c(
+                "div",
+                { staticClass: "card-body box-profile" },
+                [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("h3", { staticClass: "profile-username text-center" }, [
+                    _vm._v(
+                      "\n                                " +
+                        _vm._s(this.user.nom) +
+                        " " +
+                        _vm._s(this.user.cognoms) +
+                        "\n                            "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  this.user.poblacio
+                    ? _c("p", { staticClass: "text-muted text-center" }, [
+                        _c("i", { staticClass: "fas fa-map-marker-alt" }),
+                        _vm._v(
+                          "\n                                " +
+                            _vm._s(this.user.poblacio) +
+                            ",\n                                " +
+                            _vm._s(this.user.provincia) +
+                            "\n                            "
+                        )
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "btn btn-secondary btn-block",
+                      attrs: { to: "editarPerfil" }
+                    },
+                    [_c("b", [_vm._v("Configuració general")])]
+                  )
+                ],
+                1
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._m(2)
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "content-wrapper" }, [
-      _c("section", { staticClass: "content-header" }, [
-        _c("div", { staticClass: "container-fluid" }, [
-          _c("div", { staticClass: "row mb-2" }, [
-            _c("div", { staticClass: "col-sm-6" }, [
-              _c("h1", [_vm._v("El meu perfil")])
-            ])
+    return _c("section", { staticClass: "content-header" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row mb-2" }, [
+          _c("div", { staticClass: "col-sm-6" }, [
+            _c("h1", [_vm._v("El meu perfil")])
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("section", { staticClass: "content" }, [
-        _c("div", { staticClass: "container-fluid" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-3" }, [
-              _c("div", { staticClass: "card card-dark card-outline" }, [
-                _c("div", { staticClass: "card-body box-profile" }, [
-                  _c("div", { staticClass: "text-center" }, [
-                    _c("img", {
-                      staticClass: "profile-user-img img-fluid img-circle",
-                      attrs: {
-                        src: "/images/user2-160x160.jpg",
-                        alt: "User profile picture"
-                      }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("h3", { staticClass: "profile-username text-center" }, [
-                    _vm._v("Nom login")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-muted text-center" }, [
-                    _c("i", { staticClass: "fas fa-map-marker-alt" }),
-                    _vm._v(" Població")
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-secondary btn-block",
-                      attrs: { href: "#" }
-                    },
-                    [_c("b", [_vm._v("Configuració")])]
-                  )
-                ])
-              ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center" }, [
+      _c("img", {
+        staticClass: "profile-user-img img-fluid img-circle",
+        attrs: { src: "/images/user2-160x160.jpg", alt: "User profile picture" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-9" }, [
+      _c("div", { staticClass: "card card-dark" }, [
+        _c("div", { staticClass: "card-header p-2" }, [
+          _c("ul", { staticClass: "nav nav-pills" }, [
+            _c("li", { staticClass: "nav-item" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link active",
+                  attrs: { href: "#activity", "data-toggle": "tab" }
+                },
+                [_vm._v("Les meves comandes")]
+              )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-md-9" }, [
-              _c("div", { staticClass: "card card-dark" }, [
-                _c("div", { staticClass: "card-header p-2" }, [
-                  _c("ul", { staticClass: "nav nav-pills" }, [
-                    _c("li", { staticClass: "nav-item" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "nav-link active",
-                          attrs: { href: "#activity", "data-toggle": "tab" }
+            _c("li", { staticClass: "nav-item" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link",
+                  attrs: { href: "#timeline", "data-toggle": "tab" }
+                },
+                [_vm._v("Tornar a comprar")]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body" }, [
+          _c("div", { staticClass: "tab-content" }, [
+            _c(
+              "div",
+              { staticClass: "active tab-pane", attrs: { id: "activity" } },
+              [
+                _c("div", { staticClass: "card mb-3" }, [
+                  _c("div", { staticClass: "row g-0" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c("img", {
+                        staticClass: "img-fluid p-1 ml-4",
+                        staticStyle: {
+                          height: "150px",
+                          width: "150px",
+                          "border-radius": "150px"
                         },
-                        [_vm._v("Les meves comandes")]
+                        attrs: {
+                          src:
+                            "https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg",
+                          alt: "..."
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-8" }, [
+                      _c("div", { staticClass: "card-body" }, [
+                        _c("h5", { staticClass: "card-title" }, [
+                          _vm._v(
+                            "\n                                                        Producte\n                                                    "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "card-text" }, [
+                          _vm._v(
+                            "\n                                                        This is a wider card\n                                                        with supporting text\n                                                        below as a natural\n                                                        lead-in to\n                                                        additional content.\n                                                        This content is a\n                                                        little bit longer.\n                                                    "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "card-text" }, [
+                          _c("small", { staticClass: "text-muted" }, [
+                            _vm._v(
+                              "Comprat el\n                                                            26/04/2021"
+                            )
+                          ])
+                        ])
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card mb-3" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c("img", {
+                        staticClass: "img-fluid p-1 ml-4",
+                        staticStyle: {
+                          height: "150px",
+                          width: "150px",
+                          "border-radius": "150px"
+                        },
+                        attrs: {
+                          src:
+                            "https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg",
+                          alt: "..."
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-8" }, [
+                      _c("div", { staticClass: "card-body" }, [
+                        _c("h5", { staticClass: "card-title" }, [
+                          _vm._v(
+                            "\n                                                        Producte\n                                                    "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "card-text" }, [
+                          _vm._v(
+                            "\n                                                        This is a wider card\n                                                        with supporting text\n                                                        below as a natural\n                                                        lead-in to\n                                                        additional content.\n                                                        This content is a\n                                                        little bit longer.\n                                                    "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "card-text" }, [
+                          _c("small", { staticClass: "text-muted" }, [
+                            _vm._v(
+                              "Comprat el\n                                                            26/04/2021"
+                            )
+                          ])
+                        ])
+                      ])
+                    ])
+                  ])
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "tab-pane", attrs: { id: "timeline" } }, [
+              _c("div", { staticClass: "timeline timeline-inverse" }, [
+                _c("div", { staticClass: "time-label" }, [
+                  _c("span", { staticClass: "bg-secondary" }, [
+                    _c("i", { staticClass: "far fa-calendar-alt" }),
+                    _vm._v(
+                      "\n                                                26/04/2021\n                                            "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "timeline-item" }, [
+                    _c("span", { staticClass: "time" }, [
+                      _c("i", { staticClass: "fas fa-store-alt" }),
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v(
+                          "\n                                                        Nom Botiga"
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("h3", { staticClass: "timeline-header" }, [
+                      _vm._v(
+                        "\n                                                    Nom del producte\n                                                "
                       )
                     ]),
                     _vm._v(" "),
-                    _c("li", { staticClass: "nav-item" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "nav-link",
-                          attrs: { href: "#timeline", "data-toggle": "tab" }
-                        },
-                        [_vm._v("Tornar a comprar")]
+                    _c("small", { staticClass: "timeline-body" }, [
+                      _vm._v(
+                        "Descripcio\n                                                    producte"
                       )
                     ])
                   ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "tab-content" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "active tab-pane",
-                        attrs: { id: "activity" }
-                      },
-                      [
-                        _c("div", { staticClass: "card mb-3" }, [
-                          _c("div", { staticClass: "row g-0" }, [
-                            _c("div", { staticClass: "col-md-4" }, [
-                              _c("img", {
-                                staticClass: "img-fluid p-1 ml-4",
-                                staticStyle: {
-                                  height: "150px",
-                                  width: "150px",
-                                  "border-radius": "150px"
-                                },
-                                attrs: {
-                                  src:
-                                    "https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg",
-                                  alt: "..."
-                                }
-                              })
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "col-md-8" }, [
-                              _c("div", { staticClass: "card-body" }, [
-                                _c("h5", { staticClass: "card-title" }, [
-                                  _vm._v("Producte")
-                                ]),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "card-text" }, [
-                                  _vm._v(
-                                    "\n                                                    This is a wider card with supporting text below as a natural lead-in to\n                                                    additional content. This content is a little bit longer.\n                                                    "
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "card-text" }, [
-                                  _c("small", { staticClass: "text-muted" }, [
-                                    _vm._v("Comprat el 26/04/2021")
-                                  ])
-                                ])
-                              ])
-                            ])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "card mb-3" }, [
-                          _c("div", { staticClass: "row" }, [
-                            _c("div", { staticClass: "col-md-4" }, [
-                              _c("img", {
-                                staticClass: "img-fluid p-1 ml-4",
-                                staticStyle: {
-                                  height: "150px",
-                                  width: "150px",
-                                  "border-radius": "150px"
-                                },
-                                attrs: {
-                                  src:
-                                    "https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg",
-                                  alt: "..."
-                                }
-                              })
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "col-md-8" }, [
-                              _c("div", { staticClass: "card-body" }, [
-                                _c("h5", { staticClass: "card-title" }, [
-                                  _vm._v("Producte")
-                                ]),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "card-text" }, [
-                                  _vm._v(
-                                    "\n                                                    This is a wider card with supporting text below as a natural lead-in to\n                                                    additional content. This content is a little bit longer.\n                                                    "
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "card-text" }, [
-                                  _c("small", { staticClass: "text-muted" }, [
-                                    _vm._v("Comprat el 26/04/2021")
-                                  ])
-                                ])
-                              ])
-                            ])
-                          ])
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "tab-pane", attrs: { id: "timeline" } },
-                      [
-                        _c(
-                          "div",
-                          { staticClass: "timeline timeline-inverse" },
-                          [
-                            _c("div", { staticClass: "time-label" }, [
-                              _c("span", { staticClass: "bg-secondary" }, [
-                                _c("i", { staticClass: "far fa-calendar-alt" }),
-                                _vm._v(
-                                  "\n                                                26/04/2021\n                                            "
-                                )
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("div", [
-                              _c("i", { staticClass: "fas fa-gift bg-maroon" }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "timeline-item" }, [
-                                _c("span", { staticClass: "time" }, [
-                                  _c("i", { staticClass: "fas fa-store-alt" }),
-                                  _c("a", { attrs: { href: "#" } }, [
-                                    _vm._v(" Nom Botiga")
-                                  ])
-                                ]),
-                                _vm._v(" "),
-                                _c("h3", { staticClass: "timeline-header" }, [
-                                  _vm._v("Nom del producte")
-                                ]),
-                                _vm._v(" "),
-                                _c("small", { staticClass: "timeline-body" }, [
-                                  _vm._v("Descripcio producte")
-                                ])
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("div", [
-                              _c("i", { staticClass: "fas fa-gift bg-maroon" }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "timeline-item" }, [
-                                _c("span", { staticClass: "time" }, [
-                                  _c("i", { staticClass: "fas fa-store-alt" }),
-                                  _c("a", { attrs: { href: "#" } }, [
-                                    _vm._v(" Nom Botiga")
-                                  ])
-                                ]),
-                                _vm._v(" "),
-                                _c("h3", { staticClass: "timeline-header" }, [
-                                  _vm._v("Nom del producte")
-                                ]),
-                                _vm._v(" "),
-                                _c("small", { staticClass: "timeline-body" }, [
-                                  _vm._v("Descripcio producte")
-                                ])
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("div", [
-                              _c("i", { staticClass: "fas fa-gift bg-maroon" }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "timeline-item" }, [
-                                _c("span", { staticClass: "time" }, [
-                                  _c("i", { staticClass: "fas fa-store-alt" }),
-                                  _c("a", { attrs: { href: "#" } }, [
-                                    _vm._v(" Nom Botiga")
-                                  ])
-                                ]),
-                                _vm._v(" "),
-                                _c("h3", { staticClass: "timeline-header" }, [
-                                  _vm._v("Nom del producte")
-                                ]),
-                                _vm._v(" "),
-                                _c("small", { staticClass: "timeline-body" }, [
-                                  _vm._v("Descripcio producte")
-                                ])
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "time-label" }, [
-                              _c("span", { staticClass: "bg-secondary" }, [
-                                _c("i", { staticClass: "far fa-calendar-alt" }),
-                                _vm._v(
-                                  "\n                                                27/10/2020\n                                            "
-                                )
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("div", [
-                              _c("i", { staticClass: "fas fa-gift bg-maroon" }),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "timeline-item" }, [
-                                _c("span", { staticClass: "time" }, [
-                                  _c("i", { staticClass: "fas fa-store-alt" }),
-                                  _c("a", { attrs: { href: "#" } }, [
-                                    _vm._v(" Nom Botiga")
-                                  ])
-                                ]),
-                                _vm._v(" "),
-                                _c("h3", { staticClass: "timeline-header" }, [
-                                  _vm._v("Nom del producte")
-                                ]),
-                                _vm._v(" "),
-                                _c("small", { staticClass: "timeline-body" }, [
-                                  _vm._v("Descripcio producte")
-                                ])
-                              ])
-                            ])
-                          ]
+                _c("div", [
+                  _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "timeline-item" }, [
+                    _c("span", { staticClass: "time" }, [
+                      _c("i", { staticClass: "fas fa-store-alt" }),
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v(
+                          "\n                                                        Nom Botiga"
                         )
-                      ]
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("h3", { staticClass: "timeline-header" }, [
+                      _vm._v(
+                        "\n                                                    Nom del producte\n                                                "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("small", { staticClass: "timeline-body" }, [
+                      _vm._v(
+                        "Descripcio\n                                                    producte"
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "timeline-item" }, [
+                    _c("span", { staticClass: "time" }, [
+                      _c("i", { staticClass: "fas fa-store-alt" }),
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v(
+                          "\n                                                        Nom Botiga"
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("h3", { staticClass: "timeline-header" }, [
+                      _vm._v(
+                        "\n                                                    Nom del producte\n                                                "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("small", { staticClass: "timeline-body" }, [
+                      _vm._v(
+                        "Descripcio\n                                                    producte"
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "time-label" }, [
+                  _c("span", { staticClass: "bg-secondary" }, [
+                    _c("i", { staticClass: "far fa-calendar-alt" }),
+                    _vm._v(
+                      "\n                                                27/10/2020\n                                            "
                     )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "timeline-item" }, [
+                    _c("span", { staticClass: "time" }, [
+                      _c("i", { staticClass: "fas fa-store-alt" }),
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v(
+                          "\n                                                        Nom Botiga"
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("h3", { staticClass: "timeline-header" }, [
+                      _vm._v(
+                        "\n                                                    Nom del producte\n                                                "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("small", { staticClass: "timeline-body" }, [
+                      _vm._v(
+                        "Descripcio\n                                                    producte"
+                      )
+                    ])
                   ])
                 ])
               ])
