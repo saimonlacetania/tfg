@@ -69,7 +69,7 @@ body, html {
             />
           </div>
           <div class="info">
-            <a href="#" class="d-block">Hola! {{ this.user }}</a>
+            <a href="#" class="d-block">Hola! {{ this.user.nom }}</a>
           </div>
         </div>
 

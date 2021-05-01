@@ -39869,7 +39869,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: "info" }, [
               _c("a", { staticClass: "d-block", attrs: { href: "#" } }, [
-                _vm._v("Hola! " + _vm._s(this.user))
+                _vm._v("Hola! " + _vm._s(this.user.nom))
               ])
             ])
           ]),
