@@ -22,13 +22,9 @@ class CreateUsersTable extends Migration
             $table->string('profile_pic')->nullable();
             $table->string('telefon')->unique();
             $table->string('direccio')->nullable();
-            $table->string('direccio_compra')->nullable();
             $table->string('cp')->nullable();
-            $table->string('cp_compra')->nullable();
             $table->string('poblacio')->nullable();
-            $table->string('poblacio_compra')->nullable();
             $table->string('provincia')->nullable();
-            $table->string('provincia_compra')->nullable();
             $table->string('data_naix');
             $table->rememberToken();
             $table->timestamps();

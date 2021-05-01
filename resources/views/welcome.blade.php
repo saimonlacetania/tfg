@@ -27,8 +27,4 @@
     </div>
 </body>
 
-<!-- Scripts -->
-
-
-
 </html>
