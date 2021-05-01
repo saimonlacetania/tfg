@@ -91,7 +91,6 @@
               <div class="card-body">
                 <h5 class="card-title">Fresc</h5>
                 <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               </div>
             </div>
             <div class="card">
@@ -99,7 +98,6 @@
               <div class="card-body">
                 <h5 class="card-title">Ecològic</h5>
                 <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               </div>
             </div>
             <div class="card">
@@ -107,7 +105,6 @@
               <div class="card-body">
                 <h5 class="card-title">Sostenible</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               </div>
             </div>
           </div>
@@ -116,7 +113,7 @@
         <div class="row">
           <div class="col-md-4"></div>
           <div class="col-md-4">
-            <button type="submit" class="btn btn-block text-center mt-5 text-light" style="background-color:#ff6565;">
+            <button type="submit" class="btn btn-block text-center mt-5 text-light zoom" style="background-color:#ff6565;">
               <i class="fa fa-heart"></i>
               Descobreix-lo!
             </button>
@@ -134,200 +131,89 @@
                                 
     <hr>
 
-    <!-- tarjetes -->
-    <div class="content mt-4">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-12 card-deck mb-4">
-            <div class="card card-primary text-center zoom">
-              <img
-                class="card-img-top p-4"
-                src="/images/vendor/admin-lte/dist/prod-1.jpg"
-                alt="Card image cap"
-              />
-              <div class="card-body">
-                <div class="card-title font-weight-bold">
-                  Botes d'alta muntanya
-                </div>
-                <br />
-                <div class="badge badge-sm text-uppercase" style="background: #ff6565; color:white; border-radius:10px;">
-                  La botigueta del muntanyaire
-                </div>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-              <div class="card-footer">
-                <a href="#" class="btn btn-outline-secondary btn-icon-right">
-                  <span>Saber més</span>
-                </a>
-              </div>
-            </div>
-            <!-- /.card -->
-
-            <div class="card card-primary text-center zoom">
-              <img
-                class="card-img-top p-4"
-                src="/images/vendor/admin-lte/dist/prod-1.jpg"
-                alt="Card image cap"
-              />
-              <div class="card-body">
-                <div class="card-title font-weight-bold">
-                  Botes d'alta muntanya
-                </div>
-                <br />
-                <div class="badge badge-sm text-uppercase" style="background: #ff6565; color:white; border-radius:10px;">
-                  La botigueta del muntanyaire
-                </div>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-              <div class="card-footer">
-                <a href="#" class="btn btn-outline-secondary btn-icon-right">
-                  <span>Saber més</span>
-                </a>
-              </div>
-            </div>
-            <!-- /.card -->
-
-            <div class="card card-primary text-center zoom">
-              <img
-                class="card-img-top p-4"
-                src="/images/vendor/admin-lte/dist/prod-1.jpg"
-                alt="Card image cap"
-              />
-              <div class="card-body">
-                <div class="card-title font-weight-bold">
-                  Botes d'alta muntanya
-                </div>
-                <br />
-                <div class="badge badge-sm text-uppercase" style="background: #ff6565; color:white; border-radius:10px;">
-                  La botigueta del muntanyaire
-                </div>
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-              <div class="card-footer">
-                <a href="#" class="btn btn-outline-secondary btn-icon-right">
-                  <span>Saber més</span>
-                </a>
-              </div>
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col-md-6 card-deck-->
-        </div>
-        <!-- /.row -->
-      </div>
-      <!-- /.container-fluid -->
-    </div>
-    <!-- /.tarjetes -->
-    <div class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-12 card-deck mb-4">
-            <div class="card" style="width: 20rem; height: 20rem">
-              <div class="card-header border-0">
-                <div class="d-flex justify-content-between">
-                  <h3 class="card-title">Online Store Visitors</h3>
-                  <a href="javascript:void(0);">View Report</a>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="d-flex">
-                  <p class="d-flex flex-column">
-                    <span class="text-bold text-lg">820</span>
-                    <span>Visitors Over Time</span>
-                  </p>
-                  <p class="ml-auto d-flex flex-column text-right">
-                    <span class="text-success">
-                      <i class="fas fa-arrow-up"></i> 12.5%
-                    </span>
-                    <span class="text-muted">Since last week</span>
-                  </p>
-                </div>
-                <!-- /.d-flex -->
-              </div>
-            </div>
-            <!-- /.card -->
-
-            <div class="card" style="width: 20rem; height: 20rem">
-              <div class="card-header border-0">
-                <div class="d-flex justify-content-between">
-                  <h3 class="card-title">Online Store Visitors</h3>
-                  <a href="javascript:void(0);">View Report</a>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="d-flex">
-                  <p class="d-flex flex-column">
-                    <span class="text-bold text-lg">820</span>
-                    <span>Visitors Over Time</span>
-                  </p>
-                  <p class="ml-auto d-flex flex-column text-right">
-                    <span class="text-success">
-                      <i class="fas fa-arrow-up"></i> 12.5%
-                    </span>
-                    <span class="text-muted">Since last week</span>
-                  </p>
-                </div>
-                <!-- /.d-flex -->
-              </div>
-            </div>
-            <!-- /.card -->
-
-            <div class="card" style="width: 20rem; height: 20rem">
-              <div class="card-header border-0">
-                <div class="d-flex justify-content-between">
-                  <h3 class="card-title">Online Store Visitors</h3>
-                  <a href="javascript:void(0);">View Report</a>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="d-flex">
-                  <p class="d-flex flex-column">
-                    <span class="text-bold text-lg">820</span>
-                    <span>Visitors Over Time</span>
-                  </p>
-                  <p class="ml-auto d-flex flex-column text-right">
-                    <span class="text-success">
-                      <i class="fas fa-arrow-up"></i> 12.5%
-                    </span>
-                    <span class="text-muted">Since last week</span>
-                  </p>
-                </div>
-                <!-- /.d-flex -->
-              </div>
-            </div>
-          </div>
-          <!-- /.col-md-6 card-deck-->
-        </div>
-        <!-- /.row -->
-      </div>
-      <!-- /.container-fluid -->
-    </div>
-    <!-- /.tarjetes -->
-
-    <hr>
     <div class="content">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
-            <div class="card">
-              <div class="card-header border-0">
-                <div class="d-flex justify-content-between">
-                  <h3 class="card-title">Online Store Visitors</h3>
-                  <a href="javascript:void(0);">View Report</a>
-                </div>
-              </div>
+            <div class="card text-center">
               <div class="card-body">
-              <p>Holee</p>
+              <h3 style="color:#ff6565;">Segueix les nostres novetats</h3>
+                <p class="card-text text-gray">Inscriu-te per rebre el butlletí de Mercat Virtual al teu correu electrònic.<br> T’informem setmana a setmana de les novetats</p>
+                  
+                  <div class="input-group mb-3 col-md-12">
+                  <div class="col-md-3"></div>
+                  <div class="col-md-6 input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" style="background-color:#ff6565;"><i class="far fa-envelope" style="color:#ffffff;"></i></span>
+                    </div>
+                    <input type="email" class="form-control" placeholder="Adreça de correu electrònic">
+                  </div>
+                  <div class="col-md-3"></div>
+                  </div>
+                
+                <div class="mb-2">
+                  <input type="checkbox"> &nbsp;
+                  <small class="text-gray" aria-label="Text input with checkbox">He llegit i accepto les <a href="#"><b class="text-gray">Condicions Generals d’Accés i Ús</b></a> i <a href="#"><b class="text-gray">Política de Privacitat</b></a></small>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-5"></div>
+                  <div class="col-md-2">
+                    <button type="submit" class="btn btn-block text-center text-light zoom" style="background-color:#ff6565;">
+                      Enviar
+                    </button>
+                  </div>
+                  <div class="col-md-5"></div>
+                </div>
+
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="content">
+      <div class="container-fluid">
+        <div class="card-group">
+          <div class="card bg-gray">
+            <div class="card-body">
+              <small class="card-text">MANIFEST FUNDACIONAL</small><br>
+              <small class="card-text">FAQS</small><br>
+              <small class="card-text">L'EQUIP</small><br>
+              <small class="card-text">FES-TE SOCI</small>
+            </div>
+          </div>
+          <div class="card bg-gray">
+            <div class="card-body">
+              <small class="card-text">EL TEU COMPTE</small><br>
+              <small class="card-text">CONTACTES</small><br>
+              <small class="card-text">CONDICIONS GENERALS</small><br>
+              <small class="card-text">POLÍTICA DE PRIVACITAT</small><br>
+              <small class="card-text">POLÍTICA DE COOKIES</small>
+            </div>
+          </div>
+          <div class="card bg-gray">
+            <div class="card-body">
+            </div>
+          </div>          
+          <div class="card bg-gray">
+            <div class="card-body">
+              <h4>Segueix-nos!</h4>
+              <a class="btn btn-primary" style="background-color:#ff6565; border:none;">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a class="btn btn-primary" style="background-color:#ff6565; border:none;">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a class="btn btn-primary" style="background-color:#ff6565; border:none;">
+                <i class="fab fa-google"></i>
+              </a>
+              <a class="btn btn-primary" style="background-color:#ff6565; border:none;">
+                <i class="fab fa-instagram"></i>
+              </a>
             </div>
           </div>
         </div>
