@@ -3098,6 +3098,132 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -7858,7 +7984,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.zoom {\r\n  transition: transform 0.2s; /* Animation /\r\n}\r\n\r\n.zoom:hover {\r\n  transform: scale(1.05); / (150% zoom)*/\n}\r\n", ""]);
+exports.push([module.i, "\n.zoom {\n        transition: transform 0.2s;\n        /* Animation /\n}\n\n.zoom:hover {\n  transform: scale(1.05); / (150% zoom)*/\n}\n\n", ""]);
 
 // exports
 
@@ -41435,354 +41561,8 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "content-wrapper", attrs: { id: "contingut" } },
-    [
-      _c("div", { staticClass: "content-header" }, [
-        _c("div", { staticClass: "container-fluid" }, [
-          _vm._m(0),
-          _vm._v(" "),
-          _c("br"),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-12" }, [
-            _c("form", { attrs: { action: "simple-results.html" } }, [
-              _c("div", { staticClass: "input-group" }, [
-                _c("input", {
-                  staticClass: "form-control form-control-lg text-right",
-                  attrs: { type: "search", placeholder: "¿Què vols buscar?" }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "input-group-append" }, [
-                  _vm._m(1),
-                  _vm._v(" "),
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-lg btn-secondary",
-                      staticStyle: { "background-color": "#ff6565" },
-                      attrs: { type: "button", "aria-expanded": "true" },
-                      on: { click: _vm.mostrarCerca }
-                    },
-                    [_c("i", { staticClass: "fa fa-arrow-down" })]
-                  )
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticStyle: { display: "none" }, attrs: { id: "cerca" } },
-            [_c("cerca-component")],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(2),
-          _vm._v(" "),
-          _c("br"),
-          _c("br"),
-          _vm._v(" "),
-          _vm._m(3),
-          _vm._v(" "),
-          _vm._m(4)
-        ])
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("div", { staticClass: "content" }, [
-        _c("div", { staticClass: "container-fluid" }, [
-          _c(
-            "div",
-            { staticClass: "row" },
-            _vm._l(_vm.productes, function(producte) {
-              return _c(
-                "div",
-                { key: producte.id, class: "col-md-4 card-deck mb-4" },
-                [
-                  _c("div", { class: "card card-primary text-center zoom" }, [
-                    _c("img", {
-                      class: "card-img-top p-3",
-                      attrs: { src: "/images/" + producte.imatge }
-                    }),
-                    _vm._v(" "),
-                    _c("div", { class: "card-body" }, [
-                      _c("div", { class: "card-title font-weight-bold" }, [
-                        _vm._v(
-                          "\n                  " +
-                            _vm._s(producte.nom) +
-                            "\n                  "
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("br"),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          class: "badge badge-warning badge-sm text-uppercase"
-                        },
-                        [
-                          _vm._v(
-                            "\n                    " +
-                              _vm._s(producte.ref) +
-                              "\n                  "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("p", { class: "card-text" }, [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(producte.descripcio) +
-                            "\n                  "
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { class: "card-footer" }, [
-                      _c(
-                        "a",
-                        {
-                          class: "btn btn-outline-secondary btn-icon-right",
-                          attrs: { href: "#" }
-                        },
-                        [_c("span", [_vm._v("Saber més")])]
-                      )
-                    ])
-                  ])
-                ]
-              )
-            }),
-            0
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _vm._m(5)
-    ]
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c(
-          "div",
-          {
-            staticClass: "card bg-dark text-white",
-            staticStyle: { border: "none" }
-          },
-          [
-            _c("img", {
-              staticClass: "card-img",
-              attrs: { src: "/images/agro_1.jpg", alt: "..." }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-img-overlay" }, [
-              _c("h3", { staticClass: "card-header text-center" }, [
-                _vm._v("Benvinguts al Mercat Virtual")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-4 mt-5" }),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass:
-                      "btn btn-lg btn-secondary col-md-4 text-center mt-5",
-                    staticStyle: { "background-color": "#ff6565" },
-                    attrs: { type: "submit" }
-                  },
-                  [
-                    _c("i", { staticClass: "fa fa-search" }),
-                    _vm._v(
-                      "\n                  Descobreix-lo!\n                "
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-4" })
-              ])
-            ])
-          ]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "button",
-      {
-        staticClass: "btn btn-lg btn-secondary",
-        staticStyle: { "background-color": "#ff6565" },
-        attrs: { type: "submit" }
-      },
-      [_c("i", { staticClass: "fa fa-search" })]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm-12 mt-4" }, [
-      _c("h1", { staticClass: "text-center" }, [
-        _vm._v("El KM0 més a prop que mai")
-      ]),
-      _vm._v(" "),
-      _c("h4", { staticClass: "text-center" }, [
-        _vm._v("Productes únics de professionals locals")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "card-deck" }, [
-        _c("div", { staticClass: "card" }, [
-          _c("img", {
-            staticClass: "card-img-top",
-            attrs: { src: "/images/grapes.jpg", alt: "Card image cap" }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c("h5", { staticClass: "card-title" }, [_vm._v("Fresc")]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card-text" }, [
-              _vm._v(
-                "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-              )
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card-text" }, [
-              _c("small", { staticClass: "text-muted" }, [
-                _vm._v("Last updated 3 mins ago")
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card" }, [
-          _c("img", {
-            staticClass: "card-img-top",
-            attrs: { src: "/images/ovella.jpg", alt: "Card image cap" }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c("h5", { staticClass: "card-title" }, [_vm._v("Ecològic")]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card-text" }, [
-              _vm._v(
-                "This card has supporting text below as a natural lead-in to additional content."
-              )
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card-text" }, [
-              _c("small", { staticClass: "text-muted" }, [
-                _vm._v("Last updated 3 mins ago")
-              ])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card" }, [
-          _c("img", {
-            staticClass: "card-img-top",
-            attrs: { src: "/images/roba.jpg", alt: "Card image cap" }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c("h5", { staticClass: "card-title" }, [_vm._v("Sostenible")]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card-text" }, [
-              _vm._v(
-                "This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action."
-              )
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card-text" }, [
-              _c("small", { staticClass: "text-muted" }, [
-                _vm._v("Last updated 3 mins ago")
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-4" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-4" }, [
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-block text-center mt-5",
-            staticStyle: { "background-color": "#ff6565" },
-            attrs: { type: "submit" }
-          },
-          [
-            _c("i", { staticClass: "fa fa-search" }),
-            _vm._v("\n            Descobreix-lo!\n          ")
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-4" })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "content" }, [
-      _c("div", { staticClass: "container-fluid" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-12" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("div", { staticClass: "card-header border-0" }, [
-                _c("div", { staticClass: "d-flex justify-content-between" }, [
-                  _c("h3", { staticClass: "card-title" }, [
-                    _vm._v("Online Store Visitors")
-                  ]),
-                  _vm._v(" "),
-                  _c("a", { attrs: { href: "javascript:void(0);" } }, [
-                    _vm._v("View Report")
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("p", [_vm._v("Holee")])
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
-  }
-]
-render._withStripped = true
+var render = function () {}
+var staticRenderFns = []
 
 
 
