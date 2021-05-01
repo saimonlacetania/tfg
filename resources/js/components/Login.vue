@@ -92,19 +92,6 @@ export default {
       errors: [],
     };
   },
-  methods: {
-    loginUser() {
-      axios
-        .post("/api/login", this.form)
-        .then((res) => {
-          this.$router.push({ name: "Productes" });
-          location.reload();
-        })
-        .catch((error) => {
-          this.errors = error.response.data.errors;
-        });
-    },
-<<<<<<< HEAD
     methods: {
         loginUser() {
             axios
@@ -121,8 +108,5 @@ export default {
                 });
         }
     }
-=======
-  },
->>>>>>> origin/ian2
 };
 </script>

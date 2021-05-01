@@ -15,8 +15,4 @@ class ProductesController extends Controller
         return $productes;
        
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/ian2

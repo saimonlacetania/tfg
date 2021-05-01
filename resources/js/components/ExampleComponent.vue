@@ -44,11 +44,7 @@ body, html {
     <!-- /.navbar -->
 
     <!-- MENÚ ESQUERRA -->
-<<<<<<< HEAD
-    <aside class="main-sidebar sidebar-light-primary elevation-4">
-=======
     <aside class="main-sidebar sidebar-light elevation-4">
->>>>>>> origin/ian2
       <!-- Logo -->
       <a href="" class="brand-link">
         <img
@@ -91,15 +87,9 @@ body, html {
                with font-awesome or any other icon font library -->
             <li class="nav-header text-dark">MENÚ PRINCIPAL</li>
             <li class="nav-item">
-<<<<<<< HEAD
-              <a class="nav-link">
-                <i class="nav-icon fas fa-user"></i>
-                <p>
-=======
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-user text-dark"></i>
                 <p class="text-dark">
->>>>>>> origin/ian2
                   El meu perfil
                   <i class="right fas fa-angle-left"></i>
                 </p>
@@ -188,12 +178,7 @@ export default {
   },
   mounted() {
     axios.get("/api/user").then((res) => {
-<<<<<<< HEAD
       this.user = res.data;
-=======
-      this.user = res.data.nom;
-      console.log(this.user);
->>>>>>> origin/ian2
     });
   },
   methods: {
@@ -201,10 +186,7 @@ export default {
       axios.post("/api/logout").then(() => {
         this.$router.push({ name: "Login" });
         location.reload();
-<<<<<<< HEAD
         return false;
-=======
->>>>>>> origin/ian2
       });
     },
   },

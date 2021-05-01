@@ -2051,9 +2051,209 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
   \***************************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\abram\\Documents\\GitHub\\tfg\\resources\\js\\components\\ExampleComponent.vue: Unexpected token (195:0)\n\n\u001b[0m \u001b[90m 193 |\u001b[39m   mounted() {\u001b[0m\n\u001b[0m \u001b[90m 194 |\u001b[39m     axios\u001b[33m.\u001b[39m\u001b[36mget\u001b[39m(\u001b[32m\"/api/user\"\u001b[39m)\u001b[33m.\u001b[39mthen((res) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 195 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 196 |\u001b[39m       \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39muser \u001b[33m=\u001b[39m res\u001b[33m.\u001b[39mdata\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 197 |\u001b[39m \u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 198 |\u001b[39m       \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39muser \u001b[33m=\u001b[39m res\u001b[33m.\u001b[39mdata\u001b[33m.\u001b[39mnom\u001b[33m;\u001b[39m\u001b[0m\n    at Parser._raise (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:776:17)\n    at Parser.raiseWithData (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:769:17)\n    at Parser.raise (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:737:17)\n    at Parser.unexpected (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:9735:16)\n    at Parser.parseExprAtom (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11131:20)\n    at Parser.parseExprSubscripts (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10708:23)\n    at Parser.parseUpdate (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10688:21)\n    at Parser.parseMaybeUnary (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10666:23)\n    at Parser.parseExprOps (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10523:23)\n    at Parser.parseMaybeConditional (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10497:23)\n    at Parser.parseMaybeAssign (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10460:21)\n    at Parser.parseExpressionBase (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10405:23)\n    at C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10399:39\n    at Parser.allowInAnd (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:12104:12)\n    at Parser.parseExpression (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10399:17)\n    at Parser.parseStatementContent (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:12390:23)\n    at Parser.parseStatement (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:12259:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:12845:25)\n    at Parser.parseBlockBody (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:12836:10)\n    at Parser.parseBlock (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:12820:10)\n    at Parser.parseFunctionBody (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11777:24)\n    at Parser.parseArrowExpression (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11749:10)\n    at Parser.parseParenAndDistinguishExpression (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11322:12)\n    at Parser.parseExprAtom (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11026:21)\n    at Parser.parseExprSubscripts (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10708:23)\n    at Parser.parseUpdate (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10688:21)\n    at Parser.parseMaybeUnary (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10666:23)\n    at Parser.parseExprOps (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10523:23)\n    at Parser.parseMaybeConditional (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10497:23)\n    at Parser.parseMaybeAssign (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10460:21)\n    at C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10427:39\n    at Parser.allowInAnd (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:12104:12)\n    at Parser.parseMaybeAssignAllowIn (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10427:17)\n    at Parser.parseExprListItem (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11864:18)\n    at Parser.parseCallExpressionArguments (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10906:22)\n    at Parser.parseCoverCallAndAsyncArrowHead (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10816:29)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      user: ""
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get("/api/user").then(function (res) {
+      _this.user = res.data;
+    });
+  },
+  methods: {
+    logout: function logout() {
+      var _this2 = this;
+
+      axios.post("/api/logout").then(function () {
+        _this2.$router.push({
+          name: "Login"
+        });
+
+        location.reload();
+        return false;
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -2062,9 +2262,122 @@ throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Login.vue?vue&type=script&lang=js& ***!
   \****************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\abram\\Documents\\GitHub\\tfg\\resources\\js\\components\\Login.vue: Unexpected token (107:0)\n\n\u001b[0m \u001b[90m 105 |\u001b[39m         })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 106 |\u001b[39m     }\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 107 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 108 |\u001b[39m     methods\u001b[33m:\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 109 |\u001b[39m         loginUser() {\u001b[0m\n\u001b[0m \u001b[90m 110 |\u001b[39m             axios\u001b[0m\n    at Parser._raise (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:776:17)\n    at Parser.raiseWithData (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:769:17)\n    at Parser.raise (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:737:17)\n    at Parser.unexpected (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:9735:16)\n    at Parser.parseIdentifierName (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11899:18)\n    at Parser.parseIdentifier (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11872:23)\n    at Parser.parseMaybePrivateName (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11201:19)\n    at Parser.parsePropertyName (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11686:155)\n    at Parser.parsePropertyDefinition (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11572:22)\n    at Parser.parseObjectLike (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11487:25)\n    at Parser.parseExprAtom (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11047:23)\n    at Parser.parseExprSubscripts (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10708:23)\n    at Parser.parseUpdate (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10688:21)\n    at Parser.parseMaybeUnary (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10666:23)\n    at Parser.parseExprOps (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10523:23)\n    at Parser.parseMaybeConditional (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10497:23)\n    at Parser.parseMaybeAssign (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10460:21)\n    at C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10427:39\n    at Parser.allowInAnd (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:12104:12)\n    at Parser.parseMaybeAssignAllowIn (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10427:17)\n    at Parser.parseObjectProperty (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11648:101)\n    at Parser.parseObjPropValue (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11673:100)\n    at Parser.parsePropertyDefinition (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11597:10)\n    at Parser.parseObjectLike (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11487:25)\n    at Parser.parseExprAtom (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11047:23)\n    at Parser.parseExprSubscripts (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10708:23)\n    at Parser.parseUpdate (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10688:21)\n    at Parser.parseMaybeUnary (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10666:23)\n    at Parser.parseExprOps (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10523:23)\n    at Parser.parseMaybeConditional (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10497:23)\n    at Parser.parseMaybeAssign (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10460:21)\n    at C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10427:39\n    at Parser.allowInAnd (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:12098:16)\n    at Parser.parseMaybeAssignAllowIn (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10427:17)\n    at Parser.parseExportDefaultExpression (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:13463:24)\n    at Parser.parseExport (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:13373:31)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      form: {
+        email: "",
+        password: ""
+      },
+      errors: []
+    };
+  },
+  methods: {
+    loginUser: function loginUser() {
+      var _this = this;
+
+      axios.post("/api/login", this.form).then(function (res) {
+        _this.$router.push({
+          name: "Productes"
+        });
+
+        location.reload();
+        return false;
+      })["catch"](function (error) {
+        _this.errors = error.response.data.errors;
+        location.reload();
+        return false;
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -2091,9 +2404,232 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/PerfilComponent.vue?vue&type=script&lang=js& ***!
   \**************************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\abram\\Documents\\GitHub\\tfg\\resources\\js\\components\\PerfilComponent.vue: Unexpected token (227:0)\n\n\u001b[0m \u001b[90m 225 |\u001b[39m \u001b[90m//\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 226 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 227 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 228 |\u001b[39m   \u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 229 |\u001b[39m       data() {\u001b[0m\n\u001b[0m \u001b[90m 230 |\u001b[39m         \u001b[36mreturn\u001b[39m {\u001b[0m\n    at Parser._raise (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:776:17)\n    at Parser.raiseWithData (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:769:17)\n    at Parser.raise (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:737:17)\n    at Parser.unexpected (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:9735:16)\n    at Parser.parseExprAtom (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11131:20)\n    at Parser.parseExprSubscripts (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10708:23)\n    at Parser.parseUpdate (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10688:21)\n    at Parser.parseMaybeUnary (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10666:23)\n    at Parser.parseExprOps (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10523:23)\n    at Parser.parseMaybeConditional (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10497:23)\n    at Parser.parseMaybeAssign (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10460:21)\n    at Parser.parseExpressionBase (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10405:23)\n    at C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10399:39\n    at Parser.allowInAnd (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:12098:16)\n    at Parser.parseExpression (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10399:17)\n    at Parser.parseStatementContent (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:12390:23)\n    at Parser.parseStatement (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:12259:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:12845:25)\n    at Parser.parseBlockBody (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:12836:10)\n    at Parser.parseProgram (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:12190:10)\n    at Parser.parseTopLevel (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:12181:25)\n    at Parser.parse (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:13892:10)\n    at parse (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:13944:38)\n    at parser (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\core\\lib\\parser\\index.js:54:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:55:38)\n    at normalizeFile.next (<anonymous>)\n    at run (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\core\\lib\\transformation\\index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\core\\lib\\transform.js:19:41)\n    at transform.next (<anonymous>)\n    at step (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\gensync\\index.js:261:32)\n    at C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\gensync\\index.js:273:13\n    at async.call.result.err.err (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\gensync\\index.js:223:11)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      user: ""
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get("/api/user").then(function (res) {
+      _this.user = res.data;
+    });
+  }
+});
 
 /***/ }),
 
@@ -2102,9 +2638,225 @@ throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ProductesComponent.vue?vue&type=script&lang=js& ***!
   \*****************************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\abram\\Documents\\GitHub\\tfg\\resources\\js\\components\\ProductesComponent.vue: Unexpected token (202:0)\n\n\u001b[0m \u001b[90m 200 |\u001b[39m   components\u001b[33m:\u001b[39m { \u001b[33mCercaComponent\u001b[39m }\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 201 |\u001b[39m   mounted() {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 202 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 203 |\u001b[39m     \u001b[0m\n\u001b[0m \u001b[90m 204 |\u001b[39m \u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 205 |\u001b[39m\u001b[0m\n    at Parser._raise (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:776:17)\n    at Parser.raiseWithData (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:769:17)\n    at Parser.raise (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:737:17)\n    at Parser.unexpected (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:9735:16)\n    at Parser.parseExprAtom (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11131:20)\n    at Parser.parseExprSubscripts (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10708:23)\n    at Parser.parseUpdate (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10688:21)\n    at Parser.parseMaybeUnary (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10666:23)\n    at Parser.parseExprOps (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10523:23)\n    at Parser.parseMaybeConditional (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10497:23)\n    at Parser.parseMaybeAssign (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10460:21)\n    at Parser.parseExpressionBase (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10405:23)\n    at C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10399:39\n    at Parser.allowInAnd (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:12098:16)\n    at Parser.parseExpression (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10399:17)\n    at Parser.parseStatementContent (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:12390:23)\n    at Parser.parseStatement (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:12259:17)\n    at Parser.parseBlockOrModuleBlockBody (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:12845:25)\n    at Parser.parseBlockBody (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:12836:10)\n    at Parser.parseBlock (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:12820:10)\n    at Parser.parseFunctionBody (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11777:24)\n    at Parser.parseFunctionBodyAndFinish (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11761:10)\n    at Parser.parseMethod (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11711:10)\n    at Parser.parseObjectMethod (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11640:19)\n    at Parser.parseObjPropValue (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11673:23)\n    at Parser.parsePropertyDefinition (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11597:10)\n    at Parser.parseObjectLike (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11487:25)\n    at Parser.parseExprAtom (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:11047:23)\n    at Parser.parseExprSubscripts (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10708:23)\n    at Parser.parseUpdate (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10688:21)\n    at Parser.parseMaybeUnary (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10666:23)\n    at Parser.parseExprOps (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10523:23)\n    at Parser.parseMaybeConditional (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10497:23)\n    at Parser.parseMaybeAssign (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10460:21)\n    at C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:10427:39\n    at Parser.allowInAnd (C:\\Users\\abram\\Documents\\GitHub\\tfg\\node_modules\\@babel\\parser\\lib\\index.js:12098:16)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CercaComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CercaComponent.vue */ "./resources/js/components/CercaComponent.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      productes: ""
+    };
+  },
+  components: {
+    CercaComponent: _CercaComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get("/api/productes").then(function (res) {
+      console.log(res);
+      _this.productes = res.data;
+    });
+  },
+  methods: {
+    mostrarCerca: function mostrarCerca(event) {
+      var cerca = document.getElementById("cerca");
+
+      if (cerca.style.display == "none") {
+        cerca.style.display = "block";
+      } else {
+        cerca.style.display = "none";
+      }
+    }
+  }
+});
 
 /***/ }),
 
@@ -6797,7 +7549,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n<<<<<<< HEAD\r\n.wrapper {\r\n  height: 100%;\n}\nbody, html {\r\n  height: 100%;\n}\r\n", ""]);
+exports.push([module.i, "\n.wrapper {\r\n  height: 100%;\n}\nbody, html {\r\n  height: 100%;\n}\n.main-header{\r\n  color:#C22847 !important;\n}\r\n", ""]);
 
 // exports
 
@@ -6809,9 +7561,17 @@ exports.push([module.i, "\n<<<<<<< HEAD\r\n.wrapper {\r\n  height: 100%;\n}\nbod
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/PerfilComponent.vue?vue&type=style&index=0&lang=css& ***!
   \*********************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/postcss-loader/src/index.js):\nSyntaxError\n\n(4:9) Unknown word\n\n \u001b[90m 2 | \u001b[39m\n \u001b[90m 3 | \u001b[39m\u001b[33m.nav-link.active\u001b[39m\u001b[33m{\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 4 | \u001b[39m<<<<<<< HEAD\n \u001b[90m   | \u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 5 | \u001b[39m    background-color\u001b[33m:\u001b[39m red !important\u001b[33m;\u001b[39m\n \u001b[90m 6 | \u001b[39m=======\n");
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.nav-link.active{\r\n    background-color: #ff6565 !important;\r\n    color: white !important;\n}\n.nav-link {\r\n    text-decoration:none !important;\r\n    color: white !important;\n}\r\n\r\n\r\n\r\n", ""]);
+
+// exports
+
 
 /***/ }),
 
@@ -38773,6 +39533,111 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CercaComponent.vue?vue&type=template&id=5b3d439a&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/CercaComponent.vue?vue&type=template&id=5b3d439a& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card card-secondary" }, [
+      _c("div", { staticClass: "card-header" }, [
+        _c("h3", { staticClass: "card-title" }, [_vm._v("Cerca avançada")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card-body" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("Població")]),
+              _vm._v(" "),
+              _c(
+                "select",
+                { staticClass: "form-control", staticStyle: { width: "100%" } },
+                [
+                  _c("option", { attrs: { selected: "selected" } }, [
+                    _vm._v("Alabama")
+                  ]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("Alaska")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("California")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("Delaware")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("Tennessee")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("Texas")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("Washington")])
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("Categoría")]),
+              _vm._v(" "),
+              _c(
+                "select",
+                { staticClass: "form-control", staticStyle: { width: "100%" } },
+                [
+                  _c("option", { attrs: { selected: "selected" } }, [
+                    _vm._v("Alabama")
+                  ]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("Alaska")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("California")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("Delaware")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("Tennessee")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("Texas")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("Washington")])
+                ]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-4" }),
+          _vm._v(" "),
+          _c("button", { staticClass: "btn btn-secondary col-md-4" }, [
+            _vm._v("Busca!")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-4" })
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/EditarPerfilComponent.vue?vue&type=template&id=447df20a&":
 /*!************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/EditarPerfilComponent.vue?vue&type=template&id=447df20a& ***!
@@ -38985,8 +39850,342 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
-var staticRenderFns = []
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "wrapper" },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("aside", { staticClass: "main-sidebar sidebar-light elevation-4" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _c("div", { staticClass: "sidebar fixed-left" }, [
+          _c("div", { staticClass: "user-panel mt-3 pb-3 mb-3 d-flex" }, [
+            _vm._m(2),
+            _vm._v(" "),
+            _c("div", { staticClass: "info" }, [
+              _c("a", { staticClass: "d-block", attrs: { href: "#" } }, [
+                _vm._v("Hola! " + _vm._s(this.user))
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("nav", { staticClass: "mt-2" }, [
+            _c(
+              "ul",
+              {
+                staticClass:
+                  "nav nav-pills nav-sidebar flex-column nav-child-indent",
+                attrs: {
+                  "data-widget": "treeview",
+                  role: "menu",
+                  "data-accordion": "false"
+                }
+              },
+              [
+                _c("li", { staticClass: "nav-header text-dark" }, [
+                  _vm._v("MENÚ PRINCIPAL")
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item" }, [
+                  _vm._m(3),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "nav nav-treeview" }, [
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "router-link",
+                          { staticClass: "nav-link", attrs: { to: "profile" } },
+                          [
+                            _c("i", {
+                              staticClass:
+                                "nav-icon far fa-user-circle text-dark"
+                            }),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "text-dark" }, [
+                              _vm._v("Veure perfil")
+                            ])
+                          ]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _vm._m(4),
+                    _vm._v(" "),
+                    _c(
+                      "li",
+                      { staticClass: "nav-item" },
+                      [
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "nav-link",
+                            attrs: { to: "editarPerfil" }
+                          },
+                          [
+                            _c("i", {
+                              staticClass: "fas fa-cogs nav-icon text-dark"
+                            }),
+                            _vm._v(" "),
+                            _c("p", { staticClass: "text-dark" }, [
+                              _vm._v("Configuració")
+                            ])
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _vm._m(5),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c(
+                      "router-link",
+                      { staticClass: "nav-link", attrs: { to: "productes" } },
+                      [
+                        _c("i", {
+                          staticClass: "nav-icon fas fa-shopping-cart text-dark"
+                        }),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "text-dark" }, [
+                          _vm._v("Comprar")
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item fixed-bottom ml-2" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "nav-link",
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.logout($event)
+                        }
+                      }
+                    },
+                    [
+                      _c("i", {
+                        staticClass: "nav-icon fas fa-power-off text-dark"
+                      }),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "text-dark" }, [_vm._v("Sortir")])
+                    ]
+                  )
+                ])
+              ]
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("router-view")
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "nav",
+      { staticClass: "main-header navbar navbar-expand navbar-light" },
+      [
+        _c("ul", { staticClass: "navbar-nav" }, [
+          _c("li", { staticClass: "nav-item" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link",
+                attrs: { "data-widget": "pushmenu", href: "#", role: "button" }
+              },
+              [
+                _c("i", {
+                  staticClass: "fas fa-bars",
+                  staticStyle: { color: "#ff6565" }
+                })
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "li",
+            { staticClass: "nav-item d-none d-sm-inline-block text-dark" },
+            [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link text-dark",
+                  staticStyle: {
+                    color: "#343a40 !important",
+                    "text-decoration": "none !important"
+                  },
+                  attrs: { href: "index3.html" }
+                },
+                [_vm._v("Inici")]
+              )
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("ul", { staticClass: "navbar-nav ml-auto" }, [
+          _c("li", { staticClass: "nav-item dropdown" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link",
+                attrs: {
+                  "data-toggle": "dropdown",
+                  href: "#",
+                  "aria-expanded": "false"
+                }
+              },
+              [
+                _c("i", {
+                  staticClass: "fas fa-shopping-cart",
+                  staticStyle: { color: "#ff6565" }
+                }),
+                _vm._v(" "),
+                _c("span", { staticClass: "font-weight-light text-dark" }, [
+                  _vm._v("Cistella")
+                ])
+              ]
+            )
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "brand-link", attrs: { href: "" } }, [
+      _c("img", {
+        staticClass: "brand-image img-circle elevation-3",
+        staticStyle: { opacity: "0.8", background: "#ff6565" },
+        attrs: { src: "/images/logo_mercat.png", alt: "" }
+      }),
+      _vm._v(" "),
+      _c("span", { staticClass: "brand-text font-weight-light" }, [
+        _vm._v("Mercat Virtual")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "image" }, [
+      _c("img", {
+        staticClass: "img-circle elevation-2",
+        attrs: { src: "/images/user2-160x160.jpg", alt: "User Image" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+      _c("i", { staticClass: "nav-icon fas fa-user text-dark" }),
+      _vm._v(" "),
+      _c("p", { staticClass: "text-dark" }, [
+        _vm._v("\n                El meu perfil\n                "),
+        _c("i", { staticClass: "right fas fa-angle-left" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "nav-item" }, [
+      _c(
+        "a",
+        { staticClass: "nav-link", attrs: { href: "../../index.html" } },
+        [
+          _c("i", { staticClass: "fas fa-shopping-basket nav-icon text-dark" }),
+          _vm._v(" "),
+          _c("p", { staticClass: "text-dark" }, [_vm._v("Les meves compres")])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "nav-item" }, [
+      _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+        _c("i", { staticClass: "nav-icon fas fa-store-alt text-dark" }),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-dark" }, [
+          _vm._v("\n                La meva botiga\n                "),
+          _c("i", { staticClass: "right fas fa-angle-left" })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("ul", { staticClass: "nav nav-treeview nav-child-indent" }, [
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            { staticClass: "nav-link", attrs: { href: "../../index.html" } },
+            [
+              _c("i", { staticClass: "fas fa-feather-alt nav-icon text-dark" }),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-dark" }, [_vm._v("Perfil")])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            { staticClass: "nav-link", attrs: { href: "../../index.html" } },
+            [
+              _c("i", { staticClass: "fas fa-tag nav-icon text-dark" }),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-dark" }, [_vm._v("Productes")])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            { staticClass: "nav-link", attrs: { href: "../../index.html" } },
+            [
+              _c("i", { staticClass: "fas fa-chart-line nav-icon text-dark" }),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-dark" }, [_vm._v("Estadístiques")])
+            ]
+          )
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
 
 
 
@@ -39250,8 +40449,305 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
-var staticRenderFns = []
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "content-wrapper" }, [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("section", { staticClass: "content" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-3" }, [
+            _c("div", { staticClass: "card card-dark card-outline" }, [
+              _c("div", { staticClass: "card-body box-profile" }, [
+                _vm._m(1),
+                _vm._v(" "),
+                _c("h3", { staticClass: "profile-username text-center" }, [
+                  _vm._v(_vm._s(this.user.nom))
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-muted text-center" }, [
+                  _c("i", { staticClass: "fas fa-map-marker-alt" }),
+                  _vm._v(" " + _vm._s(this.user.poblacio))
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-muted text-center" }, [
+                  _vm._v(_vm._s(this.user.email))
+                ]),
+                _vm._v(" "),
+                _vm._m(2)
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._m(3)
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("section", { staticClass: "content-header" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row mb-2" }, [
+          _c("div", { staticClass: "col-sm-6" }, [
+            _c("h1", [_vm._v("El meu perfil")])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center" }, [
+      _c("img", {
+        staticClass: "profile-user-img img-fluid img-circle",
+        attrs: { src: "/images/user2-160x160.jpg", alt: "User profile picture" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { staticClass: "btn btn-secondary btn-block", attrs: { href: "#" } },
+      [_c("b", [_vm._v("Configuració")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-9" }, [
+      _c("div", { staticClass: "card card-dark" }, [
+        _c("div", { staticClass: "card-header p-2" }, [
+          _c("ul", { staticClass: "nav nav-pills" }, [
+            _c("li", { staticClass: "nav-item" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link active",
+                  attrs: { href: "#activity", "data-toggle": "tab" }
+                },
+                [_vm._v("Les meves comandes")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "nav-item" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link",
+                  attrs: { href: "#timeline", "data-toggle": "tab" }
+                },
+                [_vm._v("Tornar a comprar")]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body" }, [
+          _c("div", { staticClass: "tab-content" }, [
+            _c(
+              "div",
+              { staticClass: "active tab-pane", attrs: { id: "activity" } },
+              [
+                _c("div", { staticClass: "card mb-3" }, [
+                  _c("div", { staticClass: "row g-0" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c("img", {
+                        staticClass: "img-fluid p-1 ml-4",
+                        staticStyle: {
+                          height: "150px",
+                          width: "150px",
+                          "border-radius": "150px"
+                        },
+                        attrs: {
+                          src:
+                            "https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg",
+                          alt: "..."
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-8" }, [
+                      _c("div", { staticClass: "card-body" }, [
+                        _c("h5", { staticClass: "card-title" }, [
+                          _vm._v("Producte")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "card-text" }, [
+                          _vm._v(
+                            "\n                                                    This is a wider card with supporting text below as a natural lead-in to\n                                                    additional content. This content is a little bit longer.\n                                                    "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "card-text" }, [
+                          _c("small", { staticClass: "text-muted" }, [
+                            _vm._v("Comprat el 26/04/2021")
+                          ])
+                        ])
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card mb-3" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c("img", {
+                        staticClass: "img-fluid p-1 ml-4",
+                        staticStyle: {
+                          height: "150px",
+                          width: "150px",
+                          "border-radius": "150px"
+                        },
+                        attrs: {
+                          src:
+                            "https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg",
+                          alt: "..."
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-8" }, [
+                      _c("div", { staticClass: "card-body" }, [
+                        _c("h5", { staticClass: "card-title" }, [
+                          _vm._v("Producte")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "card-text" }, [
+                          _vm._v(
+                            "\n                                                    This is a wider card with supporting text below as a natural lead-in to\n                                                    additional content. This content is a little bit longer.\n                                                    "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "card-text" }, [
+                          _c("small", { staticClass: "text-muted" }, [
+                            _vm._v("Comprat el 26/04/2021")
+                          ])
+                        ])
+                      ])
+                    ])
+                  ])
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "tab-pane", attrs: { id: "timeline" } }, [
+              _c("div", { staticClass: "timeline timeline-inverse" }, [
+                _c("div", { staticClass: "time-label" }, [
+                  _c("span", { staticClass: "bg-secondary" }, [
+                    _c("i", { staticClass: "far fa-calendar-alt" }),
+                    _vm._v(
+                      "\n                                                26/04/2021\n                                            "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "timeline-item" }, [
+                    _c("span", { staticClass: "time" }, [
+                      _c("i", { staticClass: "fas fa-store-alt" }),
+                      _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
+                    ]),
+                    _vm._v(" "),
+                    _c("h3", { staticClass: "timeline-header" }, [
+                      _vm._v("Nom del producte")
+                    ]),
+                    _vm._v(" "),
+                    _c("small", { staticClass: "timeline-body" }, [
+                      _vm._v("Descripcio producte")
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "timeline-item" }, [
+                    _c("span", { staticClass: "time" }, [
+                      _c("i", { staticClass: "fas fa-store-alt" }),
+                      _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
+                    ]),
+                    _vm._v(" "),
+                    _c("h3", { staticClass: "timeline-header" }, [
+                      _vm._v("Nom del producte")
+                    ]),
+                    _vm._v(" "),
+                    _c("small", { staticClass: "timeline-body" }, [
+                      _vm._v("Descripcio producte")
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "timeline-item" }, [
+                    _c("span", { staticClass: "time" }, [
+                      _c("i", { staticClass: "fas fa-store-alt" }),
+                      _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
+                    ]),
+                    _vm._v(" "),
+                    _c("h3", { staticClass: "timeline-header" }, [
+                      _vm._v("Nom del producte")
+                    ]),
+                    _vm._v(" "),
+                    _c("small", { staticClass: "timeline-body" }, [
+                      _vm._v("Descripcio producte")
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "time-label" }, [
+                  _c("span", { staticClass: "bg-secondary" }, [
+                    _c("i", { staticClass: "far fa-calendar-alt" }),
+                    _vm._v(
+                      "\n                                                27/10/2020\n                                            "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "timeline-item" }, [
+                    _c("span", { staticClass: "time" }, [
+                      _c("i", { staticClass: "fas fa-store-alt" }),
+                      _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
+                    ]),
+                    _vm._v(" "),
+                    _c("h3", { staticClass: "timeline-header" }, [
+                      _vm._v("Nom del producte")
+                    ]),
+                    _vm._v(" "),
+                    _c("small", { staticClass: "timeline-body" }, [
+                      _vm._v("Descripcio producte")
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
 
 
 
@@ -39333,71 +40829,66 @@ var render = function() {
           _c(
             "div",
             { staticClass: "row" },
-            [
-              _vm._v("\n>>>>>>> origin/ian2\n          "),
-              _vm._l(_vm.productes, function(producte) {
-                return _c(
-                  "div",
-                  { key: producte.id, class: "col-md-4 card-deck mb-4" },
-                  [
-                    _c("div", { class: "card card-primary text-center zoom" }, [
-                      _c("img", {
-                        class: "card-img-top p-3",
-                        attrs: { src: "/images/" + producte.imatge }
-                      }),
-                      _vm._v(" "),
-                      _c("div", { class: "card-body" }, [
-                        _c("div", { class: "card-title font-weight-bold" }, [
-                          _vm._v(
-                            "\n                    " +
-                              _vm._s(producte.nom) +
-                              "\n                    "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("br"),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            class: "badge badge-warning badge-sm text-uppercase"
-                          },
-                          [
-                            _vm._v(
-                              "\n                      " +
-                                _vm._s(producte.ref) +
-                                "\n                    "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("p", { class: "card-text" }, [
-                          _vm._v(
-                            "\n                      " +
-                              _vm._s(producte.descripcio) +
-                              "\n                    "
-                          )
-                        ])
+            _vm._l(_vm.productes, function(producte) {
+              return _c(
+                "div",
+                { key: producte.id, class: "col-md-4 card-deck mb-4" },
+                [
+                  _c("div", { class: "card card-primary text-center zoom" }, [
+                    _c("img", {
+                      class: "card-img-top p-3",
+                      attrs: { src: "/images/" + producte.imatge }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { class: "card-body" }, [
+                      _c("div", { class: "card-title font-weight-bold" }, [
+                        _vm._v(
+                          "\n                  " +
+                            _vm._s(producte.nom) +
+                            "\n                  "
+                        )
                       ]),
                       _vm._v(" "),
-                      _c("div", { class: "card-footer" }, [
-                        _c(
-                          "a",
-                          {
-                            class: "btn btn-outline-secondary btn-icon-right",
-                            attrs: { href: "#" }
-                          },
-                          [_c("span", [_vm._v("Saber més")])]
+                      _c("br"),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          class: "badge badge-warning badge-sm text-uppercase"
+                        },
+                        [
+                          _vm._v(
+                            "\n                    " +
+                              _vm._s(producte.ref) +
+                              "\n                  "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("p", { class: "card-text" }, [
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(producte.descripcio) +
+                            "\n                  "
                         )
                       ])
                     ]),
                     _vm._v(" "),
-                    _vm._v("\n<<<<<<< HEAD\n=======\n          ")
-                  ]
-                )
-              })
-            ],
-            2
+                    _c("div", { class: "card-footer" }, [
+                      _c(
+                        "a",
+                        {
+                          class: "btn btn-outline-secondary btn-icon-right",
+                          attrs: { href: "#" }
+                        },
+                        [_c("span", [_vm._v("Saber més")])]
+                      )
+                    ])
+                  ])
+                ]
+              )
+            }),
+            0
           )
         ])
       ]),
@@ -39446,7 +40937,7 @@ var staticRenderFns = [
                   [
                     _c("i", { staticClass: "fa fa-search" }),
                     _vm._v(
-                      "\n                    Descobreix-lo!\n                  "
+                      "\n                  Descobreix-lo!\n                "
                     )
                   ]
                 ),
@@ -39492,7 +40983,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _vm._v("\n<<<<<<< HEAD\n=======\n          "),
       _c("div", { staticClass: "card-deck" }, [
         _c("div", { staticClass: "card" }, [
           _c("img", {
@@ -39582,7 +41072,7 @@ var staticRenderFns = [
           },
           [
             _c("i", { staticClass: "fa fa-search" }),
-            _vm._v("\n              Descobreix-lo!\n            ")
+            _vm._v("\n            Descobreix-lo!\n          ")
           ]
         )
       ]),
@@ -39614,8 +41104,7 @@ var staticRenderFns = [
               _c("div", { staticClass: "card-body" }, [
                 _c("p", [_vm._v("Holee")])
               ])
-            ]),
-            _vm._v("\n>>>>>>> origin/ian2\n          ")
+            ])
           ])
         ])
       ])
@@ -55507,6 +56996,59 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/CercaComponent.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/components/CercaComponent.vue ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CercaComponent_vue_vue_type_template_id_5b3d439a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CercaComponent.vue?vue&type=template&id=5b3d439a& */ "./resources/js/components/CercaComponent.vue?vue&type=template&id=5b3d439a&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _CercaComponent_vue_vue_type_template_id_5b3d439a___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CercaComponent_vue_vue_type_template_id_5b3d439a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/CercaComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/CercaComponent.vue?vue&type=template&id=5b3d439a&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/CercaComponent.vue?vue&type=template&id=5b3d439a& ***!
+  \***********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CercaComponent_vue_vue_type_template_id_5b3d439a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./CercaComponent.vue?vue&type=template&id=5b3d439a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/CercaComponent.vue?vue&type=template&id=5b3d439a&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CercaComponent_vue_vue_type_template_id_5b3d439a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CercaComponent_vue_vue_type_template_id_5b3d439a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 

@@ -1,11 +1,7 @@
 <style>
 
 .nav-link.active{
-<<<<<<< HEAD
-    background-color: red !important;
-=======
     background-color: #ff6565 !important;
->>>>>>> origin/ian2
     color: white !important;
 }
 .nav-link {
@@ -13,11 +9,8 @@
     color: white !important;
 }
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> origin/ian2
 </style>
 
 
@@ -43,8 +36,7 @@
                             <div class="card-body box-profile">
                                 <div class="text-center">
                                     <img class="profile-user-img img-fluid img-circle"
-<<<<<<< HEAD
-                                        src="../../../node_modules/admin-lte/dist/img/user2-160x160.jpg"
+                                        src="/images/user2-160x160.jpg"
                                         alt="User profile picture">
                                 </div>
 
@@ -53,15 +45,6 @@
                                 <p class="text-muted text-center"><i class="fas fa-map-marker-alt"></i> {{this.user.poblacio}}</p>
 
                                 <p class="text-muted text-center">{{this.user.email}}</p>
-=======
-                                        src="/images/user2-160x160.jpg"
-                                        alt="User profile picture">
-                                </div>
-
-                                <h3 class="profile-username text-center">Nom login</h3>
-
-                                <p class="text-muted text-center"><i class="fas fa-map-marker-alt"></i> Població</p>
->>>>>>> origin/ian2
 
                                 <a href="#" class="btn btn-secondary btn-block"><b>Configuració</b></a>
                             </div>
@@ -224,7 +207,6 @@
 
 
 <script>
-<<<<<<< HEAD
   export default {
       data() {
         return {
@@ -237,12 +219,5 @@
       });
     },
   }
-=======
-    export default {
-        mounted() {
-            console.log("Component mounted.");
-        },
-    };
->>>>>>> origin/ian2
 
 </script>
