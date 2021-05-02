@@ -2116,28 +2116,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     var _this = this;
@@ -2146,8 +2124,10 @@ __webpack_require__.r(__webpack_exports__);
       _this.user = res.data;
       _this.form["id"] = _this.user.id;
       _this.form2["id"] = _this.user.id;
-      _this.form["nom"] = _this.user.nom;
-      _this.form["cognoms"] = _this.user.cognoms;
+      _this.form3["id"] = _this.user.id;
+      _this.form3["nom"] = _this.user.nom;
+      _this.form3["cognoms"] = _this.user.cognoms;
+      _this.form3["arxiu"] = _this.user.profile_pic;
       _this.form["provincia"] = _this.user.provincia;
       _this.form["poblacio"] = _this.user.poblacio;
       _this.form["cp"] = _this.user.cp;
@@ -2160,8 +2140,6 @@ __webpack_require__.r(__webpack_exports__);
       user: "",
       form: {
         id: "",
-        nom: "",
-        cognoms: "",
         provincia: "",
         poblacio: "",
         cp: "",
@@ -2172,6 +2150,12 @@ __webpack_require__.r(__webpack_exports__);
         password: "",
         new_password: "",
         confirm_password: ""
+      },
+      form3: {
+        id: "",
+        nom: "",
+        cognoms: "",
+        arxiu: null
       }
     };
   },
@@ -2207,6 +2191,38 @@ __webpack_require__.r(__webpack_exports__);
         that.errors = error.response.data.errors;
         console.log(that.errors);
       });
+    },
+    modifyProfile: function modifyProfile() {
+      var _this4 = this;
+
+      var that = this;
+      var formData = new FormData();
+
+      if (document.getElementById("arxiu").files[0]) {
+        that.form3["arxiu"] = document.getElementById("arxiu").files[0];
+        formData.append("arxiu", that.form3["arxiu"]);
+      }
+
+      formData.append("id", that.form3["id"]);
+      formData.append("nom", that.form3["nom"]);
+      formData.append("cognoms", that.form3["cognoms"]);
+      axios.post("/api/modifyProfile", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
+      }).then(function (res) {
+        console.log(res);
+
+        _this4.$router.push({
+          name: "Profile"
+        });
+
+        location.reload();
+      })["catch"](function (error) {
+        that.errors = error.response.data.errors;
+        console.log(that.errors);
+      });
+      console.log(that.form3);
     }
   }
 });
@@ -2222,6 +2238,13 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -7910,7 +7933,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.wrapper {\r\n  height: 100%;\n}\nbody, html {\r\n  height: 100%;\n}\n.main-header{\r\n  color:#C22847 !important;\n}\r\n", ""]);
+exports.push([module.i, "\n.wrapper {\n  height: 100%;\n}\nbody, html {\n  height: 100%;\n}\n.main-header{\n  color:#C22847 !important;\n}\n", ""]);
 
 // exports
 
@@ -7929,7 +7952,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.nav-link.active {\r\n    background-color: #ff6565 !important;\r\n    color: white !important;\n}\n.nav-link {\r\n    text-decoration: none !important;\r\n    color: white !important;\n}\r\n", ""]);
+exports.push([module.i, "\n.nav-link.active {\n    background-color: #ff6565 !important;\n    color: white !important;\n}\n.nav-link {\n    text-decoration: none !important;\n    color: white !important;\n}\n", ""]);
 
 // exports
 
@@ -7948,7 +7971,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.zoom {\r\n  transition: transform 0.2s; /* Animation /\r\n}\r\n\r\n.zoom:hover {\r\n  transform: scale(1.05); / (150% zoom)*/\n}\r\n", ""]);
+exports.push([module.i, "\n.zoom {\n  transition: transform 0.2s; /* Animation /\n}\n\n.zoom:hover {\n  transform: scale(1.05); / (150% zoom)*/\n}\n", ""]);
 
 // exports
 
@@ -7967,7 +7990,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#registre {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\r\ninput[type=\"date\"]::-webkit-inner-spin-button {\r\n    display: none;\n}\r\n", ""]);
+exports.push([module.i, "\n#registre {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\ninput[type=\"date\"]::-webkit-inner-spin-button {\n    display: none;\n}\n", ""]);
 
 // exports
 
@@ -40029,12 +40052,33 @@ var render = function() {
                     on: {
                       submit: function($event) {
                         $event.preventDefault()
-                        return _vm.modifyPassword($event)
+                        return _vm.modifyProfile($event)
                       }
                     }
                   },
                   [
-                    _vm._m(1),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { attrs: { for: "cognoms" } }, [
+                        _vm._v("Foto de perfil")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "text-center" }, [
+                        _c("img", {
+                          staticClass: "profile-user-img img-fluid img-circle",
+                          attrs: {
+                            src: "/images/avatars/" + _vm.$data.form3.arxiu,
+                            alt: "User profile picture"
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control-file",
+                        attrs: { type: "file", id: "arxiu" }
+                      })
+                    ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "form-group" }, [
                       _c("label", { attrs: { for: "nom" } }, [_vm._v("Nom")]),
@@ -40044,8 +40088,8 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.$data.form.nom,
-                            expression: "$data.form.nom"
+                            value: _vm.$data.form3.nom,
+                            expression: "$data.form3.nom"
                           }
                         ],
                         staticClass: "form-control",
@@ -40055,13 +40099,17 @@ var render = function() {
                           name: "nom",
                           required: ""
                         },
-                        domProps: { value: _vm.$data.form.nom },
+                        domProps: { value: _vm.$data.form3.nom },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
-                            _vm.$set(_vm.$data.form, "nom", $event.target.value)
+                            _vm.$set(
+                              _vm.$data.form3,
+                              "nom",
+                              $event.target.value
+                            )
                           }
                         }
                       })
@@ -40077,20 +40125,20 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.$data.form.cognoms,
-                            expression: "$data.form.cognoms"
+                            value: _vm.$data.form3.cognoms,
+                            expression: "$data.form3.cognoms"
                           }
                         ],
                         staticClass: "form-control",
                         attrs: { type: "text", id: "cognoms", required: "" },
-                        domProps: { value: _vm.$data.form.cognoms },
+                        domProps: { value: _vm.$data.form3.cognoms },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
                             _vm.$set(
-                              _vm.$data.form,
+                              _vm.$data.form3,
                               "cognoms",
                               $event.target.value
                             )
@@ -40099,7 +40147,7 @@ var render = function() {
                       })
                     ]),
                     _vm._v(" "),
-                    _vm._m(2)
+                    _vm._m(1)
                   ]
                 )
               ])
@@ -40234,7 +40282,7 @@ var render = function() {
                       })
                     ]),
                     _vm._v(" "),
-                    _vm._m(3)
+                    _vm._m(2)
                   ]
                 )
               ])
@@ -40255,69 +40303,6 @@ var render = function() {
                     }
                   },
                   [
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", { attrs: { for: "nom" } }, [_vm._v("Nom")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.$data.form.nom,
-                            expression: "$data.form.nom"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          id: "nom",
-                          name: "nom",
-                          required: ""
-                        },
-                        domProps: { value: _vm.$data.form.nom },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(_vm.$data.form, "nom", $event.target.value)
-                          }
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group" }, [
-                      _c("label", { attrs: { for: "cognoms" } }, [
-                        _vm._v("Cognoms")
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.$data.form.cognoms,
-                            expression: "$data.form.cognoms"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text", id: "cognoms", required: "" },
-                        domProps: { value: _vm.$data.form.cognoms },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.$data.form,
-                              "cognoms",
-                              $event.target.value
-                            )
-                          }
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
                     _c("div", { staticClass: "form-group" }, [
                       _c("label", { attrs: { for: "provincia" } }, [
                         _vm._v("Provincia")
@@ -40442,7 +40427,7 @@ var render = function() {
                       })
                     ]),
                     _vm._v(" "),
-                    _vm._m(4)
+                    _vm._m(3)
                   ]
                 )
               ])
@@ -40466,31 +40451,6 @@ var staticRenderFns = [
           ])
         ])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("label", { attrs: { for: "cognoms" } }, [_vm._v("Foto de perfil")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "text-center" }, [
-        _c("img", {
-          staticClass: "profile-user-img img-fluid img-circle",
-          attrs: {
-            src: "/images/user2-160x160.jpg",
-            alt: "User profile picture"
-          }
-        })
-      ]),
-      _vm._v(" "),
-      _c("hr"),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control-file",
-        attrs: { type: "file", id: "arxiu", required: "" }
-      })
     ])
   },
   function() {
@@ -40535,7 +40495,7 @@ var staticRenderFns = [
         { staticClass: "btn btn-secondary", attrs: { type: "submit" } },
         [
           _vm._v(
-            "\n                                        Modifica les meves dades\n                                    "
+            "\n                                        Modifica la meva direcció\n                                    "
           )
         ]
       )
@@ -40569,141 +40529,182 @@ var render = function() {
     [
       _vm._m(0),
       _vm._v(" "),
-      _c("aside", { staticClass: "main-sidebar sidebar-light elevation-4" }, [
-        _vm._m(1),
-        _vm._v(" "),
-        _c("div", { staticClass: "sidebar fixed-left" }, [
-          _c("div", { staticClass: "user-panel mt-3 pb-3 mb-3 d-flex" }, [
-            _vm._m(2),
-            _vm._v(" "),
-            _c("div", { staticClass: "info" }, [
-              _c("a", { staticClass: "d-block", attrs: { href: "#" } }, [
-                _vm._v("Hola! " + _vm._s(this.user.nom))
+      _c(
+        "aside",
+        { staticClass: "main-sidebar sidebar-light elevation-4" },
+        [
+          _c(
+            "router-link",
+            { staticClass: "brand-link", attrs: { to: "productes" } },
+            [
+              _c("img", {
+                staticClass: "brand-image img-circle elevation-3",
+                staticStyle: { opacity: "0.8", background: "#ff6565" },
+                attrs: { src: "/images/logo_mercat.png", alt: "" }
+              }),
+              _vm._v(" "),
+              _c("span", { staticClass: "brand-text font-weight-light" }, [
+                _vm._v("Mercat Virtual")
               ])
-            ])
-          ]),
+            ]
+          ),
           _vm._v(" "),
-          _c("nav", { staticClass: "mt-2" }, [
-            _c(
-              "ul",
-              {
-                staticClass:
-                  "nav nav-pills nav-sidebar flex-column nav-child-indent",
-                attrs: {
-                  "data-widget": "treeview",
-                  role: "menu",
-                  "data-accordion": "false"
-                }
-              },
-              [
-                _c("li", { staticClass: "nav-header text-dark" }, [
-                  _vm._v("MENÚ PRINCIPAL")
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "nav-item" }, [
+          _c("div", { staticClass: "sidebar fixed-left" }, [
+            _c("div", { staticClass: "user-panel mt-3 pb-3 mb-3 d-flex" }, [
+              _c("div", { staticClass: "image" }, [
+                this.user.profile_pic
+                  ? _c("img", {
+                      staticClass: "img-circle elevation-2",
+                      attrs: {
+                        src: "/images/avatars/" + this.user.profile_pic,
+                        alt: "User Image"
+                      }
+                    })
+                  : _c("img", {
+                      staticClass: "img-circle elevation-2",
+                      attrs: {
+                        src: "/images/avatars/default.jpg",
+                        alt: "User Image"
+                      }
+                    })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "info" }, [
+                _c("a", { staticClass: "d-block", attrs: { href: "#" } }, [
+                  _vm._v("Hola! " + _vm._s(this.user.nom))
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("nav", { staticClass: "mt-2" }, [
+              _c(
+                "ul",
+                {
+                  staticClass:
+                    "nav nav-pills nav-sidebar flex-column nav-child-indent",
+                  attrs: {
+                    "data-widget": "treeview",
+                    role: "menu",
+                    "data-accordion": "false"
+                  }
+                },
+                [
+                  _c("li", { staticClass: "nav-header text-dark" }, [
+                    _vm._v("MENÚ PRINCIPAL")
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "nav-item" }, [
+                    _vm._m(1),
+                    _vm._v(" "),
+                    _c("ul", { staticClass: "nav nav-treeview" }, [
+                      _c(
+                        "li",
+                        { staticClass: "nav-item" },
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              staticClass: "nav-link",
+                              attrs: { to: "profile" }
+                            },
+                            [
+                              _c("i", {
+                                staticClass:
+                                  "nav-icon far fa-user-circle text-dark"
+                              }),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "text-dark" }, [
+                                _vm._v("Veure perfil")
+                              ])
+                            ]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _vm._m(2),
+                      _vm._v(" "),
+                      _c(
+                        "li",
+                        { staticClass: "nav-item" },
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              staticClass: "nav-link",
+                              attrs: { to: "editarPerfil" }
+                            },
+                            [
+                              _c("i", {
+                                staticClass: "fas fa-cogs nav-icon text-dark"
+                              }),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "text-dark" }, [
+                                _vm._v("Configuració")
+                              ])
+                            ]
+                          )
+                        ],
+                        1
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
                   _vm._m(3),
                   _vm._v(" "),
-                  _c("ul", { staticClass: "nav nav-treeview" }, [
+                  _c(
+                    "li",
+                    { staticClass: "nav-item" },
+                    [
+                      _c(
+                        "router-link",
+                        { staticClass: "nav-link", attrs: { to: "productes" } },
+                        [
+                          _c("i", {
+                            staticClass:
+                              "nav-icon fas fa-shopping-cart text-dark"
+                          }),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "text-dark" }, [
+                            _vm._v("Comprar")
+                          ])
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "nav-item fixed-bottom ml-2" }, [
                     _c(
-                      "li",
-                      { staticClass: "nav-item" },
-                      [
-                        _c(
-                          "router-link",
-                          { staticClass: "nav-link", attrs: { to: "profile" } },
-                          [
-                            _c("i", {
-                              staticClass:
-                                "nav-icon far fa-user-circle text-dark"
-                            }),
-                            _vm._v(" "),
-                            _c("p", { staticClass: "text-dark" }, [
-                              _vm._v("Veure perfil")
-                            ])
-                          ]
-                        )
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _vm._m(4),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      { staticClass: "nav-item" },
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            staticClass: "nav-link",
-                            attrs: { to: "editarPerfil" }
-                          },
-                          [
-                            _c("i", {
-                              staticClass: "fas fa-cogs nav-icon text-dark"
-                            }),
-                            _vm._v(" "),
-                            _c("p", { staticClass: "text-dark" }, [
-                              _vm._v("Configuració")
-                            ])
-                          ]
-                        )
-                      ],
-                      1
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _vm._m(5),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  { staticClass: "nav-item" },
-                  [
-                    _c(
-                      "router-link",
-                      { staticClass: "nav-link", attrs: { to: "productes" } },
+                      "a",
+                      {
+                        staticClass: "nav-link",
+                        attrs: { href: "#" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.logout($event)
+                          }
+                        }
+                      },
                       [
                         _c("i", {
-                          staticClass: "nav-icon fas fa-shopping-cart text-dark"
+                          staticClass: "nav-icon fas fa-power-off text-dark"
                         }),
                         _vm._v(" "),
                         _c("p", { staticClass: "text-dark" }, [
-                          _vm._v("Comprar")
+                          _vm._v("Sortir")
                         ])
                       ]
                     )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c("li", { staticClass: "nav-item fixed-bottom ml-2" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "nav-link",
-                      attrs: { href: "#" },
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          return _vm.logout($event)
-                        }
-                      }
-                    },
-                    [
-                      _c("i", {
-                        staticClass: "nav-icon fas fa-power-off text-dark"
-                      }),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "text-dark" }, [_vm._v("Sortir")])
-                    ]
-                  )
-                ])
-              ]
-            )
+                  ])
+                ]
+              )
+            ])
           ])
-        ])
-      ]),
+        ],
+        1
+      ),
       _vm._v(" "),
       _c("router-view")
     ],
@@ -40783,33 +40784,6 @@ var staticRenderFns = [
         ])
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "brand-link", attrs: { href: "" } }, [
-      _c("img", {
-        staticClass: "brand-image img-circle elevation-3",
-        staticStyle: { opacity: "0.8", background: "#ff6565" },
-        attrs: { src: "/images/logo_mercat.png", alt: "" }
-      }),
-      _vm._v(" "),
-      _c("span", { staticClass: "brand-text font-weight-light" }, [
-        _vm._v("Mercat Virtual")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "image" }, [
-      _c("img", {
-        staticClass: "img-circle elevation-2",
-        attrs: { src: "/images/user2-160x160.jpg", alt: "User Image" }
-      })
-    ])
   },
   function() {
     var _vm = this
@@ -58753,8 +58727,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\abram\Documents\GitHub\tfg\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\abram\Documents\GitHub\tfg\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/ian/Escritorio/tfg/tfg/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/ian/Escritorio/tfg/tfg/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

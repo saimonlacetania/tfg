@@ -13,6 +13,5 @@ class ProductesController extends Controller
     {
         $productes= Producte::all();
         return $productes;
-       
     }
 }

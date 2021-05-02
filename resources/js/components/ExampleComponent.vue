@@ -46,7 +46,7 @@ body, html {
     <!-- MENÚ ESQUERRA -->
     <aside class="main-sidebar sidebar-light elevation-4">
       <!-- Logo -->
-      <a href="" class="brand-link">
+      <router-link :to="'productes'"  class="brand-link">
         <img
           src="/images/logo_mercat.png"
           alt=""
@@ -54,7 +54,7 @@ body, html {
           style="opacity: 0.8; background: #ff6565;"
         />
         <span class="brand-text font-weight-light">Mercat Virtual</span>
-      </a>
+      </router-link>
       
       <!-- Sidebar -->
       
@@ -63,7 +63,14 @@ body, html {
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
             <img
-              src="/images/user2-160x160.jpg"
+              v-if="this.user.profile_pic"
+              :src="'/images/avatars/'+this.user.profile_pic"
+              class="img-circle elevation-2"
+              alt="User Image"
+            />
+             <img
+              v-else
+              :src="'/images/avatars/default.jpg'"
               class="img-circle elevation-2"
               alt="User Image"
             />
