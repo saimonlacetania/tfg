@@ -17,7 +17,7 @@
                     <div class="col-md-4">
                         <div class="card card-dark card-outline">
                             <div class="card-body">
-                                <form @submit.prevent="modifyPassword">
+                                <form @submit.prevent="modifyProfile">
                                     <div class="form-group">
                                         <label for="cognoms"
                                             >Foto de perfil</label
@@ -25,16 +25,15 @@
                                         <div class="text-center">
                                             <img
                                                 class="profile-user-img img-fluid img-circle"
-                                                src="/images/user2-160x160.jpg"
+                                                :src="'/images/avatars/'+$data.form3.arxiu"
                                                 alt="User profile picture"
                                             />
                                         </div>
-                                        <hr />
+                                        <br />
                                         <input
                                             type="file"
                                             class="form-control-file"
                                             id="arxiu"
-                                            required
                                         />
                                     </div>
                                     <div class="form-group">
@@ -44,7 +43,7 @@
                                             class="form-control"
                                             id="nom"
                                             name="nom"
-                                            v-model="$data.form.nom"
+                                            v-model="$data.form3.nom"
                                             required
                                         />
                                     </div>
@@ -54,7 +53,7 @@
                                             type="text"
                                             class="form-control"
                                             id="cognoms"
-                                            v-model="$data.form.cognoms"
+                                            v-model="$data.form3.cognoms"
                                             required
                                         />
                                     </div>
@@ -133,27 +132,6 @@
                             <div class="card-body">
                                 <form @submit.prevent="modifyUser">
                                     <div class="form-group">
-                                        <label for="nom">Nom</label>
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            id="nom"
-                                            name="nom"
-                                            v-model="$data.form.nom"
-                                            required
-                                        />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="cognoms">Cognoms</label>
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            id="cognoms"
-                                            v-model="$data.form.cognoms"
-                                            required
-                                        />
-                                    </div>
-                                    <div class="form-group">
                                         <label for="provincia">Provincia</label>
                                         <input
                                             type="text"
@@ -195,7 +173,7 @@
                                             type="submit"
                                             class="btn btn-secondary"
                                         >
-                                            Modifica les meves dades
+                                            Modifica la meva direcció
                                         </button>
                                     </div>
                                 </form>
@@ -218,8 +196,10 @@ export default {
             this.user = res.data;
             this.form["id"] = this.user.id;
             this.form2["id"] = this.user.id;
-            this.form["nom"] = this.user.nom;
-            this.form["cognoms"] = this.user.cognoms;
+            this.form3["id"] = this.user.id;
+            this.form3["nom"] = this.user.nom;
+            this.form3["cognoms"] = this.user.cognoms;
+            this.form3["arxiu"] = this.user.profile_pic;
             this.form["provincia"] = this.user.provincia;
             this.form["poblacio"] = this.user.poblacio;
             this.form["cp"] = this.user.cp;
@@ -232,8 +212,6 @@ export default {
             user: "",
             form: {
                 id: "",
-                nom: "",
-                cognoms: "",
                 provincia: "",
                 poblacio: "",
                 cp: "",
@@ -244,6 +222,12 @@ export default {
                 password: "",
                 new_password: "",
                 confirm_password: ""
+            },
+            form3: {
+                id: "",
+                nom: "",
+                cognoms: "",
+                arxiu: null
             }
         };
     },
@@ -275,6 +259,35 @@ export default {
                     that.errors = error.response.data.errors;
                     console.log(that.errors);
                 });
+        },
+        modifyProfile() {
+            let that = this;
+            let formData = new FormData();
+            if (document.getElementById("arxiu").files[0]) {
+                that.form3["arxiu"] = document.getElementById("arxiu").files[0];
+                formData.append("arxiu", that.form3["arxiu"]);
+            }
+            formData.append("id", that.form3["id"]);
+            formData.append("nom", that.form3["nom"]);
+            formData.append("cognoms", that.form3["cognoms"]);
+
+            axios
+                .post("/api/modifyProfile", formData, {
+                    headers: {
+                        "Content-Type": "multipart/form-data"
+                    }
+                })
+                .then(res => {
+                    console.log(res);
+                    this.$router.push({ name: "Profile" });
+                    location.reload();
+                })
+                .catch(error => {
+                    that.errors = error.response.data.errors;
+                    console.log(that.errors);
+                });
+
+            console.log(that.form3);
         }
     }
 };

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use App\User;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -14,12 +16,6 @@ class UserController extends Controller
     {
     
         $usuari = User::find($request->id);
-        if ($request->nom != "") {
-            $usuari->nom = $request->nom;
-        }
-        if ($request->cognoms != "") {
-            $usuari->cognoms = $request->cognoms;
-        }
         $usuari->provincia = $request->provincia;
         $usuari->poblacio = $request->poblacio;
         $usuari->cp = $request->cp;
@@ -50,4 +46,27 @@ class UserController extends Controller
             }
         }
     }
+
+    public function modifyProfile(Request $request) {
+        if ($request->validate([
+            'nom' => ['required'],
+            'cognoms' => ['required'],
+            'arxiu' => 'mimes:jpg,jpeg,png,svg'
+        ])) {
+            if ($request->file("arxiu") != null){
+                $usuari = User::find($request->id);
+                Storage::disk('public')->put('avatars', $request->file('arxiu'));
+                $usuari->nom = $request->nom;
+                $usuari->cognoms = $request->cognoms;
+                $usuari->profile_pic = $request->file("arxiu")->hashName();
+                $usuari->save();
+                return response($request);
+            } else {
+                return response($request);
+            }
+        }
+            
+        
+        }
+    
 }
