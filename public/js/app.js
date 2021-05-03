@@ -2416,6 +2416,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2598,60 +2604,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -7933,7 +7885,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.wrapper {\n  height: 100%;\n}\nbody, html {\n  height: 100%;\n}\n.main-header{\n  color:#C22847 !important;\n}\n", ""]);
+exports.push([module.i, "\n.wrapper {\n  height: 100%;\n}\nbody,\nhtml {\n  height: 100%;\n}\n.main-header {\n  color: #c22847 !important;\n}\n", ""]);
 
 // exports
 
@@ -7952,7 +7904,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.nav-link.active {\n    background-color: #ff6565 !important;\n    color: white !important;\n}\n.nav-link {\n    text-decoration: none !important;\n    color: white !important;\n}\n", ""]);
+exports.push([module.i, "\n.nav-link.active {\n  background-color: #ff6565 !important;\n  color: white !important;\n}\n.nav-link {\n  text-decoration: none !important;\n  color: white !important;\n}\n", ""]);
 
 // exports
 
@@ -41148,15 +41100,23 @@ var render = function() {
                 "div",
                 { staticClass: "card-body box-profile" },
                 [
-                  _vm._m(1),
+                  _c("div", { staticClass: "text-center" }, [
+                    _c("img", {
+                      staticClass: "profile-user-img img-fluid img-circle",
+                      attrs: {
+                        src: "/images/avatars/" + this.user.profile_pic,
+                        alt: "User profile picture"
+                      }
+                    })
+                  ]),
                   _vm._v(" "),
                   _c("h3", { staticClass: "profile-username text-center" }, [
                     _vm._v(
-                      "\n                                " +
+                      "\n                " +
                         _vm._s(this.user.nom) +
                         " " +
                         _vm._s(this.user.cognoms) +
-                        "\n                            "
+                        "\n              "
                     )
                   ]),
                   _vm._v(" "),
@@ -41164,11 +41124,11 @@ var render = function() {
                     ? _c("p", { staticClass: "text-muted text-center" }, [
                         _c("i", { staticClass: "fas fa-map-marker-alt" }),
                         _vm._v(
-                          "\n                                " +
+                          "\n                " +
                             _vm._s(this.user.poblacio) +
-                            ",\n                                " +
+                            ",\n                " +
                             _vm._s(this.user.provincia) +
-                            "\n                            "
+                            "\n              "
                         )
                       ])
                     : _vm._e(),
@@ -41187,7 +41147,7 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _vm._m(2)
+          _vm._m(1)
         ])
       ])
     ])
@@ -41206,17 +41166,6 @@ var staticRenderFns = [
           ])
         ])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-center" }, [
-      _c("img", {
-        staticClass: "profile-user-img img-fluid img-circle",
-        attrs: { src: "/images/user2-160x160.jpg", alt: "User profile picture" }
-      })
     ])
   },
   function() {
@@ -41278,22 +41227,18 @@ var staticRenderFns = [
                     _c("div", { staticClass: "col-md-8" }, [
                       _c("div", { staticClass: "card-body" }, [
                         _c("h5", { staticClass: "card-title" }, [
-                          _vm._v(
-                            "\n                                                        Producte\n                                                    "
-                          )
+                          _vm._v("Producte")
                         ]),
                         _vm._v(" "),
                         _c("p", { staticClass: "card-text" }, [
                           _vm._v(
-                            "\n                                                        This is a wider card\n                                                        with supporting text\n                                                        below as a natural\n                                                        lead-in to\n                                                        additional content.\n                                                        This content is a\n                                                        little bit longer.\n                                                    "
+                            "\n                            This is a wider card with supporting text below as\n                            a natural lead-in to additional content. This\n                            content is a little bit longer.\n                          "
                           )
                         ]),
                         _vm._v(" "),
                         _c("p", { staticClass: "card-text" }, [
                           _c("small", { staticClass: "text-muted" }, [
-                            _vm._v(
-                              "Comprat el\n                                                            26/04/2021"
-                            )
+                            _vm._v("Comprat el 26/04/2021")
                           ])
                         ])
                       ])
@@ -41322,22 +41267,18 @@ var staticRenderFns = [
                     _c("div", { staticClass: "col-md-8" }, [
                       _c("div", { staticClass: "card-body" }, [
                         _c("h5", { staticClass: "card-title" }, [
-                          _vm._v(
-                            "\n                                                        Producte\n                                                    "
-                          )
+                          _vm._v("Producte")
                         ]),
                         _vm._v(" "),
                         _c("p", { staticClass: "card-text" }, [
                           _vm._v(
-                            "\n                                                        This is a wider card\n                                                        with supporting text\n                                                        below as a natural\n                                                        lead-in to\n                                                        additional content.\n                                                        This content is a\n                                                        little bit longer.\n                                                    "
+                            "\n                            This is a wider card with supporting text below as\n                            a natural lead-in to additional content. This\n                            content is a little bit longer.\n                          "
                           )
                         ]),
                         _vm._v(" "),
                         _c("p", { staticClass: "card-text" }, [
                           _c("small", { staticClass: "text-muted" }, [
-                            _vm._v(
-                              "Comprat el\n                                                            26/04/2021"
-                            )
+                            _vm._v("Comprat el 26/04/2021")
                           ])
                         ])
                       ])
@@ -41353,7 +41294,7 @@ var staticRenderFns = [
                   _c("span", { staticClass: "bg-secondary" }, [
                     _c("i", { staticClass: "far fa-calendar-alt" }),
                     _vm._v(
-                      "\n                                                26/04/2021\n                                            "
+                      "\n                        26/04/2021\n                      "
                     )
                   ])
                 ]),
@@ -41364,23 +41305,15 @@ var staticRenderFns = [
                   _c("div", { staticClass: "timeline-item" }, [
                     _c("span", { staticClass: "time" }, [
                       _c("i", { staticClass: "fas fa-store-alt" }),
-                      _c("a", { attrs: { href: "#" } }, [
-                        _vm._v(
-                          "\n                                                        Nom Botiga"
-                        )
-                      ])
+                      _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
                     ]),
                     _vm._v(" "),
                     _c("h3", { staticClass: "timeline-header" }, [
-                      _vm._v(
-                        "\n                                                    Nom del producte\n                                                "
-                      )
+                      _vm._v("Nom del producte")
                     ]),
                     _vm._v(" "),
                     _c("small", { staticClass: "timeline-body" }, [
-                      _vm._v(
-                        "Descripcio\n                                                    producte"
-                      )
+                      _vm._v("Descripcio producte")
                     ])
                   ])
                 ]),
@@ -41391,23 +41324,15 @@ var staticRenderFns = [
                   _c("div", { staticClass: "timeline-item" }, [
                     _c("span", { staticClass: "time" }, [
                       _c("i", { staticClass: "fas fa-store-alt" }),
-                      _c("a", { attrs: { href: "#" } }, [
-                        _vm._v(
-                          "\n                                                        Nom Botiga"
-                        )
-                      ])
+                      _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
                     ]),
                     _vm._v(" "),
                     _c("h3", { staticClass: "timeline-header" }, [
-                      _vm._v(
-                        "\n                                                    Nom del producte\n                                                "
-                      )
+                      _vm._v("Nom del producte")
                     ]),
                     _vm._v(" "),
                     _c("small", { staticClass: "timeline-body" }, [
-                      _vm._v(
-                        "Descripcio\n                                                    producte"
-                      )
+                      _vm._v("Descripcio producte")
                     ])
                   ])
                 ]),
@@ -41418,23 +41343,15 @@ var staticRenderFns = [
                   _c("div", { staticClass: "timeline-item" }, [
                     _c("span", { staticClass: "time" }, [
                       _c("i", { staticClass: "fas fa-store-alt" }),
-                      _c("a", { attrs: { href: "#" } }, [
-                        _vm._v(
-                          "\n                                                        Nom Botiga"
-                        )
-                      ])
+                      _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
                     ]),
                     _vm._v(" "),
                     _c("h3", { staticClass: "timeline-header" }, [
-                      _vm._v(
-                        "\n                                                    Nom del producte\n                                                "
-                      )
+                      _vm._v("Nom del producte")
                     ]),
                     _vm._v(" "),
                     _c("small", { staticClass: "timeline-body" }, [
-                      _vm._v(
-                        "Descripcio\n                                                    producte"
-                      )
+                      _vm._v("Descripcio producte")
                     ])
                   ])
                 ]),
@@ -41443,7 +41360,7 @@ var staticRenderFns = [
                   _c("span", { staticClass: "bg-secondary" }, [
                     _c("i", { staticClass: "far fa-calendar-alt" }),
                     _vm._v(
-                      "\n                                                27/10/2020\n                                            "
+                      "\n                        27/10/2020\n                      "
                     )
                   ])
                 ]),
@@ -41454,23 +41371,15 @@ var staticRenderFns = [
                   _c("div", { staticClass: "timeline-item" }, [
                     _c("span", { staticClass: "time" }, [
                       _c("i", { staticClass: "fas fa-store-alt" }),
-                      _c("a", { attrs: { href: "#" } }, [
-                        _vm._v(
-                          "\n                                                        Nom Botiga"
-                        )
-                      ])
+                      _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
                     ]),
                     _vm._v(" "),
                     _c("h3", { staticClass: "timeline-header" }, [
-                      _vm._v(
-                        "\n                                                    Nom del producte\n                                                "
-                      )
+                      _vm._v("Nom del producte")
                     ]),
                     _vm._v(" "),
                     _c("small", { staticClass: "timeline-body" }, [
-                      _vm._v(
-                        "Descripcio\n                                                    producte"
-                      )
+                      _vm._v("Descripcio producte")
                     ])
                   ])
                 ])
@@ -58727,8 +58636,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/ian/Escritorio/tfg/tfg/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/ian/Escritorio/tfg/tfg/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/tfg/tfg/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/tfg/tfg/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

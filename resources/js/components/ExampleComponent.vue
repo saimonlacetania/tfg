@@ -2,11 +2,12 @@
 .wrapper {
   height: 100%;
 }
-body, html {
+body,
+html {
   height: 100%;
 }
-.main-header{
-  color:#C22847 !important;
+.main-header {
+  color: #c22847 !important;
 }
 </style>
 
@@ -18,11 +19,16 @@ body, html {
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" data-widget="pushmenu" href="#" role="button">
-          <i class="fas fa-bars" style="color:#ff6565;"></i
+            <i class="fas fa-bars" style="color: #ff6565"></i
           ></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block text-dark">
-          <a href="index3.html" class="nav-link text-dark" style="color: #343a40 !important;text-decoration:none !important;">Inici</a>
+          <a
+            href="index3.html"
+            class="nav-link text-dark"
+            style="color: #343a40 !important; text-decoration: none !important"
+            >Inici</a
+          >
         </li>
       </ul>
       <!-- Right navbar links -->
@@ -35,7 +41,7 @@ body, html {
             href="#"
             aria-expanded="false"
           >
-            <i class="fas fa-shopping-cart" style="color:#ff6565;"></i>
+            <i class="fas fa-shopping-cart" style="color: #ff6565"></i>
             <span class="font-weight-light text-dark">Cistella</span>
           </a>
         </li>
@@ -46,29 +52,29 @@ body, html {
     <!-- MENÚ ESQUERRA -->
     <aside class="main-sidebar sidebar-light elevation-4">
       <!-- Logo -->
-      <router-link :to="'productes'"  class="brand-link">
+      <router-link :to="'productes'" class="brand-link">
         <img
           src="/images/logo_mercat.png"
           alt=""
           class="brand-image img-circle elevation-3"
-          style="opacity: 0.8; background: #ff6565;"
+          style="opacity: 0.8; background: #ff6565"
         />
         <span class="brand-text font-weight-light">Mercat Virtual</span>
       </router-link>
-      
+
       <!-- Sidebar -->
-      
+
       <div class="sidebar fixed-left">
         <!-- Sidebar usuari (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
             <img
               v-if="this.user.profile_pic"
-              :src="'/images/avatars/'+this.user.profile_pic"
+              :src="'/images/avatars/' + this.user.profile_pic"
               class="img-circle elevation-2"
               alt="User Image"
             />
-             <img
+            <img
               v-else
               :src="'/images/avatars/default.jpg'"
               class="img-circle elevation-2"

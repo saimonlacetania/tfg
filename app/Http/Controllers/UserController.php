@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation\ValidationException;
 use App\User;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
+use Image;
 
 class UserController extends Controller
 {
     public function modify(Request $request)
     {
-    
+
         $usuari = User::find($request->id);
         $usuari->provincia = $request->provincia;
         $usuari->poblacio = $request->poblacio;
@@ -47,15 +46,20 @@ class UserController extends Controller
         }
     }
 
-    public function modifyProfile(Request $request) {
+    public function modifyProfile(Request $request)
+    {
         if ($request->validate([
             'nom' => ['required'],
             'cognoms' => ['required'],
-            'arxiu' => 'mimes:jpg,jpeg,png,svg'
+            'arxiu' => 'mimes:jpg,jpeg,png,svg',
         ])) {
-            if ($request->file("arxiu") != null){
+            if ($request->file("arxiu") != null) {
                 $usuari = User::find($request->id);
                 Storage::disk('public')->put('avatars', $request->file('arxiu'));
+                //Resize image here
+                $thumbnailpath = public_path('images/avatars/' . $request->file("arxiu")->hashName());
+                $img = Image::make($thumbnailpath)->resize(150, 150);
+                $img->save($thumbnailpath);
                 $usuari->nom = $request->nom;
                 $usuari->cognoms = $request->cognoms;
                 $usuari->profile_pic = $request->file("arxiu")->hashName();
@@ -65,8 +69,7 @@ class UserController extends Controller
                 return response($request);
             }
         }
-            
-        
-        }
-    
+
+    }
+
 }
