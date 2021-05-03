@@ -7933,7 +7933,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.wrapper {\n  height: 100%;\n}\nbody, html {\n  height: 100%;\n}\n.main-header{\n  color:#C22847 !important;\n}\n", ""]);
+exports.push([module.i, "\n.wrapper {\r\n  height: 100%;\n}\nbody, html {\r\n  height: 100%;\n}\n.main-header{\r\n  color:#C22847 !important;\n}\r\n", ""]);
 
 // exports
 
@@ -7952,7 +7952,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.nav-link.active {\n    background-color: #ff6565 !important;\n    color: white !important;\n}\n.nav-link {\n    text-decoration: none !important;\n    color: white !important;\n}\n", ""]);
+exports.push([module.i, "\n.nav-link.active {\r\n    background-color: #ff6565 !important;\r\n    color: white !important;\n}\n.nav-link {\r\n    text-decoration: none !important;\r\n    color: white !important;\n}\r\n", ""]);
 
 // exports
 
@@ -7971,7 +7971,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.zoom {\n  transition: transform 0.2s; /* Animation /\n}\n\n.zoom:hover {\n  transform: scale(1.05); / (150% zoom)*/\n}\n", ""]);
+exports.push([module.i, "\n.zoom {\r\n  transition: transform 0.2s; /* Animation /\r\n}\r\n\r\n.zoom:hover {\r\n  transform: scale(1.05); / (150% zoom)*/\n}\r\n", ""]);
 
 // exports
 
@@ -7990,7 +7990,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#registre {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\ninput[type=\"date\"]::-webkit-inner-spin-button {\n    display: none;\n}\n", ""]);
+exports.push([module.i, "\n#registre {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\r\ninput[type=\"date\"]::-webkit-inner-spin-button {\r\n    display: none;\n}\r\n", ""]);
 
 // exports
 
@@ -58727,8 +58727,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/ian/Escritorio/tfg/tfg/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/ian/Escritorio/tfg/tfg/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\abram\Documents\GitHub\tfg\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\abram\Documents\GitHub\tfg\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
