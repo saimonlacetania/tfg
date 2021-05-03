@@ -111,13 +111,13 @@ html {
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <router-link class="nav-link" :to="'/profile'">
+                    <router-link class="nav-link" :to="'profile'">
                       <i class="nav-icon far fa-user-circle text-dark"></i>
                       <p class="text-dark">Veure perfil</p>
                     </router-link>
                   </li>
                   <li class="nav-item">
-                    <router-link class="nav-link" :to="'/editarPerfil'">
+                    <router-link class="nav-link" :to="'editarPerfil'">
                       <i class="fas fa-cogs nav-icon text-dark"></i>
                       <p class="text-dark">Configuració</p>
                     </router-link>
@@ -135,10 +135,10 @@ html {
                   </a>
                   <ul class="nav nav-treeview nav-child-indent">
                     <li class="nav-item">
-                      <a href="../../index.html" class="nav-link">
+                      <router-link class="nav-link" :to="'botiga'">
                         <i class="fas fa-feather-alt nav-icon text-dark"></i>
                         <p class="text-dark">Perfil</p>
-                      </a>
+                      </router-link>
                     </li>
                     <li class="nav-item">
                       <a href="../../index.html" class="nav-link">
@@ -155,8 +155,17 @@ html {
                   </ul>
                 </li>
               </span>
+              <span v-else>
+                <li class="nav-item">
+                  <router-link class="nav-link" :to="'crearBotiga'">
+                    <i class="fas fa-feather-alt nav-icon text-dark"></i>
+                    <p class="text-dark">Crear Botiga</p>
+                  </router-link>
+                </li>
+              </span>
+
               <li class="nav-item">
-                <router-link class="nav-link" :to="'/productes'">
+                <router-link class="nav-link" :to="'productes'">
                   <i class="nav-icon fas fa-shopping-cart text-dark"></i>
                   <p class="text-dark">Comprar</p>
                 </router-link>

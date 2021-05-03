@@ -10,24 +10,37 @@
 </style>
 
 <template>
-    
+    <div class="content-wrapper">
+        <h1>Component botiga</h1>
+        <h2>{{this.botiga.nom}}</h2>
+        <h2>{{this.botiga.descripcio}}</h2>
+    </div>
 </template>
 
 <script>
 export default {
     data() {
         return {
-            user: "",
-            botiga: ""
+            botiga: "",
+            user: ""
         };
     },
     mounted() {
-        axios.get("/api/user").then(res => {
-            this.user = res.data;
-        });
-        axios.get("/api/botiga").then(res => {
-            this.botiga = res.data;
-        });
-    }
+        axios.get("/api/user").then((res) => {
+                this.user = res.data;
+            }).then(
+        axios.get("/api/botiga").then(res2 => {
+            console.log(this.user.id);
+            for (let b in res2.data) {
+                if (res2.data[b].id_usuari==this.user.id) {
+                    this.botiga = res2.data[b]
+                }
+            }
+        }));
+        
+        
+        
+    },
+
 };
 </script>

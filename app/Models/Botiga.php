@@ -11,7 +11,7 @@ class Botiga extends Model
     use Notifiable;
 
     protected $fillable = [
-        'nom','descripcio', 'telf_1', 'telf_2', 'direccio', 'cp', 'poblacio', 'provincia', 'email', 'instagram', 'facebook', 'twitter', 'nif', 'cif'
+        'nom','descripcio', 'telf_1', 'telf_2', 'id_usuari', 'direccio', 'cp', 'poblacio', 'provincia', 'email', 'instagram', 'facebook', 'twitter', 'nif', 'cif'
     ];
 
     //taula
@@ -19,6 +19,6 @@ class Botiga extends Model
 
     protected function user()
     {
-        return $this->belongsTo('App\Models\User', 'id_usuari');
+        return $this->belongsTo('App\User', 'id_usuari');
     }
 }

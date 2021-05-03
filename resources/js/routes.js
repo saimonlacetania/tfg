@@ -6,6 +6,8 @@ import Perfil from "./components/PerfilComponent";
 import Productes from "./components/ProductesComponent";
 import EditarPerfil from "./components/EditarPerfilComponent";
 import Producte from "./components/ProducteComponent";
+import Botiga from "./components/BotigaComponent";
+import CrearBotiga from "./components/CrearBotigaComponent";
 
 export default {
     mode: "history",
@@ -75,8 +77,17 @@ export default {
                     name: "Producte"
                 },
                 {
+                    path: "/botiga",
+                    component: Botiga,
+                    name: "Botiga"
+                },
+                {
                     path: "/register",
                     component: Register
+                },
+                {
+                    path: "/crearBotiga",
+                    component: CrearBotiga
                 },
                 {
                     path: "/login",
