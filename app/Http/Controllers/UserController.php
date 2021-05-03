@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Rules\MatchOldPassword;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -28,21 +29,13 @@ class UserController extends Controller
     public function modifyPassword(Request $request)
     {
         if ($request->validate([
-            'password' => ['required'],
-            'new_password' => ['required', 'min:6'],
+            'password' => ['required', new MatchOldPassword],
+            'nova_contrasenya' => ['required', 'min:6', 'confirmed'],
         ])) {
             $usuari = User::find($request->id);
-            if (Hash::check($request->password, $usuari->password)) {
-                if ($request->new_password == $request->confirm_password) {
-                    $usuari->password = Hash::make($request->new_password);
-                    $usuari->save();
-                    return response()->json($usuari->password, 200);
-                } else {
-                    return response()->json($usuari->password, 404);
-                }
-            } else {
-                return response()->json($usuari->password, 400);
-            }
+            $usuari->password = Hash::make($request->nova_contrasenya);
+            $usuari->save();
+            return response()->json($usuari, 200);
         }
     }
 
@@ -64,10 +57,16 @@ class UserController extends Controller
                 $usuari->cognoms = $request->cognoms;
                 $usuari->profile_pic = $request->file("arxiu")->hashName();
                 $usuari->save();
-                return response($request);
+                return response()->json($usuari, 200);
             } else {
-                return response($request);
+                $usuari = User::find($request->id);
+                $usuari->nom = $request->nom;
+                $usuari->cognoms = $request->cognoms;
+                $usuari->save();
+                return response()->json($usuari, 200);
             }
+        } else {
+            return response()->json("error", 400);
         }
 
     }
