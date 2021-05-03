@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('poblacio')->nullable();
             $table->string('provincia')->nullable();
             $table->string('data_naix');
+            $table->boolean('botiga')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
