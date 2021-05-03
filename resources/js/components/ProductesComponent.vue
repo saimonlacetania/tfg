@@ -56,7 +56,7 @@
         <br><br>
         
 
-        <div class="row">
+        <div class="row w-100">
           <div class="card-deck">
             <div class="card">
               <img class="card-img-top" src="/images/grapes.jpg" alt="Card image cap">
@@ -128,7 +128,7 @@
           <cerca-component></cerca-component>
         </div>
 
-        <div class="content">
+        <div class="content w-100">
             <div class="container-fluid">
               <div class="row">
                 <div :class="'col-md-4 card-deck mb-4'" v-for="producte in productes" :key="producte.id">

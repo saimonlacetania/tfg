@@ -8,7 +8,6 @@
   color: white !important;
 }
 </style>
-
 <template>
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -37,14 +36,19 @@
                   />
                 </div>
 
-                <h3 class="profile-username text-center">
+                <h3 class="profile-username text-left">
                   {{ this.user.nom }} {{ this.user.cognoms }}
                 </h3>
-
-                <p v-if="this.user.poblacio" class="text-muted text-center">
-                  <i class="fas fa-map-marker-alt"></i>
-                  {{ this.user.poblacio }},
-                  {{ this.user.provincia }}
+                <p class="text-muted text-left">
+                  <i class="far fa-envelope"></i>
+                  {{ this.user.email }} <br />
+                  <i class="fas fa-phone"></i>
+                  {{ this.user.telefon }} <br />
+                  <span v-if="this.user.poblacio" class="text-muted text-left">
+                    <i class="fas fa-map-marker-alt"></i>
+                    {{ this.user.poblacio }},
+                    {{ this.user.provincia }}
+                  </span>
                 </p>
                 <router-link
                   class="btn btn-secondary btn-block"
@@ -255,7 +259,6 @@
     </section>
   </div>
 </template>
-
 <script>
 export default {
   data() {
