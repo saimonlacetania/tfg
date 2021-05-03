@@ -39710,7 +39710,10 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "nav",
-      { staticClass: "main-header navbar navbar-expand navbar-light" },
+      {
+        staticClass:
+          "main-header navbar navbar-expand navbar-light border-bottom-0"
+      },
       [
         _c("ul", { staticClass: "navbar-nav" }, [
           _c("li", { staticClass: "nav-item" }, [
@@ -40929,7 +40932,7 @@ var staticRenderFns = [
                   _c(
                     "a",
                     {
-                      staticClass: "btn btn-primary",
+                      staticClass: "btn btn-primary col-md-2 m-1",
                       staticStyle: {
                         "background-color": "#ff6565",
                         border: "none"
@@ -40941,7 +40944,7 @@ var staticRenderFns = [
                   _c(
                     "a",
                     {
-                      staticClass: "btn btn-primary",
+                      staticClass: "btn btn-primary col-md-2 m-1",
                       staticStyle: {
                         "background-color": "#ff6565",
                         border: "none"
@@ -40953,7 +40956,7 @@ var staticRenderFns = [
                   _c(
                     "a",
                     {
-                      staticClass: "btn btn-primary",
+                      staticClass: "btn btn-primary col-md-2 m-1",
                       staticStyle: {
                         "background-color": "#ff6565",
                         border: "none"
@@ -40965,7 +40968,7 @@ var staticRenderFns = [
                   _c(
                     "a",
                     {
-                      staticClass: "btn btn-primary",
+                      staticClass: "btn btn-primary col-md-2 m-1",
                       staticStyle: {
                         "background-color": "#ff6565",
                         border: "none"
