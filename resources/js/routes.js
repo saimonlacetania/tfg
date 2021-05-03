@@ -5,6 +5,8 @@ import Example from "./components/ExampleComponent";
 import Perfil from "./components/PerfilComponent";
 import Productes from "./components/ProductesComponent";
 import EditarPerfil from "./components/EditarPerfilComponent";
+import FeedInici from "./components/feediniciComponent";
+import Contacte from "./components/contacteComponent";
 
 export default {
     mode: "history",
@@ -55,7 +57,7 @@ export default {
                     // UserPosts will be rendered inside User's <router-view>
                     // when /user/:id/posts is matched
                     path: "",
-                    component: Productes
+                    component: FeedInici
                 },
                 {
                     // UserPosts will be rendered inside User's <router-view>
@@ -72,7 +74,11 @@ export default {
                     path: "/login",
                     component: Login,
                     name: "Login"
-                }
+                },
+                {
+                    path: "/contacte",
+                    component: Contacte
+                },
             ]
         }
     ]
