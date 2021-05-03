@@ -35,7 +35,7 @@ class UserController extends Controller
             $usuari = User::find($request->id);
             $usuari->password = Hash::make($request->nova_contrasenya);
             $usuari->save();
-            return response()->json($usuari->password, 200);
+            return response()->json($usuari, 200);
         }
     }
 
@@ -57,16 +57,16 @@ class UserController extends Controller
                 $usuari->cognoms = $request->cognoms;
                 $usuari->profile_pic = $request->file("arxiu")->hashName();
                 $usuari->save();
-                return response($request);
+                return response()->json($usuari, 200);
             } else {
                 $usuari = User::find($request->id);
                 $usuari->nom = $request->nom;
                 $usuari->cognoms = $request->cognoms;
                 $usuari->save();
-                return response($request);
+                return response()->json($usuari, 200);
             }
         } else {
-            return response("hola");
+            return response()->json("error", 400);
         }
 
     }
