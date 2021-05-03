@@ -111,13 +111,13 @@ html {
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <router-link class="nav-link" :to="'profile'">
+                    <router-link class="nav-link" :to="'/profile'">
                       <i class="nav-icon far fa-user-circle text-dark"></i>
                       <p class="text-dark">Veure perfil</p>
                     </router-link>
                   </li>
                   <li class="nav-item">
-                    <router-link class="nav-link" :to="'editarPerfil'">
+                    <router-link class="nav-link" :to="'/editarPerfil'">
                       <i class="fas fa-cogs nav-icon text-dark"></i>
                       <p class="text-dark">Configuració</p>
                     </router-link>
@@ -156,7 +156,7 @@ html {
                 </li>
               </span>
               <li class="nav-item">
-                <router-link class="nav-link" :to="'productes'">
+                <router-link class="nav-link" :to="'/productes'">
                   <i class="nav-icon fas fa-shopping-cart text-dark"></i>
                   <p class="text-dark">Comprar</p>
                 </router-link>
@@ -192,13 +192,13 @@ html {
               <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
               <li class="nav-header text-dark">MENÚ PRINCIPAL</li>
               <li class="nav-item">
-                <router-link class="nav-link" :to="'profile'">
+                <router-link class="nav-link" :to="'/profile'">
                   <i class="nav-icon fas fa-sign-in-alt text-dark"></i>
                   <p class="text-dark">Log in</p>
                 </router-link>
               </li>
               <li class="nav-item">
-                <router-link class="nav-link" :to="'productes'">
+                <router-link class="nav-link" :to="'/productes'">
                   <i class="nav-icon fas fa-shopping-cart text-dark"></i>
                   <p class="text-dark">Comprar</p>
                 </router-link>

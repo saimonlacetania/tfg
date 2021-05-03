@@ -7,6 +7,7 @@ import Productes from "./components/ProductesComponent";
 import EditarPerfil from "./components/EditarPerfilComponent";
 import FeedInici from "./components/feediniciComponent";
 import Contacte from "./components/contacteComponent";
+import Producte from "./components/ProducteComponent";
 
 export default {
     mode: "history",
@@ -65,6 +66,13 @@ export default {
                     path: "/productes",
                     component: Productes,
                     name: "Productes"
+                },
+                {
+                    // UserPosts will be rendered inside User's <router-view>
+                    // when /user/:id/posts is matched
+                    path: "/producte/:id",
+                    component: Producte,
+                    name: "Producte"
                 },
                 {
                     path: "/register",
