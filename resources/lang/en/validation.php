@@ -39,7 +39,7 @@ return [
 	'digits_between'        => 'El camp :attribute ha de tenir entre :min i :max dígits.',
 	'dimensions'            => 'El camp :attribute no té una dimensió vàlida.',
 	'distinct'              => 'El camp :attribute té un valor duplicat.',
-	'email'                 => 'El format del :attribute és invàlid.',
+	'email'                 => 'El format de l\' :attribute és invàlid.',
 	'exists'                => 'El camp :attribute seleccionat és invàlid.',
 	'file'                  => 'El camp :attribute ha de ser un arxiu.',
 	'filled'                => 'El camp :attribute és obligatori.',

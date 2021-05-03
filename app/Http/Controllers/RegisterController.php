@@ -27,6 +27,7 @@ class RegisterController extends Controller
             'cognoms' => $request->cognoms,
             'telefon' => $request->telefon,
             'data_naix' => $request->data_naix,
+            'profile_pic' => "default.jpg"
         ]);
     }
 }
