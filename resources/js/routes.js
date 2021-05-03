@@ -5,11 +5,13 @@ import Example from "./components/ExampleComponent";
 import Perfil from "./components/PerfilComponent";
 import Productes from "./components/ProductesComponent";
 import EditarPerfil from "./components/EditarPerfilComponent";
+import Producte from "./components/ProducteComponent";
 
 export default {
     mode: "history",
     linkActiveClass: "font-semibold",
-    routes: [{
+    routes: [
+        {
             path: "*",
             component: NotFound
         },
@@ -17,7 +19,8 @@ export default {
             path: "/",
             component: Example,
             name: "Home",
-            children: [{
+            children: [
+                {
                     // UserProfile will be rendered inside User's <router-view>
                     // when /user/:id/profile is matched
                     path: "/profile",
@@ -63,6 +66,13 @@ export default {
                     path: "/productes",
                     component: Productes,
                     name: "Productes"
+                },
+                {
+                    // UserPosts will be rendered inside User's <router-view>
+                    // when /user/:id/posts is matched
+                    path: "/producte/:id",
+                    component: Producte,
+                    name: "Producte"
                 },
                 {
                     path: "/register",
