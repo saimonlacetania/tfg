@@ -41591,7 +41591,7 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c("div", { staticClass: "content" }, [
+          _c("div", { staticClass: "content w-100" }, [
             _c("div", { staticClass: "container-fluid" }, [
               _c(
                 "div",
@@ -41849,7 +41849,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
+    return _c("div", { staticClass: "row w-100" }, [
       _c("div", { staticClass: "card-deck" }, [
         _c("div", { staticClass: "card" }, [
           _c("img", {
