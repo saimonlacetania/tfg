@@ -2112,10 +2112,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     var _this = this;
@@ -2148,15 +2144,18 @@ __webpack_require__.r(__webpack_exports__);
       form2: {
         id: "",
         password: "",
-        new_password: "",
-        confirm_password: ""
+        nova_contrasenya: "",
+        nova_contrasenya_confirmation: ""
       },
       form3: {
         id: "",
         nom: "",
         cognoms: "",
         arxiu: null
-      }
+      },
+      errors: [],
+      errors2: [],
+      errors3: []
     };
   },
   methods: {
@@ -2188,8 +2187,8 @@ __webpack_require__.r(__webpack_exports__);
           name: "Profile"
         });
       })["catch"](function (error) {
-        that.errors = error.response.data.errors;
-        console.log(that.errors);
+        that.errors2 = error.response.data.errors;
+        console.log(that.errors2);
       });
     },
     modifyProfile: function modifyProfile() {
@@ -2213,14 +2212,12 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (res) {
         console.log(res);
 
-        _this4.$router.push({
+        _this4.$router.go({
           name: "Profile"
         });
-
-        location.reload();
       })["catch"](function (error) {
-        that.errors = error.response.data.errors;
-        console.log(that.errors);
+        that.errors3 = error.response.data.errors;
+        console.log(that.errors3);
       });
       console.log(that.form3);
     }
@@ -2597,7 +2594,6 @@ __webpack_require__.r(__webpack_exports__);
         return false;
       })["catch"](function (error) {
         _this.errors = error.response.data.errors;
-        location.reload();
         return false;
       });
     }
@@ -40153,6 +40149,25 @@ var render = function() {
                   },
                   [
                     _c("div", { staticClass: "form-group" }, [
+                      _vm.errors2.password
+                        ? _c("div", { staticClass: "input-group mb-3" }, [
+                            _c(
+                              "label",
+                              {
+                                staticClass: "col-form-label",
+                                attrs: { for: "number" }
+                              },
+                              [
+                                _c("i", { staticClass: "far fa-times-circle" }),
+                                _vm._v(
+                                  "\n                      " +
+                                    _vm._s(_vm.errors2.password[0])
+                                )
+                              ]
+                            )
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
                       _c("label", { attrs: { for: "password" } }, [
                         _vm._v("Contrasenya actual")
                       ]),
@@ -40190,7 +40205,26 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "form-group" }, [
-                      _c("label", { attrs: { for: "new_password" } }, [
+                      _vm.errors2.nova_contrasenya
+                        ? _c("div", { staticClass: "input-group mb-3" }, [
+                            _c(
+                              "label",
+                              {
+                                staticClass: "col-form-label",
+                                attrs: { for: "number" }
+                              },
+                              [
+                                _c("i", { staticClass: "far fa-times-circle" }),
+                                _vm._v(
+                                  "\n                      " +
+                                    _vm._s(_vm.errors2.nova_contrasenya[0])
+                                )
+                              ]
+                            )
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c("label", { attrs: { for: "nova_contrasenya" } }, [
                         _vm._v("Nova contrasenya")
                       ]),
                       _vm._v(" "),
@@ -40199,18 +40233,18 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.$data.form2.new_password,
-                            expression: "$data.form2.new_password"
+                            value: _vm.$data.form2.nova_contrasenya,
+                            expression: "$data.form2.nova_contrasenya"
                           }
                         ],
                         staticClass: "form-control",
                         attrs: {
                           type: "password",
-                          id: "new_password",
-                          name: "new_password",
+                          id: "nova_contrasenya",
+                          name: "nova_contrasenya",
                           required: ""
                         },
-                        domProps: { value: _vm.$data.form2.new_password },
+                        domProps: { value: _vm.$data.form2.nova_contrasenya },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
@@ -40218,7 +40252,7 @@ var render = function() {
                             }
                             _vm.$set(
                               _vm.$data.form2,
-                              "new_password",
+                              "nova_contrasenya",
                               $event.target.value
                             )
                           }
@@ -40227,30 +40261,33 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "form-group" }, [
-                      _c("label", { attrs: { for: "confirm_password" } }, [
-                        _vm._v(
-                          "Torna a escriure la nova\n                                        contrasenya"
-                        )
-                      ]),
+                      _c(
+                        "label",
+                        { attrs: { for: "nova_contrasenya_confirmation" } },
+                        [_vm._v("Torna a escriure la nova contrasenya")]
+                      ),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.$data.form2.confirm_password,
+                            value:
+                              _vm.$data.form2.nova_contrasenya_confirmation,
                             expression:
-                              "\n                                            $data.form2.confirm_password\n                                        "
+                              "$data.form2.nova_contrasenya_confirmation"
                           }
                         ],
                         staticClass: "form-control",
                         attrs: {
                           type: "password",
-                          id: "confirm_password",
-                          name: "confirm_password",
+                          id: "nova_contrasenya_confirmation",
+                          name: "nova_contrasenya_confirmation",
                           required: ""
                         },
-                        domProps: { value: _vm.$data.form2.confirm_password },
+                        domProps: {
+                          value: _vm.$data.form2.nova_contrasenya_confirmation
+                        },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
@@ -40258,7 +40295,7 @@ var render = function() {
                             }
                             _vm.$set(
                               _vm.$data.form2,
-                              "confirm_password",
+                              "nova_contrasenya_confirmation",
                               $event.target.value
                             )
                           }
@@ -40447,7 +40484,7 @@ var staticRenderFns = [
         { staticClass: "btn btn-secondary", attrs: { type: "submit" } },
         [
           _vm._v(
-            "\n                                        Modifica el meu avatar\n                                    "
+            "\n                    Modifica el meu perfil\n                  "
           )
         ]
       )
@@ -40463,7 +40500,7 @@ var staticRenderFns = [
         { staticClass: "btn btn-secondary", attrs: { type: "submit" } },
         [
           _vm._v(
-            "\n                                        Modifica la meva contrasenya\n                                    "
+            "\n                    Modifica la meva contrasenya\n                  "
           )
         ]
       )
@@ -40479,7 +40516,7 @@ var staticRenderFns = [
         { staticClass: "btn btn-secondary", attrs: { type: "submit" } },
         [
           _vm._v(
-            "\n                                        Modifica la meva direcció\n                                    "
+            "\n                    Modifica la meva direcció\n                  "
           )
         ]
       )
