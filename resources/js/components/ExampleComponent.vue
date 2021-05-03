@@ -110,10 +110,10 @@
                                 </a>
                                 <ul class="nav nav-treeview nav-child-indent">
                                     <li class="nav-item">
-                                        <a href="../../index.html" class="nav-link">
+                                        <router-link class="nav-link" :to="'botiga'">
                                             <i class="fas fa-feather-alt nav-icon text-dark"></i>
                                             <p class="text-dark">Perfil</p>
-                                        </a>
+                                        </router-link>
                                     </li>
                                     <li class="nav-item">
                                         <a href="../../index.html" class="nav-link">
@@ -130,6 +130,15 @@
                                 </ul>
                             </li>
                             </span>
+                            <span v-else>
+                                <li class="nav-item">
+                                    <router-link class="nav-link" :to="'crearBotiga'">
+                                            <i class="fas fa-feather-alt nav-icon text-dark"></i>
+                                            <p class="text-dark">Crear Botiga</p>
+                                    </router-link>
+                                </li>
+                            </span>
+
                             <li class="nav-item">
                                 <router-link class="nav-link" :to="'productes'">
                                     <i class="nav-icon fas fa-shopping-cart text-dark"></i>
