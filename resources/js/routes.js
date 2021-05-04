@@ -60,7 +60,8 @@ export default {
                     // UserPosts will be rendered inside User's <router-view>
                     // when /user/:id/posts is matched
                     path: "",
-                    component: FeedInici
+                    component: FeedInici,
+                    name: "FeedInici"
                 },
                 {
                     // UserPosts will be rendered inside User's <router-view>
@@ -83,11 +84,13 @@ export default {
                 },
                 {
                     path: "/register",
-                    component: Register
+                    component: Register,
+                    name: "Register"
                 },
                 {
                     path: "/crearBotiga",
-                    component: CrearBotiga
+                    component: CrearBotiga,
+                    name: "CrearBotiga"
                 },
                 {
                     path: "/login",
@@ -96,7 +99,8 @@ export default {
                 },
                 {
                     path: "/contacte",
-                    component: Contacte
+                    component: Contacte,
+                    name: "Contacte"
                 },
             ]
         }
