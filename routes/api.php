@@ -22,10 +22,13 @@ Route::middleware('auth:sanctum')->get('/athenticated', function () {
 });
 Route::get('productes', 'ProductesController@productes');
 Route::get('producte/{id}', 'ProductesController@producte');
+
 Route::post('register', 'RegisterController@register');
+Route::post('crearBotiga', 'CrearBotigaController@crearBotiga');
 Route::post('login', 'LoginController@login');
 Route::post('modifyUser', 'UserController@modify');
 Route::post('modifyProfile', 'UserController@modifyProfile');
 Route::post('modifyPassword', 'UserController@modifyPassword');
 Route::post('logout', 'LoginController@logout');
 Route::get('productes', 'ProductesController@productes');
+Route::get('botiga', 'BotigaController@botiga');
