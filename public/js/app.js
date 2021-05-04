@@ -2228,6 +2228,8 @@ __webpack_require__.r(__webpack_exports__);
         _this2.$router.push({
           name: "Botiga"
         });
+
+        location.reload();
       })["catch"](function (error) {
         that.errors = error.response.data.errors;
         console.log(that.errors);
@@ -2557,10 +2559,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
 //
 //
 //
@@ -41966,77 +41964,73 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         this.user.botiga
-                          ? _c("span", [
-                              _c("li", { staticClass: "nav-item" }, [
-                                _vm._m(2),
-                                _vm._v(" "),
-                                _c(
-                                  "ul",
-                                  {
-                                    staticClass:
-                                      "nav nav-treeview nav-child-indent"
-                                  },
-                                  [
-                                    _c(
-                                      "li",
-                                      { staticClass: "nav-item" },
-                                      [
-                                        _c(
-                                          "router-link",
-                                          {
-                                            staticClass: "nav-link",
-                                            attrs: { to: "botiga" }
-                                          },
-                                          [
-                                            _c("i", {
-                                              staticClass:
-                                                "fas fa-feather-alt nav-icon text-dark"
-                                            }),
-                                            _vm._v(" "),
-                                            _c(
-                                              "p",
-                                              { staticClass: "text-dark" },
-                                              [_vm._v("Perfil")]
-                                            )
-                                          ]
-                                        )
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _vm._m(3),
-                                    _vm._v(" "),
-                                    _vm._m(4)
-                                  ]
-                                )
-                              ])
-                            ])
-                          : _c("span", [
+                          ? _c("li", { staticClass: "nav-item" }, [
+                              _vm._m(2),
+                              _vm._v(" "),
                               _c(
-                                "li",
-                                { staticClass: "nav-item" },
+                                "ul",
+                                {
+                                  staticClass:
+                                    "nav nav-treeview nav-child-indent"
+                                },
                                 [
                                   _c(
-                                    "router-link",
-                                    {
-                                      staticClass: "nav-link",
-                                      attrs: { to: "crearBotiga" }
-                                    },
+                                    "li",
+                                    { staticClass: "nav-item" },
                                     [
-                                      _c("i", {
-                                        staticClass:
-                                          "fas fa-feather-alt nav-icon text-dark"
-                                      }),
-                                      _vm._v(" "),
-                                      _c("p", { staticClass: "text-dark" }, [
-                                        _vm._v("Crear Botiga")
-                                      ])
-                                    ]
-                                  )
-                                ],
-                                1
+                                      _c(
+                                        "router-link",
+                                        {
+                                          staticClass: "nav-link",
+                                          attrs: { to: "botiga" }
+                                        },
+                                        [
+                                          _c("i", {
+                                            staticClass:
+                                              "fas fa-feather-alt nav-icon text-dark"
+                                          }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "p",
+                                            { staticClass: "text-dark" },
+                                            [_vm._v("Perfil")]
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _vm._m(3),
+                                  _vm._v(" "),
+                                  _vm._m(4)
+                                ]
                               )
-                            ]),
+                            ])
+                          : _c(
+                              "li",
+                              { staticClass: "nav-item" },
+                              [
+                                _c(
+                                  "router-link",
+                                  {
+                                    staticClass: "nav-link",
+                                    attrs: { to: "crearBotiga" }
+                                  },
+                                  [
+                                    _c("i", {
+                                      staticClass:
+                                        "fas fa-feather-alt nav-icon text-dark"
+                                    }),
+                                    _vm._v(" "),
+                                    _c("p", { staticClass: "text-dark" }, [
+                                      _vm._v("Crear Botiga")
+                                    ])
+                                  ]
+                                )
+                              ],
+                              1
+                            ),
                         _vm._v(" "),
                         _c(
                           "li",
@@ -42302,7 +42296,7 @@ var staticRenderFns = [
       _c("i", { staticClass: "nav-icon fas fa-store-alt text-dark" }),
       _vm._v(" "),
       _c("p", { staticClass: "text-dark" }, [
-        _vm._v("\n                    La meva botiga\n                    "),
+        _vm._v("\n                  La meva botiga\n                  "),
         _c("i", { staticClass: "right fas fa-angle-left" })
       ])
     ])
@@ -60933,7 +60927,8 @@ __webpack_require__.r(__webpack_exports__);
       // UserPosts will be rendered inside User's <router-view>
       // when /user/:id/posts is matched
       path: "",
-      component: _components_feediniciComponent__WEBPACK_IMPORTED_MODULE_7__["default"]
+      component: _components_feediniciComponent__WEBPACK_IMPORTED_MODULE_7__["default"],
+      name: "FeedInici"
     }, {
       // UserPosts will be rendered inside User's <router-view>
       // when /user/:id/posts is matched
@@ -60952,17 +60947,20 @@ __webpack_require__.r(__webpack_exports__);
       name: "Botiga"
     }, {
       path: "/register",
-      component: _components_Register__WEBPACK_IMPORTED_MODULE_0__["default"]
+      component: _components_Register__WEBPACK_IMPORTED_MODULE_0__["default"],
+      name: "Register"
     }, {
       path: "/crearBotiga",
-      component: _components_CrearBotigaComponent__WEBPACK_IMPORTED_MODULE_11__["default"]
+      component: _components_CrearBotigaComponent__WEBPACK_IMPORTED_MODULE_11__["default"],
+      name: "CrearBotiga"
     }, {
       path: "/login",
       component: _components_Login__WEBPACK_IMPORTED_MODULE_1__["default"],
       name: "Login"
     }, {
       path: "/contacte",
-      component: _components_contacteComponent__WEBPACK_IMPORTED_MODULE_8__["default"]
+      component: _components_contacteComponent__WEBPACK_IMPORTED_MODULE_8__["default"],
+      name: "Contacte"
     }]
   }]
 });

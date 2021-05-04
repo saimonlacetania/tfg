@@ -246,6 +246,7 @@ export default {
                     console.log("saved");
                     
                     this.$router.push({ name: "Botiga" });
+                    location.reload();
                 })
                 .catch(error => {
                     that.errors = error.response.data.errors;
