@@ -3334,21 +3334,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -8474,7 +8459,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.nav-link.active {\r\n    background-color: #ff6565 !important;\r\n    color: white !important;\n}\n.nav-link {\r\n    text-decoration: none !important;\r\n    color: white !important;\n}\r\n", ""]);
+exports.push([module.i, "\n.nav-link.active {\n    background-color: #ff6565 !important;\n    color: white !important;\n}\n.nav-link {\n    text-decoration: none !important;\n    color: white !important;\n}\n", ""]);
 
 // exports
 
@@ -8493,7 +8478,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#registre {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\r\ninput[type=\"date\"]::-webkit-inner-spin-button {\r\n    display: none;\n}\r\n", ""]);
+exports.push([module.i, "\n#registre {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\ninput[type=\"date\"]::-webkit-inner-spin-button {\n    display: none;\n}\n", ""]);
 
 // exports
 
@@ -8512,7 +8497,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.wrapper {\r\n  height: 100%;\n}\nbody,\r\nhtml {\r\n  height: 100%;\n}\n.main-header {\r\n  color: #c22847 !important;\n}\r\n", ""]);
+exports.push([module.i, "\n.wrapper {\n  height: 100%;\n}\nbody,\nhtml {\n  height: 100%;\n}\n.main-header {\n  color: #c22847 !important;\n}\n", ""]);
 
 // exports
 
@@ -8531,7 +8516,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.nav-link.active {\r\n  background-color: #ff6565 !important;\r\n  color: white !important;\n}\n.nav-link {\r\n  text-decoration: none !important;\r\n  color: white !important;\n}\r\n", ""]);
+exports.push([module.i, "\n.nav-link.active {\n  background-color: #ff6565 !important;\n  color: white !important;\n}\n.nav-link {\n  text-decoration: none !important;\n  color: white !important;\n}\n", ""]);
 
 // exports
 
@@ -8550,7 +8535,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.zoom {\r\n  transition: transform 0.2s; /* Animation */\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.zoom {\n  transition: transform 0.2s; /* Animation */\n}\n\n", ""]);
 
 // exports
 
@@ -8569,7 +8554,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#registre {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\r\ninput[type=\"date\"]::-webkit-inner-spin-button {\r\n    display: none;\n}\r\n", ""]);
+exports.push([module.i, "\n#registre {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\ninput[type=\"date\"]::-webkit-inner-spin-button {\n    display: none;\n}\n", ""]);
 
 // exports
 
@@ -8588,7 +8573,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.zoom {\r\n  transition: transform 0.2s; /* Animation */\n}\n.zoom:hover {\r\n  transform: scale(1.05); /* (150% zoom)*/\n}\r\n", ""]);
+exports.push([module.i, "\n.zoom {\n  transition: transform 0.2s; /* Animation */\n}\n.zoom:hover {\n  transform: scale(1.05); /* (150% zoom)*/\n}\n", ""]);
 
 // exports
 
@@ -41921,7 +41906,7 @@ var render = function() {
                                   "router-link",
                                   {
                                     staticClass: "nav-link",
-                                    attrs: { to: "profile" }
+                                    attrs: { to: "/profile" }
                                   },
                                   [
                                     _c("i", {
@@ -41946,7 +41931,7 @@ var render = function() {
                                   "router-link",
                                   {
                                     staticClass: "nav-link",
-                                    attrs: { to: "editarPerfil" }
+                                    attrs: { to: "/editarPerfil" }
                                   },
                                   [
                                     _c("i", {
@@ -41985,7 +41970,7 @@ var render = function() {
                                           "router-link",
                                           {
                                             staticClass: "nav-link",
-                                            attrs: { to: "botiga" }
+                                            attrs: { to: "/botiga" }
                                           },
                                           [
                                             _c("i", {
@@ -42020,7 +42005,7 @@ var render = function() {
                                     "router-link",
                                     {
                                       staticClass: "nav-link",
-                                      attrs: { to: "crearBotiga" }
+                                      attrs: { to: "/crearBotiga" }
                                     },
                                     [
                                       _c("i", {
@@ -42046,7 +42031,7 @@ var render = function() {
                               "router-link",
                               {
                                 staticClass: "nav-link",
-                                attrs: { to: "productes" }
+                                attrs: { to: "/productes" }
                               },
                               [
                                 _c("i", {
@@ -42071,7 +42056,7 @@ var render = function() {
                               "router-link",
                               {
                                 staticClass: "nav-link",
-                                attrs: { to: "contacte" }
+                                attrs: { to: "/contacte" }
                               },
                               [
                                 _c("i", {
@@ -42955,21 +42940,37 @@ var render = function() {
       _c("section", { staticClass: "content" }, [
         _c("div", { staticClass: "container-fluid" }, [
           _c("div", { staticClass: "wrapper row" }, [
-            _vm._m(1),
+            _c("div", { staticClass: "preview col-md-6" }, [
+              _c("div", { staticClass: "preview-pic tab-content" }, [
+                _c(
+                  "div",
+                  { staticClass: "tab-pane active", attrs: { id: "pic-1" } },
+                  [
+                    _c("img", {
+                      attrs: { src: "/images/" + _vm.$data.producte.imatge }
+                    })
+                  ]
+                )
+              ])
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "details col-md-6" }, [
               _c("h3", { staticClass: "product-title text-uppercase" }, [
-                _vm._v(_vm._s(_vm.$data.producte.nom))
+                _vm._v(
+                  "\n            " +
+                    _vm._s(_vm.$data.producte.nom) +
+                    "\n          "
+                )
               ]),
               _vm._v(" "),
-              _vm._m(2),
+              _vm._m(1),
               _vm._v(" "),
               _c("p", { staticClass: "product-description" }, [
                 _vm._v(_vm._s(_vm.$data.producte.descripcio))
               ]),
               _vm._v(" "),
               _c("h4", { staticClass: "price" }, [
-                _vm._v("preu: "),
+                _vm._v("\n            preu: "),
                 _c("span", [_vm._v(_vm._s(_vm.$data.producte.preu))])
               ]),
               _vm._v(" "),
@@ -42977,7 +42978,7 @@ var render = function() {
                 _vm._v("stock:" + _vm._s(_vm.$data.producte.stock))
               ]),
               _vm._v(" "),
-              _vm._m(3)
+              _vm._m(2)
             ])
           ])
         ])
@@ -43037,18 +43038,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "preview col-md-6" }, [
-      _c("div", { staticClass: "preview-pic tab-content" }, [
-        _c("div", { staticClass: "tab-pane active", attrs: { id: "pic-1" } }, [
-          _c("img", { attrs: { src: "http://placekitten.com/400/252" } })
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "rating" }, [
       _c("div", { staticClass: "stars" }, [
         _c("span", {
@@ -43096,7 +43085,7 @@ var staticRenderFns = [
           },
           attrs: { type: "button" }
         },
-        [_vm._v("Afegir a la cistella")]
+        [_vm._v("\n              Afegir a la cistella\n            ")]
       )
     ])
   }
@@ -60933,7 +60922,8 @@ __webpack_require__.r(__webpack_exports__);
       // UserPosts will be rendered inside User's <router-view>
       // when /user/:id/posts is matched
       path: "",
-      component: _components_feediniciComponent__WEBPACK_IMPORTED_MODULE_7__["default"]
+      component: _components_feediniciComponent__WEBPACK_IMPORTED_MODULE_7__["default"],
+      name: "FeedInici"
     }, {
       // UserPosts will be rendered inside User's <router-view>
       // when /user/:id/posts is matched
@@ -60952,17 +60942,20 @@ __webpack_require__.r(__webpack_exports__);
       name: "Botiga"
     }, {
       path: "/register",
-      component: _components_Register__WEBPACK_IMPORTED_MODULE_0__["default"]
+      component: _components_Register__WEBPACK_IMPORTED_MODULE_0__["default"],
+      name: "Register"
     }, {
       path: "/crearBotiga",
-      component: _components_CrearBotigaComponent__WEBPACK_IMPORTED_MODULE_11__["default"]
+      component: _components_CrearBotigaComponent__WEBPACK_IMPORTED_MODULE_11__["default"],
+      name: "CrearBotiga"
     }, {
       path: "/login",
       component: _components_Login__WEBPACK_IMPORTED_MODULE_1__["default"],
       name: "Login"
     }, {
       path: "/contacte",
-      component: _components_contacteComponent__WEBPACK_IMPORTED_MODULE_8__["default"]
+      component: _components_contacteComponent__WEBPACK_IMPORTED_MODULE_8__["default"],
+      name: "Contacte"
     }]
   }]
 });
@@ -60987,8 +60980,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\simon\Desktop\projecte\tfg\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\simon\Desktop\projecte\tfg\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/tfg/tfg/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/tfg/tfg/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
