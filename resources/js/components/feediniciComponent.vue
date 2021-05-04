@@ -44,39 +44,7 @@
               </div>
             </div>
         </div>
-
-          <!-- cerca -->
-          <!--<div class="col-md-12">
-            <form action="simple-results.html">
-              <div class="input-group">
-                <input
-                  type="search"
-                  class="form-control form-control-lg text-right"
-                  placeholder="¿Què vols buscar?"
-                />
-                <div class="input-group-append">
-                  <button type="submit" class="btn btn-lg btn-secondary" style="background-color:#ff6565;">
-                    <i class="fa fa-search"></i>
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-lg btn-secondary"
-                    aria-expanded="true"
-                    v-on:click="mostrarCerca"
-                    style="background-color:#ff6565;"
-                  >
-                    <i class="fa fa-arrow-down"></i>
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>-->
-          <!-- /.col -->
-
-        <!-- cerca avançada -->
-        <!--<div id="cerca" style="display: none">
-          <cerca-component></cerca-component>
-        </div> -->
+        
         <div class="col-sm-12 mt-4">
           <h1 class="text-center" style="color:#ff6565;">El KM0 més a prop que mai</h1>
           <h4 class="text-center">productes únics de professionals locals</h4>
