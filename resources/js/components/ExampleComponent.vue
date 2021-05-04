@@ -16,7 +16,7 @@ html {
 <template>
   <div class="wrapper">
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-light">
+    <nav class="main-header navbar navbar-expand navbar-light border-bottom-0">
       <!-- Left navbar links -->
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -54,7 +54,7 @@ html {
     <!-- MENÚ ESQUERRA -->
     <aside class="main-sidebar sidebar-light elevation-4">
       <!-- Logo -->
-      <router-link :to="'productes'" class="brand-link">
+      <router-link :to="'/'" class="brand-link">
         <img
           src="/images/logo_mercat.png"
           alt=""
@@ -168,6 +168,12 @@ html {
                 <router-link class="nav-link" :to="'productes'">
                   <i class="nav-icon fas fa-shopping-cart text-dark"></i>
                   <p class="text-dark">Comprar</p>
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link class="nav-link" :to="'contacte'">
+                  <i class="nav-icon fas fa-comments text-dark"></i>
+                  <p class="text-dark">Contacte</p>
                 </router-link>
               </li>
 
