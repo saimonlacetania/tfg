@@ -2776,12 +2776,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-<<<<<<< HEAD
-=======
 //
 //
 //
->>>>>>> origin/ian2
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -8471,7 +8474,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.nav-link.active {\n    background-color: #ff6565 !important;\n    color: white !important;\n}\n.nav-link {\n    text-decoration: none !important;\n    color: white !important;\n}\n", ""]);
+exports.push([module.i, "\n.nav-link.active {\r\n    background-color: #ff6565 !important;\r\n    color: white !important;\n}\n.nav-link {\r\n    text-decoration: none !important;\r\n    color: white !important;\n}\r\n", ""]);
 
 // exports
 
@@ -8490,7 +8493,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#registre {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\ninput[type=\"date\"]::-webkit-inner-spin-button {\n    display: none;\n}\n", ""]);
+exports.push([module.i, "\n#registre {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\r\ninput[type=\"date\"]::-webkit-inner-spin-button {\r\n    display: none;\n}\r\n", ""]);
 
 // exports
 
@@ -60869,15 +60872,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_PerfilComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/PerfilComponent */ "./resources/js/components/PerfilComponent.vue");
 /* harmony import */ var _components_ProductesComponent__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/ProductesComponent */ "./resources/js/components/ProductesComponent.vue");
 /* harmony import */ var _components_EditarPerfilComponent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/EditarPerfilComponent */ "./resources/js/components/EditarPerfilComponent.vue");
-<<<<<<< HEAD
 /* harmony import */ var _components_feediniciComponent__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/feediniciComponent */ "./resources/js/components/feediniciComponent.vue");
 /* harmony import */ var _components_contacteComponent__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/contacteComponent */ "./resources/js/components/contacteComponent.vue");
 /* harmony import */ var _components_ProducteComponent__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/ProducteComponent */ "./resources/js/components/ProducteComponent.vue");
-=======
-/* harmony import */ var _components_ProducteComponent__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/ProducteComponent */ "./resources/js/components/ProducteComponent.vue");
-/* harmony import */ var _components_BotigaComponent__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/BotigaComponent */ "./resources/js/components/BotigaComponent.vue");
-/* harmony import */ var _components_CrearBotigaComponent__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/CrearBotigaComponent */ "./resources/js/components/CrearBotigaComponent.vue");
->>>>>>> origin/ian2
+/* harmony import */ var _components_BotigaComponent__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/BotigaComponent */ "./resources/js/components/BotigaComponent.vue");
+/* harmony import */ var _components_CrearBotigaComponent__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/CrearBotigaComponent */ "./resources/js/components/CrearBotigaComponent.vue");
+
+
 
 
 
@@ -60947,14 +60948,14 @@ __webpack_require__.r(__webpack_exports__);
       name: "Producte"
     }, {
       path: "/botiga",
-      component: _components_BotigaComponent__WEBPACK_IMPORTED_MODULE_8__["default"],
+      component: _components_BotigaComponent__WEBPACK_IMPORTED_MODULE_10__["default"],
       name: "Botiga"
     }, {
       path: "/register",
       component: _components_Register__WEBPACK_IMPORTED_MODULE_0__["default"]
     }, {
       path: "/crearBotiga",
-      component: _components_CrearBotigaComponent__WEBPACK_IMPORTED_MODULE_9__["default"]
+      component: _components_CrearBotigaComponent__WEBPACK_IMPORTED_MODULE_11__["default"]
     }, {
       path: "/login",
       component: _components_Login__WEBPACK_IMPORTED_MODULE_1__["default"],
