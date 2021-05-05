@@ -1944,6 +1944,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -40374,13 +40381,24 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "content-wrapper" }, [
-    _c("h1", [_vm._v("Component botiga")]),
-    _vm._v(" "),
-    _c("h2", [_vm._v(_vm._s(this.botiga.nom))]),
-    _vm._v(" "),
-    _c("h2", [_vm._v(_vm._s(this.botiga.descripcio))])
-  ])
+  return _c(
+    "div",
+    { staticClass: "content-wrapper" },
+    [
+      _c("h1", [_vm._v("Component botiga")]),
+      _vm._v(" "),
+      _c("h2", [_vm._v(_vm._s(this.botiga.nom))]),
+      _vm._v(" "),
+      _c("h2", [_vm._v(_vm._s(this.botiga.descripcio))]),
+      _vm._v(" "),
+      _c("router-link", { attrs: { to: "AfegirProducte" } }, [
+        _c("p", { staticClass: "text-dark" }, [
+          _vm._v("\n            Afegir Producte\n        ")
+        ])
+      ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -41556,7 +41574,10 @@ var render = function() {
       _vm._v(" "),
       _c(
         "aside",
-        { staticClass: "main-sidebar sidebar-light elevation-4" },
+        {
+          staticClass:
+            "main-sidebar sidebar-no-expand sidebar-light elevation-4"
+        },
         [
           _c(
             "router-link",
@@ -41936,7 +41957,7 @@ var staticRenderFns = [
                     color: "#343a40 !important",
                     "text-decoration": "none !important"
                   },
-                  attrs: { href: "index3.html" }
+                  attrs: { href: "#" }
                 },
                 [_vm._v("Inici")]
               )
@@ -42007,15 +42028,11 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "nav-item" }, [
-      _c(
-        "a",
-        { staticClass: "nav-link", attrs: { href: "../../index.html" } },
-        [
-          _c("i", { staticClass: "fas fa-tag nav-icon text-dark" }),
-          _vm._v(" "),
-          _c("p", { staticClass: "text-dark" }, [_vm._v("Productes")])
-        ]
-      )
+      _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+        _c("i", { staticClass: "fas fa-tag nav-icon text-dark" }),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-dark" }, [_vm._v("Productes")])
+      ])
     ])
   },
   function() {
@@ -42023,15 +42040,11 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "nav-item" }, [
-      _c(
-        "a",
-        { staticClass: "nav-link", attrs: { href: "../../index.html" } },
-        [
-          _c("i", { staticClass: "fas fa-chart-line nav-icon text-dark" }),
-          _vm._v(" "),
-          _c("p", { staticClass: "text-dark" }, [_vm._v("Estadístiques")])
-        ]
-      )
+      _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+        _c("i", { staticClass: "fas fa-chart-line nav-icon text-dark" }),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-dark" }, [_vm._v("Estadístiques")])
+      ])
     ])
   }
 ]

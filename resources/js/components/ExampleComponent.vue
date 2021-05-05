@@ -25,7 +25,7 @@
                         <i class="fas fa-bars" style="color:#ff6565;"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block text-dark">
-                    <a href="index3.html" class="nav-link text-dark"
+                    <a href="#" class="nav-link text-dark"
                         style="color: #343a40 !important;text-decoration:none !important;">Inici</a>
                 </li>
             </ul>
@@ -43,7 +43,7 @@
         <!-- /.navbar -->
 
         <!-- MENÚ ESQUERRA -->
-        <aside class="main-sidebar sidebar-light elevation-4">
+        <aside class="main-sidebar sidebar-no-expand sidebar-light elevation-4">
             <!-- Logo -->
             <router-link :to="'productes'" class="brand-link">
                 <img src="/images/logo_mercat.png" alt="" class="brand-image img-circle elevation-3"
@@ -116,13 +116,13 @@
                                         </router-link>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="../../index.html" class="nav-link">
+                                        <a href="#" class="nav-link">
                                             <i class="fas fa-tag nav-icon text-dark"></i>
                                             <p class="text-dark">Productes</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="../../index.html" class="nav-link">
+                                        <a href="#" class="nav-link">
                                             <i class="fas fa-chart-line nav-icon text-dark"></i>
                                             <p class="text-dark">Estadístiques</p>
                                         </a>

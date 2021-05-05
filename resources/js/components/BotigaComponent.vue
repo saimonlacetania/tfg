@@ -14,6 +14,13 @@
         <h1>Component botiga</h1>
         <h2>{{this.botiga.nom}}</h2>
         <h2>{{this.botiga.descripcio}}</h2>
+
+
+        <router-link :to="'AfegirProducte'">
+            <p class="text-dark">
+                Afegir Producte
+            </p>
+        </router-link>
     </div>
 </template>
 
