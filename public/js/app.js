@@ -2761,35 +2761,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -8485,7 +8456,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.wrapper {\r\n  height: 100%;\n}\nbody,\r\nhtml {\r\n  height: 100%;\n}\n.main-header {\r\n  color: #c22847 !important;\n}\r\n", ""]);
+exports.push([module.i, "\n.wrapper {\n    height: 100%;\n}\nbody,\nhtml {\n    height: 100%;\n}\n.main-header {\n    color: #C22847 !important;\n}\n\n", ""]);
 
 // exports
 
@@ -41832,17 +41803,21 @@ var render = function() {
             "main-sidebar sidebar-no-expand sidebar-light elevation-4"
         },
         [
-          _c("router-link", { staticClass: "brand-link", attrs: { to: "/" } }, [
-            _c("img", {
-              staticClass: "brand-image img-circle elevation-3",
-              staticStyle: { opacity: "0.8", background: "#ff6565" },
-              attrs: { src: "/images/logo_mercat.png", alt: "" }
-            }),
-            _vm._v(" "),
-            _c("span", { staticClass: "brand-text font-weight-light" }, [
-              _vm._v("Mercat Virtual")
-            ])
-          ]),
+          _c(
+            "router-link",
+            { staticClass: "brand-link", attrs: { to: "productes" } },
+            [
+              _c("img", {
+                staticClass: "brand-image img-circle elevation-3",
+                staticStyle: { opacity: "0.8", background: "#ff6565" },
+                attrs: { src: "/images/logo_mercat.png", alt: "" }
+              }),
+              _vm._v(" "),
+              _c("span", { staticClass: "brand-text font-weight-light" }, [
+                _vm._v("Mercat Virtual")
+              ])
+            ]
+          ),
           _vm._v(" "),
           this.user.nom
             ? _c("span", [
@@ -41953,73 +41928,77 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         this.user.botiga
-                          ? _c("li", { staticClass: "nav-item" }, [
-                              _vm._m(2),
-                              _vm._v(" "),
-                              _c(
-                                "ul",
-                                {
-                                  staticClass:
-                                    "nav nav-treeview nav-child-indent"
-                                },
-                                [
-                                  _c(
-                                    "li",
-                                    { staticClass: "nav-item" },
-                                    [
-                                      _c(
-                                        "router-link",
-                                        {
-                                          staticClass: "nav-link",
-                                          attrs: { to: "botiga" }
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass:
-                                              "fas fa-feather-alt nav-icon text-dark"
-                                          }),
-                                          _vm._v(" "),
-                                          _c(
-                                            "p",
-                                            { staticClass: "text-dark" },
-                                            [_vm._v("Perfil")]
-                                          )
-                                        ]
-                                      )
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _vm._m(3),
-                                  _vm._v(" "),
-                                  _vm._m(4)
-                                ]
-                              )
-                            ])
-                          : _c(
-                              "li",
-                              { staticClass: "nav-item" },
-                              [
+                          ? _c("span", [
+                              _c("li", { staticClass: "nav-item" }, [
+                                _vm._m(2),
+                                _vm._v(" "),
                                 _c(
-                                  "router-link",
+                                  "ul",
                                   {
-                                    staticClass: "nav-link",
-                                    attrs: { to: "crearBotiga" }
+                                    staticClass:
+                                      "nav nav-treeview nav-child-indent"
                                   },
                                   [
-                                    _c("i", {
-                                      staticClass:
-                                        "fas fa-feather-alt nav-icon text-dark"
-                                    }),
+                                    _c(
+                                      "li",
+                                      { staticClass: "nav-item" },
+                                      [
+                                        _c(
+                                          "router-link",
+                                          {
+                                            staticClass: "nav-link",
+                                            attrs: { to: "botiga" }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass:
+                                                "fas fa-feather-alt nav-icon text-dark"
+                                            }),
+                                            _vm._v(" "),
+                                            _c(
+                                              "p",
+                                              { staticClass: "text-dark" },
+                                              [_vm._v("Perfil")]
+                                            )
+                                          ]
+                                        )
+                                      ],
+                                      1
+                                    ),
                                     _vm._v(" "),
-                                    _c("p", { staticClass: "text-dark" }, [
-                                      _vm._v("Crear Botiga")
-                                    ])
+                                    _vm._m(3),
+                                    _vm._v(" "),
+                                    _vm._m(4)
                                   ]
                                 )
-                              ],
-                              1
-                            ),
+                              ])
+                            ])
+                          : _c("span", [
+                              _c(
+                                "li",
+                                { staticClass: "nav-item" },
+                                [
+                                  _c(
+                                    "router-link",
+                                    {
+                                      staticClass: "nav-link",
+                                      attrs: { to: "crearBotiga" }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass:
+                                          "fas fa-feather-alt nav-icon text-dark"
+                                      }),
+                                      _vm._v(" "),
+                                      _c("p", { staticClass: "text-dark" }, [
+                                        _vm._v("Crear Botiga")
+                                      ])
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            ]),
                         _vm._v(" "),
                         _c(
                           "li",
@@ -42039,31 +42018,6 @@ var render = function() {
                                 _vm._v(" "),
                                 _c("p", { staticClass: "text-dark" }, [
                                   _vm._v("Comprar")
-                                ])
-                              ]
-                            )
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "li",
-                          { staticClass: "nav-item" },
-                          [
-                            _c(
-                              "router-link",
-                              {
-                                staticClass: "nav-link",
-                                attrs: { to: "contacte" }
-                              },
-                              [
-                                _c("i", {
-                                  staticClass:
-                                    "nav-icon fas fa-comments text-dark"
-                                }),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "text-dark" }, [
-                                  _vm._v("Contacte")
                                 ])
                               ]
                             )
@@ -42132,7 +42086,7 @@ var render = function() {
                               "router-link",
                               {
                                 staticClass: "nav-link",
-                                attrs: { to: "/profile" }
+                                attrs: { to: "profile" }
                               },
                               [
                                 _c("i", {
@@ -42141,7 +42095,9 @@ var render = function() {
                                 }),
                                 _vm._v(" "),
                                 _c("p", { staticClass: "text-dark" }, [
-                                  _vm._v("Log in")
+                                  _vm._v(
+                                    "\n                                    Log in\n                                "
+                                  )
                                 ])
                               ]
                             )
@@ -42157,7 +42113,7 @@ var render = function() {
                               "router-link",
                               {
                                 staticClass: "nav-link",
-                                attrs: { to: "/productes" }
+                                attrs: { to: "productes" }
                               },
                               [
                                 _c("i", {
@@ -42194,10 +42150,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "nav",
-      {
-        staticClass:
-          "main-header navbar navbar-expand navbar-light border-bottom-0"
-      },
+      { staticClass: "main-header navbar navbar-expand navbar-light" },
       [
         _c("ul", { staticClass: "navbar-nav" }, [
           _c("li", { staticClass: "nav-item" }, [
@@ -42228,7 +42181,7 @@ var staticRenderFns = [
                     color: "#343a40 !important",
                     "text-decoration": "none !important"
                   },
-                  attrs: { href: "#" }
+                  attrs: { href: "index3.html" }
                 },
                 [_vm._v("Inici")]
               )
@@ -42272,7 +42225,9 @@ var staticRenderFns = [
       _c("i", { staticClass: "nav-icon fas fa-user text-dark" }),
       _vm._v(" "),
       _c("p", { staticClass: "text-dark" }, [
-        _vm._v("\n                  El meu perfil\n                  "),
+        _vm._v(
+          "\n                                    El meu perfil\n                                    "
+        ),
         _c("i", { staticClass: "right fas fa-angle-left" })
       ])
     ])
@@ -42285,7 +42240,9 @@ var staticRenderFns = [
       _c("i", { staticClass: "nav-icon fas fa-store-alt text-dark" }),
       _vm._v(" "),
       _c("p", { staticClass: "text-dark" }, [
-        _vm._v("\n                  La meva botiga\n                  "),
+        _vm._v(
+          "\n                                    La meva botiga\n                                    "
+        ),
         _c("i", { staticClass: "right fas fa-angle-left" })
       ])
     ])
@@ -60966,8 +60923,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\simon\Desktop\projecte\tfg\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\simon\Desktop\projecte\tfg\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\abram\Documents\GitHub\tfg\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\abram\Documents\GitHub\tfg\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
