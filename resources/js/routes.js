@@ -5,6 +5,9 @@ import Example from "./components/ExampleComponent";
 import Perfil from "./components/PerfilComponent";
 import Productes from "./components/ProductesComponent";
 import EditarPerfil from "./components/EditarPerfilComponent";
+import FeedInici from "./components/feediniciComponent";
+import Contacte from "./components/contacteComponent";
+import Producte from "./components/ProducteComponent";
 import Botiga from "./components/BotigaComponent";
 import CrearBotiga from "./components/CrearBotigaComponent";
 
@@ -57,7 +60,8 @@ export default {
                     // UserPosts will be rendered inside User's <router-view>
                     // when /user/:id/posts is matched
                     path: "",
-                    component: Productes
+                    component: FeedInici,
+                    name: "FeedInici"
                 },
                 {
                     // UserPosts will be rendered inside User's <router-view>
@@ -67,23 +71,37 @@ export default {
                     name: "Productes"
                 },
                 {
+                    // UserPosts will be rendered inside User's <router-view>
+                    // when /user/:id/posts is matched
+                    path: "/producte/:id",
+                    component: Producte,
+                    name: "Producte"
+                },
+                {
                     path: "/botiga",
                     component: Botiga,
                     name: "Botiga"
                 },
                 {
                     path: "/register",
-                    component: Register
+                    component: Register,
+                    name: "Register"
                 },
                 {
                     path: "/crearBotiga",
-                    component: CrearBotiga
+                    component: CrearBotiga,
+                    name: "CrearBotiga"
                 },
                 {
                     path: "/login",
                     component: Login,
                     name: "Login"
-                }
+                },
+                {
+                    path: "/contacte",
+                    component: Contacte,
+                    name: "Contacte"
+                },
             ]
         }
     ]

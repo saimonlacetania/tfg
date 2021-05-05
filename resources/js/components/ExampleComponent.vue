@@ -25,7 +25,7 @@
                         <i class="fas fa-bars" style="color:#ff6565;"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block text-dark">
-                    <a href="#" class="nav-link text-dark"
+                    <a href="index3.html" class="nav-link text-dark"
                         style="color: #343a40 !important;text-decoration:none !important;">Inici</a>
                 </li>
             </ul>
