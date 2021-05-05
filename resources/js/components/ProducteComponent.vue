@@ -40,6 +40,7 @@
             <div class="action">
               <button
                 class="add-to-cart btn btn-default zoom"
+                v-on:click="afegirCistella"
                 type="button"
                 style="background-color: #ff6565; border: none; color: white"
               >
@@ -93,6 +94,20 @@ export default {
       console.log(res);
       this.producte = res.data;
     });
+  },
+  methods: {
+    afegirCistella() {
+      axios
+        .post("/api/afegirCistella/" + this.producte.id)
+        .then((res) => {
+          console.log(res);
+          return false;
+        })
+        .catch((error) => {
+          this.errors = error.response.data.errors;
+          return false;
+        });
+    },
   },
 };
 </script>

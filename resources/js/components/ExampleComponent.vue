@@ -37,7 +37,8 @@ html {
       <ul class="navbar-nav ml-auto">
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
-          <a
+          <router-link
+            :to="'/cistella'"
             class="nav-link"
             data-toggle="dropdown"
             href="#"
@@ -45,7 +46,7 @@ html {
           >
             <i class="fas fa-shopping-cart" style="color: #ff6565"></i>
             <span class="font-weight-light text-dark">Cistella</span>
-          </a>
+          </router-link>
         </li>
       </ul>
     </nav>
