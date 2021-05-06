@@ -58,8 +58,7 @@
       </router-link>
 
             <!-- Sidebar -->
-            <span v-if="this.user.nom">
-                <div class="sidebar fixed-left">
+                <div v-if="this.user.nom" class="sidebar fixed-left">
                     <!-- Sidebar usuari (optional) -->
                     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                         <div class="image">
@@ -92,13 +91,13 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <router-link class="nav-link" :to="'profile'">
+                                        <router-link class="nav-link" :to="'/profile'">
                                             <i class="nav-icon far fa-user-circle text-dark"></i>
                                             <p class="text-dark">Veure perfil</p>
                                         </router-link>
                                     </li>
                                     <li class="nav-item">
-                                        <router-link class="nav-link" :to="'editarPerfil'">
+                                        <router-link class="nav-link" :to="'/editarPerfil'">
                                             <i class="fas fa-cogs nav-icon text-dark"></i>
                                             <p class="text-dark">Configuració</p>
                                         </router-link>
@@ -115,7 +114,7 @@
                                 </a>
                                 <ul class="nav nav-treeview nav-child-indent">
                                     <li class="nav-item">
-                                        <router-link class="nav-link" :to="'botiga'">
+                                        <router-link class="nav-link" :to="'/botiga'">
                                             <i class="fas fa-feather-alt nav-icon text-dark"></i>
                                             <p class="text-dark">Perfil</p>
                                         </router-link>
@@ -136,7 +135,7 @@
                             </li>
                             <span v-else>
                                 <li class="nav-item">
-                                    <router-link class="nav-link" :to="'crearBotiga'">
+                                    <router-link class="nav-link" :to="'/crearBotiga'">
                                             <i class="fas fa-feather-alt nav-icon text-dark"></i>
                                             <p class="text-dark">Crear Botiga</p>
                                     </router-link>
@@ -144,7 +143,7 @@
                             </span>
 
                             <li class="nav-item">
-                                <router-link class="nav-link" :to="'productes'">
+                                <router-link class="nav-link" :to="'/productes'">
                                     <i class="nav-icon fas fa-shopping-cart text-dark"></i>
                                     <p class="text-dark">Comprar</p>
                                 </router-link>
@@ -166,7 +165,6 @@
                     </nav>
                     <!-- /.sidebar-menu -->
                 </div>
-            </span>
             <span v-else>
                 <div class="sidebar fixed-left">
                     <!-- Sidebar Menu -->
@@ -176,7 +174,7 @@
                             <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
                             <li class="nav-header text-dark">MENÚ PRINCIPAL</li>
                             <li class="nav-item">
-                                <router-link class="nav-link" :to="'profile'">
+                                <router-link class="nav-link" :to="'/profile'">
                                     <i class="nav-icon fas fa-sign-in-alt text-dark"></i>
                                     <p class="text-dark">
                                         Log in
@@ -184,7 +182,7 @@
                                 </router-link>
                             </li>
                             <li class="nav-item">
-                                <router-link class="nav-link" :to="'productes'">
+                                <router-link class="nav-link" :to="'/productes'">
                                     <i class="nav-icon fas fa-shopping-cart text-dark"></i>
                                     <p class="text-dark">Comprar</p>
                                 </router-link>

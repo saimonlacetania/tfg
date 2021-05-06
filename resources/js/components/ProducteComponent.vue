@@ -14,7 +14,7 @@
           <div class="preview col-md-6">
             <div class="preview-pic tab-content">
               <div class="tab-pane active" id="pic-1">
-                <img :src="'/images/' + $data.producte.imatge" />
+                <img :src="'/images/productes/' + $data.producte.imatge" />
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@
                 <br />
                 <img
                   :class="'card-img-top p-3 mx-auto d-block border border-dark'"
-                  :src="'/images/' + $data.producte.imatge"
+                  :src="'/images/productes/' + $data.producte.imatge"
                   style="width: 600px"
                 />
                 <hr />
