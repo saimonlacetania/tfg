@@ -67,7 +67,7 @@
                                 alt="User Image" />
                         </div>
                         <div class="info">
-                            <a href="#" class="d-block">Hola! {{ this.user.nom }}</a>
+                            <span class="d-block">Hola! {{ this.user.nom }}</span>
                         </div>
                     </div>
 
@@ -103,8 +103,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <span v-if="this.user.botiga">
-                            <li class="nav-item">
+                            <li class="nav-item" v-if="this.user.botiga">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-store-alt text-dark"></i>
                                     <p class="text-dark">
@@ -133,7 +132,6 @@
                                     </li>
                                 </ul>
                             </li>
-                            </span>
                             <span v-else>
                                 <li class="nav-item">
                                     <router-link class="nav-link" :to="'crearBotiga'">
