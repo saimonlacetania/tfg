@@ -218,6 +218,11 @@
                         <!-- /.timeline-label -->
                         <!-- timeline item -->
                         <div>
+                            <router-link :to="'AfegirProducte'">
+                                <p class="text-dark">
+                                    Afegir Producte
+                                </p>
+                            </router-link>
                             <i class="fas fa-gift bg-maroon"></i>
                             <div class="timeline-item">
                             <span class="time"

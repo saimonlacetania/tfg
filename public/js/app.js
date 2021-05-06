@@ -1916,6 +1916,272 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AfegirProducteComponent.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AfegirProducteComponent.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      form: {
+        imatge: null,
+        ref: "",
+        id_botiga: "",
+        nom: "",
+        desc: "",
+        preu: "",
+        stock: "",
+        actiu: "",
+        categoria: "",
+        visites: "0"
+      },
+      errors: [],
+      categories: "",
+      botiga: "",
+      user: ""
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get("/api/categories").then(function (res) {
+      _this.categories = res.data;
+    });
+    axios.get("/api/user").then(function (res) {
+      _this.user = res.data;
+    }).then(axios.get("/api/botiga").then(function (res2) {
+      for (var b in res2.data) {
+        if (res2.data[b].id_usuari == _this.user.id) {
+          _this.botiga = res2.data[b];
+          _this.form.id_botiga = _this.user.id;
+        }
+      }
+    }));
+  },
+  methods: {
+    saveForm: function saveForm() {
+      var _this2 = this;
+
+      var that = this;
+      console.log(that.form);
+      var formData = new FormData();
+
+      if (document.getElementById("imatge").files[0]) {
+        that.form["imatge"] = document.getElementById("imatge").files[0];
+        formData.append("imatge", that.form["imatge"]);
+      }
+
+      formData.append("ref", that.form["ref"]);
+      formData.append("id_botiga", that.form["id_botiga"]);
+      formData.append("nom", that.form["nom"]);
+      formData.append("desc", that.form["desc"]);
+      formData.append("preu", that.form["preu"]);
+      formData.append("stock", that.form["stock"]);
+      formData.append("actiu", that.form["actiu"]);
+      formData.append("categoria", that.form["categoria"]);
+      formData.append("visites", that.form["visites"]);
+      axios.post("/api/afegirProducte", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
+      }).then(function (res) {
+        console.log(res);
+
+        _this2.$router.push({
+          name: "Botiga"
+        });
+      })["catch"](function (error) {
+        that.errors = error.response.data.errors;
+        console.log(that.errors);
+      });
+      console.log(that.form);
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/BotigaComponent.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/BotigaComponent.vue?vue&type=script&lang=js& ***!
@@ -1925,6 +2191,11 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2854,31 +3125,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -8730,6 +8976,25 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AfegirProducteComponent.vue?vue&type=style&index=0&lang=css&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AfegirProducteComponent.vue?vue&type=style&index=0&lang=css& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n#registre {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\ninput[type=\"date\"]::-webkit-inner-spin-button {\n    display: none;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/BotigaComponent.vue?vue&type=style&index=0&lang=css&":
 /*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/BotigaComponent.vue?vue&type=style&index=0&lang=css& ***!
@@ -8780,7 +9045,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.wrapper {\r\n  height: 100%;\n}\nbody,\r\nhtml {\r\n  height: 100%;\n}\n.main-header {\r\n  color: #c22847 !important;\n}\r\n", ""]);
+exports.push([module.i, "\n.wrapper {\n    height: 100%;\n}\nbody,\nhtml {\n    height: 100%;\n}\n.main-header {\n    color: #C22847 !important;\n}\n\n", ""]);
 
 // exports
 
@@ -40079,6 +40344,36 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AfegirProducteComponent.vue?vue&type=style&index=0&lang=css&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AfegirProducteComponent.vue?vue&type=style&index=0&lang=css& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./AfegirProducteComponent.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AfegirProducteComponent.vue?vue&type=style&index=0&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/BotigaComponent.vue?vue&type=style&index=0&lang=css&":
 /*!*************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/BotigaComponent.vue?vue&type=style&index=0&lang=css& ***!
@@ -40873,6 +41168,484 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AfegirProducteComponent.vue?vue&type=template&id=787ac9c8&":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/AfegirProducteComponent.vue?vue&type=template&id=787ac9c8& ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "content-wrapper", attrs: { id: "registre" } },
+    [
+      _c("div", { staticClass: "register-box" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "card" }, [
+          _c("form", [
+            _c("div", { staticClass: "card-body register-card-body" }, [
+              _vm._m(1),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-group mb-3" }, [
+                _vm.errors.ref
+                  ? _c("div", { staticClass: "input-group mb-3" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-form-label",
+                          attrs: { for: "number" }
+                        },
+                        [
+                          _c("i", { staticClass: "far fa-times-circle" }),
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(_vm.errors.ref[0])
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("br")
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.ref,
+                      expression: "form.ref"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { name: "ref", type: "text", placeholder: "Ref" },
+                  domProps: { value: _vm.form.ref },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "ref", $event.target.value)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _vm._m(2)
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-group mb-3" }, [
+                _vm.errors.nom
+                  ? _c("div", { staticClass: "input-group mb-3" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-form-label",
+                          attrs: { for: "number" }
+                        },
+                        [
+                          _c("i", { staticClass: "far fa-times-circle" }),
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(_vm.errors.nom[0])
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("br")
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.nom,
+                      expression: "form.nom"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { name: "nom", type: "text", placeholder: "Nom" },
+                  domProps: { value: _vm.form.nom },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "nom", $event.target.value)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _vm._m(3)
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "categoria" } }, [
+                  _vm._v("Categoria")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.categoria,
+                        expression: "form.categoria"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { id: "categoria" },
+                    on: {
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.$set(
+                          _vm.form,
+                          "categoria",
+                          $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        )
+                      }
+                    }
+                  },
+                  _vm._l(_vm.categories, function(categoria) {
+                    return _c(
+                      "option",
+                      { key: categoria.id, domProps: { value: categoria.id } },
+                      [
+                        _vm._v(
+                          "\n                                " +
+                            _vm._s(categoria.nom) +
+                            "\n                            "
+                        )
+                      ]
+                    )
+                  }),
+                  0
+                )
+              ]),
+              _vm._v(" "),
+              _c("label", { attrs: { for: "desc" } }, [
+                _vm._v("Descripcio del producte")
+              ]),
+              _c("br"),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group mb-3" }, [
+                _vm.errors.desc
+                  ? _c("div", { staticClass: "input-group mb-3" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-form-label",
+                          attrs: { for: "number" }
+                        },
+                        [
+                          _c("i", { staticClass: "far fa-times-circle" }),
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(_vm.errors.desc[0])
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("br")
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.desc,
+                      expression: "form.desc"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "text", id: "desc", name: "desc", rows: "3" },
+                  domProps: { value: _vm.form.desc },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "desc", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-group mb-3" }, [
+                _vm.errors.preu
+                  ? _c("div", { staticClass: "input-group mb-3" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-form-label",
+                          attrs: { for: "number" }
+                        },
+                        [
+                          _c("i", { staticClass: "far fa-times-circle" }),
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(_vm.errors.preu[0])
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("br")
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.preu,
+                      expression: "form.preu"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "number", placeholder: "Preu", name: "preu" },
+                  domProps: { value: _vm.form.preu },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "preu", $event.target.value)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _vm._m(4)
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-group mb-3" }, [
+                _vm.errors.stock
+                  ? _c("div", { staticClass: "input-group mb-3" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-form-label",
+                          attrs: { for: "number" }
+                        },
+                        [
+                          _c("i", { staticClass: "far fa-times-circle" }),
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(_vm.errors.stock[0])
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("br")
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.stock,
+                      expression: "form.stock"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "number",
+                    placeholder: "Stock",
+                    name: "stock"
+                  },
+                  domProps: { value: _vm.form.stock },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.form, "stock", $event.target.value)
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _vm._m(5)
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-check" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.form.actiu,
+                      expression: "form.actiu"
+                    }
+                  ],
+                  staticClass: "form-check-input",
+                  attrs: { type: "checkbox", value: "0", id: "actiu" },
+                  domProps: {
+                    checked: Array.isArray(_vm.form.actiu)
+                      ? _vm._i(_vm.form.actiu, "0") > -1
+                      : _vm.form.actiu
+                  },
+                  on: {
+                    change: function($event) {
+                      var $$a = _vm.form.actiu,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = "0",
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 &&
+                            _vm.$set(_vm.form, "actiu", $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            _vm.$set(
+                              _vm.form,
+                              "actiu",
+                              $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                            )
+                        }
+                      } else {
+                        _vm.$set(_vm.form, "actiu", $$c)
+                      }
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "label",
+                  { staticClass: "form-check-label", attrs: { for: "actiu" } },
+                  [
+                    _vm._v(
+                      "\n                        Producte actiu\n                    "
+                    )
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col text-center" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-secondary",
+                      attrs: { type: "submit" },
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.saveForm($event)
+                        }
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n                            Puja producte\n                        "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("br")
+              ])
+            ])
+          ])
+        ])
+      ])
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "register-logo" }, [
+      _c("h1", [_vm._v("Afegir producte")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group mb-3" }, [
+      _c("label", { attrs: { for: "imatge" } }, [
+        _vm._v("Imatge del producte")
+      ]),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "form-control-file",
+        attrs: { type: "file", id: "imatge" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-append" }, [
+      _c("div", { staticClass: "input-group-text" }, [_c("span", {})])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-append" }, [
+      _c("div", { staticClass: "input-group-text" }, [_c("span", {})])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-append" }, [
+      _c("div", { staticClass: "input-group-text" }, [
+        _c("span", { staticClass: "fas fa-euro-sign" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-append" }, [
+      _c("div", { staticClass: "input-group-text" }, [
+        _c("span", { staticClass: "fas fa-layer-group" })
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/BotigaComponent.vue?vue&type=template&id=0961c866&":
 /*!******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/BotigaComponent.vue?vue&type=template&id=0961c866& ***!
@@ -40970,7 +41743,57 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _vm._m(1)
+          _c("div", { staticClass: "col-md-9" }, [
+            _c("div", { staticClass: "card card-navy card-outline" }, [
+              _vm._m(1),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _c("div", { staticClass: "tab-content" }, [
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "tab-pane", attrs: { id: "puja_producte" } },
+                    [
+                      _c("div", { staticClass: "timeline timeline-inverse" }, [
+                        _vm._m(3),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          [
+                            _c(
+                              "router-link",
+                              { attrs: { to: "AfegirProducte" } },
+                              [
+                                _c("p", { staticClass: "text-dark" }, [
+                                  _vm._v(
+                                    "\n                                Afegir Producte\n                            "
+                                  )
+                                ])
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+                            _vm._v(" "),
+                            _vm._m(4)
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _vm._m(5),
+                        _vm._v(" "),
+                        _vm._m(6),
+                        _vm._v(" "),
+                        _vm._m(7),
+                        _vm._v(" "),
+                        _vm._m(8)
+                      ])
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ])
         ])
       ])
     ])
@@ -40990,474 +41813,452 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-9" }, [
-      _c("div", { staticClass: "card card-navy card-outline" }, [
-        _c("div", { staticClass: "card-header p-2" }, [
-          _c("ul", { staticClass: "nav nav-pills" }, [
-            _c("li", { staticClass: "nav-item" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "nav-link active",
-                  staticStyle: { color: "#0a0421 !important" },
-                  attrs: { href: "#mod_perfil", "data-toggle": "tab" }
-                },
-                [_vm._v("Modificar perfil")]
-              )
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "nav-item" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "nav-link",
-                  staticStyle: { color: "#0a0421 !important" },
-                  attrs: { href: "#puja_producte", "data-toggle": "tab" }
-                },
-                [_vm._v("Pujar productes")]
-              )
-            ])
-          ])
+    return _c("div", { staticClass: "card-header p-2" }, [
+      _c("ul", { staticClass: "nav nav-pills" }, [
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link active",
+              staticStyle: { color: "#0a0421 !important" },
+              attrs: { href: "#mod_perfil", "data-toggle": "tab" }
+            },
+            [_vm._v("Modificar perfil")]
+          )
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "card-body" }, [
-          _c("div", { staticClass: "tab-content" }, [
-            _c(
-              "div",
-              { staticClass: "active tab-pane", attrs: { id: "mod_perfil" } },
-              [
-                _c("div", { staticClass: "form-group mb-3" }, [
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-md-1" }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-10" }, [
-                      _c("label", { attrs: { for: "nom_botiga" } }, [
-                        _vm._v("Nom")
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          id: "nom_botiga",
-                          placeholder: "Nom"
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-1" })
-                  ]),
-                  _vm._v(" "),
-                  _c("br"),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-md-1" }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-10" }, [
-                      _c("label", { attrs: { for: "descripcio_botiga" } }, [
-                        _vm._v("Descripció")
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          id: "descripcio_botiga",
-                          placeholder: "Descripció"
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-1" })
-                  ]),
-                  _vm._v(" "),
-                  _c("br"),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-md-1" }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-5" }, [
-                      _c("label", { attrs: { for: "telf_1_botiga" } }, [
-                        _vm._v("Telèfon")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "input-group mb-3" }, [
-                        _c("input", {
-                          staticClass: "form-control",
-                          attrs: {
-                            type: "text",
-                            id: "telf_1_botiga",
-                            placeholder: "Telèfon"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "input-group-prepend" }, [
-                          _c("span", { staticClass: "input-group-text" }, [
-                            _c("i", { staticClass: "fas fa-phone" })
-                          ])
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-5" }, [
-                      _c("label", { attrs: { for: "telf_1_botiga" } }, [
-                        _vm._v("Telèfon")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "input-group mb-3" }, [
-                        _c("input", {
-                          staticClass: "form-control",
-                          attrs: {
-                            type: "text",
-                            id: "telf_1_botiga",
-                            placeholder: "Telèfon"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "input-group-prepend" }, [
-                          _c("span", { staticClass: "input-group-text" }, [
-                            _c("i", { staticClass: "fas fa-phone" })
-                          ])
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-1" })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-md-1" }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-10" }, [
-                      _c("label", { attrs: { for: "email_botiga" } }, [
-                        _vm._v("Email")
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "email",
-                          id: "email_botiga",
-                          placeholder: "Email"
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-1" })
-                  ]),
-                  _vm._v(" "),
-                  _c("br"),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-md-1" }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-10" }, [
-                      _c("label", { attrs: { for: "direccio_botiga" } }, [
-                        _vm._v("Direcció")
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          id: "direccio_botiga",
-                          placeholder: "Direcció"
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-1" })
-                  ]),
-                  _vm._v(" "),
-                  _c("br"),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-md-1" }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-3" }, [
-                      _c("label", { attrs: { for: "cp_botiga" } }, [
-                        _vm._v("Codi postal")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "input-group mb-3" }, [
-                        _c("input", {
-                          staticClass: "form-control",
-                          attrs: {
-                            type: "text",
-                            id: "cp_botiga",
-                            placeholder: "Codi postal"
-                          }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c("label", { attrs: { for: "poblacio_botiga" } }, [
-                        _vm._v("Població")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "input-group mb-3" }, [
-                        _c("input", {
-                          staticClass: "form-control",
-                          attrs: {
-                            type: "text",
-                            id: "poblacio_botiga",
-                            placeholder: "Població"
-                          }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-3" }, [
-                      _c("div", { staticClass: "form-group" }, [
-                        _c("label", { attrs: { for: "provincia_botiga" } }, [
-                          _vm._v("Província")
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "select",
-                          {
-                            staticClass: "form-control select2",
-                            staticStyle: { width: "100%" }
-                          },
-                          [
-                            _c("option", [_vm._v("Barcelona")]),
-                            _vm._v(" "),
-                            _c("option", [_vm._v("Girona")]),
-                            _vm._v(" "),
-                            _c("option", [_vm._v("Tarragona")]),
-                            _vm._v(" "),
-                            _c("option", [_vm._v("Lleida")])
-                          ]
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-md-1" }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-5" }, [
-                      _c("label", { attrs: { for: "cif_botiga" } }, [
-                        _vm._v("CIF")
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          id: "cif_botiga",
-                          placeholder: "CIF"
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-5" }, [
-                      _c("label", { attrs: { for: "nif_botiga" } }, [
-                        _vm._v("NIF")
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          type: "text",
-                          id: "nif_botiga",
-                          placeholder: "NIF"
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-1" })
-                  ]),
-                  _vm._v(" "),
-                  _c("br"),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-md-1" }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-3" }, [
-                      _c("label", { attrs: { for: "instagram_botiga" } }, [
-                        _vm._v("Instagram")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "input-group mb-3" }, [
-                        _c("input", {
-                          staticClass: "form-control",
-                          attrs: {
-                            type: "text",
-                            id: "instagram_botiga",
-                            placeholder: "@instagram"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "input-group-prepend" }, [
-                          _c("span", { staticClass: "input-group-text" }, [
-                            _c("i", { staticClass: "fab fa-instagram" })
-                          ])
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c("label", { attrs: { for: "facebook_botiga" } }, [
-                        _vm._v("Facebook")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "input-group mb-3" }, [
-                        _c("input", {
-                          staticClass: "form-control",
-                          attrs: {
-                            type: "text",
-                            id: "facebook_botiga",
-                            placeholder: "@facebook"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "input-group-append" }, [
-                          _c("div", { staticClass: "input-group-text" }, [
-                            _c("span", { staticClass: "fab fa-facebook-f" })
-                          ])
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-3" }, [
-                      _c("label", { attrs: { for: "twitter_botiga" } }, [
-                        _vm._v("Twitter")
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "input-group mb-3" }, [
-                        _c("input", {
-                          staticClass: "form-control",
-                          attrs: {
-                            type: "text",
-                            id: "twitter_botiga",
-                            placeholder: "@twitter"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "input-group-append" }, [
-                          _c("div", { staticClass: "input-group-text" }, [
-                            _c("span", { staticClass: "fab fa-twitter" })
-                          ])
-                        ])
-                      ])
-                    ])
-                  ])
-                ])
-              ]
-            ),
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link",
+              staticStyle: { color: "#0a0421 !important" },
+              attrs: { href: "#puja_producte", "data-toggle": "tab" }
+            },
+            [_vm._v("Pujar productes")]
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "active tab-pane", attrs: { id: "mod_perfil" } },
+      [
+        _c("div", { staticClass: "form-group mb-3" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-1" }),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "tab-pane", attrs: { id: "puja_producte" } },
-              [
-                _c("div", { staticClass: "timeline timeline-inverse" }, [
-                  _c("div", { staticClass: "time-label" }, [
-                    _c("span", { staticClass: "bg-secondary" }, [
-                      _c("i", { staticClass: "far fa-calendar-alt" }),
-                      _vm._v(
-                        "\n                        26/04/2021\n                        "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("i", { staticClass: "fas fa-gift bg-maroon" }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "timeline-item" }, [
-                      _c("span", { staticClass: "time" }, [
-                        _c("i", { staticClass: "fas fa-store-alt" }),
-                        _c("a", { attrs: { href: "#" } }, [
-                          _vm._v(" Nom Botiga")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("h3", { staticClass: "timeline-header" }, [
-                        _vm._v("Nom del producte")
-                      ]),
-                      _vm._v(" "),
-                      _c("small", { staticClass: "timeline-body" }, [
-                        _vm._v("Descripcio producte")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("i", { staticClass: "fas fa-gift bg-maroon" }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "timeline-item" }, [
-                      _c("span", { staticClass: "time" }, [
-                        _c("i", { staticClass: "fas fa-store-alt" }),
-                        _c("a", { attrs: { href: "#" } }, [
-                          _vm._v(" Nom Botiga")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("h3", { staticClass: "timeline-header" }, [
-                        _vm._v("Nom del producte")
-                      ]),
-                      _vm._v(" "),
-                      _c("small", { staticClass: "timeline-body" }, [
-                        _vm._v("Descripcio producte")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("i", { staticClass: "fas fa-gift bg-maroon" }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "timeline-item" }, [
-                      _c("span", { staticClass: "time" }, [
-                        _c("i", { staticClass: "fas fa-store-alt" }),
-                        _c("a", { attrs: { href: "#" } }, [
-                          _vm._v(" Nom Botiga")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("h3", { staticClass: "timeline-header" }, [
-                        _vm._v("Nom del producte")
-                      ]),
-                      _vm._v(" "),
-                      _c("small", { staticClass: "timeline-body" }, [
-                        _vm._v("Descripcio producte")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "time-label" }, [
-                    _c("span", { staticClass: "bg-secondary" }, [
-                      _c("i", { staticClass: "far fa-calendar-alt" }),
-                      _vm._v(
-                        "\n                        27/10/2020\n                        "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", [
-                    _c("i", { staticClass: "fas fa-gift bg-maroon" }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "timeline-item" }, [
-                      _c("span", { staticClass: "time" }, [
-                        _c("i", { staticClass: "fas fa-store-alt" }),
-                        _c("a", { attrs: { href: "#" } }, [
-                          _vm._v(" Nom Botiga")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("h3", { staticClass: "timeline-header" }, [
-                        _vm._v("Nom del producte")
-                      ]),
-                      _vm._v(" "),
-                      _c("small", { staticClass: "timeline-body" }, [
-                        _vm._v("Descripcio producte")
-                      ])
-                    ])
+            _c("div", { staticClass: "col-md-10" }, [
+              _c("label", { attrs: { for: "nom_botiga" } }, [_vm._v("Nom")]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: { type: "text", id: "nom_botiga", placeholder: "Nom" }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-1" })
+          ]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-1" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-10" }, [
+              _c("label", { attrs: { for: "descripcio_botiga" } }, [
+                _vm._v("Descripció")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: {
+                  type: "text",
+                  id: "descripcio_botiga",
+                  placeholder: "Descripció"
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-1" })
+          ]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-1" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-5" }, [
+              _c("label", { attrs: { for: "telf_1_botiga" } }, [
+                _vm._v("Telèfon")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-group mb-3" }, [
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "text",
+                    id: "telf_1_botiga",
+                    placeholder: "Telèfon"
+                  }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group-prepend" }, [
+                  _c("span", { staticClass: "input-group-text" }, [
+                    _c("i", { staticClass: "fas fa-phone" })
                   ])
                 ])
-              ]
-            )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-5" }, [
+              _c("label", { attrs: { for: "telf_1_botiga" } }, [
+                _vm._v("Telèfon")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-group mb-3" }, [
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "text",
+                    id: "telf_1_botiga",
+                    placeholder: "Telèfon"
+                  }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group-prepend" }, [
+                  _c("span", { staticClass: "input-group-text" }, [
+                    _c("i", { staticClass: "fas fa-phone" })
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-1" })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-1" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-10" }, [
+              _c("label", { attrs: { for: "email_botiga" } }, [
+                _vm._v("Email")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: {
+                  type: "email",
+                  id: "email_botiga",
+                  placeholder: "Email"
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-1" })
+          ]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-1" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-10" }, [
+              _c("label", { attrs: { for: "direccio_botiga" } }, [
+                _vm._v("Direcció")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: {
+                  type: "text",
+                  id: "direccio_botiga",
+                  placeholder: "Direcció"
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-1" })
+          ]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-1" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-3" }, [
+              _c("label", { attrs: { for: "cp_botiga" } }, [
+                _vm._v("Codi postal")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-group mb-3" }, [
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "text",
+                    id: "cp_botiga",
+                    placeholder: "Codi postal"
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-4" }, [
+              _c("label", { attrs: { for: "poblacio_botiga" } }, [
+                _vm._v("Població")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-group mb-3" }, [
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "text",
+                    id: "poblacio_botiga",
+                    placeholder: "Població"
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-3" }, [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "provincia_botiga" } }, [
+                  _vm._v("Província")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    staticClass: "form-control select2",
+                    staticStyle: { width: "100%" }
+                  },
+                  [
+                    _c("option", [_vm._v("Barcelona")]),
+                    _vm._v(" "),
+                    _c("option", [_vm._v("Girona")]),
+                    _vm._v(" "),
+                    _c("option", [_vm._v("Tarragona")]),
+                    _vm._v(" "),
+                    _c("option", [_vm._v("Lleida")])
+                  ]
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-1" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-5" }, [
+              _c("label", { attrs: { for: "cif_botiga" } }, [_vm._v("CIF")]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: { type: "text", id: "cif_botiga", placeholder: "CIF" }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-5" }, [
+              _c("label", { attrs: { for: "nif_botiga" } }, [_vm._v("NIF")]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: { type: "text", id: "nif_botiga", placeholder: "NIF" }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-1" })
+          ]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-1" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-3" }, [
+              _c("label", { attrs: { for: "instagram_botiga" } }, [
+                _vm._v("Instagram")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-group mb-3" }, [
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "text",
+                    id: "instagram_botiga",
+                    placeholder: "@instagram"
+                  }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group-prepend" }, [
+                  _c("span", { staticClass: "input-group-text" }, [
+                    _c("i", { staticClass: "fab fa-instagram" })
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-4" }, [
+              _c("label", { attrs: { for: "facebook_botiga" } }, [
+                _vm._v("Facebook")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-group mb-3" }, [
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "text",
+                    id: "facebook_botiga",
+                    placeholder: "@facebook"
+                  }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group-append" }, [
+                  _c("div", { staticClass: "input-group-text" }, [
+                    _c("span", { staticClass: "fab fa-facebook-f" })
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-3" }, [
+              _c("label", { attrs: { for: "twitter_botiga" } }, [
+                _vm._v("Twitter")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-group mb-3" }, [
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "text",
+                    id: "twitter_botiga",
+                    placeholder: "@twitter"
+                  }
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "input-group-append" }, [
+                  _c("div", { staticClass: "input-group-text" }, [
+                    _c("span", { staticClass: "fab fa-twitter" })
+                  ])
+                ])
+              ])
+            ])
           ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "time-label" }, [
+      _c("span", { staticClass: "bg-secondary" }, [
+        _c("i", { staticClass: "far fa-calendar-alt" }),
+        _vm._v("\n                        26/04/2021\n                        ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "timeline-item" }, [
+      _c("span", { staticClass: "time" }, [
+        _c("i", { staticClass: "fas fa-store-alt" }),
+        _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
+      ]),
+      _vm._v(" "),
+      _c("h3", { staticClass: "timeline-header" }, [
+        _vm._v("Nom del producte")
+      ]),
+      _vm._v(" "),
+      _c("small", { staticClass: "timeline-body" }, [
+        _vm._v("Descripcio producte")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "timeline-item" }, [
+        _c("span", { staticClass: "time" }, [
+          _c("i", { staticClass: "fas fa-store-alt" }),
+          _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
+        ]),
+        _vm._v(" "),
+        _c("h3", { staticClass: "timeline-header" }, [
+          _vm._v("Nom del producte")
+        ]),
+        _vm._v(" "),
+        _c("small", { staticClass: "timeline-body" }, [
+          _vm._v("Descripcio producte")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "timeline-item" }, [
+        _c("span", { staticClass: "time" }, [
+          _c("i", { staticClass: "fas fa-store-alt" }),
+          _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
+        ]),
+        _vm._v(" "),
+        _c("h3", { staticClass: "timeline-header" }, [
+          _vm._v("Nom del producte")
+        ]),
+        _vm._v(" "),
+        _c("small", { staticClass: "timeline-body" }, [
+          _vm._v("Descripcio producte")
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "time-label" }, [
+      _c("span", { staticClass: "bg-secondary" }, [
+        _c("i", { staticClass: "far fa-calendar-alt" }),
+        _vm._v("\n                        27/10/2020\n                        ")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "timeline-item" }, [
+        _c("span", { staticClass: "time" }, [
+          _c("i", { staticClass: "fas fa-store-alt" }),
+          _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
+        ]),
+        _vm._v(" "),
+        _c("h3", { staticClass: "timeline-header" }, [
+          _vm._v("Nom del producte")
+        ]),
+        _vm._v(" "),
+        _c("small", { staticClass: "timeline-body" }, [
+          _vm._v("Descripcio producte")
         ])
       ])
     ])
@@ -42803,73 +43604,77 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         this.user.botiga
-                          ? _c("li", { staticClass: "nav-item" }, [
-                              _vm._m(2),
-                              _vm._v(" "),
-                              _c(
-                                "ul",
-                                {
-                                  staticClass:
-                                    "nav nav-treeview nav-child-indent"
-                                },
-                                [
-                                  _c(
-                                    "li",
-                                    { staticClass: "nav-item" },
-                                    [
-                                      _c(
-                                        "router-link",
-                                        {
-                                          staticClass: "nav-link",
-                                          attrs: { to: "botiga" }
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass:
-                                              "fas fa-feather-alt nav-icon text-dark"
-                                          }),
-                                          _vm._v(" "),
-                                          _c(
-                                            "p",
-                                            { staticClass: "text-dark" },
-                                            [_vm._v("Perfil")]
-                                          )
-                                        ]
-                                      )
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _vm._m(3),
-                                  _vm._v(" "),
-                                  _vm._m(4)
-                                ]
-                              )
-                            ])
-                          : _c(
-                              "li",
-                              { staticClass: "nav-item" },
-                              [
+                          ? _c("span", [
+                              _c("li", { staticClass: "nav-item" }, [
+                                _vm._m(2),
+                                _vm._v(" "),
                                 _c(
-                                  "router-link",
+                                  "ul",
                                   {
-                                    staticClass: "nav-link",
-                                    attrs: { to: "crearBotiga" }
+                                    staticClass:
+                                      "nav nav-treeview nav-child-indent"
                                   },
                                   [
-                                    _c("i", {
-                                      staticClass:
-                                        "fas fa-feather-alt nav-icon text-dark"
-                                    }),
+                                    _c(
+                                      "li",
+                                      { staticClass: "nav-item" },
+                                      [
+                                        _c(
+                                          "router-link",
+                                          {
+                                            staticClass: "nav-link",
+                                            attrs: { to: "botiga" }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass:
+                                                "fas fa-feather-alt nav-icon text-dark"
+                                            }),
+                                            _vm._v(" "),
+                                            _c(
+                                              "p",
+                                              { staticClass: "text-dark" },
+                                              [_vm._v("Perfil")]
+                                            )
+                                          ]
+                                        )
+                                      ],
+                                      1
+                                    ),
                                     _vm._v(" "),
-                                    _c("p", { staticClass: "text-dark" }, [
-                                      _vm._v("Crear Botiga")
-                                    ])
+                                    _vm._m(3),
+                                    _vm._v(" "),
+                                    _vm._m(4)
                                   ]
                                 )
-                              ],
-                              1
-                            ),
+                              ])
+                            ])
+                          : _c("span", [
+                              _c(
+                                "li",
+                                { staticClass: "nav-item" },
+                                [
+                                  _c(
+                                    "router-link",
+                                    {
+                                      staticClass: "nav-link",
+                                      attrs: { to: "crearBotiga" }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass:
+                                          "fas fa-feather-alt nav-icon text-dark"
+                                      }),
+                                      _vm._v(" "),
+                                      _c("p", { staticClass: "text-dark" }, [
+                                        _vm._v("Crear Botiga")
+                                      ])
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            ]),
                         _vm._v(" "),
                         _c(
                           "li",
@@ -42889,31 +43694,6 @@ var render = function() {
                                 _vm._v(" "),
                                 _c("p", { staticClass: "text-dark" }, [
                                   _vm._v("Comprar")
-                                ])
-                              ]
-                            )
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "li",
-                          { staticClass: "nav-item" },
-                          [
-                            _c(
-                              "router-link",
-                              {
-                                staticClass: "nav-link",
-                                attrs: { to: "contacte" }
-                              },
-                              [
-                                _c("i", {
-                                  staticClass:
-                                    "nav-icon fas fa-comments text-dark"
-                                }),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "text-dark" }, [
-                                  _vm._v("Contacte")
                                 ])
                               ]
                             )
@@ -42982,7 +43762,7 @@ var render = function() {
                               "router-link",
                               {
                                 staticClass: "nav-link",
-                                attrs: { to: "/profile" }
+                                attrs: { to: "profile" }
                               },
                               [
                                 _c("i", {
@@ -42991,7 +43771,9 @@ var render = function() {
                                 }),
                                 _vm._v(" "),
                                 _c("p", { staticClass: "text-dark" }, [
-                                  _vm._v("Log in")
+                                  _vm._v(
+                                    "\n                                    Log in\n                                "
+                                  )
                                 ])
                               ]
                             )
@@ -43007,7 +43789,7 @@ var render = function() {
                               "router-link",
                               {
                                 staticClass: "nav-link",
-                                attrs: { to: "/productes" }
+                                attrs: { to: "productes" }
                               },
                               [
                                 _c("i", {
@@ -43044,10 +43826,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "nav",
-      {
-        staticClass:
-          "main-header navbar navbar-expand navbar-light border-bottom-0"
-      },
+      { staticClass: "main-header navbar navbar-expand navbar-light" },
       [
         _c("ul", { staticClass: "navbar-nav" }, [
           _c("li", { staticClass: "nav-item" }, [
@@ -43122,7 +43901,9 @@ var staticRenderFns = [
       _c("i", { staticClass: "nav-icon fas fa-user text-dark" }),
       _vm._v(" "),
       _c("p", { staticClass: "text-dark" }, [
-        _vm._v("\n                  El meu perfil\n                  "),
+        _vm._v(
+          "\n                                    El meu perfil\n                                    "
+        ),
         _c("i", { staticClass: "right fas fa-angle-left" })
       ])
     ])
@@ -43135,7 +43916,9 @@ var staticRenderFns = [
       _c("i", { staticClass: "nav-icon fas fa-store-alt text-dark" }),
       _vm._v(" "),
       _c("p", { staticClass: "text-dark" }, [
-        _vm._v("\n                  La meva botiga\n                  "),
+        _vm._v(
+          "\n                                    La meva botiga\n                                    "
+        ),
         _c("i", { staticClass: "right fas fa-angle-left" })
       ])
     ])
@@ -43145,15 +43928,11 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "nav-item" }, [
-      _c(
-        "a",
-        { staticClass: "nav-link", attrs: { href: "../../index.html" } },
-        [
-          _c("i", { staticClass: "fas fa-tag nav-icon text-dark" }),
-          _vm._v(" "),
-          _c("p", { staticClass: "text-dark" }, [_vm._v("Productes")])
-        ]
-      )
+      _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+        _c("i", { staticClass: "fas fa-tag nav-icon text-dark" }),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-dark" }, [_vm._v("Productes")])
+      ])
     ])
   },
   function() {
@@ -43161,15 +43940,11 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "nav-item" }, [
-      _c(
-        "a",
-        { staticClass: "nav-link", attrs: { href: "../../index.html" } },
-        [
-          _c("i", { staticClass: "fas fa-chart-line nav-icon text-dark" }),
-          _vm._v(" "),
-          _c("p", { staticClass: "text-dark" }, [_vm._v("Estadístiques")])
-        ]
-      )
+      _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+        _c("i", { staticClass: "fas fa-chart-line nav-icon text-dark" }),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-dark" }, [_vm._v("Estadístiques")])
+      ])
     ])
   }
 ]
@@ -44015,7 +44790,9 @@ var render = function() {
                         [
                           _c("img", {
                             class: "card-img-top p-3",
-                            attrs: { src: "/images/" + producte.imatge }
+                            attrs: {
+                              src: "/images/productes/" + producte.imatge
+                            }
                           }),
                           _vm._v(" "),
                           _c("div", { class: "card-body" }, [
@@ -60704,6 +61481,93 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 
 /***/ }),
 
+/***/ "./resources/js/components/AfegirProducteComponent.vue":
+/*!*************************************************************!*\
+  !*** ./resources/js/components/AfegirProducteComponent.vue ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AfegirProducteComponent_vue_vue_type_template_id_787ac9c8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AfegirProducteComponent.vue?vue&type=template&id=787ac9c8& */ "./resources/js/components/AfegirProducteComponent.vue?vue&type=template&id=787ac9c8&");
+/* harmony import */ var _AfegirProducteComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AfegirProducteComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/AfegirProducteComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _AfegirProducteComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AfegirProducteComponent.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/AfegirProducteComponent.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _AfegirProducteComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _AfegirProducteComponent_vue_vue_type_template_id_787ac9c8___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AfegirProducteComponent_vue_vue_type_template_id_787ac9c8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/AfegirProducteComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/AfegirProducteComponent.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/AfegirProducteComponent.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AfegirProducteComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./AfegirProducteComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AfegirProducteComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AfegirProducteComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/AfegirProducteComponent.vue?vue&type=style&index=0&lang=css&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/AfegirProducteComponent.vue?vue&type=style&index=0&lang=css& ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AfegirProducteComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./AfegirProducteComponent.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AfegirProducteComponent.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AfegirProducteComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AfegirProducteComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AfegirProducteComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_AfegirProducteComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/components/AfegirProducteComponent.vue?vue&type=template&id=787ac9c8&":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/components/AfegirProducteComponent.vue?vue&type=template&id=787ac9c8& ***!
+  \********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AfegirProducteComponent_vue_vue_type_template_id_787ac9c8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./AfegirProducteComponent.vue?vue&type=template&id=787ac9c8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/AfegirProducteComponent.vue?vue&type=template&id=787ac9c8&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AfegirProducteComponent_vue_vue_type_template_id_787ac9c8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AfegirProducteComponent_vue_vue_type_template_id_787ac9c8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/BotigaComponent.vue":
 /*!*****************************************************!*\
   !*** ./resources/js/components/BotigaComponent.vue ***!
@@ -61716,6 +62580,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ProducteComponent__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/ProducteComponent */ "./resources/js/components/ProducteComponent.vue");
 /* harmony import */ var _components_BotigaComponent__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/BotigaComponent */ "./resources/js/components/BotigaComponent.vue");
 /* harmony import */ var _components_CrearBotigaComponent__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/CrearBotigaComponent */ "./resources/js/components/CrearBotigaComponent.vue");
+/* harmony import */ var _components_AfegirProducteComponent__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/AfegirProducteComponent */ "./resources/js/components/AfegirProducteComponent.vue");
+
 
 
 
@@ -61790,6 +62656,10 @@ __webpack_require__.r(__webpack_exports__);
       path: "/botiga",
       component: _components_BotigaComponent__WEBPACK_IMPORTED_MODULE_10__["default"],
       name: "Botiga"
+    }, {
+      path: "/afegirProducte",
+      component: _components_AfegirProducteComponent__WEBPACK_IMPORTED_MODULE_12__["default"],
+      name: "AfegirProducte"
     }, {
       path: "/register",
       component: _components_Register__WEBPACK_IMPORTED_MODULE_0__["default"],
