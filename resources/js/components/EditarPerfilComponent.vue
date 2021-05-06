@@ -17,9 +17,9 @@
           <div class="col-md-4">
             <div class="card card-dark card-outline">
               <div class="card-body">
-                <form @submit.prevent="modifyProfile">
+                <form @submit.prevent="modifyProfile">                      
                   <div class="form-group">
-                    <label for="cognoms">Foto de perfil</label>
+                    
                     <div class="text-center">
                       <img
                         class="profile-user-img img-fluid img-circle"
@@ -28,8 +28,27 @@
                       />
                     </div>
                     <br />
+                    <label for="arxiu">Foto de perfil</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                          <input 
+                              @change="fileSelected"
+                              type="file" 
+                              class="custom-file-input" 
+                              id="arxiu"
+                          >
+                          <label v-if="!files || !files.length" class="custom-file-label" for="arxiu">Tria un fitxer</label>
+                          <span v-else>
+                            <label v-for="file in files" :key="file.name" class="custom-file-label" for="arxiu">{{file.name}}</label>
+                          </span>
+                      </div>
+                    <div class="input-group-append">
+                        <span class="input-group-text">
+                            <i class="fas fa-image"></i>
+                        </span>
+                    </div>
+                  </div>
 
-                    <input type="file" class="form-control-file" id="arxiu" />
                   </div>
                   <div class="form-group">
                     <label for="nom">Nom</label>
@@ -186,6 +205,7 @@
 </template>
 
 <script>
+
 export default {
   mounted() {
     axios.get("/api/user").then((res) => {
@@ -203,8 +223,10 @@ export default {
       console.log(this.user);
     });
   },
+  
   data() {
     return {
+      files: null,
       user: "",
       form: {
         id: "",
@@ -231,6 +253,10 @@ export default {
     };
   },
   methods: {
+    fileSelected(e) {
+    this.files = e.target.files
+    console.log(this.files);
+    },
     toastCorrecte() {
       // Use sweetalert2
       this.$swal({
@@ -326,3 +352,13 @@ export default {
   },
 };
 </script>
+<style>
+    .custom-file-input:lang(en) ~ .custom-file-label::after {
+        content: "Busca";
+        visibility: hidden;
+    }
+    .custom-file-label::after {
+      content: "Busca";
+        visibility: hidden;
+    }
+</style>

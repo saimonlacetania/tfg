@@ -113,11 +113,15 @@
                                     <div class="input-group">
                                     <div class="custom-file">
                                         <input 
+                                            @change="fileSelected"
                                             type="file" 
                                             class="custom-file-input" 
                                             id="imatge"
                                         >
-                                        <label class="custom-file-label" for="imatge">Tria un fitxer</label>
+                                        <label v-if="!files || !files.length" class="custom-file-label" for="imatge">Tria un fitxer</label>
+                                        <span v-else>
+                                            <label v-for="file in files" :key="file.name" class="custom-file-label" for="imatge">{{file.name}}</label>
+                                        </span>
                                     </div>
                                     <div class="input-group-append">
                                         <span class="input-group-text">
@@ -312,6 +316,7 @@ export default {
                 categoria: "",
                 visites: "0",
             },
+            files: null,
             errors: [],
             categories: "",
             botiga: "",
@@ -337,6 +342,10 @@ export default {
     },
 
     methods: {
+        fileSelected(e) {
+        this.files = e.target.files
+        console.log(this.files);
+        },
         toastCorrecte() {
         // Use sweetalert2
         this.$swal({
@@ -410,3 +419,9 @@ export default {
 
 };
 </script>
+<style>
+    .custom-file-input:lang(en) ~ .custom-file-label::after {
+        content: "Busca";
+        visibility: hidden;
+    }
+</style>
