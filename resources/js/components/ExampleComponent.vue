@@ -52,7 +52,7 @@ html {
     <!-- /.navbar -->
 
     <!-- MENÚ ESQUERRA -->
-    <aside class="main-sidebar sidebar-light elevation-4">
+    <aside class="main-sidebar sidebar-light elevation-4 sidebar-no-expand">
       <!-- Logo -->
       <router-link :to="'/'" class="brand-link">
         <img

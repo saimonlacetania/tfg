@@ -1944,6 +1944,230 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3759,6 +3983,13 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CercaComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CercaComponent.vue */ "./resources/js/components/CercaComponent.vue");
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -40587,14 +40818,328 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "content-wrapper" }, [
-    _c("h1", [_vm._v("Component botiga")]),
-    _vm._v(" "),
-    _c("h2", [_vm._v(_vm._s(this.botiga.nom))]),
-    _vm._v(" "),
-    _c("h2", [_vm._v(_vm._s(this.botiga.descripcio))])
+    _c("section", { staticClass: "content" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-3" }, [
+            _c("div", { staticClass: "card card-navy card-outline" }, [
+              _c("div", { staticClass: "card-body box-profile" }, [
+                _c("div", { staticClass: "text-center" }, [
+                  _c("img", {
+                    staticClass: "profile-user-img img-fluid img-circle",
+                    attrs: {
+                      src: "/images/avatars/" + this.user.profile_pic,
+                      alt: "User profile picture"
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("h3", { staticClass: "profile-username text-center" }, [
+                  _vm._v(_vm._s(this.user.nom))
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-muted text-center" }, [
+                  _vm._v(_vm._s(this.botiga.descripcio))
+                ]),
+                _vm._v(" "),
+                _c(
+                  "ul",
+                  { staticClass: "list-group list-group-unbordered mb-3" },
+                  [
+                    _c("li", { staticClass: "list-group-item" }, [
+                      _c("strong", [
+                        _c("i", { staticClass: "fas fa-map-marker-alt mr-1" }),
+                        _vm._v(" " + _vm._s(this.botiga.poblacio))
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "text-muted" }, [
+                        _vm._v(_vm._s(this.botiga.direccio))
+                      ]),
+                      _vm._v(" "),
+                      _c("small", [
+                        _c("p", { staticClass: "text-muted" }, [
+                          _vm._v(_vm._s(this.botiga.provincia))
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "list-group-item" }, [
+                      _vm._m(0),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "text-muted" }, [
+                        _vm._v(_vm._s(this.botiga.email))
+                      ]),
+                      _vm._v(" "),
+                      _c("small", [
+                        _c("p", { staticClass: "text-muted" }, [
+                          _vm._v(_vm._s(this.botiga.telf_1))
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", { staticClass: "list-group-item" }, [
+                      _c("i", { staticClass: "fab fa-instagram mr-1" }),
+                      _vm._v(" " + _vm._s(this.botiga.instagram)),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c("i", { staticClass: "fab fa-facebook mr-1" }),
+                      _vm._v(" " + _vm._s(this.botiga.facebook)),
+                      _c("br"),
+                      _vm._v(" "),
+                      _c("i", { staticClass: "fab fa-twitter mr-1" }),
+                      _vm._v(
+                        " " +
+                          _vm._s(this.botiga.twitter) +
+                          "\n                        "
+                      )
+                    ])
+                  ]
+                )
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _vm._m(1)
+        ])
+      ])
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("strong", [
+      _c("i", { staticClass: "far fa-address-card mr-1" }),
+      _vm._v(" Contacte")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-9" }, [
+      _c("div", { staticClass: "card card-navy card-outline" }, [
+        _c("div", { staticClass: "card-header p-2" }, [
+          _c("ul", { staticClass: "nav nav-pills" }, [
+            _c("li", { staticClass: "nav-item" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link active",
+                  staticStyle: { color: "#0a0421 !important" },
+                  attrs: { href: "#activity", "data-toggle": "tab" }
+                },
+                [_vm._v("Modificar perfil")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("li", { staticClass: "nav-item" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "nav-link",
+                  staticStyle: { color: "#0a0421 !important" },
+                  attrs: { href: "#timeline", "data-toggle": "tab" }
+                },
+                [_vm._v("Pujar productes")]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body" }, [
+          _c("div", { staticClass: "tab-content" }, [
+            _c(
+              "div",
+              { staticClass: "active tab-pane", attrs: { id: "activity" } },
+              [
+                _c("div", { staticClass: "card mb-3" }, [
+                  _c("div", { staticClass: "row g-0" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c("img", {
+                        staticClass: "img-fluid p-1 ml-4",
+                        staticStyle: {
+                          height: "150px",
+                          width: "150px",
+                          "border-radius": "150px"
+                        },
+                        attrs: {
+                          src:
+                            "https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg",
+                          alt: "..."
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-8" }, [
+                      _c("div", { staticClass: "card-body" }, [
+                        _c("h5", { staticClass: "card-title" }, [
+                          _vm._v("Producte")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "card-text" }, [
+                          _vm._v(
+                            "\n                            This is a wider card with supporting text below as\n                            a natural lead-in to additional content. This\n                            content is a little bit longer.\n                            "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "card-text" }, [
+                          _c("small", { staticClass: "text-muted" }, [
+                            _vm._v("Comprat el 26/04/2021")
+                          ])
+                        ])
+                      ])
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card mb-3" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c("img", {
+                        staticClass: "img-fluid p-1 ml-4",
+                        staticStyle: {
+                          height: "150px",
+                          width: "150px",
+                          "border-radius": "150px"
+                        },
+                        attrs: {
+                          src:
+                            "https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg",
+                          alt: "..."
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-8" }, [
+                      _c("div", { staticClass: "card-body" }, [
+                        _c("h5", { staticClass: "card-title" }, [
+                          _vm._v("Producte")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "card-text" }, [
+                          _vm._v(
+                            "\n                            This is a wider card with supporting text below as\n                            a natural lead-in to additional content. This\n                            content is a little bit longer.\n                            "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "card-text" }, [
+                          _c("small", { staticClass: "text-muted" }, [
+                            _vm._v("Comprat el 26/04/2021")
+                          ])
+                        ])
+                      ])
+                    ])
+                  ])
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "tab-pane", attrs: { id: "timeline" } }, [
+              _c("div", { staticClass: "timeline timeline-inverse" }, [
+                _c("div", { staticClass: "time-label" }, [
+                  _c("span", { staticClass: "bg-secondary" }, [
+                    _c("i", { staticClass: "far fa-calendar-alt" }),
+                    _vm._v(
+                      "\n                        26/04/2021\n                        "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "timeline-item" }, [
+                    _c("span", { staticClass: "time" }, [
+                      _c("i", { staticClass: "fas fa-store-alt" }),
+                      _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
+                    ]),
+                    _vm._v(" "),
+                    _c("h3", { staticClass: "timeline-header" }, [
+                      _vm._v("Nom del producte")
+                    ]),
+                    _vm._v(" "),
+                    _c("small", { staticClass: "timeline-body" }, [
+                      _vm._v("Descripcio producte")
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "timeline-item" }, [
+                    _c("span", { staticClass: "time" }, [
+                      _c("i", { staticClass: "fas fa-store-alt" }),
+                      _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
+                    ]),
+                    _vm._v(" "),
+                    _c("h3", { staticClass: "timeline-header" }, [
+                      _vm._v("Nom del producte")
+                    ]),
+                    _vm._v(" "),
+                    _c("small", { staticClass: "timeline-body" }, [
+                      _vm._v("Descripcio producte")
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "timeline-item" }, [
+                    _c("span", { staticClass: "time" }, [
+                      _c("i", { staticClass: "fas fa-store-alt" }),
+                      _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
+                    ]),
+                    _vm._v(" "),
+                    _c("h3", { staticClass: "timeline-header" }, [
+                      _vm._v("Nom del producte")
+                    ]),
+                    _vm._v(" "),
+                    _c("small", { staticClass: "timeline-body" }, [
+                      _vm._v("Descripcio producte")
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "time-label" }, [
+                  _c("span", { staticClass: "bg-secondary" }, [
+                    _c("i", { staticClass: "far fa-calendar-alt" }),
+                    _vm._v(
+                      "\n                        27/10/2020\n                        "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "timeline-item" }, [
+                    _c("span", { staticClass: "time" }, [
+                      _c("i", { staticClass: "fas fa-store-alt" }),
+                      _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
+                    ]),
+                    _vm._v(" "),
+                    _c("h3", { staticClass: "timeline-header" }, [
+                      _vm._v("Nom del producte")
+                    ]),
+                    _vm._v(" "),
+                    _c("small", { staticClass: "timeline-body" }, [
+                      _vm._v("Descripcio producte")
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -41809,7 +42354,10 @@ var render = function() {
       _vm._v(" "),
       _c(
         "aside",
-        { staticClass: "main-sidebar sidebar-light elevation-4" },
+        {
+          staticClass:
+            "main-sidebar sidebar-light elevation-4 sidebar-no-expand"
+        },
         [
           _c("router-link", { staticClass: "brand-link", attrs: { to: "/" } }, [
             _c("img", {
@@ -43986,125 +44534,131 @@ var staticRenderFns = [
             _c("br"),
             _c("br"),
             _vm._v(" "),
-            _c("div", { staticClass: "col-sm-12 mt-4" }, [
-              _c("h1", { staticClass: "text-center" }, [
-                _vm._v("¿Perquè Mercat Virtual?")
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-12 mt-4" }, [
+                _c("h1", { staticClass: "text-center" }, [
+                  _vm._v("¿Perquè Mercat Virtual?")
+                ])
               ])
             ]),
             _vm._v(" "),
             _c("br"),
             _c("br"),
             _vm._v(" "),
-            _c("div", { staticClass: "row ml-2" }, [
-              _c("div", { staticClass: "col-md-1" }),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "card",
-                  staticStyle: {
-                    width: "18rem",
-                    background: "transparent !important",
-                    border: "none",
-                    "box-shadow": "none"
-                  }
-                },
-                [
-                  _c("img", {
-                    staticClass: "float-left ml-5",
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-4" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "card",
                     staticStyle: {
-                      width: "200px",
-                      height: "200px",
-                      "border-radius": "250px"
-                    },
-                    attrs: { src: "images/granja.png", alt: "..." }
-                  }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card-body text-center" }, [
-                    _c("h5", { staticClass: "card-title" }, [
-                      _vm._v("Empoderem el petit productor")
-                    ]),
+                      width: "18rem",
+                      background: "transparent !important",
+                      border: "none",
+                      "box-shadow": "none"
+                    }
+                  },
+                  [
+                    _c("img", {
+                      staticClass: "float-left ml-5",
+                      staticStyle: {
+                        width: "200px",
+                        height: "200px",
+                        "border-radius": "250px"
+                      },
+                      attrs: { src: "images/granja.png", alt: "..." }
+                    }),
                     _vm._v(" "),
-                    _c("p", { staticClass: "card-text" }, [
-                      _vm._v(
-                        "Some quick example text to build on the card title and make up the bulk of the card's content."
-                      )
+                    _c("div", { staticClass: "card-body text-center" }, [
+                      _c("h5", { staticClass: "card-title" }, [
+                        _vm._v("Empoderem el petit productor")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v(
+                          "Some quick example text to build on the card title and make up the bulk of the card's content."
+                        )
+                      ])
                     ])
-                  ])
-                ]
-              ),
+                  ]
+                )
+              ]),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "card",
-                  staticStyle: {
-                    width: "18rem",
-                    background: "transparent !important",
-                    border: "none",
-                    "box-shadow": "none"
-                  }
-                },
-                [
-                  _c("img", {
-                    staticClass: "float-left ml-5",
+              _c("div", { staticClass: "col-md-4" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "card",
                     staticStyle: {
-                      width: "200px",
-                      height: "200px",
-                      "border-radius": "250px"
-                    },
-                    attrs: { src: "images/market.png", alt: "..." }
-                  }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card-body text-center" }, [
-                    _c("h5", { staticClass: "card-title" }, [
-                      _vm._v("Recuperem el mercat")
-                    ]),
+                      width: "18rem",
+                      background: "transparent !important",
+                      border: "none",
+                      "box-shadow": "none"
+                    }
+                  },
+                  [
+                    _c("img", {
+                      staticClass: "float-left ml-5",
+                      staticStyle: {
+                        width: "200px",
+                        height: "200px",
+                        "border-radius": "250px"
+                      },
+                      attrs: { src: "images/market.png", alt: "..." }
+                    }),
                     _vm._v(" "),
-                    _c("p", { staticClass: "card-text" }, [
-                      _vm._v(
-                        "Some quick example text to build on the card title and make up the bulk of the card's content."
-                      )
+                    _c("div", { staticClass: "card-body text-center" }, [
+                      _c("h5", { staticClass: "card-title" }, [
+                        _vm._v("Recuperem el mercat")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v(
+                          "Some quick example text to build on the card title and make up the bulk of the card's content."
+                        )
+                      ])
                     ])
-                  ])
-                ]
-              ),
+                  ]
+                )
+              ]),
               _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "card",
-                  staticStyle: {
-                    width: "18rem",
-                    background: "transparent !important",
-                    border: "none",
-                    "box-shadow": "none"
-                  }
-                },
-                [
-                  _c("img", {
-                    staticClass: "float-left ml-5",
+              _c("div", { staticClass: "col-md-4" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "card",
                     staticStyle: {
-                      width: "200px",
-                      height: "200px",
-                      "border-radius": "250px"
-                    },
-                    attrs: { src: "images/hands.png", alt: "..." }
-                  }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card-body text-center" }, [
-                    _c("h5", { staticClass: "card-title" }, [
-                      _vm._v("Creem sinergia")
-                    ]),
+                      width: "18rem",
+                      background: "transparent !important",
+                      border: "none",
+                      "box-shadow": "none"
+                    }
+                  },
+                  [
+                    _c("img", {
+                      staticClass: "float-left ml-5",
+                      staticStyle: {
+                        width: "200px",
+                        height: "200px",
+                        "border-radius": "250px"
+                      },
+                      attrs: { src: "images/hands.png", alt: "..." }
+                    }),
                     _vm._v(" "),
-                    _c("p", { staticClass: "card-text" }, [
-                      _vm._v(
-                        "Some quick example text to build on the card title and make up the bulk of the card's content."
-                      )
+                    _c("div", { staticClass: "card-body text-center" }, [
+                      _c("h5", { staticClass: "card-title" }, [
+                        _vm._v("Creem sinergia")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v(
+                          "Some quick example text to build on the card title and make up the bulk of the card's content."
+                        )
+                      ])
                     ])
-                  ])
-                ]
-              )
+                  ]
+                )
+              ])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-sm-12 mt-4" }, [
@@ -44126,8 +44680,8 @@ var staticRenderFns = [
             _c("br"),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "card-deck" }, [
-                _c("div", { staticClass: "card" }, [
+              _c("div", { staticClass: "card-deck col-md-12" }, [
+                _c("div", { staticClass: "card " }, [
                   _c("img", {
                     staticClass: "card-img-top",
                     attrs: { src: "/images/grapes.jpg", alt: "Card image cap" }
