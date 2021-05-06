@@ -41,7 +41,6 @@ html {
             :to="'/cistella'"
             class="nav-link"
             data-toggle="dropdown"
-            href="#"
             aria-expanded="false"
           >
             <i class="fas fa-shopping-cart" style="color: #ff6565"></i>
@@ -67,7 +66,7 @@ html {
 
       <!-- Sidebar -->
       <span v-if="this.user.nom">
-        <div class="sidebar fixed-left">
+        <div class="sidebar fixed-left" style="overflow-y: auto">
           <!-- Sidebar usuari (optional) -->
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">

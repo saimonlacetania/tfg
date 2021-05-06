@@ -3182,7 +3182,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3650,6 +3649,28 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -42787,7 +42808,6 @@ var render = function() {
                     attrs: {
                       to: "/cistella",
                       "data-toggle": "dropdown",
-                      href: "#",
                       "aria-expanded": "false"
                     }
                   },
@@ -42830,264 +42850,272 @@ var render = function() {
           _vm._v(" "),
           this.user.nom
             ? _c("span", [
-                _c("div", { staticClass: "sidebar fixed-left" }, [
-                  _c(
-                    "div",
-                    { staticClass: "user-panel mt-3 pb-3 mb-3 d-flex" },
-                    [
-                      _c("div", { staticClass: "image" }, [
-                        this.user.profile_pic
-                          ? _c("img", {
-                              staticClass: "img-circle elevation-2",
-                              attrs: {
-                                src: "/images/avatars/" + this.user.profile_pic,
-                                alt: "User Image"
-                              }
-                            })
-                          : _c("img", {
-                              staticClass: "img-circle elevation-2",
-                              attrs: {
-                                src: "/images/avatars/default.jpg",
-                                alt: "User Image"
-                              }
-                            })
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "info" }, [
-                        _c(
-                          "a",
-                          { staticClass: "d-block", attrs: { href: "#" } },
-                          [_vm._v("Hola! " + _vm._s(this.user.nom))]
-                        )
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("nav", { staticClass: "mt-2" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "sidebar fixed-left",
+                    staticStyle: { "overflow-y": "auto" }
+                  },
+                  [
                     _c(
-                      "ul",
-                      {
-                        staticClass:
-                          "nav nav-pills nav-sidebar flex-column nav-child-indent",
-                        attrs: {
-                          "data-widget": "treeview",
-                          role: "menu",
-                          "data-accordion": "false"
-                        }
-                      },
+                      "div",
+                      { staticClass: "user-panel mt-3 pb-3 mb-3 d-flex" },
                       [
-                        _c("li", { staticClass: "nav-header text-dark" }, [
-                          _vm._v("MENÚ PRINCIPAL")
+                        _c("div", { staticClass: "image" }, [
+                          this.user.profile_pic
+                            ? _c("img", {
+                                staticClass: "img-circle elevation-2",
+                                attrs: {
+                                  src:
+                                    "/images/avatars/" + this.user.profile_pic,
+                                  alt: "User Image"
+                                }
+                              })
+                            : _c("img", {
+                                staticClass: "img-circle elevation-2",
+                                attrs: {
+                                  src: "/images/avatars/default.jpg",
+                                  alt: "User Image"
+                                }
+                              })
                         ]),
                         _vm._v(" "),
-                        _c("li", { staticClass: "nav-item" }, [
-                          _vm._m(1),
+                        _c("div", { staticClass: "info" }, [
+                          _c(
+                            "a",
+                            { staticClass: "d-block", attrs: { href: "#" } },
+                            [_vm._v("Hola! " + _vm._s(this.user.nom))]
+                          )
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("nav", { staticClass: "mt-2" }, [
+                      _c(
+                        "ul",
+                        {
+                          staticClass:
+                            "nav nav-pills nav-sidebar flex-column nav-child-indent",
+                          attrs: {
+                            "data-widget": "treeview",
+                            role: "menu",
+                            "data-accordion": "false"
+                          }
+                        },
+                        [
+                          _c("li", { staticClass: "nav-header text-dark" }, [
+                            _vm._v("MENÚ PRINCIPAL")
+                          ]),
                           _vm._v(" "),
-                          _c("ul", { staticClass: "nav nav-treeview" }, [
-                            _c(
-                              "li",
-                              { staticClass: "nav-item" },
-                              [
-                                _c(
-                                  "router-link",
-                                  {
-                                    staticClass: "nav-link",
-                                    attrs: { to: "/profile" }
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass:
-                                        "nav-icon far fa-user-circle text-dark"
-                                    }),
-                                    _vm._v(" "),
-                                    _c("p", { staticClass: "text-dark" }, [
-                                      _vm._v("Veure perfil")
-                                    ])
-                                  ]
-                                )
-                              ],
-                              1
-                            ),
+                          _c("li", { staticClass: "nav-item" }, [
+                            _vm._m(1),
                             _vm._v(" "),
-                            _c(
-                              "li",
-                              { staticClass: "nav-item" },
-                              [
-                                _c(
-                                  "router-link",
-                                  {
-                                    staticClass: "nav-link",
-                                    attrs: { to: "/editarPerfil" }
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass:
-                                        "fas fa-cogs nav-icon text-dark"
-                                    }),
-                                    _vm._v(" "),
-                                    _c("p", { staticClass: "text-dark" }, [
-                                      _vm._v("Configuració")
-                                    ])
-                                  ]
-                                )
-                              ],
-                              1
-                            )
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        this.user.botiga
-                          ? _c("li", { staticClass: "nav-item" }, [
-                              _vm._m(2),
-                              _vm._v(" "),
+                            _c("ul", { staticClass: "nav nav-treeview" }, [
                               _c(
-                                "ul",
-                                {
-                                  staticClass:
-                                    "nav nav-treeview nav-child-indent"
-                                },
+                                "li",
+                                { staticClass: "nav-item" },
                                 [
                                   _c(
-                                    "li",
-                                    { staticClass: "nav-item" },
+                                    "router-link",
+                                    {
+                                      staticClass: "nav-link",
+                                      attrs: { to: "/profile" }
+                                    },
                                     [
-                                      _c(
-                                        "router-link",
-                                        {
-                                          staticClass: "nav-link",
-                                          attrs: { to: "botiga" }
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass:
-                                              "fas fa-feather-alt nav-icon text-dark"
-                                          }),
-                                          _vm._v(" "),
-                                          _c(
-                                            "p",
-                                            { staticClass: "text-dark" },
-                                            [_vm._v("Perfil")]
-                                          )
-                                        ]
-                                      )
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _vm._m(3),
-                                  _vm._v(" "),
-                                  _vm._m(4)
-                                ]
+                                      _c("i", {
+                                        staticClass:
+                                          "nav-icon far fa-user-circle text-dark"
+                                      }),
+                                      _vm._v(" "),
+                                      _c("p", { staticClass: "text-dark" }, [
+                                        _vm._v("Veure perfil")
+                                      ])
+                                    ]
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "li",
+                                { staticClass: "nav-item" },
+                                [
+                                  _c(
+                                    "router-link",
+                                    {
+                                      staticClass: "nav-link",
+                                      attrs: { to: "/editarPerfil" }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass:
+                                          "fas fa-cogs nav-icon text-dark"
+                                      }),
+                                      _vm._v(" "),
+                                      _c("p", { staticClass: "text-dark" }, [
+                                        _vm._v("Configuració")
+                                      ])
+                                    ]
+                                  )
+                                ],
+                                1
                               )
                             ])
-                          : _c(
-                              "li",
-                              { staticClass: "nav-item" },
-                              [
+                          ]),
+                          _vm._v(" "),
+                          this.user.botiga
+                            ? _c("li", { staticClass: "nav-item" }, [
+                                _vm._m(2),
+                                _vm._v(" "),
                                 _c(
-                                  "router-link",
+                                  "ul",
                                   {
-                                    staticClass: "nav-link",
-                                    attrs: { to: "crearBotiga" }
+                                    staticClass:
+                                      "nav nav-treeview nav-child-indent"
                                   },
                                   [
-                                    _c("i", {
-                                      staticClass:
-                                        "fas fa-feather-alt nav-icon text-dark"
-                                    }),
+                                    _c(
+                                      "li",
+                                      { staticClass: "nav-item" },
+                                      [
+                                        _c(
+                                          "router-link",
+                                          {
+                                            staticClass: "nav-link",
+                                            attrs: { to: "botiga" }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass:
+                                                "fas fa-feather-alt nav-icon text-dark"
+                                            }),
+                                            _vm._v(" "),
+                                            _c(
+                                              "p",
+                                              { staticClass: "text-dark" },
+                                              [_vm._v("Perfil")]
+                                            )
+                                          ]
+                                        )
+                                      ],
+                                      1
+                                    ),
                                     _vm._v(" "),
-                                    _c("p", { staticClass: "text-dark" }, [
-                                      _vm._v("Crear Botiga")
-                                    ])
+                                    _vm._m(3),
+                                    _vm._v(" "),
+                                    _vm._m(4)
                                   ]
                                 )
-                              ],
-                              1
-                            ),
-                        _vm._v(" "),
-                        _c(
-                          "li",
-                          { staticClass: "nav-item" },
-                          [
-                            _c(
-                              "router-link",
-                              {
-                                staticClass: "nav-link",
-                                attrs: { to: "/productes" }
-                              },
-                              [
-                                _c("i", {
-                                  staticClass:
-                                    "nav-icon fas fa-shopping-cart text-dark"
-                                }),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "text-dark" }, [
-                                  _vm._v("Comprar")
-                                ])
-                              ]
-                            )
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "li",
-                          { staticClass: "nav-item" },
-                          [
-                            _c(
-                              "router-link",
-                              {
-                                staticClass: "nav-link",
-                                attrs: { to: "/contacte" }
-                              },
-                              [
-                                _c("i", {
-                                  staticClass:
-                                    "nav-icon fas fa-comments text-dark"
-                                }),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "text-dark" }, [
-                                  _vm._v("Contacte")
-                                ])
-                              ]
-                            )
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "li",
-                          { staticClass: "nav-item fixed-bottom ml-2" },
-                          [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "nav-link",
-                                attrs: { href: "#" },
-                                on: {
-                                  click: function($event) {
-                                    $event.preventDefault()
-                                    return _vm.logout($event)
+                              ])
+                            : _c(
+                                "li",
+                                { staticClass: "nav-item" },
+                                [
+                                  _c(
+                                    "router-link",
+                                    {
+                                      staticClass: "nav-link",
+                                      attrs: { to: "crearBotiga" }
+                                    },
+                                    [
+                                      _c("i", {
+                                        staticClass:
+                                          "fas fa-feather-alt nav-icon text-dark"
+                                      }),
+                                      _vm._v(" "),
+                                      _c("p", { staticClass: "text-dark" }, [
+                                        _vm._v("Crear Botiga")
+                                      ])
+                                    ]
+                                  )
+                                ],
+                                1
+                              ),
+                          _vm._v(" "),
+                          _c(
+                            "li",
+                            { staticClass: "nav-item" },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass: "nav-link",
+                                  attrs: { to: "/productes" }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass:
+                                      "nav-icon fas fa-shopping-cart text-dark"
+                                  }),
+                                  _vm._v(" "),
+                                  _c("p", { staticClass: "text-dark" }, [
+                                    _vm._v("Comprar")
+                                  ])
+                                ]
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "li",
+                            { staticClass: "nav-item" },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass: "nav-link",
+                                  attrs: { to: "/contacte" }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass:
+                                      "nav-icon fas fa-comments text-dark"
+                                  }),
+                                  _vm._v(" "),
+                                  _c("p", { staticClass: "text-dark" }, [
+                                    _vm._v("Contacte")
+                                  ])
+                                ]
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "li",
+                            { staticClass: "nav-item fixed-bottom ml-2" },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "nav-link",
+                                  attrs: { href: "#" },
+                                  on: {
+                                    click: function($event) {
+                                      $event.preventDefault()
+                                      return _vm.logout($event)
+                                    }
                                   }
-                                }
-                              },
-                              [
-                                _c("i", {
-                                  staticClass:
-                                    "nav-icon fas fa-power-off text-dark"
-                                }),
-                                _vm._v(" "),
-                                _c("p", { staticClass: "text-dark" }, [
-                                  _vm._v("Sortir")
-                                ])
-                              ]
-                            )
-                          ]
-                        )
-                      ]
-                    )
-                  ])
-                ])
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass:
+                                      "nav-icon fas fa-power-off text-dark"
+                                  }),
+                                  _vm._v(" "),
+                                  _c("p", { staticClass: "text-dark" }, [
+                                    _vm._v("Sortir")
+                                  ])
+                                ]
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    ])
+                  ]
+                )
               ])
             : _c("span", [
                 _c("div", { staticClass: "sidebar fixed-left" }, [
@@ -43878,100 +43906,121 @@ var render = function() {
     "div",
     { staticClass: "content-wrapper", attrs: { id: "contingut" } },
     [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("section", { staticClass: "content" }, [
+      _c("section", { staticClass: "content-header" }, [
         _c("div", { staticClass: "container-fluid" }, [
-          _c("div", { staticClass: "wrapper row" }, [
-            _c("div", { staticClass: "preview col-md-6" }, [
-              _c("div", { staticClass: "preview-pic tab-content" }, [
-                _c(
-                  "div",
-                  { staticClass: "tab-pane active", attrs: { id: "pic-1" } },
-                  [
-                    _c("img", {
-                      attrs: { src: "/images/" + _vm.$data.producte.imatge }
-                    })
-                  ]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "details col-md-6" }, [
-              _c("h3", { staticClass: "product-title text-uppercase" }, [
-                _vm._v(
-                  "\n            " +
-                    _vm._s(_vm.$data.producte.nom) +
-                    "\n          "
-                )
-              ]),
-              _vm._v(" "),
-              _vm._m(1),
-              _vm._v(" "),
-              _c("p", { staticClass: "product-description" }, [
-                _vm._v(_vm._s(_vm.$data.producte.descripcio))
-              ]),
-              _vm._v(" "),
-              _c("h4", { staticClass: "price" }, [
-                _vm._v("\n            preu: "),
-                _c("span", [_vm._v(_vm._s(_vm.$data.producte.preu))])
-              ]),
-              _vm._v(" "),
-              _c("h5", { staticClass: "colors" }, [
-                _vm._v("stock:" + _vm._s(_vm.$data.producte.stock))
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "action" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "add-to-cart btn btn-default zoom",
-                    staticStyle: {
-                      "background-color": "#ff6565",
-                      border: "none",
-                      color: "white"
-                    },
-                    attrs: { type: "button" },
-                    on: { click: _vm.afegirCistella }
-                  },
-                  [_vm._v("\n              Afegir a la cistella\n            ")]
-                )
-              ])
+          _c("div", { staticClass: "row mb-2" }, [
+            _c("div", { staticClass: "col-sm-6" }, [
+              _c("h1", [_vm._v("Producte nº " + _vm._s(_vm.$data.producte.id))])
             ])
           ])
         ])
       ]),
       _vm._v(" "),
       _c("section", { staticClass: "content" }, [
-        _c("div", { staticClass: "container-fluid" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-9 mx-auto" }, [
-              _c("div", { staticClass: "card card-dark card-outline" }, [
-                _c("div", { staticClass: "card-body" }, [
-                  _c("h1", { staticClass: "text-center" }, [
-                    _vm._v(_vm._s(_vm.$data.producte.nom))
+        _c("div", { staticClass: "card card-solid" }, [
+          _c("div", { staticClass: "card-body" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-12 col-sm-6" }, [
+                _c("div", { staticClass: "col-12" }, [
+                  _c("img", {
+                    staticClass: "product-image",
+                    attrs: {
+                      src: "/images/" + _vm.$data.producte.imatge,
+                      alt: "Product Image"
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-12 col-sm-6" }, [
+                _c("h3", { staticClass: "my-3" }, [
+                  _vm._v(
+                    "\n              " +
+                      _vm._s(_vm.$data.producte.nom) +
+                      "\n            "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v("Referencia: " + _vm._s(_vm.$data.producte.ref))
+                ]),
+                _vm._v(" "),
+                _c("hr"),
+                _vm._v(" "),
+                _c("div", { staticClass: "bg-gray py-2 px-3 mt-4" }, [
+                  _c("h2", { staticClass: "mb-0" }, [
+                    _vm._v(_vm._s(_vm.$data.producte.preu) + " €")
                   ]),
                   _vm._v(" "),
-                  _c("br"),
+                  _vm.$data.producte.stock == 1
+                    ? _c("h4", [
+                        _vm._v(
+                          "\n                Queda " +
+                            _vm._s(_vm.$data.producte.stock) +
+                            " unitat!\n              "
+                        )
+                      ])
+                    : _c("h4", [
+                        _vm._v(
+                          "Queden " +
+                            _vm._s(_vm.$data.producte.stock) +
+                            " unitats!"
+                        )
+                      ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "mt-4" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "btn btn-primary btn-lg btn-flat",
+                      on: { click: _vm.afegirCistella }
+                    },
+                    [
+                      _c("i", { staticClass: "fas fa-cart-plus fa-lg mr-2" }),
+                      _vm._v(
+                        "\n                Afegir a la cistella\n              "
+                      )
+                    ]
+                  ),
                   _vm._v(" "),
-                  _c("img", {
-                    class:
-                      "card-img-top p-3 mx-auto d-block border border-dark",
-                    staticStyle: { width: "600px" },
-                    attrs: { src: "/images/" + _vm.$data.producte.imatge }
-                  }),
-                  _vm._v(" "),
-                  _c("hr"),
-                  _vm._v(" "),
-                  _c("h3", [_vm._v(_vm._s(_vm.$data.producte.descripcio))]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("Preu: " + _vm._s(_vm.$data.producte.preu))]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v("Stock: " + _vm._s(_vm.$data.producte.stock))
-                  ])
-                ])
+                  _vm._m(0)
+                ]),
+                _vm._v(" "),
+                _vm._m(1)
               ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row mt-4" }, [
+              _vm._m(2),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "tab-content p-3",
+                  attrs: { id: "nav-tabContent" }
+                },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "tab-pane fade show active",
+                      attrs: {
+                        id: "product-desc",
+                        role: "tabpanel",
+                        "aria-labelledby": "product-desc-tab"
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n              " +
+                          _vm._s(_vm.$data.producte.descripcio) +
+                          "\n            "
+                      )
+                    ]
+                  )
+                ]
+              )
             ])
           ])
         ])
@@ -43984,11 +44033,26 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "content-header" }, [
-      _c("div", { staticClass: "container-fluid" }, [
-        _c("div", { staticClass: "row mb-2" }, [
-          _c("div", { staticClass: "col-sm-6" })
-        ])
+    return _c("div", { staticClass: "btn btn-default btn-lg btn-flat" }, [
+      _c("i", { staticClass: "fas fa-heart fa-lg mr-2" }),
+      _vm._v("\n                Afegir a la llista de desitjos\n              ")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mt-4 product-share" }, [
+      _c("a", { staticClass: "text-gray", attrs: { href: "#" } }, [
+        _c("i", { staticClass: "fab fa-facebook-square fa-2x" })
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "text-gray", attrs: { href: "#" } }, [
+        _c("i", { staticClass: "fab fa-twitter-square fa-2x" })
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "text-gray", attrs: { href: "#" } }, [
+        _c("i", { staticClass: "fab fa-instagram-square fa-2x" })
       ])
     ])
   },
@@ -43996,35 +44060,31 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "rating" }, [
-      _c("div", { staticClass: "stars" }, [
-        _c("span", {
-          staticClass: "fas fa-star",
-          staticStyle: { color: "#ff6565" }
-        }),
-        _vm._v(" "),
-        _c("span", {
-          staticClass: "fas fa-star",
-          staticStyle: { color: "#ff6565" }
-        }),
-        _vm._v(" "),
-        _c("span", {
-          staticClass: "fas fa-star",
-          staticStyle: { color: "#ff6565" }
-        }),
-        _vm._v(" "),
-        _c("span", {
-          staticClass: "fas fa-star",
-          staticStyle: { color: "#ff6565" }
-        }),
-        _vm._v(" "),
-        _c("span", {
-          staticClass: "far fa-star",
-          staticStyle: { color: "#ff6565" }
-        })
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "review-no" }, [_vm._v("41 ressenyes")])
+    return _c("nav", { staticClass: "w-100" }, [
+      _c(
+        "div",
+        {
+          staticClass: "nav nav-tabs",
+          attrs: { id: "product-tab", role: "tablist" }
+        },
+        [
+          _c(
+            "a",
+            {
+              staticClass: "nav-item nav-link active",
+              attrs: {
+                id: "product-desc-tab",
+                "data-toggle": "tab",
+                href: "#product-desc",
+                role: "tab",
+                "aria-controls": "product-desc",
+                "aria-selected": "true"
+              }
+            },
+            [_vm._v("Descripció")]
+          )
+        ]
+      )
     ])
   }
 ]
