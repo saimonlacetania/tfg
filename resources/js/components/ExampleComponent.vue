@@ -57,20 +57,28 @@
         <span class="brand-text font-weight-light">Mercat Virtual</span>
       </router-link>
 
-            <!-- Sidebar -->
-                <div v-if="this.user.nom" class="sidebar fixed-left">
-                    <!-- Sidebar usuari (optional) -->
-                    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                        <div class="image">
-                            <img v-if="this.user.profile_pic" :src="'/images/avatars/'+this.user.profile_pic"
-                                class="img-circle elevation-2" alt="User Image" />
-                            <img v-else :src="'/images/avatars/default.jpg'" class="img-circle elevation-2"
-                                alt="User Image" />
-                        </div>
-                        <div class="info">
-                            <span class="d-block">Hola! {{ this.user.nom }}</span>
-                        </div>
-                    </div>
+      <!-- Sidebar -->
+        <div v-if="this.user.nom" class="sidebar fixed-left" style="overflow-y: auto">
+          <!-- Sidebar usuari (optional) -->
+          <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+              <img
+                v-if="this.user.profile_pic"
+                :src="'/images/avatars/' + this.user.profile_pic"
+                class="img-circle elevation-2"
+                alt="User Image"
+              />
+              <img
+                v-else
+                :src="'/images/avatars/default.jpg'"
+                class="img-circle elevation-2"
+                alt="User Image"
+              />
+            </div>
+            <div class="info">
+              <a href="#" class="d-block">Hola! {{ this.user.nom }}</a>
+            </div>
+          </div>
 
                     <!-- Sidebar Menu -->
 
