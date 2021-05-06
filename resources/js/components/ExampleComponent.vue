@@ -1,17 +1,16 @@
 <style>
-    .wrapper {
-        height: 100%;
-    }
+.wrapper {
+  height: 100%;
+}
 
-    body,
-    html {
-        height: 100%;
-    }
+body,
+html {
+  height: 100%;
+}
 
-    .main-header {
-        color: #C22847 !important;
-    }
-
+.main-header {
+  color: #c22847 !important;
+}
 </style>
 
 <template>
@@ -40,6 +39,17 @@
             <span class="font-weight-light text-dark">Cistella</span>
           </router-link>
         </li>
+        <li class="nav-item dropdown">
+          <router-link
+            :to="'/profile'"
+            class="nav-link"
+            data-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fas fa-heart" style="color: #ff6565"></i>
+            <span class="font-weight-light text-dark">Llista de desitjos</span>
+          </router-link>
+        </li>
       </ul>
     </nav>
     <!-- /.navbar -->
@@ -58,179 +68,189 @@
       </router-link>
 
       <!-- Sidebar -->
-        <div v-if="this.user.nom" class="sidebar fixed-left" style="overflow-y: auto">
-          <!-- Sidebar usuari (optional) -->
-          <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-              <img
-                v-if="this.user.profile_pic"
-                :src="'/images/avatars/' + this.user.profile_pic"
-                class="img-circle elevation-2"
-                alt="User Image"
-              />
-              <img
-                v-else
-                :src="'/images/avatars/default.jpg'"
-                class="img-circle elevation-2"
-                alt="User Image"
-              />
-            </div>
-            <div class="info">
-              <a href="#" class="d-block">Hola! {{ this.user.nom }}</a>
-            </div>
+      <div
+        v-if="this.user.nom"
+        class="sidebar fixed-left"
+        style="overflow-y: auto"
+      >
+        <!-- Sidebar usuari (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+          <div class="image">
+            <img
+              v-if="this.user.profile_pic"
+              :src="'/images/avatars/' + this.user.profile_pic"
+              class="img-circle elevation-2"
+              alt="User Image"
+            />
+            <img
+              v-else
+              :src="'/images/avatars/default.jpg'"
+              class="img-circle elevation-2"
+              alt="User Image"
+            />
           </div>
+          <div class="info">
+            <a href="#" class="d-block">Hola! {{ this.user.nom }}</a>
+          </div>
+        </div>
 
-                    <!-- Sidebar Menu -->
+        <!-- Sidebar Menu -->
 
-                    <!-- Sidebar Menu -->
-                    <nav class="mt-2">
-                        <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview"
-                            role="menu" data-accordion="false">
-                            <!-- Add icons to the links using the .nav-icon class
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul
+            class="nav nav-pills nav-sidebar flex-column nav-child-indent"
+            data-widget="treeview"
+            role="menu"
+            data-accordion="false"
+          >
+            <!-- Add icons to the links using the .nav-icon class
                                   with font-awesome or any other icon font library -->
-                            <li class="nav-header text-dark">MENÚ PRINCIPAL</li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="nav-icon fas fa-user text-dark"></i>
-                                    <p class="text-dark">
-                                        El meu perfil
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <router-link class="nav-link" :to="'/profile'">
-                                            <i class="nav-icon far fa-user-circle text-dark"></i>
-                                            <p class="text-dark">Veure perfil</p>
-                                        </router-link>
-                                    </li>
-                                    <li class="nav-item">
-                                        <router-link class="nav-link" :to="'/editarPerfil'">
-                                            <i class="fas fa-cogs nav-icon text-dark"></i>
-                                            <p class="text-dark">Configuració</p>
-                                        </router-link>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item" v-if="this.user.botiga">
-                                <a href="#" class="nav-link">
-                                    <i class="nav-icon fas fa-store-alt text-dark"></i>
-                                    <p class="text-dark">
-                                        La meva botiga
-                                        <i class="right fas fa-angle-left"></i>
-                                    </p>
-                                </a>
-                                <ul class="nav nav-treeview nav-child-indent">
-                                    <li class="nav-item">
-                                        <router-link class="nav-link" :to="'/botiga'">
-                                            <i class="fas fa-feather-alt nav-icon text-dark"></i>
-                                            <p class="text-dark">Perfil</p>
-                                        </router-link>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="fas fa-tag nav-icon text-dark"></i>
-                                            <p class="text-dark">Productes</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="fas fa-chart-line nav-icon text-dark"></i>
-                                            <p class="text-dark">Estadístiques</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <span v-else>
-                                <li class="nav-item">
-                                    <router-link class="nav-link" :to="'/crearBotiga'">
-                                            <i class="fas fa-feather-alt nav-icon text-dark"></i>
-                                            <p class="text-dark">Crear Botiga</p>
-                                    </router-link>
-                                </li>
-                            </span>
-
-                            <li class="nav-item">
-                                <router-link class="nav-link" :to="'/productes'">
-                                    <i class="nav-icon fas fa-shopping-cart text-dark"></i>
-                                    <p class="text-dark">Comprar</p>
-                                </router-link>
-                            </li>
-                            <li class="nav-item">
-                              <router-link class="nav-link" :to="'/contacte'">
-                                <i class="nav-icon fas fa-comments text-dark"></i>
-                                <p class="text-dark">Contacte</p>
-                              </router-link>
-                            </li>
-
-                            <li class="nav-item fixed-bottom ml-2">
-                                <a @click.prevent="logout" href="#" class="nav-link">
-                                    <i class="nav-icon fas fa-power-off text-dark"></i>
-                                    <p class="text-dark">Sortir</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <!-- /.sidebar-menu -->
-                </div>
+            <li class="nav-header text-dark">MENÚ PRINCIPAL</li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-user text-dark"></i>
+                <p class="text-dark">
+                  El meu perfil
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <router-link class="nav-link" :to="'/profile'">
+                    <i class="nav-icon far fa-user-circle text-dark"></i>
+                    <p class="text-dark">Veure perfil</p>
+                  </router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link class="nav-link" :to="'/editarPerfil'">
+                    <i class="fas fa-cogs nav-icon text-dark"></i>
+                    <p class="text-dark">Configuració</p>
+                  </router-link>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item" v-if="this.user.botiga">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-store-alt text-dark"></i>
+                <p class="text-dark">
+                  La meva botiga
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview nav-child-indent">
+                <li class="nav-item">
+                  <router-link class="nav-link" :to="'/botiga'">
+                    <i class="fas fa-feather-alt nav-icon text-dark"></i>
+                    <p class="text-dark">Perfil</p>
+                  </router-link>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="fas fa-tag nav-icon text-dark"></i>
+                    <p class="text-dark">Productes</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="fas fa-chart-line nav-icon text-dark"></i>
+                    <p class="text-dark">Estadístiques</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
             <span v-else>
-                <div class="sidebar fixed-left">
-                    <!-- Sidebar Menu -->
-                    <nav class="mt-2">
-                        <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview"
-                            role="menu" data-accordion="false">
-                            <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
-                            <li class="nav-header text-dark">MENÚ PRINCIPAL</li>
-                            <li class="nav-item">
-                                <router-link class="nav-link" :to="'/profile'">
-                                    <i class="nav-icon fas fa-sign-in-alt text-dark"></i>
-                                    <p class="text-dark">
-                                        Log in
-                                    </p>
-                                </router-link>
-                            </li>
-                            <li class="nav-item">
-                                <router-link class="nav-link" :to="'/productes'">
-                                    <i class="nav-icon fas fa-shopping-cart text-dark"></i>
-                                    <p class="text-dark">Comprar</p>
-                                </router-link>
-                            </li>
-                        </ul>
-                    </nav>
-                    <!-- /.sidebar-menu -->
-                </div>
+              <li class="nav-item">
+                <router-link class="nav-link" :to="'/crearBotiga'">
+                  <i class="fas fa-feather-alt nav-icon text-dark"></i>
+                  <p class="text-dark">Crear Botiga</p>
+                </router-link>
+              </li>
             </span>
 
-            <!-- /.sidebar -->
-        </aside>
+            <li class="nav-item">
+              <router-link class="nav-link" :to="'/productes'">
+                <i class="nav-icon fas fa-shopping-cart text-dark"></i>
+                <p class="text-dark">Comprar</p>
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" :to="'/contacte'">
+                <i class="nav-icon fas fa-comments text-dark"></i>
+                <p class="text-dark">Contacte</p>
+              </router-link>
+            </li>
 
-        <!-- PAGINA PRODUCTES -->
-        <router-view></router-view>
-    </div>
+            <li class="nav-item fixed-bottom ml-2">
+              <a @click.prevent="logout" href="#" class="nav-link">
+                <i class="nav-icon fas fa-power-off text-dark"></i>
+                <p class="text-dark">Sortir</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <span v-else>
+        <div class="sidebar fixed-left">
+          <!-- Sidebar Menu -->
+          <nav class="mt-2">
+            <ul
+              class="nav nav-pills nav-sidebar flex-column nav-child-indent"
+              data-widget="treeview"
+              role="menu"
+              data-accordion="false"
+            >
+              <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
+              <li class="nav-header text-dark">MENÚ PRINCIPAL</li>
+              <li class="nav-item">
+                <router-link class="nav-link" :to="'/profile'">
+                  <i class="nav-icon fas fa-sign-in-alt text-dark"></i>
+                  <p class="text-dark">Log in</p>
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link class="nav-link" :to="'/productes'">
+                  <i class="nav-icon fas fa-shopping-cart text-dark"></i>
+                  <p class="text-dark">Comprar</p>
+                </router-link>
+              </li>
+            </ul>
+          </nav>
+          <!-- /.sidebar-menu -->
+        </div>
+      </span>
+
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- PAGINA PRODUCTES -->
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                user: "",
-            };
-        },
-        mounted() {
-            axios.get("/api/user").then((res) => {
-                this.user = res.data;
-            });
-        },
-        methods: {
-            logout() {
-                axios.post("/api/logout").then(() => {
-                    this.$router.push({
-                        name: "Login"
-                    });
-                    location.reload();
-                    return false;
-                });
-            },
-        },
+export default {
+  data() {
+    return {
+      user: "",
     };
+  },
+  mounted() {
+    axios.get("/api/user").then((res) => {
+      this.user = res.data;
+    });
+  },
+  methods: {
+    logout() {
+      axios.post("/api/logout").then(() => {
+        this.$router.push({
+          name: "Login",
+        });
+        location.reload();
+        return false;
+      });
+    },
+  },
+};
 </script>

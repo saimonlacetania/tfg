@@ -3416,6 +3416,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3896,10 +3916,68 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      user: ""
+      user: "",
+      wishlist: ""
     };
   },
   mounted: function mounted() {
@@ -3908,21 +3986,35 @@ __webpack_require__.r(__webpack_exports__);
     axios.get("/api/user").then(function (res) {
       _this.user = res.data;
     });
+    axios.get("/api/veureWishlist").then(function (res) {
+      _this.wishlist = res.data;
+      console.log(_this.wishlist);
+    });
   },
   methods: {
     loginCorrecte: function loginCorrecte() {
       // Use sweetalert2
       this.$swal({
         toast: true,
-        position: 'top-end',
-        icon: 'success',
-        title: 'Login correcte',
+        position: "top-end",
+        icon: "success",
+        title: "Login correcte",
         showConfirmButton: false,
         timer: 3000,
         didOpen: function didOpen(toast) {
-          toast.addEventListener('mouseenter', Swal.stopTimer);
-          toast.addEventListener('mouseleave', Swal.resumeTimer);
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
         }
+      });
+    },
+    eliminarWishlist: function eliminarWishlist(id) {
+      var _this2 = this;
+
+      axios.post("/api/eliminarWishlist/" + id).then(function (res) {
+        console.log(res);
+      });
+      axios.get("/api/veureWishlist").then(function (res) {
+        _this2.wishlist = res.data;
       });
     }
   }
@@ -3939,6 +4031,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -4063,14 +4158,14 @@ __webpack_require__.r(__webpack_exports__);
       // Use sweetalert2
       this.$swal({
         toast: true,
-        position: 'top-end',
-        icon: 'success',
-        title: 'Producte afegit a la cistella',
+        position: "top-end",
+        icon: "success",
+        title: "Producte afegit a la cistella",
         showConfirmButton: false,
         timer: 3000,
         didOpen: function didOpen(toast) {
-          toast.addEventListener('mouseenter', Swal.stopTimer);
-          toast.addEventListener('mouseleave', Swal.resumeTimer);
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
         }
       });
     },
@@ -4078,14 +4173,14 @@ __webpack_require__.r(__webpack_exports__);
       // Use sweetalert2
       this.$swal({
         toast: true,
-        position: 'top-end',
-        icon: 'error',
-        title: 'Error al afegir el producte',
+        position: "top-end",
+        icon: "error",
+        title: "Error al afegir el producte",
         showConfirmButton: false,
         timer: 3000,
         didOpen: function didOpen(toast) {
-          toast.addEventListener('mouseenter', Swal.stopTimer);
-          toast.addEventListener('mouseleave', Swal.resumeTimer);
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
         }
       });
     },
@@ -4102,6 +4197,23 @@ __webpack_require__.r(__webpack_exports__);
         _this2.errors = error.response.data.errors;
 
         _this2.toastIncorrecte();
+
+        return false;
+      });
+    },
+    afegirWishlist: function afegirWishlist() {
+      var _this3 = this;
+
+      axios.post("/api/afegirWishlist/" + this.producte.id).then(function (res) {
+        console.log(res);
+
+        _this3.toastCorrecte();
+
+        return false;
+      })["catch"](function (error) {
+        _this3.errors = error.response.data.errors;
+
+        _this3.toastIncorrecte();
 
         return false;
       });
@@ -9249,7 +9361,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.nav-link.active {\r\n    background-color: #ff6565 !important;\r\n    color: white !important;\n}\n.nav-link {\r\n    text-decoration: none !important;\r\n    color: white !important;\n}\r\n", ""]);
+exports.push([module.i, "\n.nav-link.active {\n    background-color: #ff6565 !important;\n    color: white !important;\n}\n.nav-link {\n    text-decoration: none !important;\n    color: white !important;\n}\n", ""]);
 
 // exports
 
@@ -9268,7 +9380,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#registre {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\r\ninput[type=\"date\"]::-webkit-inner-spin-button {\r\n  display: none;\n}\r\n", ""]);
+exports.push([module.i, "\n#registre {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\ninput[type=\"date\"]::-webkit-inner-spin-button {\n  display: none;\n}\n", ""]);
 
 // exports
 
@@ -9287,7 +9399,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.wrapper {\n    height: 100%;\n}\nbody,\nhtml {\n    height: 100%;\n}\n.main-header {\n    color: #C22847 !important;\n}\n\n", ""]);
+exports.push([module.i, "\n.wrapper {\n  height: 100%;\n}\nbody,\nhtml {\n  height: 100%;\n}\n.main-header {\n  color: #c22847 !important;\n}\n", ""]);
 
 // exports
 
@@ -9306,7 +9418,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.nav-link.active {\r\n  background-color: #ff6565 !important;\r\n  color: white !important;\n}\n.nav-link {\r\n  text-decoration: none !important;\r\n  color: white !important;\n}\r\n", ""]);
+exports.push([module.i, "\n.nav-link.active {\n  background-color: #ff6565 !important;\n  color: white !important;\n}\n.nav-link {\n  text-decoration: none !important;\n  color: white !important;\n}\n", ""]);
 
 // exports
 
@@ -9325,7 +9437,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.zoom {\r\n  transition: transform 0.2s; /* Animation */\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.zoom {\n  transition: transform 0.2s; /* Animation */\n}\n\n", ""]);
 
 // exports
 
@@ -9344,7 +9456,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#registre {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\r\ninput[type=\"date\"]::-webkit-inner-spin-button {\r\n    display: none;\n}\r\n", ""]);
+exports.push([module.i, "\n#registre {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\ninput[type=\"date\"]::-webkit-inner-spin-button {\n    display: none;\n}\n", ""]);
 
 // exports
 
@@ -9363,7 +9475,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.zoom {\r\n  transition: transform 0.2s; /* Animation */\n}\n.zoom:hover {\r\n  transform: scale(1.05); /* (150% zoom)*/\n}\r\n", ""]);
+exports.push([module.i, "\n.zoom {\n  transition: transform 0.2s; /* Animation */\n}\n.zoom:hover {\n  transform: scale(1.05); /* (150% zoom)*/\n}\n", ""]);
 
 // exports
 
@@ -47323,6 +47435,35 @@ var render = function() {
                 )
               ],
               1
+            ),
+            _vm._v(" "),
+            _c(
+              "li",
+              { staticClass: "nav-item dropdown" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "nav-link",
+                    attrs: {
+                      to: "/profile",
+                      "data-toggle": "dropdown",
+                      "aria-expanded": "false"
+                    }
+                  },
+                  [
+                    _c("i", {
+                      staticClass: "fas fa-heart",
+                      staticStyle: { color: "#ff6565" }
+                    }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "font-weight-light text-dark" }, [
+                      _vm._v("Llista de desitjos")
+                    ])
+                  ]
+                )
+              ],
+              1
             )
           ])
         ]
@@ -47651,9 +47792,7 @@ var render = function() {
                                 }),
                                 _vm._v(" "),
                                 _c("p", { staticClass: "text-dark" }, [
-                                  _vm._v(
-                                    "\n                                      Log in\n                                  "
-                                  )
+                                  _vm._v("Log in")
                                 ])
                               ]
                             )
@@ -47730,9 +47869,7 @@ var staticRenderFns = [
       _c("i", { staticClass: "nav-icon fas fa-user text-dark" }),
       _vm._v(" "),
       _c("p", { staticClass: "text-dark" }, [
-        _vm._v(
-          "\n                                      El meu perfil\n                                      "
-        ),
+        _vm._v("\n                El meu perfil\n                "),
         _c("i", { staticClass: "right fas fa-angle-left" })
       ])
     ])
@@ -47745,9 +47882,7 @@ var staticRenderFns = [
       _c("i", { staticClass: "nav-icon fas fa-store-alt text-dark" }),
       _vm._v(" "),
       _c("p", { staticClass: "text-dark" }, [
-        _vm._v(
-          "\n                                      La meva botiga\n                                      "
-        ),
+        _vm._v("\n                La meva botiga\n                "),
         _c("i", { staticClass: "right fas fa-angle-left" })
       ])
     ])
@@ -48113,7 +48248,7 @@ var render = function() {
                       attrs: { type: "button" },
                       on: { click: _vm.loginCorrecte }
                     },
-                    [_vm._v("Hello world")]
+                    [_vm._v("\n                Hello world\n              ")]
                   ),
                   _vm._v(" "),
                   _c("br"),
@@ -48132,7 +48267,97 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _vm._m(1)
+          _c("div", { staticClass: "col-md-9" }, [
+            _c("div", { staticClass: "card card-dark" }, [
+              _vm._m(1),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _c("div", { staticClass: "tab-content" }, [
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "active tab-pane",
+                      attrs: { id: "wishlist" }
+                    },
+                    [
+                      _c("div", { staticClass: "card mb-3" }, [
+                        _c("div", { staticClass: "row g-0" }, [
+                          _c("div", { staticClass: "col-md-12" }, [
+                            _vm._m(3),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "card-body table-responsive" },
+                              [
+                                _c("table", { staticClass: "table" }, [
+                                  _vm._m(4),
+                                  _vm._v(" "),
+                                  _c(
+                                    "tbody",
+                                    {},
+                                    _vm._l(_vm.wishlist, function(producte) {
+                                      return _c("tr", { key: producte.id }, [
+                                        _c("td", [
+                                          _vm._v(_vm._s(producte.productes.nom))
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(_vm._s(producte.productes.ref))
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            _vm._s(producte.productes.preu) +
+                                              " €"
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-right" },
+                                          [
+                                            _c("span", [
+                                              _c(
+                                                "button",
+                                                {
+                                                  staticClass: "btn btn-danger",
+                                                  on: {
+                                                    click: function($event) {
+                                                      return _vm.eliminarWishlist(
+                                                        producte.id
+                                                      )
+                                                    }
+                                                  }
+                                                },
+                                                [
+                                                  _c("i", {
+                                                    staticClass: "fas fa-trash"
+                                                  })
+                                                ]
+                                              )
+                                            ])
+                                          ]
+                                        )
+                                      ])
+                                    }),
+                                    0
+                                  )
+                                ])
+                              ]
+                            )
+                          ])
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _vm._m(5)
+                ])
+              ])
+            ])
+          ])
         ])
       ])
     ])
@@ -48157,218 +48382,249 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-9" }, [
-      _c("div", { staticClass: "card card-dark" }, [
-        _c("div", { staticClass: "card-header p-2" }, [
-          _c("ul", { staticClass: "nav nav-pills" }, [
-            _c("li", { staticClass: "nav-item" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "nav-link active",
-                  attrs: { href: "#activity", "data-toggle": "tab" }
-                },
-                [_vm._v("Les meves comandes")]
-              )
+    return _c("div", { staticClass: "card-header p-2" }, [
+      _c("ul", { staticClass: "nav nav-pills" }, [
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link active",
+              attrs: { href: "#wishlist", "data-toggle": "tab" }
+            },
+            [_vm._v("Llista de desitjos")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link",
+              attrs: { href: "#activity", "data-toggle": "tab" }
+            },
+            [_vm._v("Les meves comandes")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link",
+              attrs: { href: "#timeline", "data-toggle": "tab" }
+            },
+            [_vm._v("Tornar a comprar")]
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "tab-pane", attrs: { id: "activity" } }, [
+      _c("div", { staticClass: "card mb-3" }, [
+        _c("div", { staticClass: "row g-0" }, [
+          _c("div", { staticClass: "col-md-4" }, [
+            _c("img", {
+              staticClass: "img-fluid p-1 ml-4",
+              staticStyle: {
+                height: "150px",
+                width: "150px",
+                "border-radius": "150px"
+              },
+              attrs: {
+                src:
+                  "https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg",
+                alt: "..."
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-8" }, [
+            _c("div", { staticClass: "card-body" }, [
+              _c("h5", { staticClass: "card-title" }, [_vm._v("Producte")]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v(
+                  "\n                            This is a wider card with supporting text below as\n                            a natural lead-in to additional content. This\n                            content is a little bit longer.\n                          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _c("small", { staticClass: "text-muted" }, [
+                  _vm._v("Comprat el 26/04/2021")
+                ])
+              ])
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card mb-3" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-4" }, [
+            _c("img", {
+              staticClass: "img-fluid p-1 ml-4",
+              staticStyle: {
+                height: "150px",
+                width: "150px",
+                "border-radius": "150px"
+              },
+              attrs: {
+                src:
+                  "https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg",
+                alt: "..."
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-8" }, [
+            _c("div", { staticClass: "card-body" }, [
+              _c("h5", { staticClass: "card-title" }, [_vm._v("Producte")]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v(
+                  "\n                            This is a wider card with supporting text below as\n                            a natural lead-in to additional content. This\n                            content is a little bit longer.\n                          "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _c("small", { staticClass: "text-muted" }, [
+                  _vm._v("Comprat el 26/04/2021")
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header" }, [
+      _c("h3", { staticClass: "card-title" }, [
+        _vm._v(
+          "\n                            La meva llista de desitjos\n                          "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", {}, [
+      _c("tr", [
+        _c("th", [_vm._v("Nom")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Referència")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Preu")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-right" }, [_vm._v("Eliminar")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "tab-pane", attrs: { id: "timeline" } }, [
+      _c("div", { staticClass: "timeline timeline-inverse" }, [
+        _c("div", { staticClass: "time-label" }, [
+          _c("span", { staticClass: "bg-secondary" }, [
+            _c("i", { staticClass: "far fa-calendar-alt" }),
+            _vm._v(
+              "\n                        26/04/2021\n                      "
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "timeline-item" }, [
+            _c("span", { staticClass: "time" }, [
+              _c("i", { staticClass: "fas fa-store-alt" }),
+              _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
             ]),
             _vm._v(" "),
-            _c("li", { staticClass: "nav-item" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "nav-link",
-                  attrs: { href: "#timeline", "data-toggle": "tab" }
-                },
-                [_vm._v("Tornar a comprar")]
-              )
+            _c("h3", { staticClass: "timeline-header" }, [
+              _vm._v("Nom del producte")
+            ]),
+            _vm._v(" "),
+            _c("small", { staticClass: "timeline-body" }, [
+              _vm._v("Descripcio producte")
             ])
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "card-body" }, [
-          _c("div", { staticClass: "tab-content" }, [
-            _c(
-              "div",
-              { staticClass: "active tab-pane", attrs: { id: "activity" } },
-              [
-                _c("div", { staticClass: "card mb-3" }, [
-                  _c("div", { staticClass: "row g-0" }, [
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c("img", {
-                        staticClass: "img-fluid p-1 ml-4",
-                        staticStyle: {
-                          height: "150px",
-                          width: "150px",
-                          "border-radius": "150px"
-                        },
-                        attrs: {
-                          src:
-                            "https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg",
-                          alt: "..."
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-8" }, [
-                      _c("div", { staticClass: "card-body" }, [
-                        _c("h5", { staticClass: "card-title" }, [
-                          _vm._v("Producte")
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "card-text" }, [
-                          _vm._v(
-                            "\n                            This is a wider card with supporting text below as\n                            a natural lead-in to additional content. This\n                            content is a little bit longer.\n                          "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "card-text" }, [
-                          _c("small", { staticClass: "text-muted" }, [
-                            _vm._v("Comprat el 26/04/2021")
-                          ])
-                        ])
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card mb-3" }, [
-                  _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c("img", {
-                        staticClass: "img-fluid p-1 ml-4",
-                        staticStyle: {
-                          height: "150px",
-                          width: "150px",
-                          "border-radius": "150px"
-                        },
-                        attrs: {
-                          src:
-                            "https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg",
-                          alt: "..."
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-8" }, [
-                      _c("div", { staticClass: "card-body" }, [
-                        _c("h5", { staticClass: "card-title" }, [
-                          _vm._v("Producte")
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "card-text" }, [
-                          _vm._v(
-                            "\n                            This is a wider card with supporting text below as\n                            a natural lead-in to additional content. This\n                            content is a little bit longer.\n                          "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "card-text" }, [
-                          _c("small", { staticClass: "text-muted" }, [
-                            _vm._v("Comprat el 26/04/2021")
-                          ])
-                        ])
-                      ])
-                    ])
-                  ])
-                ])
-              ]
-            ),
+        _c("div", [
+          _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "timeline-item" }, [
+            _c("span", { staticClass: "time" }, [
+              _c("i", { staticClass: "fas fa-store-alt" }),
+              _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
+            ]),
             _vm._v(" "),
-            _c("div", { staticClass: "tab-pane", attrs: { id: "timeline" } }, [
-              _c("div", { staticClass: "timeline timeline-inverse" }, [
-                _c("div", { staticClass: "time-label" }, [
-                  _c("span", { staticClass: "bg-secondary" }, [
-                    _c("i", { staticClass: "far fa-calendar-alt" }),
-                    _vm._v(
-                      "\n                        26/04/2021\n                      "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("i", { staticClass: "fas fa-gift bg-maroon" }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "timeline-item" }, [
-                    _c("span", { staticClass: "time" }, [
-                      _c("i", { staticClass: "fas fa-store-alt" }),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
-                    ]),
-                    _vm._v(" "),
-                    _c("h3", { staticClass: "timeline-header" }, [
-                      _vm._v("Nom del producte")
-                    ]),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "timeline-body" }, [
-                      _vm._v("Descripcio producte")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("i", { staticClass: "fas fa-gift bg-maroon" }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "timeline-item" }, [
-                    _c("span", { staticClass: "time" }, [
-                      _c("i", { staticClass: "fas fa-store-alt" }),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
-                    ]),
-                    _vm._v(" "),
-                    _c("h3", { staticClass: "timeline-header" }, [
-                      _vm._v("Nom del producte")
-                    ]),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "timeline-body" }, [
-                      _vm._v("Descripcio producte")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("i", { staticClass: "fas fa-gift bg-maroon" }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "timeline-item" }, [
-                    _c("span", { staticClass: "time" }, [
-                      _c("i", { staticClass: "fas fa-store-alt" }),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
-                    ]),
-                    _vm._v(" "),
-                    _c("h3", { staticClass: "timeline-header" }, [
-                      _vm._v("Nom del producte")
-                    ]),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "timeline-body" }, [
-                      _vm._v("Descripcio producte")
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "time-label" }, [
-                  _c("span", { staticClass: "bg-secondary" }, [
-                    _c("i", { staticClass: "far fa-calendar-alt" }),
-                    _vm._v(
-                      "\n                        27/10/2020\n                      "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("i", { staticClass: "fas fa-gift bg-maroon" }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "timeline-item" }, [
-                    _c("span", { staticClass: "time" }, [
-                      _c("i", { staticClass: "fas fa-store-alt" }),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
-                    ]),
-                    _vm._v(" "),
-                    _c("h3", { staticClass: "timeline-header" }, [
-                      _vm._v("Nom del producte")
-                    ]),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "timeline-body" }, [
-                      _vm._v("Descripcio producte")
-                    ])
-                  ])
-                ])
-              ])
+            _c("h3", { staticClass: "timeline-header" }, [
+              _vm._v("Nom del producte")
+            ]),
+            _vm._v(" "),
+            _c("small", { staticClass: "timeline-body" }, [
+              _vm._v("Descripcio producte")
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "timeline-item" }, [
+            _c("span", { staticClass: "time" }, [
+              _c("i", { staticClass: "fas fa-store-alt" }),
+              _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
+            ]),
+            _vm._v(" "),
+            _c("h3", { staticClass: "timeline-header" }, [
+              _vm._v("Nom del producte")
+            ]),
+            _vm._v(" "),
+            _c("small", { staticClass: "timeline-body" }, [
+              _vm._v("Descripcio producte")
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "time-label" }, [
+          _c("span", { staticClass: "bg-secondary" }, [
+            _c("i", { staticClass: "far fa-calendar-alt" }),
+            _vm._v(
+              "\n                        27/10/2020\n                      "
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "timeline-item" }, [
+            _c("span", { staticClass: "time" }, [
+              _c("i", { staticClass: "fas fa-store-alt" }),
+              _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
+            ]),
+            _vm._v(" "),
+            _c("h3", { staticClass: "timeline-header" }, [
+              _vm._v("Nom del producte")
+            ]),
+            _vm._v(" "),
+            _c("small", { staticClass: "timeline-body" }, [
+              _vm._v("Descripcio producte")
             ])
           ])
         ])
@@ -48479,15 +48735,27 @@ var render = function() {
                     ]
                   ),
                   _vm._v(" "),
-                  _vm._m(0)
+                  _c(
+                    "div",
+                    {
+                      staticClass: "btn btn-default btn-lg btn-flat",
+                      on: { click: _vm.afegirWishlist }
+                    },
+                    [
+                      _c("i", { staticClass: "fas fa-heart fa-lg mr-2" }),
+                      _vm._v(
+                        "\n                Afegir a la llista de desitjos\n              "
+                      )
+                    ]
+                  )
                 ]),
                 _vm._v(" "),
-                _vm._m(1)
+                _vm._m(0)
               ])
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "row mt-4" }, [
-              _vm._m(2),
+              _vm._m(1),
               _vm._v(" "),
               _c(
                 "div",
@@ -48524,15 +48792,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "btn btn-default btn-lg btn-flat" }, [
-      _c("i", { staticClass: "fas fa-heart fa-lg mr-2" }),
-      _vm._v("\n                Afegir a la llista de desitjos\n              ")
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -66626,8 +66885,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\abram\Documents\GitHub\tfg\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\abram\Documents\GitHub\tfg\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/tfg/tfg/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/tfg/tfg/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -22,11 +22,15 @@ Route::middleware('auth:sanctum')->get('/athenticated', function () {
 });
 Route::get('productes', 'ProductesController@productes');
 Route::get('producte/{id}', 'ProductesController@producte');
+Route::get('veureCistella', 'CistellaController@veureCistella');
 Route::post('afegirCistella/{id}', 'CistellaController@afegirCistella');
 Route::post('eliminarCistella/{id}', 'CistellaController@eliminarCistella');
+Route::get('veureWishlist', 'WishlistController@veureWishlist');
+Route::post('afegirWishlist/{id}', 'WishlistController@afegirWishlist');
+Route::post('eliminarWishlist/{id}', 'WishlistController@eliminarWishlist');
 Route::post('restarCistella/{id}', 'CistellaController@restarCistella');
 Route::post('sumarCistella/{id}', 'CistellaController@sumarCistella');
-Route::get('veureCistella', 'CistellaController@veureCistella');
+
 Route::post('register', 'RegisterController@register');
 Route::post('crearBotiga', 'CrearBotigaController@crearBotiga');
 Route::post('login', 'LoginController@login');
