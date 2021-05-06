@@ -55,7 +55,7 @@
                 <div :class="'card card-primary text-center zoom'">
                   <img
                     :class="'card-img-top p-3'"
-                    :src="'/images/' + producte.imatge"
+                    :src="'/images/productes/' + producte.imatge"
                   />
                   <div :class="'card-body'">
                     <div :class="'card-title font-weight-bold'">
