@@ -42,14 +42,18 @@
         </nav>
         <!-- /.navbar -->
 
-        <!-- MENÚ ESQUERRA -->
-        <aside class="main-sidebar sidebar-no-expand sidebar-light elevation-4">
-            <!-- Logo -->
-            <router-link :to="'productes'" class="brand-link">
-                <img src="/images/logo_mercat.png" alt="" class="brand-image img-circle elevation-3"
-                    style="opacity: 0.8; background: #ff6565;" />
-                <span class="brand-text font-weight-light">Mercat Virtual</span>
-            </router-link>
+    <!-- MENÚ ESQUERRA -->
+    <aside class="main-sidebar sidebar-light elevation-4 sidebar-no-expand">
+      <!-- Logo -->
+      <router-link :to="'/'" class="brand-link">
+        <img
+          src="/images/logo_mercat.png"
+          alt=""
+          class="brand-image img-circle elevation-3"
+          style="opacity: 0.8; background: #ff6565"
+        />
+        <span class="brand-text font-weight-light">Mercat Virtual</span>
+      </router-link>
 
             <!-- Sidebar -->
             <span v-if="this.user.nom">
