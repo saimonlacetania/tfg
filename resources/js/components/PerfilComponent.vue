@@ -50,9 +50,9 @@
                     {{ this.user.provincia }}
                   </span>
                 </p>
-                <button type="button" class="btn btn-success swalDefaultSuccess">
-                  Launch Success Toast
-                </button>
+                <br>
+                <button @click="showAlert" type="button" class="btn btn-block btn-primary">Hello world</button>
+                <br>
                 <router-link
                   class="btn btn-secondary btn-block"
                   :to="'editarPerfil'"
@@ -273,6 +273,23 @@ export default {
     axios.get("/api/user").then((res) => {
       this.user = res.data;
     });
+  },
+  methods: {
+    showAlert() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'success',
+        title: 'Login correcte',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      });
+    }
   },
 };
 </script>
