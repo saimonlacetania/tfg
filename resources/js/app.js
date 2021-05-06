@@ -4,13 +4,9 @@ window.Vue = require("vue");
 
 import VueRouter from "vue-router";
 import routes from "./routes";
-<<<<<<< HEAD
 import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
 const router = new VueRouter(routes)
-=======
-const router = new VueRouter(routes);
->>>>>>> origin/ian2
 
 Vue.use(VueSweetalert2);
 Vue.use(VueRouter);
