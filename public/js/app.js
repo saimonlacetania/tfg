@@ -2137,42 +2137,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       botiga: "",
-      user: ""
+      user: "",
+      formulari_dades: ""
     };
   },
   mounted: function mounted() {
@@ -40929,7 +40899,7 @@ var staticRenderFns = [
                 {
                   staticClass: "nav-link active",
                   staticStyle: { color: "#0a0421 !important" },
-                  attrs: { href: "#activity", "data-toggle": "tab" }
+                  attrs: { href: "#mod_perfil", "data-toggle": "tab" }
                 },
                 [_vm._v("Modificar perfil")]
               )
@@ -40941,7 +40911,7 @@ var staticRenderFns = [
                 {
                   staticClass: "nav-link",
                   staticStyle: { color: "#0a0421 !important" },
-                  attrs: { href: "#timeline", "data-toggle": "tab" }
+                  attrs: { href: "#puja_producte", "data-toggle": "tab" }
                 },
                 [_vm._v("Pujar productes")]
               )
@@ -40953,187 +40923,203 @@ var staticRenderFns = [
           _c("div", { staticClass: "tab-content" }, [
             _c(
               "div",
-              { staticClass: "active tab-pane", attrs: { id: "activity" } },
+              { staticClass: "active tab-pane", attrs: { id: "mod_perfil" } },
               [
-                _c("div", { staticClass: "card mb-3" }, [
-                  _c("div", { staticClass: "row g-0" }, [
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c("img", {
-                        staticClass: "img-fluid p-1 ml-4",
-                        staticStyle: {
-                          height: "150px",
-                          width: "150px",
-                          "border-radius": "150px"
-                        },
-                        attrs: {
-                          src:
-                            "https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg",
-                          alt: "..."
-                        }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-8" }, [
-                      _c("div", { staticClass: "card-body" }, [
-                        _c("h5", { staticClass: "card-title" }, [
-                          _vm._v("Producte")
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "card-text" }, [
-                          _vm._v(
-                            "\n                            This is a wider card with supporting text below as\n                            a natural lead-in to additional content. This\n                            content is a little bit longer.\n                            "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "card-text" }, [
-                          _c("small", { staticClass: "text-muted" }, [
-                            _vm._v("Comprat el 26/04/2021")
-                          ])
-                        ])
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card mb-3" }, [
+                _c("div", { staticClass: "form-group" }, [
                   _c("div", { staticClass: "row" }, [
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c("img", {
-                        staticClass: "img-fluid p-1 ml-4",
-                        staticStyle: {
-                          height: "150px",
-                          width: "150px",
-                          "border-radius": "150px"
-                        },
+                    _c("div", { staticClass: "col-md-1" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-10" }, [
+                      _c("label", { attrs: { for: "nom_botiga" } }, [
+                        _vm._v("Nom")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
                         attrs: {
-                          src:
-                            "https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg",
-                          alt: "..."
+                          type: "text",
+                          id: "nom_botiga",
+                          placeholder: "Nom"
                         }
                       })
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-md-8" }, [
-                      _c("div", { staticClass: "card-body" }, [
-                        _c("h5", { staticClass: "card-title" }, [
-                          _vm._v("Producte")
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "card-text" }, [
-                          _vm._v(
-                            "\n                            This is a wider card with supporting text below as\n                            a natural lead-in to additional content. This\n                            content is a little bit longer.\n                            "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "card-text" }, [
-                          _c("small", { staticClass: "text-muted" }, [
-                            _vm._v("Comprat el 26/04/2021")
-                          ])
-                        ])
-                      ])
-                    ])
+                    _c("div", { staticClass: "col-md-1" })
+                  ]),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-md-1" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-10" }, [
+                      _c("label", { attrs: { for: "descripcio_botiga" } }, [
+                        _vm._v("Descripció")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          id: "descripcio_botiga",
+                          placeholder: "Descripció"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-1" })
+                  ]),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-md-1" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-5" }, [
+                      _c("label", { attrs: { for: "telf_1_botiga" } }, [
+                        _vm._v("Telèfon")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          id: "telf_1_botiga",
+                          placeholder: "Telèfon"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-5" }, [
+                      _c("label", { attrs: { for: "telf_2_botiga" } }, [
+                        _vm._v("Telèfon")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          id: "telf_2_botiga",
+                          placeholder: "Telèfon"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-1" })
                   ])
                 ])
               ]
             ),
             _vm._v(" "),
-            _c("div", { staticClass: "tab-pane", attrs: { id: "timeline" } }, [
-              _c("div", { staticClass: "timeline timeline-inverse" }, [
-                _c("div", { staticClass: "time-label" }, [
-                  _c("span", { staticClass: "bg-secondary" }, [
-                    _c("i", { staticClass: "far fa-calendar-alt" }),
-                    _vm._v(
-                      "\n                        26/04/2021\n                        "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("i", { staticClass: "fas fa-gift bg-maroon" }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "timeline-item" }, [
-                    _c("span", { staticClass: "time" }, [
-                      _c("i", { staticClass: "fas fa-store-alt" }),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
-                    ]),
-                    _vm._v(" "),
-                    _c("h3", { staticClass: "timeline-header" }, [
-                      _vm._v("Nom del producte")
-                    ]),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "timeline-body" }, [
-                      _vm._v("Descripcio producte")
+            _c(
+              "div",
+              { staticClass: "tab-pane", attrs: { id: "puja_producte" } },
+              [
+                _c("div", { staticClass: "timeline timeline-inverse" }, [
+                  _c("div", { staticClass: "time-label" }, [
+                    _c("span", { staticClass: "bg-secondary" }, [
+                      _c("i", { staticClass: "far fa-calendar-alt" }),
+                      _vm._v(
+                        "\n                        26/04/2021\n                        "
+                      )
                     ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+                  ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "timeline-item" }, [
-                    _c("span", { staticClass: "time" }, [
-                      _c("i", { staticClass: "fas fa-store-alt" }),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
-                    ]),
+                  _c("div", [
+                    _c("i", { staticClass: "fas fa-gift bg-maroon" }),
                     _vm._v(" "),
-                    _c("h3", { staticClass: "timeline-header" }, [
-                      _vm._v("Nom del producte")
-                    ]),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "timeline-body" }, [
-                      _vm._v("Descripcio producte")
+                    _c("div", { staticClass: "timeline-item" }, [
+                      _c("span", { staticClass: "time" }, [
+                        _c("i", { staticClass: "fas fa-store-alt" }),
+                        _c("a", { attrs: { href: "#" } }, [
+                          _vm._v(" Nom Botiga")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("h3", { staticClass: "timeline-header" }, [
+                        _vm._v("Nom del producte")
+                      ]),
+                      _vm._v(" "),
+                      _c("small", { staticClass: "timeline-body" }, [
+                        _vm._v("Descripcio producte")
+                      ])
                     ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+                  ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "timeline-item" }, [
-                    _c("span", { staticClass: "time" }, [
-                      _c("i", { staticClass: "fas fa-store-alt" }),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
-                    ]),
+                  _c("div", [
+                    _c("i", { staticClass: "fas fa-gift bg-maroon" }),
                     _vm._v(" "),
-                    _c("h3", { staticClass: "timeline-header" }, [
-                      _vm._v("Nom del producte")
-                    ]),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "timeline-body" }, [
-                      _vm._v("Descripcio producte")
+                    _c("div", { staticClass: "timeline-item" }, [
+                      _c("span", { staticClass: "time" }, [
+                        _c("i", { staticClass: "fas fa-store-alt" }),
+                        _c("a", { attrs: { href: "#" } }, [
+                          _vm._v(" Nom Botiga")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("h3", { staticClass: "timeline-header" }, [
+                        _vm._v("Nom del producte")
+                      ]),
+                      _vm._v(" "),
+                      _c("small", { staticClass: "timeline-body" }, [
+                        _vm._v("Descripcio producte")
+                      ])
                     ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "time-label" }, [
-                  _c("span", { staticClass: "bg-secondary" }, [
-                    _c("i", { staticClass: "far fa-calendar-alt" }),
-                    _vm._v(
-                      "\n                        27/10/2020\n                        "
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("i", { staticClass: "fas fa-gift bg-maroon" }),
+                  ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "timeline-item" }, [
-                    _c("span", { staticClass: "time" }, [
-                      _c("i", { staticClass: "fas fa-store-alt" }),
-                      _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
-                    ]),
+                  _c("div", [
+                    _c("i", { staticClass: "fas fa-gift bg-maroon" }),
                     _vm._v(" "),
-                    _c("h3", { staticClass: "timeline-header" }, [
-                      _vm._v("Nom del producte")
-                    ]),
+                    _c("div", { staticClass: "timeline-item" }, [
+                      _c("span", { staticClass: "time" }, [
+                        _c("i", { staticClass: "fas fa-store-alt" }),
+                        _c("a", { attrs: { href: "#" } }, [
+                          _vm._v(" Nom Botiga")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("h3", { staticClass: "timeline-header" }, [
+                        _vm._v("Nom del producte")
+                      ]),
+                      _vm._v(" "),
+                      _c("small", { staticClass: "timeline-body" }, [
+                        _vm._v("Descripcio producte")
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "time-label" }, [
+                    _c("span", { staticClass: "bg-secondary" }, [
+                      _c("i", { staticClass: "far fa-calendar-alt" }),
+                      _vm._v(
+                        "\n                        27/10/2020\n                        "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("i", { staticClass: "fas fa-gift bg-maroon" }),
                     _vm._v(" "),
-                    _c("small", { staticClass: "timeline-body" }, [
-                      _vm._v("Descripcio producte")
+                    _c("div", { staticClass: "timeline-item" }, [
+                      _c("span", { staticClass: "time" }, [
+                        _c("i", { staticClass: "fas fa-store-alt" }),
+                        _c("a", { attrs: { href: "#" } }, [
+                          _vm._v(" Nom Botiga")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("h3", { staticClass: "timeline-header" }, [
+                        _vm._v("Nom del producte")
+                      ]),
+                      _vm._v(" "),
+                      _c("small", { staticClass: "timeline-body" }, [
+                        _vm._v("Descripcio producte")
+                      ])
                     ])
                   ])
                 ])
-              ])
-            ])
+              ]
+            )
           ])
         ])
       ])

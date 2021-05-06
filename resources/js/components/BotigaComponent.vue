@@ -55,10 +55,10 @@
                 <div class="card-header p-2">
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#activity" data-toggle="tab" style="color:#0a0421 !important;">Modificar perfil</a>
+                            <a class="nav-link active" href="#mod_perfil" data-toggle="tab" style="color:#0a0421 !important;">Modificar perfil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#timeline" data-toggle="tab" style="color:#0a0421 !important;">Pujar productes</a>
+                            <a class="nav-link" href="#puja_producte" data-toggle="tab" style="color:#0a0421 !important;">Pujar productes</a>
                         </li>
                     </ul>
                 </div>
@@ -67,75 +67,44 @@
                 <!-- les meves comandes -->
                 <div class="card-body">
                     <div class="tab-content">
-                    <div class="active tab-pane" id="activity">
-                        <div class="card mb-3">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                            <img
-                                src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg"
-                                alt="..."
-                                class="img-fluid p-1 ml-4"
-                                style="
-                                height: 150px;
-                                width: 150px;
-                                border-radius: 150px;
-                                "
-                            />
+                    <div class="active tab-pane" id="mod_perfil">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-10">
+                                        <label for="nom_botiga">Nom</label>
+                                        <input type="text" class="form-control" id="nom_botiga" placeholder="Nom">
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-10">
+                                        <label for="descripcio_botiga">Descripció</label>
+                                        <input type="text" class="form-control" id="descripcio_botiga" placeholder="Descripció">
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-5">
+                                        <label for="telf_1_botiga">Telèfon</label>
+                                        <input type="text" class="form-control" id="telf_1_botiga" placeholder="Telèfon">
+                                    </div>
+                                    <div class="col-md-5">
+                                        <label for="telf_2_botiga">Telèfon</label>
+                                        <input type="text" class="form-control" id="telf_2_botiga" placeholder="Telèfon">
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
                             </div>
-                            <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Producte</h5>
-                                <p class="card-text">
-                                This is a wider card with supporting text below as
-                                a natural lead-in to additional content. This
-                                content is a little bit longer.
-                                </p>
-                                <p class="card-text">
-                                <small class="text-muted"
-                                    >Comprat el 26/04/2021</small
-                                >
-                                </p>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-
-                        <div class="card mb-3">
-                        <div class="row">
-                            <div class="col-md-4">
-                            <img
-                                src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg"
-                                alt="..."
-                                class="img-fluid p-1 ml-4"
-                                style="
-                                height: 150px;
-                                width: 150px;
-                                border-radius: 150px;
-                                "
-                            />
-                            </div>
-                            <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Producte</h5>
-                                <p class="card-text">
-                                This is a wider card with supporting text below as
-                                a natural lead-in to additional content. This
-                                content is a little bit longer.
-                                </p>
-                                <p class="card-text">
-                                <small class="text-muted"
-                                    >Comprat el 26/04/2021</small
-                                >
-                                </p>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
                     </div>
                     <!-- /.les meves comandes -->
 
                     <!-- TIMELINE tornar a comprar -->
-                    <div class="tab-pane" id="timeline">
+                    <div class="tab-pane" id="puja_producte">
                         <!-- The timeline -->
                         <div class="timeline timeline-inverse">
                         <!-- timeline time label -->
@@ -246,7 +215,8 @@ export default {
     data() {
         return {
             botiga: "",
-            user: ""
+            user: "",
+            formulari_dades: ""
         };
     },
     mounted() {
