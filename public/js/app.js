@@ -2409,6 +2409,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2425,6 +2441,8 @@ __webpack_require__.r(__webpack_exports__);
         visites: "0"
       },
       files: null,
+      files2: null,
+      files3: null,
       form_botiga: {
         id: "",
         nom: "",
@@ -2489,6 +2507,14 @@ __webpack_require__.r(__webpack_exports__);
     fileSelected: function fileSelected(e) {
       this.files = e.target.files;
       console.log(this.files);
+    },
+    fileSelected2: function fileSelected2(e) {
+      this.files2 = e.target.files2;
+      console.log(this.files2);
+    },
+    fileSelected3: function fileSelected3(e) {
+      this.files3 = e.target.files3;
+      console.log(this.files3);
     },
     toastCorrecte: function toastCorrecte() {
       // Use sweetalert2
@@ -2559,6 +2585,8 @@ __webpack_require__.r(__webpack_exports__);
       console.log(that.form);
     },
     saveBotiga: function saveBotiga() {
+      var _this3 = this;
+
       var that = this;
       console.log(that.form_botiga);
       var formData = new FormData();
@@ -2593,10 +2621,16 @@ __webpack_require__.r(__webpack_exports__);
           "Content-Type": "multipart/form-data"
         }
       }).then(function (res) {
-        console.log(res); //this.$router.push({ name: "Profile" });
+        console.log(res);
+
+        _this3.toastCorrecte();
+
+        location.reload();
       })["catch"](function (error) {
         that.errors = error.response.data.errors;
         console.log(that.errors);
+
+        _this3.toastIncorrecte();
       });
     }
   }
@@ -46388,7 +46422,102 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _vm._m(8),
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-1" }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-5" }, [
+                                _c("label", { attrs: { for: "img_perfil" } }, [
+                                  _vm._v("Imatge de perfil")
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "input-group" }, [
+                                  _c("div", { staticClass: "custom-file" }, [
+                                    _c("input", {
+                                      staticClass: "custom-file-input",
+                                      attrs: { type: "file", id: "img_perfil" },
+                                      on: { change: _vm.fileSelected }
+                                    }),
+                                    _vm._v(" "),
+                                    !_vm.files || !_vm.files.length
+                                      ? _c(
+                                          "label",
+                                          {
+                                            staticClass: "custom-file-label",
+                                            attrs: { for: "img_perfil" }
+                                          },
+                                          [_vm._v("Tria un fitxer")]
+                                        )
+                                      : _c(
+                                          "span",
+                                          _vm._l(_vm.files, function(file) {
+                                            return _c(
+                                              "label",
+                                              {
+                                                key: file.name,
+                                                staticClass:
+                                                  "custom-file-label",
+                                                attrs: { for: "img_perfil" }
+                                              },
+                                              [_vm._v(_vm._s(file.name))]
+                                            )
+                                          }),
+                                          0
+                                        )
+                                  ]),
+                                  _vm._v(" "),
+                                  _vm._m(8)
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-5" }, [
+                                _c("label", { attrs: { for: "img_portada" } }, [
+                                  _vm._v("Imatge de portada")
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "input-group" }, [
+                                  _c("div", { staticClass: "custom-file" }, [
+                                    _c("input", {
+                                      staticClass: "custom-file-input",
+                                      attrs: {
+                                        type: "file",
+                                        id: "img_portada"
+                                      },
+                                      on: { change: _vm.fileSelected2 }
+                                    }),
+                                    _vm._v(" "),
+                                    !_vm.files2 || !_vm.files2.length
+                                      ? _c(
+                                          "label",
+                                          {
+                                            staticClass: "custom-file-label",
+                                            attrs: { for: "img_portada" }
+                                          },
+                                          [_vm._v("Tria un fitxer")]
+                                        )
+                                      : _c(
+                                          "span",
+                                          _vm._l(_vm.files2, function(file2) {
+                                            return _c(
+                                              "label",
+                                              {
+                                                key: file2.name,
+                                                staticClass:
+                                                  "custom-file-label",
+                                                attrs: { for: "img_portada" }
+                                              },
+                                              [_vm._v(_vm._s(file2.name))]
+                                            )
+                                          }),
+                                          0
+                                        )
+                                  ]),
+                                  _vm._v(" "),
+                                  _vm._m(9)
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-1" })
+                            ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "row" }, [
                               _c("div", { staticClass: "col-md-4" }),
@@ -46445,10 +46574,10 @@ var render = function() {
                                   _c("input", {
                                     staticClass: "custom-file-input",
                                     attrs: { type: "file", id: "imatge" },
-                                    on: { change: _vm.fileSelected }
+                                    on: { change: _vm.fileSelected3 }
                                   }),
                                   _vm._v(" "),
-                                  !_vm.files || !_vm.files.length
+                                  !_vm.files3 || !_vm.files3.length
                                     ? _c(
                                         "label",
                                         {
@@ -46459,22 +46588,22 @@ var render = function() {
                                       )
                                     : _c(
                                         "span",
-                                        _vm._l(_vm.files, function(file) {
+                                        _vm._l(_vm.files3, function(file3) {
                                           return _c(
                                             "label",
                                             {
-                                              key: file.name,
+                                              key: file3.name,
                                               staticClass: "custom-file-label",
                                               attrs: { for: "imatge" }
                                             },
-                                            [_vm._v(_vm._s(file.name))]
+                                            [_vm._v(_vm._s(file3.name))]
                                           )
                                         }),
                                         0
                                       )
                                 ]),
                                 _vm._v(" "),
-                                _vm._m(9)
+                                _vm._m(10)
                               ])
                             ]),
                             _vm._v(" "),
@@ -46536,7 +46665,7 @@ var render = function() {
                                 }
                               }),
                               _vm._v(" "),
-                              _vm._m(10)
+                              _vm._m(11)
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "input-group mb-3" }, [
@@ -46597,7 +46726,7 @@ var render = function() {
                                 }
                               }),
                               _vm._v(" "),
-                              _vm._m(11)
+                              _vm._m(12)
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "form-group" }, [
@@ -46784,7 +46913,7 @@ var render = function() {
                                 }
                               }),
                               _vm._v(" "),
-                              _vm._m(12)
+                              _vm._m(13)
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "input-group mb-3" }, [
@@ -46845,7 +46974,7 @@ var render = function() {
                                 }
                               }),
                               _vm._v(" "),
-                              _vm._m(13)
+                              _vm._m(14)
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "form-check" }, [
@@ -47082,70 +47211,20 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-1" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-5" }, [
-        _c("label", { attrs: { for: "img_perfil" } }, [
-          _vm._v("Imatge de perfil")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "input-group" }, [
-          _c("div", { staticClass: "custom-file" }, [
-            _c("input", {
-              staticClass: "custom-file-input",
-              attrs: { type: "file", id: "img_perfil" }
-            }),
-            _vm._v(" "),
-            _c(
-              "label",
-              {
-                staticClass: "custom-file-label",
-                attrs: { for: "img_perfil" }
-              },
-              [_vm._v("Tria un fitxer")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "input-group-append" }, [
-            _c("span", { staticClass: "input-group-text" }, [
-              _c("i", { staticClass: "fas fa-image" })
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-5" }, [
-        _c("label", { attrs: { for: "img_portada" } }, [
-          _vm._v("Imatge de portada")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "input-group" }, [
-          _c("div", { staticClass: "custom-file" }, [
-            _c("input", {
-              staticClass: "custom-file-input",
-              attrs: { type: "file", id: "img_portada" }
-            }),
-            _vm._v(" "),
-            _c(
-              "label",
-              {
-                staticClass: "custom-file-label",
-                attrs: { for: "img_portada" }
-              },
-              [_vm._v("Tria un fitxer")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "input-group-append" }, [
-            _c("span", { staticClass: "input-group-text" }, [
-              _c("i", { staticClass: "fas fa-image" })
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-1" })
+    return _c("div", { staticClass: "input-group-append" }, [
+      _c("span", { staticClass: "input-group-text" }, [
+        _c("i", { staticClass: "fas fa-image" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-append" }, [
+      _c("span", { staticClass: "input-group-text" }, [
+        _c("i", { staticClass: "fas fa-image" })
+      ])
     ])
   },
   function() {
