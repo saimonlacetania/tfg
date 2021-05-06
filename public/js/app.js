@@ -2262,7 +2262,39 @@ __webpack_require__.r(__webpack_exports__);
     }));
   },
   methods: {
+    toastCorrecte: function toastCorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'success',
+        title: 'Producte afegit correctament',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: function didOpen(toast) {
+          toast.addEventListener('mouseenter', Swal.stopTimer);
+          toast.addEventListener('mouseleave', Swal.resumeTimer);
+        }
+      });
+    },
+    toastIncorrecte: function toastIncorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'error',
+        title: 'Error al afegir el producte',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: function didOpen(toast) {
+          toast.addEventListener('mouseenter', Swal.stopTimer);
+          toast.addEventListener('mouseleave', Swal.resumeTimer);
+        }
+      });
+    },
     saveForm: function saveForm() {
+      var _this2 = this;
+
       var that = this;
       console.log(that.form);
       var formData = new FormData();
@@ -2286,10 +2318,14 @@ __webpack_require__.r(__webpack_exports__);
           "Content-Type": "multipart/form-data"
         }
       }).then(function (res) {
-        console.log(res);
+        _this2.toastCorrecte();
+
         location.reload();
       })["catch"](function (error) {
         that.errors = error.response.data.errors;
+
+        _this2.toastIncorrecte();
+
         console.log(that.errors);
       });
       console.log(that.form);
@@ -2752,6 +2788,36 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
+    toastCorrecte: function toastCorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'success',
+        title: 'Botiga creada correctament',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: function didOpen(toast) {
+          toast.addEventListener('mouseenter', Swal.stopTimer);
+          toast.addEventListener('mouseleave', Swal.resumeTimer);
+        }
+      });
+    },
+    toastIncorrecte: function toastIncorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'error',
+        title: 'Error al crear la botiga',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: function didOpen(toast) {
+          toast.addEventListener('mouseenter', Swal.stopTimer);
+          toast.addEventListener('mouseleave', Swal.resumeTimer);
+        }
+      });
+    },
     saveForm: function saveForm() {
       var _this2 = this;
 
@@ -2764,9 +2830,13 @@ __webpack_require__.r(__webpack_exports__);
         _this2.$router.push({
           name: "Botiga"
         });
+
+        _this2.toastCorrecte();
       })["catch"](function (error) {
         that.errors = error.response.data.errors;
         console.log(that.errors);
+
+        _this2.toastIncorrecte();
       });
     }
   }
@@ -3017,6 +3087,36 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    toastCorrecte: function toastCorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'success',
+        title: 'Canvi realitzat',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: function didOpen(toast) {
+          toast.addEventListener('mouseenter', Swal.stopTimer);
+          toast.addEventListener('mouseleave', Swal.resumeTimer);
+        }
+      });
+    },
+    toastIncorrecte: function toastIncorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'error',
+        title: 'Error al realitzar el canvi',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: function didOpen(toast) {
+          toast.addEventListener('mouseenter', Swal.stopTimer);
+          toast.addEventListener('mouseleave', Swal.resumeTimer);
+        }
+      });
+    },
     modifyUser: function modifyUser() {
       var _this2 = this;
 
@@ -3028,9 +3128,13 @@ __webpack_require__.r(__webpack_exports__);
         _this2.$router.push({
           name: "Profile"
         });
+
+        _this2.toastCorrecte();
       })["catch"](function (error) {
         that.errors = error.response.data.errors;
         console.log(that.errors);
+
+        _this2.toastIncorrecte();
       });
     },
     modifyPassword: function modifyPassword() {
@@ -3044,9 +3148,13 @@ __webpack_require__.r(__webpack_exports__);
         _this3.$router.push({
           name: "Profile"
         });
+
+        _this3.toastCorrecte();
       })["catch"](function (error) {
         that.errors2 = error.response.data.errors;
         console.log(that.errors2);
+
+        _this3.toastIncorrecte();
       });
     },
     modifyProfile: function modifyProfile() {
@@ -3073,9 +3181,13 @@ __webpack_require__.r(__webpack_exports__);
         _this4.$router.push({
           name: "Profile"
         });
+
+        _this4.toastCorrecte();
       })["catch"](function (error) {
         that.errors3 = error.response.data.errors;
         console.log(that.errors3);
+
+        _this4.toastIncorrecte();
       });
       console.log(that.form3);
     }
@@ -3093,7 +3205,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -3434,6 +3545,36 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    loginCorrecte: function loginCorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'success',
+        title: 'Login correcte',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: function didOpen(toast) {
+          toast.addEventListener('mouseenter', Swal.stopTimer);
+          toast.addEventListener('mouseleave', Swal.resumeTimer);
+        }
+      });
+    },
+    loginIncorrecte: function loginIncorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'error',
+        title: 'Login incorrecte',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: function didOpen(toast) {
+          toast.addEventListener('mouseenter', Swal.stopTimer);
+          toast.addEventListener('mouseleave', Swal.resumeTimer);
+        }
+      });
+    },
     loginUser: function loginUser() {
       var _this = this;
 
@@ -3442,9 +3583,14 @@ __webpack_require__.r(__webpack_exports__);
           name: "Productes"
         });
 
+        _this.loginCorrecte();
+
         return false;
       })["catch"](function (error) {
         _this.errors = error.response.data.errors;
+
+        _this.loginIncorrecte();
+
         return false;
       });
     }
@@ -3758,7 +3904,7 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
-    showAlert: function showAlert() {
+    loginCorrecte: function loginCorrecte() {
       // Use sweetalert2
       this.$swal({
         toast: true,
@@ -3885,14 +4031,50 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
+    toastCorrecte: function toastCorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'success',
+        title: 'Producte afegit a la cistella',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: function didOpen(toast) {
+          toast.addEventListener('mouseenter', Swal.stopTimer);
+          toast.addEventListener('mouseleave', Swal.resumeTimer);
+        }
+      });
+    },
+    toastIncorrecte: function toastIncorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'error',
+        title: 'Error al afegir el producte',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: function didOpen(toast) {
+          toast.addEventListener('mouseenter', Swal.stopTimer);
+          toast.addEventListener('mouseleave', Swal.resumeTimer);
+        }
+      });
+    },
     afegirCistella: function afegirCistella() {
       var _this2 = this;
 
       axios.post("/api/afegirCistella/" + this.producte.id).then(function (res) {
         console.log(res);
+
+        _this2.toastCorrecte();
+
         return false;
       })["catch"](function (error) {
         _this2.errors = error.response.data.errors;
+
+        _this2.toastIncorrecte();
+
         return false;
       });
     }
@@ -4263,6 +4445,36 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    registreCorrecte: function registreCorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'success',
+        title: 'Usuari creat correctament!',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: function didOpen(toast) {
+          toast.addEventListener('mouseenter', Swal.stopTimer);
+          toast.addEventListener('mouseleave', Swal.resumeTimer);
+        }
+      });
+    },
+    registreIncorrecte: function registreIncorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'error',
+        title: 'Error al registrar usuari!',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: function didOpen(toast) {
+          toast.addEventListener('mouseenter', Swal.stopTimer);
+          toast.addEventListener('mouseleave', Swal.resumeTimer);
+        }
+      });
+    },
     saveForm: function saveForm() {
       var _this = this;
 
@@ -4274,9 +4486,17 @@ __webpack_require__.r(__webpack_exports__);
         _this.$router.push({
           name: "Login"
         });
+
+        _this.registreCorrecte();
+
+        return false;
       })["catch"](function (error) {
         that.errors = error.response.data.errors;
         console.log(that.errors);
+
+        _this.registreIncorrecte();
+
+        return false;
       });
     }
   }
@@ -47059,7 +47279,6 @@ var render = function() {
                     attrs: {
                       to: "/cistella",
                       "data-toggle": "dropdown",
-                      href: "#",
                       "aria-expanded": "false"
                     }
                   },
@@ -47857,7 +48076,7 @@ var render = function() {
                     {
                       staticClass: "btn btn-block btn-primary",
                       attrs: { type: "button" },
-                      on: { click: _vm.showAlert }
+                      on: { click: _vm.loginCorrecte }
                     },
                     [_vm._v("Hello world")]
                   ),

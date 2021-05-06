@@ -96,15 +96,47 @@ export default {
     });
   },
   methods: {
+    toastCorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'success',
+        title: 'Producte afegit a la cistella',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      });
+    },
+    toastIncorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'error',
+        title: 'Error al afegir el producte',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      });
+    },
     afegirCistella() {
       axios
         .post("/api/afegirCistella/" + this.producte.id)
         .then((res) => {
           console.log(res);
+          this.toastCorrecte();
           return false;
         })
         .catch((error) => {
           this.errors = error.response.data.errors;
+          this.toastIncorrecte();
           return false;
         });
     },

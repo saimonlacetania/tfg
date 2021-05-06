@@ -231,6 +231,36 @@ export default {
     };
   },
   methods: {
+    toastCorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'success',
+        title: 'Canvi realitzat',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      });
+    },
+    toastIncorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'error',
+        title: 'Error al realitzar el canvi',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      });
+    },
     modifyUser() {
       let that = this;
       console.log(that.form);
@@ -239,10 +269,12 @@ export default {
         .then((res) => {
           console.log(res);
           this.$router.push({ name: "Profile" });
+          this.toastCorrecte();
         })
         .catch((error) => {
           that.errors = error.response.data.errors;
           console.log(that.errors);
+          this.toastIncorrecte();
         });
     },
     modifyPassword() {
@@ -253,10 +285,12 @@ export default {
         .then((res) => {
           console.log(res);
           this.$router.push({ name: "Profile" });
+          this.toastCorrecte();
         })
         .catch((error) => {
           that.errors2 = error.response.data.errors;
           console.log(that.errors2);
+          this.toastIncorrecte();
         });
     },
     modifyProfile() {
@@ -279,10 +313,12 @@ export default {
         .then((res) => {
           console.log(res);
           this.$router.push({ name: "Profile" });
+          this.toastCorrecte();
         })
         .catch((error) => {
           that.errors3 = error.response.data.errors;
           console.log(that.errors3);
+          this.toastIncorrecte();
         });
 
       console.log(that.form3);

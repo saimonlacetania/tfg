@@ -51,7 +51,7 @@
                   </span>
                 </p>
                 <br>
-                <button @click="showAlert" type="button" class="btn btn-block btn-primary">Hello world</button>
+                <button @click="loginCorrecte" type="button" class="btn btn-block btn-primary">Hello world</button>
                 <br>
                 <router-link
                   class="btn btn-secondary btn-block"
@@ -275,7 +275,7 @@ export default {
     });
   },
   methods: {
-    showAlert() {
+    loginCorrecte() {
       // Use sweetalert2
       this.$swal({
         toast: true,

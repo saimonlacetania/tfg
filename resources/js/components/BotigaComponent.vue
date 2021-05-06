@@ -337,6 +337,36 @@ export default {
     },
 
     methods: {
+        toastCorrecte() {
+        // Use sweetalert2
+        this.$swal({
+            toast: true,
+            position: 'top-end',
+            icon: 'success',
+            title: 'Producte afegit correctament',
+            showConfirmButton: false,
+            timer: 3000,
+            didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        });
+        },
+        toastIncorrecte() {
+        // Use sweetalert2
+        this.$swal({
+            toast: true,
+            position: 'top-end',
+            icon: 'error',
+            title: 'Error al afegir el producte',
+            showConfirmButton: false,
+            timer: 3000,
+            didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        });
+        },
         saveForm() {
             let that = this;
             console.log(that.form);
@@ -364,11 +394,12 @@ export default {
                 },
                 })
                 .then((res) => {
-                console.log(res);
+                this.toastCorrecte();
                 location.reload();
                 })
                 .catch((error) => {
                 that.errors = error.response.data.errors;
+                this.toastIncorrecte();
                 console.log(that.errors);
                 });
 

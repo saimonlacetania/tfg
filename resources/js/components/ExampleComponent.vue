@@ -34,7 +34,6 @@
             :to="'/cistella'"
             class="nav-link"
             data-toggle="dropdown"
-            href="#"
             aria-expanded="false"
           >
             <i class="fas fa-shopping-cart" style="color: #ff6565"></i>

@@ -94,16 +94,47 @@ export default {
     };
   },
   methods: {
+    loginCorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'success',
+        title: 'Login correcte',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      });
+    },
+    loginIncorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'error',
+        title: 'Login incorrecte',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      });
+    },
     loginUser() {
       axios
         .post("/api/login", this.form)
         .then((res) => {
           this.$router.push({ name: "Productes" });
-
+          this.loginCorrecte();
           return false;
         })
         .catch((error) => {
           this.errors = error.response.data.errors;
+          this.loginIncorrecte();
           return false;
         });
     },

@@ -234,6 +234,36 @@ export default {
   },
 
   methods: {
+    toastCorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'success',
+        title: 'Botiga creada correctament',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      });
+    },
+    toastIncorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'error',
+        title: 'Error al crear la botiga',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      });
+    },
     saveForm() {
       let that = this;
       console.log(that.form);
@@ -243,10 +273,12 @@ export default {
         .then(() => {
           console.log("saved");
           this.$router.push({ name: "Botiga" });
+          this.toastCorrecte();
         })
         .catch((error) => {
           that.errors = error.response.data.errors;
           console.log(that.errors);
+          this.toastIncorrecte();
         });
     },
   },
