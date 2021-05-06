@@ -2057,8 +2057,6 @@ __webpack_require__.r(__webpack_exports__);
       console.log(_this.cistella);
 
       for (var i = 0; i < _this.cistella.length; i++) {
-        console.log(_this.cistella[i].productes);
-        console.log(_this.cistella[i].productes.preu * _this.cistella[i].quantitat);
         _this.cistella[i].productes.preu = _this.cistella[i].productes.preu * _this.cistella[i].quantitat;
       }
     });
@@ -2074,8 +2072,6 @@ __webpack_require__.r(__webpack_exports__);
         _this2.cistella = res.data;
 
         for (var i = 0; i < _this2.cistella.length; i++) {
-          console.log(_this2.cistella[i].productes);
-          console.log(_this2.cistella[i].productes.preu * _this2.cistella[i].quantitat);
           _this2.cistella[i].productes.preu = _this2.cistella[i].productes.preu * _this2.cistella[i].quantitat;
         }
       });
@@ -2090,8 +2086,6 @@ __webpack_require__.r(__webpack_exports__);
         _this3.cistella = res.data;
 
         for (var i = 0; i < _this3.cistella.length; i++) {
-          console.log(_this3.cistella[i].productes);
-          console.log(_this3.cistella[i].productes.preu * _this3.cistella[i].quantitat);
           _this3.cistella[i].productes.preu = _this3.cistella[i].productes.preu * _this3.cistella[i].quantitat;
         }
       });
@@ -2106,8 +2100,6 @@ __webpack_require__.r(__webpack_exports__);
         _this4.cistella = res.data;
 
         for (var i = 0; i < _this4.cistella.length; i++) {
-          console.log(_this4.cistella[i].productes);
-          console.log(_this4.cistella[i].productes.preu * _this4.cistella[i].quantitat);
           _this4.cistella[i].productes.preu = _this4.cistella[i].productes.preu * _this4.cistella[i].quantitat;
         }
       });
