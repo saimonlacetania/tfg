@@ -104,7 +104,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item" v-if="this.user.botiga">
-                                <a href="#" class="nav-link">
+                                <a href="" class="nav-link">
                                     <i class="nav-icon fas fa-store-alt text-dark"></i>
                                     <p class="text-dark">
                                         La meva botiga

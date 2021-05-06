@@ -3787,9 +3787,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -44516,7 +44513,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+    return _c("a", { staticClass: "nav-link", attrs: { href: "" } }, [
       _c("i", { staticClass: "nav-icon fas fa-store-alt text-dark" }),
       _vm._v(" "),
       _c("p", { staticClass: "text-dark" }, [
@@ -44880,25 +44877,12 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-success swalDefaultSuccess",
-                      attrs: { type: "button" }
-                    },
-                    [
-                      _vm._v(
-                        "\n                Launch Success Toast\n              "
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
                     "router-link",
                     {
                       staticClass: "btn btn-secondary btn-block",
                       attrs: { to: "editarPerfil" }
                     },
-                    [_c("b", [_vm._v("Configuració general")])]
+                    [_vm._v("\n                Configuració general")]
                   )
                 ],
                 1

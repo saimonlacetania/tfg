@@ -50,14 +50,11 @@
                     {{ this.user.provincia }}
                   </span>
                 </p>
-                <button type="button" class="btn btn-success swalDefaultSuccess">
-                  Launch Success Toast
-                </button>
                 <router-link
                   class="btn btn-secondary btn-block"
                   :to="'editarPerfil'"
                 >
-                  <b>Configuració general</b></router-link
+                  Configuració general</router-link
                 >
               </div>
               <!-- /.card-body -->
