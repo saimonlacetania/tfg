@@ -2055,6 +2055,12 @@ __webpack_require__.r(__webpack_exports__);
     axios.get("/api/veureCistella").then(function (res) {
       _this.cistella = res.data;
       console.log(_this.cistella);
+
+      for (var i = 0; i < _this.cistella.length; i++) {
+        console.log(_this.cistella[i].productes);
+        console.log(_this.cistella[i].productes.preu * _this.cistella[i].quantitat);
+        _this.cistella[i].productes.preu = _this.cistella[i].productes.preu * _this.cistella[i].quantitat;
+      }
     });
   },
   methods: {
@@ -2066,6 +2072,44 @@ __webpack_require__.r(__webpack_exports__);
       });
       axios.get("/api/veureCistella").then(function (res) {
         _this2.cistella = res.data;
+
+        for (var i = 0; i < _this2.cistella.length; i++) {
+          console.log(_this2.cistella[i].productes);
+          console.log(_this2.cistella[i].productes.preu * _this2.cistella[i].quantitat);
+          _this2.cistella[i].productes.preu = _this2.cistella[i].productes.preu * _this2.cistella[i].quantitat;
+        }
+      });
+    },
+    restarCistella: function restarCistella(id) {
+      var _this3 = this;
+
+      axios.post("/api/restarCistella/" + id).then(function (res) {
+        console.log(res);
+      });
+      axios.get("/api/veureCistella").then(function (res) {
+        _this3.cistella = res.data;
+
+        for (var i = 0; i < _this3.cistella.length; i++) {
+          console.log(_this3.cistella[i].productes);
+          console.log(_this3.cistella[i].productes.preu * _this3.cistella[i].quantitat);
+          _this3.cistella[i].productes.preu = _this3.cistella[i].productes.preu * _this3.cistella[i].quantitat;
+        }
+      });
+    },
+    sumarCistella: function sumarCistella(id) {
+      var _this4 = this;
+
+      axios.post("/api/sumarCistella/" + id).then(function (res) {
+        console.log(res);
+      });
+      axios.get("/api/veureCistella").then(function (res) {
+        _this4.cistella = res.data;
+
+        for (var i = 0; i < _this4.cistella.length; i++) {
+          console.log(_this4.cistella[i].productes);
+          console.log(_this4.cistella[i].productes.preu * _this4.cistella[i].quantitat);
+          _this4.cistella[i].productes.preu = _this4.cistella[i].productes.preu * _this4.cistella[i].quantitat;
+        }
       });
     }
   }
@@ -40881,10 +40925,32 @@ var render = function() {
                   _c("td", [_vm._v("ASADASDASD")]),
                   _vm._v(" "),
                   _c("td", [
+                    _c(
+                      "button",
+                      {
+                        on: {
+                          click: function($event) {
+                            return _vm.restarCistella(producte.id)
+                          }
+                        }
+                      },
+                      [_vm._v("-")]
+                    ),
                     _vm._v(
-                      "\n              -\n              " +
+                      "\n              " +
                         _vm._s(producte.quantitat) +
-                        "\n              +\n            "
+                        "\n              "
+                    ),
+                    _c(
+                      "button",
+                      {
+                        on: {
+                          click: function($event) {
+                            return _vm.sumarCistella(producte.id)
+                          }
+                        }
+                      },
+                      [_vm._v("+")]
                     )
                   ]),
                   _vm._v(" "),

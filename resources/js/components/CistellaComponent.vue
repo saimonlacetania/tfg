@@ -31,9 +31,9 @@
               <td>{{ producte.productes.nom }}</td>
               <td>ASADASDASD</td>
               <td>
-                -
+                <button v-on:click="restarCistella(producte.id)">-</button>
                 {{ producte.quantitat }}
-                +
+                <button v-on:click="sumarCistella(producte.id)">+</button>
               </td>
               <td>
                 {{ producte.productes.preu }}
@@ -73,6 +73,10 @@ export default {
     axios.get("/api/veureCistella").then((res) => {
       this.cistella = res.data;
       console.log(this.cistella);
+      for (let i = 0; i < this.cistella.length; i++) {
+        this.cistella[i].productes.preu =
+          this.cistella[i].productes.preu * this.cistella[i].quantitat;
+      }
     });
   },
   methods: {
@@ -82,6 +86,34 @@ export default {
       });
       axios.get("/api/veureCistella").then((res) => {
         this.cistella = res.data;
+        for (let i = 0; i < this.cistella.length; i++) {
+          this.cistella[i].productes.preu =
+            this.cistella[i].productes.preu * this.cistella[i].quantitat;
+        }
+      });
+    },
+    restarCistella(id) {
+      axios.post("/api/restarCistella/" + id).then((res) => {
+        console.log(res);
+      });
+      axios.get("/api/veureCistella").then((res) => {
+        this.cistella = res.data;
+        for (let i = 0; i < this.cistella.length; i++) {
+          this.cistella[i].productes.preu =
+            this.cistella[i].productes.preu * this.cistella[i].quantitat;
+        }
+      });
+    },
+    sumarCistella(id) {
+      axios.post("/api/sumarCistella/" + id).then((res) => {
+        console.log(res);
+      });
+      axios.get("/api/veureCistella").then((res) => {
+        this.cistella = res.data;
+        for (let i = 0; i < this.cistella.length; i++) {
+          this.cistella[i].productes.preu =
+            this.cistella[i].productes.preu * this.cistella[i].quantitat;
+        }
       });
     },
   },

@@ -50,4 +50,24 @@ class CistellaController extends Controller
         $cistella->delete();
         return true;
     }
+
+    public function restarCistella($id_cistella)
+    {
+        $cistella = Cistella::find($id_cistella);
+        if ($cistella->quantitat <= 1) {
+            $this->eliminarCistella($id_cistella);
+        } else {
+            $cistella->quantitat = $cistella->quantitat - 1;
+            $cistella->save();
+        }
+
+        return true;
+    }
+    public function sumarCistella($id_cistella)
+    {
+        $cistella = Cistella::find($id_cistella);
+        $cistella->quantitat = $cistella->quantitat + 1;
+        $cistella->save();
+        return true;
+    }
 }
