@@ -67,141 +67,222 @@
                 <!-- les meves comandes -->
                 <div class="card-body">
                     <div class="tab-content">
-                    <div class="active tab-pane" id="mod_perfil">
-                            <div class="form-group mb-3">
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-10">
-                                        <label for="nom_botiga">Nom</label>
-                                        <input type="text" class="form-control" id="nom_botiga" placeholder="Nom">
+                        <div class="active tab-pane" id="mod_perfil">
+                            <div class="card-body register-card-body">
+                                <div class="form-group mb-3">
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-10">
+                                            <label for="nom_botiga">Nom</label>
+                                            <input type="text" class="form-control" id="nom_botiga" placeholder="Nom" v-model="$data.form_botiga.nom">
+                                        </div>
+                                        <div class="col-md-1"></div>
                                     </div>
-                                    <div class="col-md-1"></div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-10">
-                                        <label for="descripcio_botiga">Descripció</label>
-                                        <input type="text" class="form-control" id="descripcio_botiga" placeholder="Descripció">
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-10">
+                                            <label for="descripcio_botiga">Descripció</label>
+                                            <input type="text" class="form-control" id="descripcio_botiga" placeholder="Descripció" v-model="$data.form_botiga.descripcio">
+                                        </div>
+                                        <div class="col-md-1"></div>
                                     </div>
-                                    <div class="col-md-1"></div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-5">
-                                        <label for="telf_1_botiga">Telèfon</label>
-                                        <div class="input-group mb-3">
-                                            <input type="text" class="form-control" id="telf_1_botiga" placeholder="Telèfon">                                            
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-5">
+                                            <div class="input-group mb-3" v-if="errors.telf_1">
+                                                <label class="col-form-label" for="number"><i class="far fa-times-circle"></i>
+                                                    {{ errors.telf_1[0] }}</label>
+                                            </div>
+                                            <label for="telf_1_botiga">Telèfon</label>
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" id="telf_1_botiga" placeholder="Telèfon" v-model="$data.form_botiga.telf_1">                                            
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-phone" style="color:#ff6565;"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="input-group mb-3" v-if="errors.telf_2">
+                                                <label class="col-form-label" for="number"><i class="far fa-times-circle"></i>
+                                                    {{ errors.telf_2[0] }}</label>
+                                            </div>
+                                            <label for="telf_2_botiga">Telèfon</label>
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" id="telf_2_botiga" placeholder="Telèfon" v-model="$data.form_botiga.telf_2">                                            
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fas fa-phone" style="color:#ff6565;"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-10">
+                                            <div class="input-group mb-3" v-if="errors.email">
+                                                <label class="col-form-label" for="number"><i class="far fa-times-circle"></i>
+                                                    {{ errors.email[0] }}</label>
+                                            </div>
+                                            <label for="email_botiga">Email</label>
+                                            <input type="email" class="form-control" id="email_botiga" placeholder="Email" v-model="$data.form_botiga.email">
+                                        </div>
+                                        <div class="col-md-1"></div>                                    
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-10">
+                                            <div class="input-group mb-3" v-if="errors.direccio">
+                                                <label class="col-form-label" for="number"><i class="far fa-times-circle"></i>
+                                                    {{ errors.direccio[0] }}</label>
+                                            </div>
+                                            <label for="direccio_botiga">Direcció</label>
+                                            <input type="text" class="form-control" id="direccio_botiga" placeholder="Direcció" v-model="$data.form_botiga.direccio">
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-3">
+                                            <div class="input-group mb-3" v-if="errors.cp">
+                                                <label class="col-form-label" for="number"><i class="far fa-times-circle"></i>
+                                                    {{ errors.cp[0] }}</label>
+                                            </div>
+                                            <label for="cp_botiga">Codi postal</label>
+                                            <input type="text" class="form-control" id="cp_botiga" placeholder="Codi postal" v-model="$data.form_botiga.cp">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="input-group mb-3" v-if="errors.poblacio">
+                                                <label class="col-form-label" for="number"><i class="far fa-times-circle"></i>
+                                                    {{ errors.poblacio[0] }}</label>
+                                            </div>
+                                            <label for="poblacio_botiga">Població</label>
+                                            <input type="text" class="form-control" id="poblacio_botiga" placeholder="Població" v-model="$data.form_botiga.poblacio">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="input-group mb-3" v-if="errors.provincia">
+                                                <label class="col-form-label" for="number"><i class="far fa-times-circle"></i>
+                                                    {{ errors.provincia[0] }}</label>
+                                                </div>
+                                                <label for="provincia_botiga">Província</label>
+                                                <select class="form-control select2" style="width: 100%;">
+                                                    <option>Barcelona</option>
+                                                    <option>Girona</option>
+                                                    <option>Tarragona</option>
+                                                    <option>Lleida</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-5">
-                                        <label for="telf_1_botiga">Telèfon</label>
-                                        <div class="input-group mb-3">
-                                            <input type="text" class="form-control" id="telf_1_botiga" placeholder="Telèfon">                                            
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-5">
+                                            <div class="input-group mb-3" v-if="errors.cif">
+                                                <label class="col-form-label" for="number"><i class="far fa-times-circle"></i>
+                                                    {{ errors.cif[0] }}</label>
+                                            </div>
+                                            <label for="cif_botiga">CIF</label>
+                                            <input type="text" class="form-control" id="cif_botiga" placeholder="CIF" v-model="$data.form_botiga.cif">
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="input-group mb-3" v-if="errors.nif">
+                                                <label class="col-form-label" for="number"><i class="far fa-times-circle"></i>
+                                                    {{ errors.nif[0] }}</label>
+                                            </div>
+                                            <label for="nif_botiga">NIF</label>
+                                            <input type="text" class="form-control" id="nif_botiga" placeholder="NIF" v-model="$data.form_botiga.nif">
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-3">
+                                            <label for="instagram_botiga">Instagram</label>
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" id="instagram_botiga" placeholder="@instagram" v-model="$data.form_botiga.instagram">                                            
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i class="fab fa-instagram" style="color:#ff6565;"></i></span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-1"></div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-10">
-                                        <label for="email_botiga">Email</label>
-                                        <input type="email" class="form-control" id="email_botiga" placeholder="Email">
-                                    </div>
-                                    <div class="col-md-1"></div>                                    
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-10">
-                                        <label for="direccio_botiga">Direcció</label>
-                                        <input type="text" class="form-control" id="direccio_botiga" placeholder="Direcció">
-                                    </div>
-                                    <div class="col-md-1"></div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-3">
-                                        <label for="cp_botiga">Codi postal</label>
-                                        <div class="input-group mb-3">
-                                            <input type="text" class="form-control" id="cp_botiga" placeholder="Codi postal">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label for="poblacio_botiga">Població</label>
-                                        <div class="input-group mb-3">
-                                            <input type="text" class="form-control" id="poblacio_botiga" placeholder="Població">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="form-group">
-                                            <label for="provincia_botiga">Província</label>
-                                            <select class="form-control select2" style="width: 100%;">
-                                                <option>Barcelona</option>
-                                                <option>Girona</option>
-                                                <option>Tarragona</option>
-                                                <option>Lleida</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-5">
-                                        <label for="cif_botiga">CIF</label>
-                                        <input type="text" class="form-control" id="cif_botiga" placeholder="CIF">
-                                    </div>
-                                    <div class="col-md-5">
-                                        <label for="nif_botiga">NIF</label>
-                                        <input type="text" class="form-control" id="nif_botiga" placeholder="NIF">
-                                    </div>
-                                    <div class="col-md-1"></div>
-                                </div>
-                                <br>
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-3">
-                                        <label for="instagram_botiga">Instagram</label>
-                                        <div class="input-group mb-3">
-                                            <input type="text" class="form-control" id="instagram_botiga" placeholder="@instagram">                                            
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fab fa-instagram"></i></span>
+                                        <div class="col-md-4">
+                                            <label for="facebook_botiga">Facebook</label>
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" id="facebook_botiga" placeholder="@facebook" v-model="$data.form_botiga.facebook">                                            
+                                                <div class="input-group-append">
+                                                    <div class="input-group-text" style="color:#ff6565;">
+                                                        <span class="fab fa-facebook-f"></span>
+                                                    </div>                                                
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <label for="facebook_botiga">Facebook</label>
-                                        <div class="input-group mb-3">
-                                            <input type="text" class="form-control" id="facebook_botiga" placeholder="@facebook">                                            
-                                            <div class="input-group-append">
-                                                <div class="input-group-text">
-                                                    <span class="fab fa-facebook-f"></span>
-                                                </div>                                                
+                                        <div class="col-md-3">
+                                            <label for="twitter_botiga">Twitter</label>
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" id="twitter_botiga" placeholder="@twitter" v-model="$data.form_botiga.twitter">                                           
+                                                <div class="input-group-append">
+                                                    <div class="input-group-text" style="color:#ff6565;">
+                                                        <span class="fab fa-twitter"></span>
+                                                    </div>                                                
+                                                </div>
                                             </div>
                                         </div>
+
                                     </div>
-                                    <div class="col-md-3">
-                                        <label for="twitter_botiga">Twitter</label>
-                                        <div class="input-group mb-3">
-                                            <input type="text" class="form-control" id="twitter_botiga" placeholder="@twitter"/>                                           
-                                            <div class="input-group-append">
-                                                <div class="input-group-text">
-                                                    <span class="fab fa-twitter"></span>
-                                                </div>                                                
+                                    <div class="row">
+                                        <div class="col-md-1"></div>
+                                        <div class="col-md-5">
+                                            <label for="img_perfil">Imatge de perfil</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="img_perfil">
+                                                    <label class="custom-file-label" for="img_perfil">Tria un fitxer</label>
+                                                </div>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="fas fa-image"></i>
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
+                                        <div class="col-md-5">
+                                            <label for="img_portada">Imatge de portada</label>
+                                            <div class="input-group">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="img_portada">
+                                                    <label class="custom-file-label" for="img_portada">Tria un fitxer</label>
+                                                </div>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="fas fa-image"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1"></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4"></div>
+                                        <div class="col-md-4">
+                                            <button class="btn btn-block text-center mt-5 text-light zoom" style="background-color:#ff6565;"
+
+                                            @click.prevent="saveBotiga"
+                                            type="submit">                 
+
+                                            Guardar
+                                            </button>
+                                        </div>
+                                        <div class="col-md-4"></div>
                                     </div>
                                 </div>
                             </div>
-                    </div>
+                        </div>
                     <!-- /.les meves comandes -->
 
                     <!-- Pujar producte -->
@@ -413,6 +494,25 @@ export default {
                 categoria: "",
                 visites: "0",
             },
+            form_botiga: {
+                id:"",
+                nom:"",
+                descripcio:"",
+                telf_1:"",
+                telf_2:"",
+                direccio:"",
+                cp:"",
+                poblacio:"",
+                provincia:"",
+                email:"",
+                instagram:"",
+                facebook:"",
+                twitter:"",
+                nif:"",
+                cif:"",
+                img_perfil: null,
+                img_portada: null,
+            },
             errors: [],
             categories: "",
             botiga: "",
@@ -434,6 +534,23 @@ export default {
                     this.form.id_botiga = this.user.id;
                 }
             }
+            this.form_botiga["id"] = this.botiga.id;
+            this.form_botiga["nom"] = this.botiga.nom;
+            this.form_botiga["descripcio"] = this.botiga.descripcio;
+            this.form_botiga["telf_1"] = this.botiga.telf_1;
+            this.form_botiga["telf_2"] = this.botiga.telf_2;
+            this.form_botiga["direccio"] = this.botiga.direccio;
+            this.form_botiga["cp"] = this.botiga.cp;
+            this.form_botiga["poblacio"] = this.botiga.poblacio;
+            this.form_botiga["provincia"] = this.botiga.provincia;
+            this.form_botiga["email"] = this.botiga.email;
+            this.form_botiga["instagram"] = this.botiga.instagram;
+            this.form_botiga["facebook"] = this.botiga.facebook;
+            this.form_botiga["twitter"] = this.botiga.twitter;
+            this.form_botiga["nif"] = this.botiga.nif;
+            this.form_botiga["cif"] = this.botiga.cif;
+            this.form_botiga["img_perfil"] = this.botiga.img_perfil;
+            this.form_botiga["img_portada"] = this.botiga.img_portada;
         }));
     },
 
@@ -455,8 +572,6 @@ export default {
             formData.append("actiu", that.form["actiu"]);
             formData.append("categoria", that.form["categoria"]);
             formData.append("visites", that.form["visites"]);
-
-
             
             axios
                 .post("/api/afegirProducte", formData, {
@@ -465,16 +580,60 @@ export default {
                 },
                 })
                 .then((res) => {
-                console.log(res);
-                location.reload();
+                    console.log(res);
+                    location.reload();
                 })
                 .catch((error) => {
-                that.errors = error.response.data.errors;
-                console.log(that.errors);
+                    that.errors = error.response.data.errors;
+                    console.log(that.errors);
                 });
 
             console.log(that.form);
             
+        },
+        saveBotiga() {
+            let that = this;
+            console.log(that.form_botiga);
+            let formData = new FormData();
+
+            if (document.getElementById("img_perfil").files[0]) {
+                that.form_botiga["img_perfil"] = document.getElementById("img_perfil").files[0];
+                formData.append("img_perfil", that.form_botiga["img_perfil"]);
+            }
+            if (document.getElementById("img_portada").files[0]) {
+                that.form_botiga["img_portada"] = document.getElementById("img_portada").files[0];
+                formData.append("img_portada", that.form_botiga["img_portada"]);
+            }
+            formData.append("id", that.form_botiga["id"]);
+            formData.append("nom", that.form_botiga["nom"]);
+            formData.append("descripcio", that.form_botiga["descripcio"]);
+            formData.append("telf_1", that.form_botiga["telf_1"]);
+            formData.append("telf_2", that.form_botiga["telf_2"]);
+            formData.append("direccio", that.form_botiga["direccio"]);
+            formData.append("cp", that.form_botiga["cp"]);
+            formData.append("poblacio", that.form_botiga["poblacio"]);
+            formData.append("provincia", that.form_botiga["provincia"]);
+            formData.append("email", that.form_botiga["email"]);
+            formData.append("instagram", that.form_botiga["instagram"]);
+            formData.append("facebook", that.form_botiga["facebook"]);
+            formData.append("twitter", that.form_botiga["twitter"]);
+            formData.append("nif", that.form_botiga["nif"]);
+            formData.append("cif", that.form_botiga["cif"]);
+
+            axios
+            .post("/api/modifyShop", formData, {               
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            }) 
+            .then((res) => {
+                console.log(res);
+                //this.$router.push({ name: "Profile" });
+            })
+            .catch((error) => {
+                that.errors = error.response.data.errors;
+                console.log(that.errors);
+            });
         }
     }
 

@@ -34,3 +34,4 @@ Route::get('productes', 'ProductesController@productes');
 Route::get('botiga', 'BotigaController@botiga');
 Route::get('categories', 'CategoriesController@categories');
 Route::post('afegirProducte', 'ProductesController@afegirProducte');
+Route::post('modifyShop', 'BotigaController@modifica_botiga');
