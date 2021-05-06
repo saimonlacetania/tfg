@@ -2137,6 +2137,107 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -40925,7 +41026,7 @@ var staticRenderFns = [
               "div",
               { staticClass: "active tab-pane", attrs: { id: "mod_perfil" } },
               [
-                _c("div", { staticClass: "form-group" }, [
+                _c("div", { staticClass: "form-group mb-3" }, [
                   _c("div", { staticClass: "row" }, [
                     _c("div", { staticClass: "col-md-1" }),
                     _vm._v(" "),
@@ -40980,32 +41081,268 @@ var staticRenderFns = [
                         _vm._v("Telèfon")
                       ]),
                       _vm._v(" "),
+                      _c("div", { staticClass: "input-group mb-3" }, [
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "text",
+                            id: "telf_1_botiga",
+                            placeholder: "Telèfon"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "input-group-prepend" }, [
+                          _c("span", { staticClass: "input-group-text" }, [
+                            _c("i", { staticClass: "fas fa-phone" })
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-5" }, [
+                      _c("label", { attrs: { for: "telf_1_botiga" } }, [
+                        _vm._v("Telèfon")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "input-group mb-3" }, [
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "text",
+                            id: "telf_1_botiga",
+                            placeholder: "Telèfon"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "input-group-prepend" }, [
+                          _c("span", { staticClass: "input-group-text" }, [
+                            _c("i", { staticClass: "fas fa-phone" })
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-1" })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-md-1" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-10" }, [
+                      _c("label", { attrs: { for: "email_botiga" } }, [
+                        _vm._v("Email")
+                      ]),
+                      _vm._v(" "),
                       _c("input", {
                         staticClass: "form-control",
                         attrs: {
-                          type: "text",
-                          id: "telf_1_botiga",
-                          placeholder: "Telèfon"
+                          type: "email",
+                          id: "email_botiga",
+                          placeholder: "Email"
                         }
                       })
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-md-5" }, [
-                      _c("label", { attrs: { for: "telf_2_botiga" } }, [
-                        _vm._v("Telèfon")
+                    _c("div", { staticClass: "col-md-1" })
+                  ]),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-md-1" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-10" }, [
+                      _c("label", { attrs: { for: "direccio_botiga" } }, [
+                        _vm._v("Direcció")
                       ]),
                       _vm._v(" "),
                       _c("input", {
                         staticClass: "form-control",
                         attrs: {
                           type: "text",
-                          id: "telf_2_botiga",
-                          placeholder: "Telèfon"
+                          id: "direccio_botiga",
+                          placeholder: "Direcció"
                         }
                       })
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "col-md-1" })
+                  ]),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-md-1" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-3" }, [
+                      _c("label", { attrs: { for: "cp_botiga" } }, [
+                        _vm._v("Codi postal")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "input-group mb-3" }, [
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "text",
+                            id: "cp_botiga",
+                            placeholder: "Codi postal"
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c("label", { attrs: { for: "poblacio_botiga" } }, [
+                        _vm._v("Població")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "input-group mb-3" }, [
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "text",
+                            id: "poblacio_botiga",
+                            placeholder: "Població"
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-3" }, [
+                      _c("div", { staticClass: "form-group" }, [
+                        _c("label", { attrs: { for: "provincia_botiga" } }, [
+                          _vm._v("Província")
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "select",
+                          {
+                            staticClass: "form-control select2",
+                            staticStyle: { width: "100%" }
+                          },
+                          [
+                            _c("option", [_vm._v("Barcelona")]),
+                            _vm._v(" "),
+                            _c("option", [_vm._v("Girona")]),
+                            _vm._v(" "),
+                            _c("option", [_vm._v("Tarragona")]),
+                            _vm._v(" "),
+                            _c("option", [_vm._v("Lleida")])
+                          ]
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-md-1" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-5" }, [
+                      _c("label", { attrs: { for: "cif_botiga" } }, [
+                        _vm._v("CIF")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          id: "cif_botiga",
+                          placeholder: "CIF"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-5" }, [
+                      _c("label", { attrs: { for: "nif_botiga" } }, [
+                        _vm._v("NIF")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          id: "nif_botiga",
+                          placeholder: "NIF"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-1" })
+                  ]),
+                  _vm._v(" "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-md-1" }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-3" }, [
+                      _c("label", { attrs: { for: "instagram_botiga" } }, [
+                        _vm._v("Instagram")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "input-group mb-3" }, [
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "text",
+                            id: "instagram_botiga",
+                            placeholder: "@instagram"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "input-group-prepend" }, [
+                          _c("span", { staticClass: "input-group-text" }, [
+                            _c("i", { staticClass: "fab fa-instagram" })
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-4" }, [
+                      _c("label", { attrs: { for: "facebook_botiga" } }, [
+                        _vm._v("Facebook")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "input-group mb-3" }, [
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "text",
+                            id: "facebook_botiga",
+                            placeholder: "@facebook"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "input-group-append" }, [
+                          _c("div", { staticClass: "input-group-text" }, [
+                            _c("span", { staticClass: "fab fa-facebook-f" })
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-3" }, [
+                      _c("label", { attrs: { for: "twitter_botiga" } }, [
+                        _vm._v("Twitter")
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "input-group mb-3" }, [
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "text",
+                            id: "twitter_botiga",
+                            placeholder: "@twitter"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "input-group-append" }, [
+                          _c("div", { staticClass: "input-group-text" }, [
+                            _c("span", { staticClass: "fab fa-twitter" })
+                          ])
+                        ])
+                      ])
+                    ])
                   ])
                 ])
               ]

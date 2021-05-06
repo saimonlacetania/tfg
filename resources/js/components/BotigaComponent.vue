@@ -68,7 +68,7 @@
                 <div class="card-body">
                     <div class="tab-content">
                     <div class="active tab-pane" id="mod_perfil">
-                            <div class="form-group">
+                            <div class="form-group mb-3">
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="col-md-10">
@@ -91,13 +91,114 @@
                                     <div class="col-md-1"></div>
                                     <div class="col-md-5">
                                         <label for="telf_1_botiga">Telèfon</label>
-                                        <input type="text" class="form-control" id="telf_1_botiga" placeholder="Telèfon">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" id="telf_1_botiga" placeholder="Telèfon">                                            
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="col-md-5">
-                                        <label for="telf_2_botiga">Telèfon</label>
-                                        <input type="text" class="form-control" id="telf_2_botiga" placeholder="Telèfon">
+                                        <label for="telf_1_botiga">Telèfon</label>
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" id="telf_1_botiga" placeholder="Telèfon">                                            
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="col-md-1"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-10">
+                                        <label for="email_botiga">Email</label>
+                                        <input type="email" class="form-control" id="email_botiga" placeholder="Email">
+                                    </div>
+                                    <div class="col-md-1"></div>                                    
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-10">
+                                        <label for="direccio_botiga">Direcció</label>
+                                        <input type="text" class="form-control" id="direccio_botiga" placeholder="Direcció">
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-3">
+                                        <label for="cp_botiga">Codi postal</label>
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" id="cp_botiga" placeholder="Codi postal">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="poblacio_botiga">Població</label>
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" id="poblacio_botiga" placeholder="Població">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="provincia_botiga">Província</label>
+                                            <select class="form-control select2" style="width: 100%;">
+                                                <option>Barcelona</option>
+                                                <option>Girona</option>
+                                                <option>Tarragona</option>
+                                                <option>Lleida</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-5">
+                                        <label for="cif_botiga">CIF</label>
+                                        <input type="text" class="form-control" id="cif_botiga" placeholder="CIF">
+                                    </div>
+                                    <div class="col-md-5">
+                                        <label for="nif_botiga">NIF</label>
+                                        <input type="text" class="form-control" id="nif_botiga" placeholder="NIF">
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-1"></div>
+                                    <div class="col-md-3">
+                                        <label for="instagram_botiga">Instagram</label>
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" id="instagram_botiga" placeholder="@instagram">                                            
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fab fa-instagram"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="facebook_botiga">Facebook</label>
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" id="facebook_botiga" placeholder="@facebook">                                            
+                                            <div class="input-group-append">
+                                                <div class="input-group-text">
+                                                    <span class="fab fa-facebook-f"></span>
+                                                </div>                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="twitter_botiga">Twitter</label>
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" id="twitter_botiga" placeholder="@twitter"/>                                           
+                                            <div class="input-group-append">
+                                                <div class="input-group-text">
+                                                    <span class="fab fa-twitter"></span>
+                                                </div>                                                
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                     </div>
