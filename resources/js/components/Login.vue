@@ -81,6 +81,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   data() {
@@ -98,7 +99,7 @@ export default {
         .post("/api/login", this.form)
         .then((res) => {
           this.$router.push({ name: "Productes" });
-          location.reload();
+
           return false;
         })
         .catch((error) => {

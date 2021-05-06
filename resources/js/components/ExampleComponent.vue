@@ -53,7 +53,7 @@ html {
     <!-- /.navbar -->
 
     <!-- MENÚ ESQUERRA -->
-    <aside class="main-sidebar sidebar-light elevation-4">
+    <aside class="main-sidebar sidebar-light elevation-4 sidebar-no-expand">
       <!-- Logo -->
       <router-link :to="'/'" class="brand-link">
         <img
@@ -125,45 +125,41 @@ html {
                   </li>
                 </ul>
               </li>
-              <span v-if="this.user.botiga">
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-store-alt text-dark"></i>
-                    <p class="text-dark">
-                      La meva botiga
-                      <i class="right fas fa-angle-left"></i>
-                    </p>
-                  </a>
-                  <ul class="nav nav-treeview nav-child-indent">
-                    <li class="nav-item">
-                      <router-link class="nav-link" :to="'/botiga'">
-                        <i class="fas fa-feather-alt nav-icon text-dark"></i>
-                        <p class="text-dark">Perfil</p>
-                      </router-link>
-                    </li>
-                    <li class="nav-item">
-                      <a href="../../index.html" class="nav-link">
-                        <i class="fas fa-tag nav-icon text-dark"></i>
-                        <p class="text-dark">Productes</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="../../index.html" class="nav-link">
-                        <i class="fas fa-chart-line nav-icon text-dark"></i>
-                        <p class="text-dark">Estadístiques</p>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-              </span>
-              <span v-else>
-                <li class="nav-item">
-                  <router-link class="nav-link" :to="'/crearBotiga'">
-                    <i class="fas fa-feather-alt nav-icon text-dark"></i>
-                    <p class="text-dark">Crear Botiga</p>
-                  </router-link>
-                </li>
-              </span>
+              <li class="nav-item" v-if="this.user.botiga">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-store-alt text-dark"></i>
+                  <p class="text-dark">
+                    La meva botiga
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview nav-child-indent">
+                  <li class="nav-item">
+                    <router-link class="nav-link" :to="'botiga'">
+                      <i class="fas fa-feather-alt nav-icon text-dark"></i>
+                      <p class="text-dark">Perfil</p>
+                    </router-link>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../../index.html" class="nav-link">
+                      <i class="fas fa-tag nav-icon text-dark"></i>
+                      <p class="text-dark">Productes</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="../../index.html" class="nav-link">
+                      <i class="fas fa-chart-line nav-icon text-dark"></i>
+                      <p class="text-dark">Estadístiques</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item" v-else>
+                <router-link class="nav-link" :to="'crearBotiga'">
+                  <i class="fas fa-feather-alt nav-icon text-dark"></i>
+                  <p class="text-dark">Crear Botiga</p>
+                </router-link>
+              </li>
 
               <li class="nav-item">
                 <router-link class="nav-link" :to="'/productes'">
@@ -245,7 +241,6 @@ export default {
         this.$router.push({
           name: "Login",
         });
-        location.reload();
         return false;
       });
     },

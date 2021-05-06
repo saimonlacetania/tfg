@@ -278,7 +278,7 @@ export default {
         })
         .then((res) => {
           console.log(res);
-          this.$router.go({ name: "Profile" });
+          this.$router.push({ name: "Profile" });
         })
         .catch((error) => {
           that.errors3 = error.response.data.errors;

@@ -23,7 +23,7 @@
 <body class="hold-transition sidebar-mini control-sidebar-slide-open layout-fixed layout-navbar-fixed">
     <div id="app">
         @yield('content')
-        <router-view></router-view>
+        <router-view :key="$route.fullPath"></router-view>
     </div>
 </body>
 

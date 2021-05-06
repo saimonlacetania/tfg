@@ -14,14 +14,16 @@
 
         <br><br>
 
-        <div class="col-sm-12 mt-4">
+      <div class="row">
+        <div class="col-md-12 mt-4">
           <h1 class="text-center">¿Perquè Mercat Virtual?</h1>
         </div>
+      </div>
 
         <br><br>
 
-        <div class="row ml-2">
-          <div class="col-md-1"></div>
+        <div class="row">
+          <div class="col-md-4">
             <div class="card" style="width: 18rem; background:transparent !important; border:none; box-shadow: none;">
               <img src="images/granja.png" class="float-left ml-5" alt="..." style="width:200px; height:200px; border-radius:250px;">
               <div class="card-body text-center">
@@ -29,6 +31,8 @@
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               </div>
             </div>
+          </div>
+          <div class="col-md-4">
             <div class="card" style="width: 18rem; background:transparent !important; border:none; box-shadow: none;">
               <img src="images/market.png" class="float-left ml-5" alt="..." style="width:200px; height:200px; border-radius:250px;">
               <div class="card-body text-center">
@@ -36,6 +40,8 @@
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               </div>
             </div>
+          </div>
+          <div class="col-md-4">
             <div class="card" style="width: 18rem; background:transparent !important; border:none; box-shadow: none;">
               <img src="images/hands.png" class="float-left ml-5" alt="..." style="width:200px; height:200px; border-radius:250px;">
               <div class="card-body text-center">
@@ -43,40 +49,9 @@
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               </div>
             </div>
+          </div>
         </div>
-
-          <!-- cerca -->
-          <!--<div class="col-md-12">
-            <form action="simple-results.html">
-              <div class="input-group">
-                <input
-                  type="search"
-                  class="form-control form-control-lg text-right"
-                  placeholder="¿Què vols buscar?"
-                />
-                <div class="input-group-append">
-                  <button type="submit" class="btn btn-lg btn-secondary" style="background-color:#ff6565;">
-                    <i class="fa fa-search"></i>
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-lg btn-secondary"
-                    aria-expanded="true"
-                    v-on:click="mostrarCerca"
-                    style="background-color:#ff6565;"
-                  >
-                    <i class="fa fa-arrow-down"></i>
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>-->
-          <!-- /.col -->
-
-        <!-- cerca avançada -->
-        <!--<div id="cerca" style="display: none">
-          <cerca-component></cerca-component>
-        </div> -->
+        
         <div class="col-sm-12 mt-4">
           <h1 class="text-center" style="color:#ff6565;">El KM0 més a prop que mai</h1>
           <h4 class="text-center">productes únics de professionals locals</h4>
@@ -85,8 +60,8 @@
         <br><br>
 
         <div class="row">
-          <div class="card-deck">
-            <div class="card">
+          <div class="card-deck col-md-12">
+            <div class="card ">
               <img class="card-img-top" src="/images/grapes.jpg" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Fresc</h5>
@@ -107,7 +82,7 @@
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
               </div>
             </div>
-          </div>
+          </div>          
         </div>
 
         <div class="row">
