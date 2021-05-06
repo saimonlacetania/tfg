@@ -2227,6 +2227,188 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2243,6 +2425,25 @@ __webpack_require__.r(__webpack_exports__);
         visites: "0"
       },
       files: null,
+      form_botiga: {
+        id: "",
+        nom: "",
+        descripcio: "",
+        telf_1: "",
+        telf_2: "",
+        direccio: "",
+        cp: "",
+        poblacio: "",
+        provincia: "",
+        email: "",
+        instagram: "",
+        facebook: "",
+        twitter: "",
+        nif: "",
+        cif: "",
+        img_perfil: null,
+        img_portada: null
+      },
       errors: [],
       categories: "",
       botiga: "",
@@ -2264,6 +2465,24 @@ __webpack_require__.r(__webpack_exports__);
           _this.form.id_botiga = _this.user.id;
         }
       }
+
+      _this.form_botiga["id"] = _this.botiga.id;
+      _this.form_botiga["nom"] = _this.botiga.nom;
+      _this.form_botiga["descripcio"] = _this.botiga.descripcio;
+      _this.form_botiga["telf_1"] = _this.botiga.telf_1;
+      _this.form_botiga["telf_2"] = _this.botiga.telf_2;
+      _this.form_botiga["direccio"] = _this.botiga.direccio;
+      _this.form_botiga["cp"] = _this.botiga.cp;
+      _this.form_botiga["poblacio"] = _this.botiga.poblacio;
+      _this.form_botiga["provincia"] = _this.botiga.provincia;
+      _this.form_botiga["email"] = _this.botiga.email;
+      _this.form_botiga["instagram"] = _this.botiga.instagram;
+      _this.form_botiga["facebook"] = _this.botiga.facebook;
+      _this.form_botiga["twitter"] = _this.botiga.twitter;
+      _this.form_botiga["nif"] = _this.botiga.nif;
+      _this.form_botiga["cif"] = _this.botiga.cif;
+      _this.form_botiga["img_perfil"] = _this.botiga.img_perfil;
+      _this.form_botiga["img_portada"] = _this.botiga.img_portada;
     }));
   },
   methods: {
@@ -2338,6 +2557,47 @@ __webpack_require__.r(__webpack_exports__);
         console.log(that.errors);
       });
       console.log(that.form);
+    },
+    saveBotiga: function saveBotiga() {
+      var that = this;
+      console.log(that.form_botiga);
+      var formData = new FormData();
+
+      if (document.getElementById("img_perfil").files[0]) {
+        that.form_botiga["img_perfil"] = document.getElementById("img_perfil").files[0];
+        formData.append("img_perfil", that.form_botiga["img_perfil"]);
+      }
+
+      if (document.getElementById("img_portada").files[0]) {
+        that.form_botiga["img_portada"] = document.getElementById("img_portada").files[0];
+        formData.append("img_portada", that.form_botiga["img_portada"]);
+      }
+
+      formData.append("id", that.form_botiga["id"]);
+      formData.append("nom", that.form_botiga["nom"]);
+      formData.append("descripcio", that.form_botiga["descripcio"]);
+      formData.append("telf_1", that.form_botiga["telf_1"]);
+      formData.append("telf_2", that.form_botiga["telf_2"]);
+      formData.append("direccio", that.form_botiga["direccio"]);
+      formData.append("cp", that.form_botiga["cp"]);
+      formData.append("poblacio", that.form_botiga["poblacio"]);
+      formData.append("provincia", that.form_botiga["provincia"]);
+      formData.append("email", that.form_botiga["email"]);
+      formData.append("instagram", that.form_botiga["instagram"]);
+      formData.append("facebook", that.form_botiga["facebook"]);
+      formData.append("twitter", that.form_botiga["twitter"]);
+      formData.append("nif", that.form_botiga["nif"]);
+      formData.append("cif", that.form_botiga["cif"]);
+      axios.post("/api/modifyShop", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
+      }).then(function (res) {
+        console.log(res); //this.$router.push({ name: "Profile" });
+      })["catch"](function (error) {
+        that.errors = error.response.data.errors;
+        console.log(that.errors);
+      });
     }
   }
 });
@@ -45291,7 +45551,880 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "card-body" }, [
                 _c("div", { staticClass: "tab-content" }, [
-                  _vm._m(2),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "active tab-pane",
+                      attrs: { id: "mod_perfil" }
+                    },
+                    [
+                      _c(
+                        "div",
+                        { staticClass: "card-body register-card-body" },
+                        [
+                          _c("div", { staticClass: "form-group mb-3" }, [
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-1" }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-10" }, [
+                                _c("label", { attrs: { for: "nom_botiga" } }, [
+                                  _vm._v("Nom")
+                                ]),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.$data.form_botiga.nom,
+                                      expression: "$data.form_botiga.nom"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    type: "text",
+                                    id: "nom_botiga",
+                                    placeholder: "Nom"
+                                  },
+                                  domProps: {
+                                    value: _vm.$data.form_botiga.nom
+                                  },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.$data.form_botiga,
+                                        "nom",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-1" })
+                            ]),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-1" }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-10" }, [
+                                _c(
+                                  "label",
+                                  { attrs: { for: "descripcio_botiga" } },
+                                  [_vm._v("Descripció")]
+                                ),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.$data.form_botiga.descripcio,
+                                      expression: "$data.form_botiga.descripcio"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    type: "text",
+                                    id: "descripcio_botiga",
+                                    placeholder: "Descripció"
+                                  },
+                                  domProps: {
+                                    value: _vm.$data.form_botiga.descripcio
+                                  },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.$data.form_botiga,
+                                        "descripcio",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-1" })
+                            ]),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-1" }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-5" }, [
+                                _vm.errors.telf_1
+                                  ? _c(
+                                      "div",
+                                      { staticClass: "input-group mb-3" },
+                                      [
+                                        _c(
+                                          "label",
+                                          {
+                                            staticClass: "col-form-label",
+                                            attrs: { for: "number" }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass: "far fa-times-circle"
+                                            }),
+                                            _vm._v(
+                                              "\n                                                " +
+                                                _vm._s(_vm.errors.telf_1[0])
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _c(
+                                  "label",
+                                  { attrs: { for: "telf_1_botiga" } },
+                                  [_vm._v("Telèfon")]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "input-group mb-3" }, [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.$data.form_botiga.telf_1,
+                                        expression: "$data.form_botiga.telf_1"
+                                      }
+                                    ],
+                                    staticClass: "form-control",
+                                    attrs: {
+                                      type: "text",
+                                      id: "telf_1_botiga",
+                                      placeholder: "Telèfon"
+                                    },
+                                    domProps: {
+                                      value: _vm.$data.form_botiga.telf_1
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.$data.form_botiga,
+                                          "telf_1",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm._m(2)
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-5" }, [
+                                _vm.errors.telf_2
+                                  ? _c(
+                                      "div",
+                                      { staticClass: "input-group mb-3" },
+                                      [
+                                        _c(
+                                          "label",
+                                          {
+                                            staticClass: "col-form-label",
+                                            attrs: { for: "number" }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass: "far fa-times-circle"
+                                            }),
+                                            _vm._v(
+                                              "\n                                                " +
+                                                _vm._s(_vm.errors.telf_2[0])
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _c(
+                                  "label",
+                                  { attrs: { for: "telf_2_botiga" } },
+                                  [_vm._v("Telèfon")]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "input-group mb-3" }, [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.$data.form_botiga.telf_2,
+                                        expression: "$data.form_botiga.telf_2"
+                                      }
+                                    ],
+                                    staticClass: "form-control",
+                                    attrs: {
+                                      type: "text",
+                                      id: "telf_2_botiga",
+                                      placeholder: "Telèfon"
+                                    },
+                                    domProps: {
+                                      value: _vm.$data.form_botiga.telf_2
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.$data.form_botiga,
+                                          "telf_2",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm._m(3)
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-1" })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-1" }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-10" }, [
+                                _vm.errors.email
+                                  ? _c(
+                                      "div",
+                                      { staticClass: "input-group mb-3" },
+                                      [
+                                        _c(
+                                          "label",
+                                          {
+                                            staticClass: "col-form-label",
+                                            attrs: { for: "number" }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass: "far fa-times-circle"
+                                            }),
+                                            _vm._v(
+                                              "\n                                                " +
+                                                _vm._s(_vm.errors.email[0])
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _c(
+                                  "label",
+                                  { attrs: { for: "email_botiga" } },
+                                  [_vm._v("Email")]
+                                ),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.$data.form_botiga.email,
+                                      expression: "$data.form_botiga.email"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    type: "email",
+                                    id: "email_botiga",
+                                    placeholder: "Email"
+                                  },
+                                  domProps: {
+                                    value: _vm.$data.form_botiga.email
+                                  },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.$data.form_botiga,
+                                        "email",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-1" })
+                            ]),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-1" }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-10" }, [
+                                _vm.errors.direccio
+                                  ? _c(
+                                      "div",
+                                      { staticClass: "input-group mb-3" },
+                                      [
+                                        _c(
+                                          "label",
+                                          {
+                                            staticClass: "col-form-label",
+                                            attrs: { for: "number" }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass: "far fa-times-circle"
+                                            }),
+                                            _vm._v(
+                                              "\n                                                " +
+                                                _vm._s(_vm.errors.direccio[0])
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _c(
+                                  "label",
+                                  { attrs: { for: "direccio_botiga" } },
+                                  [_vm._v("Direcció")]
+                                ),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.$data.form_botiga.direccio,
+                                      expression: "$data.form_botiga.direccio"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    type: "text",
+                                    id: "direccio_botiga",
+                                    placeholder: "Direcció"
+                                  },
+                                  domProps: {
+                                    value: _vm.$data.form_botiga.direccio
+                                  },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.$data.form_botiga,
+                                        "direccio",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-1" })
+                            ]),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-1" }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-3" }, [
+                                _vm.errors.cp
+                                  ? _c(
+                                      "div",
+                                      { staticClass: "input-group mb-3" },
+                                      [
+                                        _c(
+                                          "label",
+                                          {
+                                            staticClass: "col-form-label",
+                                            attrs: { for: "number" }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass: "far fa-times-circle"
+                                            }),
+                                            _vm._v(
+                                              "\n                                                " +
+                                                _vm._s(_vm.errors.cp[0])
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _c("label", { attrs: { for: "cp_botiga" } }, [
+                                  _vm._v("Codi postal")
+                                ]),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.$data.form_botiga.cp,
+                                      expression: "$data.form_botiga.cp"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    type: "text",
+                                    id: "cp_botiga",
+                                    placeholder: "Codi postal"
+                                  },
+                                  domProps: { value: _vm.$data.form_botiga.cp },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.$data.form_botiga,
+                                        "cp",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-4" }, [
+                                _vm.errors.poblacio
+                                  ? _c(
+                                      "div",
+                                      { staticClass: "input-group mb-3" },
+                                      [
+                                        _c(
+                                          "label",
+                                          {
+                                            staticClass: "col-form-label",
+                                            attrs: { for: "number" }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass: "far fa-times-circle"
+                                            }),
+                                            _vm._v(
+                                              "\n                                                " +
+                                                _vm._s(_vm.errors.poblacio[0])
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _c(
+                                  "label",
+                                  { attrs: { for: "poblacio_botiga" } },
+                                  [_vm._v("Població")]
+                                ),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.$data.form_botiga.poblacio,
+                                      expression: "$data.form_botiga.poblacio"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    type: "text",
+                                    id: "poblacio_botiga",
+                                    placeholder: "Població"
+                                  },
+                                  domProps: {
+                                    value: _vm.$data.form_botiga.poblacio
+                                  },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.$data.form_botiga,
+                                        "poblacio",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-3" }, [
+                                _c("div", { staticClass: "form-group" }, [
+                                  _vm.errors.provincia
+                                    ? _c(
+                                        "div",
+                                        { staticClass: "input-group mb-3" },
+                                        [
+                                          _c(
+                                            "label",
+                                            {
+                                              staticClass: "col-form-label",
+                                              attrs: { for: "number" }
+                                            },
+                                            [
+                                              _c("i", {
+                                                staticClass:
+                                                  "far fa-times-circle"
+                                              }),
+                                              _vm._v(
+                                                "\n                                                " +
+                                                  _vm._s(
+                                                    _vm.errors.provincia[0]
+                                                  )
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  _c(
+                                    "label",
+                                    { attrs: { for: "provincia_botiga" } },
+                                    [_vm._v("Província")]
+                                  ),
+                                  _vm._v(" "),
+                                  _vm._m(4)
+                                ])
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-1" }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-5" }, [
+                                _vm.errors.cif
+                                  ? _c(
+                                      "div",
+                                      { staticClass: "input-group mb-3" },
+                                      [
+                                        _c(
+                                          "label",
+                                          {
+                                            staticClass: "col-form-label",
+                                            attrs: { for: "number" }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass: "far fa-times-circle"
+                                            }),
+                                            _vm._v(
+                                              "\n                                                " +
+                                                _vm._s(_vm.errors.cif[0])
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _c("label", { attrs: { for: "cif_botiga" } }, [
+                                  _vm._v("CIF")
+                                ]),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.$data.form_botiga.cif,
+                                      expression: "$data.form_botiga.cif"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    type: "text",
+                                    id: "cif_botiga",
+                                    placeholder: "CIF"
+                                  },
+                                  domProps: {
+                                    value: _vm.$data.form_botiga.cif
+                                  },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.$data.form_botiga,
+                                        "cif",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-5" }, [
+                                _vm.errors.nif
+                                  ? _c(
+                                      "div",
+                                      { staticClass: "input-group mb-3" },
+                                      [
+                                        _c(
+                                          "label",
+                                          {
+                                            staticClass: "col-form-label",
+                                            attrs: { for: "number" }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass: "far fa-times-circle"
+                                            }),
+                                            _vm._v(
+                                              "\n                                                " +
+                                                _vm._s(_vm.errors.nif[0])
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e(),
+                                _vm._v(" "),
+                                _c("label", { attrs: { for: "nif_botiga" } }, [
+                                  _vm._v("NIF")
+                                ]),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.$data.form_botiga.nif,
+                                      expression: "$data.form_botiga.nif"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  attrs: {
+                                    type: "text",
+                                    id: "nif_botiga",
+                                    placeholder: "NIF"
+                                  },
+                                  domProps: {
+                                    value: _vm.$data.form_botiga.nif
+                                  },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.$data.form_botiga,
+                                        "nif",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-1" })
+                            ]),
+                            _vm._v(" "),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-1" }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-3" }, [
+                                _c(
+                                  "label",
+                                  { attrs: { for: "instagram_botiga" } },
+                                  [_vm._v("Instagram")]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "input-group mb-3" }, [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.$data.form_botiga.instagram,
+                                        expression:
+                                          "$data.form_botiga.instagram"
+                                      }
+                                    ],
+                                    staticClass: "form-control",
+                                    attrs: {
+                                      type: "text",
+                                      id: "instagram_botiga",
+                                      placeholder: "@instagram"
+                                    },
+                                    domProps: {
+                                      value: _vm.$data.form_botiga.instagram
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.$data.form_botiga,
+                                          "instagram",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm._m(5)
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-4" }, [
+                                _c(
+                                  "label",
+                                  { attrs: { for: "facebook_botiga" } },
+                                  [_vm._v("Facebook")]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "input-group mb-3" }, [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.$data.form_botiga.facebook,
+                                        expression: "$data.form_botiga.facebook"
+                                      }
+                                    ],
+                                    staticClass: "form-control",
+                                    attrs: {
+                                      type: "text",
+                                      id: "facebook_botiga",
+                                      placeholder: "@facebook"
+                                    },
+                                    domProps: {
+                                      value: _vm.$data.form_botiga.facebook
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.$data.form_botiga,
+                                          "facebook",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm._m(6)
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-3" }, [
+                                _c(
+                                  "label",
+                                  { attrs: { for: "twitter_botiga" } },
+                                  [_vm._v("Twitter")]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "input-group mb-3" }, [
+                                  _c("input", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.$data.form_botiga.twitter,
+                                        expression: "$data.form_botiga.twitter"
+                                      }
+                                    ],
+                                    staticClass: "form-control",
+                                    attrs: {
+                                      type: "text",
+                                      id: "twitter_botiga",
+                                      placeholder: "@twitter"
+                                    },
+                                    domProps: {
+                                      value: _vm.$data.form_botiga.twitter
+                                    },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.$data.form_botiga,
+                                          "twitter",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm._m(7)
+                                ])
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _vm._m(8),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-4" }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-4" }, [
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass:
+                                      "btn btn-block text-center mt-5 text-light zoom",
+                                    staticStyle: {
+                                      "background-color": "#ff6565"
+                                    },
+                                    attrs: { type: "submit" },
+                                    on: {
+                                      click: function($event) {
+                                        $event.preventDefault()
+                                        return _vm.saveBotiga($event)
+                                      }
+                                    }
+                                  },
+                                  [
+                                    _vm._v(
+                                      "                 \n\n                                        Guardar\n                                        "
+                                    )
+                                  ]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-4" })
+                            ])
+                          ])
+                        ]
+                      )
+                    ]
+                  ),
                   _vm._v(" "),
                   _c(
                     "div",
@@ -45341,7 +46474,7 @@ var render = function() {
                                       )
                                 ]),
                                 _vm._v(" "),
-                                _vm._m(3)
+                                _vm._m(9)
                               ])
                             ]),
                             _vm._v(" "),
@@ -45403,7 +46536,7 @@ var render = function() {
                                 }
                               }),
                               _vm._v(" "),
-                              _vm._m(4)
+                              _vm._m(10)
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "input-group mb-3" }, [
@@ -45464,7 +46597,7 @@ var render = function() {
                                 }
                               }),
                               _vm._v(" "),
-                              _vm._m(5)
+                              _vm._m(11)
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "form-group" }, [
@@ -45651,7 +46784,7 @@ var render = function() {
                                 }
                               }),
                               _vm._v(" "),
-                              _vm._m(6)
+                              _vm._m(12)
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "input-group mb-3" }, [
@@ -45712,7 +46845,7 @@ var render = function() {
                                 }
                               }),
                               _vm._v(" "),
-                              _vm._m(7)
+                              _vm._m(13)
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "form-check" }, [
@@ -45868,89 +47001,152 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c("span", { staticClass: "input-group-text" }, [
+        _c("i", {
+          staticClass: "fas fa-phone",
+          staticStyle: { color: "#ff6565" }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c("span", { staticClass: "input-group-text" }, [
+        _c("i", {
+          staticClass: "fas fa-phone",
+          staticStyle: { color: "#ff6565" }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c(
-      "div",
-      { staticClass: "active tab-pane", attrs: { id: "mod_perfil" } },
+      "select",
+      { staticClass: "form-control select2", staticStyle: { width: "100%" } },
       [
-        _c("div", { staticClass: "form-group" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-1" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-10" }, [
-              _c("label", { attrs: { for: "nom_botiga" } }, [_vm._v("Nom")]),
-              _vm._v(" "),
-              _c("input", {
-                staticClass: "form-control",
-                attrs: { type: "text", id: "nom_botiga", placeholder: "Nom" }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-1" })
-          ]),
-          _vm._v(" "),
-          _c("br"),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-1" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-10" }, [
-              _c("label", { attrs: { for: "descripcio_botiga" } }, [
-                _vm._v("Descripció")
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                staticClass: "form-control",
-                attrs: {
-                  type: "text",
-                  id: "descripcio_botiga",
-                  placeholder: "Descripció"
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-1" })
-          ]),
-          _vm._v(" "),
-          _c("br"),
-          _vm._v(" "),
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-1" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-5" }, [
-              _c("label", { attrs: { for: "telf_1_botiga" } }, [
-                _vm._v("Telèfon")
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                staticClass: "form-control",
-                attrs: {
-                  type: "text",
-                  id: "telf_1_botiga",
-                  placeholder: "Telèfon"
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-5" }, [
-              _c("label", { attrs: { for: "telf_2_botiga" } }, [
-                _vm._v("Telèfon")
-              ]),
-              _vm._v(" "),
-              _c("input", {
-                staticClass: "form-control",
-                attrs: {
-                  type: "text",
-                  id: "telf_2_botiga",
-                  placeholder: "Telèfon"
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-1" })
-          ])
-        ])
+        _c("option", [_vm._v("Barcelona")]),
+        _vm._v(" "),
+        _c("option", [_vm._v("Girona")]),
+        _vm._v(" "),
+        _c("option", [_vm._v("Tarragona")]),
+        _vm._v(" "),
+        _c("option", [_vm._v("Lleida")])
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-prepend" }, [
+      _c("span", { staticClass: "input-group-text" }, [
+        _c("i", {
+          staticClass: "fab fa-instagram",
+          staticStyle: { color: "#ff6565" }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-append" }, [
+      _c(
+        "div",
+        { staticClass: "input-group-text", staticStyle: { color: "#ff6565" } },
+        [_c("span", { staticClass: "fab fa-facebook-f" })]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "input-group-append" }, [
+      _c(
+        "div",
+        { staticClass: "input-group-text", staticStyle: { color: "#ff6565" } },
+        [_c("span", { staticClass: "fab fa-twitter" })]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-1" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-5" }, [
+        _c("label", { attrs: { for: "img_perfil" } }, [
+          _vm._v("Imatge de perfil")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "input-group" }, [
+          _c("div", { staticClass: "custom-file" }, [
+            _c("input", {
+              staticClass: "custom-file-input",
+              attrs: { type: "file", id: "img_perfil" }
+            }),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                staticClass: "custom-file-label",
+                attrs: { for: "img_perfil" }
+              },
+              [_vm._v("Tria un fitxer")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "input-group-append" }, [
+            _c("span", { staticClass: "input-group-text" }, [
+              _c("i", { staticClass: "fas fa-image" })
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-5" }, [
+        _c("label", { attrs: { for: "img_portada" } }, [
+          _vm._v("Imatge de portada")
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "input-group" }, [
+          _c("div", { staticClass: "custom-file" }, [
+            _c("input", {
+              staticClass: "custom-file-input",
+              attrs: { type: "file", id: "img_portada" }
+            }),
+            _vm._v(" "),
+            _c(
+              "label",
+              {
+                staticClass: "custom-file-label",
+                attrs: { for: "img_portada" }
+              },
+              [_vm._v("Tria un fitxer")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "input-group-append" }, [
+            _c("span", { staticClass: "input-group-text" }, [
+              _c("i", { staticClass: "fas fa-image" })
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-1" })
+    ])
   },
   function() {
     var _vm = this
