@@ -4284,6 +4284,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -4305,6 +4311,10 @@ __webpack_require__.r(__webpack_exports__);
     axios.get("/api/veureOrdreUser").then(function (res3) {
       _this.orders = res3.data;
       console.log(_this.orders);
+    });
+    axios.get("/api/veureOrdreProcessadaUser").then(function (res4) {
+      _this.ordersP = res4.data;
+      console.log(_this.ordersP);
     });
   },
   methods: {
@@ -49881,11 +49891,7 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _c(
-                                          "td",
-                                          { staticClass: "text-right" },
-                                          [_vm._v("a")]
-                                        )
+                                        _vm._m(4, true)
                                       ])
                                     }),
                                     0
@@ -49909,14 +49915,14 @@ var render = function() {
                       _c("div", { staticClass: "card mb-3" }, [
                         _c("div", { staticClass: "row g-0" }, [
                           _c("div", { staticClass: "col-md-12" }, [
-                            _vm._m(4),
+                            _vm._m(5),
                             _vm._v(" "),
                             _c(
                               "div",
                               { staticClass: "card-body table-responsive" },
                               [
                                 _c("table", { staticClass: "table" }, [
-                                  _vm._m(5),
+                                  _vm._m(6),
                                   _vm._v(" "),
                                   _c(
                                     "tbody",
@@ -49977,7 +49983,7 @@ var render = function() {
                     ]
                   ),
                   _vm._v(" "),
-                  _vm._m(6)
+                  _vm._m(7)
                 ])
               ])
             ])
@@ -50063,7 +50069,19 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Direcció d'enviament")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Veure")])
+        _c("th", { staticClass: "text-right" }, [_vm._v("Veure")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticClass: "text-right" }, [
+      _c("span", [
+        _c("button", { staticClass: "btn btn-primary" }, [
+          _c("i", { staticClass: "fas fa-eye" })
+        ])
       ])
     ])
   },

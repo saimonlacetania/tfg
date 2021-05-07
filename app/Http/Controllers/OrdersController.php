@@ -52,4 +52,18 @@ class OrdersController extends Controller
             ->get();
         return $ordre;
     }
+    public function veureOrdreProcessadaUser()
+    {
+        $id = Auth::id();
+        $ordre = Order::having('id_usuari', '=', $id)
+            ->having('rebut', '=', 1)
+            ->get();
+        $productes = [];
+        foreach ($ordre as $ord) {
+            $producte = OrderLin::where("id_ordre", $ord->id)->get();
+            array_push($productes, $producte);
+
+        }
+        return $productes;
+    }
 }

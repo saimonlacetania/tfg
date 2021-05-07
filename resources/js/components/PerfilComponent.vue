@@ -114,7 +114,7 @@
                                   <th>Id</th>
                                   <th>Estat</th>
                                   <th>Direcció d'enviament</th>
-                                  <th>Veure</th>
+                                  <th class="text-right">Veure</th>
                                 </tr>
                               </thead>
                               <tbody class="">
@@ -126,7 +126,13 @@
                                     {{ comanda.direccio }},
                                     {{ comanda.poblacio }}
                                   </td>
-                                  <td class="text-right">a</td>
+                                  <td class="text-right">
+                                    <span
+                                      ><button class="btn btn-primary">
+                                        <i class="fas fa-eye"></i>
+                                      </button>
+                                    </span>
+                                  </td>
                                 </tr>
                               </tbody>
                             </table>
@@ -309,6 +315,10 @@ export default {
     axios.get("/api/veureOrdreUser").then((res3) => {
       this.orders = res3.data;
       console.log(this.orders);
+    });
+    axios.get("/api/veureOrdreProcessadaUser").then((res4) => {
+      this.ordersP = res4.data;
+      console.log(this.ordersP);
     });
   },
   methods: {
