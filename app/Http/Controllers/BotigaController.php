@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Botiga;
+use App\Models\Producte;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -11,14 +12,29 @@ use App\User;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Image;
+use Illuminate\Support\Facades\Auth;
 
 class BotigaController extends Controller
 {
     
     public function botiga()
     {
-        $botiga= Botiga::all();
+        $id = Auth::id();
+
+        $botiga = Botiga::with('user')->where('id_usuari', $id)
+            ->get();
+        
         return $botiga;
+    }
+
+    public function productes()
+    {
+        $id = Auth::id();
+
+        $productes = Producte::where('id_botiga', $id)
+            ->get();
+        
+        return $productes;
     }
 
     public function modifica_botiga(Request $request)

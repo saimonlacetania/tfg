@@ -2425,6 +2425,106 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2440,9 +2540,22 @@ __webpack_require__.r(__webpack_exports__);
         categoria: "",
         visites: "0"
       },
+      form2: {
+        imatge: null,
+        ref: "",
+        id_botiga: "",
+        nom: "",
+        desc: "",
+        preu: "",
+        stock: "",
+        actiu: "",
+        categoria: "",
+        visites: "0"
+      },
       files: null,
       files2: null,
       files3: null,
+      files4: null,
       form_botiga: {
         id: "",
         nom: "",
@@ -2465,6 +2578,7 @@ __webpack_require__.r(__webpack_exports__);
       errors: [],
       categories: "",
       botiga: "",
+      productes: {},
       user: ""
     };
   },
@@ -2474,16 +2588,12 @@ __webpack_require__.r(__webpack_exports__);
     axios.get("/api/categories").then(function (res) {
       _this.categories = res.data;
     });
-    axios.get("/api/user").then(function (res) {
-      _this.user = res.data;
-    }).then(axios.get("/api/botiga").then(function (res2) {
-      for (var b in res2.data) {
-        if (res2.data[b].id_usuari == _this.user.id) {
-          _this.botiga = res2.data[b];
-          _this.form.id_botiga = _this.user.id;
-        }
-      }
-
+    axios.get("/api/productes").then(function (res1) {
+      _this.productes = res1.data;
+    });
+    axios.get("/api/botiga").then(function (res2) {
+      _this.botiga = res2.data[0];
+      _this.user = _this.botiga.user;
       _this.form_botiga["id"] = _this.botiga.id;
       _this.form_botiga["nom"] = _this.botiga.nom;
       _this.form_botiga["descripcio"] = _this.botiga.descripcio;
@@ -2501,9 +2611,66 @@ __webpack_require__.r(__webpack_exports__);
       _this.form_botiga["cif"] = _this.botiga.cif;
       _this.form_botiga["img_perfil"] = _this.botiga.img_perfil;
       _this.form_botiga["img_portada"] = _this.botiga.img_portada;
-    }));
+    });
   },
   methods: {
+    eliminarProducte: function eliminarProducte(id) {
+      var _this2 = this;
+
+      axios.post("/api/eliminarProducte/" + id).then(function (res) {
+        console.log(res);
+      });
+      axios.get("/api/productes").then(function (res) {
+        _this2.productes = res.data;
+      });
+    },
+    restarStock: function restarStock(id) {
+      var _this3 = this;
+
+      axios.post("/api/restarStock/" + id).then(function (res) {
+        console.log(res);
+      });
+      axios.get("/api/productes").then(function (res) {
+        _this3.productes = res.data;
+      });
+    },
+    sumarStock: function sumarStock(id) {
+      var _this4 = this;
+
+      axios.post("/api/sumarStock/" + id).then(function (res) {
+        console.log(res);
+      });
+      axios.get("/api/productes").then(function (res) {
+        _this4.productes = res.data;
+      });
+    },
+    editarProducte: function editarProducte(id) {
+      var _this5 = this;
+
+      axios.post("/api/producte/" + id).then(function (res) {
+        var producte = res.data;
+      }).then(this.$swal({
+        title: 'Editar Producte',
+        html: "\n                    <form>\n                            <div class=\"card-body register-card-body\">\n\n                                <div class=\"form-group mb-3\">\n                                    <label for=\"imatge\">Imatge del Producte</label>\n                                    <div class=\"input-group\">\n                                    <div class=\"custom-file\">\n                                        <input \n                                            @change=\"fileSelected3\"\n                                            type=\"file\" \n                                            class=\"custom-file-input\" \n                                            id=\"imatge\"\n                                        >\n                                        <label v-if=\"!files4 || !files4.length\" class=\"custom-file-label\" for=\"imatge\">Tria un fitxer</label>\n                                        <span v-else>\n                                            <label v-for=\"file4 in files4\" :key=\"file4.name\" class=\"custom-file-label\" for=\"imatge\">{{file4.name}}</label>\n                                        </span>\n                                    </div>\n                                    <div class=\"input-group-append\">\n                                        <span class=\"input-group-text\">\n                                            <i class=\"fas fa-image\"></i>\n                                        </span>\n                                    </div>\n                                    </div>\n                                </div>\n\n                                <div class=\"input-group mb-3\">\n                                    <div class=\"input-group mb-3\" v-if=\"errors.ref\">\n                                        <label class=\"col-form-label\" for=\"number\"\n                                            ><i class=\"far fa-times-circle\"></i>\n                                            {{ errors.ref[0] }}</label\n                                        >\n                                        <br />\n                                    </div>\n                                    <input\n                                        name=\"ref\"\n                                        type=\"text\"\n                                        class=\"form-control\"\n                                        placeholder=\"Ref\"\n                                        v-model=\"form2.ref\"\n                                    />\n                                    <div class=\"input-group-append\">\n                                        <div class=\"input-group-text\">\n                                            <span class=\"fas fa-asterisk\"></span>\n                                        </div>\n                                    </div>\n                                </div>\n\n                                <div class=\"input-group mb-3\">\n                                    <div class=\"input-group mb-3\" v-if=\"errors.nom\">\n                                        <label class=\"col-form-label\" for=\"number\"\n                                            ><i class=\"far fa-times-circle\"></i>\n                                            {{ errors.nom[0] }}</label\n                                        >\n                                        <br />\n                                    </div>\n                                    <input\n                                        name=\"nom\"\n                                        type=\"text\"\n                                        class=\"form-control\"\n                                        placeholder=\"Nom\"\n                                        v-model=\"form2.nom\"\n                                    />\n                                    <div class=\"input-group-append\">\n                                        <div class=\"input-group-text\">\n                                            <span class=\"\"></span>\n                                        </div>\n                                    </div>\n                                </div>\n\n                                <div class=\"form-group\">\n                                    <label for=\"categoria\">Categoria</label>\n                                    <select \n                                        class=\"form-control\" \n                                        id=\"categoria\"\n                                        v-model=\"form2.categoria\">\n                                            <option v-for=\"categoria in categories\" :key=\"categoria.id\" :value=\"categoria.id\">\n                                                {{categoria.nom}}\n                                            </option>\n                                    </select>\n                                </div>\n\n                                <label for=\"desc\">Descripcio del producte</label><br />\n                                <div class=\"form-group mb-3\">\n                                    <div class=\"input-group mb-3\" v-if=\"errors.desc\">\n                                        <label class=\"col-form-label\" for=\"number\"\n                                            ><i class=\"far fa-times-circle\"></i>\n                                            {{ errors.desc[0] }}</label\n                                        >\n                                        <br />\n                                    </div>\n                                    \n                                    <textarea \n                                        class=\"form-control\" \n                                        type=\"text\"\n                                        id=\"desc\" \n                                        name=\"desc\"\n                                        v-model=\"form2.desc\"\n                                        rows=\"3\">\n                                    </textarea>\n                                    \n                                </div>\n\n                                <div class=\"input-group mb-3\">\n                                    <div class=\"input-group mb-3\" v-if=\"errors.preu\">\n                                        <label class=\"col-form-label\" for=\"number\"\n                                            ><i class=\"far fa-times-circle\"></i>\n                                            {{ errors.preu[0] }}</label\n                                        >\n                                        <br />\n                                    </div>\n                                    <input\n                                        type=\"number\"\n                                        class=\"form-control\"\n                                        placeholder=\"Preu\"\n                                        name=\"preu\"\n                                        v-model=\"form2.preu\"\n                                    />\n                                    <div class=\"input-group-append\">\n                                        <div class=\"input-group-text\">\n                                            <span class=\"fas fa-euro-sign\"></span>\n                                        </div>\n                                    </div>\n                                </div>\n\n                                <div class=\"input-group mb-3\">\n                                    <div class=\"input-group mb-3\" v-if=\"errors.stock\">\n                                        <label class=\"col-form-label\" for=\"number\"\n                                            ><i class=\"far fa-times-circle\"></i>\n                                            {{ errors.stock[0] }}</label\n                                        >\n                                        <br />\n                                    </div>\n                                    <input\n                                        type=\"number\"\n                                        class=\"form-control\"\n                                        placeholder=\"Stock\"\n                                        name=\"stock\"\n                                        v-model=\"form2.stock\"\n                                    />\n                                    <div class=\"input-group-append\">\n                                        <div class=\"input-group-text\">\n                                            <span class=\"fas fa-layer-group\"></span>\n                                        </div>\n                                    </div>\n                                </div>\n\n                                <div class=\"form-check\">\n                                    <input \n                                        class=\"form-check-input\"   \n                                        type=\"checkbox\" \n                                        value=\"0\" \n                                        id=\"actiu\"\n                                        v-model=\"form2.actiu\">\n                                    <label class=\"form-check-label\" for=\"actiu\">\n                                        Producte actiu\n                                    </label>\n                                </div>\n                            </div>\n                            <!-- /.form-box -->\n                            </form>\n                    ",
+        confirmButtonText: 'Edita',
+        focusConfirm: false,
+        preConfirm: function preConfirm() {
+          var login = Swal.getPopup().querySelector('#login').value;
+          var password = Swal.getPopup().querySelector('#password').value;
+
+          if (!login || !password) {
+            Swal.showValidationMessage("Please enter login and password");
+          }
+
+          return {
+            login: login,
+            password: password
+          };
+        }
+      }).then(function (result) {
+        _this5.$swal("\n                    Login: ".concat(result.value.login, "\n                    Password: ").concat(result.value.password, "\n                ").trim());
+      }));
+    },
     fileSelected: function fileSelected(e) {
       this.files = e.target.files;
       console.log(this.files);
@@ -2547,7 +2714,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     saveForm: function saveForm() {
-      var _this2 = this;
+      var _this6 = this;
 
       var that = this;
       console.log(that.form);
@@ -2572,20 +2739,20 @@ __webpack_require__.r(__webpack_exports__);
           "Content-Type": "multipart/form-data"
         }
       }).then(function (res) {
-        _this2.toastCorrecte();
+        _this6.toastCorrecte();
 
         location.reload();
       })["catch"](function (error) {
         that.errors = error.response.data.errors;
 
-        _this2.toastIncorrecte();
+        _this6.toastIncorrecte();
 
         console.log(that.errors);
       });
       console.log(that.form);
     },
     saveBotiga: function saveBotiga() {
-      var _this3 = this;
+      var _this7 = this;
 
       var that = this;
       console.log(that.form_botiga);
@@ -2623,14 +2790,14 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (res) {
         console.log(res);
 
-        _this3.toastCorrecte();
+        _this7.toastCorrecte();
 
         location.reload();
       })["catch"](function (error) {
         that.errors = error.response.data.errors;
         console.log(that.errors);
 
-        _this3.toastIncorrecte();
+        _this7.toastIncorrecte();
       });
     }
   }
@@ -46769,6 +46936,254 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "div",
+                    {
+                      staticClass: "tab-pane",
+                      attrs: { id: "editarProductes" }
+                    },
+                    [
+                      _c("div", { staticClass: "content w-100" }, [
+                        _c("div", { staticClass: "container-fluid" }, [
+                          _c("div", { staticClass: "row" }, [
+                            _c("div", { staticClass: "col-md-12" }, [
+                              _c("div", { staticClass: "card" }, [
+                                _vm._m(10),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "card-body table-responsive" },
+                                  [
+                                    _c("table", { staticClass: "table" }, [
+                                      _vm._m(11),
+                                      _vm._v(" "),
+                                      _c(
+                                        "tbody",
+                                        {},
+                                        _vm._l(_vm.productes, function(
+                                          producte
+                                        ) {
+                                          return _c(
+                                            "tr",
+                                            { key: producte.id },
+                                            [
+                                              _c("td", [
+                                                _vm._v(_vm._s(producte.ref))
+                                              ]),
+                                              _vm._v(" "),
+                                              _c("td", [
+                                                _vm._v(_vm._s(producte.nom))
+                                              ]),
+                                              _vm._v(" "),
+                                              _c("td", [
+                                                _c(
+                                                  "button",
+                                                  {
+                                                    staticClass: "btn pl-0",
+                                                    staticStyle: {
+                                                      "background-color":
+                                                        "transparent"
+                                                    },
+                                                    on: {
+                                                      click: function($event) {
+                                                        return _vm.restarStock(
+                                                          producte.id
+                                                        )
+                                                      }
+                                                    }
+                                                  },
+                                                  [
+                                                    _c("i", {
+                                                      staticClass:
+                                                        "fas fa-minus"
+                                                    })
+                                                  ]
+                                                ),
+                                                _vm._v(
+                                                  "\n                                                " +
+                                                    _vm._s(producte.stock) +
+                                                    "\n                                                "
+                                                ),
+                                                _c(
+                                                  "button",
+                                                  {
+                                                    staticClass: "btn pr-0",
+                                                    staticStyle: {
+                                                      "background-color":
+                                                        "transparent"
+                                                    },
+                                                    on: {
+                                                      click: function($event) {
+                                                        return _vm.sumarStock(
+                                                          producte.id
+                                                        )
+                                                      }
+                                                    }
+                                                  },
+                                                  [
+                                                    _c("i", {
+                                                      staticClass: "fas fa-plus"
+                                                    })
+                                                  ]
+                                                )
+                                              ]),
+                                              _vm._v(" "),
+                                              _c("td", [
+                                                _vm._v(
+                                                  _vm._s(producte.preu) + " €"
+                                                )
+                                              ]),
+                                              _vm._v(" "),
+                                              producte.actiu
+                                                ? _c(
+                                                    "td",
+                                                    {
+                                                      staticClass: "text-right"
+                                                    },
+                                                    [
+                                                      _c("input", {
+                                                        staticClass:
+                                                          "form-check-input",
+                                                        attrs: {
+                                                          type: "checkbox",
+                                                          value: "0",
+                                                          id: "actiu",
+                                                          checked: ""
+                                                        },
+                                                        on: {
+                                                          change: function(
+                                                            $event
+                                                          ) {
+                                                            return _vm.canviEstat(
+                                                              producte.id
+                                                            )
+                                                          }
+                                                        }
+                                                      })
+                                                    ]
+                                                  )
+                                                : _vm._e(),
+                                              _vm._v(" "),
+                                              !producte.actiu
+                                                ? _c(
+                                                    "td",
+                                                    {
+                                                      staticClass: "text-right"
+                                                    },
+                                                    [
+                                                      _c("input", {
+                                                        staticClass:
+                                                          "form-check-input",
+                                                        attrs: {
+                                                          type: "checkbox",
+                                                          value: "0",
+                                                          id: "actiu"
+                                                        },
+                                                        on: {
+                                                          change: function(
+                                                            $event
+                                                          ) {
+                                                            return _vm.canviEstat(
+                                                              producte.id
+                                                            )
+                                                          }
+                                                        }
+                                                      })
+                                                    ]
+                                                  )
+                                                : _vm._e(),
+                                              _vm._v(" "),
+                                              _c(
+                                                "td",
+                                                { staticClass: "text-right" },
+                                                [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass: "btn-group"
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "button",
+                                                        {
+                                                          staticClass:
+                                                            "btn btn-info",
+                                                          attrs: {
+                                                            "data-bs-toggle":
+                                                              "tooltip",
+                                                            "data-bs-placement":
+                                                              "top",
+                                                            title:
+                                                              "Editar producte"
+                                                          },
+                                                          on: {
+                                                            click: function(
+                                                              $event
+                                                            ) {
+                                                              return _vm.editarProducte(
+                                                                producte.id
+                                                              )
+                                                            }
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("i", {
+                                                            staticClass:
+                                                              "fas fa-pen"
+                                                          })
+                                                        ]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "button",
+                                                        {
+                                                          staticClass:
+                                                            "btn btn-danger",
+                                                          attrs: {
+                                                            "data-bs-toggle":
+                                                              "tooltip",
+                                                            "data-bs-placement":
+                                                              "top",
+                                                            title:
+                                                              "Eliminar producte"
+                                                          },
+                                                          on: {
+                                                            click: function(
+                                                              $event
+                                                            ) {
+                                                              return _vm.eliminarProducte(
+                                                                producte.id
+                                                              )
+                                                            }
+                                                          }
+                                                        },
+                                                        [
+                                                          _c("i", {
+                                                            staticClass:
+                                                              "fas fa-trash"
+                                                          })
+                                                        ]
+                                                      )
+                                                    ]
+                                                  )
+                                                ]
+                                              )
+                                            ]
+                                          )
+                                        }),
+                                        0
+                                      )
+                                    ])
+                                  ]
+                                )
+                              ])
+                            ])
+                          ])
+                        ])
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
                     { staticClass: "tab-pane", attrs: { id: "puja_producte" } },
                     [
                       _c("form", [
@@ -46815,7 +47230,7 @@ var render = function() {
                                       )
                                 ]),
                                 _vm._v(" "),
-                                _vm._m(10)
+                                _vm._m(12)
                               ])
                             ]),
                             _vm._v(" "),
@@ -46877,7 +47292,7 @@ var render = function() {
                                 }
                               }),
                               _vm._v(" "),
-                              _vm._m(11)
+                              _vm._m(13)
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "input-group mb-3" }, [
@@ -46938,7 +47353,7 @@ var render = function() {
                                 }
                               }),
                               _vm._v(" "),
-                              _vm._m(12)
+                              _vm._m(14)
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "form-group" }, [
@@ -47125,7 +47540,7 @@ var render = function() {
                                 }
                               }),
                               _vm._v(" "),
-                              _vm._m(13)
+                              _vm._m(15)
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "input-group mb-3" }, [
@@ -47186,7 +47601,7 @@ var render = function() {
                                 }
                               }),
                               _vm._v(" "),
-                              _vm._m(14)
+                              _vm._m(16)
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "form-check" }, [
@@ -47330,6 +47745,18 @@ var staticRenderFns = [
             {
               staticClass: "nav-link",
               staticStyle: { color: "#0a0421 !important" },
+              attrs: { href: "#editarProductes", "data-toggle": "tab" }
+            },
+            [_vm._v("Editar productes")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-item" }, [
+          _c(
+            "a",
+            {
+              staticClass: "nav-link",
+              staticStyle: { color: "#0a0421 !important" },
               attrs: { href: "#puja_producte", "data-toggle": "tab" }
             },
             [_vm._v("Pujar productes")]
@@ -47436,6 +47863,36 @@ var staticRenderFns = [
     return _c("div", { staticClass: "input-group-append" }, [
       _c("span", { staticClass: "input-group-text" }, [
         _c("i", { staticClass: "fas fa-image" })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header" }, [
+      _c("h3", { staticClass: "card-title" }, [_vm._v("Llistat de productes")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", {}, [
+      _c("tr", [
+        _c("th", [_vm._v("Ref.")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Nom")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Stock")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Preu")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Actiu")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-right" }),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-right" })
       ])
     ])
   },
@@ -51439,342 +51896,332 @@ var staticRenderFns = [
                     ]
                   )
                 ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-sm-12 mt-4" }, [
-                  _c(
-                    "h1",
-                    {
-                      staticClass: "text-center",
-                      staticStyle: { color: "#ff6565" }
-                    },
-                    [_vm._v("\n          El KM0 més a prop que mai\n        ")]
-                  ),
-                  _vm._v(" "),
-                  _c("h4", { staticClass: "text-center" }, [
-                    _vm._v("productes únics de professionals locals")
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("br"),
-              _c("br"),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "card-deck col-md-12" }, [
-                  _c("div", { staticClass: "card" }, [
-                    _c("img", {
-                      staticClass: "card-img",
-                      attrs: {
-                        src: "/images/grapes.jpg",
-                        alt: "Card image cap"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "card-body" }, [
-                      _c("h5", { staticClass: "card-title" }, [
-                        _vm._v("Fresc")
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "card-text" }, [
-                        _vm._v(
-                          "\n                This is a longer card with supporting text below as a natural\n                lead-in to additional content. This content is a little bit\n                longer.\n              "
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card" }, [
-                    _c("img", {
-                      staticClass: "card-img",
-                      attrs: {
-                        src: "/images/ovella.jpg",
-                        alt: "Card image cap"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "card-body" }, [
-                      _c("h5", { staticClass: "card-title" }, [
-                        _vm._v("Ecològic")
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "card-text" }, [
-                        _vm._v(
-                          "\n                This card has supporting text below as a natural lead-in to\n                additional content.\n              "
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card" }, [
-                    _c("img", {
-                      staticClass: "card-img",
-                      attrs: { src: "/images/roba.jpg", alt: "Card image cap" }
-                    }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "card-body" }, [
-                      _c("h5", { staticClass: "card-title" }, [
-                        _vm._v("Sostenible")
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "card-text" }, [
-                        _vm._v(
-                          "\n                This is a wider card with supporting text below as a natural\n                lead-in to additional content. This card has even longer\n                content than the first to show that equal height action.\n              "
-                        )
-                      ])
-                    ])
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-4" }),
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-sm-12 mt-4" }, [
+                _c(
+                  "h1",
+                  {
+                    staticClass: "text-center",
+                    staticStyle: { color: "#ff6565" }
+                  },
+                  [_vm._v("\n          El KM0 més a prop que mai\n        ")]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-md-4" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-block text-center mt-5 text-light zoom",
-                      staticStyle: { "background-color": "#ff6565" },
-                      attrs: { type: "submit" }
-                    },
-                    [
-                      _c("i", { staticClass: "fa fa-heart" }),
-                      _vm._v("\n            Descobreix-lo!\n          ")
-                    ]
-                  )
+                _c("h4", { staticClass: "text-center" }, [
+                  _vm._v("productes únics de professionals locals")
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("br"),
+            _c("br"),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "card-deck col-md-12" }, [
+                _c("div", { staticClass: "card" }, [
+                  _c("img", {
+                    staticClass: "card-img",
+                    attrs: { src: "/images/grapes.jpg", alt: "Card image cap" }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("h5", { staticClass: "card-title" }, [_vm._v("Fresc")]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _vm._v(
+                        "\n                This is a longer card with supporting text below as a natural\n                lead-in to additional content. This content is a little bit\n                longer.\n              "
+                      )
+                    ])
+                  ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-md-4" })
+                _c("div", { staticClass: "card" }, [
+                  _c("img", {
+                    staticClass: "card-img",
+                    attrs: { src: "/images/ovella.jpg", alt: "Card image cap" }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("h5", { staticClass: "card-title" }, [
+                      _vm._v("Ecològic")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _vm._v(
+                        "\n                This card has supporting text below as a natural lead-in to\n                additional content.\n              "
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card" }, [
+                  _c("img", {
+                    staticClass: "card-img",
+                    attrs: { src: "/images/roba.jpg", alt: "Card image cap" }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("h5", { staticClass: "card-title" }, [
+                      _vm._v("Sostenible")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _vm._v(
+                        "\n                This is a wider card with supporting text below as a natural\n                lead-in to additional content. This card has even longer\n                content than the first to show that equal height action.\n              "
+                      )
+                    ])
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-4" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "btn btn-block text-center mt-5 text-light zoom",
+                    staticStyle: { "background-color": "#ff6565" },
+                    attrs: { type: "submit" }
+                  },
+                  [
+                    _c("i", { staticClass: "fa fa-heart" }),
+                    _vm._v("\n            Descobreix-lo!\n          ")
+                  ]
+                )
               ]),
               _vm._v(" "),
-              _c("br")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("hr"),
-          _vm._v(" "),
-          _c("div", { staticClass: "content" }, [
-            _c("div", { staticClass: "container-fluid" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-12" }, [
-                  _c("div", { staticClass: "card text-center" }, [
-                    _c("div", { staticClass: "card-body" }, [
-                      _c("h3", { staticStyle: { color: "#ff6565" } }, [
-                        _vm._v("Segueix les nostres novetats")
-                      ]),
+              _c("div", { staticClass: "col-md-4" })
+            ]),
+            _vm._v(" "),
+            _c("br")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
+        _c("div", { staticClass: "content" }, [
+          _c("div", { staticClass: "container-fluid" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-12" }, [
+                _c("div", { staticClass: "card text-center" }, [
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("h3", { staticStyle: { color: "#ff6565" } }, [
+                      _vm._v("Segueix les nostres novetats")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text text-gray" }, [
+                      _vm._v(
+                        "\n                Inscriu-te per rebre el butlletí de Mercat Virtual al teu\n                correu electrònic."
+                      ),
+                      _c("br"),
+                      _vm._v(
+                        "\n                T’informem setmana a setmana de les novetats\n              "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "input-group mb-3 col-md-12" }, [
+                      _c("div", { staticClass: "col-md-3" }),
                       _vm._v(" "),
-                      _c("p", { staticClass: "card-text text-gray" }, [
-                        _vm._v(
-                          "\n                Inscriu-te per rebre el butlletí de Mercat Virtual al teu\n                correu electrònic."
-                        ),
-                        _c("br"),
-                        _vm._v(
-                          "\n                T’informem setmana a setmana de les novetats\n              "
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "input-group mb-3 col-md-12" }, [
-                        _c("div", { staticClass: "col-md-3" }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-6 input-group" }, [
-                          _c("div", { staticClass: "input-group-prepend" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass: "input-group-text",
-                                staticStyle: { "background-color": "#ff6565" }
-                              },
-                              [
-                                _c("i", {
-                                  staticClass: "far fa-envelope",
-                                  staticStyle: { color: "#ffffff" }
-                                })
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("input", {
-                            staticClass: "form-control",
-                            attrs: {
-                              type: "email",
-                              placeholder: "Adreça de correu electrònic"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-3" })
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "mb-2" }, [
-                        _c("input", { attrs: { type: "checkbox" } }),
-                        _vm._v("  \n                "),
-                        _c(
-                          "small",
-                          {
-                            staticClass: "text-gray",
-                            attrs: { "aria-label": "Text input with checkbox" }
-                          },
-                          [
-                            _vm._v(
-                              "He llegit i accepto les\n                  "
-                            ),
-                            _c("a", { attrs: { href: "#" } }, [
-                              _c("b", { staticClass: "text-gray" }, [
-                                _vm._v("Condicions Generals d’Accés i Ús")
-                              ])
-                            ]),
-                            _vm._v("\n                  i\n                  "),
-                            _c("a", { attrs: { href: "#" } }, [
-                              _c("b", { staticClass: "text-gray" }, [
-                                _vm._v("Política de Privacitat")
-                              ])
-                            ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-md-5" }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-2" }, [
+                      _c("div", { staticClass: "col-md-6 input-group" }, [
+                        _c("div", { staticClass: "input-group-prepend" }, [
                           _c(
-                            "button",
+                            "span",
                             {
-                              staticClass:
-                                "btn btn-block text-center text-light zoom",
-                              staticStyle: { "background-color": "#ff6565" },
-                              attrs: { type: "submit" }
+                              staticClass: "input-group-text",
+                              staticStyle: { "background-color": "#ff6565" }
                             },
                             [
-                              _vm._v(
-                                "\n                    Enviar\n                  "
-                              )
+                              _c("i", {
+                                staticClass: "far fa-envelope",
+                                staticStyle: { color: "#ffffff" }
+                              })
                             ]
                           )
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "col-md-5" })
-                      ])
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "email",
+                            placeholder: "Adreça de correu electrònic"
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-3" })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mb-2" }, [
+                      _c("input", { attrs: { type: "checkbox" } }),
+                      _vm._v("  \n                "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "text-gray",
+                          attrs: { "aria-label": "Text input with checkbox" }
+                        },
+                        [
+                          _vm._v("He llegit i accepto les\n                  "),
+                          _c("a", { attrs: { href: "#" } }, [
+                            _c("b", { staticClass: "text-gray" }, [
+                              _vm._v("Condicions Generals d’Accés i Ús")
+                            ])
+                          ]),
+                          _vm._v("\n                  i\n                  "),
+                          _c("a", { attrs: { href: "#" } }, [
+                            _c("b", { staticClass: "text-gray" }, [
+                              _vm._v("Política de Privacitat")
+                            ])
+                          ])
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-5" }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-2" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-block text-center text-light zoom",
+                            staticStyle: { "background-color": "#ff6565" },
+                            attrs: { type: "submit" }
+                          },
+                          [
+                            _vm._v(
+                              "\n                    Enviar\n                  "
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-5" })
                     ])
                   ])
                 ])
               ])
             ])
-          ]),
-          _vm._v(" "),
-          _c("br"),
-          _vm._v(" "),
-          _c("div", { staticClass: "content" }, [
-            _c("div", { staticClass: "container-fluid" }, [
-              _c("div", { staticClass: "card-group" }, [
-                _c("div", { staticClass: "card bg-gray" }, [
-                  _c("div", { staticClass: "card-body" }, [
-                    _c("small", { staticClass: "card-text" }, [
-                      _vm._v("MANIFEST FUNDACIONAL")
-                    ]),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "card-text" }, [_vm._v("FAQS")]),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "card-text" }, [
-                      _vm._v("L'EQUIP")
-                    ]),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "card-text" }, [
-                      _vm._v("FES-TE SOCI")
-                    ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("div", { staticClass: "content" }, [
+          _c("div", { staticClass: "container-fluid" }, [
+            _c("div", { staticClass: "card-group" }, [
+              _c("div", { staticClass: "card bg-gray" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _c("small", { staticClass: "card-text" }, [
+                    _vm._v("MANIFEST FUNDACIONAL")
+                  ]),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("small", { staticClass: "card-text" }, [_vm._v("FAQS")]),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("small", { staticClass: "card-text" }, [
+                    _vm._v("L'EQUIP")
+                  ]),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("small", { staticClass: "card-text" }, [
+                    _vm._v("FES-TE SOCI")
                   ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card bg-gray" }, [
-                  _c("div", { staticClass: "card-body" }, [
-                    _c("small", { staticClass: "card-text" }, [
-                      _vm._v("EL TEU COMPTE")
-                    ]),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "card-text" }, [
-                      _vm._v("CONTACTES")
-                    ]),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "card-text" }, [
-                      _vm._v("CONDICIONS GENERALS")
-                    ]),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "card-text" }, [
-                      _vm._v("POLÍTICA DE PRIVACITAT")
-                    ]),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "card-text" }, [
-                      _vm._v("POLÍTICA DE COOKIES")
-                    ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card bg-gray" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _c("small", { staticClass: "card-text" }, [
+                    _vm._v("EL TEU COMPTE")
+                  ]),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("small", { staticClass: "card-text" }, [
+                    _vm._v("CONTACTES")
+                  ]),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("small", { staticClass: "card-text" }, [
+                    _vm._v("CONDICIONS GENERALS")
+                  ]),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("small", { staticClass: "card-text" }, [
+                    _vm._v("POLÍTICA DE PRIVACITAT")
+                  ]),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("small", { staticClass: "card-text" }, [
+                    _vm._v("POLÍTICA DE COOKIES")
                   ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card bg-gray" }, [
-                  _c("div", { staticClass: "card-body" })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card bg-gray" }, [
-                  _c("div", { staticClass: "card-body" }, [
-                    _c("h4", [_vm._v("Segueix-nos!")]),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-primary col-md-2 m-1",
-                        staticStyle: {
-                          "background-color": "#ff6565",
-                          border: "none"
-                        }
-                      },
-                      [_c("i", { staticClass: "fab fa-facebook-f" })]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-primary col-md-2 m-1",
-                        staticStyle: {
-                          "background-color": "#ff6565",
-                          border: "none"
-                        }
-                      },
-                      [_c("i", { staticClass: "fab fa-twitter" })]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-primary col-md-2 m-1",
-                        staticStyle: {
-                          "background-color": "#ff6565",
-                          border: "none"
-                        }
-                      },
-                      [_c("i", { staticClass: "fab fa-google" })]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-primary col-md-2 m-1",
-                        staticStyle: {
-                          "background-color": "#ff6565",
-                          border: "none"
-                        }
-                      },
-                      [_c("i", { staticClass: "fab fa-instagram" })]
-                    )
-                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card bg-gray" }, [
+                _c("div", { staticClass: "card-body" })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card bg-gray" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _c("h4", [_vm._v("Segueix-nos!")]),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-primary col-md-2 m-1",
+                      staticStyle: {
+                        "background-color": "#ff6565",
+                        border: "none"
+                      }
+                    },
+                    [_c("i", { staticClass: "fab fa-facebook-f" })]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-primary col-md-2 m-1",
+                      staticStyle: {
+                        "background-color": "#ff6565",
+                        border: "none"
+                      }
+                    },
+                    [_c("i", { staticClass: "fab fa-twitter" })]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-primary col-md-2 m-1",
+                      staticStyle: {
+                        "background-color": "#ff6565",
+                        border: "none"
+                      }
+                    },
+                    [_c("i", { staticClass: "fab fa-google" })]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-primary col-md-2 m-1",
+                      staticStyle: {
+                        "background-color": "#ff6565",
+                        border: "none"
+                      }
+                    },
+                    [_c("i", { staticClass: "fab fa-instagram" })]
+                  )
                 ])
               ])
             ])

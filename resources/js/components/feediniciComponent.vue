@@ -80,7 +80,7 @@
             </div>
           </div>
         </div>
-        
+        </div>
         <div class="row">
         <div class="col-sm-12 mt-4">
           <h1 class="text-center" style="color: #ff6565">
@@ -89,9 +89,9 @@
           <h4 class="text-center">productes únics de professionals locals</h4>
         </div>
         </div>
-
+      
         <br /><br />
-
+      
         <div class="row">
           <div class="card-deck col-md-12">
             <div class="card">
@@ -290,7 +290,7 @@
       </div>
     </div>
     </div>
-  </div>
+  
   <!-- /.contingut pagina -->
 </template>
 

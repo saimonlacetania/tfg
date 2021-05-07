@@ -22,6 +22,10 @@ Route::middleware('auth:sanctum')->get('/athenticated', function () {
 });
 Route::get('productes', 'ProductesController@productes');
 Route::get('producte/{id}', 'ProductesController@producte');
+Route::post('eliminarProducte/{id}', 'ProductesController@eliminarProducte');
+Route::post('restarStock/{id}', 'ProductesController@restarStock');
+Route::post('sumarStock/{id}', 'ProductesController@sumarStock');
+
 Route::get('veureCistella', 'CistellaController@veureCistella');
 Route::post('afegirCistella/{id}', 'CistellaController@afegirCistella');
 Route::post('eliminarCistella/{id}', 'CistellaController@eliminarCistella');
@@ -40,6 +44,7 @@ Route::post('modifyPassword', 'UserController@modifyPassword');
 Route::post('logout', 'LoginController@logout');
 Route::get('productes', 'ProductesController@productes');
 Route::get('botiga', 'BotigaController@botiga');
+Route::get('productes', 'BotigaController@productes');
 Route::get('categories', 'CategoriesController@categories');
 Route::post('afegirProducte', 'ProductesController@afegirProducte');
 Route::post('modifyShop', 'BotigaController@modifica_botiga');

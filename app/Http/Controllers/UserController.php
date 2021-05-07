@@ -41,16 +41,6 @@ class UserController extends Controller
         }
     }
 
-    public function botiga()
-    {
-        $id = Auth::id();
-
-        $botiga = Botiga::where('id_usuari', $id)
-            ->get();
-
-        return $botiga;
-    }
-
     public function modifyProfile(Request $request)
     {
         if ($request->validate([

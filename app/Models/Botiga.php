@@ -17,8 +17,13 @@ class Botiga extends Model
     //taula
     protected $table = 'botigues';
 
-    protected function user()
+    public function user()
     {
         return $this->belongsTo('App\User', 'id_usuari');
+    }
+
+    public function productes()
+    {
+        return $this->hasMany('App\Models\Producte','id_botiga');
     }
 }

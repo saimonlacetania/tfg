@@ -20,6 +20,31 @@ class ProductesController extends Controller
         $producte = Producte::find($id);
         return $producte;
     }
+    public function eliminarProducte($id)
+    {
+        $producte = Producte::find($id);
+        $producte->delete();
+        return true;
+    }
+    public function restarStock($id)
+    {
+        $producte = Producte::find($id);
+        if ($producte->stock <= 1) {
+            $this->eliminarProducte($id);
+        } else {
+            $producte->stock = $producte->stock - 1;
+            $producte->save();
+        }
+
+        return true;
+    }
+    public function sumarStock($id)
+    {
+        $producte = Producte::find($id);
+        $producte->stock = $producte->stock + 1;
+        $producte->save();
+        return true;
+    }
     public function afegirProducte(Request $request)
     {
 

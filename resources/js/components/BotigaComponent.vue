@@ -58,6 +58,9 @@
                             <a class="nav-link active" href="#mod_perfil" data-toggle="tab" style="color:#0a0421 !important;">Modificar perfil</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="#editarProductes" data-toggle="tab" style="color:#0a0421 !important;">Editar productes</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="#puja_producte" data-toggle="tab" style="color:#0a0421 !important;">Pujar productes</a>
                         </li>
                     </ul>
@@ -301,6 +304,103 @@
                         </div>
                     <!-- /.les meves comandes -->
 
+                    <div class="tab-pane" id="editarProductes">
+                        
+                        <div class="content w-100">
+                            <div class="container-fluid">
+                                <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Llistat de productes</h3>
+                                    </div>
+                                    <div class="card-body table-responsive">
+                                        <table class="table">
+                                        <thead class="">
+                                            <tr>
+                                            <th>Ref.</th>
+                                            <th>Nom</th>
+                                            <th>Stock</th>
+                                            <th>Preu</th>
+                                            <th>Actiu</th>
+                                            <th class="text-right"></th>
+                                            <th class="text-right"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="">
+                                            <tr v-for="producte in productes" :key="producte.id">
+                                                <td>{{ producte.ref }}</td>
+                                                <td>{{ producte.nom }}</td>
+                                                <td>
+                                                    <button
+                                                    class="btn pl-0"
+                                                    style="background-color: transparent"
+                                                    v-on:click="restarStock(producte.id)"
+                                                    >
+                                                    <i class="fas fa-minus"></i>
+                                                    </button>
+                                                    {{ producte.stock }}
+                                                    <button
+                                                    class="btn pr-0"
+                                                    style="background-color: transparent"
+                                                    v-on:click="sumarStock(producte.id)"
+                                                    >
+                                                    <i class="fas fa-plus"></i>
+                                                    </button>
+                                                </td>
+                                                <td>{{ producte.preu }} €</td>
+
+                                                <td v-if="producte.actiu" class="text-right">
+                                                    <input 
+                                                    v-on:change="canviEstat(producte.id)"
+                                                    class="form-check-input"   
+                                                    type="checkbox" 
+                                                    value="0" 
+                                                    id="actiu"
+                                                    checked>
+                                                </td>
+                                                <td v-if="!producte.actiu" class="text-right">
+                                                    <input 
+                                                    v-on:change="canviEstat(producte.id)"
+                                                    class="form-check-input"   
+                                                    type="checkbox" 
+                                                    value="0" 
+                                                    id="actiu">
+                                                </td>
+                                                <td class="text-right">
+                                                    <div class="btn-group"
+                                                    ><button
+                                                        class="btn btn-info"
+                                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Editar producte"
+                                                        @click="editarProducte(producte.id)"
+                                                    >
+                                                        <i class="fas fa-pen"></i>
+                                                    </button>
+                                                                                                   
+                                                    <button
+                                                        class="btn btn-danger"
+                                                        data-bs-toggle="tooltip" data-bs-placement="top" title="Eliminar producte"
+                                                        @click="eliminarProducte(producte.id)"
+                                                    >
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                    </div>
+                                                </td>
+                                                
+                                            </tr>
+                                        </tbody>
+                                        </table>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                            </div>
+
+                    </div>
+
+
                     <!-- Pujar producte -->
                     <div class="tab-pane" id="puja_producte">
                         <form>
@@ -514,9 +614,22 @@ export default {
                 categoria: "",
                 visites: "0",
             },
+            form2: {
+                imatge: null,
+                ref: "",
+                id_botiga: "",
+                nom: "",
+                desc: "",
+                preu: "",
+                stock: "",
+                actiu: "",
+                categoria: "",
+                visites: "0",
+            },
             files: null,
             files2: null,
             files3: null,
+            files4: null,
             form_botiga: {
                 id:"",
                 nom:"",
@@ -539,6 +652,7 @@ export default {
             errors: [],
             categories: "",
             botiga: "",
+            productes: {},
             user: ""
             
         };
@@ -547,16 +661,17 @@ export default {
         axios.get("/api/categories").then((res) => {
                 this.categories = res.data;
             });
-        axios.get("/api/user").then((res) => {
-                this.user = res.data;
-            }).then(
+
+        axios.get("/api/productes").then((res1) => {
+                this.productes=res1.data;
+            });
+        
         axios.get("/api/botiga").then(res2 => {
-            for (let b in res2.data) {
-                if (res2.data[b].id_usuari==this.user.id) {
-                    this.botiga = res2.data[b];
-                    this.form.id_botiga = this.user.id;
-                }
-            }
+            
+            this.botiga = res2.data[0];
+            this.user = this.botiga.user;
+            
+            
             this.form_botiga["id"] = this.botiga.id;
             this.form_botiga["nom"] = this.botiga.nom;
             this.form_botiga["descripcio"] = this.botiga.descripcio;
@@ -574,10 +689,220 @@ export default {
             this.form_botiga["cif"] = this.botiga.cif;
             this.form_botiga["img_perfil"] = this.botiga.img_perfil;
             this.form_botiga["img_portada"] = this.botiga.img_portada;
-        }));
+        });
     },
 
     methods: {
+        eliminarProducte(id) {
+            axios.post("/api/eliminarProducte/" + id).then((res) => {
+                console.log(res);
+            });
+            axios.get("/api/productes").then((res) => {
+                this.productes = res.data;
+            });
+        },
+        restarStock(id) {
+            axios.post("/api/restarStock/" + id).then((res) => {
+                console.log(res);
+            });
+            axios.get("/api/productes").then((res) => {
+                this.productes = res.data;
+            });
+        },
+        sumarStock(id) {
+            axios.post("/api/sumarStock/" + id).then((res) => {
+                console.log(res);
+            });
+            axios.get("/api/productes").then((res) => {
+                this.productes = res.data;
+            });
+        },
+        editarProducte(id){
+            axios.post("/api/producte/" + id).then((res) => {
+                let producte = res.data;
+            }).then(
+                this.$swal({
+                title: 'Editar Producte',
+                html: `
+                    <form>
+                            <div class="card-body register-card-body">
+
+                                <div class="form-group mb-3">
+                                    <label for="imatge">Imatge del Producte</label>
+                                    <div class="input-group">
+                                    <div class="custom-file">
+                                        <input 
+                                            @change="fileSelected3"
+                                            type="file" 
+                                            class="custom-file-input" 
+                                            id="imatge"
+                                        >
+                                        <label v-if="!files4 || !files4.length" class="custom-file-label" for="imatge">Tria un fitxer</label>
+                                        <span v-else>
+                                            <label v-for="file4 in files4" :key="file4.name" class="custom-file-label" for="imatge">{{file4.name}}</label>
+                                        </span>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="fas fa-image"></i>
+                                        </span>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group mb-3" v-if="errors.ref">
+                                        <label class="col-form-label" for="number"
+                                            ><i class="far fa-times-circle"></i>
+                                            {{ errors.ref[0] }}</label
+                                        >
+                                        <br />
+                                    </div>
+                                    <input
+                                        name="ref"
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Ref"
+                                        v-model="form2.ref"
+                                    />
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-asterisk"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group mb-3" v-if="errors.nom">
+                                        <label class="col-form-label" for="number"
+                                            ><i class="far fa-times-circle"></i>
+                                            {{ errors.nom[0] }}</label
+                                        >
+                                        <br />
+                                    </div>
+                                    <input
+                                        name="nom"
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Nom"
+                                        v-model="form2.nom"
+                                    />
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class=""></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="categoria">Categoria</label>
+                                    <select 
+                                        class="form-control" 
+                                        id="categoria"
+                                        v-model="form2.categoria">
+                                            <option v-for="categoria in categories" :key="categoria.id" :value="categoria.id">
+                                                {{categoria.nom}}
+                                            </option>
+                                    </select>
+                                </div>
+
+                                <label for="desc">Descripcio del producte</label><br />
+                                <div class="form-group mb-3">
+                                    <div class="input-group mb-3" v-if="errors.desc">
+                                        <label class="col-form-label" for="number"
+                                            ><i class="far fa-times-circle"></i>
+                                            {{ errors.desc[0] }}</label
+                                        >
+                                        <br />
+                                    </div>
+                                    
+                                    <textarea 
+                                        class="form-control" 
+                                        type="text"
+                                        id="desc" 
+                                        name="desc"
+                                        v-model="form2.desc"
+                                        rows="3">
+                                    </textarea>
+                                    
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group mb-3" v-if="errors.preu">
+                                        <label class="col-form-label" for="number"
+                                            ><i class="far fa-times-circle"></i>
+                                            {{ errors.preu[0] }}</label
+                                        >
+                                        <br />
+                                    </div>
+                                    <input
+                                        type="number"
+                                        class="form-control"
+                                        placeholder="Preu"
+                                        name="preu"
+                                        v-model="form2.preu"
+                                    />
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-euro-sign"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <div class="input-group mb-3" v-if="errors.stock">
+                                        <label class="col-form-label" for="number"
+                                            ><i class="far fa-times-circle"></i>
+                                            {{ errors.stock[0] }}</label
+                                        >
+                                        <br />
+                                    </div>
+                                    <input
+                                        type="number"
+                                        class="form-control"
+                                        placeholder="Stock"
+                                        name="stock"
+                                        v-model="form2.stock"
+                                    />
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">
+                                            <span class="fas fa-layer-group"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-check">
+                                    <input 
+                                        class="form-check-input"   
+                                        type="checkbox" 
+                                        value="0" 
+                                        id="actiu"
+                                        v-model="form2.actiu">
+                                    <label class="form-check-label" for="actiu">
+                                        Producte actiu
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- /.form-box -->
+                            </form>
+                    `,
+                confirmButtonText: 'Edita',
+                focusConfirm: false,
+                preConfirm: () => {
+                    const login = Swal.getPopup().querySelector('#login').value
+                    const password = Swal.getPopup().querySelector('#password').value
+                    if (!login || !password) {
+                    Swal.showValidationMessage(`Please enter login and password`)
+                    }
+                    return { login: login, password: password }
+                }
+                }).then((result) => {
+                this.$swal(`
+                    Login: ${result.value.login}
+                    Password: ${result.value.password}
+                `.trim())
+                })
+            )},
         fileSelected(e) {
         this.files = e.target.files
         console.log(this.files);
