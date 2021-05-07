@@ -50,9 +50,15 @@
                     {{ this.user.provincia }}
                   </span>
                 </p>
-                <br>
-                <button @click="loginCorrecte" type="button" class="btn btn-block btn-primary">Hello world</button>
-                <br>
+                <br />
+                <button
+                  @click="loginCorrecte"
+                  type="button"
+                  class="btn btn-block btn-primary"
+                >
+                  Hello world
+                </button>
+                <br />
                 <router-link
                   class="btn btn-secondary btn-block"
                   :to="'editarPerfil'"
@@ -72,8 +78,13 @@
                   <li class="nav-item">
                     <a
                       class="nav-link active"
-                      href="#activity"
+                      href="#wishlist"
                       data-toggle="tab"
+                      >Llista de desitjos</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#activity" data-toggle="tab"
                       >Les meves comandes</a
                     >
                   </li>
@@ -89,7 +100,7 @@
               <!-- les meves comandes -->
               <div class="card-body">
                 <div class="tab-content">
-                  <div class="active tab-pane" id="activity">
+                  <div class="tab-pane" id="activity">
                     <div class="card mb-3">
                       <div class="row g-0">
                         <div class="col-md-4">
@@ -155,6 +166,52 @@
                     </div>
                   </div>
                   <!-- /.les meves comandes -->
+
+                  <div class="active tab-pane" id="wishlist">
+                    <div class="card mb-3">
+                      <div class="row g-0">
+                        <div class="col-md-12">
+                          <div class="card-header">
+                            <h3 class="card-title">
+                              La meva llista de desitjos
+                            </h3>
+                          </div>
+                          <div class="card-body table-responsive">
+                            <table class="table">
+                              <thead class="">
+                                <tr>
+                                  <th>Nom</th>
+                                  <th>Referència</th>
+                                  <th>Preu</th>
+                                  <th class="text-right">Eliminar</th>
+                                </tr>
+                              </thead>
+                              <tbody class="">
+                                <tr
+                                  v-for="producte in wishlist"
+                                  :key="producte.id"
+                                >
+                                  <td>{{ producte.productes.nom }}</td>
+                                  <td>{{ producte.productes.ref }}</td>
+                                  <td>{{ producte.productes.preu }} €</td>
+                                  <td class="text-right">
+                                    <span
+                                      ><button
+                                        class="btn btn-danger"
+                                        @click="eliminarWishlist(producte.id)"
+                                      >
+                                        <i class="fas fa-trash"></i>
+                                      </button>
+                                    </span>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
                   <!-- TIMELINE tornar a comprar -->
                   <div class="tab-pane" id="timeline">
@@ -267,11 +324,16 @@ export default {
   data() {
     return {
       user: "",
+      wishlist: "",
     };
   },
   mounted() {
     axios.get("/api/user").then((res) => {
       this.user = res.data;
+    });
+    axios.get("/api/veureWishlist").then((res) => {
+      this.wishlist = res.data;
+      console.log(this.wishlist);
     });
   },
   methods: {
@@ -279,17 +341,25 @@ export default {
       // Use sweetalert2
       this.$swal({
         toast: true,
-        position: 'top-end',
-        icon: 'success',
-        title: 'Login correcte',
+        position: "top-end",
+        icon: "success",
+        title: "Login correcte",
         showConfirmButton: false,
         timer: 3000,
         didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
       });
-    }
+    },
+    eliminarWishlist(id) {
+      axios.post("/api/eliminarWishlist/" + id).then((res) => {
+        console.log(res);
+      });
+      axios.get("/api/veureWishlist").then((res) => {
+        this.wishlist = res.data;
+      });
+    },
   },
 };
 </script>

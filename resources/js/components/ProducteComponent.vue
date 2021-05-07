@@ -48,7 +48,10 @@
                   Afegir a la cistella
                 </div>
 
-                <div class="btn btn-default btn-lg btn-flat">
+                <div
+                  class="btn btn-default btn-lg btn-flat"
+                  v-on:click="afegirWishlist"
+                >
                   <i class="fas fa-heart fa-lg mr-2"></i>
                   Afegir a la llista de desitjos
                 </div>
@@ -122,35 +125,49 @@ export default {
       // Use sweetalert2
       this.$swal({
         toast: true,
-        position: 'top-end',
-        icon: 'success',
-        title: 'Producte afegit a la cistella',
+        position: "top-end",
+        icon: "success",
+        title: "Producte afegit a la cistella",
         showConfirmButton: false,
         timer: 3000,
         didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
       });
     },
     toastIncorrecte() {
       // Use sweetalert2
       this.$swal({
         toast: true,
-        position: 'top-end',
-        icon: 'error',
-        title: 'Error al afegir el producte',
+        position: "top-end",
+        icon: "error",
+        title: "Error al afegir el producte",
         showConfirmButton: false,
         timer: 3000,
         didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
       });
     },
     afegirCistella() {
       axios
         .post("/api/afegirCistella/" + this.producte.id)
+        .then((res) => {
+          console.log(res);
+          this.toastCorrecte();
+          return false;
+        })
+        .catch((error) => {
+          this.errors = error.response.data.errors;
+          this.toastIncorrecte();
+          return false;
+        });
+    },
+    afegirWishlist() {
+      axios
+        .post("/api/afegirWishlist/" + this.producte.id)
         .then((res) => {
           console.log(res);
           this.toastCorrecte();
