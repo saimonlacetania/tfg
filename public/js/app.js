@@ -2760,6 +2760,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2787,28 +2789,22 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
-    eliminarCistella: function eliminarCistella(id) {
+    crearOrdre: function crearOrdre() {
       var _this2 = this;
 
-      axios.post("/api/eliminarCistella/" + id).then(function (res) {
+      axios.post("/api/crearOrdre").then(function (res) {
         console.log(res);
-      });
-      axios.get("/api/veureCistella").then(function (res) {
-        _this2.cistella = res.data;
-        _this2.total = 0;
-
-        for (var i = 0; i < _this2.cistella.length; i++) {
-          _this2.cistella[i].productes.preu = parseFloat(_this2.cistella[i].productes.preu * _this2.cistella[i].quantitat).toFixed(2);
-          _this2.total += parseFloat(_this2.cistella[i].productes.preu);
-        }
-
-        _this2.total = parseFloat(_this2.total).toFixed(2);
+        axios.get("/api/veureCistella").then(function (res) {
+          _this2.cistella = res.data;
+          console.log(_this2.cistella);
+          _this2.total = 0.0;
+        });
       });
     },
-    restarCistella: function restarCistella(id) {
+    eliminarCistella: function eliminarCistella(id) {
       var _this3 = this;
 
-      axios.post("/api/restarCistella/" + id).then(function (res) {
+      axios.post("/api/eliminarCistella/" + id).then(function (res) {
         console.log(res);
       });
       axios.get("/api/veureCistella").then(function (res) {
@@ -2823,10 +2819,10 @@ __webpack_require__.r(__webpack_exports__);
         _this3.total = parseFloat(_this3.total).toFixed(2);
       });
     },
-    sumarCistella: function sumarCistella(id) {
+    restarCistella: function restarCistella(id) {
       var _this4 = this;
 
-      axios.post("/api/sumarCistella/" + id).then(function (res) {
+      axios.post("/api/restarCistella/" + id).then(function (res) {
         console.log(res);
       });
       axios.get("/api/veureCistella").then(function (res) {
@@ -2839,6 +2835,24 @@ __webpack_require__.r(__webpack_exports__);
         }
 
         _this4.total = parseFloat(_this4.total).toFixed(2);
+      });
+    },
+    sumarCistella: function sumarCistella(id) {
+      var _this5 = this;
+
+      axios.post("/api/sumarCistella/" + id).then(function (res) {
+        console.log(res);
+      });
+      axios.get("/api/veureCistella").then(function (res) {
+        _this5.cistella = res.data;
+        _this5.total = 0;
+
+        for (var i = 0; i < _this5.cistella.length; i++) {
+          _this5.cistella[i].productes.preu = parseFloat(_this5.cistella[i].productes.preu * _this5.cistella[i].quantitat).toFixed(2);
+          _this5.total += parseFloat(_this5.cistella[i].productes.preu);
+        }
+
+        _this5.total = parseFloat(_this5.total).toFixed(2);
       });
     }
   }
@@ -4270,41 +4284,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       user: "",
-      wishlist: ""
+      wishlist: "",
+      orders: ""
     };
   },
   mounted: function mounted() {
@@ -4313,9 +4298,13 @@ __webpack_require__.r(__webpack_exports__);
     axios.get("/api/user").then(function (res) {
       _this.user = res.data;
     });
-    axios.get("/api/veureWishlist").then(function (res) {
-      _this.wishlist = res.data;
+    axios.get("/api/veureWishlist").then(function (res2) {
+      _this.wishlist = res2.data;
       console.log(_this.wishlist);
+    });
+    axios.get("/api/veureOrdreUser").then(function (res3) {
+      _this.orders = res3.data;
+      console.log(_this.orders);
     });
   },
   methods: {
@@ -4358,6 +4347,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4519,6 +4513,10 @@ __webpack_require__.r(__webpack_exports__);
 
         _this2.toastCorrecte();
 
+        axios.get("/api/producte/" + _this2.$route.params.id).then(function (res) {
+          console.log(res);
+          _this2.producte = res.data;
+        });
         return false;
       })["catch"](function (error) {
         _this2.errors = error.response.data.errors;
@@ -47745,7 +47743,20 @@ var render = function() {
                     )
                   ]),
                   _vm._v(" "),
-                  _vm._m(6)
+                  _c("div", { staticClass: "text-right" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-success",
+                        on: { click: _vm.crearOrdre }
+                      },
+                      [
+                        _vm._v(
+                          "\n                  Processar la comanda\n                "
+                        )
+                      ]
+                    )
+                  ])
                 ])
               ])
             ])
@@ -47823,16 +47834,6 @@ var staticRenderFns = [
     return _c("td", { staticClass: "text-left" }, [
       _c("b", [_vm._v("Total")]),
       _vm._v(":")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-right" }, [
-      _c("button", { staticClass: "btn btn-success" }, [
-        _vm._v("Processar la comanda")
-      ])
     ])
   }
 ]
@@ -49841,7 +49842,62 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "card-body" }, [
                 _c("div", { staticClass: "tab-content" }, [
-                  _vm._m(2),
+                  _c(
+                    "div",
+                    { staticClass: "tab-pane", attrs: { id: "activity" } },
+                    [
+                      _c("div", { staticClass: "card mb-3" }, [
+                        _c("div", { staticClass: "row g-0" }, [
+                          _c("div", { staticClass: "col-md-12" }, [
+                            _vm._m(2),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "card-body table-responsive" },
+                              [
+                                _c("table", { staticClass: "table" }, [
+                                  _vm._m(3),
+                                  _vm._v(" "),
+                                  _c(
+                                    "tbody",
+                                    {},
+                                    _vm._l(_vm.orders, function(comanda) {
+                                      return _c("tr", { key: comanda.id }, [
+                                        _c("td", [_vm._v(_vm._s(comanda.id))]),
+                                        _vm._v(" "),
+                                        comanda.enviat == 1
+                                          ? _c("td", [_vm._v("Enviat")])
+                                          : _c("td", [
+                                              _vm._v("Preparant l'enviament...")
+                                            ]),
+                                        _vm._v(" "),
+                                        _c("td", [
+                                          _vm._v(
+                                            "\n                                  " +
+                                              _vm._s(comanda.direccio) +
+                                              ",\n                                  " +
+                                              _vm._s(comanda.poblacio) +
+                                              "\n                                "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c(
+                                          "td",
+                                          { staticClass: "text-right" },
+                                          [_vm._v("a")]
+                                        )
+                                      ])
+                                    }),
+                                    0
+                                  )
+                                ])
+                              ]
+                            )
+                          ])
+                        ])
+                      ])
+                    ]
+                  ),
                   _vm._v(" "),
                   _c(
                     "div",
@@ -49853,14 +49909,14 @@ var render = function() {
                       _c("div", { staticClass: "card mb-3" }, [
                         _c("div", { staticClass: "row g-0" }, [
                           _c("div", { staticClass: "col-md-12" }, [
-                            _vm._m(3),
+                            _vm._m(4),
                             _vm._v(" "),
                             _c(
                               "div",
                               { staticClass: "card-body table-responsive" },
                               [
                                 _c("table", { staticClass: "table" }, [
-                                  _vm._m(4),
+                                  _vm._m(5),
                                   _vm._v(" "),
                                   _c(
                                     "tbody",
@@ -49921,7 +49977,7 @@ var render = function() {
                     ]
                   ),
                   _vm._v(" "),
-                  _vm._m(5)
+                  _vm._m(6)
                 ])
               ])
             ])
@@ -49991,81 +50047,23 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "tab-pane", attrs: { id: "activity" } }, [
-      _c("div", { staticClass: "card mb-3" }, [
-        _c("div", { staticClass: "row g-0" }, [
-          _c("div", { staticClass: "col-md-4" }, [
-            _c("img", {
-              staticClass: "img-fluid p-1 ml-4",
-              staticStyle: {
-                height: "150px",
-                width: "150px",
-                "border-radius": "150px"
-              },
-              attrs: {
-                src:
-                  "https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg",
-                alt: "..."
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-8" }, [
-            _c("div", { staticClass: "card-body" }, [
-              _c("h5", { staticClass: "card-title" }, [_vm._v("Producte")]),
-              _vm._v(" "),
-              _c("p", { staticClass: "card-text" }, [
-                _vm._v(
-                  "\n                            This is a wider card with supporting text below as\n                            a natural lead-in to additional content. This\n                            content is a little bit longer.\n                          "
-                )
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "card-text" }, [
-                _c("small", { staticClass: "text-muted" }, [
-                  _vm._v("Comprat el 26/04/2021")
-                ])
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card mb-3" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-4" }, [
-            _c("img", {
-              staticClass: "img-fluid p-1 ml-4",
-              staticStyle: {
-                height: "150px",
-                width: "150px",
-                "border-radius": "150px"
-              },
-              attrs: {
-                src:
-                  "https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg",
-                alt: "..."
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-8" }, [
-            _c("div", { staticClass: "card-body" }, [
-              _c("h5", { staticClass: "card-title" }, [_vm._v("Producte")]),
-              _vm._v(" "),
-              _c("p", { staticClass: "card-text" }, [
-                _vm._v(
-                  "\n                            This is a wider card with supporting text below as\n                            a natural lead-in to additional content. This\n                            content is a little bit longer.\n                          "
-                )
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "card-text" }, [
-                _c("small", { staticClass: "text-muted" }, [
-                  _vm._v("Comprat el 26/04/2021")
-                ])
-              ])
-            ])
-          ])
-        ])
+    return _c("div", { staticClass: "card-header" }, [
+      _c("h3", { staticClass: "card-title" }, [_vm._v("Les meves comandes")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", {}, [
+      _c("tr", [
+        _c("th", [_vm._v("Id")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Estat")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Direcció d'enviament")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Veure")])
       ])
     ])
   },
@@ -50289,19 +50287,37 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "mt-4" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "btn btn-primary btn-lg btn-flat",
-                      on: { click: _vm.afegirCistella }
-                    },
-                    [
-                      _c("i", { staticClass: "fas fa-cart-plus fa-lg mr-2" }),
-                      _vm._v(
-                        "\n                Afegir a la cistella\n              "
+                  this.producte.stock > 0
+                    ? _c(
+                        "div",
+                        {
+                          staticClass: "btn btn-primary btn-lg btn-flat",
+                          on: { click: _vm.afegirCistella }
+                        },
+                        [
+                          _c("i", {
+                            staticClass: "fas fa-cart-plus fa-lg mr-2"
+                          }),
+                          _vm._v(
+                            "\n                Afegir a la cistella\n              "
+                          )
+                        ]
                       )
-                    ]
-                  ),
+                    : _c(
+                        "div",
+                        {
+                          staticClass:
+                            "btn btn-secondary btn-lg btn-flat disabled"
+                        },
+                        [
+                          _c("i", {
+                            staticClass: "fas fa-cart-plus fa-lg mr-2"
+                          }),
+                          _vm._v(
+                            "\n                Afegir a la cistella\n              "
+                          )
+                        ]
+                      ),
                   _vm._v(" "),
                   _c(
                     "div",

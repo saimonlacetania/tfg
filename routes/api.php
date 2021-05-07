@@ -30,7 +30,8 @@ Route::post('afegirWishlist/{id}', 'WishlistController@afegirWishlist');
 Route::post('eliminarWishlist/{id}', 'WishlistController@eliminarWishlist');
 Route::post('restarCistella/{id}', 'CistellaController@restarCistella');
 Route::post('sumarCistella/{id}', 'CistellaController@sumarCistella');
-
+Route::post('crearOrdre', 'OrdersController@crearOrdre');
+Route::get('veureOrdreUser', 'OrdersController@veureOrdreUser');
 Route::post('register', 'RegisterController@register');
 Route::post('crearBotiga', 'CrearBotigaController@crearBotiga');
 Route::post('login', 'LoginController@login');

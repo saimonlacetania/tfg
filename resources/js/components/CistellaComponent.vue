@@ -97,7 +97,9 @@
                   </tbody>
                 </table>
                 <div class="text-right">
-                  <button class="btn btn-success">Processar la comanda</button>
+                  <button class="btn btn-success" v-on:click="crearOrdre">
+                    Processar la comanda
+                  </button>
                 </div>
               </div>
               <!-- /.card-body -->
@@ -137,6 +139,17 @@ export default {
     });
   },
   methods: {
+    crearOrdre() {
+      axios.post("/api/crearOrdre").then((res) => {
+        console.log(res);
+        axios.get("/api/veureCistella").then((res) => {
+          this.cistella = res.data;
+          console.log(this.cistella);
+
+          this.total = 0.0;
+        });
+      });
+    },
     eliminarCistella(id) {
       axios.post("/api/eliminarCistella/" + id).then((res) => {
         console.log(res);
