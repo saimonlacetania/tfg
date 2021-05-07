@@ -90,7 +90,7 @@ html {
             />
           </div>
           <div class="info">
-            <a href="#" class="d-block">Hola! {{ this.user.nom }}</a>
+            <span class="d-block">Hola! {{ this.user.nom }}</span>
           </div>
         </div>
 
