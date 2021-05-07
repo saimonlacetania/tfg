@@ -4865,6 +4865,104 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -9475,7 +9573,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.zoom {\n  transition: transform 0.2s; /* Animation */\n}\n.zoom:hover {\n  transform: scale(1.05); /* (150% zoom)*/\n}\n", ""]);
+exports.push([module.i, "\n.card-img-top {\n  height: 15rem;\n  -o-object-fit: contain;\n     object-fit: contain;\n}\n.zoom {\n  transition: transform 0.2s; /* Animation */\n}\n.zoom:hover {\n  transform: scale(1.05); /* (150% zoom)*/\n}\n", ""]);
 
 // exports
 
@@ -49785,31 +49883,25 @@ var staticRenderFns = [
                   {
                     staticClass: "card",
                     staticStyle: {
-                      width: "18rem",
                       background: "transparent !important",
                       border: "none",
                       "box-shadow": "none"
                     }
                   },
                   [
-                    _c("img", {
-                      staticClass: "float-left ml-5",
-                      staticStyle: {
-                        width: "200px",
-                        height: "200px",
-                        "border-radius": "250px"
-                      },
-                      attrs: { src: "images/granja.png", alt: "..." }
-                    }),
-                    _vm._v(" "),
                     _c("div", { staticClass: "card-body text-center" }, [
-                      _c("h5", { staticClass: "card-title" }, [
+                      _c("img", {
+                        staticClass: "card-img-top",
+                        attrs: { src: "images/granja.png" }
+                      }),
+                      _vm._v(" "),
+                      _c("h5", { staticClass: "card-title-center" }, [
                         _vm._v("Empoderem el petit productor")
                       ]),
                       _vm._v(" "),
                       _c("p", { staticClass: "card-text" }, [
                         _vm._v(
-                          "Some quick example text to build on the card title and make up the bulk of the card's content."
+                          "\n                Some quick example text to build on the card title and make up\n                the bulk of the card's content.\n              "
                         )
                       ])
                     ])
@@ -49823,31 +49915,25 @@ var staticRenderFns = [
                   {
                     staticClass: "card",
                     staticStyle: {
-                      width: "18rem",
                       background: "transparent !important",
                       border: "none",
                       "box-shadow": "none"
                     }
                   },
                   [
-                    _c("img", {
-                      staticClass: "float-left ml-5",
-                      staticStyle: {
-                        width: "200px",
-                        height: "200px",
-                        "border-radius": "250px"
-                      },
-                      attrs: { src: "images/market.png", alt: "..." }
-                    }),
-                    _vm._v(" "),
                     _c("div", { staticClass: "card-body text-center" }, [
-                      _c("h5", { staticClass: "card-title" }, [
+                      _c("img", {
+                        staticClass: "card-img-top",
+                        attrs: { src: "images/market.png" }
+                      }),
+                      _vm._v(" "),
+                      _c("h5", { staticClass: "card-title-center" }, [
                         _vm._v("Recuperem el mercat")
                       ]),
                       _vm._v(" "),
                       _c("p", { staticClass: "card-text" }, [
                         _vm._v(
-                          "Some quick example text to build on the card title and make up the bulk of the card's content."
+                          "\n                Some quick example text to build on the card title and make up\n                the bulk of the card's content.\n              "
                         )
                       ])
                     ])
@@ -49861,31 +49947,25 @@ var staticRenderFns = [
                   {
                     staticClass: "card",
                     staticStyle: {
-                      width: "18rem",
                       background: "transparent !important",
                       border: "none",
                       "box-shadow": "none"
                     }
                   },
                   [
-                    _c("img", {
-                      staticClass: "float-left ml-5",
-                      staticStyle: {
-                        width: "200px",
-                        height: "200px",
-                        "border-radius": "250px"
-                      },
-                      attrs: { src: "images/hands.png", alt: "..." }
-                    }),
-                    _vm._v(" "),
                     _c("div", { staticClass: "card-body text-center" }, [
-                      _c("h5", { staticClass: "card-title" }, [
+                      _c("img", {
+                        staticClass: "card-img-top",
+                        attrs: { src: "images/hands.png" }
+                      }),
+                      _vm._v(" "),
+                      _c("h5", { staticClass: "card-title-center" }, [
                         _vm._v("Creem sinergia")
                       ]),
                       _vm._v(" "),
                       _c("p", { staticClass: "card-text" }, [
                         _vm._v(
-                          "Some quick example text to build on the card title and make up the bulk of the card's content."
+                          "\n                Some quick example text to build on the card title and make up\n                the bulk of the card's content.\n              "
                         )
                       ])
                     ])
@@ -49901,7 +49981,7 @@ var staticRenderFns = [
                   staticClass: "text-center",
                   staticStyle: { color: "#ff6565" }
                 },
-                [_vm._v("El KM0 més a prop que mai")]
+                [_vm._v("\n          El KM0 més a prop que mai\n        ")]
               ),
               _vm._v(" "),
               _c("h4", { staticClass: "text-center" }, [
@@ -49914,9 +49994,9 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
               _c("div", { staticClass: "card-deck col-md-12" }, [
-                _c("div", { staticClass: "card " }, [
+                _c("div", { staticClass: "card" }, [
                   _c("img", {
-                    staticClass: "card-img-top",
+                    staticClass: "card-img",
                     attrs: { src: "/images/grapes.jpg", alt: "Card image cap" }
                   }),
                   _vm._v(" "),
@@ -49925,7 +50005,7 @@ var staticRenderFns = [
                     _vm._v(" "),
                     _c("p", { staticClass: "card-text" }, [
                       _vm._v(
-                        "This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
+                        "\n                This is a longer card with supporting text below as a natural\n                lead-in to additional content. This content is a little bit\n                longer.\n              "
                       )
                     ])
                   ])
@@ -49933,7 +50013,7 @@ var staticRenderFns = [
                 _vm._v(" "),
                 _c("div", { staticClass: "card" }, [
                   _c("img", {
-                    staticClass: "card-img-top",
+                    staticClass: "card-img",
                     attrs: { src: "/images/ovella.jpg", alt: "Card image cap" }
                   }),
                   _vm._v(" "),
@@ -49944,7 +50024,7 @@ var staticRenderFns = [
                     _vm._v(" "),
                     _c("p", { staticClass: "card-text" }, [
                       _vm._v(
-                        "This card has supporting text below as a natural lead-in to additional content."
+                        "\n                This card has supporting text below as a natural lead-in to\n                additional content.\n              "
                       )
                     ])
                   ])
@@ -49952,7 +50032,7 @@ var staticRenderFns = [
                 _vm._v(" "),
                 _c("div", { staticClass: "card" }, [
                   _c("img", {
-                    staticClass: "card-img-top",
+                    staticClass: "card-img",
                     attrs: { src: "/images/roba.jpg", alt: "Card image cap" }
                   }),
                   _vm._v(" "),
@@ -49963,7 +50043,7 @@ var staticRenderFns = [
                     _vm._v(" "),
                     _c("p", { staticClass: "card-text" }, [
                       _vm._v(
-                        "This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action."
+                        "\n                This is a wider card with supporting text below as a natural\n                lead-in to additional content. This card has even longer\n                content than the first to show that equal height action.\n              "
                       )
                     ])
                   ])
@@ -50011,10 +50091,12 @@ var staticRenderFns = [
                     _vm._v(" "),
                     _c("p", { staticClass: "card-text text-gray" }, [
                       _vm._v(
-                        "Inscriu-te per rebre el butlletí de Mercat Virtual al teu correu electrònic."
+                        "\n                Inscriu-te per rebre el butlletí de Mercat Virtual al teu\n                correu electrònic."
                       ),
                       _c("br"),
-                      _vm._v(" T’informem setmana a setmana de les novetats")
+                      _vm._v(
+                        "\n                T’informem setmana a setmana de les novetats\n              "
+                      )
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "input-group mb-3 col-md-12" }, [
@@ -50059,13 +50141,13 @@ var staticRenderFns = [
                           attrs: { "aria-label": "Text input with checkbox" }
                         },
                         [
-                          _vm._v("He llegit i accepto les "),
+                          _vm._v("He llegit i accepto les\n                  "),
                           _c("a", { attrs: { href: "#" } }, [
                             _c("b", { staticClass: "text-gray" }, [
                               _vm._v("Condicions Generals d’Accés i Ús")
                             ])
                           ]),
-                          _vm._v(" i "),
+                          _vm._v("\n                  i\n                  "),
                           _c("a", { attrs: { href: "#" } }, [
                             _c("b", { staticClass: "text-gray" }, [
                               _vm._v("Política de Privacitat")
