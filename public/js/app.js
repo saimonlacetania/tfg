@@ -5080,6 +5080,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -50977,7 +50979,7 @@ var staticRenderFns = [
             _c("br"),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-12 mt-4" }, [
+              _c("div", { staticClass: "col-md-11 mt-4" }, [
                 _c("h1", { staticClass: "text-center" }, [
                   _vm._v("¿Perquè Mercat Virtual?")
                 ])
@@ -51103,18 +51105,20 @@ var staticRenderFns = [
               ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-sm-12 mt-4" }, [
-              _c(
-                "h1",
-                {
-                  staticClass: "text-center",
-                  staticStyle: { color: "#ff6565" }
-                },
-                [_vm._v("El KM0 més a prop que mai")]
-              ),
-              _vm._v(" "),
-              _c("h4", { staticClass: "text-center" }, [
-                _vm._v("productes únics de professionals locals")
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-sm-12 mt-4" }, [
+                _c(
+                  "h1",
+                  {
+                    staticClass: "text-center",
+                    staticStyle: { color: "#ff6565" }
+                  },
+                  [_vm._v("El KM0 més a prop que mai")]
+                ),
+                _vm._v(" "),
+                _c("h4", { staticClass: "text-center" }, [
+                  _vm._v("productes únics de professionals locals")
+                ])
               ])
             ]),
             _vm._v(" "),

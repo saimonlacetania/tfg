@@ -15,7 +15,7 @@
         <br><br>
 
       <div class="row">
-        <div class="col-md-12 mt-4">
+        <div class="col-md-11 mt-4">
           <h1 class="text-center">¿Perquè Mercat Virtual?</h1>
         </div>
       </div>
@@ -52,9 +52,11 @@
           </div>
         </div>
         
+        <div class="row">
         <div class="col-sm-12 mt-4">
           <h1 class="text-center" style="color:#ff6565;">El KM0 més a prop que mai</h1>
           <h4 class="text-center">productes únics de professionals locals</h4>
+        </div>
         </div>
 
         <br><br>
