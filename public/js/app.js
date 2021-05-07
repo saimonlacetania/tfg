@@ -5292,6 +5292,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -9788,7 +9790,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.nav-link.active {\r\n    background-color: #ff6565 !important;\r\n    color: white !important;\n}\n.nav-link {\r\n    text-decoration: none !important;\r\n    color: white !important;\n}\r\n", ""]);
+exports.push([module.i, "\n.nav-link.active {\n    background-color: #ff6565 !important;\n    color: white !important;\n}\n.nav-link {\n    text-decoration: none !important;\n    color: white !important;\n}\n", ""]);
 
 // exports
 
@@ -9826,7 +9828,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#registre {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\r\ninput[type=\"date\"]::-webkit-inner-spin-button {\r\n  display: none;\n}\r\n", ""]);
+exports.push([module.i, "\n#registre {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\ninput[type=\"date\"]::-webkit-inner-spin-button {\n  display: none;\n}\n", ""]);
 
 // exports
 
@@ -9864,7 +9866,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.wrapper {\r\n  height: 100%;\n}\nbody,\r\nhtml {\r\n  height: 100%;\n}\n.main-header {\r\n  color: #c22847 !important;\n}\r\n", ""]);
+exports.push([module.i, "\n.wrapper {\n  height: 100%;\n}\nbody,\nhtml {\n  height: 100%;\n}\n.main-header {\n  color: #c22847 !important;\n}\n", ""]);
 
 // exports
 
@@ -9883,7 +9885,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.nav-link.active {\r\n  background-color: #ff6565 !important;\r\n  color: white !important;\n}\n.nav-link {\r\n  text-decoration: none !important;\r\n  color: white !important;\n}\r\n", ""]);
+exports.push([module.i, "\n.nav-link.active {\n  background-color: #ff6565 !important;\n  color: white !important;\n}\n.nav-link {\n  text-decoration: none !important;\n  color: white !important;\n}\n", ""]);
 
 // exports
 
@@ -9902,7 +9904,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.zoom {\r\n  transition: transform 0.2s; /* Animation */\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.zoom {\n  transition: transform 0.2s; /* Animation */\n}\n\n", ""]);
 
 // exports
 
@@ -9921,7 +9923,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#registre {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\r\ninput[type=\"date\"]::-webkit-inner-spin-button {\r\n    display: none;\n}\r\n", ""]);
+exports.push([module.i, "\n#registre {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\ninput[type=\"date\"]::-webkit-inner-spin-button {\n    display: none;\n}\n", ""]);
 
 // exports
 
@@ -9940,7 +9942,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card-img-top {\r\n  height: 15rem;\r\n  -o-object-fit: contain;\r\n     object-fit: contain;\n}\n.zoom {\r\n  transition: transform 0.2s; /* Animation */\n}\n.zoom:hover {\r\n  transform: scale(1.05); /* (150% zoom)*/\n}\r\n", ""]);
+exports.push([module.i, "\n.card-img-top {\n  height: 15rem;\n  -o-object-fit: contain;\n     object-fit: contain;\n}\n.zoom {\n  transition: transform 0.2s; /* Animation */\n}\n.zoom:hover {\n  transform: scale(1.05); /* (150% zoom)*/\n}\n", ""]);
 
 // exports
 
@@ -51363,12 +51365,14 @@ var staticRenderFns = [
                         }),
                         _vm._v(" "),
                         _c("h5", { staticClass: "card-title-center" }, [
-                          _vm._v("Empoderem el petit productor")
+                          _vm._v(
+                            "\n                  Empoderem el petit productor\n                "
+                          )
                         ]),
                         _vm._v(" "),
                         _c("p", { staticClass: "card-text" }, [
                           _vm._v(
-                            "\n                Some quick example text to build on the card title and make up\n                the bulk of the card's content.\n              "
+                            "\n                  Some quick example text to build on the card title and make\n                  up the bulk of the card's content.\n                "
                           )
                         ])
                       ])
@@ -51400,7 +51404,7 @@ var staticRenderFns = [
                         _vm._v(" "),
                         _c("p", { staticClass: "card-text" }, [
                           _vm._v(
-                            "\n                Some quick example text to build on the card title and make up\n                the bulk of the card's content.\n              "
+                            "\n                  Some quick example text to build on the card title and make\n                  up the bulk of the card's content.\n                "
                           )
                         ])
                       ])
@@ -51432,349 +51436,343 @@ var staticRenderFns = [
                         _vm._v(" "),
                         _c("p", { staticClass: "card-text" }, [
                           _vm._v(
-                            "\n                Some quick example text to build on the card title and make up\n                the bulk of the card's content.\n              "
+                            "\n                  Some quick example text to build on the card title and make\n                  up the bulk of the card's content.\n                "
                           )
                         ])
                       ])
                     ]
                   )
                 ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-sm-12 mt-4" }, [
-                  _c(
-                    "h1",
-                    {
-                      staticClass: "text-center",
-                      staticStyle: { color: "#ff6565" }
-                    },
-                    [_vm._v("\n          El KM0 més a prop que mai\n        ")]
-                  ),
-                  _vm._v(" "),
-                  _c("h4", { staticClass: "text-center" }, [
-                    _vm._v("productes únics de professionals locals")
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("br"),
-              _c("br"),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "card-deck col-md-12" }, [
-                  _c("div", { staticClass: "card" }, [
-                    _c("img", {
-                      staticClass: "card-img",
-                      attrs: {
-                        src: "/images/grapes.jpg",
-                        alt: "Card image cap"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "card-body" }, [
-                      _c("h5", { staticClass: "card-title" }, [
-                        _vm._v("Fresc")
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "card-text" }, [
-                        _vm._v(
-                          "\n                This is a longer card with supporting text below as a natural\n                lead-in to additional content. This content is a little bit\n                longer.\n              "
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card" }, [
-                    _c("img", {
-                      staticClass: "card-img",
-                      attrs: {
-                        src: "/images/ovella.jpg",
-                        alt: "Card image cap"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "card-body" }, [
-                      _c("h5", { staticClass: "card-title" }, [
-                        _vm._v("Ecològic")
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "card-text" }, [
-                        _vm._v(
-                          "\n                This card has supporting text below as a natural lead-in to\n                additional content.\n              "
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card" }, [
-                    _c("img", {
-                      staticClass: "card-img",
-                      attrs: { src: "/images/roba.jpg", alt: "Card image cap" }
-                    }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "card-body" }, [
-                      _c("h5", { staticClass: "card-title" }, [
-                        _vm._v("Sostenible")
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "card-text" }, [
-                        _vm._v(
-                          "\n                This is a wider card with supporting text below as a natural\n                lead-in to additional content. This card has even longer\n                content than the first to show that equal height action.\n              "
-                        )
-                      ])
-                    ])
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-4" }),
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-sm-12 mt-4" }, [
+                _c(
+                  "h1",
+                  {
+                    staticClass: "text-center",
+                    staticStyle: { color: "#ff6565" }
+                  },
+                  [
+                    _vm._v(
+                      "\n            El KM0 més a prop que mai\n          "
+                    )
+                  ]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-md-4" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass:
-                        "btn btn-block text-center mt-5 text-light zoom",
-                      staticStyle: { "background-color": "#ff6565" },
-                      attrs: { type: "submit" }
-                    },
-                    [
-                      _c("i", { staticClass: "fa fa-heart" }),
-                      _vm._v("\n            Descobreix-lo!\n          ")
-                    ]
-                  )
+                _c("h4", { staticClass: "text-center" }, [
+                  _vm._v("productes únics de professionals locals")
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("br"),
+            _c("br"),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "card-deck col-md-12" }, [
+                _c("div", { staticClass: "card" }, [
+                  _c("img", {
+                    staticClass: "card-img",
+                    attrs: { src: "/images/grapes.jpg", alt: "Card image cap" }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("h5", { staticClass: "card-title" }, [_vm._v("Fresc")]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _vm._v(
+                        "\n                This is a longer card with supporting text below as a natural\n                lead-in to additional content. This content is a little bit\n                longer.\n              "
+                      )
+                    ])
+                  ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-md-4" })
+                _c("div", { staticClass: "card" }, [
+                  _c("img", {
+                    staticClass: "card-img",
+                    attrs: { src: "/images/ovella.jpg", alt: "Card image cap" }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("h5", { staticClass: "card-title" }, [
+                      _vm._v("Ecològic")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _vm._v(
+                        "\n                This card has supporting text below as a natural lead-in to\n                additional content.\n              "
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "card" }, [
+                  _c("img", {
+                    staticClass: "card-img",
+                    attrs: { src: "/images/roba.jpg", alt: "Card image cap" }
+                  }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("h5", { staticClass: "card-title" }, [
+                      _vm._v("Sostenible")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _vm._v(
+                        "\n                This is a wider card with supporting text below as a natural\n                lead-in to additional content. This card has even longer\n                content than the first to show that equal height action.\n              "
+                      )
+                    ])
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-4" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass:
+                      "btn btn-block text-center mt-5 text-light zoom",
+                    staticStyle: { "background-color": "#ff6565" },
+                    attrs: { type: "submit" }
+                  },
+                  [
+                    _c("i", { staticClass: "fa fa-heart" }),
+                    _vm._v("\n            Descobreix-lo!\n          ")
+                  ]
+                )
               ]),
               _vm._v(" "),
-              _c("br")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("hr"),
-          _vm._v(" "),
-          _c("div", { staticClass: "content" }, [
-            _c("div", { staticClass: "container-fluid" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-12" }, [
-                  _c("div", { staticClass: "card text-center" }, [
-                    _c("div", { staticClass: "card-body" }, [
-                      _c("h3", { staticStyle: { color: "#ff6565" } }, [
-                        _vm._v("Segueix les nostres novetats")
-                      ]),
+              _c("div", { staticClass: "col-md-4" })
+            ]),
+            _vm._v(" "),
+            _c("br")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
+        _c("div", { staticClass: "content" }, [
+          _c("div", { staticClass: "container-fluid" }, [
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-12" }, [
+                _c("div", { staticClass: "card text-center" }, [
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("h3", { staticStyle: { color: "#ff6565" } }, [
+                      _vm._v("Segueix les nostres novetats")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text text-gray" }, [
+                      _vm._v(
+                        "\n                Inscriu-te per rebre el butlletí de Mercat Virtual al teu\n                correu electrònic."
+                      ),
+                      _c("br"),
+                      _vm._v(
+                        "\n                T’informem setmana a setmana de les novetats\n              "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "input-group mb-3 col-md-12" }, [
+                      _c("div", { staticClass: "col-md-3" }),
                       _vm._v(" "),
-                      _c("p", { staticClass: "card-text text-gray" }, [
-                        _vm._v(
-                          "\n                Inscriu-te per rebre el butlletí de Mercat Virtual al teu\n                correu electrònic."
-                        ),
-                        _c("br"),
-                        _vm._v(
-                          "\n                T’informem setmana a setmana de les novetats\n              "
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "input-group mb-3 col-md-12" }, [
-                        _c("div", { staticClass: "col-md-3" }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-6 input-group" }, [
-                          _c("div", { staticClass: "input-group-prepend" }, [
-                            _c(
-                              "span",
-                              {
-                                staticClass: "input-group-text",
-                                staticStyle: { "background-color": "#ff6565" }
-                              },
-                              [
-                                _c("i", {
-                                  staticClass: "far fa-envelope",
-                                  staticStyle: { color: "#ffffff" }
-                                })
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("input", {
-                            staticClass: "form-control",
-                            attrs: {
-                              type: "email",
-                              placeholder: "Adreça de correu electrònic"
-                            }
-                          })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-3" })
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "mb-2" }, [
-                        _c("input", { attrs: { type: "checkbox" } }),
-                        _vm._v("  \n                "),
-                        _c(
-                          "small",
-                          {
-                            staticClass: "text-gray",
-                            attrs: { "aria-label": "Text input with checkbox" }
-                          },
-                          [
-                            _vm._v(
-                              "He llegit i accepto les\n                  "
-                            ),
-                            _c("a", { attrs: { href: "#" } }, [
-                              _c("b", { staticClass: "text-gray" }, [
-                                _vm._v("Condicions Generals d’Accés i Ús")
-                              ])
-                            ]),
-                            _vm._v("\n                  i\n                  "),
-                            _c("a", { attrs: { href: "#" } }, [
-                              _c("b", { staticClass: "text-gray" }, [
-                                _vm._v("Política de Privacitat")
-                              ])
-                            ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "row" }, [
-                        _c("div", { staticClass: "col-md-5" }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "col-md-2" }, [
+                      _c("div", { staticClass: "col-md-6 input-group" }, [
+                        _c("div", { staticClass: "input-group-prepend" }, [
                           _c(
-                            "button",
+                            "span",
                             {
-                              staticClass:
-                                "btn btn-block text-center text-light zoom",
-                              staticStyle: { "background-color": "#ff6565" },
-                              attrs: { type: "submit" }
+                              staticClass: "input-group-text",
+                              staticStyle: { "background-color": "#ff6565" }
                             },
                             [
-                              _vm._v(
-                                "\n                    Enviar\n                  "
-                              )
+                              _c("i", {
+                                staticClass: "far fa-envelope",
+                                staticStyle: { color: "#ffffff" }
+                              })
                             ]
                           )
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticClass: "col-md-5" })
-                      ])
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "email",
+                            placeholder: "Adreça de correu electrònic"
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-3" })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mb-2" }, [
+                      _c("input", { attrs: { type: "checkbox" } }),
+                      _vm._v("  \n                "),
+                      _c(
+                        "small",
+                        {
+                          staticClass: "text-gray",
+                          attrs: { "aria-label": "Text input with checkbox" }
+                        },
+                        [
+                          _vm._v("He llegit i accepto les\n                  "),
+                          _c("a", { attrs: { href: "#" } }, [
+                            _c("b", { staticClass: "text-gray" }, [
+                              _vm._v("Condicions Generals d’Accés i Ús")
+                            ])
+                          ]),
+                          _vm._v("\n                  i\n                  "),
+                          _c("a", { attrs: { href: "#" } }, [
+                            _c("b", { staticClass: "text-gray" }, [
+                              _vm._v("Política de Privacitat")
+                            ])
+                          ])
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "col-md-5" }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-2" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-block text-center text-light zoom",
+                            staticStyle: { "background-color": "#ff6565" },
+                            attrs: { type: "submit" }
+                          },
+                          [
+                            _vm._v(
+                              "\n                    Enviar\n                  "
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-5" })
                     ])
                   ])
                 ])
               ])
             ])
-          ]),
-          _vm._v(" "),
-          _c("br"),
-          _vm._v(" "),
-          _c("div", { staticClass: "content" }, [
-            _c("div", { staticClass: "container-fluid" }, [
-              _c("div", { staticClass: "card-group" }, [
-                _c("div", { staticClass: "card bg-gray" }, [
-                  _c("div", { staticClass: "card-body" }, [
-                    _c("small", { staticClass: "card-text" }, [
-                      _vm._v("MANIFEST FUNDACIONAL")
-                    ]),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "card-text" }, [_vm._v("FAQS")]),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "card-text" }, [
-                      _vm._v("L'EQUIP")
-                    ]),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "card-text" }, [
-                      _vm._v("FES-TE SOCI")
-                    ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("div", { staticClass: "content" }, [
+          _c("div", { staticClass: "container-fluid" }, [
+            _c("div", { staticClass: "card-group" }, [
+              _c("div", { staticClass: "card bg-gray" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _c("small", { staticClass: "card-text" }, [
+                    _vm._v("MANIFEST FUNDACIONAL")
+                  ]),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("small", { staticClass: "card-text" }, [_vm._v("FAQS")]),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("small", { staticClass: "card-text" }, [
+                    _vm._v("L'EQUIP")
+                  ]),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("small", { staticClass: "card-text" }, [
+                    _vm._v("FES-TE SOCI")
                   ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card bg-gray" }, [
-                  _c("div", { staticClass: "card-body" }, [
-                    _c("small", { staticClass: "card-text" }, [
-                      _vm._v("EL TEU COMPTE")
-                    ]),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "card-text" }, [
-                      _vm._v("CONTACTES")
-                    ]),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "card-text" }, [
-                      _vm._v("CONDICIONS GENERALS")
-                    ]),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "card-text" }, [
-                      _vm._v("POLÍTICA DE PRIVACITAT")
-                    ]),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("small", { staticClass: "card-text" }, [
-                      _vm._v("POLÍTICA DE COOKIES")
-                    ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card bg-gray" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _c("small", { staticClass: "card-text" }, [
+                    _vm._v("EL TEU COMPTE")
+                  ]),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("small", { staticClass: "card-text" }, [
+                    _vm._v("CONTACTES")
+                  ]),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("small", { staticClass: "card-text" }, [
+                    _vm._v("CONDICIONS GENERALS")
+                  ]),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("small", { staticClass: "card-text" }, [
+                    _vm._v("POLÍTICA DE PRIVACITAT")
+                  ]),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("small", { staticClass: "card-text" }, [
+                    _vm._v("POLÍTICA DE COOKIES")
                   ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card bg-gray" }, [
-                  _c("div", { staticClass: "card-body" })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "card bg-gray" }, [
-                  _c("div", { staticClass: "card-body" }, [
-                    _c("h4", [_vm._v("Segueix-nos!")]),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-primary col-md-2 m-1",
-                        staticStyle: {
-                          "background-color": "#ff6565",
-                          border: "none"
-                        }
-                      },
-                      [_c("i", { staticClass: "fab fa-facebook-f" })]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-primary col-md-2 m-1",
-                        staticStyle: {
-                          "background-color": "#ff6565",
-                          border: "none"
-                        }
-                      },
-                      [_c("i", { staticClass: "fab fa-twitter" })]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-primary col-md-2 m-1",
-                        staticStyle: {
-                          "background-color": "#ff6565",
-                          border: "none"
-                        }
-                      },
-                      [_c("i", { staticClass: "fab fa-google" })]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-primary col-md-2 m-1",
-                        staticStyle: {
-                          "background-color": "#ff6565",
-                          border: "none"
-                        }
-                      },
-                      [_c("i", { staticClass: "fab fa-instagram" })]
-                    )
-                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card bg-gray" }, [
+                _c("div", { staticClass: "card-body" })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "card bg-gray" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _c("h4", [_vm._v("Segueix-nos!")]),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-primary col-md-2 m-1",
+                      staticStyle: {
+                        "background-color": "#ff6565",
+                        border: "none"
+                      }
+                    },
+                    [_c("i", { staticClass: "fab fa-facebook-f" })]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-primary col-md-2 m-1",
+                      staticStyle: {
+                        "background-color": "#ff6565",
+                        border: "none"
+                      }
+                    },
+                    [_c("i", { staticClass: "fab fa-twitter" })]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-primary col-md-2 m-1",
+                      staticStyle: {
+                        "background-color": "#ff6565",
+                        border: "none"
+                      }
+                    },
+                    [_c("i", { staticClass: "fab fa-google" })]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-primary col-md-2 m-1",
+                      staticStyle: {
+                        "background-color": "#ff6565",
+                        border: "none"
+                      }
+                    },
+                    [_c("i", { staticClass: "fab fa-instagram" })]
+                  )
                 ])
               ])
             ])
@@ -68483,8 +68481,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\abram\Documents\GitHub\tfg\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\abram\Documents\GitHub\tfg\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/tfg/tfg/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/tfg/tfg/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

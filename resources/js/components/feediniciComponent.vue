@@ -14,80 +14,82 @@
 
         <br /><br />
 
-      <div class="row">
-        <div class="col-md-11 mt-4">
-          <h1 class="text-center">¿Perquè Mercat Virtual?</h1>
-        </div>
-
-        <br /><br />
-
         <div class="row">
-          <div class="col-md-4">
-            <div
-              class="card"
-              style="
-                background: transparent !important;
-                border: none;
-                box-shadow: none;
-              "
-            >
-              <div class="card-body text-center">
-                <img src="images/granja.png" class="card-img-top" />
-                <h5 class="card-title-center">Empoderem el petit productor</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
+          <div class="col-md-11 mt-4">
+            <h1 class="text-center">¿Perquè Mercat Virtual?</h1>
+          </div>
+
+          <br /><br />
+
+          <div class="row">
+            <div class="col-md-4">
+              <div
+                class="card"
+                style="
+                  background: transparent !important;
+                  border: none;
+                  box-shadow: none;
+                "
+              >
+                <div class="card-body text-center">
+                  <img src="images/granja.png" class="card-img-top" />
+                  <h5 class="card-title-center">
+                    Empoderem el petit productor
+                  </h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card"
-              style="
-                background: transparent !important;
-                border: none;
-                box-shadow: none;
-              "
-            >
-              <div class="card-body text-center">
-                <img src="images/market.png" class="card-img-top" />
-                <h5 class="card-title-center">Recuperem el mercat</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
+            <div class="col-md-4">
+              <div
+                class="card"
+                style="
+                  background: transparent !important;
+                  border: none;
+                  box-shadow: none;
+                "
+              >
+                <div class="card-body text-center">
+                  <img src="images/market.png" class="card-img-top" />
+                  <h5 class="card-title-center">Recuperem el mercat</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div
-              class="card"
-              style="
-                background: transparent !important;
-                border: none;
-                box-shadow: none;
-              "
-            >
-              <div class="card-body text-center">
-                <img src="images/hands.png" class="card-img-top" />
-                <h5 class="card-title-center">Creem sinergia</h5>
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
+            <div class="col-md-4">
+              <div
+                class="card"
+                style="
+                  background: transparent !important;
+                  border: none;
+                  box-shadow: none;
+                "
+              >
+                <div class="card-body text-center">
+                  <img src="images/hands.png" class="card-img-top" />
+                  <h5 class="card-title-center">Creem sinergia</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        
         <div class="row">
-        <div class="col-sm-12 mt-4">
-          <h1 class="text-center" style="color: #ff6565">
-            El KM0 més a prop que mai
-          </h1>
-          <h4 class="text-center">productes únics de professionals locals</h4>
-        </div>
+          <div class="col-sm-12 mt-4">
+            <h1 class="text-center" style="color: #ff6565">
+              El KM0 més a prop que mai
+            </h1>
+            <h4 class="text-center">productes únics de professionals locals</h4>
+          </div>
         </div>
 
         <br /><br />
@@ -289,8 +291,8 @@
         </div>
       </div>
     </div>
-    </div>
   </div>
+
   <!-- /.contingut pagina -->
 </template>
 
