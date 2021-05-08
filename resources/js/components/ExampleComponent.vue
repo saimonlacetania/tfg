@@ -90,13 +90,13 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <router-link class="nav-link" :to="'profile'">
+                                        <router-link class="nav-link" :to="'/profile'">
                                             <i class="nav-icon far fa-user-circle text-dark"></i>
                                             <p class="text-dark">Veure perfil</p>
                                         </router-link>
                                     </li>
                                     <li class="nav-item">
-                                        <router-link class="nav-link" :to="'editarPerfil'">
+                                        <router-link class="nav-link" :to="'/editarPerfil'">
                                             <i class="fas fa-cogs nav-icon text-dark"></i>
                                             <p class="text-dark">Configuració</p>
                                         </router-link>
@@ -113,16 +113,16 @@
                                 </a>
                                 <ul class="nav nav-treeview nav-child-indent">
                                     <li class="nav-item">
-                                        <router-link class="nav-link" :to="'botiga'">
+                                        <router-link class="nav-link" :to="'/botiga'">
                                             <i class="fas fa-feather-alt nav-icon text-dark"></i>
                                             <p class="text-dark">Perfil</p>
                                         </router-link>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">
-                                            <i class="fas fa-tag nav-icon text-dark"></i>
-                                            <p class="text-dark">Productes</p>
-                                        </a>
+                                        <router-link class="nav-link" :to="{ name: 'PerfilBotiga', params: { id: user.id } }">
+                                            <i class="fas fa-feather-alt nav-icon text-dark"></i>
+                                            <p class="text-dark">Perfil públic</p>
+                                        </router-link>
                                     </li>
                                     <li class="nav-item">
                                         <a href="#" class="nav-link">
@@ -142,7 +142,7 @@
                             </span>
 
                             <li class="nav-item">
-                                <router-link class="nav-link" :to="'productes'">
+                                <router-link class="nav-link" :to="'/productes'">
                                     <i class="nav-icon fas fa-shopping-cart text-dark"></i>
                                     <p class="text-dark">Comprar</p>
                                 </router-link>

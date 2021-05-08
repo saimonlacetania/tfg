@@ -21,6 +21,18 @@ class BotigaController extends Controller
         return $botiga;
     }
 
+    public function botigaId($id)
+    {
+        $id= Botiga::find($id);
+        return $id;
+    }
+
+    public function perfilBotiga($id)
+    {
+        $botiga = Botiga::where("id",$id)->get();
+        return $botiga;
+    }
+
     public function modifica_botiga(Request $request)
     {
         $botiga = Botiga::find($request->id);

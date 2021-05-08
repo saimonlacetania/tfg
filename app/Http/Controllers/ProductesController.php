@@ -20,6 +20,11 @@ class ProductesController extends Controller
         $producte = Producte::find($id);
         return $producte;
     }
+    public function producteBotiga($id)
+    {
+        $producte = Producte::where("id_botiga",$id)->get();
+        return $producte;
+    }
     public function afegirProducte(Request $request)
     {
 

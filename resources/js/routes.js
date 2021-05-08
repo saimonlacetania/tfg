@@ -10,6 +10,7 @@ import Contacte from "./components/contacteComponent";
 import Producte from "./components/ProducteComponent";
 import Botiga from "./components/BotigaComponent";
 import CrearBotiga from "./components/CrearBotigaComponent";
+import PerfilBotiga from "./components/PerfilBotigaComponent";
 
 export default {
     mode: "history",
@@ -101,6 +102,16 @@ export default {
                     path: "/contacte",
                     component: Contacte,
                     name: "Contacte"
+                },
+                {
+                    path: "/perfil/:id",
+                    component: PerfilBotiga,
+                    name: "PerfilBotiga"
+                },
+                {
+                    path: "/productesBotiga/:id",
+                    component: PerfilBotiga,
+                    name: "ProductesBotiga"
                 },
             ]
         }
