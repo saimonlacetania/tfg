@@ -9,10 +9,10 @@
                             <!-- Add the bg color to the header using any of the bg-* classes -->
                             <div class="widget-user-header text-white" style="background: url('/images/photo1.png') center center; height:300px;">
                                 <h3 class="widget-user-username text-right">{{ this.botiga.nom }}</h3>
-                                <h5 class="widget-user-desc text-right">Sector</h5>
+                                <h5 class="widget-user-desc text-right">{{ this.user.nom }}</h5>
                             </div>
                             <div class="widget-user-image pt-5">
-                                <img class="img-circle border-0" src="/images/avatars/default.jpg" alt="User Avatar" style="height:200px; width:200px; margin-top:25%; margin-left:-30%;">
+                                <img class="img-circle border-4" :src="'/images/botigues/' + this.botiga.img_perfil" alt="User Avatar" style="height:200px; width:200px; margin-top:25%; margin-left:-30%;">
                             </div>
                             <div class="card-footer">
                                 <div class="row">
@@ -41,7 +41,7 @@
                                         <hr>
                                     </div>
                                     <div class="col-md-2">
-                                        <h4 class="text-center">Nom botiga</h4>
+                                        <h4 class="text-center">{{ this.botiga.nom }}</h4>
                                     </div>
                                     <div class="col-md-5">
                                         <hr>
@@ -150,6 +150,7 @@ export default {
             productes: "",
             botiga:"",
             id:"",
+            user:""
         };
     },
     mounted() {
@@ -164,8 +165,11 @@ export default {
         });
 
         axios.get("/api/perfilBotiga/"+this.$route.params.id).then((res) => {
-            console.log(res.data[0])
         this.botiga = res.data[0];
+        });
+
+        axios.get("/api/user/" + this.$route.params.id).then((res) => {
+            this.user = res.data[0];
         });
 
     },

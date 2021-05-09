@@ -113,6 +113,11 @@ export default {
                     component: PerfilBotiga,
                     name: "ProductesBotiga"
                 },
+                {
+                    path: "/user/:id",
+                    component: PerfilBotiga,
+                    name: "User"
+                },
             ]
         }
     ]

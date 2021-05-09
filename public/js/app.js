@@ -3681,7 +3681,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       productes: "",
       botiga: "",
-      id: ""
+      id: "",
+      user: ""
     };
   },
   mounted: function mounted() {
@@ -3695,8 +3696,10 @@ __webpack_require__.r(__webpack_exports__);
       _this.productes = res.data;
     });
     axios.get("/api/perfilBotiga/" + this.$route.params.id).then(function (res) {
-      console.log(res.data[0]);
       _this.botiga = res.data[0];
+    });
+    axios.get("/api/user/" + this.$route.params.id).then(function (res) {
+      _this.user = res.data[0];
     });
   },
   methods: {}
@@ -41405,7 +41408,7 @@ var render = function() {
                   _c("img", {
                     staticClass: "profile-user-img img-fluid img-circle",
                     attrs: {
-                      src: "/images/avatars/" + this.user.profile_pic,
+                      src: "/images/botigues/" + this.botiga.img_perfil,
                       alt: "User profile picture"
                     }
                   })
@@ -45107,17 +45110,41 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("h5", { staticClass: "widget-user-desc text-right" }, [
-                    _vm._v("Sector")
+                    _vm._v(_vm._s(this.user.nom))
                   ])
                 ]
               ),
               _vm._v(" "),
-              _vm._m(0),
+              _c("div", { staticClass: "widget-user-image pt-5" }, [
+                _c("img", {
+                  staticClass: "img-circle border-4",
+                  staticStyle: {
+                    height: "200px",
+                    width: "200px",
+                    "margin-top": "25%",
+                    "margin-left": "-30%"
+                  },
+                  attrs: {
+                    src: "/images/botigues/" + this.botiga.img_perfil,
+                    alt: "User Avatar"
+                  }
+                })
+              ]),
               _vm._v(" "),
               _c("div", { staticClass: "card-footer" }, [
-                _vm._m(1),
+                _vm._m(0),
                 _vm._v(" "),
-                _vm._m(2),
+                _c("div", { staticClass: "row" }, [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-2" }, [
+                    _c("h4", { staticClass: "text-center" }, [
+                      _vm._v(_vm._s(this.botiga.nom))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(2)
+                ]),
                 _vm._v(" "),
                 _c("br"),
                 _vm._v(" "),
@@ -45259,23 +45286,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "widget-user-image pt-5" }, [
-      _c("img", {
-        staticClass: "img-circle border-0",
-        staticStyle: {
-          height: "200px",
-          width: "200px",
-          "margin-top": "25%",
-          "margin-left": "-30%"
-        },
-        attrs: { src: "/images/avatars/default.jpg", alt: "User Avatar" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-sm-4" }, [
         _c("div", { staticClass: "description-block" }, [
@@ -45300,15 +45310,13 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-5" }, [_c("hr")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-2" }, [
-        _c("h4", { staticClass: "text-center" }, [_vm._v("Nom botiga")])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-5" }, [_c("hr")])
-    ])
+    return _c("div", { staticClass: "col-md-5" }, [_c("hr")])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-5" }, [_c("hr")])
   },
   function() {
     var _vm = this
@@ -63821,6 +63829,10 @@ __webpack_require__.r(__webpack_exports__);
       path: "/productesBotiga/:id",
       component: _components_PerfilBotigaComponent__WEBPACK_IMPORTED_MODULE_12__["default"],
       name: "ProductesBotiga"
+    }, {
+      path: "/user/:id",
+      component: _components_PerfilBotigaComponent__WEBPACK_IMPORTED_MODULE_12__["default"],
+      name: "User"
     }]
   }]
 });
