@@ -49411,10 +49411,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "input-group-append" }, [
       _c("div", { staticClass: "input-group-text" }, [
-        _c("span", {
-          staticClass: "fas fa-feather-alt",
-          staticStyle: { color: "#ff6565" }
-        })
+        _c("span", { staticClass: "fas fa-feather-alt" })
       ])
     ])
   },
