@@ -22,7 +22,7 @@ class CreateProductesTable extends Migration
             $table->string('imatge');
             $table->string('preu');
             $table->string('stock');
-            $table->string('actiu');
+            $table->string('actiu')->nullable();
             $table->foreignId('id_categoria')->constrained('categories');
             $table->timestamps();
             $table->string('visites');

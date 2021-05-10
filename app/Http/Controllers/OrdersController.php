@@ -57,12 +57,12 @@ class OrdersController extends Controller
         $id = Auth::id();
         $ordre = Order::having('id_usuari', '=', $id)
             ->having('rebut', '=', 1)
+            ->orderBy('id', 'DESC')
             ->get();
         $productes = [];
         foreach ($ordre as $ord) {
-            $producte = OrderLin::where("id_ordre", $ord->id)->get();
+            $producte = OrderLin::with("productes", 'productes.botiga')->where("id_ordre", $ord->id)->get();
             array_push($productes, $producte);
-
         }
         return $productes;
     }

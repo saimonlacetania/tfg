@@ -2529,6 +2529,218 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2598,6 +2810,8 @@ __webpack_require__.r(__webpack_exports__);
     axios.get("/api/botiga").then(function (res2) {
       _this.botiga = res2.data[0];
       _this.user = _this.botiga.user;
+      _this.form["id_botiga"] = _this.botiga.user.id;
+      _this.form2["id_botiga"] = _this.botiga.user.id;
       _this.form_botiga["id"] = _this.botiga.id;
       _this.form_botiga["nom"] = _this.botiga.nom;
       _this.form_botiga["descripcio"] = _this.botiga.descripcio;
@@ -2655,9 +2869,9 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get("/api/producte/" + id).then(function (res) {
         _this6.$swal({
-          title: 'Editar Producte',
+          title: "Editar Producte",
           html: "\n                    <form>\n                            <div class=\"card-body register-card-body\">\n\n                                <div class=\"form-group mb-3\">\n                                    <label for=\"imatge\">Imatge del Producte</label>\n                                    <div class=\"input-group\">\n                                    <div class=\"custom-file\">\n                                        <input \n                                            @change=\"fileSelected3\"\n                                            type=\"file\" \n                                            class=\"custom-file-input\" \n                                            id=\"imatge\"\n                                        >\n                                        <label v-if=\"!files4 || !files4.length\" class=\"custom-file-label\" for=\"imatge\">Tria un fitxer</label>\n                                        <span v-else>\n                                            <label v-for=\"file4 in files4\" :key=\"file4.name\" class=\"custom-file-label\" for=\"imatge\">{{file4.name}}</label>\n                                        </span>\n                                    </div>\n                                    <div class=\"input-group-append\">\n                                        <span class=\"input-group-text\">\n                                            <i class=\"fas fa-image\"></i>\n                                        </span>\n                                    </div>\n                                    </div>\n                                </div>\n\n                                <div class=\"input-group mb-3\">\n                                    <div class=\"input-group mb-3\" v-if=\"errors.ref\">\n                                        <label class=\"col-form-label\" for=\"number\"\n                                            ><i class=\"far fa-times-circle\"></i>\n                                            {{ errors.ref[0] }}</label\n                                        >\n                                        <br />\n                                    </div>\n                                    <input\n                                        name=\"ref\"\n                                        type=\"text\"\n                                        class=\"form-control\"\n                                        placeholder=\"Ref\"\n                                        v-model=\"form2.ref\"\n                                    />\n                                    <div class=\"input-group-append\">\n                                        <div class=\"input-group-text\">\n                                            <span class=\"fas fa-asterisk\"></span>\n                                        </div>\n                                    </div>\n                                </div>\n\n                                <div class=\"input-group mb-3\">\n                                    <div class=\"input-group mb-3\" v-if=\"errors.nom\">\n                                        <label class=\"col-form-label\" for=\"number\"\n                                            ><i class=\"far fa-times-circle\"></i>\n                                            {{ errors.nom[0] }}</label\n                                        >\n                                        <br />\n                                    </div>\n                                    <input\n                                        name=\"nom\"\n                                        type=\"text\"\n                                        class=\"form-control\"\n                                        placeholder=\"Nom\"\n                                        v-model=\"form2.nom\"\n                                    />\n                                    <div class=\"input-group-append\">\n                                        <div class=\"input-group-text\">\n                                            <span class=\"\"></span>\n                                        </div>\n                                    </div>\n                                </div>\n\n                                <div class=\"form-group\">\n                                    <label for=\"categoria\">Categoria</label>\n                                    <select \n                                        class=\"form-control\" \n                                        id=\"categoria\"\n                                        v-model=\"form2.categoria\">\n                                            <option v-for=\"categoria in categories\" :key=\"categoria.id\" :value=\"categoria.id\">\n                                                {{categoria.nom}}\n                                            </option>\n                                    </select>\n                                </div>\n\n                                <label for=\"desc\">Descripcio del producte</label><br />\n                                <div class=\"form-group mb-3\">\n                                    <div class=\"input-group mb-3\" v-if=\"errors.desc\">\n                                        <label class=\"col-form-label\" for=\"number\"\n                                            ><i class=\"far fa-times-circle\"></i>\n                                            {{ errors.desc[0] }}</label\n                                        >\n                                        <br />\n                                    </div>\n                                    \n                                    <textarea \n                                        class=\"form-control\" \n                                        type=\"text\"\n                                        id=\"desc\" \n                                        name=\"desc\"\n                                        v-model=\"form2.desc\"\n                                        rows=\"3\">\n                                    </textarea>\n                                    \n                                </div>\n\n                                <div class=\"input-group mb-3\">\n                                    <div class=\"input-group mb-3\" v-if=\"errors.preu\">\n                                        <label class=\"col-form-label\" for=\"number\"\n                                            ><i class=\"far fa-times-circle\"></i>\n                                            {{ errors.preu[0] }}</label\n                                        >\n                                        <br />\n                                    </div>\n                                    <input\n                                        type=\"number\"\n                                        class=\"form-control\"\n                                        placeholder=\"Preu\"\n                                        name=\"preu\"\n                                        v-model=\"form2.preu\"\n                                    />\n                                    <div class=\"input-group-append\">\n                                        <div class=\"input-group-text\">\n                                            <span class=\"fas fa-euro-sign\"></span>\n                                        </div>\n                                    </div>\n                                </div>\n\n                                <div class=\"input-group mb-3\">\n                                    <div class=\"input-group mb-3\" v-if=\"errors.stock\">\n                                        <label class=\"col-form-label\" for=\"number\"\n                                            ><i class=\"far fa-times-circle\"></i>\n                                            {{ errors.stock[0] }}</label\n                                        >\n                                        <br />\n                                    </div>\n                                    <input\n                                        type=\"number\"\n                                        class=\"form-control\"\n                                        placeholder=\"Stock\"\n                                        name=\"stock\"\n                                        v-model=\"form2.stock\"\n                                    />\n                                    <div class=\"input-group-append\">\n                                        <div class=\"input-group-text\">\n                                            <span class=\"fas fa-layer-group\"></span>\n                                        </div>\n                                    </div>\n                                </div>\n\n                                <div class=\"form-check\">\n                                    <input \n                                        class=\"form-check-input\"   \n                                        type=\"checkbox\" \n                                        value=\"0\" \n                                        id=\"actiu\"\n                                        v-model=\"form2.actiu\">\n                                    <label class=\"form-check-label\" for=\"actiu\">\n                                        Producte actiu\n                                    </label>\n                                </div>\n                            </div>\n                            <!-- /.form-box -->\n                            </form>\n                    ",
-          confirmButtonText: 'Edita',
+          confirmButtonText: "Edita",
           focusConfirm: false,
           preConfirm: function preConfirm() {
             axios.get("/api/producte/" + id).then(function (res) {
@@ -2686,14 +2900,14 @@ __webpack_require__.r(__webpack_exports__);
       // Use sweetalert2
       this.$swal({
         toast: true,
-        position: 'top-end',
-        icon: 'success',
-        title: 'Guardat correctament',
+        position: "top-end",
+        icon: "success",
+        title: "Guardat correctament",
         showConfirmButton: false,
         timer: 3000,
         didOpen: function didOpen(toast) {
-          toast.addEventListener('mouseenter', Swal.stopTimer);
-          toast.addEventListener('mouseleave', Swal.resumeTimer);
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
         }
       });
     },
@@ -2701,14 +2915,14 @@ __webpack_require__.r(__webpack_exports__);
       // Use sweetalert2
       this.$swal({
         toast: true,
-        position: 'top-end',
-        icon: 'error',
-        title: 'Error al guardar',
+        position: "top-end",
+        icon: "error",
+        title: "Error al guardar",
         showConfirmButton: false,
         timer: 3000,
         didOpen: function didOpen(toast) {
-          toast.addEventListener('mouseenter', Swal.stopTimer);
-          toast.addEventListener('mouseleave', Swal.resumeTimer);
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
         }
       });
     },
@@ -4593,51 +4807,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       user: "",
       wishlist: "",
-      orders: ""
+      orders: "",
+      ordersP: ""
     };
   },
   mounted: function mounted() {
@@ -10140,7 +10316,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.nav-link.active {\r\n    background-color: #ff6565 !important;\r\n    color: white !important;\n}\n.nav-link {\r\n    text-decoration: none !important;\r\n    color: white !important;\n}\r\n", ""]);
+exports.push([module.i, "\n.nav-link.active {\n  background-color: #ff6565 !important;\n  color: white !important;\n}\n.nav-link {\n  text-decoration: none !important;\n  color: white !important;\n}\n", ""]);
 
 // exports
 
@@ -10159,7 +10335,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.custom-file-input:lang(en) ~ .custom-file-label::after {\n    content: \"Busca\";\n    visibility: hidden;\n}\n", ""]);
+exports.push([module.i, "\n.custom-file-input:lang(en) ~ .custom-file-label::after {\n  content: \"Busca\";\n  visibility: hidden;\n}\n", ""]);
 
 // exports
 
@@ -10178,7 +10354,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#registre {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\r\ninput[type=\"date\"]::-webkit-inner-spin-button {\r\n  display: none;\n}\r\n", ""]);
+exports.push([module.i, "\n#registre {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\ninput[type=\"date\"]::-webkit-inner-spin-button {\n  display: none;\n}\n", ""]);
 
 // exports
 
@@ -10216,7 +10392,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.wrapper {\r\n  height: 100%;\n}\nbody,\r\nhtml {\r\n  height: 100%;\n}\n.main-header {\r\n  color: #c22847 !important;\n}\r\n", ""]);
+exports.push([module.i, "\n.wrapper {\n  height: 100%;\n}\nbody,\nhtml {\n  height: 100%;\n}\n.main-header {\n  color: #c22847 !important;\n}\n", ""]);
 
 // exports
 
@@ -10235,7 +10411,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.zoom {\r\n  transition: transform 0.2s; /* Animation */\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.zoom {\n  transition: transform 0.2s; /* Animation */\n}\n\n", ""]);
 
 // exports
 
@@ -10254,7 +10430,26 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.nav-link.active {\r\n  background-color: #ff6565 !important;\r\n  color: white !important;\n}\n.nav-link {\r\n  text-decoration: none !important;\r\n  color: white !important;\n}\r\n", ""]);
+exports.push([module.i, "\n.nav-link.active {\n  background-color: #ff6565 !important;\n  color: white !important;\n}\n.nav-link {\n  text-decoration: none !important;\n  color: white !important;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PerfilComponent.vue?vue&type=style&index=1&lang=css&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/PerfilComponent.vue?vue&type=style&index=1&lang=css& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.timeline::before {\n  background-color: #ffffff;\n}\n", ""]);
 
 // exports
 
@@ -10273,7 +10468,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.zoom {\r\n  transition: transform 0.2s; /* Animation */\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.zoom {\n  transition: transform 0.2s; /* Animation */\n}\n\n", ""]);
 
 // exports
 
@@ -10292,7 +10487,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#registre {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\r\ninput[type=\"date\"]::-webkit-inner-spin-button {\r\n    display: none;\n}\r\n", ""]);
+exports.push([module.i, "\n#registre {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\ninput[type=\"date\"]::-webkit-inner-spin-button {\n    display: none;\n}\n", ""]);
 
 // exports
 
@@ -10311,7 +10506,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card-img-top {\r\n  height: 15rem;\r\n  -o-object-fit: contain;\r\n     object-fit: contain;\n}\n.zoom {\r\n  transition: transform 0.2s; /* Animation */\n}\n.zoom:hover {\r\n  transform: scale(1.05); /* (150% zoom)*/\n}\r\n", ""]);
+exports.push([module.i, "\n.card-img-top {\n  height: 15rem;\n  -o-object-fit: contain;\n     object-fit: contain;\n}\n.zoom {\n  transition: transform 0.2s; /* Animation */\n}\n.zoom:hover {\n  transform: scale(1.05); /* (150% zoom)*/\n}\n", ""]);
 
 // exports
 
@@ -41744,6 +41939,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PerfilComponent.vue?vue&type=style&index=1&lang=css&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/PerfilComponent.vue?vue&type=style&index=1&lang=css& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./PerfilComponent.vue?vue&type=style&index=1&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PerfilComponent.vue?vue&type=style&index=1&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProductesComponent.vue?vue&type=style&index=0&lang=css&":
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ProductesComponent.vue?vue&type=style&index=0&lang=css& ***!
@@ -46130,11 +46355,19 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("h3", { staticClass: "profile-username text-center" }, [
-                  _vm._v(_vm._s(this.user.nom))
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(this.user.nom) +
+                      "\n              "
+                  )
                 ]),
                 _vm._v(" "),
                 _c("p", { staticClass: "text-muted text-center" }, [
-                  _vm._v(_vm._s(this.botiga.descripcio))
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(this.botiga.descripcio) +
+                      "\n              "
+                  )
                 ]),
                 _vm._v(" "),
                 _c(
@@ -46144,7 +46377,10 @@ var render = function() {
                     _c("li", { staticClass: "list-group-item" }, [
                       _c("strong", [
                         _c("i", { staticClass: "fas fa-map-marker-alt mr-1" }),
-                        _vm._v(" " + _vm._s(this.botiga.poblacio))
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(this.botiga.poblacio)
+                        )
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "text-muted" }, [
@@ -46153,7 +46389,11 @@ var render = function() {
                       _vm._v(" "),
                       _c("small", [
                         _c("p", { staticClass: "text-muted" }, [
-                          _vm._v(_vm._s(this.botiga.provincia))
+                          _vm._v(
+                            "\n                      " +
+                              _vm._s(this.botiga.provincia) +
+                              "\n                    "
+                          )
                         ])
                       ])
                     ]),
@@ -46174,18 +46414,22 @@ var render = function() {
                     _vm._v(" "),
                     _c("li", { staticClass: "list-group-item" }, [
                       _c("i", { staticClass: "fab fa-instagram mr-1" }),
-                      _vm._v(" " + _vm._s(this.botiga.instagram)),
+                      _vm._v(
+                        "\n                  " + _vm._s(this.botiga.instagram)
+                      ),
                       _c("br"),
                       _vm._v(" "),
                       _c("i", { staticClass: "fab fa-facebook mr-1" }),
-                      _vm._v(" " + _vm._s(this.botiga.facebook)),
+                      _vm._v(
+                        "\n                  " + _vm._s(this.botiga.facebook)
+                      ),
                       _c("br"),
                       _vm._v(" "),
                       _c("i", { staticClass: "fab fa-twitter mr-1" }),
                       _vm._v(
-                        " " +
+                        "\n                  " +
                           _vm._s(this.botiga.twitter) +
-                          "\n                        "
+                          "\n                "
                       )
                     ])
                   ]
@@ -46326,7 +46570,7 @@ var render = function() {
                                               staticClass: "far fa-times-circle"
                                             }),
                                             _vm._v(
-                                              "\n                                                " +
+                                              "\n                              " +
                                                 _vm._s(_vm.errors.telf_1[0])
                                             )
                                           ]
@@ -46395,7 +46639,7 @@ var render = function() {
                                               staticClass: "far fa-times-circle"
                                             }),
                                             _vm._v(
-                                              "\n                                                " +
+                                              "\n                              " +
                                                 _vm._s(_vm.errors.telf_2[0])
                                             )
                                           ]
@@ -46470,7 +46714,7 @@ var render = function() {
                                               staticClass: "far fa-times-circle"
                                             }),
                                             _vm._v(
-                                              "\n                                                " +
+                                              "\n                              " +
                                                 _vm._s(_vm.errors.email[0])
                                             )
                                           ]
@@ -46543,7 +46787,7 @@ var render = function() {
                                               staticClass: "far fa-times-circle"
                                             }),
                                             _vm._v(
-                                              "\n                                                " +
+                                              "\n                              " +
                                                 _vm._s(_vm.errors.direccio[0])
                                             )
                                           ]
@@ -46616,7 +46860,7 @@ var render = function() {
                                               staticClass: "far fa-times-circle"
                                             }),
                                             _vm._v(
-                                              "\n                                                " +
+                                              "\n                              " +
                                                 _vm._s(_vm.errors.cp[0])
                                             )
                                           ]
@@ -46677,7 +46921,7 @@ var render = function() {
                                               staticClass: "far fa-times-circle"
                                             }),
                                             _vm._v(
-                                              "\n                                                " +
+                                              "\n                              " +
                                                 _vm._s(_vm.errors.poblacio[0])
                                             )
                                           ]
@@ -46744,7 +46988,7 @@ var render = function() {
                                                   "far fa-times-circle"
                                               }),
                                               _vm._v(
-                                                "\n                                                " +
+                                                "\n                                " +
                                                   _vm._s(
                                                     _vm.errors.provincia[0]
                                                   )
@@ -46786,7 +47030,7 @@ var render = function() {
                                               staticClass: "far fa-times-circle"
                                             }),
                                             _vm._v(
-                                              "\n                                                " +
+                                              "\n                              " +
                                                 _vm._s(_vm.errors.cif[0])
                                             )
                                           ]
@@ -46849,7 +47093,7 @@ var render = function() {
                                               staticClass: "far fa-times-circle"
                                             }),
                                             _vm._v(
-                                              "\n                                                " +
+                                              "\n                              " +
                                                 _vm._s(_vm.errors.nif[0])
                                             )
                                           ]
@@ -47156,7 +47400,7 @@ var render = function() {
                                   },
                                   [
                                     _vm._v(
-                                      "                 \n\n                                        Guardar\n                                        "
+                                      "\n                            Guardar\n                          "
                                     )
                                   ]
                                 )
@@ -47234,9 +47478,9 @@ var render = function() {
                                                   ]
                                                 ),
                                                 _vm._v(
-                                                  "\n                                                " +
+                                                  "\n                                      " +
                                                     _vm._s(producte.stock) +
-                                                    "\n                                                "
+                                                    "\n                                      "
                                                 ),
                                                 _c(
                                                   "button",
@@ -47485,7 +47729,7 @@ var render = function() {
                                             staticClass: "far fa-times-circle"
                                           }),
                                           _vm._v(
-                                            "\n                                        " +
+                                            "\n                            " +
                                               _vm._s(_vm.errors.ref[0])
                                           )
                                         ]
@@ -47546,7 +47790,7 @@ var render = function() {
                                             staticClass: "far fa-times-circle"
                                           }),
                                           _vm._v(
-                                            "\n                                        " +
+                                            "\n                            " +
                                               _vm._s(_vm.errors.nom[0])
                                           )
                                         ]
@@ -47640,9 +47884,9 @@ var render = function() {
                                     },
                                     [
                                       _vm._v(
-                                        "\n                                            " +
+                                        "\n                            " +
                                           _vm._s(categoria.nom) +
-                                          "\n                                        "
+                                          "\n                          "
                                       )
                                     ]
                                   )
@@ -47673,7 +47917,7 @@ var render = function() {
                                             staticClass: "far fa-times-circle"
                                           }),
                                           _vm._v(
-                                            "\n                                        " +
+                                            "\n                            " +
                                               _vm._s(_vm.errors.desc[0])
                                           )
                                         ]
@@ -47733,7 +47977,7 @@ var render = function() {
                                             staticClass: "far fa-times-circle"
                                           }),
                                           _vm._v(
-                                            "\n                                        " +
+                                            "\n                            " +
                                               _vm._s(_vm.errors.preu[0])
                                           )
                                         ]
@@ -47794,7 +48038,7 @@ var render = function() {
                                             staticClass: "far fa-times-circle"
                                           }),
                                           _vm._v(
-                                            "\n                                        " +
+                                            "\n                            " +
                                               _vm._s(_vm.errors.stock[0])
                                           )
                                         ]
@@ -47899,7 +48143,7 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    "\n                                    Producte actiu\n                                "
+                                    "\n                          Producte actiu\n                        "
                                   )
                                 ]
                               )
@@ -47923,7 +48167,7 @@ var render = function() {
                                   },
                                   [
                                     _vm._v(
-                                      "\n                                        Puja producte\n                                    "
+                                      "\n                            Puja producte\n                          "
                                     )
                                   ]
                                 )
@@ -50955,7 +51199,99 @@ var render = function() {
                     ]
                   ),
                   _vm._v(" "),
-                  _vm._m(7)
+                  _c(
+                    "div",
+                    { staticClass: "tab-pane", attrs: { id: "timeline" } },
+                    _vm._l(_vm.ordersP, function(order) {
+                      return _c("span", { key: order.index }, [
+                        _c(
+                          "div",
+                          { staticClass: "timeline timeline-inverse border" },
+                          [
+                            _c("div", { staticClass: "time-label" }, [
+                              _c("span", {}, [
+                                _c("i", {
+                                  staticClass: "fas fa-shipping-fast"
+                                }),
+                                _vm._v(
+                                  "\n                          " +
+                                    _vm._s("Ordre nº" + order[0].id_ordre) +
+                                    "\n                        "
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _vm._l(order, function(product) {
+                              return _c("div", { key: product.index }, [
+                                _c("i", {
+                                  staticClass: "fas fa-box-open text-white",
+                                  staticStyle: { "background-color": "#ff6565" }
+                                }),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "timeline-item" }, [
+                                  _c(
+                                    "span",
+                                    { staticClass: "time" },
+                                    [
+                                      _c("i", {
+                                        staticClass: "fas fa-store-alt"
+                                      }),
+                                      _c(
+                                        "router-link",
+                                        {
+                                          staticStyle: {
+                                            color: "#ff6565",
+                                            "text-decoration": "none"
+                                          },
+                                          attrs: {
+                                            to: {
+                                              name: "PerfilBotiga",
+                                              params: {
+                                                id: product.productes.botiga.id
+                                              }
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                              " +
+                                              _vm._s(
+                                                product.productes.botiga.nom
+                                              )
+                                          )
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("h3", { staticClass: "timeline-header" }, [
+                                    _vm._v(
+                                      "\n                            " +
+                                        _vm._s(product.productes.nom) +
+                                        "\n                          "
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "small",
+                                    { staticClass: "timeline-body" },
+                                    [
+                                      _vm._v(
+                                        _vm._s(product.productes.descripcio)
+                                      )
+                                    ]
+                                  )
+                                ])
+                              ])
+                            })
+                          ],
+                          2
+                        )
+                      ])
+                    }),
+                    0
+                  )
                 ])
               ])
             ])
@@ -51082,108 +51418,6 @@ var staticRenderFns = [
         _c("th", [_vm._v("Preu")]),
         _vm._v(" "),
         _c("th", { staticClass: "text-right" }, [_vm._v("Eliminar")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "tab-pane", attrs: { id: "timeline" } }, [
-      _c("div", { staticClass: "timeline timeline-inverse" }, [
-        _c("div", { staticClass: "time-label" }, [
-          _c("span", { staticClass: "bg-secondary" }, [
-            _c("i", { staticClass: "far fa-calendar-alt" }),
-            _vm._v(
-              "\n                        26/04/2021\n                      "
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c("i", { staticClass: "fas fa-gift bg-maroon" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "timeline-item" }, [
-            _c("span", { staticClass: "time" }, [
-              _c("i", { staticClass: "fas fa-store-alt" }),
-              _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
-            ]),
-            _vm._v(" "),
-            _c("h3", { staticClass: "timeline-header" }, [
-              _vm._v("Nom del producte")
-            ]),
-            _vm._v(" "),
-            _c("small", { staticClass: "timeline-body" }, [
-              _vm._v("Descripcio producte")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c("i", { staticClass: "fas fa-gift bg-maroon" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "timeline-item" }, [
-            _c("span", { staticClass: "time" }, [
-              _c("i", { staticClass: "fas fa-store-alt" }),
-              _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
-            ]),
-            _vm._v(" "),
-            _c("h3", { staticClass: "timeline-header" }, [
-              _vm._v("Nom del producte")
-            ]),
-            _vm._v(" "),
-            _c("small", { staticClass: "timeline-body" }, [
-              _vm._v("Descripcio producte")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c("i", { staticClass: "fas fa-gift bg-maroon" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "timeline-item" }, [
-            _c("span", { staticClass: "time" }, [
-              _c("i", { staticClass: "fas fa-store-alt" }),
-              _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
-            ]),
-            _vm._v(" "),
-            _c("h3", { staticClass: "timeline-header" }, [
-              _vm._v("Nom del producte")
-            ]),
-            _vm._v(" "),
-            _c("small", { staticClass: "timeline-body" }, [
-              _vm._v("Descripcio producte")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "time-label" }, [
-          _c("span", { staticClass: "bg-secondary" }, [
-            _c("i", { staticClass: "far fa-calendar-alt" }),
-            _vm._v(
-              "\n                        27/10/2020\n                      "
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c("i", { staticClass: "fas fa-gift bg-maroon" }),
-          _vm._v(" "),
-          _c("div", { staticClass: "timeline-item" }, [
-            _c("span", { staticClass: "time" }, [
-              _c("i", { staticClass: "fas fa-store-alt" }),
-              _c("a", { attrs: { href: "#" } }, [_vm._v(" Nom Botiga")])
-            ]),
-            _vm._v(" "),
-            _c("h3", { staticClass: "timeline-header" }, [
-              _vm._v("Nom del producte")
-            ]),
-            _vm._v(" "),
-            _c("small", { staticClass: "timeline-body" }, [
-              _vm._v("Descripcio producte")
-            ])
-          ])
-        ])
       ])
     ])
   }
@@ -68967,15 +69201,18 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************************************!*\
   !*** ./resources/js/components/PerfilComponent.vue ***!
   \*****************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _PerfilComponent_vue_vue_type_template_id_85951714___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PerfilComponent.vue?vue&type=template&id=85951714& */ "./resources/js/components/PerfilComponent.vue?vue&type=template&id=85951714&");
 /* harmony import */ var _PerfilComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PerfilComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/PerfilComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _PerfilComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PerfilComponent.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/PerfilComponent.vue?vue&type=style&index=0&lang=css&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _PerfilComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _PerfilComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _PerfilComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PerfilComponent.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/PerfilComponent.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _PerfilComponent_vue_vue_type_style_index_1_lang_css___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./PerfilComponent.vue?vue&type=style&index=1&lang=css& */ "./resources/js/components/PerfilComponent.vue?vue&type=style&index=1&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -68984,7 +69221,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_4__["default"])(
   _PerfilComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _PerfilComponent_vue_vue_type_template_id_85951714___WEBPACK_IMPORTED_MODULE_0__["render"],
   _PerfilComponent_vue_vue_type_template_id_85951714___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -69006,7 +69243,7 @@ component.options.__file = "resources/js/components/PerfilComponent.vue"
 /*!******************************************************************************!*\
   !*** ./resources/js/components/PerfilComponent.vue?vue&type=script&lang=js& ***!
   \******************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69028,6 +69265,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./PerfilComponent.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PerfilComponent.vue?vue&type=style&index=0&lang=css&");
 /* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
+
+/***/ }),
+
+/***/ "./resources/js/components/PerfilComponent.vue?vue&type=style&index=1&lang=css&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/PerfilComponent.vue?vue&type=style&index=1&lang=css& ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilComponent_vue_vue_type_style_index_1_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./PerfilComponent.vue?vue&type=style&index=1&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PerfilComponent.vue?vue&type=style&index=1&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilComponent_vue_vue_type_style_index_1_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilComponent_vue_vue_type_style_index_1_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilComponent_vue_vue_type_style_index_1_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_PerfilComponent_vue_vue_type_style_index_1_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
@@ -69588,8 +69841,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\abram\Documents\GitHub\tfg\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\abram\Documents\GitHub\tfg\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/tfg/tfg/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/tfg/tfg/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
