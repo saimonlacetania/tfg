@@ -2523,8 +2523,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2617,9 +2615,7 @@ __webpack_require__.r(__webpack_exports__);
     eliminarProducte: function eliminarProducte(id) {
       var _this2 = this;
 
-      axios.post("/api/eliminarProducte/" + id).then(function (res) {
-        console.log(res);
-      });
+      axios.post("/api/eliminarProducte/" + id).then(function (res) {});
       axios.get("/api/productes").then(function (res) {
         _this2.productes = res.data;
       });
@@ -2627,9 +2623,7 @@ __webpack_require__.r(__webpack_exports__);
     restarStock: function restarStock(id) {
       var _this3 = this;
 
-      axios.post("/api/restarStock/" + id).then(function (res) {
-        console.log(res);
-      });
+      axios.post("/api/restarStock/" + id).then(function (res) {});
       axios.get("/api/productes").then(function (res) {
         _this3.productes = res.data;
       });
@@ -2637,39 +2631,38 @@ __webpack_require__.r(__webpack_exports__);
     sumarStock: function sumarStock(id) {
       var _this4 = this;
 
-      axios.post("/api/sumarStock/" + id).then(function (res) {
-        console.log(res);
-      });
+      axios.post("/api/sumarStock/" + id).then(function (res) {});
       axios.get("/api/productes").then(function (res) {
         _this4.productes = res.data;
       });
     },
-    editarProducte: function editarProducte(id) {
+    canviEstat: function canviEstat(id) {
       var _this5 = this;
 
-      axios.post("/api/producte/" + id).then(function (res) {
-        var producte = res.data;
-      }).then(this.$swal({
-        title: 'Editar Producte',
-        html: "\n                    <form>\n                            <div class=\"card-body register-card-body\">\n\n                                <div class=\"form-group mb-3\">\n                                    <label for=\"imatge\">Imatge del Producte</label>\n                                    <div class=\"input-group\">\n                                    <div class=\"custom-file\">\n                                        <input \n                                            @change=\"fileSelected3\"\n                                            type=\"file\" \n                                            class=\"custom-file-input\" \n                                            id=\"imatge\"\n                                        >\n                                        <label v-if=\"!files4 || !files4.length\" class=\"custom-file-label\" for=\"imatge\">Tria un fitxer</label>\n                                        <span v-else>\n                                            <label v-for=\"file4 in files4\" :key=\"file4.name\" class=\"custom-file-label\" for=\"imatge\">{{file4.name}}</label>\n                                        </span>\n                                    </div>\n                                    <div class=\"input-group-append\">\n                                        <span class=\"input-group-text\">\n                                            <i class=\"fas fa-image\"></i>\n                                        </span>\n                                    </div>\n                                    </div>\n                                </div>\n\n                                <div class=\"input-group mb-3\">\n                                    <div class=\"input-group mb-3\" v-if=\"errors.ref\">\n                                        <label class=\"col-form-label\" for=\"number\"\n                                            ><i class=\"far fa-times-circle\"></i>\n                                            {{ errors.ref[0] }}</label\n                                        >\n                                        <br />\n                                    </div>\n                                    <input\n                                        name=\"ref\"\n                                        type=\"text\"\n                                        class=\"form-control\"\n                                        placeholder=\"Ref\"\n                                        v-model=\"form2.ref\"\n                                    />\n                                    <div class=\"input-group-append\">\n                                        <div class=\"input-group-text\">\n                                            <span class=\"fas fa-asterisk\"></span>\n                                        </div>\n                                    </div>\n                                </div>\n\n                                <div class=\"input-group mb-3\">\n                                    <div class=\"input-group mb-3\" v-if=\"errors.nom\">\n                                        <label class=\"col-form-label\" for=\"number\"\n                                            ><i class=\"far fa-times-circle\"></i>\n                                            {{ errors.nom[0] }}</label\n                                        >\n                                        <br />\n                                    </div>\n                                    <input\n                                        name=\"nom\"\n                                        type=\"text\"\n                                        class=\"form-control\"\n                                        placeholder=\"Nom\"\n                                        v-model=\"form2.nom\"\n                                    />\n                                    <div class=\"input-group-append\">\n                                        <div class=\"input-group-text\">\n                                            <span class=\"\"></span>\n                                        </div>\n                                    </div>\n                                </div>\n\n                                <div class=\"form-group\">\n                                    <label for=\"categoria\">Categoria</label>\n                                    <select \n                                        class=\"form-control\" \n                                        id=\"categoria\"\n                                        v-model=\"form2.categoria\">\n                                            <option v-for=\"categoria in categories\" :key=\"categoria.id\" :value=\"categoria.id\">\n                                                {{categoria.nom}}\n                                            </option>\n                                    </select>\n                                </div>\n\n                                <label for=\"desc\">Descripcio del producte</label><br />\n                                <div class=\"form-group mb-3\">\n                                    <div class=\"input-group mb-3\" v-if=\"errors.desc\">\n                                        <label class=\"col-form-label\" for=\"number\"\n                                            ><i class=\"far fa-times-circle\"></i>\n                                            {{ errors.desc[0] }}</label\n                                        >\n                                        <br />\n                                    </div>\n                                    \n                                    <textarea \n                                        class=\"form-control\" \n                                        type=\"text\"\n                                        id=\"desc\" \n                                        name=\"desc\"\n                                        v-model=\"form2.desc\"\n                                        rows=\"3\">\n                                    </textarea>\n                                    \n                                </div>\n\n                                <div class=\"input-group mb-3\">\n                                    <div class=\"input-group mb-3\" v-if=\"errors.preu\">\n                                        <label class=\"col-form-label\" for=\"number\"\n                                            ><i class=\"far fa-times-circle\"></i>\n                                            {{ errors.preu[0] }}</label\n                                        >\n                                        <br />\n                                    </div>\n                                    <input\n                                        type=\"number\"\n                                        class=\"form-control\"\n                                        placeholder=\"Preu\"\n                                        name=\"preu\"\n                                        v-model=\"form2.preu\"\n                                    />\n                                    <div class=\"input-group-append\">\n                                        <div class=\"input-group-text\">\n                                            <span class=\"fas fa-euro-sign\"></span>\n                                        </div>\n                                    </div>\n                                </div>\n\n                                <div class=\"input-group mb-3\">\n                                    <div class=\"input-group mb-3\" v-if=\"errors.stock\">\n                                        <label class=\"col-form-label\" for=\"number\"\n                                            ><i class=\"far fa-times-circle\"></i>\n                                            {{ errors.stock[0] }}</label\n                                        >\n                                        <br />\n                                    </div>\n                                    <input\n                                        type=\"number\"\n                                        class=\"form-control\"\n                                        placeholder=\"Stock\"\n                                        name=\"stock\"\n                                        v-model=\"form2.stock\"\n                                    />\n                                    <div class=\"input-group-append\">\n                                        <div class=\"input-group-text\">\n                                            <span class=\"fas fa-layer-group\"></span>\n                                        </div>\n                                    </div>\n                                </div>\n\n                                <div class=\"form-check\">\n                                    <input \n                                        class=\"form-check-input\"   \n                                        type=\"checkbox\" \n                                        value=\"0\" \n                                        id=\"actiu\"\n                                        v-model=\"form2.actiu\">\n                                    <label class=\"form-check-label\" for=\"actiu\">\n                                        Producte actiu\n                                    </label>\n                                </div>\n                            </div>\n                            <!-- /.form-box -->\n                            </form>\n                    ",
-        confirmButtonText: 'Edita',
-        focusConfirm: false,
-        preConfirm: function preConfirm() {
-          var login = Swal.getPopup().querySelector('#login').value;
-          var password = Swal.getPopup().querySelector('#password').value;
+      axios.post("/api/canviEstat/" + id).then(function (res) {});
+      axios.get("/api/productes").then(function (res) {
+        _this5.productes = res.data;
+      });
+    },
+    editarProducte: function editarProducte(id) {
+      var _this6 = this;
 
-          if (!login || !password) {
-            Swal.showValidationMessage("Please enter login and password");
+      axios.get("/api/producte/" + id).then(function (res) {
+        _this6.$swal({
+          title: 'Editar Producte',
+          html: "\n                    <form>\n                            <div class=\"card-body register-card-body\">\n\n                                <div class=\"form-group mb-3\">\n                                    <label for=\"imatge\">Imatge del Producte</label>\n                                    <div class=\"input-group\">\n                                    <div class=\"custom-file\">\n                                        <input \n                                            @change=\"fileSelected3\"\n                                            type=\"file\" \n                                            class=\"custom-file-input\" \n                                            id=\"imatge\"\n                                        >\n                                        <label v-if=\"!files4 || !files4.length\" class=\"custom-file-label\" for=\"imatge\">Tria un fitxer</label>\n                                        <span v-else>\n                                            <label v-for=\"file4 in files4\" :key=\"file4.name\" class=\"custom-file-label\" for=\"imatge\">{{file4.name}}</label>\n                                        </span>\n                                    </div>\n                                    <div class=\"input-group-append\">\n                                        <span class=\"input-group-text\">\n                                            <i class=\"fas fa-image\"></i>\n                                        </span>\n                                    </div>\n                                    </div>\n                                </div>\n\n                                <div class=\"input-group mb-3\">\n                                    <div class=\"input-group mb-3\" v-if=\"errors.ref\">\n                                        <label class=\"col-form-label\" for=\"number\"\n                                            ><i class=\"far fa-times-circle\"></i>\n                                            {{ errors.ref[0] }}</label\n                                        >\n                                        <br />\n                                    </div>\n                                    <input\n                                        name=\"ref\"\n                                        type=\"text\"\n                                        class=\"form-control\"\n                                        placeholder=\"Ref\"\n                                        v-model=\"form2.ref\"\n                                    />\n                                    <div class=\"input-group-append\">\n                                        <div class=\"input-group-text\">\n                                            <span class=\"fas fa-asterisk\"></span>\n                                        </div>\n                                    </div>\n                                </div>\n\n                                <div class=\"input-group mb-3\">\n                                    <div class=\"input-group mb-3\" v-if=\"errors.nom\">\n                                        <label class=\"col-form-label\" for=\"number\"\n                                            ><i class=\"far fa-times-circle\"></i>\n                                            {{ errors.nom[0] }}</label\n                                        >\n                                        <br />\n                                    </div>\n                                    <input\n                                        name=\"nom\"\n                                        type=\"text\"\n                                        class=\"form-control\"\n                                        placeholder=\"Nom\"\n                                        v-model=\"form2.nom\"\n                                    />\n                                    <div class=\"input-group-append\">\n                                        <div class=\"input-group-text\">\n                                            <span class=\"\"></span>\n                                        </div>\n                                    </div>\n                                </div>\n\n                                <div class=\"form-group\">\n                                    <label for=\"categoria\">Categoria</label>\n                                    <select \n                                        class=\"form-control\" \n                                        id=\"categoria\"\n                                        v-model=\"form2.categoria\">\n                                            <option v-for=\"categoria in categories\" :key=\"categoria.id\" :value=\"categoria.id\">\n                                                {{categoria.nom}}\n                                            </option>\n                                    </select>\n                                </div>\n\n                                <label for=\"desc\">Descripcio del producte</label><br />\n                                <div class=\"form-group mb-3\">\n                                    <div class=\"input-group mb-3\" v-if=\"errors.desc\">\n                                        <label class=\"col-form-label\" for=\"number\"\n                                            ><i class=\"far fa-times-circle\"></i>\n                                            {{ errors.desc[0] }}</label\n                                        >\n                                        <br />\n                                    </div>\n                                    \n                                    <textarea \n                                        class=\"form-control\" \n                                        type=\"text\"\n                                        id=\"desc\" \n                                        name=\"desc\"\n                                        v-model=\"form2.desc\"\n                                        rows=\"3\">\n                                    </textarea>\n                                    \n                                </div>\n\n                                <div class=\"input-group mb-3\">\n                                    <div class=\"input-group mb-3\" v-if=\"errors.preu\">\n                                        <label class=\"col-form-label\" for=\"number\"\n                                            ><i class=\"far fa-times-circle\"></i>\n                                            {{ errors.preu[0] }}</label\n                                        >\n                                        <br />\n                                    </div>\n                                    <input\n                                        type=\"number\"\n                                        class=\"form-control\"\n                                        placeholder=\"Preu\"\n                                        name=\"preu\"\n                                        v-model=\"form2.preu\"\n                                    />\n                                    <div class=\"input-group-append\">\n                                        <div class=\"input-group-text\">\n                                            <span class=\"fas fa-euro-sign\"></span>\n                                        </div>\n                                    </div>\n                                </div>\n\n                                <div class=\"input-group mb-3\">\n                                    <div class=\"input-group mb-3\" v-if=\"errors.stock\">\n                                        <label class=\"col-form-label\" for=\"number\"\n                                            ><i class=\"far fa-times-circle\"></i>\n                                            {{ errors.stock[0] }}</label\n                                        >\n                                        <br />\n                                    </div>\n                                    <input\n                                        type=\"number\"\n                                        class=\"form-control\"\n                                        placeholder=\"Stock\"\n                                        name=\"stock\"\n                                        v-model=\"form2.stock\"\n                                    />\n                                    <div class=\"input-group-append\">\n                                        <div class=\"input-group-text\">\n                                            <span class=\"fas fa-layer-group\"></span>\n                                        </div>\n                                    </div>\n                                </div>\n\n                                <div class=\"form-check\">\n                                    <input \n                                        class=\"form-check-input\"   \n                                        type=\"checkbox\" \n                                        value=\"0\" \n                                        id=\"actiu\"\n                                        v-model=\"form2.actiu\">\n                                    <label class=\"form-check-label\" for=\"actiu\">\n                                        Producte actiu\n                                    </label>\n                                </div>\n                            </div>\n                            <!-- /.form-box -->\n                            </form>\n                    ",
+          confirmButtonText: 'Edita',
+          focusConfirm: false,
+          preConfirm: function preConfirm() {
+            axios.get("/api/producte/" + id).then(function (res) {
+              var producte = res.data;
+            });
+            return producte;
           }
-
-          return {
-            login: login,
-            password: password
-          };
-        }
-      }).then(function (result) {
-        _this5.$swal("\n                    Login: ".concat(result.value.login, "\n                    Password: ").concat(result.value.password, "\n                ").trim());
-      }));
+        }).then(function (result) {
+          console.log(result);
+        });
+      });
     },
     fileSelected: function fileSelected(e) {
       this.files = e.target.files;
@@ -2714,7 +2707,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     saveForm: function saveForm() {
-      var _this6 = this;
+      var _this7 = this;
 
       var that = this;
       console.log(that.form);
@@ -2739,20 +2732,20 @@ __webpack_require__.r(__webpack_exports__);
           "Content-Type": "multipart/form-data"
         }
       }).then(function (res) {
-        _this6.toastCorrecte();
+        _this7.toastCorrecte();
 
         location.reload();
       })["catch"](function (error) {
         that.errors = error.response.data.errors;
 
-        _this6.toastIncorrecte();
+        _this7.toastIncorrecte();
 
         console.log(that.errors);
       });
       console.log(that.form);
     },
     saveBotiga: function saveBotiga() {
-      var _this7 = this;
+      var _this8 = this;
 
       var that = this;
       console.log(that.form_botiga);
@@ -2790,14 +2783,14 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (res) {
         console.log(res);
 
-        _this7.toastCorrecte();
+        _this8.toastCorrecte();
 
         location.reload();
       })["catch"](function (error) {
         that.errors = error.response.data.errors;
         console.log(that.errors);
 
-        _this7.toastIncorrecte();
+        _this8.toastIncorrecte();
       });
     }
   }
@@ -47032,7 +47025,7 @@ var render = function() {
                                                 )
                                               ]),
                                               _vm._v(" "),
-                                              producte.actiu
+                                              producte.actiu == 1
                                                 ? _c(
                                                     "td",
                                                     {
@@ -47044,7 +47037,6 @@ var render = function() {
                                                           "form-check-input",
                                                         attrs: {
                                                           type: "checkbox",
-                                                          value: "0",
                                                           id: "actiu",
                                                           checked: ""
                                                         },
@@ -47062,7 +47054,7 @@ var render = function() {
                                                   )
                                                 : _vm._e(),
                                               _vm._v(" "),
-                                              !producte.actiu
+                                              producte.actiu == 0
                                                 ? _c(
                                                     "td",
                                                     {
@@ -47074,7 +47066,6 @@ var render = function() {
                                                           "form-check-input",
                                                         attrs: {
                                                           type: "checkbox",
-                                                          value: "0",
                                                           id: "actiu"
                                                         },
                                                         on: {
@@ -47888,7 +47879,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Preu")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Actiu")]),
+        _c("th", { staticClass: "text-right" }, [_vm._v("Actiu")]),
         _vm._v(" "),
         _c("th", { staticClass: "text-right" }),
         _vm._v(" "),

@@ -25,6 +25,7 @@ Route::get('producte/{id}', 'ProductesController@producte');
 Route::post('eliminarProducte/{id}', 'ProductesController@eliminarProducte');
 Route::post('restarStock/{id}', 'ProductesController@restarStock');
 Route::post('sumarStock/{id}', 'ProductesController@sumarStock');
+Route::post('canviEstat/{id}', 'ProductesController@canviEstat');
 
 Route::get('veureCistella', 'CistellaController@veureCistella');
 Route::post('afegirCistella/{id}', 'CistellaController@afegirCistella');

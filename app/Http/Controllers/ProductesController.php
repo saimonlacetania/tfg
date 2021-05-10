@@ -45,6 +45,13 @@ class ProductesController extends Controller
         $producte->save();
         return true;
     }
+    public function canviEstat($id)
+    {
+        $producte = Producte::find($id);
+        $producte->actiu = !($producte->actiu);
+        $producte->save();
+        return true;
+    }
     public function afegirProducte(Request $request)
     {
 

@@ -322,7 +322,7 @@
                                             <th>Nom</th>
                                             <th>Stock</th>
                                             <th>Preu</th>
-                                            <th>Actiu</th>
+                                            <th class="text-right">Actiu</th>
                                             <th class="text-right"></th>
                                             <th class="text-right"></th>
                                             </tr>
@@ -350,21 +350,19 @@
                                                 </td>
                                                 <td>{{ producte.preu }} €</td>
 
-                                                <td v-if="producte.actiu" class="text-right">
+                                                <td v-if="producte.actiu==1" class="text-right">
                                                     <input 
                                                     v-on:change="canviEstat(producte.id)"
                                                     class="form-check-input"   
                                                     type="checkbox" 
-                                                    value="0" 
                                                     id="actiu"
                                                     checked>
                                                 </td>
-                                                <td v-if="!producte.actiu" class="text-right">
+                                                <td v-if="producte.actiu==0" class="text-right">
                                                     <input 
                                                     v-on:change="canviEstat(producte.id)"
                                                     class="form-check-input"   
-                                                    type="checkbox" 
-                                                    value="0" 
+                                                    type="checkbox"  
                                                     id="actiu">
                                                 </td>
                                                 <td class="text-right">
@@ -695,7 +693,6 @@ export default {
     methods: {
         eliminarProducte(id) {
             axios.post("/api/eliminarProducte/" + id).then((res) => {
-                console.log(res);
             });
             axios.get("/api/productes").then((res) => {
                 this.productes = res.data;
@@ -703,7 +700,6 @@ export default {
         },
         restarStock(id) {
             axios.post("/api/restarStock/" + id).then((res) => {
-                console.log(res);
             });
             axios.get("/api/productes").then((res) => {
                 this.productes = res.data;
@@ -711,16 +707,22 @@ export default {
         },
         sumarStock(id) {
             axios.post("/api/sumarStock/" + id).then((res) => {
-                console.log(res);
+            });
+            axios.get("/api/productes").then((res) => {
+                this.productes = res.data;
+            });
+        },
+        canviEstat(id) {
+            axios.post("/api/canviEstat/" + id).then((res) => {
             });
             axios.get("/api/productes").then((res) => {
                 this.productes = res.data;
             });
         },
         editarProducte(id){
-            axios.post("/api/producte/" + id).then((res) => {
-                let producte = res.data;
-            }).then(
+            axios.get("/api/producte/" + id).then((res) => {
+                
+            
                 this.$swal({
                 title: 'Editar Producte',
                 html: `
@@ -889,20 +891,17 @@ export default {
                 confirmButtonText: 'Edita',
                 focusConfirm: false,
                 preConfirm: () => {
-                    const login = Swal.getPopup().querySelector('#login').value
-                    const password = Swal.getPopup().querySelector('#password').value
-                    if (!login || !password) {
-                    Swal.showValidationMessage(`Please enter login and password`)
-                    }
-                    return { login: login, password: password }
+                    axios.get("/api/producte/" + id).then((res) => {
+                        const producte = res.data;
+                    });
+                    return producte;
                 }
                 }).then((result) => {
-                this.$swal(`
-                    Login: ${result.value.login}
-                    Password: ${result.value.password}
-                `.trim())
+                    console.log(result);
                 })
-            )},
+            });
+        },
+
         fileSelected(e) {
         this.files = e.target.files
         console.log(this.files);
