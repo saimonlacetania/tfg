@@ -139,24 +139,24 @@ html {
                 </p>
               </a>
               <ul class="nav nav-treeview nav-child-indent">
-                <li class="nav-item">
-                  <router-link class="nav-link" :to="'/botiga'">
-                    <i class="fas fa-feather-alt nav-icon text-dark"></i>
-                    <p class="text-dark">Perfil</p>
-                  </router-link>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="fas fa-tag nav-icon text-dark"></i>
-                    <p class="text-dark">Productes</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="fas fa-chart-line nav-icon text-dark"></i>
-                    <p class="text-dark">Estadístiques</p>
-                  </a>
-                </li>
+                  <li class="nav-item">
+                      <router-link class="nav-link" :to="'/botiga'">
+                          <i class="fas fa-feather-alt nav-icon text-dark"></i>
+                          <p class="text-dark">Perfil</p>
+                      </router-link>
+                  </li>
+                  <li class="nav-item">
+                      <router-link class="nav-link" :to="{ name: 'PerfilBotiga', params: { id: user.id } }">
+                          <i class="fas fa-feather-alt nav-icon text-dark"></i>
+                          <p class="text-dark">Perfil públic</p>
+                      </router-link>
+                  </li>
+                  <li class="nav-item">
+                      <a href="#" class="nav-link">
+                          <i class="fas fa-chart-line nav-icon text-dark"></i>
+                          <p class="text-dark">Estadístiques</p>
+                      </a>
+                  </li>
               </ul>
             </li>
             <span v-else>

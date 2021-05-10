@@ -28,6 +28,12 @@ class UserController extends Controller
         return response()->json($usuari, 200);
     }
 
+    public function perfilUser($id)
+    {
+        $user = User::where("id",$id)->get();
+        return $user;
+    }
+
     public function modifyPassword(Request $request)
     {
         if ($request->validate([

@@ -17,6 +17,7 @@ class CreateOrdersLinTable extends Migration
             $table->id();
             $table->foreignId('id_ordre')->constrained('orders');
             $table->foreignId('id_producte')->constrained('productes');
+            $table->foreignId('id_botiga')->constrained('botigues');
             $table->string('quantitat');
             $table->timestamps();
         });

@@ -23,24 +23,30 @@ class CistellaController extends Controller
     public function afegirCistella($id_producte)
     {
         $producte = Producte::find($id_producte);
-        $id = Auth::id();
-        $cistella = Cistella::where('id_usuari', $id)
-            ->where('id_productes', $id_producte)
-            ->where('pagat', 0)
-            ->get();
-        if (count($cistella) > 0) {
-            Cistella::where('id_usuari', $id)
-                ->where('id_productes', $id_producte)
-                ->increment('quantitat', 1);
-            return $id;
+        if ($producte->stock == 0) {
+            return response()->json("No queda stock", 422);
         } else {
-            Cistella::create([
-                'id_usuari' => $id,
-                'id_productes' => $producte->id,
-                'quantitat' => 1,
-                'pagat' => 0,
-            ]);
-            return $id;
+            $producte->stock = $producte->stock - 1;
+            $producte->save();
+            $id = Auth::id();
+            $cistella = Cistella::where('id_usuari', $id)
+                ->where('id_productes', $id_producte)
+                ->where('pagat', 0)
+                ->get();
+            if (count($cistella) > 0) {
+                Cistella::where('id_usuari', $id)
+                    ->where('id_productes', $id_producte)
+                    ->increment('quantitat', 1);
+                return $id;
+            } else {
+                Cistella::create([
+                    'id_usuari' => $id,
+                    'id_productes' => $producte->id,
+                    'quantitat' => 1,
+                    'pagat' => 0,
+                ]);
+                return $id;
+            }
         }
     }
 
@@ -58,6 +64,9 @@ class CistellaController extends Controller
             $this->eliminarCistella($id_cistella);
         } else {
             $cistella->quantitat = $cistella->quantitat - 1;
+            $producte = Producte::find($cistella->id_productes);
+            $producte->stock = $producte->stock + 1;
+            $producte->save();
             $cistella->save();
         }
 
@@ -66,6 +75,12 @@ class CistellaController extends Controller
     public function sumarCistella($id_cistella)
     {
         $cistella = Cistella::find($id_cistella);
+        $producte = Producte::find($cistella->id_productes);
+        if ($producte->stock == 0) {
+            return response()->json("No queda stock", 422);
+        }
+        $producte->stock = $producte->stock - 1;
+        $producte->save();
         $cistella->quantitat = $cistella->quantitat + 1;
         $cistella->save();
         return true;

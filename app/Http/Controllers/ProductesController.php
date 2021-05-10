@@ -52,6 +52,11 @@ class ProductesController extends Controller
         $producte->save();
         return true;
     }
+    public function producteBotiga($id)
+    {
+        $producte = Producte::where("id_botiga",$id)->get();
+        return $producte;
+    }
     public function afegirProducte(Request $request)
     {
 

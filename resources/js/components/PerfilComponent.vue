@@ -8,6 +8,7 @@
   color: white !important;
 }
 </style>
+
 <template>
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -50,20 +51,11 @@
                     {{ this.user.provincia }}
                   </span>
                 </p>
-                <br />
-                <button
-                  @click="loginCorrecte"
-                  type="button"
-                  class="btn btn-block btn-primary"
-                >
-                  Hello world
-                </button>
-                <br />
                 <router-link
                   class="btn btn-secondary btn-block"
                   :to="'editarPerfil'"
                 >
-                  <b>Configuració general</b></router-link
+                  Configuració general</router-link
                 >
               </div>
               <!-- /.card-body -->
@@ -103,63 +95,39 @@
                   <div class="tab-pane" id="activity">
                     <div class="card mb-3">
                       <div class="row g-0">
-                        <div class="col-md-4">
-                          <img
-                            src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg"
-                            alt="..."
-                            class="img-fluid p-1 ml-4"
-                            style="
-                              height: 150px;
-                              width: 150px;
-                              border-radius: 150px;
-                            "
-                          />
-                        </div>
-                        <div class="col-md-8">
-                          <div class="card-body">
-                            <h5 class="card-title">Producte</h5>
-                            <p class="card-text">
-                              This is a wider card with supporting text below as
-                              a natural lead-in to additional content. This
-                              content is a little bit longer.
-                            </p>
-                            <p class="card-text">
-                              <small class="text-muted"
-                                >Comprat el 26/04/2021</small
-                              >
-                            </p>
+                        <div class="col-md-12">
+                          <div class="card-header">
+                            <h3 class="card-title">Les meves comandes</h3>
                           </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card mb-3">
-                      <div class="row">
-                        <div class="col-md-4">
-                          <img
-                            src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg"
-                            alt="..."
-                            class="img-fluid p-1 ml-4"
-                            style="
-                              height: 150px;
-                              width: 150px;
-                              border-radius: 150px;
-                            "
-                          />
-                        </div>
-                        <div class="col-md-8">
-                          <div class="card-body">
-                            <h5 class="card-title">Producte</h5>
-                            <p class="card-text">
-                              This is a wider card with supporting text below as
-                              a natural lead-in to additional content. This
-                              content is a little bit longer.
-                            </p>
-                            <p class="card-text">
-                              <small class="text-muted"
-                                >Comprat el 26/04/2021</small
-                              >
-                            </p>
+                          <div class="card-body table-responsive">
+                            <table class="table">
+                              <thead class="">
+                                <tr>
+                                  <th>Id</th>
+                                  <th>Estat</th>
+                                  <th>Direcció d'enviament</th>
+                                  <th class="text-right">Veure</th>
+                                </tr>
+                              </thead>
+                              <tbody class="">
+                                <tr v-for="comanda in orders" :key="comanda.id">
+                                  <td>{{ comanda.id }}</td>
+                                  <td v-if="comanda.enviat == 1">Enviat</td>
+                                  <td v-else>Preparant l'enviament...</td>
+                                  <td>
+                                    {{ comanda.direccio }},
+                                    {{ comanda.poblacio }}
+                                  </td>
+                                  <td class="text-right">
+                                    <span
+                                      ><button class="btn btn-primary">
+                                        <i class="fas fa-eye"></i>
+                                      </button>
+                                    </span>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
                           </div>
                         </div>
                       </div>
@@ -325,15 +293,24 @@ export default {
     return {
       user: "",
       wishlist: "",
+      orders: "",
     };
   },
   mounted() {
     axios.get("/api/user").then((res) => {
       this.user = res.data;
     });
-    axios.get("/api/veureWishlist").then((res) => {
-      this.wishlist = res.data;
+    axios.get("/api/veureWishlist").then((res2) => {
+      this.wishlist = res2.data;
       console.log(this.wishlist);
+    });
+    axios.get("/api/veureOrdreUser").then((res3) => {
+      this.orders = res3.data;
+      console.log(this.orders);
+    });
+    axios.get("/api/veureOrdreProcessadaUser").then((res4) => {
+      this.ordersP = res4.data;
+      console.log(this.ordersP);
     });
   },
   methods: {

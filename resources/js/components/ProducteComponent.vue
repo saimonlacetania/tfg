@@ -43,7 +43,12 @@
                 <div
                   class="btn btn-primary btn-lg btn-flat"
                   v-on:click="afegirCistella"
+                  v-if="this.producte.stock > 0"
                 >
+                  <i class="fas fa-cart-plus fa-lg mr-2"></i>
+                  Afegir a la cistella
+                </div>
+                <div class="btn btn-secondary btn-lg btn-flat disabled" v-else>
                   <i class="fas fa-cart-plus fa-lg mr-2"></i>
                   Afegir a la cistella
                 </div>
@@ -157,6 +162,10 @@ export default {
         .then((res) => {
           console.log(res);
           this.toastCorrecte();
+          axios.get("/api/producte/" + this.$route.params.id).then((res) => {
+            console.log(res);
+            this.producte = res.data;
+          });
           return false;
         })
         .catch((error) => {

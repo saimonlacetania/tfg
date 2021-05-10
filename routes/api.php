@@ -35,7 +35,9 @@ Route::post('afegirWishlist/{id}', 'WishlistController@afegirWishlist');
 Route::post('eliminarWishlist/{id}', 'WishlistController@eliminarWishlist');
 Route::post('restarCistella/{id}', 'CistellaController@restarCistella');
 Route::post('sumarCistella/{id}', 'CistellaController@sumarCistella');
-
+Route::post('crearOrdre', 'OrdersController@crearOrdre');
+Route::get('veureOrdreUser', 'OrdersController@veureOrdreUser');
+Route::get('veureOrdreProcessadaUser', 'OrdersController@veureOrdreProcessadaUser');
 Route::post('register', 'RegisterController@register');
 Route::post('crearBotiga', 'CrearBotigaController@crearBotiga');
 Route::post('login', 'LoginController@login');
@@ -49,3 +51,8 @@ Route::get('productes', 'BotigaController@productes');
 Route::get('categories', 'CategoriesController@categories');
 Route::post('afegirProducte', 'ProductesController@afegirProducte');
 Route::post('modifyShop', 'BotigaController@modifica_botiga');
+
+Route::get('perfil/{id}', 'BotigaController@botigaId');
+Route::get('productesBotiga/{id}', 'ProductesController@producteBotiga');
+Route::get('perfilBotiga/{id}', 'BotigaController@perfilBotiga');
+Route::get('user/{id}', 'UserController@perfilUser');

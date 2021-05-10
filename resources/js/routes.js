@@ -10,13 +10,15 @@ import Contacte from "./components/contacteComponent";
 import Producte from "./components/ProducteComponent";
 import Botiga from "./components/BotigaComponent";
 import CrearBotiga from "./components/CrearBotigaComponent";
+
+import PerfilBotiga from "./components/PerfilBotigaComponent";
 import Cistella from "./components/CistellaComponent";
+
 
 export default {
     mode: "history",
     linkActiveClass: "font-semibold",
-    routes: [
-        {
+    routes: [{
             path: "*",
             component: NotFound
         },
@@ -24,8 +26,7 @@ export default {
             path: "/",
             component: Example,
             name: "Home",
-            children: [
-                {
+            children: [{
                     // UserProfile will be rendered inside User's <router-view>
                     // when /user/:id/profile is matched
                     path: "/profile",
@@ -104,6 +105,21 @@ export default {
                     path: "/contacte",
                     component: Contacte,
                     name: "Contacte"
+                },
+                {
+                    path: "/perfil/:id",
+                    component: PerfilBotiga,
+                    name: "PerfilBotiga"
+                },
+                {
+                    path: "/productesBotiga/:id",
+                    component: PerfilBotiga,
+                    name: "ProductesBotiga"
+                },
+                {
+                    path: "/user/:id",
+                    component: PerfilBotiga,
+                    name: "User"
                 },
                 {
                     path: "/cistella",

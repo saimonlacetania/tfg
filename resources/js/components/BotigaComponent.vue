@@ -11,20 +11,26 @@
 
 <template>
     <div class="content-wrapper">
-        <!--<h1>Component botiga</h1>
-        <h2>{{this.botiga.nom}}</h2>
-        <h2>{{this.botiga.descripcio}}</h2>-->
-
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>El meu perfil</h1>
+                </div>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        </section>
         <section class="content">
         <div class="container-fluid">
             <div class="row">
             <div class="col-md-3">
                 <!-- Profile Image -->
-                <div class="card card-navy card-outline">
+                <div class="card card-dark card-outline">
                     <div class="card-body box-profile">
                         <div class="text-center">
                             <img class="profile-user-img img-fluid img-circle"
-                                :src="'/images/avatars/' + this.user.profile_pic"
+                                :src="'/images/botigues/' + this.botiga.img_perfil"
                                 alt="User profile picture">
                         </div>
                         <h3 class="profile-username text-center">{{this.user.nom}}</h3>
@@ -51,17 +57,17 @@
             </div>
             <!-- /.col -->
             <div class="col-md-9">
-                <div class="card card-navy card-outline">
+                <div class="card card-dark">
                 <div class="card-header p-2">
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#mod_perfil" data-toggle="tab" style="color:#0a0421 !important;">Modificar perfil</a>
+                            <a class="nav-link active" href="#mod_perfil" data-toggle="tab">Modificar perfil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#editarProductes" data-toggle="tab" style="color:#0a0421 !important;">Editar productes</a>
+                            <a class="nav-link" href="#editarProductes" data-toggle="tab" >Editar productes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#puja_producte" data-toggle="tab" style="color:#0a0421 !important;">Pujar productes</a>
+                            <a class="nav-link" href="#puja_producte" data-toggle="tab" >Pujar productes</a>
                         </li>
                     </ul>
                 </div>
@@ -920,7 +926,7 @@ export default {
             toast: true,
             position: 'top-end',
             icon: 'success',
-            title: 'Producte afegit correctament',
+            title: 'Guardat correctament',
             showConfirmButton: false,
             timer: 3000,
             didOpen: (toast) => {
@@ -935,7 +941,7 @@ export default {
             toast: true,
             position: 'top-end',
             icon: 'error',
-            title: 'Error al afegir el producte',
+            title: 'Error al guardar',
             showConfirmButton: false,
             timer: 3000,
             didOpen: (toast) => {
