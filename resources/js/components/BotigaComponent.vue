@@ -675,7 +675,9 @@ export default {
             this.botiga = res2.data[0];
             this.user = this.botiga.user;
             
-            
+            this.form["id_botiga"] = this.botiga.id_usuari;
+            this.form2["id_botiga"] = this.botiga.id_usuari;
+
             this.form_botiga["id"] = this.botiga.id;
             this.form_botiga["nom"] = this.botiga.nom;
             this.form_botiga["descripcio"] = this.botiga.descripcio;
