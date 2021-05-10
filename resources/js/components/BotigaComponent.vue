@@ -360,7 +360,8 @@
                                                     <input 
                                                     v-on:change="canviEstat(producte.id)"
                                                     class="form-check-input"   
-                                                    type="checkbox" 
+                                                    type="checkbox"
+                                                    value="true" 
                                                     id="actiu"
                                                     checked>
                                                 </td>
@@ -368,7 +369,8 @@
                                                     <input 
                                                     v-on:change="canviEstat(producte.id)"
                                                     class="form-check-input"   
-                                                    type="checkbox"  
+                                                    type="checkbox" 
+                                                    value="false" 
                                                     id="actiu">
                                                 </td>
                                                 <td class="text-right">
@@ -675,6 +677,9 @@ export default {
             this.botiga = res2.data[0];
             this.user = this.botiga.user;
             
+            this.form["id_botiga"] = this.botiga.id_usuari;
+            this.form2["id_botiga"] = this.botiga.id_usuari;
+            
             
             this.form_botiga["id"] = this.botiga.id;
             this.form_botiga["nom"] = this.botiga.nom;
@@ -726,186 +731,7 @@ export default {
             });
         },
         editarProducte(id){
-            axios.get("/api/producte/" + id).then((res) => {
-                
-            
-                this.$swal({
-                title: 'Editar Producte',
-                html: `
-                    <form>
-                            <div class="card-body register-card-body">
-
-                                <div class="form-group mb-3">
-                                    <label for="imatge">Imatge del Producte</label>
-                                    <div class="input-group">
-                                    <div class="custom-file">
-                                        <input 
-                                            @change="fileSelected3"
-                                            type="file" 
-                                            class="custom-file-input" 
-                                            id="imatge"
-                                        >
-                                        <label v-if="!files4 || !files4.length" class="custom-file-label" for="imatge">Tria un fitxer</label>
-                                        <span v-else>
-                                            <label v-for="file4 in files4" :key="file4.name" class="custom-file-label" for="imatge">{{file4.name}}</label>
-                                        </span>
-                                    </div>
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">
-                                            <i class="fas fa-image"></i>
-                                        </span>
-                                    </div>
-                                    </div>
-                                </div>
-
-                                <div class="input-group mb-3">
-                                    <div class="input-group mb-3" v-if="errors.ref">
-                                        <label class="col-form-label" for="number"
-                                            ><i class="far fa-times-circle"></i>
-                                            {{ errors.ref[0] }}</label
-                                        >
-                                        <br />
-                                    </div>
-                                    <input
-                                        name="ref"
-                                        type="text"
-                                        class="form-control"
-                                        placeholder="Ref"
-                                        v-model="form2.ref"
-                                    />
-                                    <div class="input-group-append">
-                                        <div class="input-group-text">
-                                            <span class="fas fa-asterisk"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="input-group mb-3">
-                                    <div class="input-group mb-3" v-if="errors.nom">
-                                        <label class="col-form-label" for="number"
-                                            ><i class="far fa-times-circle"></i>
-                                            {{ errors.nom[0] }}</label
-                                        >
-                                        <br />
-                                    </div>
-                                    <input
-                                        name="nom"
-                                        type="text"
-                                        class="form-control"
-                                        placeholder="Nom"
-                                        v-model="form2.nom"
-                                    />
-                                    <div class="input-group-append">
-                                        <div class="input-group-text">
-                                            <span class=""></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="categoria">Categoria</label>
-                                    <select 
-                                        class="form-control" 
-                                        id="categoria"
-                                        v-model="form2.categoria">
-                                            <option v-for="categoria in categories" :key="categoria.id" :value="categoria.id">
-                                                {{categoria.nom}}
-                                            </option>
-                                    </select>
-                                </div>
-
-                                <label for="desc">Descripcio del producte</label><br />
-                                <div class="form-group mb-3">
-                                    <div class="input-group mb-3" v-if="errors.desc">
-                                        <label class="col-form-label" for="number"
-                                            ><i class="far fa-times-circle"></i>
-                                            {{ errors.desc[0] }}</label
-                                        >
-                                        <br />
-                                    </div>
-                                    
-                                    <textarea 
-                                        class="form-control" 
-                                        type="text"
-                                        id="desc" 
-                                        name="desc"
-                                        v-model="form2.desc"
-                                        rows="3">
-                                    </textarea>
-                                    
-                                </div>
-
-                                <div class="input-group mb-3">
-                                    <div class="input-group mb-3" v-if="errors.preu">
-                                        <label class="col-form-label" for="number"
-                                            ><i class="far fa-times-circle"></i>
-                                            {{ errors.preu[0] }}</label
-                                        >
-                                        <br />
-                                    </div>
-                                    <input
-                                        type="number"
-                                        class="form-control"
-                                        placeholder="Preu"
-                                        name="preu"
-                                        v-model="form2.preu"
-                                    />
-                                    <div class="input-group-append">
-                                        <div class="input-group-text">
-                                            <span class="fas fa-euro-sign"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="input-group mb-3">
-                                    <div class="input-group mb-3" v-if="errors.stock">
-                                        <label class="col-form-label" for="number"
-                                            ><i class="far fa-times-circle"></i>
-                                            {{ errors.stock[0] }}</label
-                                        >
-                                        <br />
-                                    </div>
-                                    <input
-                                        type="number"
-                                        class="form-control"
-                                        placeholder="Stock"
-                                        name="stock"
-                                        v-model="form2.stock"
-                                    />
-                                    <div class="input-group-append">
-                                        <div class="input-group-text">
-                                            <span class="fas fa-layer-group"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-check">
-                                    <input 
-                                        class="form-check-input"   
-                                        type="checkbox" 
-                                        value="0" 
-                                        id="actiu"
-                                        v-model="form2.actiu">
-                                    <label class="form-check-label" for="actiu">
-                                        Producte actiu
-                                    </label>
-                                </div>
-                            </div>
-                            <!-- /.form-box -->
-                            </form>
-                    `,
-                confirmButtonText: 'Edita',
-                focusConfirm: false,
-                preConfirm: () => {
-                    axios.get("/api/producte/" + id).then((res) => {
-                        const producte = res.data;
-                    });
-                    return producte;
-                }
-                }).then((result) => {
-                    console.log(result);
-                })
-            });
+            this.$router.push({ name: "editarProducte", params: { id } });
         },
 
         fileSelected(e) {
@@ -964,7 +790,14 @@ export default {
             formData.append("desc", that.form["desc"]);
             formData.append("preu", that.form["preu"]);
             formData.append("stock", that.form["stock"]);
-            formData.append("actiu", that.form["actiu"]);
+            if (that.form["actiu"]==true) {
+                console.log("true");
+                that.form["actiu"]=1;
+                formData.append("actiu", that.form["actiu"]);    
+            } else {
+                that.form["actiu"]=0;
+                formData.append("actiu", that.form["actiu"]);
+            }
             formData.append("categoria", that.form["categoria"]);
             formData.append("visites", that.form["visites"]);
             
@@ -976,7 +809,8 @@ export default {
                 })
                 .then((res) => {
                 this.toastCorrecte();
-                location.reload();
+                console.log(that.form);
+                //location.reload();
                 })
                 .catch((error) => {
                 that.errors = error.response.data.errors;

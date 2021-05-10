@@ -223,14 +223,40 @@ html {
 
       <!-- /.sidebar -->
     </aside>
-
     <!-- PAGINA PRODUCTES -->
     <router-view></router-view>
+      <div id="cajacookies">
+      <p>
+      Aquesta web utilitza cookies per garantir la millor experiencia per l'usuari.
+      <a href="https://www.cookiesandyou.com/">Més info</a>.
+      <button v-on:click="aceptarCookies" class="pull-right"><i class="fa fa-times"></i> Acceptar i tancar</button>
+      </p>
+      </div>
   </div>
 </template>
+<style>
+  #cajacookies {
+    box-shadow: 0px 0px 5px 5px #808080;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    visibility: visible;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: 0px;
+    position: fixed;
+    bottom: 0;
+    left: 33%;
+    width: 47%;
+  }
 
+  #cajacookies button {
+    color: black;
+  }
+</style>
 <script>
 export default {
+  
   data() {
     return {
       user: "",
@@ -240,6 +266,11 @@ export default {
     axios.get("/api/user").then((res) => {
       this.user = res.data;
     });
+    /* ésto comprueba la localStorage si ya tiene la variable guardada */
+    if(localStorage.aceptaCookies == 'true'){
+        cajacookies.style.visibility = 'hidden';
+    }
+    
   },
   methods: {
     logout() {
@@ -250,6 +281,11 @@ export default {
         location.reload();
         return false;
       });
+    },
+    aceptarCookies() {
+      console.log("click")
+      localStorage.aceptaCookies = 'true';
+      cajacookies.style.visibility = 'hidden';
     },
   },
 };

@@ -132,7 +132,7 @@ export default {
         toast: true,
         position: "top-end",
         icon: "success",
-        title: "Producte afegit a la cistella",
+        title: "Producte afegit correctament",
         showConfirmButton: false,
         timer: 3000,
         didOpen: (toast) => {
