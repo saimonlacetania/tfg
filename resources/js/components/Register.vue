@@ -206,6 +206,37 @@ export default {
     },
 
     methods: {
+        registreCorrecte() {
+        // Use sweetalert2
+        this.$swal({
+            toast: true,
+            position: 'top-end',
+            icon: 'success',
+            title: 'Usuari creat correctament!',
+            showConfirmButton: false,
+            timer: 3000,
+            didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        });
+        },
+
+        registreIncorrecte() {
+        // Use sweetalert2
+        this.$swal({
+            toast: true,
+            position: 'top-end',
+            icon: 'error',
+            title: 'Error al registrar usuari!',
+            showConfirmButton: false,
+            timer: 3000,
+            didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        });
+        },
         saveForm() {
             let that = this;
             console.log(that.form);
@@ -214,10 +245,14 @@ export default {
                 .then(() => {
                     console.log("saved");
                     this.$router.push({ name: "Login" });
+                    this.registreCorrecte();
+                    return false
                 })
                 .catch(error => {
                     that.errors = error.response.data.errors;
                     console.log(that.errors);
+                    this.registreIncorrecte();
+                    return false;
                 });
         }
     }

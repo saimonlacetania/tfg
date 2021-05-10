@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Rules\MatchOldPassword;
 use App\User;
+use App\Models\Botiga;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Image;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -43,6 +45,16 @@ class UserController extends Controller
             $usuari->save();
             return response()->json($usuari, 200);
         }
+    }
+
+    public function botiga()
+    {
+        $id = Auth::id();
+
+        $botiga = Botiga::where('id_usuari', $id)
+            ->get();
+
+        return $botiga;
     }
 
     public function modifyProfile(Request $request)

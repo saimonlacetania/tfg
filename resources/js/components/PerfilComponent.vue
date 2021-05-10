@@ -70,8 +70,13 @@
                   <li class="nav-item">
                     <a
                       class="nav-link active"
-                      href="#activity"
+                      href="#wishlist"
                       data-toggle="tab"
+                      >Llista de desitjos</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#activity" data-toggle="tab"
                       >Les meves comandes</a
                     >
                   </li>
@@ -87,72 +92,94 @@
               <!-- les meves comandes -->
               <div class="card-body">
                 <div class="tab-content">
-                  <div class="active tab-pane" id="activity">
+                  <div class="tab-pane" id="activity">
                     <div class="card mb-3">
                       <div class="row g-0">
-                        <div class="col-md-4">
-                          <img
-                            src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg"
-                            alt="..."
-                            class="img-fluid p-1 ml-4"
-                            style="
-                              height: 150px;
-                              width: 150px;
-                              border-radius: 150px;
-                            "
-                          />
-                        </div>
-                        <div class="col-md-8">
-                          <div class="card-body">
-                            <h5 class="card-title">Producte</h5>
-                            <p class="card-text">
-                              This is a wider card with supporting text below as
-                              a natural lead-in to additional content. This
-                              content is a little bit longer.
-                            </p>
-                            <p class="card-text">
-                              <small class="text-muted"
-                                >Comprat el 26/04/2021</small
-                              >
-                            </p>
+                        <div class="col-md-12">
+                          <div class="card-header">
+                            <h3 class="card-title">Les meves comandes</h3>
                           </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="card mb-3">
-                      <div class="row">
-                        <div class="col-md-4">
-                          <img
-                            src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg"
-                            alt="..."
-                            class="img-fluid p-1 ml-4"
-                            style="
-                              height: 150px;
-                              width: 150px;
-                              border-radius: 150px;
-                            "
-                          />
-                        </div>
-                        <div class="col-md-8">
-                          <div class="card-body">
-                            <h5 class="card-title">Producte</h5>
-                            <p class="card-text">
-                              This is a wider card with supporting text below as
-                              a natural lead-in to additional content. This
-                              content is a little bit longer.
-                            </p>
-                            <p class="card-text">
-                              <small class="text-muted"
-                                >Comprat el 26/04/2021</small
-                              >
-                            </p>
+                          <div class="card-body table-responsive">
+                            <table class="table">
+                              <thead class="">
+                                <tr>
+                                  <th>Id</th>
+                                  <th>Estat</th>
+                                  <th>Direcció d'enviament</th>
+                                  <th class="text-right">Veure</th>
+                                </tr>
+                              </thead>
+                              <tbody class="">
+                                <tr v-for="comanda in orders" :key="comanda.id">
+                                  <td>{{ comanda.id }}</td>
+                                  <td v-if="comanda.enviat == 1">Enviat</td>
+                                  <td v-else>Preparant l'enviament...</td>
+                                  <td>
+                                    {{ comanda.direccio }},
+                                    {{ comanda.poblacio }}
+                                  </td>
+                                  <td class="text-right">
+                                    <span
+                                      ><button class="btn btn-primary">
+                                        <i class="fas fa-eye"></i>
+                                      </button>
+                                    </span>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <!-- /.les meves comandes -->
+
+                  <div class="active tab-pane" id="wishlist">
+                    <div class="card mb-3">
+                      <div class="row g-0">
+                        <div class="col-md-12">
+                          <div class="card-header">
+                            <h3 class="card-title">
+                              La meva llista de desitjos
+                            </h3>
+                          </div>
+                          <div class="card-body table-responsive">
+                            <table class="table">
+                              <thead class="">
+                                <tr>
+                                  <th>Nom</th>
+                                  <th>Referència</th>
+                                  <th>Preu</th>
+                                  <th class="text-right">Eliminar</th>
+                                </tr>
+                              </thead>
+                              <tbody class="">
+                                <tr
+                                  v-for="producte in wishlist"
+                                  :key="producte.id"
+                                >
+                                  <td>{{ producte.productes.nom }}</td>
+                                  <td>{{ producte.productes.ref }}</td>
+                                  <td>{{ producte.productes.preu }} €</td>
+                                  <td class="text-right">
+                                    <span
+                                      ><button
+                                        class="btn btn-danger"
+                                        @click="eliminarWishlist(producte.id)"
+                                      >
+                                        <i class="fas fa-trash"></i>
+                                      </button>
+                                    </span>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
                   <!-- TIMELINE tornar a comprar -->
                   <div class="tab-pane" id="timeline">
@@ -265,12 +292,51 @@ export default {
   data() {
     return {
       user: "",
+      wishlist: "",
+      orders: "",
     };
   },
   mounted() {
     axios.get("/api/user").then((res) => {
       this.user = res.data;
     });
+    axios.get("/api/veureWishlist").then((res2) => {
+      this.wishlist = res2.data;
+      console.log(this.wishlist);
+    });
+    axios.get("/api/veureOrdreUser").then((res3) => {
+      this.orders = res3.data;
+      console.log(this.orders);
+    });
+    axios.get("/api/veureOrdreProcessadaUser").then((res4) => {
+      this.ordersP = res4.data;
+      console.log(this.ordersP);
+    });
+  },
+  methods: {
+    loginCorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: "top-end",
+        icon: "success",
+        title: "Login correcte",
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+      });
+    },
+    eliminarWishlist(id) {
+      axios.post("/api/eliminarWishlist/" + id).then((res) => {
+        console.log(res);
+      });
+      axios.get("/api/veureWishlist").then((res) => {
+        this.wishlist = res.data;
+      });
+    },
   },
 };
 </script>

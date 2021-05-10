@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nom', 'cognoms', 'email', 'telefon', 'password', 'direccio', 'cp', 'poblacio', 'provincia', 'data_naix', 'profile_pic'
+        'nom', 'cognoms', 'email', 'telefon', 'password', 'direccio', 'cp', 'poblacio', 'provincia', 'data_naix', 'profile_pic',
     ];
 
     /**
@@ -35,5 +35,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected function botiga()
+    {
+        return $this->hasOne('App\Models\Botiga', 'id_usuari');
+    }
 
 }

@@ -42,7 +42,7 @@ class ProductesController extends Controller
         if ($request->file("imatge") != null) {
             Storage::disk('public')->put('productes', $request->file('imatge'));
             $thumbnailpath = public_path('images/productes/' . $request->file("imatge")->hashName());
-            $img = Image::make($thumbnailpath)->resize(150, 150);
+            $img = Image::make($thumbnailpath)->resize(500, 500);
             $img->save($thumbnailpath);
 
             Producte::create([

@@ -10,7 +10,10 @@ import Contacte from "./components/contacteComponent";
 import Producte from "./components/ProducteComponent";
 import Botiga from "./components/BotigaComponent";
 import CrearBotiga from "./components/CrearBotigaComponent";
+
 import PerfilBotiga from "./components/PerfilBotigaComponent";
+import Cistella from "./components/CistellaComponent";
+
 
 export default {
     mode: "history",
@@ -118,6 +121,11 @@ export default {
                     component: PerfilBotiga,
                     name: "User"
                 },
+                {
+                    path: "/cistella",
+                    component: Cistella,
+                    name: "Cistella"
+                }
             ]
         }
     ]

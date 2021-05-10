@@ -246,8 +246,16 @@
                                             <label for="img_perfil">Imatge de perfil</label>
                                             <div class="input-group">
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="img_perfil">
-                                                    <label class="custom-file-label" for="img_perfil">Tria un fitxer</label>
+                                                    <input 
+                                                        @change="fileSelected"
+                                                        type="file" 
+                                                        class="custom-file-input" 
+                                                        id="img_perfil"
+                                                    >
+                                                    <label v-if="!files || !files.length" class="custom-file-label" for="img_perfil">Tria un fitxer</label>
+                                                    <span v-else>
+                                                        <label v-for="file in files" :key="file.name" class="custom-file-label" for="img_perfil">{{file.name}}</label>
+                                                    </span>
                                                 </div>
                                                 <div class="input-group-append">
                                                     <span class="input-group-text">
@@ -260,8 +268,16 @@
                                             <label for="img_portada">Imatge de portada</label>
                                             <div class="input-group">
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="img_portada">
-                                                    <label class="custom-file-label" for="img_portada">Tria un fitxer</label>
+                                                    <input 
+                                                        @change="fileSelected2"
+                                                        type="file" 
+                                                        class="custom-file-input" 
+                                                        id="img_portada"
+                                                    >
+                                                    <label v-if="!files2 || !files2.length" class="custom-file-label" for="img_portada">Tria un fitxer</label>
+                                                    <span v-else>
+                                                        <label v-for="file2 in files2" :key="file2.name" class="custom-file-label" for="img_portada">{{file2.name}}</label>
+                                                    </span>
                                                 </div>
                                                 <div class="input-group-append">
                                                     <span class="input-group-text">
@@ -301,11 +317,15 @@
                                     <div class="input-group">
                                     <div class="custom-file">
                                         <input 
+                                            @change="fileSelected3"
                                             type="file" 
                                             class="custom-file-input" 
                                             id="imatge"
                                         >
-                                        <label class="custom-file-label" for="imatge">Tria un fitxer</label>
+                                        <label v-if="!files3 || !files3.length" class="custom-file-label" for="imatge">Tria un fitxer</label>
+                                        <span v-else>
+                                            <label v-for="file3 in files3" :key="file3.name" class="custom-file-label" for="imatge">{{file3.name}}</label>
+                                        </span>
                                     </div>
                                     <div class="input-group-append">
                                         <span class="input-group-text">
@@ -500,6 +520,9 @@ export default {
                 categoria: "",
                 visites: "0",
             },
+            files: null,
+            files2: null,
+            files3: null,
             form_botiga: {
                 id:"",
                 nom:"",
@@ -561,6 +584,48 @@ export default {
     },
 
     methods: {
+        fileSelected(e) {
+        this.files = e.target.files
+        console.log(this.files);
+        },
+        fileSelected2(e) {
+        this.files2 = e.target.files2
+        console.log(this.files2);
+        },
+        fileSelected3(e) {
+        this.files3 = e.target.files3
+        console.log(this.files3);
+        },
+        toastCorrecte() {
+        // Use sweetalert2
+        this.$swal({
+            toast: true,
+            position: 'top-end',
+            icon: 'success',
+            title: 'Producte afegit correctament',
+            showConfirmButton: false,
+            timer: 3000,
+            didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        });
+        },
+        toastIncorrecte() {
+        // Use sweetalert2
+        this.$swal({
+            toast: true,
+            position: 'top-end',
+            icon: 'error',
+            title: 'Error al afegir el producte',
+            showConfirmButton: false,
+            timer: 3000,
+            didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        });
+        },
         saveForm() {
             let that = this;
             console.log(that.form);
@@ -586,12 +651,13 @@ export default {
                 },
                 })
                 .then((res) => {
-                    console.log(res);
-                    location.reload();
+                this.toastCorrecte();
+                location.reload();
                 })
                 .catch((error) => {
-                    that.errors = error.response.data.errors;
-                    console.log(that.errors);
+                that.errors = error.response.data.errors;
+                this.toastIncorrecte();
+                console.log(that.errors);
                 });
 
             console.log(that.form);
@@ -634,14 +700,23 @@ export default {
             }) 
             .then((res) => {
                 console.log(res);
-                //this.$router.push({ name: "Profile" });
+                this.toastCorrecte();
+                location.reload();
+                
             })
             .catch((error) => {
                 that.errors = error.response.data.errors;
                 console.log(that.errors);
+                this.toastIncorrecte();
             });
         }
     }
 
 };
 </script>
+<style>
+    .custom-file-input:lang(en) ~ .custom-file-label::after {
+        content: "Busca";
+        visibility: hidden;
+    }
+</style>
