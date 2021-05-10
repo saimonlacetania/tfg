@@ -89,7 +89,7 @@
               <!-- /.card-header -->
 
               <!-- les meves comandes -->
-              <div class="card-body">
+              <div class="card-body register-card-body">
                 <div class="tab-content">
                   <div class="tab-pane" id="activity">
                     <div class="card mb-3">
@@ -338,8 +338,8 @@
                                 />
                               </div>
                               <div class="col text-center" style="margin-bottom:0%;">
-                                <button type="submit" class="btn btn-secondary">
-                                  Modifica el meu perfil
+                                <button type="submit" class="btn btn-secondary zoom" style="background-color:#ff6565; border:none;">
+                                  Modifica perfil
                                 </button>
                               </div>
                             </form>
@@ -402,8 +402,8 @@
                                 />
                               </div>
                               <div class="text-center" style="margin-top:63%;">
-                                <button type="submit" class="btn btn-xs btn-secondary">
-                                  Modifica la meva contrasenya
+                                <button type="submit" class="btn btn-xs btn-secondary zoom" style="background-color:#ff6565; border:none;">
+                                  Modifica contrasenya
                                 </button>
                               </div>
                             </form>
@@ -452,8 +452,8 @@
                                 />
                               </div>
                               <div class="col text-center" style="margin-top:30%;">
-                                <button type="submit" class="btn btn-secondary">
-                                  Modifica la meva direcció
+                                <button type="submit" class="btn btn-secondary zoom" style="background-color:#ff6565; border:none;">
+                                  Modifica direcció
                                 </button>
                               </div>
                             </form>

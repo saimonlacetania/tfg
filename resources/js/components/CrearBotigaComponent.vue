@@ -51,7 +51,7 @@
                           />
                           <div class="input-group-append">
                             <div class="input-group-text">
-                              <span class="fas fa-feather-alt"></span>
+                              <span class="fas fa-feather-alt" style="color:#ff6565;"></span>
                             </div>
                           </div>
                         </div>

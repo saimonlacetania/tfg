@@ -107,29 +107,12 @@ html {
             <!-- Add icons to the links using the .nav-icon class
                                   with font-awesome or any other icon font library -->
             <li class="nav-header text-dark">MENÚ PRINCIPAL</li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-user text-dark"></i>
-                <p class="text-dark">
-                  El meu perfil
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <router-link class="nav-link" :to="'/profile'">
-                    <i class="nav-icon far fa-user-circle text-dark"></i>
+                    <i class="nav-icon fas fa-user text-dark"></i>
                     <p class="text-dark">Veure perfil</p>
                   </router-link>
                 </li>
-                <li class="nav-item">
-                  <router-link class="nav-link" :to="'/editarPerfil'">
-                    <i class="fas fa-cogs nav-icon text-dark"></i>
-                    <p class="text-dark">Configuració</p>
-                  </router-link>
-                </li>
-              </ul>
-            </li>
             <li class="nav-item" v-if="this.user.botiga">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-store-alt text-dark"></i>

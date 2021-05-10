@@ -3932,23 +3932,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -49428,7 +49411,10 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "input-group-append" }, [
       _c("div", { staticClass: "input-group-text" }, [
-        _c("span", { staticClass: "fas fa-feather-alt" })
+        _c("span", {
+          staticClass: "fas fa-feather-alt",
+          staticStyle: { color: "#ff6565" }
+        })
       ])
     ])
   },
@@ -50232,65 +50218,33 @@ var render = function() {
                           _vm._v("MENÚ PRINCIPAL")
                         ]),
                         _vm._v(" "),
-                        _c("li", { staticClass: "nav-item" }, [
-                          _vm._m(1),
-                          _vm._v(" "),
-                          _c("ul", { staticClass: "nav nav-treeview" }, [
+                        _c(
+                          "li",
+                          { staticClass: "nav-item" },
+                          [
                             _c(
-                              "li",
-                              { staticClass: "nav-item" },
+                              "router-link",
+                              {
+                                staticClass: "nav-link",
+                                attrs: { to: "/profile" }
+                              },
                               [
-                                _c(
-                                  "router-link",
-                                  {
-                                    staticClass: "nav-link",
-                                    attrs: { to: "/profile" }
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass:
-                                        "nav-icon far fa-user-circle text-dark"
-                                    }),
-                                    _vm._v(" "),
-                                    _c("p", { staticClass: "text-dark" }, [
-                                      _vm._v("Veure perfil")
-                                    ])
-                                  ]
-                                )
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "li",
-                              { staticClass: "nav-item" },
-                              [
-                                _c(
-                                  "router-link",
-                                  {
-                                    staticClass: "nav-link",
-                                    attrs: { to: "/editarPerfil" }
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass:
-                                        "fas fa-cogs nav-icon text-dark"
-                                    }),
-                                    _vm._v(" "),
-                                    _c("p", { staticClass: "text-dark" }, [
-                                      _vm._v("Configuració")
-                                    ])
-                                  ]
-                                )
-                              ],
-                              1
+                                _c("i", {
+                                  staticClass: "nav-icon fas fa-user text-dark"
+                                }),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "text-dark" }, [
+                                  _vm._v("Veure perfil")
+                                ])
+                              ]
                             )
-                          ])
-                        ]),
+                          ],
+                          1
+                        ),
                         _vm._v(" "),
                         this.user.botiga
                           ? _c("li", { staticClass: "nav-item" }, [
-                              _vm._m(2),
+                              _vm._m(1),
                               _vm._v(" "),
                               _c(
                                 "ul",
@@ -50358,7 +50312,7 @@ var render = function() {
                                     1
                                   ),
                                   _vm._v(" "),
-                                  _vm._m(3)
+                                  _vm._m(2)
                                 ]
                               )
                             ])
@@ -50573,19 +50527,6 @@ var staticRenderFns = [
             })
           ]
         )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-      _c("i", { staticClass: "nav-icon fas fa-user text-dark" }),
-      _vm._v(" "),
-      _c("p", { staticClass: "text-dark" }, [
-        _vm._v("\n                El meu perfil\n                "),
-        _c("i", { staticClass: "right fas fa-angle-left" })
       ])
     ])
   },
@@ -51257,7 +51198,7 @@ var render = function() {
             _c("div", { staticClass: "card card-dark" }, [
               _vm._m(1),
               _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
+              _c("div", { staticClass: "card-body register-card-body" }, [
                 _c("div", { staticClass: "tab-content" }, [
                   _c(
                     "div",
@@ -52382,10 +52323,14 @@ var staticRenderFns = [
       [
         _c(
           "button",
-          { staticClass: "btn btn-secondary", attrs: { type: "submit" } },
+          {
+            staticClass: "btn btn-secondary zoom",
+            staticStyle: { "background-color": "#ff6565", border: "none" },
+            attrs: { type: "submit" }
+          },
           [
             _vm._v(
-              "\n                                Modifica el meu perfil\n                              "
+              "\n                                Modifica perfil\n                              "
             )
           ]
         )
@@ -52403,12 +52348,13 @@ var staticRenderFns = [
         _c(
           "button",
           {
-            staticClass: "btn btn-xs btn-secondary",
+            staticClass: "btn btn-xs btn-secondary zoom",
+            staticStyle: { "background-color": "#ff6565", border: "none" },
             attrs: { type: "submit" }
           },
           [
             _vm._v(
-              "\n                                Modifica la meva contrasenya\n                              "
+              "\n                                Modifica contrasenya\n                              "
             )
           ]
         )
@@ -52425,10 +52371,14 @@ var staticRenderFns = [
       [
         _c(
           "button",
-          { staticClass: "btn btn-secondary", attrs: { type: "submit" } },
+          {
+            staticClass: "btn btn-secondary zoom",
+            staticStyle: { "background-color": "#ff6565", border: "none" },
+            attrs: { type: "submit" }
+          },
           [
             _vm._v(
-              "\n                                Modifica la meva direcció\n                              "
+              "\n                                Modifica direcció\n                              "
             )
           ]
         )
