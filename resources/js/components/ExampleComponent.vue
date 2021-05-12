@@ -210,7 +210,9 @@ html {
 </template>
 
 <script>
+import PerfilBotigaComponent from './PerfilBotigaComponent.vue';
 export default {
+  components: { PerfilBotigaComponent },
   data() {
     return {
       user: "",

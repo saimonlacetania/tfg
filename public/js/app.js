@@ -3721,6 +3721,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PerfilBotigaComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PerfilBotigaComponent.vue */ "./resources/js/components/PerfilBotigaComponent.vue");
 //
 //
 //
@@ -3932,7 +3933,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    PerfilBotigaComponent: _PerfilBotigaComponent_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
   data: function data() {
     return {
       user: ""
@@ -4139,6 +4144,39 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -50814,27 +50852,92 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("section", { staticClass: "content" }, [
+    _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-2" }),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-8" }, [
+          _c("div", { staticClass: "row h-100" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "error-page" }, [
+              _c(
+                "h2",
+                { staticClass: "headline", staticStyle: { color: "#ff6565" } },
+                [_vm._v(" 404")]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "error-content" },
+                [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "nav-item input-group-append col-md-10",
+                      attrs: { to: "/" }
+                    },
+                    [
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-warning btn-block zoom",
+                          staticStyle: {
+                            "background-color": "#ff6565",
+                            border: "none",
+                            color: "white"
+                          },
+                          attrs: { type: "submit", name: "submit" }
+                        },
+                        [_c("i", { staticClass: "fas fa-home fa-2x" })]
+                      )
+                    ]
+                  )
+                ],
+                1
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-2" })
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "absolute inset-0 bg-gray-200 flex items-center justify-center"
-      },
-      [
-        _c("div", { staticClass: "text-3xl text-center text-gray-700" }, [
-          _vm._v("Page Not Found! "),
-          _c("br"),
-          _vm._v("404 ERROR!")
-        ])
-      ]
-    )
+    return _c("h3", [
+      _c("i", {
+        staticClass: "fas fa-exclamation-triangle",
+        staticStyle: { color: "#ff6565" }
+      }),
+      _vm._v(" Oops! "),
+      _c("br"),
+      _c("small", [_vm._v("No hem trobat la pàgina que busques")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _vm._v(
+        "\n                                No hem pogut trobar la pàgina que busques\n                                mentres,"
+      ),
+      _c("br"),
+      _vm._v(
+        "pots tornar a l'inici clickant el següent botó\n                            "
+      )
+    ])
   }
 ]
 render._withStripped = true

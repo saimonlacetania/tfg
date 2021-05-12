@@ -45,7 +45,6 @@ Route::post('modifyUser', 'UserController@modify');
 Route::post('modifyProfile', 'UserController@modifyProfile');
 Route::post('modifyPassword', 'UserController@modifyPassword');
 Route::post('logout', 'LoginController@logout');
-Route::get('productes', 'ProductesController@productes');
 Route::get('botiga', 'BotigaController@botiga');
 Route::get('categories', 'CategoriesController@categories');
 Route::post('afegirProducte', 'ProductesController@afegirProducte');
