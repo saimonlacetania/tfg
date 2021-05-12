@@ -15,6 +15,17 @@ class ProductesController extends Controller
         $productes = Producte::where('actiu', 1)->get();
         return $productes;
     }
+    public function productesCerca($keyword)
+    {
+        if ($keyword=="" || $keyword==" ") {
+            $productesCerca = Producte::where('actiu', 1)->get();
+        }
+        else {
+            $productesCerca = Producte::where('nom', 'LIKE','%'.$keyword.'%')->where('actiu', 1)->get();  
+        }
+        
+        return $productesCerca;
+    }
     
     public function producte($id)
     {

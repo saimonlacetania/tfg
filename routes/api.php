@@ -22,6 +22,7 @@ Route::middleware('auth:sanctum')->get('/athenticated', function () {
 });
 
 Route::get('productes', 'ProductesController@productes');
+Route::get('productesCerca/{keyword}', 'ProductesController@productesCerca');
 Route::get('producte/{id}', 'ProductesController@producte');
 Route::post('eliminarProducte/{id}', 'ProductesController@eliminarProducte');
 Route::post('restarStock/{id}', 'ProductesController@restarStock');

@@ -1,7 +1,7 @@
 import Register from "./components/Register";
 import Login from "./components/Login";
 import NotFound from "./components/NotFound";
-import Example from "./components/ExampleComponent";
+import Main from "./components/MainComponent";
 import Perfil from "./components/PerfilComponent";
 import Productes from "./components/ProductesComponent";
 import EditarPerfil from "./components/EditarPerfilComponent";
@@ -25,7 +25,7 @@ export default {
         },
         {
             path: "/",
-            component: Example,
+            component: Main,
             name: "Home",
             children: [{
                     // UserProfile will be rendered inside User's <router-view>
