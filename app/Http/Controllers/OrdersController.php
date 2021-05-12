@@ -66,4 +66,50 @@ class OrdersController extends Controller
         }
         return $productes;
     }
+    public function veureOrdreBotiga()
+    {
+        $id = Auth::id();
+
+        $botiga = Botiga::with('user')->where('id_usuari', $id)
+            ->get();
+        $ordre = OrderLin::with("productes", "order")
+            ->having('id_botiga', '=', $botiga[0]->id)
+            ->having('enviat', '!=', 1)
+            ->orderBy('id', 'ASC')
+            ->get();
+        return response()->json($ordre, 200);
+    }
+    public function veureOrdreBotigaEnviat()
+    {
+        $id = Auth::id();
+
+        $botiga = Botiga::with('user')->where('id_usuari', $id)
+            ->get();
+        $ordre = OrderLin::with("productes", "order")
+            ->having('id_botiga', '=', $botiga[0]->id)
+            ->having('enviat', '=', 1)
+            ->orderBy('id', 'ASC')
+            ->get();
+        return response()->json($ordre, 200);
+    }
+    public function enviarOrdre($id)
+    {
+        $ord = OrderLin::find($id);
+        $ord->enviat = 1;
+        $ord->save();
+        $ordre = OrderLin::having('id_ordre', '=', $ord->id_ordre)
+            ->get();
+        $comptador = 0;
+        foreach ($ordre as $ordComprovar) {
+            if ($ordComprovar->enviat == 1) {
+                $comptador++;
+            }
+        }
+        if ($comptador == count($ordre)) {
+            $ordreEnviada = Order::find($ord->id_ordre);
+            $ordreEnviada->enviat = 1;
+            $ordreEnviada->save();
+        }
+        return true;
+    }
 }

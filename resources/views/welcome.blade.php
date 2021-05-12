@@ -1,4 +1,3 @@
-
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -14,8 +13,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link rel="stylesheet" href="/../../../node_modules/admin-lte/dist/css/adminlte.min.css">
-    <link rel="stylesheet" href="/../../../node_modules/admin-lte/plugins/fontawesome-free/css/all.min.css">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
