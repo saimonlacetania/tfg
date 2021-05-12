@@ -48,7 +48,12 @@ class ProductesController extends Controller
     public function canviEstat($id)
     {
         $producte = Producte::find($id);
-        $producte->actiu = !($producte->actiu);
+        if ($producte->actiu == 1) {
+            $producte->actiu = 0;
+        }
+        else {
+            $producte->actiu = 1;
+        }
         $producte->save();
         return true;
     }
@@ -90,7 +95,49 @@ class ProductesController extends Controller
                 'visites' => $request->visites,
             ]);
         }
+    }
 
-        
+    public function editarProducte(Request $request)
+    {
+        if (
+            $request->validate([
+                'imatge' => 'mimes:jpg,jpeg,png,svg',
+                'ref' => ['required'],
+                'nom' => ['required'],
+                'desc' => ['required'],
+                'preu' => ['required'],
+                'stock' => ['required'],
+            ])) 
+            
+            {
+      
+            if ($request->file("imatge") != null) {
+                $producte = Producte::find($request->id);
+                Storage::disk('public')->put('productes', $request->file('imatge'));
+                $thumbnailpath = public_path('images/productes/' . $request->file("imatge")->hashName());
+                $img = Image::make($thumbnailpath)->resize(500, 500);
+                $img->save($thumbnailpath);
+
+                $producte->ref = $request->ref;
+                $producte->nom = $request->nom;
+                $producte->descripcio = $request->desc;
+                $producte->preu = $request->preu;
+                $producte->stock = $request->stock;
+                $producte->save();
+                return response()->json($producte, 200);
+                
+            } else { 
+                $producte = Producte::find($request->id);
+                $producte->ref = $request->ref;
+                $producte->nom = $request->nom;
+                $producte->descripcio = $request->desc;
+                $producte->preu = $request->preu;
+                $producte->stock = $request->stock;
+                $producte->save();
+                return response()->json($producte, 200);
+            }
+        } else {
+            return response()->json("error", 400);
+        }
     }
 }

@@ -10,6 +10,7 @@ import Contacte from "./components/contacteComponent";
 import Producte from "./components/ProducteComponent";
 import Botiga from "./components/BotigaComponent";
 import CrearBotiga from "./components/CrearBotigaComponent";
+import EditarProducte from "./components/EditarProducteComponent";
 
 import PerfilBotiga from "./components/PerfilBotigaComponent";
 import Cistella from "./components/CistellaComponent";
@@ -80,6 +81,11 @@ export default {
                     path: "/producte/:id",
                     component: Producte,
                     name: "Producte"
+                },
+                {
+                    path: "/editarProducte/:id",
+                    component: EditarProducte,
+                    name: "editarProducte"
                 },
                 {
                     path: "/botiga",
