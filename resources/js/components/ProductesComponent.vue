@@ -3,10 +3,6 @@
     <!-- cerca -->
     <div class="content-header">
       <div class="container-fluid">
-      
-        <br /><br />
-
-        <br />
         <!-- cerca -->
         <div class="col-md-12">
           <form action="simple-results.html">

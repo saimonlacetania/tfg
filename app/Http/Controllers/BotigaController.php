@@ -27,7 +27,7 @@ class BotigaController extends Controller
         return $botiga;
     }
 
-    public function productes()
+    public function productesB()
     {
         $id = Auth::id();
 

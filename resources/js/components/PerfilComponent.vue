@@ -31,8 +31,15 @@
               <div class="card-body box-profile">
                 <div class="text-center">
                   <img
+                    v-if="this.user.profile_pic"
                     class="profile-user-img img-fluid img-circle"
                     :src="'/images/avatars/' + this.user.profile_pic"
+                    alt="User profile picture"
+                  />
+                  <img
+                    v-else
+                    :src="'/images/avatars/default.jpg'"
+                    class="profile-user-img img-fluid img-circle"
                     alt="User profile picture"
                   />
                 </div>
