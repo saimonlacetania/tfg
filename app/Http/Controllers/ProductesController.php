@@ -12,9 +12,10 @@ class ProductesController extends Controller
 
     public function productes()
     {
-        $productes = Producte::all();
+        $productes = Producte::where('actiu', 1)->get();
         return $productes;
     }
+    
     public function producte($id)
     {
         $producte = Producte::find($id);
@@ -23,7 +24,9 @@ class ProductesController extends Controller
     public function eliminarProducte($id)
     {
         $producte = Producte::find($id);
-        $producte->delete();
+        $producte->actiu = 0;
+        $producte->eliminat = 1;
+        $producte->save();
         return true;
     }
     public function restarStock($id)
@@ -93,6 +96,7 @@ class ProductesController extends Controller
                 'actiu' => $request->actiu,
                 'id_categoria' => $request->categoria,
                 'visites' => $request->visites,
+                'eliminat' => 0,
             ]);
         }
     }

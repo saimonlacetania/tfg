@@ -12,7 +12,20 @@
                                 <h5 class="widget-user-desc text-right">{{ this.user.nom }}</h5>
                             </div>
                             <div class="widget-user-image pt-5">
-                                <img class="img-circle border-4" :src="'/images/botigues/' + this.botiga.img_perfil" alt="User Avatar" style="height:200px; width:200px; margin-top:25%; margin-left:-30%;">
+                                <img 
+                                    v-if="this.botiga.img_perfil"
+                                    class="img-circle border-4" 
+                                    :src="'/images/botigues/' + this.botiga.img_perfil" 
+                                    alt="Shop profile picture" 
+                                    style="height:200px; width:200px; margin-top:25%; margin-left:-30%;"
+                                />
+                                <img 
+                                    v-else
+                                    class="img-circle border-4" 
+                                    :src="'/images/botigues/default.png'" 
+                                    alt="Shop profile picture" 
+                                    style="height:200px; width:200px; margin-top:25%; margin-left:-30%;"
+                                />
                             </div>
                             <div class="card-footer">
                                 <div class="row">

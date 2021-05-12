@@ -2531,6 +2531,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2594,7 +2603,7 @@ __webpack_require__.r(__webpack_exports__);
     axios.get("/api/categories").then(function (res) {
       _this.categories = res.data;
     });
-    axios.get("/api/productes").then(function (res1) {
+    axios.get("/api/productesB").then(function (res1) {
       _this.productes = res1.data;
     });
     axios.get("/api/botiga").then(function (res2) {
@@ -2626,7 +2635,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       axios.post("/api/eliminarProducte/" + id).then(function (res) {});
-      axios.get("/api/productes").then(function (res) {
+      axios.get("/api/productesB").then(function (res) {
         _this2.productes = res.data;
       });
     },
@@ -2634,7 +2643,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this3 = this;
 
       axios.post("/api/restarStock/" + id).then(function (res) {});
-      axios.get("/api/productes").then(function (res) {
+      axios.get("/api/productesB").then(function (res) {
         _this3.productes = res.data;
       });
     },
@@ -2642,7 +2651,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this4 = this;
 
       axios.post("/api/sumarStock/" + id).then(function (res) {});
-      axios.get("/api/productes").then(function (res) {
+      axios.get("/api/productesB").then(function (res) {
         _this4.productes = res.data;
       });
     },
@@ -2650,7 +2659,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this5 = this;
 
       axios.post("/api/canviEstat/" + id).then(function (res) {});
-      axios.get("/api/productes").then(function (res) {
+      axios.get("/api/productesB").then(function (res) {
         _this5.productes = res.data;
       });
     },
@@ -2741,7 +2750,8 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (res) {
         _this6.toastCorrecte();
 
-        console.log(that.form); //location.reload();
+        console.log(that.form);
+        location.reload();
       })["catch"](function (error) {
         that.errors = error.response.data.errors;
 
@@ -4666,6 +4676,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -4708,6 +4731,13 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5606,10 +5636,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CercaComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CercaComponent.vue */ "./resources/js/components/CercaComponent.vue");
-//
-//
-//
-//
 //
 //
 //
@@ -46928,13 +46954,21 @@ var render = function() {
             _c("div", { staticClass: "card card-dark card-outline" }, [
               _c("div", { staticClass: "card-body box-profile" }, [
                 _c("div", { staticClass: "text-center" }, [
-                  _c("img", {
-                    staticClass: "profile-user-img img-fluid img-circle",
-                    attrs: {
-                      src: "/images/botigues/" + this.botiga.img_perfil,
-                      alt: "User profile picture"
-                    }
-                  })
+                  this.botiga.img_perfil
+                    ? _c("img", {
+                        staticClass: "profile-user-img img-fluid img-circle",
+                        attrs: {
+                          src: "/images/botigues/" + this.botiga.img_perfil,
+                          alt: "Shop profile picture"
+                        }
+                      })
+                    : _c("img", {
+                        staticClass: "profile-user-img img-fluid img-circle",
+                        attrs: {
+                          src: "/images/botigues/default.png",
+                          alt: "Shop profile picture"
+                        }
+                      })
                 ]),
                 _vm._v(" "),
                 _c("h3", { staticClass: "profile-username text-center" }, [
@@ -51862,19 +51896,33 @@ var render = function() {
               ),
               _vm._v(" "),
               _c("div", { staticClass: "widget-user-image pt-5" }, [
-                _c("img", {
-                  staticClass: "img-circle border-4",
-                  staticStyle: {
-                    height: "200px",
-                    width: "200px",
-                    "margin-top": "25%",
-                    "margin-left": "-30%"
-                  },
-                  attrs: {
-                    src: "/images/botigues/" + this.botiga.img_perfil,
-                    alt: "User Avatar"
-                  }
-                })
+                this.botiga.img_perfil
+                  ? _c("img", {
+                      staticClass: "img-circle border-4",
+                      staticStyle: {
+                        height: "200px",
+                        width: "200px",
+                        "margin-top": "25%",
+                        "margin-left": "-30%"
+                      },
+                      attrs: {
+                        src: "/images/botigues/" + this.botiga.img_perfil,
+                        alt: "Shop profile picture"
+                      }
+                    })
+                  : _c("img", {
+                      staticClass: "img-circle border-4",
+                      staticStyle: {
+                        height: "200px",
+                        width: "200px",
+                        "margin-top": "25%",
+                        "margin-left": "-30%"
+                      },
+                      attrs: {
+                        src: "/images/botigues/default.png",
+                        alt: "Shop profile picture"
+                      }
+                    })
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "card-footer" }, [
@@ -52121,13 +52169,21 @@ var render = function() {
             _c("div", { staticClass: "card card-dark card-outline" }, [
               _c("div", { staticClass: "card-body box-profile" }, [
                 _c("div", { staticClass: "text-center" }, [
-                  _c("img", {
-                    staticClass: "profile-user-img img-fluid img-circle",
-                    attrs: {
-                      src: "/images/avatars/" + this.user.profile_pic,
-                      alt: "User profile picture"
-                    }
-                  })
+                  this.user.profile_pic
+                    ? _c("img", {
+                        staticClass: "profile-user-img img-fluid img-circle",
+                        attrs: {
+                          src: "/images/avatars/" + this.user.profile_pic,
+                          alt: "User profile picture"
+                        }
+                      })
+                    : _c("img", {
+                        staticClass: "profile-user-img img-fluid img-circle",
+                        attrs: {
+                          src: "/images/avatars/default.jpg",
+                          alt: "User profile picture"
+                        }
+                      })
                 ]),
                 _vm._v(" "),
                 _c("h3", { staticClass: "profile-username text-left" }, [
@@ -53615,11 +53671,6 @@ var render = function() {
     [
       _c("div", { staticClass: "content-header" }, [
         _c("div", { staticClass: "container-fluid" }, [
-          _c("br"),
-          _c("br"),
-          _vm._v(" "),
-          _c("br"),
-          _vm._v(" "),
           _c("div", { staticClass: "col-md-12" }, [
             _c("form", { attrs: { action: "simple-results.html" } }, [
               _c("div", { staticClass: "input-group" }, [

@@ -29,9 +29,18 @@
                 <div class="card card-dark card-outline">
                     <div class="card-body box-profile">
                         <div class="text-center">
-                            <img class="profile-user-img img-fluid img-circle"
+                            <img 
+                                v-if="this.botiga.img_perfil"
+                                class="profile-user-img img-fluid img-circle"
                                 :src="'/images/botigues/' + this.botiga.img_perfil"
-                                alt="User profile picture">
+                                alt="Shop profile picture"
+                                />
+                                <img 
+                                v-else
+                                class="profile-user-img img-fluid img-circle"
+                                :src="'/images/botigues/default.png'"
+                                alt="Shop profile picture"
+                                />
                         </div>
                         <h3 class="profile-username text-center">{{this.user.nom}}</h3>
                         <p class="text-muted text-center">{{this.botiga.descripcio}}</p>
@@ -668,7 +677,7 @@ export default {
                 this.categories = res.data;
             });
 
-        axios.get("/api/productes").then((res1) => {
+        axios.get("/api/productesB").then((res1) => {
                 this.productes=res1.data;
             });
         
@@ -705,28 +714,28 @@ export default {
         eliminarProducte(id) {
             axios.post("/api/eliminarProducte/" + id).then((res) => {
             });
-            axios.get("/api/productes").then((res) => {
+            axios.get("/api/productesB").then((res) => {
                 this.productes = res.data;
             });
         },
         restarStock(id) {
             axios.post("/api/restarStock/" + id).then((res) => {
             });
-            axios.get("/api/productes").then((res) => {
+            axios.get("/api/productesB").then((res) => {
                 this.productes = res.data;
             });
         },
         sumarStock(id) {
             axios.post("/api/sumarStock/" + id).then((res) => {
             });
-            axios.get("/api/productes").then((res) => {
+            axios.get("/api/productesB").then((res) => {
                 this.productes = res.data;
             });
         },
         canviEstat(id) {
             axios.post("/api/canviEstat/" + id).then((res) => {
             });
-            axios.get("/api/productes").then((res) => {
+            axios.get("/api/productesB").then((res) => {
                 this.productes = res.data;
             });
         },
@@ -810,7 +819,7 @@ export default {
                 .then((res) => {
                 this.toastCorrecte();
                 console.log(that.form);
-                //location.reload();
+                location.reload();
                 })
                 .catch((error) => {
                 that.errors = error.response.data.errors;

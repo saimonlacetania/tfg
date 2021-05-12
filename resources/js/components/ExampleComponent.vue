@@ -142,7 +142,7 @@ html {
                   </li>
               </ul>
             </li>
-              <li class="nav-item" v-else>
+              <li v-else class="nav-item">
                 <router-link class="nav-link" :to="'/crearBotiga'">
                   <i class="fas fa-feather-alt nav-icon text-dark"></i>
                   <p class="text-dark">Crear Botiga</p>
