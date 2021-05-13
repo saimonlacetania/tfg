@@ -130,7 +130,7 @@ html {
                   </li>
                   <li class="nav-item">
                       <router-link class="nav-link" :to="{ name: 'PerfilBotiga', params: { id: user.id } }">
-                          <i class="fas fa-feather-alt nav-icon text-dark"></i>
+                          <i class="fas fa-gem nav-icon text-dark"></i>
                           <p class="text-dark">Perfil públic</p>
                       </router-link>
                   </li>

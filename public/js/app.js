@@ -3906,6 +3906,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     var _this = this;
@@ -46982,7 +46985,7 @@ var render = function() {
                     : _c("img", {
                         staticClass: "profile-user-img img-fluid img-circle",
                         attrs: {
-                          src: "/images/botigues/default.png",
+                          src: "/images/botigues/default.jpg",
                           alt: "Shop profile picture"
                         }
                       })
@@ -47194,11 +47197,9 @@ var render = function() {
                                     )
                                   : _vm._e(),
                                 _vm._v(" "),
-                                _c(
-                                  "label",
-                                  { attrs: { for: "telf_1_botiga" } },
-                                  [_vm._v("Telèfon")]
-                                ),
+                                _c("label", { attrs: { for: "telf_1" } }, [
+                                  _vm._v("Telèfon")
+                                ]),
                                 _vm._v(" "),
                                 _c("div", { staticClass: "input-group mb-3" }, [
                                   _c("input", {
@@ -47213,7 +47214,7 @@ var render = function() {
                                     staticClass: "form-control",
                                     attrs: {
                                       type: "text",
-                                      id: "telf_1_botiga",
+                                      id: "telf_1",
                                       placeholder: "Telèfon"
                                     },
                                     domProps: {
@@ -47263,11 +47264,9 @@ var render = function() {
                                     )
                                   : _vm._e(),
                                 _vm._v(" "),
-                                _c(
-                                  "label",
-                                  { attrs: { for: "telf_2_botiga" } },
-                                  [_vm._v("Telèfon")]
-                                ),
+                                _c("label", { attrs: { for: "telf_2" } }, [
+                                  _vm._v("Telèfon")
+                                ]),
                                 _vm._v(" "),
                                 _c("div", { staticClass: "input-group mb-3" }, [
                                   _c("input", {
@@ -47282,7 +47281,7 @@ var render = function() {
                                     staticClass: "form-control",
                                     attrs: {
                                       type: "text",
-                                      id: "telf_2_botiga",
+                                      id: "telf_2",
                                       placeholder: "Telèfon"
                                     },
                                     domProps: {
@@ -50589,7 +50588,9 @@ var render = function() {
     _c("section", { staticClass: "content" }, [
       _c("div", { staticClass: "container-fluid" }, [
         _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-4" }, [
+          _c("div", { staticClass: "col-md-3" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-6" }, [
             _c("form", [
               _c("div", { staticClass: "card-body register-card-body" }, [
                 _c("div", { staticClass: "form-group mb-3" }, [
@@ -50645,7 +50646,10 @@ var render = function() {
                             attrs: { for: "number" }
                           },
                           [
-                            _c("i", { staticClass: "far fa-times-circle" }),
+                            _c("i", {
+                              staticClass: "far fa-times-circle",
+                              staticStyle: { color: "#ff6565" }
+                            }),
                             _vm._v(
                               "\r\n                                    " +
                                 _vm._s(_vm.errors.ref[0])
@@ -50696,7 +50700,10 @@ var render = function() {
                             attrs: { for: "number" }
                           },
                           [
-                            _c("i", { staticClass: "far fa-times-circle" }),
+                            _c("i", {
+                              staticClass: "far fa-times-circle",
+                              staticStyle: { color: "#ff6565" }
+                            }),
                             _vm._v(
                               "\r\n                                    " +
                                 _vm._s(_vm.errors.nom[0])
@@ -50748,7 +50755,10 @@ var render = function() {
                             attrs: { for: "number" }
                           },
                           [
-                            _c("i", { staticClass: "far fa-times-circle" }),
+                            _c("i", {
+                              staticClass: "far fa-times-circle",
+                              staticStyle: { color: "#ff6565" }
+                            }),
                             _vm._v(
                               "\r\n                                    " +
                                 _vm._s(_vm.errors.desc[0])
@@ -50798,7 +50808,10 @@ var render = function() {
                             attrs: { for: "number" }
                           },
                           [
-                            _c("i", { staticClass: "far fa-times-circle" }),
+                            _c("i", {
+                              staticClass: "far fa-times-circle",
+                              staticStyle: { color: "#ff6565" }
+                            }),
                             _vm._v(
                               "\r\n                                    " +
                                 _vm._s(_vm.errors.preu[0])
@@ -50849,7 +50862,10 @@ var render = function() {
                             attrs: { for: "number" }
                           },
                           [
-                            _c("i", { staticClass: "far fa-times-circle" }),
+                            _c("i", {
+                              staticClass: "far fa-times-circle",
+                              staticStyle: { color: "#ff6565" }
+                            }),
                             _vm._v(
                               "\r\n                                    " +
                                 _vm._s(_vm.errors.stock[0])
@@ -50890,14 +50906,16 @@ var render = function() {
                   _vm._m(5)
                 ]),
                 _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col text-center" }, [
                     _c(
                       "button",
                       {
-                        staticClass: "btn btn-secondary",
+                        staticClass: "btn btn-secondary zoom",
+                        staticStyle: {
+                          "background-color": "#ff6565",
+                          border: "none"
+                        },
                         attrs: { type: "submit" },
                         on: {
                           click: function($event) {
@@ -50918,7 +50936,9 @@ var render = function() {
                 ])
               ])
             ])
-          ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-3" })
         ])
       ])
     ])
@@ -50932,9 +50952,16 @@ var staticRenderFns = [
     return _c("section", { staticClass: "content-header" }, [
       _c("div", { staticClass: "container-fluid" }, [
         _c("div", { staticClass: "row mb-2" }, [
-          _c("div", { staticClass: "col-sm-6" }, [
-            _c("h1", [_vm._v("Editar Producte")])
-          ])
+          _c("div", { staticClass: "col-md-3" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-6 text-center" }, [
+            _c("h1", { staticStyle: { color: "#ff6565" } }, [
+              _vm._v("Editar "),
+              _c("b", { staticClass: "text-secondary" }, [_vm._v("Producte")])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-3" })
         ])
       ])
     ])
@@ -50945,7 +50972,10 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "input-group-append" }, [
       _c("span", { staticClass: "input-group-text" }, [
-        _c("i", { staticClass: "fas fa-image" })
+        _c("i", {
+          staticClass: "fas fa-image",
+          staticStyle: { color: "#ff6565" }
+        })
       ])
     ])
   },
@@ -50955,7 +50985,10 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "input-group-append" }, [
       _c("div", { staticClass: "input-group-text" }, [
-        _c("span", { staticClass: "fas fa-asterisk" })
+        _c("span", {
+          staticClass: "fas fa-asterisk",
+          staticStyle: { color: "#ff6565" }
+        })
       ])
     ])
   },
@@ -50973,7 +51006,10 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "input-group-append" }, [
       _c("div", { staticClass: "input-group-text" }, [
-        _c("span", { staticClass: "fas fa-euro-sign" })
+        _c("span", {
+          staticClass: "fas fa-euro-sign",
+          staticStyle: { color: "#ff6565" }
+        })
       ])
     ])
   },
@@ -50983,7 +51019,10 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "input-group-append" }, [
       _c("div", { staticClass: "input-group-text" }, [
-        _c("span", { staticClass: "fas fa-layer-group" })
+        _c("span", {
+          staticClass: "fas fa-layer-group",
+          staticStyle: { color: "#ff6565" }
+        })
       ])
     ])
   }
@@ -51238,7 +51277,7 @@ var render = function() {
                                         [
                                           _c("i", {
                                             staticClass:
-                                              "fas fa-feather-alt nav-icon text-dark"
+                                              "fas fa-gem nav-icon text-dark"
                                           }),
                                           _vm._v(" "),
                                           _c(

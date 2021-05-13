@@ -4,9 +4,11 @@
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Editar Producte</h1>
-          </div>
+            <div class="col-md-3"></div>
+            <div class="col-md-6 text-center">
+                <h1 style="color:#ff6565;">Editar <b class="text-secondary">Producte</b></h1>
+            </div>
+            <div class="col-md-3"></div>
         </div>
       </div>
       <!-- /.container-fluid -->
@@ -14,10 +16,10 @@
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-4">
-            <form>
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <form>
                     <div class="card-body register-card-body">
-
                         <div class="form-group mb-3">
                             <label for="imatge">Imatge del Producte</label>
                             <div class="input-group">
@@ -35,7 +37,7 @@
                             </div>
                             <div class="input-group-append">
                                 <span class="input-group-text">
-                                    <i class="fas fa-image"></i>
+                                    <i class="fas fa-image" style="color:#ff6565;"></i>
                                 </span>
                             </div>
                             </div>
@@ -44,7 +46,7 @@
                         <div class="input-group mb-3">
                             <div class="input-group mb-3" v-if="errors.ref">
                                 <label class="col-form-label" for="number"
-                                    ><i class="far fa-times-circle"></i>
+                                    ><i class="far fa-times-circle" style="color:#ff6565;"></i>
                                     {{ errors.ref[0] }}</label
                                 >
                                 <br />
@@ -58,7 +60,7 @@
                             />
                             <div class="input-group-append">
                                 <div class="input-group-text">
-                                    <span class="fas fa-asterisk"></span>
+                                    <span class="fas fa-asterisk" style="color:#ff6565;"></span>
                                 </div>
                             </div>
                         </div>
@@ -66,7 +68,7 @@
                         <div class="input-group mb-3">
                             <div class="input-group mb-3" v-if="errors.nom">
                                 <label class="col-form-label" for="number"
-                                    ><i class="far fa-times-circle"></i>
+                                    ><i class="far fa-times-circle" style="color:#ff6565;"></i>
                                     {{ errors.nom[0] }}</label
                                 >
                                 <br />
@@ -89,7 +91,7 @@
                         <div class="form-group mb-3">
                             <div class="input-group mb-3" v-if="errors.desc">
                                 <label class="col-form-label" for="number"
-                                    ><i class="far fa-times-circle"></i>
+                                    ><i class="far fa-times-circle" style="color:#ff6565;"></i>
                                     {{ errors.desc[0] }}</label
                                 >
                                 <br />
@@ -109,7 +111,7 @@
                         <div class="input-group mb-3">
                             <div class="input-group mb-3" v-if="errors.preu">
                                 <label class="col-form-label" for="number"
-                                    ><i class="far fa-times-circle"></i>
+                                    ><i class="far fa-times-circle" style="color:#ff6565;"></i>
                                     {{ errors.preu[0] }}</label
                                 >
                                 <br />
@@ -123,7 +125,7 @@
                             />
                             <div class="input-group-append">
                                 <div class="input-group-text">
-                                    <span class="fas fa-euro-sign"></span>
+                                    <span class="fas fa-euro-sign" style="color:#ff6565;"></span>
                                 </div>
                             </div>
                         </div>
@@ -131,7 +133,7 @@
                         <div class="input-group mb-3">
                             <div class="input-group mb-3" v-if="errors.stock">
                                 <label class="col-form-label" for="number"
-                                    ><i class="far fa-times-circle"></i>
+                                    ><i class="far fa-times-circle" style="color:#ff6565;"></i>
                                     {{ errors.stock[0] }}</label
                                 >
                                 <br />
@@ -145,18 +147,18 @@
                             />
                             <div class="input-group-append">
                                 <div class="input-group-text">
-                                    <span class="fas fa-layer-group"></span>
+                                    <span class="fas fa-layer-group" style="color:#ff6565;"></span>
                                 </div>
                             </div>
                         </div>
-                        <br>
                         <div class="row">
                             <!-- /.col -->
                             <div class="col text-center">
                                 <button
                                     @click.prevent="editarProducte"
                                     type="submit"
-                                    class="btn btn-secondary"
+                                    class="btn btn-secondary zoom"
+                                    style="background-color:#ff6565; border:none;"
                                 >
                                     Edita producte
                                 </button>
@@ -168,6 +170,7 @@
                     <!-- /.form-box -->
                 </form>
             </div>
+            <div class="col-md-3"></div>
         </div>
       </div>
     </section>
