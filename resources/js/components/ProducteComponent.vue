@@ -1,16 +1,11 @@
 <template>
   <div class="content-wrapper" id="contingut">
-    <section class="content-header">
+    <section class="content pt-3">
       <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Producte nº {{ $data.producte.id }}</h1>
-          </div>
+      <div class="row">
+        <div class="col-md-1">
         </div>
-      </div>
-    </section>
-
-    <section class="content">
+        <div class="col-md-10">
       <div class="card card-solid">
         <div class="card-body">
           <div class="row">
@@ -78,36 +73,94 @@
           <div class="row mt-4">
             <nav class="w-100">
               <div class="nav nav-tabs" id="product-tab" role="tablist">
-                <a
-                  class="nav-item nav-link active"
-                  id="product-desc-tab"
-                  data-toggle="tab"
-                  href="#product-desc"
-                  role="tab"
-                  aria-controls="product-desc"
-                  aria-selected="true"
-                  >Descripció</a
-                >
+                <a class="nav-item nav-link text-dark active" id="product-desc-tab" data-toggle="tab" href="#product-desc" role="tab" aria-controls="product-desc" aria-selected="true">Description</a>
+                <a class="nav-item nav-link text-dark" id="product-comments-tab" data-toggle="tab" href="#product-comments" role="tab" aria-controls="product-comments" aria-selected="false">Comments</a>
               </div>
             </nav>
-            <div class="tab-content p-3" id="nav-tabContent">
-              <div
-                class="tab-pane fade show active"
-                id="product-desc"
-                role="tabpanel"
-                aria-labelledby="product-desc-tab"
-              >
-                {{ $data.producte.descripcio }}
+            <div class="tab-content p-3 w-100" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="product-desc" role="tabpanel" aria-labelledby="product-desc-tab"> {{$data.producte.descripcio}} </div>
+              <div class="tab-pane fade" id="product-comments" role="tabpanel" aria-labelledby="product-comments-tab"> 
+                <form>    
+                      <!-- textarea -->
+                      <div class="form-group">
+                        <label>Escriu un comentari</label>
+                        <textarea v-model="form.descripcio" class="form-control" rows="3" style="min-width: 100%;" placeholder="Escriu aqui..."></textarea>
+                      </div>
+                      <div class="rating"> 
+                        <input v-model="form.valoracio" type="radio" name="rating" value="5" id="5"><label for="5">☆</label> 
+                        <input v-model="form.valoracio" type="radio" name="rating" value="4" id="4"><label for="4">☆</label> 
+                        <input v-model="form.valoracio" type="radio" name="rating" value="3" id="3"><label for="3">☆</label> 
+                        <input v-model="form.valoracio" type="radio" name="rating" value="2" id="2"><label for="2">☆</label> 
+                        <input v-model="form.valoracio" type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                          <button
+                            @click.prevent="pujarComentari"
+                            type="submit"
+                            class="btn btn-block text-center text-light zoom"
+                            style="background-color: #ff6565"
+                          >
+                            Enviar
+                          </button>
+                        </div>
+                        <div class="col-md-4"></div>
+                      </div>
+                    
+                </form>
               </div>
             </div>
           </div>
         </div>
         <!-- /.card-body -->
       </div>
+        </div>
+        <div class="col-md-1"></div>
+      </div>
+      </div>
     </section>
   </div>
 </template>
+<style>
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center
+}
 
+.rating>input {
+    display: none
+}
+
+.rating>label {
+    position: relative;
+    width: 1em;
+    font-size: 4vw;
+    color: #FF6565;
+    cursor: pointer
+}
+
+.rating>label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0
+}
+
+.rating>label:hover:before,
+.rating>label:hover~label:before {
+    opacity: 1 !important
+}
+
+.rating>input:checked~label:before {
+    opacity: 1
+}
+
+.rating:hover>input:checked~label:before {
+    opacity: 0.4
+}
+
+</style>
 
 
 <script>
@@ -115,6 +168,14 @@ export default {
   data() {
     return {
       producte: "",
+      comentaris: "",
+      user: "",
+      form: {
+        id_usuari: "",
+        id_producte: "",
+        descripcio: "",
+        valoracio: "",
+      }
     };
   },
   mounted() {
@@ -124,8 +185,32 @@ export default {
       console.log(res);
       this.producte = res.data;
     });
+    axios.get("/api/comentaris/" + this.$route.params.id).then((res) => {
+      console.log(res);
+      this.comentaris = res.data;
+    });
+    axios.get("/api/user").then((res) => {
+        this.user = res.data;
+      });
   },
   methods: {
+    pujarComentari() {
+      this.form.id_usuari = this.user.id;
+      this.form.id_producte = this.producte.id;
+      let that = this;
+      axios
+        .post("/api/pujarComentari", that.form)
+        .then((res) => {
+          console.log(res);
+          this.$router.push({ name: "Producte", params: {id: this.producte.id} });
+          this.toastCorrecte();
+        })
+        .catch((error) => {
+          that.errors2 = error.response.data.errors;
+          console.log(that.errors2);
+          this.toastIncorrecte();
+        });
+    },
     toastCorrecte() {
       // Use sweetalert2
       this.$swal({

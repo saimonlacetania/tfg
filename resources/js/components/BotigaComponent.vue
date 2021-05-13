@@ -266,7 +266,14 @@
                                                     >
                                                     <label v-if="!files || !files.length" class="custom-file-label" for="img_perfil">Tria un fitxer</label>
                                                     <span v-else>
-                                                        <label v-for="file in files" :key="file.name" class="custom-file-label" for="img_perfil">{{file.name}}</label>
+                                                        <label v-for="file in files" :key="file" class="custom-file-label" for="img_perfil">
+                                                            <span v-if="file.id=='img_perfil'">
+                                                                {{file.file[0].name}}
+                                                            </span>
+                                                            <span v-else>
+                                                                Tria un fitxer
+                                                            </span>
+                                                        </label>
                                                     </span>
                                                 </div>
                                                 <div class="input-group-append">
@@ -281,14 +288,21 @@
                                             <div class="input-group">
                                                 <div class="custom-file">
                                                     <input 
-                                                        @change="fileSelected2"
+                                                        @change="fileSelected"
                                                         type="file" 
                                                         class="custom-file-input" 
                                                         id="img_portada"
                                                     >
-                                                    <label v-if="!files2 || !files2.length" class="custom-file-label" for="img_portada">Tria un fitxer</label>
+                                                    <label v-if="!files || !files.length" class="custom-file-label" for="img_portada">Tria un fitxer</label>
                                                     <span v-else>
-                                                        <label v-for="file2 in files2" :key="file2.name" class="custom-file-label" for="img_portada">{{file2.name}}</label>
+                                                        <label v-for="file in files" :key="file" class="custom-file-label" for="img_portada">
+                                                            <span v-if="file.id=='img_portada'">
+                                                                {{file.file[0].name}}
+                                                            </span>
+                                                            <span v-else>
+                                                                Tria un fitxer
+                                                            </span>
+                                                        </label>
                                                     </span>
                                                 </div>
                                                 <div class="input-group-append">
@@ -426,16 +440,24 @@
                                     <div class="input-group">
                                     <div class="custom-file">
                                         <input 
-                                            @change="fileSelected3"
+                                            @change="fileSelected"
                                             type="file" 
                                             class="custom-file-input" 
-                                            id="imatge"
+                                            id="img_producte"
                                         >
-                                        <label v-if="!files3 || !files3.length" class="custom-file-label" for="imatge">Tria un fitxer</label>
+                                        <label v-if="!files || !files.length" class="custom-file-label" for="img_producte">Tria un fitxer</label>
                                         <span v-else>
-                                            <label v-for="file3 in files3" :key="file3.name" class="custom-file-label" for="imatge">{{file3.name}}</label>
+                                            <label v-for="file in files" :key="file" class="custom-file-label" for="img_producte">
+                                                <span v-if="file.id=='img_producte'">
+                                                {{file.file[0].name}}
+                                                </span>
+                                                <span v-else>
+                                                    Tria un fitxer
+                                                </span>
+                                            </label>
                                         </span>
                                     </div>
+                                    
                                     <div class="input-group-append">
                                         <span class="input-group-text">
                                             <i class="fas fa-image"></i>
@@ -644,7 +666,6 @@ export default {
             files: null,
             files2: null,
             files3: null,
-            files4: null,
             form_botiga: {
                 id:"",
                 nom:"",
@@ -673,6 +694,7 @@ export default {
         };
     },
     mounted() {
+        this.files = new Array();
         axios.get("/api/categories").then((res) => {
                 this.categories = res.data;
             });
@@ -744,17 +766,14 @@ export default {
         },
 
         fileSelected(e) {
-        this.files = e.target.files
-        console.log(this.files);
+            this.files.push({ id: e.target.id, file: e.target.files });
+            console.log(this.files);
+            for (let f in this.files) {
+                console.log(this.files[f].id);
+            }
+            
         },
-        fileSelected2(e) {
-        this.files2 = e.target.files2
-        console.log(this.files2);
-        },
-        fileSelected3(e) {
-        this.files3 = e.target.files3
-        console.log(this.files3);
-        },
+        
         toastCorrecte() {
         // Use sweetalert2
         this.$swal({

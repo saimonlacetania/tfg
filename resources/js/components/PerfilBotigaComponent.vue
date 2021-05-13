@@ -7,7 +7,7 @@
                         <!-- Widget: user widget style 1 -->
                         <div class="card card-widget widget-user">
                             <!-- Add the bg color to the header using any of the bg-* classes -->
-                            <div class="widget-user-header text-white" style="background: url('/images/photo1.png') center center; height:300px;">
+                            <div class="widget-user-header text-white" id="portada" :style="'background: url(/images/botigues/'+this.botiga.img_portada+');'">
                                 <h3 class="widget-user-username text-right">{{ this.botiga.nom }}</h3>
                                 <h5 class="widget-user-desc text-right">{{ this.user.nom }}</h5>
                             </div>
@@ -155,6 +155,12 @@
 <style>
 .zoom {
   transition: transform 0.2s; /* Animation */
+}
+#portada {
+    background-size: cover !important; 
+    background-position: center !important; 
+    height: 300px; 
+    background-repeat: no-repeat !important;
 }
 
 </style>

@@ -5,7 +5,6 @@
       <div class="container-fluid">
         <!-- cerca -->
         <div class="col-md-12">
-          <form>
             <div class="input-group">
               <input
                 v-model="keyword"
@@ -14,7 +13,6 @@
                 placeholder="¿Què vols buscar?"
               />
                 <button
-                v-on:click="cercaProductes"
                   type="button"
                   class="btn btn-lg btn-secondary"
                   style="background-color: #ff6565"
@@ -22,8 +20,8 @@
                   <i class="fa fa-search"></i>
                 </button>
             </div>
-          </form>
         </div>
+        <br>
         <!-- /.col -->
         <div class="content w-100">
           <div class="container-fluid">
@@ -102,7 +100,7 @@ export default {
   },
   watch: {
         keyword(after, before) {
-            
+            this.cercaProductes();
         }
     },
   methods: {

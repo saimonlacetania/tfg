@@ -215,6 +215,13 @@ html {
   </div>
 </template>
 <style>
+
+
+
+.main-sidebar, .main-sidebar::before {
+  @media (max-width: 767.98px);
+  background-color: white;
+}
   #cajacookies {
     box-shadow: 0px 0px 5px 5px #808080;
     background-color: white;

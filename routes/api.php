@@ -24,6 +24,10 @@ Route::middleware('auth:sanctum')->get('/athenticated', function () {
 Route::get('productes', 'ProductesController@productes');
 Route::get('productesCerca/{keyword}', 'ProductesController@productesCerca');
 Route::get('producte/{id}', 'ProductesController@producte');
+Route::get('comentaris/{id}', 'ProductesController@comentaris');
+Route::post('pujarComentari', 'ProductesController@pujarComentari');
+
+
 Route::post('eliminarProducte/{id}', 'ProductesController@eliminarProducte');
 Route::post('restarStock/{id}', 'ProductesController@restarStock');
 Route::post('sumarStock/{id}', 'ProductesController@sumarStock');

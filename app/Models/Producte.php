@@ -22,6 +22,7 @@ class Producte extends Model
     {
         return $this->belongsTo("App\Models\Botiga", "id_botiga");
     }
+    
 
     public function categoria()
     {

@@ -2540,6 +2540,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2570,7 +2592,6 @@ __webpack_require__.r(__webpack_exports__);
       files: null,
       files2: null,
       files3: null,
-      files4: null,
       form_botiga: {
         id: "",
         nom: "",
@@ -2600,6 +2621,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
+    this.files = new Array();
     axios.get("/api/categories").then(function (res) {
       _this.categories = res.data;
     });
@@ -2672,16 +2694,15 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     fileSelected: function fileSelected(e) {
-      this.files = e.target.files;
+      this.files.push({
+        id: e.target.id,
+        file: e.target.files
+      });
       console.log(this.files);
-    },
-    fileSelected2: function fileSelected2(e) {
-      this.files2 = e.target.files2;
-      console.log(this.files2);
-    },
-    fileSelected3: function fileSelected3(e) {
-      this.files3 = e.target.files3;
-      console.log(this.files3);
+
+      for (var f in this.files) {
+        console.log(this.files[f].id);
+      }
     },
     toastCorrecte: function toastCorrecte() {
       // Use sweetalert2
@@ -4427,6 +4448,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -4532,6 +4560,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -5541,10 +5575,71 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      producte: ""
+      producte: "",
+      comentaris: "",
+      user: "",
+      form: {
+        id_usuari: "",
+        id_producte: "",
+        descripcio: "",
+        valoracio: ""
+      }
     };
   },
   mounted: function mounted() {
@@ -5555,8 +5650,39 @@ __webpack_require__.r(__webpack_exports__);
       console.log(res);
       _this.producte = res.data;
     });
+    axios.get("/api/comentaris/" + this.$route.params.id).then(function (res) {
+      console.log(res);
+      _this.comentaris = res.data;
+    });
+    axios.get("/api/user").then(function (res) {
+      _this.user = res.data;
+    });
   },
   methods: {
+    pujarComentari: function pujarComentari() {
+      var _this2 = this;
+
+      this.form.id_usuari = this.user.id;
+      this.form.id_producte = this.producte.id;
+      var that = this;
+      axios.post("/api/pujarComentari", that.form).then(function (res) {
+        console.log(res);
+
+        _this2.$router.push({
+          name: "Producte",
+          params: {
+            id: _this2.producte.id
+          }
+        });
+
+        _this2.toastCorrecte();
+      })["catch"](function (error) {
+        that.errors2 = error.response.data.errors;
+        console.log(that.errors2);
+
+        _this2.toastIncorrecte();
+      });
+    },
     toastCorrecte: function toastCorrecte() {
       // Use sweetalert2
       this.$swal({
@@ -5588,39 +5714,39 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     afegirCistella: function afegirCistella() {
-      var _this2 = this;
+      var _this3 = this;
 
       axios.post("/api/afegirCistella/" + this.producte.id).then(function (res) {
         console.log(res);
 
-        _this2.toastCorrecte();
-
-        axios.get("/api/producte/" + _this2.$route.params.id).then(function (res) {
-          console.log(res);
-          _this2.producte = res.data;
-        });
-        return false;
-      })["catch"](function (error) {
-        _this2.errors = error.response.data.errors;
-
-        _this2.toastIncorrecte();
-
-        return false;
-      });
-    },
-    afegirWishlist: function afegirWishlist() {
-      var _this3 = this;
-
-      axios.post("/api/afegirWishlist/" + this.producte.id).then(function (res) {
-        console.log(res);
-
         _this3.toastCorrecte();
 
+        axios.get("/api/producte/" + _this3.$route.params.id).then(function (res) {
+          console.log(res);
+          _this3.producte = res.data;
+        });
         return false;
       })["catch"](function (error) {
         _this3.errors = error.response.data.errors;
 
         _this3.toastIncorrecte();
+
+        return false;
+      });
+    },
+    afegirWishlist: function afegirWishlist() {
+      var _this4 = this;
+
+      axios.post("/api/afegirWishlist/" + this.producte.id).then(function (res) {
+        console.log(res);
+
+        _this4.toastCorrecte();
+
+        return false;
+      })["catch"](function (error) {
+        _this4.errors = error.response.data.errors;
+
+        _this4.toastIncorrecte();
 
         return false;
       });
@@ -5723,8 +5849,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5741,7 +5865,9 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   watch: {
-    keyword: function keyword(after, before) {}
+    keyword: function keyword(after, before) {
+      this.cercaProductes();
+    }
   },
   methods: {
     cercaProductes: function cercaProductes() {
@@ -10985,7 +11111,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#cajacookies {\n  box-shadow: 0px 0px 5px 5px #808080;\n  background-color: white;\n  color: black;\n  padding: 10px;\n  visibility: visible;\n  margin-left: -15px;\n  margin-right: -15px;\n  margin-bottom: 0px;\n  position: fixed;\n  bottom: 0;\n  left: 33%;\n  width: 47%;\n}\n#cajacookies button {\n  color: black;\n}\n", ""]);
+exports.push([module.i, "\n.main-sidebar, .main-sidebar::before {\n@media (max-width: 767.98px);\r\n  background-color: white;\n}\n#cajacookies {\r\n    box-shadow: 0px 0px 5px 5px #808080;\r\n    background-color: white;\r\n    color: black;\r\n    padding: 10px;\r\n    visibility: visible;\r\n    margin-left: -15px;\r\n    margin-right: -15px;\r\n    margin-bottom: 0px;\r\n    position: fixed;\r\n    bottom: 0;\r\n    left: 33%;\r\n    width: 47%;\n}\n#cajacookies button {\r\n    color: black;\n}\r\n", ""]);
 
 // exports
 
@@ -11004,7 +11130,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.zoom {\r\n  transition: transform 0.2s; /* Animation */\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.zoom {\r\n  transition: transform 0.2s; /* Animation */\n}\n#portada {\r\n    background-size: cover !important; \r\n    background-position: center !important; \r\n    height: 300px; \r\n    background-repeat: no-repeat !important;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -11043,6 +11169,25 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, "\n.custom-file-input:lang(en) ~ .custom-file-label::after {\n    content: \"Busca\";\n    visibility: hidden;\n}\n.custom-file-label::after {\n  content: \"Busca\";\n    visibility: hidden;\n}\n.footer {\n  align-self: flex-end !important;\n  flex: 1 1 auto;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProducteComponent.vue?vue&type=style&index=0&lang=css&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ProducteComponent.vue?vue&type=style&index=0&lang=css& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.rating {\r\n    display: flex;\r\n    flex-direction: row-reverse;\r\n    justify-content: center\n}\n.rating>input {\r\n    display: none\n}\n.rating>label {\r\n    position: relative;\r\n    width: 1em;\r\n    font-size: 4vw;\r\n    color: #FF6565;\r\n    cursor: pointer\n}\n.rating>label::before {\r\n    content: \"\\2605\";\r\n    position: absolute;\r\n    opacity: 0\n}\n.rating>label:hover:before,\r\n.rating>label:hover~label:before {\r\n    opacity: 1 !important\n}\n.rating>input:checked~label:before {\r\n    opacity: 1\n}\n.rating:hover>input:checked~label:before {\r\n    opacity: 0.4\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -42603,6 +42748,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProducteComponent.vue?vue&type=style&index=0&lang=css&":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ProducteComponent.vue?vue&type=style&index=0&lang=css& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./ProducteComponent.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProducteComponent.vue?vue&type=style&index=0&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProductesComponent.vue?vue&type=style&index=0&lang=css&":
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ProductesComponent.vue?vue&type=style&index=0&lang=css& ***!
@@ -47905,12 +48080,28 @@ var render = function() {
                                             return _c(
                                               "label",
                                               {
-                                                key: file.name,
+                                                key: file,
                                                 staticClass:
                                                   "custom-file-label",
                                                 attrs: { for: "img_perfil" }
                                               },
-                                              [_vm._v(_vm._s(file.name))]
+                                              [
+                                                file.id == "img_perfil"
+                                                  ? _c("span", [
+                                                      _vm._v(
+                                                        "\n                                                            " +
+                                                          _vm._s(
+                                                            file.file[0].name
+                                                          ) +
+                                                          "\n                                                        "
+                                                      )
+                                                    ])
+                                                  : _c("span", [
+                                                      _vm._v(
+                                                        "\n                                                            Tria un fitxer\n                                                        "
+                                                      )
+                                                    ])
+                                              ]
                                             )
                                           }),
                                           0
@@ -47934,10 +48125,10 @@ var render = function() {
                                         type: "file",
                                         id: "img_portada"
                                       },
-                                      on: { change: _vm.fileSelected2 }
+                                      on: { change: _vm.fileSelected }
                                     }),
                                     _vm._v(" "),
-                                    !_vm.files2 || !_vm.files2.length
+                                    !_vm.files || !_vm.files.length
                                       ? _c(
                                           "label",
                                           {
@@ -47948,16 +48139,32 @@ var render = function() {
                                         )
                                       : _c(
                                           "span",
-                                          _vm._l(_vm.files2, function(file2) {
+                                          _vm._l(_vm.files, function(file) {
                                             return _c(
                                               "label",
                                               {
-                                                key: file2.name,
+                                                key: file,
                                                 staticClass:
                                                   "custom-file-label",
                                                 attrs: { for: "img_portada" }
                                               },
-                                              [_vm._v(_vm._s(file2.name))]
+                                              [
+                                                file.id == "img_portada"
+                                                  ? _c("span", [
+                                                      _vm._v(
+                                                        "\n                                                            " +
+                                                          _vm._s(
+                                                            file.file[0].name
+                                                          ) +
+                                                          "\n                                                        "
+                                                      )
+                                                    ])
+                                                  : _c("span", [
+                                                      _vm._v(
+                                                        "\n                                                            Tria un fitxer\n                                                        "
+                                                      )
+                                                    ])
+                                              ]
                                             )
                                           }),
                                           0
@@ -48273,30 +48480,46 @@ var render = function() {
                                 _c("div", { staticClass: "custom-file" }, [
                                   _c("input", {
                                     staticClass: "custom-file-input",
-                                    attrs: { type: "file", id: "imatge" },
-                                    on: { change: _vm.fileSelected3 }
+                                    attrs: { type: "file", id: "img_producte" },
+                                    on: { change: _vm.fileSelected }
                                   }),
                                   _vm._v(" "),
-                                  !_vm.files3 || !_vm.files3.length
+                                  !_vm.files || !_vm.files.length
                                     ? _c(
                                         "label",
                                         {
                                           staticClass: "custom-file-label",
-                                          attrs: { for: "imatge" }
+                                          attrs: { for: "img_producte" }
                                         },
                                         [_vm._v("Tria un fitxer")]
                                       )
                                     : _c(
                                         "span",
-                                        _vm._l(_vm.files3, function(file3) {
+                                        _vm._l(_vm.files, function(file) {
                                           return _c(
                                             "label",
                                             {
-                                              key: file3.name,
+                                              key: file,
                                               staticClass: "custom-file-label",
-                                              attrs: { for: "imatge" }
+                                              attrs: { for: "img_producte" }
                                             },
-                                            [_vm._v(_vm._s(file3.name))]
+                                            [
+                                              file.id == "img_producte"
+                                                ? _c("span", [
+                                                    _vm._v(
+                                                      "\n                                            " +
+                                                        _vm._s(
+                                                          file.file[0].name
+                                                        ) +
+                                                        "\n                                            "
+                                                    )
+                                                  ])
+                                                : _c("span", [
+                                                    _vm._v(
+                                                      "\n                                                Tria un fitxer\n                                            "
+                                                    )
+                                                  ])
+                                            ]
                                           )
                                         }),
                                         0
@@ -51874,10 +52097,11 @@ var render = function() {
                 "div",
                 {
                   staticClass: "widget-user-header text-white",
-                  staticStyle: {
-                    background: "url('/images/photo1.png') center center",
-                    height: "300px"
-                  }
+                  style:
+                    "background: url(/images/botigues/" +
+                    this.botiga.img_portada +
+                    ");",
+                  attrs: { id: "portada" }
                 },
                 [
                   _c("h3", { staticClass: "widget-user-username text-right" }, [
@@ -53457,152 +53681,393 @@ var render = function() {
     "div",
     { staticClass: "content-wrapper", attrs: { id: "contingut" } },
     [
-      _c("section", { staticClass: "content-header" }, [
+      _c("section", { staticClass: "content pt-3" }, [
         _c("div", { staticClass: "container-fluid" }, [
-          _c("div", { staticClass: "row mb-2" }, [
-            _c("div", { staticClass: "col-sm-6" }, [
-              _c("h1", [_vm._v("Producte nº " + _vm._s(_vm.$data.producte.id))])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("section", { staticClass: "content" }, [
-        _c("div", { staticClass: "card card-solid" }, [
-          _c("div", { staticClass: "card-body" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-12 col-sm-6" }, [
-                _c("div", { staticClass: "col-12" }, [
-                  _c("img", {
-                    staticClass: "product-image",
-                    attrs: {
-                      src: "/images/productes/" + _vm.$data.producte.imatge,
-                      alt: "Product Image"
-                    }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-12 col-sm-6" }, [
-                _c("h3", { staticClass: "my-3" }, [
-                  _vm._v(
-                    "\n              " +
-                      _vm._s(_vm.$data.producte.nom) +
-                      "\n            "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v("Referencia: " + _vm._s(_vm.$data.producte.ref))
-                ]),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _c("div", { staticClass: "bg-gray py-2 px-3 mt-4" }, [
-                  _c("h2", { staticClass: "mb-0" }, [
-                    _vm._v(_vm._s(_vm.$data.producte.preu) + " €")
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-1" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-10" }, [
+              _c("div", { staticClass: "card card-solid" }, [
+                _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col-12 col-sm-6" }, [
+                      _c("div", { staticClass: "col-12" }, [
+                        _c("img", {
+                          staticClass: "product-image",
+                          attrs: {
+                            src:
+                              "/images/productes/" + _vm.$data.producte.imatge,
+                            alt: "Product Image"
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-12 col-sm-6" }, [
+                      _c("h3", { staticClass: "my-3" }, [
+                        _vm._v(
+                          "\n              " +
+                            _vm._s(_vm.$data.producte.nom) +
+                            "\n            "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v("Referencia: " + _vm._s(_vm.$data.producte.ref))
+                      ]),
+                      _vm._v(" "),
+                      _c("hr"),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "bg-gray py-2 px-3 mt-4" }, [
+                        _c("h2", { staticClass: "mb-0" }, [
+                          _vm._v(_vm._s(_vm.$data.producte.preu) + " €")
+                        ]),
+                        _vm._v(" "),
+                        _vm.$data.producte.stock == 1
+                          ? _c("h4", [
+                              _vm._v(
+                                "\n                Queda " +
+                                  _vm._s(_vm.$data.producte.stock) +
+                                  " unitat!\n              "
+                              )
+                            ])
+                          : _c("h4", [
+                              _vm._v(
+                                "Queden " +
+                                  _vm._s(_vm.$data.producte.stock) +
+                                  " unitats!"
+                              )
+                            ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "mt-4" }, [
+                        this.producte.stock > 0
+                          ? _c(
+                              "div",
+                              {
+                                staticClass: "btn btn-primary btn-lg btn-flat",
+                                on: { click: _vm.afegirCistella }
+                              },
+                              [
+                                _c("i", {
+                                  staticClass: "fas fa-cart-plus fa-lg mr-2"
+                                }),
+                                _vm._v(
+                                  "\n                Afegir a la cistella\n              "
+                                )
+                              ]
+                            )
+                          : _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "btn btn-secondary btn-lg btn-flat disabled"
+                              },
+                              [
+                                _c("i", {
+                                  staticClass: "fas fa-cart-plus fa-lg mr-2"
+                                }),
+                                _vm._v(
+                                  "\n                Afegir a la cistella\n              "
+                                )
+                              ]
+                            ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "btn btn-default btn-lg btn-flat",
+                            on: { click: _vm.afegirWishlist }
+                          },
+                          [
+                            _c("i", { staticClass: "fas fa-heart fa-lg mr-2" }),
+                            _vm._v(
+                              "\n                Afegir a la llista de desitjos\n              "
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _vm._m(0)
+                    ])
                   ]),
                   _vm._v(" "),
-                  _vm.$data.producte.stock == 1
-                    ? _c("h4", [
-                        _vm._v(
-                          "\n                Queda " +
-                            _vm._s(_vm.$data.producte.stock) +
-                            " unitat!\n              "
+                  _c("div", { staticClass: "row mt-4" }, [
+                    _vm._m(1),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "tab-content p-3 w-100",
+                        attrs: { id: "nav-tabContent" }
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "tab-pane fade show active",
+                            attrs: {
+                              id: "product-desc",
+                              role: "tabpanel",
+                              "aria-labelledby": "product-desc-tab"
+                            }
+                          },
+                          [
+                            _vm._v(
+                              " " + _vm._s(_vm.$data.producte.descripcio) + " "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "tab-pane fade",
+                            attrs: {
+                              id: "product-comments",
+                              role: "tabpanel",
+                              "aria-labelledby": "product-comments-tab"
+                            }
+                          },
+                          [
+                            _c("form", [
+                              _c("div", { staticClass: "form-group" }, [
+                                _c("label", [_vm._v("Escriu un comentari")]),
+                                _vm._v(" "),
+                                _c("textarea", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.form.descripcio,
+                                      expression: "form.descripcio"
+                                    }
+                                  ],
+                                  staticClass: "form-control",
+                                  staticStyle: { "min-width": "100%" },
+                                  attrs: {
+                                    rows: "3",
+                                    placeholder: "Escriu aqui..."
+                                  },
+                                  domProps: { value: _vm.form.descripcio },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.form,
+                                        "descripcio",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "rating" }, [
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.form.valoracio,
+                                      expression: "form.valoracio"
+                                    }
+                                  ],
+                                  attrs: {
+                                    type: "radio",
+                                    name: "rating",
+                                    value: "5",
+                                    id: "5"
+                                  },
+                                  domProps: {
+                                    checked: _vm._q(_vm.form.valoracio, "5")
+                                  },
+                                  on: {
+                                    change: function($event) {
+                                      return _vm.$set(
+                                        _vm.form,
+                                        "valoracio",
+                                        "5"
+                                      )
+                                    }
+                                  }
+                                }),
+                                _c("label", { attrs: { for: "5" } }, [
+                                  _vm._v("☆")
+                                ]),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.form.valoracio,
+                                      expression: "form.valoracio"
+                                    }
+                                  ],
+                                  attrs: {
+                                    type: "radio",
+                                    name: "rating",
+                                    value: "4",
+                                    id: "4"
+                                  },
+                                  domProps: {
+                                    checked: _vm._q(_vm.form.valoracio, "4")
+                                  },
+                                  on: {
+                                    change: function($event) {
+                                      return _vm.$set(
+                                        _vm.form,
+                                        "valoracio",
+                                        "4"
+                                      )
+                                    }
+                                  }
+                                }),
+                                _c("label", { attrs: { for: "4" } }, [
+                                  _vm._v("☆")
+                                ]),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.form.valoracio,
+                                      expression: "form.valoracio"
+                                    }
+                                  ],
+                                  attrs: {
+                                    type: "radio",
+                                    name: "rating",
+                                    value: "3",
+                                    id: "3"
+                                  },
+                                  domProps: {
+                                    checked: _vm._q(_vm.form.valoracio, "3")
+                                  },
+                                  on: {
+                                    change: function($event) {
+                                      return _vm.$set(
+                                        _vm.form,
+                                        "valoracio",
+                                        "3"
+                                      )
+                                    }
+                                  }
+                                }),
+                                _c("label", { attrs: { for: "3" } }, [
+                                  _vm._v("☆")
+                                ]),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.form.valoracio,
+                                      expression: "form.valoracio"
+                                    }
+                                  ],
+                                  attrs: {
+                                    type: "radio",
+                                    name: "rating",
+                                    value: "2",
+                                    id: "2"
+                                  },
+                                  domProps: {
+                                    checked: _vm._q(_vm.form.valoracio, "2")
+                                  },
+                                  on: {
+                                    change: function($event) {
+                                      return _vm.$set(
+                                        _vm.form,
+                                        "valoracio",
+                                        "2"
+                                      )
+                                    }
+                                  }
+                                }),
+                                _c("label", { attrs: { for: "2" } }, [
+                                  _vm._v("☆")
+                                ]),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.form.valoracio,
+                                      expression: "form.valoracio"
+                                    }
+                                  ],
+                                  attrs: {
+                                    type: "radio",
+                                    name: "rating",
+                                    value: "1",
+                                    id: "1"
+                                  },
+                                  domProps: {
+                                    checked: _vm._q(_vm.form.valoracio, "1")
+                                  },
+                                  on: {
+                                    change: function($event) {
+                                      return _vm.$set(
+                                        _vm.form,
+                                        "valoracio",
+                                        "1"
+                                      )
+                                    }
+                                  }
+                                }),
+                                _c("label", { attrs: { for: "1" } }, [
+                                  _vm._v("☆")
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "row" }, [
+                                _c("div", { staticClass: "col-md-4" }),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "col-md-4" }, [
+                                  _c(
+                                    "button",
+                                    {
+                                      staticClass:
+                                        "btn btn-block text-center text-light zoom",
+                                      staticStyle: {
+                                        "background-color": "#ff6565"
+                                      },
+                                      attrs: { type: "submit" },
+                                      on: {
+                                        click: function($event) {
+                                          $event.preventDefault()
+                                          return _vm.pujarComentari($event)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                          Enviar\n                        "
+                                      )
+                                    ]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "col-md-4" })
+                              ])
+                            ])
+                          ]
                         )
-                      ])
-                    : _c("h4", [
-                        _vm._v(
-                          "Queden " +
-                            _vm._s(_vm.$data.producte.stock) +
-                            " unitats!"
-                        )
-                      ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "mt-4" }, [
-                  this.producte.stock > 0
-                    ? _c(
-                        "div",
-                        {
-                          staticClass: "btn btn-primary btn-lg btn-flat",
-                          on: { click: _vm.afegirCistella }
-                        },
-                        [
-                          _c("i", {
-                            staticClass: "fas fa-cart-plus fa-lg mr-2"
-                          }),
-                          _vm._v(
-                            "\n                Afegir a la cistella\n              "
-                          )
-                        ]
-                      )
-                    : _c(
-                        "div",
-                        {
-                          staticClass:
-                            "btn btn-secondary btn-lg btn-flat disabled"
-                        },
-                        [
-                          _c("i", {
-                            staticClass: "fas fa-cart-plus fa-lg mr-2"
-                          }),
-                          _vm._v(
-                            "\n                Afegir a la cistella\n              "
-                          )
-                        ]
-                      ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "btn btn-default btn-lg btn-flat",
-                      on: { click: _vm.afegirWishlist }
-                    },
-                    [
-                      _c("i", { staticClass: "fas fa-heart fa-lg mr-2" }),
-                      _vm._v(
-                        "\n                Afegir a la llista de desitjos\n              "
-                      )
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _vm._m(0)
+                      ]
+                    )
+                  ])
+                ])
               ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "row mt-4" }, [
-              _vm._m(1),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "tab-content p-3",
-                  attrs: { id: "nav-tabContent" }
-                },
-                [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "tab-pane fade show active",
-                      attrs: {
-                        id: "product-desc",
-                        role: "tabpanel",
-                        "aria-labelledby": "product-desc-tab"
-                      }
-                    },
-                    [
-                      _vm._v(
-                        "\n              " +
-                          _vm._s(_vm.$data.producte.descripcio) +
-                          "\n            "
-                      )
-                    ]
-                  )
-                ]
-              )
-            ])
+            _c("div", { staticClass: "col-md-1" })
           ])
         ])
       ])
@@ -53643,7 +54108,7 @@ var staticRenderFns = [
           _c(
             "a",
             {
-              staticClass: "nav-item nav-link active",
+              staticClass: "nav-item nav-link text-dark active",
               attrs: {
                 id: "product-desc-tab",
                 "data-toggle": "tab",
@@ -53653,7 +54118,23 @@ var staticRenderFns = [
                 "aria-selected": "true"
               }
             },
-            [_vm._v("Descripció")]
+            [_vm._v("Description")]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "nav-item nav-link text-dark",
+              attrs: {
+                id: "product-comments-tab",
+                "data-toggle": "tab",
+                href: "#product-comments",
+                role: "tab",
+                "aria-controls": "product-comments",
+                "aria-selected": "false"
+              }
+            },
+            [_vm._v("Comments")]
           )
         ]
       )
@@ -53688,43 +54169,34 @@ var render = function() {
       _c("div", { staticClass: "content-header" }, [
         _c("div", { staticClass: "container-fluid" }, [
           _c("div", { staticClass: "col-md-12" }, [
-            _c("form", [
-              _c("div", { staticClass: "input-group" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.keyword,
-                      expression: "keyword"
-                    }
-                  ],
-                  staticClass: "form-control form-control-lg text-right",
-                  attrs: { type: "text", placeholder: "¿Què vols buscar?" },
-                  domProps: { value: _vm.keyword },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.keyword = $event.target.value
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c(
-                  "button",
+            _c("div", { staticClass: "input-group" }, [
+              _c("input", {
+                directives: [
                   {
-                    staticClass: "btn btn-lg btn-secondary",
-                    staticStyle: { "background-color": "#ff6565" },
-                    attrs: { type: "button" },
-                    on: { click: _vm.cercaProductes }
-                  },
-                  [_c("i", { staticClass: "fa fa-search" })]
-                )
-              ])
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.keyword,
+                    expression: "keyword"
+                  }
+                ],
+                staticClass: "form-control form-control-lg text-right",
+                attrs: { type: "text", placeholder: "¿Què vols buscar?" },
+                domProps: { value: _vm.keyword },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.keyword = $event.target.value
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _vm._m(0)
             ])
           ]),
+          _vm._v(" "),
+          _c("br"),
           _vm._v(" "),
           _c("div", { staticClass: "content w-100" }, [
             _c("div", { staticClass: "container-fluid" }, [
@@ -53825,7 +54297,22 @@ var render = function() {
     ]
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "btn btn-lg btn-secondary",
+        staticStyle: { "background-color": "#ff6565" },
+        attrs: { type: "button" }
+      },
+      [_c("i", { staticClass: "fa fa-search" })]
+    )
+  }
+]
 render._withStripped = true
 
 
@@ -71451,7 +71938,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ProducteComponent_vue_vue_type_template_id_04abddec___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProducteComponent.vue?vue&type=template&id=04abddec& */ "./resources/js/components/ProducteComponent.vue?vue&type=template&id=04abddec&");
 /* harmony import */ var _ProducteComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProducteComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/ProducteComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _ProducteComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ProducteComponent.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/ProducteComponent.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -71459,7 +71948,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _ProducteComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _ProducteComponent_vue_vue_type_template_id_04abddec___WEBPACK_IMPORTED_MODULE_0__["render"],
   _ProducteComponent_vue_vue_type_template_id_04abddec___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -71488,6 +71977,22 @@ component.options.__file = "resources/js/components/ProducteComponent.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ProducteComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ProducteComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProducteComponent.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ProducteComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/ProducteComponent.vue?vue&type=style&index=0&lang=css&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/ProducteComponent.vue?vue&type=style&index=0&lang=css& ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ProducteComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./ProducteComponent.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProducteComponent.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ProducteComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ProducteComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ProducteComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ProducteComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
 
 /***/ }),
 
