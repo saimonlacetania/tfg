@@ -44,11 +44,11 @@
           <div class="container-fluid">
             <div class="row">
               <div
-                :class="'col-md-4 card-deck mb-4'"
+                :class="'col-md-4 card-deck mb-4 ml-2'"
                 v-for="producte in productes"
                 :key="producte.id"
               >
-                <div :class="'card card-primary text-center zoom'">
+                <div :class="'card card-primary text-center zoom bg-light'">
                   <img
                     :class="'card-img-top p-3'"
                     :src="'/images/productes/' + producte.imatge"

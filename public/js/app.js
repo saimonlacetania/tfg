@@ -4689,6 +4689,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -51983,8 +51987,6 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _vm._m(3),
-                _vm._v(" "),
                 _c("hr")
               ])
             ])
@@ -52002,69 +52004,117 @@ var render = function() {
             _vm._l(_vm.productes, function(producte) {
               return _c(
                 "div",
-                { key: producte.id, class: "col-md-4 card-deck mb-4" },
+                { key: producte.id, class: "col-md-4 card-deck mb-4 ml-2" },
                 [
-                  _c("div", { class: "card card-primary text-center zoom" }, [
-                    _c("img", {
-                      class: "card-img-top p-3",
-                      attrs: { src: "/images/productes/" + producte.imatge }
-                    }),
-                    _vm._v(" "),
-                    _c("div", { class: "card-body" }, [
-                      _c("div", { class: "card-title font-weight-bold" }, [
-                        _vm._v(
-                          "\n                        " +
-                            _vm._s(producte.nom) +
-                            "\n                        "
+                  _c(
+                    "div",
+                    { class: "card card-primary text-center zoom bg-light" },
+                    [
+                      _c("img", {
+                        class: "card-img-top p-3",
+                        attrs: { src: "/images/productes/" + producte.imatge }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { class: "card-body" }, [
+                        _c("div", { staticClass: "row" }, [
+                          _c("div", { staticClass: "col-md-1" }),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              class:
+                                "card-title font-weight-bold text-uppercase col-md-10 text-center align-middle"
+                            },
+                            [
+                              _vm._v(
+                                "\n                                 " +
+                                  _vm._s(producte.nom) +
+                                  "\n                            "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-md-1" })
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "row" }, [
+                          _c("div", { staticClass: "col-md-4" }),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              class:
+                                "col-md-4 badge badge-sm align-middle text-center",
+                              staticStyle: {
+                                "background-color": "#ff6565",
+                                color: "white"
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                Queden:\n                            " +
+                                  _vm._s(producte.stock) +
+                                  "\n                            "
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-md-4" })
+                        ]),
+                        _vm._v(" "),
+                        _c("br"),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "row",
+                            staticStyle: { "margin-bottom": "-10%" }
+                          },
+                          [
+                            _c("div", { staticClass: "col-md-1" }),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { class: "card-text col-md-10 text-justify" },
+                              [
+                                _vm._v(
+                                  "\n                            " +
+                                    _vm._s(producte.descripcio) +
+                                    "\n                            "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col-md-1" })
+                          ]
                         )
                       ]),
-                      _vm._v(" "),
-                      _c("br"),
                       _vm._v(" "),
                       _c(
                         "div",
                         {
-                          class: "badge badge-warning badge-sm text-uppercase"
+                          class: "card-footer bg-light",
+                          staticStyle: { border: "none" }
                         },
                         [
-                          _vm._v(
-                            "\n                        " +
-                              _vm._s(producte.ref) +
-                              "\n                        "
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("p", { class: "card-text" }, [
-                        _vm._v(
-                          "\n                        " +
-                            _vm._s(producte.descripcio) +
-                            "\n                        "
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { class: "card-footer" },
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            class: "btn btn-outline-secondary btn-icon-right",
-                            attrs: {
-                              to: {
-                                name: "Producte",
-                                params: { id: producte.id }
+                          _c(
+                            "router-link",
+                            {
+                              class: "btn btn-outline-secondary btn-icon-right",
+                              attrs: {
+                                to: {
+                                  name: "Producte",
+                                  params: { id: producte.id }
+                                }
                               }
-                            }
-                          },
-                          [_c("span", [_vm._v("Saber més")])]
-                        )
-                      ],
-                      1
-                    )
-                  ])
+                            },
+                            [_c("span", [_vm._v("Saber més")])]
+                          )
+                        ],
+                        1
+                      )
+                    ]
+                  )
                 ]
               )
             }),
@@ -52111,31 +52161,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-md-5" }, [_c("hr")])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-10" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-md-2" }, [
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-block text-center mt-3 text-light zoom",
-            staticStyle: { "background-color": "#ff6565" },
-            attrs: { type: "submit" }
-          },
-          [
-            _c("i", { staticClass: "fa fa-heart" }),
-            _vm._v(
-              "\n                                        Contacta!\n                                    "
-            )
-          ]
-        )
-      ])
-    ])
   }
 ]
 render._withStripped = true
@@ -53712,11 +53737,13 @@ var render = function() {
                 _vm._l(_vm.productes, function(producte) {
                   return _c(
                     "div",
-                    { key: producte.id, class: "col-md-4 card-deck mb-4" },
+                    { key: producte.id, class: "col-md-4 card-deck mb-4 ml-2" },
                     [
                       _c(
                         "div",
-                        { class: "card card-primary text-center zoom" },
+                        {
+                          class: "card card-primary text-center zoom bg-light"
+                        },
                         [
                           _c("img", {
                             class: "card-img-top p-3",
