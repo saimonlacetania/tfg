@@ -4253,16 +4253,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -11011,7 +11001,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#cajacookies {\n  box-shadow: 0px 0px 5px 5px #808080;\n  background-color: white;\n  color: black;\n  padding: 10px;\n  visibility: visible;\n  margin-left: -15px;\n  margin-right: -15px;\n  margin-bottom: 0px;\n  position: fixed;\n  bottom: 0;\n  left: 33%;\n  width: 47%;\n}\n#cajacookies button {\n  color: black;\n}\n", ""]);
+exports.push([module.i, "\n#cajacookies {\n  position: fixed;\n  bottom: 0;\n}\n", ""]);
 
 // exports
 
@@ -51483,25 +51473,42 @@ var render = function() {
       _vm._v(" "),
       _c("router-view"),
       _vm._v(" "),
-      _c("div", { attrs: { id: "cajacookies" } }, [
-        _c("p", [
+      _c(
+        "div",
+        {
+          staticClass:
+            "shadow p-3 mb-5 bg-white rounded align-middle text-center",
+          staticStyle: { "margin-left": "37% !important" },
+          attrs: { id: "cajacookies" }
+        },
+        [
           _vm._v(
-            "\n    Aquesta web utilitza cookies per garantir la millor experiencia per l'usuari.\n    "
+            "\n        Aquesta web utilitza cookies per garantir la millor experiencia per l'usuari.\n        "
           ),
-          _c("a", { attrs: { href: "https://www.cookiesandyou.com/" } }, [
-            _vm._v("Més info")
-          ]),
-          _vm._v(".\n    "),
-          _c(
-            "button",
-            { staticClass: "pull-right", on: { click: _vm.aceptarCookies } },
-            [
-              _c("i", { staticClass: "fa fa-times" }),
-              _vm._v(" Acceptar i tancar")
-            ]
-          )
-        ])
-      ])
+          _vm._m(3),
+          _vm._v(".\n        "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-4" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-4" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "pull-right btn btn-sm text-white zoom",
+                  staticStyle: { "background-color": "#ff6565" },
+                  on: { click: _vm.aceptarCookies }
+                },
+                [
+                  _c("i", { staticClass: "fa fa-check-circle" }),
+                  _vm._v(" Acceptar i tancar")
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-4" })
+          ])
+        ]
+      )
     ],
     1
   )
@@ -51552,6 +51559,14 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", { staticClass: "text-dark" }, [_vm._v("Estadístiques")])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "https://www.cookiesandyou.com/" } }, [
+      _c("span", { staticStyle: { color: "#ff6565" } }, [_vm._v("Més info")])
     ])
   }
 ]
@@ -72014,11 +72029,29 @@ __webpack_require__.r(__webpack_exports__);
     }, {
       path: "/editarProducte/:id",
       component: _components_EditarProducteComponent__WEBPACK_IMPORTED_MODULE_12__["default"],
-      name: "editarProducte"
+      name: "editarProducte",
+      beforeEnter: function beforeEnter(to, form, next) {
+        axios.get("/api/athenticated").then(function () {
+          next();
+        })["catch"](function () {
+          return next({
+            name: "Login"
+          });
+        });
+      }
     }, {
       path: "/botiga",
       component: _components_BotigaComponent__WEBPACK_IMPORTED_MODULE_10__["default"],
-      name: "Botiga"
+      name: "Botiga",
+      beforeEnter: function beforeEnter(to, form, next) {
+        axios.get("/api/athenticated").then(function () {
+          next();
+        })["catch"](function () {
+          return next({
+            name: "Login"
+          });
+        });
+      }
     }, {
       path: "/register",
       component: _components_Register__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -72026,7 +72059,16 @@ __webpack_require__.r(__webpack_exports__);
     }, {
       path: "/crearBotiga",
       component: _components_CrearBotigaComponent__WEBPACK_IMPORTED_MODULE_11__["default"],
-      name: "CrearBotiga"
+      name: "CrearBotiga",
+      beforeEnter: function beforeEnter(to, form, next) {
+        axios.get("/api/athenticated").then(function () {
+          next();
+        })["catch"](function () {
+          return next({
+            name: "Login"
+          });
+        });
+      }
     }, {
       path: "/login",
       component: _components_Login__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -72038,19 +72080,55 @@ __webpack_require__.r(__webpack_exports__);
     }, {
       path: "/perfil/:id",
       component: _components_PerfilBotigaComponent__WEBPACK_IMPORTED_MODULE_13__["default"],
-      name: "PerfilBotiga"
+      name: "PerfilBotiga",
+      beforeEnter: function beforeEnter(to, form, next) {
+        axios.get("/api/athenticated").then(function () {
+          next();
+        })["catch"](function () {
+          return next({
+            name: "Login"
+          });
+        });
+      }
     }, {
       path: "/productesBotiga/:id",
       component: _components_PerfilBotigaComponent__WEBPACK_IMPORTED_MODULE_13__["default"],
-      name: "ProductesBotiga"
+      name: "ProductesBotiga",
+      beforeEnter: function beforeEnter(to, form, next) {
+        axios.get("/api/athenticated").then(function () {
+          next();
+        })["catch"](function () {
+          return next({
+            name: "Login"
+          });
+        });
+      }
     }, {
       path: "/user/:id",
       component: _components_PerfilBotigaComponent__WEBPACK_IMPORTED_MODULE_13__["default"],
-      name: "User"
+      name: "User",
+      beforeEnter: function beforeEnter(to, form, next) {
+        axios.get("/api/athenticated").then(function () {
+          next();
+        })["catch"](function () {
+          return next({
+            name: "Login"
+          });
+        });
+      }
     }, {
       path: "/cistella",
       component: _components_CistellaComponent__WEBPACK_IMPORTED_MODULE_14__["default"],
-      name: "Cistella"
+      name: "Cistella",
+      beforeEnter: function beforeEnter(to, form, next) {
+        axios.get("/api/athenticated").then(function () {
+          next();
+        })["catch"](function () {
+          return next({
+            name: "Login"
+          });
+        });
+      }
     }]
   }]
 });

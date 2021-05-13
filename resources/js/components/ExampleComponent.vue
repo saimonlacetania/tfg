@@ -205,33 +205,23 @@ html {
     </aside>
     <!-- PAGINA PRODUCTES -->
     <router-view></router-view>
-      <div id="cajacookies">
-      <p>
-      Aquesta web utilitza cookies per garantir la millor experiencia per l'usuari.
-      <a href="https://www.cookiesandyou.com/">Més info</a>.
-      <button v-on:click="aceptarCookies" class="pull-right"><i class="fa fa-times"></i> Acceptar i tancar</button>
-      </p>
+      <div id="cajacookies" class="shadow p-3 mb-5 bg-white rounded align-middle text-center" style="margin-left:37% !important;">
+          Aquesta web utilitza cookies per garantir la millor experiencia per l'usuari.
+          <a href="https://www.cookiesandyou.com/"><span style="color:#ff6565;">Més info</span></a>.
+          <div class="row">
+            <div class="col-md-4"></div>            
+            <div class="col-md-4">
+              <button v-on:click="aceptarCookies" class="pull-right btn btn-sm text-white zoom" style="background-color:#ff6565"><i class="fa fa-check-circle"></i> Acceptar i tancar</button>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
       </div>
   </div>
 </template>
 <style>
   #cajacookies {
-    box-shadow: 0px 0px 5px 5px #808080;
-    background-color: white;
-    color: black;
-    padding: 10px;
-    visibility: visible;
-    margin-left: -15px;
-    margin-right: -15px;
-    margin-bottom: 0px;
     position: fixed;
     bottom: 0;
-    left: 33%;
-    width: 47%;
-  }
-
-  #cajacookies button {
-    color: black;
   }
 </style>
 <script>
