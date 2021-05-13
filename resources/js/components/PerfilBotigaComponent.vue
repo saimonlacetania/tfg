@@ -82,15 +82,6 @@
                                         <h5><li class="fab fa-twitter mr-1"></li> {{ this.botiga.twitter }}</h5>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-10"></div>
-                                    <div class="col-md-2">
-                                        <button type="submit" class="btn btn-block text-center mt-3 text-light zoom" style="background-color:#ff6565;">
-                                            <i class="fa fa-heart"></i>
-                                            Contacta!
-                                        </button>
-                                    </div>
-                                </div>
                                 <hr>
                             </div>
                                 
@@ -106,33 +97,46 @@
                 <div class="container-fluid">
                     <div class="row">
                     <div
-                        :class="'col-md-4 card-deck mb-4'"
+                        :class="'col-md-4 card-deck mb-4 ml-2'"
                         v-for="producte in productes"
                         :key="producte.id"
                     >
-                        <div :class="'card card-primary text-center zoom'">
+                        <div :class="'card card-primary text-center zoom bg-light'">
                         <img
                             :class="'card-img-top p-3'"
                             :src="'/images/productes/' + producte.imatge"
                         />
                         <div :class="'card-body'">
-                            <div :class="'card-title font-weight-bold'">
-                            {{ producte.nom }}
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div :class="'card-title font-weight-bold text-uppercase col-md-10 text-center align-middle'">
+                                    &nbsp;{{ producte.nom }}
+                                </div>
+                                <div class="col-md-1"></div>
                             </div>
-                            <br />
-                            <div :class="'badge badge-warning badge-sm text-uppercase'">
-                            {{ producte.ref }}
+                            <div class="row">
+                                <div class="col-md-4"></div>
+                                <div :class="'col-md-4 badge badge-sm align-middle text-center'" style="background-color: #ff6565; color:white;">
+                                    Queden:
+                                {{ producte.stock }}
+                                </div>
+                                <div class="col-md-4"></div>
                             </div>
-                            <p :class="'card-text'">
-                            {{ producte.descripcio }}
-                            </p>
+                            <br>
+                            <div class="row" style="margin-bottom:-10%;">
+                                <div class="col-md-1"></div>
+                                <div :class="'card-text col-md-10 text-justify'">
+                                {{ producte.descripcio }}
+                                </div>
+                                <div class="col-md-1"></div>
+                            </div>
                         </div>
-                        <div :class="'card-footer'">
+                        <div :class="'card-footer bg-light'" style="border:none;">
                             <router-link
                             :to="{ name: 'Producte', params: { id: producte.id } }"
                             :class="'btn btn-outline-secondary btn-icon-right'"
                             >
-                            <span>Saber més</span>
+                                <span>Saber més</span>
                             </router-link>
                         </div>
                         </div>
