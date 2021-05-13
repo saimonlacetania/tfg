@@ -110,7 +110,7 @@
                             <div class="row">
                                 <div class="col-md-1"></div>
                                 <div :class="'card-title font-weight-bold text-uppercase col-md-10 text-center align-middle'">
-                                    &nbsp;{{ producte.nom }}
+                                    {{ producte.nom }}
                                 </div>
                                 <div class="col-md-1"></div>
                             </div>
@@ -126,7 +126,7 @@
                             <div class="row" style="margin-bottom:-10%;">
                                 <div class="col-md-1"></div>
                                 <div :class="'card-text col-md-10 text-justify'">
-                                {{ producte.descripcio }}
+                                    {{ producte.descripcio }}
                                 </div>
                                 <div class="col-md-1"></div>
                             </div>

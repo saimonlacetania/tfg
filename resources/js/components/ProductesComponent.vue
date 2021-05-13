@@ -54,18 +54,31 @@
                     :src="'/images/productes/' + producte.imatge"
                   />
                   <div :class="'card-body'">
-                    <div :class="'card-title font-weight-bold'">
-                      {{ producte.nom }}
+                    <div class="row">
+                      <div class="col-md-1"></div>
+                      <div :class="'card-title font-weight-bold text-uppercase col-md-10 text-center align-middle'">
+                        {{ producte.nom }}
+                      </div>
+                      <div class="col-md-1"></div>
                     </div>
-                    <br />
-                    <div :class="'badge badge-warning badge-sm text-uppercase'">
-                      {{ producte.ref }}
+                    <div class="row">
+                      <div class="col-md-4"></div>
+                      <div :class="'col-md-4 badge badge-sm align-middle text-center'" style="background-color: #ff6565; color:white;">
+                        Queden:
+                        {{ producte.stock }}
+                      </div>
+                      <div class="col-md-4"></div>
                     </div>
-                    <p :class="'card-text'">
-                      {{ producte.descripcio }}
-                    </p>
+                    <br>
+                    <div class="row" style="margin-bottom:-10%;">
+                      <div class="col-md-1"></div>
+                      <div :class="'card-text col-md-10 text-justify'">
+                        {{ producte.descripcio }}
+                      </div>
+                      <div class="col-md-1"></div>
                   </div>
-                  <div :class="'card-footer'">
+                </div>
+                  <div :class="'card-footer bg-light'" style="border:none;">
                     <router-link
                       :to="{ name: 'Producte', params: { id: producte.id } }"
                       :class="'btn btn-outline-secondary btn-icon-right'"
