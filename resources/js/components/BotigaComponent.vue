@@ -38,7 +38,7 @@
                                 <img 
                                 v-else
                                 class="profile-user-img img-fluid img-circle"
-                                :src="'/images/botigues/default.png'"
+                                :src="'/images/botigues/default.jpg'"
                                 alt="Shop profile picture"
                                 />
                         </div>
