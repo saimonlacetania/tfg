@@ -51975,7 +51975,7 @@ var render = function() {
                         "margin-left": "-30%"
                       },
                       attrs: {
-                        src: "/images/botigues/default.png",
+                        src: "/images/botigues/default.jpg",
                         alt: "Shop profile picture"
                       }
                     })

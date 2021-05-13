@@ -22,7 +22,7 @@
                                 <img 
                                     v-else
                                     class="img-circle border-4" 
-                                    :src="'/images/botigues/default.png'" 
+                                    :src="'/images/botigues/default.jpg'" 
                                     alt="Shop profile picture" 
                                     style="height:200px; width:200px; margin-top:25%; margin-left:-30%;"
                                 />
