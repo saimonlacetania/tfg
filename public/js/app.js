@@ -3927,6 +3927,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     var _this = this;
@@ -4212,16 +4215,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _PerfilBotigaComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PerfilBotigaComponent.vue */ "./resources/js/components/PerfilBotigaComponent.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -5765,6 +5758,19 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -11111,7 +11117,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.main-sidebar, .main-sidebar::before {\n@media (max-width: 767.98px);\r\n  background-color: white;\n}\n#cajacookies {\r\n    box-shadow: 0px 0px 5px 5px #808080;\r\n    background-color: white;\r\n    color: black;\r\n    padding: 10px;\r\n    visibility: visible;\r\n    margin-left: -15px;\r\n    margin-right: -15px;\r\n    margin-bottom: 0px;\r\n    position: fixed;\r\n    bottom: 0;\r\n    left: 33%;\r\n    width: 47%;\n}\n#cajacookies button {\r\n    color: black;\n}\r\n", ""]);
+exports.push([module.i, "\n.main-sidebar, .main-sidebar::before {\n@media (max-width: 767.98px);\r\n  background-color: white;\n}\n#cajacookies {\r\n    position: fixed;\r\n    bottom: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -47347,11 +47353,9 @@ var render = function() {
                                     )
                                   : _vm._e(),
                                 _vm._v(" "),
-                                _c(
-                                  "label",
-                                  { attrs: { for: "telf_1_botiga" } },
-                                  [_vm._v("Telèfon")]
-                                ),
+                                _c("label", { attrs: { for: "telf_1" } }, [
+                                  _vm._v("Telèfon")
+                                ]),
                                 _vm._v(" "),
                                 _c("div", { staticClass: "input-group mb-3" }, [
                                   _c("input", {
@@ -47366,7 +47370,7 @@ var render = function() {
                                     staticClass: "form-control",
                                     attrs: {
                                       type: "text",
-                                      id: "telf_1_botiga",
+                                      id: "telf_1",
                                       placeholder: "Telèfon"
                                     },
                                     domProps: {
@@ -47416,11 +47420,9 @@ var render = function() {
                                     )
                                   : _vm._e(),
                                 _vm._v(" "),
-                                _c(
-                                  "label",
-                                  { attrs: { for: "telf_2_botiga" } },
-                                  [_vm._v("Telèfon")]
-                                ),
+                                _c("label", { attrs: { for: "telf_2" } }, [
+                                  _vm._v("Telèfon")
+                                ]),
                                 _vm._v(" "),
                                 _c("div", { staticClass: "input-group mb-3" }, [
                                   _c("input", {
@@ -47435,7 +47437,7 @@ var render = function() {
                                     staticClass: "form-control",
                                     attrs: {
                                       type: "text",
-                                      id: "telf_2_botiga",
+                                      id: "telf_2",
                                       placeholder: "Telèfon"
                                     },
                                     domProps: {
@@ -50790,7 +50792,9 @@ var render = function() {
     _c("section", { staticClass: "content" }, [
       _c("div", { staticClass: "container-fluid" }, [
         _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-4" }, [
+          _c("div", { staticClass: "col-md-3" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-6" }, [
             _c("form", [
               _c("div", { staticClass: "card-body register-card-body" }, [
                 _c("div", { staticClass: "form-group mb-3" }, [
@@ -50846,7 +50850,10 @@ var render = function() {
                             attrs: { for: "number" }
                           },
                           [
-                            _c("i", { staticClass: "far fa-times-circle" }),
+                            _c("i", {
+                              staticClass: "far fa-times-circle",
+                              staticStyle: { color: "#ff6565" }
+                            }),
                             _vm._v(
                               "\r\n                                    " +
                                 _vm._s(_vm.errors.ref[0])
@@ -50897,7 +50904,10 @@ var render = function() {
                             attrs: { for: "number" }
                           },
                           [
-                            _c("i", { staticClass: "far fa-times-circle" }),
+                            _c("i", {
+                              staticClass: "far fa-times-circle",
+                              staticStyle: { color: "#ff6565" }
+                            }),
                             _vm._v(
                               "\r\n                                    " +
                                 _vm._s(_vm.errors.nom[0])
@@ -50949,7 +50959,10 @@ var render = function() {
                             attrs: { for: "number" }
                           },
                           [
-                            _c("i", { staticClass: "far fa-times-circle" }),
+                            _c("i", {
+                              staticClass: "far fa-times-circle",
+                              staticStyle: { color: "#ff6565" }
+                            }),
                             _vm._v(
                               "\r\n                                    " +
                                 _vm._s(_vm.errors.desc[0])
@@ -50999,7 +51012,10 @@ var render = function() {
                             attrs: { for: "number" }
                           },
                           [
-                            _c("i", { staticClass: "far fa-times-circle" }),
+                            _c("i", {
+                              staticClass: "far fa-times-circle",
+                              staticStyle: { color: "#ff6565" }
+                            }),
                             _vm._v(
                               "\r\n                                    " +
                                 _vm._s(_vm.errors.preu[0])
@@ -51050,7 +51066,10 @@ var render = function() {
                             attrs: { for: "number" }
                           },
                           [
-                            _c("i", { staticClass: "far fa-times-circle" }),
+                            _c("i", {
+                              staticClass: "far fa-times-circle",
+                              staticStyle: { color: "#ff6565" }
+                            }),
                             _vm._v(
                               "\r\n                                    " +
                                 _vm._s(_vm.errors.stock[0])
@@ -51091,14 +51110,16 @@ var render = function() {
                   _vm._m(5)
                 ]),
                 _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col text-center" }, [
                     _c(
                       "button",
                       {
-                        staticClass: "btn btn-secondary",
+                        staticClass: "btn btn-secondary zoom",
+                        staticStyle: {
+                          "background-color": "#ff6565",
+                          border: "none"
+                        },
                         attrs: { type: "submit" },
                         on: {
                           click: function($event) {
@@ -51119,7 +51140,9 @@ var render = function() {
                 ])
               ])
             ])
-          ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-3" })
         ])
       ])
     ])
@@ -51133,9 +51156,16 @@ var staticRenderFns = [
     return _c("section", { staticClass: "content-header" }, [
       _c("div", { staticClass: "container-fluid" }, [
         _c("div", { staticClass: "row mb-2" }, [
-          _c("div", { staticClass: "col-sm-6" }, [
-            _c("h1", [_vm._v("Editar Producte")])
-          ])
+          _c("div", { staticClass: "col-md-3" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-6 text-center" }, [
+            _c("h1", { staticStyle: { color: "#ff6565" } }, [
+              _vm._v("Editar "),
+              _c("b", { staticClass: "text-secondary" }, [_vm._v("Producte")])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-3" })
         ])
       ])
     ])
@@ -51146,7 +51176,10 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "input-group-append" }, [
       _c("span", { staticClass: "input-group-text" }, [
-        _c("i", { staticClass: "fas fa-image" })
+        _c("i", {
+          staticClass: "fas fa-image",
+          staticStyle: { color: "#ff6565" }
+        })
       ])
     ])
   },
@@ -51156,7 +51189,10 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "input-group-append" }, [
       _c("div", { staticClass: "input-group-text" }, [
-        _c("span", { staticClass: "fas fa-asterisk" })
+        _c("span", {
+          staticClass: "fas fa-asterisk",
+          staticStyle: { color: "#ff6565" }
+        })
       ])
     ])
   },
@@ -51174,7 +51210,10 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "input-group-append" }, [
       _c("div", { staticClass: "input-group-text" }, [
-        _c("span", { staticClass: "fas fa-euro-sign" })
+        _c("span", {
+          staticClass: "fas fa-euro-sign",
+          staticStyle: { color: "#ff6565" }
+        })
       ])
     ])
   },
@@ -51184,7 +51223,10 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "input-group-append" }, [
       _c("div", { staticClass: "input-group-text" }, [
-        _c("span", { staticClass: "fas fa-layer-group" })
+        _c("span", {
+          staticClass: "fas fa-layer-group",
+          staticStyle: { color: "#ff6565" }
+        })
       ])
     ])
   }
@@ -51679,7 +51721,7 @@ var render = function() {
                                         [
                                           _c("i", {
                                             staticClass:
-                                              "fas fa-feather-alt nav-icon text-dark"
+                                              "fas fa-gem nav-icon text-dark"
                                           }),
                                           _vm._v(" "),
                                           _c(
@@ -51885,25 +51927,42 @@ var render = function() {
       _vm._v(" "),
       _c("router-view"),
       _vm._v(" "),
-      _c("div", { attrs: { id: "cajacookies" } }, [
-        _c("p", [
+      _c(
+        "div",
+        {
+          staticClass:
+            "shadow p-3 mb-5 bg-white rounded align-middle text-center",
+          staticStyle: { "margin-left": "37% !important" },
+          attrs: { id: "cajacookies" }
+        },
+        [
           _vm._v(
-            "\n    Aquesta web utilitza cookies per garantir la millor experiencia per l'usuari.\n    "
+            "\n        Aquesta web utilitza cookies per garantir la millor experiencia per l'usuari.\n        "
           ),
-          _c("a", { attrs: { href: "https://www.cookiesandyou.com/" } }, [
-            _vm._v("Més info")
-          ]),
-          _vm._v(".\n    "),
-          _c(
-            "button",
-            { staticClass: "pull-right", on: { click: _vm.aceptarCookies } },
-            [
-              _c("i", { staticClass: "fa fa-times" }),
-              _vm._v(" Acceptar i tancar")
-            ]
-          )
-        ])
-      ])
+          _vm._m(3),
+          _vm._v(".\n        "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-4" }),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-4" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "pull-right btn btn-sm text-white zoom",
+                  staticStyle: { "background-color": "#ff6565" },
+                  on: { click: _vm.aceptarCookies }
+                },
+                [
+                  _c("i", { staticClass: "fa fa-check-circle" }),
+                  _vm._v(" Acceptar i tancar")
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-4" })
+          ])
+        ]
+      )
     ],
     1
   )
@@ -51954,6 +52013,14 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", { staticClass: "text-dark" }, [_vm._v("Estadístiques")])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "https://www.cookiesandyou.com/" } }, [
+      _c("span", { staticStyle: { color: "#ff6565" } }, [_vm._v("Més info")])
     ])
   }
 ]
@@ -52138,7 +52205,7 @@ var render = function() {
                         "margin-left": "-30%"
                       },
                       attrs: {
-                        src: "/images/botigues/default.png",
+                        src: "/images/botigues/default.jpg",
                         alt: "Shop profile picture"
                       }
                     })
@@ -52242,7 +52309,7 @@ var render = function() {
                             },
                             [
                               _vm._v(
-                                "\n                                 " +
+                                "\n                                " +
                                   _vm._s(producte.nom) +
                                   "\n                            "
                               )
@@ -52293,7 +52360,7 @@ var render = function() {
                               { class: "card-text col-md-10 text-justify" },
                               [
                                 _vm._v(
-                                  "\n                            " +
+                                  "\n                                " +
                                     _vm._s(producte.descripcio) +
                                     "\n                            "
                                 )
@@ -54222,47 +54289,86 @@ var render = function() {
                           }),
                           _vm._v(" "),
                           _c("div", { class: "card-body" }, [
-                            _c(
-                              "div",
-                              { class: "card-title font-weight-bold" },
-                              [
-                                _vm._v(
-                                  "\n                    " +
-                                    _vm._s(producte.nom) +
-                                    "\n                  "
-                                )
-                              ]
-                            ),
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-1" }),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  class:
+                                    "card-title font-weight-bold text-uppercase col-md-10 text-center align-middle"
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                      " +
+                                      _vm._s(producte.nom) +
+                                      "\n                    "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-1" })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-4" }),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  class:
+                                    "col-md-4 badge badge-sm align-middle text-center",
+                                  staticStyle: {
+                                    "background-color": "#ff6565",
+                                    color: "white"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                      Queden:\n                      " +
+                                      _vm._s(producte.stock) +
+                                      "\n                    "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-4" })
+                            ]),
                             _vm._v(" "),
                             _c("br"),
                             _vm._v(" "),
                             _c(
                               "div",
                               {
-                                class:
-                                  "badge badge-warning badge-sm text-uppercase"
+                                staticClass: "row",
+                                staticStyle: { "margin-bottom": "-10%" }
                               },
                               [
-                                _vm._v(
-                                  "\n                    " +
-                                    _vm._s(producte.ref) +
-                                    "\n                  "
-                                )
+                                _c("div", { staticClass: "col-md-1" }),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { class: "card-text col-md-10 text-justify" },
+                                  [
+                                    _vm._v(
+                                      "\n                      " +
+                                        _vm._s(producte.descripcio) +
+                                        "\n                    "
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "col-md-1" })
                               ]
-                            ),
-                            _vm._v(" "),
-                            _c("p", { class: "card-text" }, [
-                              _vm._v(
-                                "\n                    " +
-                                  _vm._s(producte.descripcio) +
-                                  "\n                  "
-                              )
-                            ])
+                            )
                           ]),
                           _vm._v(" "),
                           _c(
                             "div",
-                            { class: "card-footer" },
+                            {
+                              class: "card-footer bg-light",
+                              staticStyle: { border: "none" }
+                            },
                             [
                               _c(
                                 "router-link",
@@ -72410,11 +72516,29 @@ __webpack_require__.r(__webpack_exports__);
     }, {
       path: "/editarProducte/:id",
       component: _components_EditarProducteComponent__WEBPACK_IMPORTED_MODULE_12__["default"],
-      name: "editarProducte"
+      name: "editarProducte",
+      beforeEnter: function beforeEnter(to, form, next) {
+        axios.get("/api/athenticated").then(function () {
+          next();
+        })["catch"](function () {
+          return next({
+            name: "Login"
+          });
+        });
+      }
     }, {
       path: "/botiga",
       component: _components_BotigaComponent__WEBPACK_IMPORTED_MODULE_10__["default"],
-      name: "Botiga"
+      name: "Botiga",
+      beforeEnter: function beforeEnter(to, form, next) {
+        axios.get("/api/athenticated").then(function () {
+          next();
+        })["catch"](function () {
+          return next({
+            name: "Login"
+          });
+        });
+      }
     }, {
       path: "/register",
       component: _components_Register__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -72422,7 +72546,16 @@ __webpack_require__.r(__webpack_exports__);
     }, {
       path: "/crearBotiga",
       component: _components_CrearBotigaComponent__WEBPACK_IMPORTED_MODULE_11__["default"],
-      name: "CrearBotiga"
+      name: "CrearBotiga",
+      beforeEnter: function beforeEnter(to, form, next) {
+        axios.get("/api/athenticated").then(function () {
+          next();
+        })["catch"](function () {
+          return next({
+            name: "Login"
+          });
+        });
+      }
     }, {
       path: "/login",
       component: _components_Login__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -72434,19 +72567,55 @@ __webpack_require__.r(__webpack_exports__);
     }, {
       path: "/perfil/:id",
       component: _components_PerfilBotigaComponent__WEBPACK_IMPORTED_MODULE_13__["default"],
-      name: "PerfilBotiga"
+      name: "PerfilBotiga",
+      beforeEnter: function beforeEnter(to, form, next) {
+        axios.get("/api/athenticated").then(function () {
+          next();
+        })["catch"](function () {
+          return next({
+            name: "Login"
+          });
+        });
+      }
     }, {
       path: "/productesBotiga/:id",
       component: _components_PerfilBotigaComponent__WEBPACK_IMPORTED_MODULE_13__["default"],
-      name: "ProductesBotiga"
+      name: "ProductesBotiga",
+      beforeEnter: function beforeEnter(to, form, next) {
+        axios.get("/api/athenticated").then(function () {
+          next();
+        })["catch"](function () {
+          return next({
+            name: "Login"
+          });
+        });
+      }
     }, {
       path: "/user/:id",
       component: _components_PerfilBotigaComponent__WEBPACK_IMPORTED_MODULE_13__["default"],
-      name: "User"
+      name: "User",
+      beforeEnter: function beforeEnter(to, form, next) {
+        axios.get("/api/athenticated").then(function () {
+          next();
+        })["catch"](function () {
+          return next({
+            name: "Login"
+          });
+        });
+      }
     }, {
       path: "/cistella",
       component: _components_CistellaComponent__WEBPACK_IMPORTED_MODULE_14__["default"],
-      name: "Cistella"
+      name: "Cistella",
+      beforeEnter: function beforeEnter(to, form, next) {
+        axios.get("/api/athenticated").then(function () {
+          next();
+        })["catch"](function () {
+          return next({
+            name: "Login"
+          });
+        });
+      }
     }]
   }]
 });

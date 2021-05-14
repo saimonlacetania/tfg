@@ -113,9 +113,9 @@
                                                 <label class="col-form-label" for="number"><i class="far fa-times-circle"></i>
                                                     {{ errors.telf_1[0] }}</label>
                                             </div>
-                                            <label for="telf_1_botiga">Telèfon</label>
+                                            <label for="telf_1">Telèfon</label>
                                             <div class="input-group mb-3">
-                                                <input type="text" class="form-control" id="telf_1_botiga" placeholder="Telèfon" v-model="$data.form_botiga.telf_1">                                            
+                                                <input type="text" class="form-control" id="telf_1" placeholder="Telèfon" v-model="$data.form_botiga.telf_1">                                            
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i class="fas fa-phone" style="color:#ff6565;"></i></span>
                                                 </div>
@@ -126,9 +126,9 @@
                                                 <label class="col-form-label" for="number"><i class="far fa-times-circle"></i>
                                                     {{ errors.telf_2[0] }}</label>
                                             </div>
-                                            <label for="telf_2_botiga">Telèfon</label>
+                                            <label for="telf_2">Telèfon</label>
                                             <div class="input-group mb-3">
-                                                <input type="text" class="form-control" id="telf_2_botiga" placeholder="Telèfon" v-model="$data.form_botiga.telf_2">                                            
+                                                <input type="text" class="form-control" id="telf_2" placeholder="Telèfon" v-model="$data.form_botiga.telf_2">                                            
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><i class="fas fa-phone" style="color:#ff6565;"></i></span>
                                                 </div>
