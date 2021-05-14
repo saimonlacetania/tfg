@@ -15,9 +15,11 @@
         <br /><br />
 
         <div class="row">
-          <div class="col-md-11 mt-4">
-            <h1 class="text-center">¿Perquè Mercat Virtual?</h1>
-          </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4 mt-4">
+              <h1 class="text-center">¿Perquè Mercat Virtual?</h1>
+            </div>
+            <div class="col-md-4"></div>
 
           <br /><br />
 

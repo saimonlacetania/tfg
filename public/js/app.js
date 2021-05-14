@@ -2573,22 +2573,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -6508,6 +6492,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CercaComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CercaComponent.vue */ "./resources/js/components/CercaComponent.vue");
+//
+//
 //
 //
 //
@@ -52556,7 +52542,7 @@ var render = function() {
                                         [
                                           _c("i", {
                                             staticClass:
-                                              "fas fa-feather-alt nav-icon text-dark"
+                                              "fas fa-gem nav-icon text-dark"
                                           }),
                                           _vm._v(" "),
                                           _c(
@@ -56023,11 +56009,15 @@ var staticRenderFns = [
             _c("br"),
             _vm._v(" "),
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-11 mt-4" }, [
+              _c("div", { staticClass: "col-md-4" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4 mt-4" }, [
                 _c("h1", { staticClass: "text-center" }, [
                   _vm._v("¿Perquè Mercat Virtual?")
                 ])
               ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-4" }),
               _vm._v(" "),
               _c("br"),
               _c("br"),

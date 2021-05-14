@@ -426,9 +426,7 @@
                             </div>
                             <!-- /.card-body -->
                             </div>
-
                     </div>
-
 
                     <!-- Pujar producte -->
                     <div class="tab-pane" id="puja_producte">
@@ -627,25 +625,11 @@
                                     </div>
                                     <!-- /.form-box -->
                                 </form>
-
-
-
-                                
-
                             </div>
                             <div class="col-md-1"></div>
                         </div>
                     </div>
                     <!-- /.tab-pane -->
-
-
-
-
-
-
-
-
-                    
                     </div>
                     <!-- /.tab-content -->
                 </div>
