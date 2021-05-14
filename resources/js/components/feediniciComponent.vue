@@ -11,15 +11,15 @@
             </div>
           </div>
         </div>
-        
+
         <br /><br />
 
         <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4 mt-4">
-              <h1 class="text-center">¿Perquè Mercat Virtual?</h1>
-            </div>
-            <div class="col-md-4"></div>
+          <div class="col-md-4"></div>
+          <div class="col-md-4 mt-4">
+            <h1 class="text-center">¿Perquè Mercat Virtual?</h1>
+          </div>
+          <div class="col-md-4"></div>
 
           <br /><br />
 
@@ -93,9 +93,9 @@
             <h4 class="text-center">productes únics de professionals locals</h4>
           </div>
         </div>
-      
+
         <br /><br />
-      
+
         <div class="row">
           <div class="card-deck col-md-12">
             <div class="card">
@@ -293,7 +293,6 @@
         </div>
       </div>
     </div>
-    
   </div>
 
   <!-- /.contingut pagina -->
@@ -315,43 +314,40 @@
 </style>
 
 <script>
-import CercaComponent from "./CercaComponent.vue";
-
 export default {
-  components: { CercaComponent},
   mounted() {
     console.log("Productes mounted.");
     this.loading();
   },
   methods: {
     loading() {
-      let timerInterval
+      let timerInterval;
       Swal.fire({
-        title: 'Auto close alert!',
-        html: 'I will close in <b></b> milliseconds.',
+        title: "Auto close alert!",
+        html: "I will close in <b></b> milliseconds.",
         timer: 2000,
         timerProgressBar: true,
         didOpen: () => {
-          Swal.showLoading()
+          Swal.showLoading();
           timerInterval = setInterval(() => {
-            const content = Swal.getContent()
+            const content = Swal.getContent();
             if (content) {
-              const b = content.querySelector('b')
+              const b = content.querySelector("b");
               if (b) {
-                b.textContent = Swal.getTimerLeft()
+                b.textContent = Swal.getTimerLeft();
               }
             }
-          }, 100)
+          }, 100);
         },
         willClose: () => {
-          clearInterval(timerInterval)
-        }
+          clearInterval(timerInterval);
+        },
       }).then((result) => {
         /* Read more about handling dismissals below */
         if (result.dismiss === Swal.DismissReason.timer) {
-          console.log('I was closed by the timer')
+          console.log("I was closed by the timer");
         }
-      })
+      });
     },
   },
 };

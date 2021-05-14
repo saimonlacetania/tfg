@@ -141,7 +141,7 @@ export default {
   methods: {
     toastCorrecte() {
       // Use sweetalert2
-      this.$swal({
+      Swal.fire({
         toast: true,
         position: "top-end",
         icon: "success",
@@ -156,7 +156,7 @@ export default {
     },
     elminatCorrectament() {
       // Use sweetalert2
-      this.$swal({
+      Swal.fire({
         toast: true,
         position: "top-end",
         icon: "success",
@@ -171,7 +171,7 @@ export default {
     },
     toastIncorrecte() {
       // Use sweetalert2
-      this.$swal({
+      Swal.fire({
         toast: true,
         position: "top-end",
         icon: "error",
@@ -186,7 +186,7 @@ export default {
     },
     toastIncorrecte2() {
       // Use sweetalert2
-      this.$swal({
+      Swal.fire({
         toast: true,
         position: "top-end",
         icon: "error",

@@ -544,7 +544,7 @@ export default {
     },
     toastCorrecte() {
       // Use sweetalert2
-      this.$swal({
+      Swal.fire({
         toast: true,
         position: "top-end",
         icon: "success",
@@ -559,7 +559,7 @@ export default {
     },
     toastIncorrecte() {
       // Use sweetalert2
-      this.$swal({
+      Swal.fire({
         toast: true,
         position: "top-end",
         icon: "error",

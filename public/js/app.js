@@ -2999,7 +2999,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     toastCorrecte: function toastCorrecte() {
       // Use sweetalert2
-      this.$swal({
+      Swal.fire({
         toast: true,
         position: "top-end",
         icon: "success",
@@ -3014,7 +3014,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     elminatCorrectament: function elminatCorrectament() {
       // Use sweetalert2
-      this.$swal({
+      Swal.fire({
         toast: true,
         position: "top-end",
         icon: "success",
@@ -3029,7 +3029,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     toastIncorrecte: function toastIncorrecte() {
       // Use sweetalert2
-      this.$swal({
+      Swal.fire({
         toast: true,
         position: "top-end",
         icon: "error",
@@ -3044,7 +3044,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     toastIncorrecte2: function toastIncorrecte2() {
       // Use sweetalert2
-      this.$swal({
+      Swal.fire({
         toast: true,
         position: "top-end",
         icon: "error",
@@ -5631,7 +5631,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     toastCorrecte: function toastCorrecte() {
       // Use sweetalert2
-      this.$swal({
+      Swal.fire({
         toast: true,
         position: "top-end",
         icon: "success",
@@ -5646,7 +5646,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     toastIncorrecte: function toastIncorrecte() {
       // Use sweetalert2
-      this.$swal({
+      Swal.fire({
         toast: true,
         position: "top-end",
         icon: "error",
