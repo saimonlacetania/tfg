@@ -112,4 +112,11 @@ class OrdersController extends Controller
         }
         return true;
     }
+    public function ordreRebuda($id)
+    {
+        $ordre = Order::find($id);
+        $ordre->rebut = 1;
+        $ordre->save();
+
+    }
 }

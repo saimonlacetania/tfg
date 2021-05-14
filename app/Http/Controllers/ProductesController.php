@@ -38,7 +38,7 @@ class ProductesController extends Controller
 
     public function comentaris($id)
     {
-        $comentaris = Comentari::with('user')->get();
+        $comentaris = Comentari::with('user')->where("id_producte",$id)->get();
         return $comentaris;
     }
 

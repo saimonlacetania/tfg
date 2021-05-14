@@ -266,9 +266,9 @@
                                                     >
                                                     <label v-if="!files || !files.length" class="custom-file-label" for="img_perfil">Tria un fitxer</label>
                                                     <span v-else>
-                                                        <label v-for="file in files" :key="file" class="custom-file-label" for="img_perfil">
-                                                            <span v-if="file.id=='img_perfil'">
-                                                                {{file.file[0].name}}
+                                                        <label v-for="file1 in files" :key="file1.name" class="custom-file-label" for="img_perfil">
+                                                            <span v-if="file1.id=='img_perfil'">
+                                                                {{file1.file[0].name}}
                                                             </span>
                                                             <span v-else>
                                                                 Tria un fitxer
@@ -295,9 +295,9 @@
                                                     >
                                                     <label v-if="!files || !files.length" class="custom-file-label" for="img_portada">Tria un fitxer</label>
                                                     <span v-else>
-                                                        <label v-for="file in files" :key="file" class="custom-file-label" for="img_portada">
-                                                            <span v-if="file.id=='img_portada'">
-                                                                {{file.file[0].name}}
+                                                        <label v-for="file2 in files" :key="file2.name" class="custom-file-label" for="img_portada">
+                                                            <span v-if="file2.id=='img_portada'">
+                                                                {{file2.file[0].name}}
                                                             </span>
                                                             <span v-else>
                                                                 Tria un fitxer
@@ -449,9 +449,9 @@
                                                 >
                                                 <label v-if="!files || !files.length" class="custom-file-label" for="img_producte">Tria un fitxer</label>
                                                 <span v-else>
-                                                    <label v-for="file in files" :key="file" class="custom-file-label" for="img_producte">
-                                                        <span v-if="file.id=='img_producte'">
-                                                        {{file.file[0].name}}
+                                                    <label v-for="file3 in files" :key="file3.name" class="custom-file-label" for="img_producte">
+                                                        <span v-if="file3.id=='img_producte'">
+                                                        {{file3.file[0].name}}
                                                         </span>
                                                         <span v-else>
                                                             Tria un fitxer
@@ -630,6 +630,7 @@
                         </div>
                     </div>
                     <!-- /.tab-pane -->
+
                     </div>
                     <!-- /.tab-content -->
                 </div>
@@ -675,8 +676,6 @@ export default {
                 visites: "0",
             },
             files: null,
-            files2: null,
-            files3: null,
             form_botiga: {
                 id:"",
                 nom:"",
@@ -819,8 +818,8 @@ export default {
             let that = this;
             console.log(that.form);
             let formData = new FormData();
-            if (document.getElementById("imatge").files[0]) {
-                that.form["imatge"] = document.getElementById("imatge").files[0];
+            if (document.getElementById("img_producte").files[0]) {
+                that.form["imatge"] = document.getElementById("img_producte").files[0];
                 formData.append("imatge", that.form["imatge"]);
             }
             formData.append("ref", that.form["ref"]);
