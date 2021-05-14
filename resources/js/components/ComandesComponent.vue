@@ -209,9 +209,25 @@ export default {
     });
   },
   methods: {
+    toastCorrecte() {
+      // Use sweetalert2
+      Swal.fire({
+        toast: true,
+        position: "top-end",
+        icon: "success",
+        title: "Producte enviat correctament",
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+      });
+    },
     enviarOrdre(id) {
       axios.post("/api/enviarOrdre/" + id).then((res1) => {
         console.log(res1);
+        this.toastCorrecte();
         axios.get("/api/veureOrdreBotiga").then((res2) => {
           this.orders = res2.data;
           console.log(this.orders);

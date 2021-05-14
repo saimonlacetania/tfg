@@ -528,6 +528,7 @@ export default {
     ordreRebuda(id) {
       axios.post("/api/ordreRebuda/" + id).then((res) => {
         console.log(res);
+        this.rebut();
       });
       axios.get("/api/veureOrdreUser").then((res3) => {
         this.orders = res3.data;
@@ -541,6 +542,21 @@ export default {
     fileSelected(e) {
       this.files = e.target.files;
       console.log(this.files);
+    },
+    rebut() {
+      // Use sweetalert2
+      Swal.fire({
+        toast: true,
+        position: "top-end",
+        icon: "success",
+        title: "Comanda rebuda!",
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+      });
     },
     toastCorrecte() {
       // Use sweetalert2

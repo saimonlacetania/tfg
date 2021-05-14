@@ -126,19 +126,22 @@ export default {
     axios.get("/api/user").then((res) => {
       this.user = res.data;
     });
-    axios.get("/api/veureCistella").then((res) => {
-      this.cistella = res.data;
-      console.log(this.cistella);
-      for (let i = 0; i < this.cistella.length; i++) {
-        this.cistella[i].productes.preu = parseFloat(
-          this.cistella[i].productes.preu * this.cistella[i].quantitat
-        ).toFixed(2);
-        this.total += parseFloat(this.cistella[i].productes.preu);
-      }
-      this.total = parseFloat(this.total).toFixed(2);
-    });
+    this.actualitzarCistella();
   },
   methods: {
+    actualitzarCistella() {
+      axios.get("/api/veureCistella").then((res) => {
+        this.cistella = res.data;
+        this.total = 0;
+        for (let i = 0; i < this.cistella.length; i++) {
+          this.cistella[i].productes.preu = parseFloat(
+            this.cistella[i].productes.preu * this.cistella[i].quantitat
+          ).toFixed(2);
+          this.total += parseFloat(this.cistella[i].productes.preu);
+        }
+        this.total = parseFloat(this.total).toFixed(2);
+      });
+    },
     toastCorrecte() {
       // Use sweetalert2
       Swal.fire({
@@ -225,50 +228,20 @@ export default {
       axios.post("/api/eliminarCistella/" + id).then((res) => {
         console.log(res);
         this.elminatCorrectament();
-      });
-      axios.get("/api/veureCistella").then((res) => {
-        this.cistella = res.data;
-        this.total = 0;
-        for (let i = 0; i < this.cistella.length; i++) {
-          this.cistella[i].productes.preu = parseFloat(
-            this.cistella[i].productes.preu * this.cistella[i].quantitat
-          ).toFixed(2);
-          this.total += parseFloat(this.cistella[i].productes.preu);
-        }
-        this.total = parseFloat(this.total).toFixed(2);
+        this.actualitzarCistella();
       });
     },
     restarCistella(id) {
       axios.post("/api/restarCistella/" + id).then((res) => {
         console.log(res);
       });
-      axios.get("/api/veureCistella").then((res) => {
-        this.cistella = res.data;
-        this.total = 0;
-        for (let i = 0; i < this.cistella.length; i++) {
-          this.cistella[i].productes.preu = parseFloat(
-            this.cistella[i].productes.preu * this.cistella[i].quantitat
-          ).toFixed(2);
-          this.total += parseFloat(this.cistella[i].productes.preu);
-        }
-        this.total = parseFloat(this.total).toFixed(2);
-      });
+      this.actualitzarCistella();
     },
     sumarCistella(id) {
       axios.post("/api/sumarCistella/" + id).then((res) => {
         console.log(res);
       });
-      axios.get("/api/veureCistella").then((res) => {
-        this.cistella = res.data;
-        this.total = 0;
-        for (let i = 0; i < this.cistella.length; i++) {
-          this.cistella[i].productes.preu = parseFloat(
-            this.cistella[i].productes.preu * this.cistella[i].quantitat
-          ).toFixed(2);
-          this.total += parseFloat(this.cistella[i].productes.preu);
-        }
-        this.total = parseFloat(this.total).toFixed(2);
-      });
+      this.actualitzarCistella();
     },
   },
 };

@@ -2984,19 +2984,24 @@ __webpack_require__.r(__webpack_exports__);
     axios.get("/api/user").then(function (res) {
       _this.user = res.data;
     });
-    axios.get("/api/veureCistella").then(function (res) {
-      _this.cistella = res.data;
-      console.log(_this.cistella);
-
-      for (var i = 0; i < _this.cistella.length; i++) {
-        _this.cistella[i].productes.preu = parseFloat(_this.cistella[i].productes.preu * _this.cistella[i].quantitat).toFixed(2);
-        _this.total += parseFloat(_this.cistella[i].productes.preu);
-      }
-
-      _this.total = parseFloat(_this.total).toFixed(2);
-    });
+    this.actualitzarCistella();
   },
   methods: {
+    actualitzarCistella: function actualitzarCistella() {
+      var _this2 = this;
+
+      axios.get("/api/veureCistella").then(function (res) {
+        _this2.cistella = res.data;
+        _this2.total = 0;
+
+        for (var i = 0; i < _this2.cistella.length; i++) {
+          _this2.cistella[i].productes.preu = parseFloat(_this2.cistella[i].productes.preu * _this2.cistella[i].quantitat).toFixed(2);
+          _this2.total += parseFloat(_this2.cistella[i].productes.preu);
+        }
+
+        _this2.total = parseFloat(_this2.total).toFixed(2);
+      });
+    },
     toastCorrecte: function toastCorrecte() {
       // Use sweetalert2
       Swal.fire({
@@ -3058,83 +3063,50 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     crearOrdre: function crearOrdre() {
-      var _this2 = this;
+      var _this3 = this;
 
       axios.post("/api/crearOrdre").then(function (res) {
         console.log(res);
 
-        _this2.toastCorrecte();
+        _this3.toastCorrecte();
 
         axios.get("/api/veureCistella").then(function (res) {
-          _this2.cistella = res.data;
-          console.log(_this2.cistella);
-          _this2.total = 0.0;
+          _this3.cistella = res.data;
+          console.log(_this3.cistella);
+          _this3.total = 0.0;
         });
       })["catch"](function (error) {
         console.log(error.response.data);
 
         if (error.response.data == "Buida") {
-          _this2.toastIncorrecte2();
+          _this3.toastIncorrecte2();
         } else {
-          _this2.toastIncorrecte();
+          _this3.toastIncorrecte();
         }
       });
     },
     eliminarCistella: function eliminarCistella(id) {
-      var _this3 = this;
+      var _this4 = this;
 
       axios.post("/api/eliminarCistella/" + id).then(function (res) {
         console.log(res);
 
-        _this3.elminatCorrectament();
-      });
-      axios.get("/api/veureCistella").then(function (res) {
-        _this3.cistella = res.data;
-        _this3.total = 0;
+        _this4.elminatCorrectament();
 
-        for (var i = 0; i < _this3.cistella.length; i++) {
-          _this3.cistella[i].productes.preu = parseFloat(_this3.cistella[i].productes.preu * _this3.cistella[i].quantitat).toFixed(2);
-          _this3.total += parseFloat(_this3.cistella[i].productes.preu);
-        }
-
-        _this3.total = parseFloat(_this3.total).toFixed(2);
+        _this4.actualitzarCistella();
       });
     },
     restarCistella: function restarCistella(id) {
-      var _this4 = this;
-
       axios.post("/api/restarCistella/" + id).then(function (res) {
         console.log(res);
       });
-      axios.get("/api/veureCistella").then(function (res) {
-        _this4.cistella = res.data;
-        _this4.total = 0;
-
-        for (var i = 0; i < _this4.cistella.length; i++) {
-          _this4.cistella[i].productes.preu = parseFloat(_this4.cistella[i].productes.preu * _this4.cistella[i].quantitat).toFixed(2);
-          _this4.total += parseFloat(_this4.cistella[i].productes.preu);
-        }
-
-        _this4.total = parseFloat(_this4.total).toFixed(2);
-      });
+      this.actualitzarCistella();
     },
     sumarCistella: function sumarCistella(id) {
-      var _this5 = this;
-
       axios.post("/api/sumarCistella/" + id).then(function (res) {
         console.log(res);
       });
-      axios.get("/api/veureCistella").then(function (res) {
-        _this5.cistella = res.data;
-        _this5.total = 0;
-
-        for (var i = 0; i < _this5.cistella.length; i++) {
-          _this5.cistella[i].productes.preu = parseFloat(_this5.cistella[i].productes.preu * _this5.cistella[i].quantitat).toFixed(2);
-          _this5.total += parseFloat(_this5.cistella[i].productes.preu);
-        }
-
-        _this5.total = parseFloat(_this5.total).toFixed(2);
-      });
+      this.actualitzarCistella();
     }
   }
 });
@@ -3361,11 +3333,29 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
+    toastCorrecte: function toastCorrecte() {
+      // Use sweetalert2
+      Swal.fire({
+        toast: true,
+        position: "top-end",
+        icon: "success",
+        title: "Producte enviat correctament",
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: function didOpen(toast) {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        }
+      });
+    },
     enviarOrdre: function enviarOrdre(id) {
       var _this2 = this;
 
       axios.post("/api/enviarOrdre/" + id).then(function (res1) {
         console.log(res1);
+
+        _this2.toastCorrecte();
+
         axios.get("/api/veureOrdreBotiga").then(function (res2) {
           _this2.orders = res2.data;
           console.log(_this2.orders);
@@ -5615,6 +5605,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       axios.post("/api/ordreRebuda/" + id).then(function (res) {
         console.log(res);
+
+        _this3.rebut();
       });
       axios.get("/api/veureOrdreUser").then(function (res3) {
         _this3.orders = res3.data;
@@ -5628,6 +5620,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     fileSelected: function fileSelected(e) {
       this.files = e.target.files;
       console.log(this.files);
+    },
+    rebut: function rebut() {
+      // Use sweetalert2
+      Swal.fire({
+        toast: true,
+        position: "top-end",
+        icon: "success",
+        title: "Comanda rebuda!",
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: function didOpen(toast) {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        }
+      });
     },
     toastCorrecte: function toastCorrecte() {
       // Use sweetalert2
