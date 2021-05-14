@@ -263,7 +263,7 @@ export default {
     },
     toastCorrecte() {
       // Use sweetalert2
-      this.$swal({
+      Swal.fire({
         toast: true,
         position: "top-end",
         icon: "success",
@@ -278,7 +278,7 @@ export default {
     },
     toastIncorrecte() {
       // Use sweetalert2
-      this.$swal({
+      Swal.fire({
         toast: true,
         position: "top-end",
         icon: "error",
@@ -293,7 +293,7 @@ export default {
     },
     toastCorrecteComentari() {
         // Use sweetalert2
-        this.$swal({
+        Swal.fire({
         toast: true,
         position: 'top-end',
         icon: 'success',
@@ -307,19 +307,19 @@ export default {
       });
     },
     toastIncorrecteComentari() {
-    // Use sweetalert2
-    this.$swal({
-        toast: true,
-        position: 'top-end',
-        icon: 'error',
-        title: 'Error al enviar comentari',
-        showConfirmButton: false,
-        timer: 3000,
-        didOpen: (toast) => {
-        toast.addEventListener('mouseenter', Swal.stopTimer)
-        toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-    });
+      // Use sweetalert2
+      Swal.fire({
+          toast: true,
+          position: 'top-end',
+          icon: 'error',
+          title: 'Error al enviar comentari',
+          showConfirmButton: false,
+          timer: 3000,
+          didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+      });
     },
     afegirCistella() {
       axios

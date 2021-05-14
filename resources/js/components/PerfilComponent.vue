@@ -195,22 +195,21 @@
                   </div>
                   <!-- /.tab-pane -->
 
-
-
                   <!-- CONFIGURACIO tornar a comprar -->
                   <div class="tab-pane" id="configuracio">
                     <!-- The timeline -->
-                    <div class="row" >
+                    <div class="row">
                       <div class="col-lg-4 d-lg-flex align-items-stretch">
                         <div class="card card-dark card-outline w-100">
                           <div class="card-body d-flex flex-column">
-                            <form>                      
+                            <form>
                               <div class="form-group">
-                                
                                 <div class="text-center">
                                   <img
                                     class="profile-user-img img-fluid img-circle"
-                                    :src="'/images/avatars/' + $data.form3.arxiu"
+                                    :src="
+                                      '/images/avatars/' + $data.form3.arxiu
+                                    "
                                     alt="User profile picture"
                                   />
                                 </div>
@@ -218,24 +217,34 @@
                                 <label for="arxiu">Foto de perfil</label>
                                 <div class="input-group">
                                   <div class="custom-file">
-                                      <input 
-                                          @change="fileSelected"
-                                          type="file" 
-                                          class="custom-file-input" 
-                                          id="arxiu"
+                                    <input
+                                      @change="fileSelected"
+                                      type="file"
+                                      class="custom-file-input"
+                                      id="arxiu"
+                                    />
+                                    <label
+                                      v-if="!files || !files.length"
+                                      class="custom-file-label"
+                                      for="arxiu"
+                                      >Tria un fitxer</label
+                                    >
+                                    <span v-else>
+                                      <label
+                                        v-for="file in files"
+                                        :key="file.name"
+                                        class="custom-file-label"
+                                        for="arxiu"
+                                        >{{ file.name }}</label
                                       >
-                                      <label v-if="!files || !files.length" class="custom-file-label" for="arxiu">Tria un fitxer</label>
-                                      <span v-else>
-                                        <label v-for="file in files" :key="file.name" class="custom-file-label" for="arxiu">{{file.name}}</label>
-                                      </span>
-                                  </div>
-                                <div class="input-group-append">
-                                    <span class="input-group-text">
-                                        <i class="fas fa-image"></i>
                                     </span>
+                                  </div>
+                                  <div class="input-group-append">
+                                    <span class="input-group-text">
+                                      <i class="fas fa-image"></i>
+                                    </span>
+                                  </div>
                                 </div>
-                              </div>
-
                               </div>
                               <div class="form-group">
                                 <label for="nom">Nom</label>
@@ -261,11 +270,16 @@
                                 />
                               </div>
                             </form>
-                              <div class="col text-center mt-auto">
-                                <button @click.prevent="modifyProfile" type="submit" class="btn btn-secondary zoom" style="background-color:#ff6565; border:none;">
-                                  Modifica perfil
-                                </button>
-                              </div>
+                            <div class="col text-center mt-auto">
+                              <button
+                                @click.prevent="modifyProfile"
+                                type="submit"
+                                class="btn btn-secondary zoom"
+                                style="background-color: #ff6565; border: none"
+                              >
+                                Modifica perfil
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -275,7 +289,10 @@
                           <div class="card-body d-flex flex-column">
                             <form>
                               <div class="form-group">
-                                <div class="input-group mb-3" v-if="errors2.password">
+                                <div
+                                  class="input-group mb-3"
+                                  v-if="errors2.password"
+                                >
                                   <label class="col-form-label" for="number"
                                     ><i class="far fa-times-circle"></i>
                                     {{ errors2.password[0] }}</label
@@ -301,7 +318,9 @@
                                     {{ errors2.nova_contrasenya[0] }}</label
                                   >
                                 </div>
-                                <label for="nova_contrasenya">Nova contrasenya</label>
+                                <label for="nova_contrasenya"
+                                  >Nova contrasenya</label
+                                >
                                 <input
                                   type="password"
                                   class="form-control"
@@ -320,17 +339,23 @@
                                   class="form-control"
                                   id="nova_contrasenya_confirmation"
                                   name="nova_contrasenya_confirmation"
-                                  v-model="$data.form2.nova_contrasenya_confirmation"
+                                  v-model="
+                                    $data.form2.nova_contrasenya_confirmation
+                                  "
                                   required
                                 />
                               </div>
-                              </form>
-                              <div class="text-center mt-auto">
-                                <button @click.prevent="modifyPassword" type="submit" class="btn btn-xs btn-secondary zoom" style="background-color:#ff6565; border:none;">
-                                  Modifica contrasenya
-                                </button>
-                              </div>
-                            
+                            </form>
+                            <div class="text-center mt-auto">
+                              <button
+                                @click.prevent="modifyPassword"
+                                type="submit"
+                                class="btn btn-xs btn-secondary zoom"
+                                style="background-color: #ff6565; border: none"
+                              >
+                                Modifica contrasenya
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -377,20 +402,22 @@
                                 />
                               </div>
                             </form>
-                              <div class="text-center mt-auto" >
-                                <button @click.prevent="modifyUser" type="submit" class="btn btn-secondary zoom" style="background-color:#ff6565; border:none;">
-                                  Modifica direcció
-                                </button>
-                              </div>
+                            <div class="text-center mt-auto">
+                              <button
+                                @click.prevent="modifyUser"
+                                type="submit"
+                                class="btn btn-secondary zoom"
+                                style="background-color: #ff6565; border: none"
+                              >
+                                Modifica direcció
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <!-- /.tab-pane -->
-
-
-
                 </div>
                 <!-- /.tab-content -->
               </div>
@@ -498,38 +525,67 @@ export default {
         this.wishlist = res.data;
       });
     },
-        fileSelected(e) {
-    this.files = e.target.files
-    console.log(this.files);
+    ordreRebuda(id) {
+      axios.post("/api/ordreRebuda/" + id).then((res) => {
+        console.log(res);
+        this.rebut();
+      });
+      axios.get("/api/veureOrdreUser").then((res3) => {
+        this.orders = res3.data;
+        console.log(this.orders);
+      });
+      axios.get("/api/veureOrdreProcessadaUser").then((res4) => {
+        this.ordersP = res4.data;
+        console.log(this.ordersP);
+      });
     },
-    toastCorrecte() {
+    fileSelected(e) {
+      this.files = e.target.files;
+      console.log(this.files);
+    },
+    rebut() {
       // Use sweetalert2
-      this.$swal({
+      Swal.fire({
         toast: true,
-        position: 'top-end',
-        icon: 'success',
-        title: 'Canvi realitzat',
+        position: "top-end",
+        icon: "success",
+        title: "Comanda rebuda!",
         showConfirmButton: false,
         timer: 3000,
         didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+      });
+    },
+    toastCorrecte() {
+      // Use sweetalert2
+      Swal.fire({
+        toast: true,
+        position: "top-end",
+        icon: "success",
+        title: "Canvi realitzat",
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
       });
     },
     toastIncorrecte() {
       // Use sweetalert2
-      this.$swal({
+      Swal.fire({
         toast: true,
-        position: 'top-end',
-        icon: 'error',
-        title: 'Error al realitzar el canvi',
+        position: "top-end",
+        icon: "error",
+        title: "Error al realitzar el canvi",
         showConfirmButton: false,
         timer: 3000,
         didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
       });
     },
     modifyUser() {
@@ -592,35 +648,22 @@ export default {
 
       console.log(that.form3);
     },
-    ordreRebuda(id) {
-      axios.post("/api/ordreRebuda/" + id).then((res) => {
-        console.log(res);
-      });
-      axios.get("/api/veureOrdreUser").then((res3) => {
-        this.orders = res3.data;
-        console.log(this.orders);
-      });
-      axios.get("/api/veureOrdreProcessadaUser").then((res4) => {
-        this.ordersP = res4.data;
-        console.log(this.ordersP);
-      });
-    },
   },
 };
 </script>
 
 <style>
-    .custom-file-input:lang(en) ~ .custom-file-label::after {
-        content: "Busca";
-        visibility: hidden;
-    }
-    .custom-file-label::after {
-      content: "Busca";
-        visibility: hidden;
-    }
+.custom-file-input:lang(en) ~ .custom-file-label::after {
+  content: "Busca";
+  visibility: hidden;
+}
+.custom-file-label::after {
+  content: "Busca";
+  visibility: hidden;
+}
 
-    .footer {
-      align-self: flex-end !important;
-      flex: 1 1 auto;
-    }
+.footer {
+  align-self: flex-end !important;
+  flex: 1 1 auto;
+}
 </style>

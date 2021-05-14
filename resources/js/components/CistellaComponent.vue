@@ -125,35 +125,11 @@ export default {
   mounted() {
     axios.get("/api/user").then((res) => {
       this.user = res.data;
-    });
-    axios.get("/api/veureCistella").then((res) => {
-      this.cistella = res.data;
-      console.log(this.cistella);
-      for (let i = 0; i < this.cistella.length; i++) {
-        this.cistella[i].productes.preu = parseFloat(
-          this.cistella[i].productes.preu * this.cistella[i].quantitat
-        ).toFixed(2);
-        this.total += parseFloat(this.cistella[i].productes.preu);
-      }
-      this.total = parseFloat(this.total).toFixed(2);
+      this.actualitzarCistella();
     });
   },
   methods: {
-    crearOrdre() {
-      axios.post("/api/crearOrdre").then((res) => {
-        console.log(res);
-        axios.get("/api/veureCistella").then((res) => {
-          this.cistella = res.data;
-          console.log(this.cistella);
-
-          this.total = 0.0;
-        });
-      });
-    },
-    eliminarCistella(id) {
-      axios.post("/api/eliminarCistella/" + id).then((res) => {
-        console.log(res);
-      });
+    actualitzarCistella() {
       axios.get("/api/veureCistella").then((res) => {
         this.cistella = res.data;
         this.total = 0;
@@ -164,38 +140,107 @@ export default {
           this.total += parseFloat(this.cistella[i].productes.preu);
         }
         this.total = parseFloat(this.total).toFixed(2);
+      });
+    },
+    toastCorrecte() {
+      // Use sweetalert2
+      Swal.fire({
+        toast: true,
+        position: "top-end",
+        icon: "success",
+        title: "Comanda realitzada correctament",
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+      });
+    },
+    elminatCorrectament() {
+      // Use sweetalert2
+      Swal.fire({
+        toast: true,
+        position: "top-end",
+        icon: "success",
+        title: "Eliminat correctament",
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+      });
+    },
+    toastIncorrecte() {
+      // Use sweetalert2
+      Swal.fire({
+        toast: true,
+        position: "top-end",
+        icon: "error",
+        title: "La direcció de compra no és correcte!",
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+      });
+    },
+    toastIncorrecte2() {
+      // Use sweetalert2
+      Swal.fire({
+        toast: true,
+        position: "top-end",
+        icon: "error",
+        title: "La cistella no pot ser buida!",
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+      });
+    },
+    crearOrdre() {
+      axios
+        .post("/api/crearOrdre")
+        .then((res) => {
+          console.log(res);
+          this.toastCorrecte();
+          axios.get("/api/veureCistella").then((res) => {
+            this.cistella = res.data;
+            console.log(this.cistella);
+
+            this.total = 0.0;
+          });
+        })
+        .catch((error) => {
+          console.log(error.response.data);
+          if (error.response.data == "Buida") {
+            this.toastIncorrecte2();
+          } else {
+            this.toastIncorrecte();
+          }
+        });
+    },
+    eliminarCistella(id) {
+      axios.post("/api/eliminarCistella/" + id).then((res) => {
+        console.log(res);
+        this.elminatCorrectament();
+        this.actualitzarCistella();
       });
     },
     restarCistella(id) {
       axios.post("/api/restarCistella/" + id).then((res) => {
         console.log(res);
-      });
-      axios.get("/api/veureCistella").then((res) => {
-        this.cistella = res.data;
-        this.total = 0;
-        for (let i = 0; i < this.cistella.length; i++) {
-          this.cistella[i].productes.preu = parseFloat(
-            this.cistella[i].productes.preu * this.cistella[i].quantitat
-          ).toFixed(2);
-          this.total += parseFloat(this.cistella[i].productes.preu);
-        }
-        this.total = parseFloat(this.total).toFixed(2);
+        this.actualitzarCistella();
       });
     },
     sumarCistella(id) {
       axios.post("/api/sumarCistella/" + id).then((res) => {
         console.log(res);
-      });
-      axios.get("/api/veureCistella").then((res) => {
-        this.cistella = res.data;
-        this.total = 0;
-        for (let i = 0; i < this.cistella.length; i++) {
-          this.cistella[i].productes.preu = parseFloat(
-            this.cistella[i].productes.preu * this.cistella[i].quantitat
-          ).toFixed(2);
-          this.total += parseFloat(this.cistella[i].productes.preu);
-        }
-        this.total = parseFloat(this.total).toFixed(2);
+        this.actualitzarCistella();
       });
     },
   },
