@@ -615,7 +615,6 @@ export default {
         .post("/api/modifyUser", that.form)
         .then((res) => {
           console.log(res);
-          this.$router.push({ name: "Profile" });
           this.toastCorrecte();
         })
         .catch((error) => {
@@ -631,7 +630,6 @@ export default {
         .post("/api/modifyPassword", that.form2)
         .then((res) => {
           console.log(res);
-          this.$router.push({ name: "Profile" });
           this.toastCorrecte();
         })
         .catch((error) => {
@@ -659,7 +657,7 @@ export default {
         })
         .then((res) => {
           console.log(res);
-          this.$router.push({ name: "Profile" });
+          this.$router.push({ name: "Productes" });
           this.toastCorrecte();
         })
         .catch((error) => {

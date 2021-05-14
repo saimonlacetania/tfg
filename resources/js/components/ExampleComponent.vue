@@ -114,7 +114,7 @@ html {
                   </router-link>
                 </li>
             <li class="nav-item" v-if="this.user.botiga">
-              <a class="nav-link">
+              <a class="nav-link" href="#">
                 <i class="nav-icon fas fa-store-alt text-dark"></i>
                 <p class="text-dark">
                   La meva botiga

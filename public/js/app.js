@@ -2540,6 +2540,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5344,10 +5353,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       axios.post("/api/modifyUser", that.form).then(function (res) {
         console.log(res);
 
-        _this3.$router.push({
-          name: "Profile"
-        });
-
         _this3.toastCorrecte();
       })["catch"](function (error) {
         that.errors = error.response.data.errors;
@@ -5363,10 +5368,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       console.log(that.form2);
       axios.post("/api/modifyPassword", that.form2).then(function (res) {
         console.log(res);
-
-        _this4.$router.push({
-          name: "Profile"
-        });
 
         _this4.toastCorrecte();
       })["catch"](function (error) {
@@ -5398,7 +5399,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         console.log(res);
 
         _this5.$router.push({
-          name: "Profile"
+          name: "Productes"
         });
 
         _this5.toastCorrecte();
@@ -51542,7 +51543,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "nav-link" }, [
+    return _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
       _c("i", { staticClass: "nav-icon fas fa-store-alt text-dark" }),
       _vm._v(" "),
       _c("p", { staticClass: "text-dark" }, [
