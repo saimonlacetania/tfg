@@ -5219,6 +5219,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     var _ref;
@@ -52471,18 +52472,13 @@ var render = function() {
                               "div",
                               { staticClass: "card card-dark card-outline" },
                               [
-                                _c("div", { staticClass: "card-body" }, [
-                                  _c(
-                                    "form",
-                                    {
-                                      on: {
-                                        submit: function($event) {
-                                          $event.preventDefault()
-                                          return _vm.modifyProfile($event)
-                                        }
-                                      }
-                                    },
-                                    [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "card-body d-flex flex-column"
+                                  },
+                                  [
+                                    _c("form", [
                                       _c("div", { staticClass: "form-group" }, [
                                         _c(
                                           "div",
@@ -52651,12 +52647,42 @@ var render = function() {
                                             }
                                           }
                                         })
-                                      ]),
-                                      _vm._v(" "),
-                                      _vm._m(9)
-                                    ]
-                                  )
-                                ])
+                                      ])
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "col text-center mt-auto"
+                                      },
+                                      [
+                                        _c(
+                                          "button",
+                                          {
+                                            staticClass:
+                                              "btn btn-secondary zoom",
+                                            staticStyle: {
+                                              "background-color": "#ff6565",
+                                              border: "none"
+                                            },
+                                            attrs: { type: "submit" },
+                                            on: {
+                                              click: function($event) {
+                                                $event.preventDefault()
+                                                return _vm.modifyProfile($event)
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                                Modifica perfil\n                              "
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
                               ]
                             )
                           ]
@@ -52670,23 +52696,15 @@ var render = function() {
                           [
                             _c(
                               "div",
-                              {
-                                staticClass:
-                                  "card card-dark card-outline d-flex flex-column"
-                              },
+                              { staticClass: "card card-dark card-outline" },
                               [
-                                _c("div", { staticClass: "card-body " }, [
-                                  _c(
-                                    "form",
-                                    {
-                                      on: {
-                                        submit: function($event) {
-                                          $event.preventDefault()
-                                          return _vm.modifyPassword($event)
-                                        }
-                                      }
-                                    },
-                                    [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "card-body d-flex flex-column"
+                                  },
+                                  [
+                                    _c("form", [
                                       _c("div", { staticClass: "form-group" }, [
                                         _vm.errors2.password
                                           ? _c(
@@ -52893,12 +52911,42 @@ var render = function() {
                                             }
                                           }
                                         })
-                                      ]),
-                                      _vm._v(" "),
-                                      _vm._m(10)
-                                    ]
-                                  )
-                                ])
+                                      ])
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "text-center mt-auto" },
+                                      [
+                                        _c(
+                                          "button",
+                                          {
+                                            staticClass:
+                                              "btn btn-xs btn-secondary zoom",
+                                            staticStyle: {
+                                              "background-color": "#ff6565",
+                                              border: "none"
+                                            },
+                                            attrs: { type: "submit" },
+                                            on: {
+                                              click: function($event) {
+                                                $event.preventDefault()
+                                                return _vm.modifyPassword(
+                                                  $event
+                                                )
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                                Modifica contrasenya\n                              "
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
                               ]
                             )
                           ]
@@ -52914,18 +52962,13 @@ var render = function() {
                               "div",
                               { staticClass: "card card-dark card-outline" },
                               [
-                                _c("div", { staticClass: "card-body" }, [
-                                  _c(
-                                    "form",
-                                    {
-                                      on: {
-                                        submit: function($event) {
-                                          $event.preventDefault()
-                                          return _vm.modifyUser($event)
-                                        }
-                                      }
-                                    },
-                                    [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "card-body d-flex flex-column"
+                                  },
+                                  [
+                                    _c("form", [
                                       _c("div", { staticClass: "form-group" }, [
                                         _c(
                                           "label",
@@ -53076,12 +53119,40 @@ var render = function() {
                                             }
                                           }
                                         })
-                                      ]),
-                                      _vm._v(" "),
-                                      _vm._m(11)
-                                    ]
-                                  )
-                                ])
+                                      ])
+                                    ]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "text-center mt-auto" },
+                                      [
+                                        _c(
+                                          "button",
+                                          {
+                                            staticClass:
+                                              "btn btn-secondary zoom",
+                                            staticStyle: {
+                                              "background-color": "#ff6565",
+                                              border: "none"
+                                            },
+                                            attrs: { type: "submit" },
+                                            on: {
+                                              click: function($event) {
+                                                $event.preventDefault()
+                                                return _vm.modifyUser($event)
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                                Modifica direcció\n                              "
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    )
+                                  ]
+                                )
                               ]
                             )
                           ]
@@ -53340,70 +53411,6 @@ var staticRenderFns = [
         _c("i", { staticClass: "fas fa-image" })
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col text-center" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-secondary zoom",
-          staticStyle: { "background-color": "#ff6565", border: "none" },
-          attrs: { type: "submit" }
-        },
-        [
-          _vm._v(
-            "\n                                Modifica perfil\n                              "
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group text-center mt-auto pt-5" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-xs btn-secondary zoom",
-          staticStyle: { "background-color": "#ff6565", border: "none" },
-          attrs: { type: "submit" }
-        },
-        [
-          _vm._v(
-            "\n                                Modifica contrasenya\n                              "
-          )
-        ]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "col text-center align-self-end align-bottom" },
-      [
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-secondary zoom",
-            staticStyle: { "background-color": "#ff6565", border: "none" },
-            attrs: { type: "submit" }
-          },
-          [
-            _vm._v(
-              "\n                                Modifica direcció\n                              "
-            )
-          ]
-        )
-      ]
-    )
   }
 ]
 render._withStripped = true

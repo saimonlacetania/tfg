@@ -287,8 +287,8 @@
                     <div class="row" >
                       <div class="col-lg-4 d-flex align-items-stretch">
                         <div class="card card-dark card-outline">
-                          <div class="card-body">
-                            <form @submit.prevent="modifyProfile">                      
+                          <div class="card-body d-flex flex-column">
+                            <form>                      
                               <div class="form-group">
                                 
                                 <div class="text-center">
@@ -344,20 +344,20 @@
                                   required
                                 />
                               </div>
-                              <div class="col text-center">
-                                <button type="submit" class="btn btn-secondary zoom" style="background-color:#ff6565; border:none;">
+                            </form>
+                              <div class="col text-center mt-auto">
+                                <button @click.prevent="modifyProfile" type="submit" class="btn btn-secondary zoom" style="background-color:#ff6565; border:none;">
                                   Modifica perfil
                                 </button>
                               </div>
-                            </form>
                           </div>
                         </div>
                       </div>
 
                       <div class="col-lg-4 d-flex align-items-stretch">
-                        <div class="card card-dark card-outline d-flex flex-column">
-                          <div class="card-body ">
-                            <form @submit.prevent="modifyPassword">
+                        <div class="card card-dark card-outline">
+                          <div class="card-body d-flex flex-column">
+                            <form>
                               <div class="form-group">
                                 <div class="input-group mb-3" v-if="errors2.password">
                                   <label class="col-form-label" for="number"
@@ -408,20 +408,21 @@
                                   required
                                 />
                               </div>
-                              <div class="form-group text-center mt-auto pt-5">
-                                <button type="submit" class="btn btn-xs btn-secondary zoom" style="background-color:#ff6565; border:none;">
+                              </form>
+                              <div class="text-center mt-auto">
+                                <button @click.prevent="modifyPassword" type="submit" class="btn btn-xs btn-secondary zoom" style="background-color:#ff6565; border:none;">
                                   Modifica contrasenya
                                 </button>
                               </div>
-                            </form>
+                            
                           </div>
                         </div>
                       </div>
 
                       <div class="col-lg-4 d-flex align-items-stretch">
                         <div class="card card-dark card-outline">
-                          <div class="card-body">
-                            <form @submit.prevent="modifyUser">
+                          <div class="card-body d-flex flex-column">
+                            <form>
                               <div class="form-group">
                                 <label for="provincia">Provincia</label>
                                 <input
@@ -459,12 +460,12 @@
                                   required
                                 />
                               </div>
-                              <div class="col text-center align-self-end align-bottom" >
-                                <button type="submit" class="btn btn-secondary zoom" style="background-color:#ff6565; border:none;">
+                            </form>
+                              <div class="text-center mt-auto" >
+                                <button @click.prevent="modifyUser" type="submit" class="btn btn-secondary zoom" style="background-color:#ff6565; border:none;">
                                   Modifica direcció
                                 </button>
                               </div>
-                            </form>
                           </div>
                         </div>
                       </div>
