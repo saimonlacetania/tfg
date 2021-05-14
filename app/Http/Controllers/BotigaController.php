@@ -42,6 +42,17 @@ class BotigaController extends Controller
         return $id;
     }
 
+    public function comprovaBotiga()
+    {
+        $id = Auth::id();
+        $user = User::find($id);
+        if ($user->botiga == 1){
+            return "si que te botiga";
+        } else {
+            return response()->json(false,400);
+        }
+    }
+
     public function perfilBotiga($id)
     {
         $botiga = Botiga::where("id",$id)->get();

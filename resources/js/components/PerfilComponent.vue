@@ -284,7 +284,7 @@
                   <!-- CONFIGURACIO tornar a comprar -->
                   <div class="tab-pane" id="configuracio">
                     <!-- The timeline -->
-                    <div class="row" style="height:100% !important;">
+                    <div class="row" >
                       <div class="col-lg-4 d-flex align-items-stretch">
                         <div class="card card-dark card-outline">
                           <div class="card-body">
@@ -344,7 +344,7 @@
                                   required
                                 />
                               </div>
-                              <div class="col text-center" style="margin-bottom:0%;">
+                              <div class="col text-center">
                                 <button type="submit" class="btn btn-secondary zoom" style="background-color:#ff6565; border:none;">
                                   Modifica perfil
                                 </button>
@@ -355,8 +355,8 @@
                       </div>
 
                       <div class="col-lg-4 d-flex align-items-stretch">
-                        <div class="card card-dark card-outline">
-                          <div class="card-body d-flex flex-column">
+                        <div class="card card-dark card-outline d-flex flex-column">
+                          <div class="card-body ">
                             <form @submit.prevent="modifyPassword">
                               <div class="form-group">
                                 <div class="input-group mb-3" v-if="errors2.password">
@@ -408,7 +408,7 @@
                                   required
                                 />
                               </div>
-                              <div class="text-center" style="margin-top:63%;">
+                              <div class="form-group text-center mt-auto pt-5">
                                 <button type="submit" class="btn btn-xs btn-secondary zoom" style="background-color:#ff6565; border:none;">
                                   Modifica contrasenya
                                 </button>
@@ -417,6 +417,7 @@
                           </div>
                         </div>
                       </div>
+
                       <div class="col-lg-4 d-flex align-items-stretch">
                         <div class="card card-dark card-outline">
                           <div class="card-body">
@@ -458,7 +459,7 @@
                                   required
                                 />
                               </div>
-                              <div class="col text-center" style="margin-top:30%;">
+                              <div class="col text-center align-self-end align-bottom" >
                                 <button type="submit" class="btn btn-secondary zoom" style="background-color:#ff6565; border:none;">
                                   Modifica direcció
                                 </button>

@@ -66,3 +66,6 @@ Route::get('perfil/{id}', 'BotigaController@botigaId');
 Route::get('productesBotiga/{id}', 'ProductesController@producteBotiga');
 Route::get('perfilBotiga/{id}', 'BotigaController@perfilBotiga');
 Route::get('user/{id}', 'UserController@perfilUser');
+
+
+Route::get('comprovaBotiga', 'BotigaController@comprovaBotiga');

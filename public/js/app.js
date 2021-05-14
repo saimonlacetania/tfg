@@ -5218,6 +5218,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     var _ref;
@@ -51540,7 +51541,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+    return _c("a", { staticClass: "nav-link" }, [
       _c("i", { staticClass: "nav-icon fas fa-store-alt text-dark" }),
       _vm._v(" "),
       _c("p", { staticClass: "text-dark" }, [
@@ -52459,725 +52460,633 @@ var render = function() {
                     "div",
                     { staticClass: "tab-pane", attrs: { id: "configuracio" } },
                     [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "row",
-                          staticStyle: { height: "100% !important" }
-                        },
-                        [
-                          _c(
-                            "div",
-                            {
-                              staticClass: "col-lg-4 d-flex align-items-stretch"
-                            },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "card card-dark card-outline" },
-                                [
-                                  _c("div", { staticClass: "card-body" }, [
-                                    _c(
-                                      "form",
-                                      {
-                                        on: {
-                                          submit: function($event) {
-                                            $event.preventDefault()
-                                            return _vm.modifyProfile($event)
-                                          }
+                      _c("div", { staticClass: "row" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "col-lg-4 d-flex align-items-stretch"
+                          },
+                          [
+                            _c(
+                              "div",
+                              { staticClass: "card card-dark card-outline" },
+                              [
+                                _c("div", { staticClass: "card-body" }, [
+                                  _c(
+                                    "form",
+                                    {
+                                      on: {
+                                        submit: function($event) {
+                                          $event.preventDefault()
+                                          return _vm.modifyProfile($event)
                                         }
-                                      },
-                                      [
+                                      }
+                                    },
+                                    [
+                                      _c("div", { staticClass: "form-group" }, [
                                         _c(
                                           "div",
-                                          { staticClass: "form-group" },
+                                          { staticClass: "text-center" },
+                                          [
+                                            _c("img", {
+                                              staticClass:
+                                                "profile-user-img img-fluid img-circle",
+                                              attrs: {
+                                                src:
+                                                  "/images/avatars/" +
+                                                  _vm.$data.form3.arxiu,
+                                                alt: "User profile picture"
+                                              }
+                                            })
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("br"),
+                                        _vm._v(" "),
+                                        _c(
+                                          "label",
+                                          { attrs: { for: "arxiu" } },
+                                          [_vm._v("Foto de perfil")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "input-group" },
                                           [
                                             _c(
                                               "div",
-                                              { staticClass: "text-center" },
+                                              { staticClass: "custom-file" },
                                               [
-                                                _c("img", {
+                                                _c("input", {
                                                   staticClass:
-                                                    "profile-user-img img-fluid img-circle",
+                                                    "custom-file-input",
                                                   attrs: {
-                                                    src:
-                                                      "/images/avatars/" +
-                                                      _vm.$data.form3.arxiu,
-                                                    alt: "User profile picture"
+                                                    type: "file",
+                                                    id: "arxiu"
+                                                  },
+                                                  on: {
+                                                    change: _vm.fileSelected
                                                   }
-                                                })
+                                                }),
+                                                _vm._v(" "),
+                                                !_vm.files || !_vm.files.length
+                                                  ? _c(
+                                                      "label",
+                                                      {
+                                                        staticClass:
+                                                          "custom-file-label",
+                                                        attrs: { for: "arxiu" }
+                                                      },
+                                                      [_vm._v("Tria un fitxer")]
+                                                    )
+                                                  : _c(
+                                                      "span",
+                                                      _vm._l(
+                                                        _vm.files,
+                                                        function(file) {
+                                                          return _c(
+                                                            "label",
+                                                            {
+                                                              key: file.name,
+                                                              staticClass:
+                                                                "custom-file-label",
+                                                              attrs: {
+                                                                for: "arxiu"
+                                                              }
+                                                            },
+                                                            [
+                                                              _vm._v(
+                                                                _vm._s(
+                                                                  file.name
+                                                                )
+                                                              )
+                                                            ]
+                                                          )
+                                                        }
+                                                      ),
+                                                      0
+                                                    )
                                               ]
                                             ),
                                             _vm._v(" "),
-                                            _c("br"),
-                                            _vm._v(" "),
-                                            _c(
-                                              "label",
-                                              { attrs: { for: "arxiu" } },
-                                              [_vm._v("Foto de perfil")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
+                                            _vm._m(8)
+                                          ]
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "form-group" }, [
+                                        _c("label", { attrs: { for: "nom" } }, [
+                                          _vm._v("Nom")
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.$data.form3.nom,
+                                              expression: "$data.form3.nom"
+                                            }
+                                          ],
+                                          staticClass: "form-control",
+                                          attrs: {
+                                            type: "text",
+                                            id: "nom",
+                                            name: "nom",
+                                            required: ""
+                                          },
+                                          domProps: {
+                                            value: _vm.$data.form3.nom
+                                          },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.$data.form3,
+                                                "nom",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        })
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "form-group" }, [
+                                        _c(
+                                          "label",
+                                          { attrs: { for: "cognoms" } },
+                                          [_vm._v("Cognoms")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.$data.form3.cognoms,
+                                              expression: "$data.form3.cognoms"
+                                            }
+                                          ],
+                                          staticClass: "form-control",
+                                          attrs: {
+                                            type: "text",
+                                            id: "cognoms",
+                                            required: ""
+                                          },
+                                          domProps: {
+                                            value: _vm.$data.form3.cognoms
+                                          },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.$data.form3,
+                                                "cognoms",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        })
+                                      ]),
+                                      _vm._v(" "),
+                                      _vm._m(9)
+                                    ]
+                                  )
+                                ])
+                              ]
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "col-lg-4 d-flex align-items-stretch"
+                          },
+                          [
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "card card-dark card-outline d-flex flex-column"
+                              },
+                              [
+                                _c("div", { staticClass: "card-body " }, [
+                                  _c(
+                                    "form",
+                                    {
+                                      on: {
+                                        submit: function($event) {
+                                          $event.preventDefault()
+                                          return _vm.modifyPassword($event)
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("div", { staticClass: "form-group" }, [
+                                        _vm.errors2.password
+                                          ? _c(
                                               "div",
-                                              { staticClass: "input-group" },
+                                              {
+                                                staticClass: "input-group mb-3"
+                                              },
                                               [
                                                 _c(
-                                                  "div",
+                                                  "label",
                                                   {
-                                                    staticClass: "custom-file"
+                                                    staticClass:
+                                                      "col-form-label",
+                                                    attrs: { for: "number" }
                                                   },
                                                   [
-                                                    _c("input", {
+                                                    _c("i", {
                                                       staticClass:
-                                                        "custom-file-input",
-                                                      attrs: {
-                                                        type: "file",
-                                                        id: "arxiu"
-                                                      },
-                                                      on: {
-                                                        change: _vm.fileSelected
-                                                      }
+                                                        "far fa-times-circle"
                                                     }),
-                                                    _vm._v(" "),
-                                                    !_vm.files ||
-                                                    !_vm.files.length
-                                                      ? _c(
-                                                          "label",
-                                                          {
-                                                            staticClass:
-                                                              "custom-file-label",
-                                                            attrs: {
-                                                              for: "arxiu"
-                                                            }
-                                                          },
-                                                          [
-                                                            _vm._v(
-                                                              "Tria un fitxer"
-                                                            )
-                                                          ]
+                                                    _vm._v(
+                                                      "\n                                  " +
+                                                        _vm._s(
+                                                          _vm.errors2
+                                                            .password[0]
                                                         )
-                                                      : _c(
-                                                          "span",
-                                                          _vm._l(
-                                                            _vm.files,
-                                                            function(file) {
-                                                              return _c(
-                                                                "label",
-                                                                {
-                                                                  key:
-                                                                    file.name,
-                                                                  staticClass:
-                                                                    "custom-file-label",
-                                                                  attrs: {
-                                                                    for: "arxiu"
-                                                                  }
-                                                                },
-                                                                [
-                                                                  _vm._v(
-                                                                    _vm._s(
-                                                                      file.name
-                                                                    )
-                                                                  )
-                                                                ]
-                                                              )
-                                                            }
-                                                          ),
-                                                          0
-                                                        )
+                                                    )
                                                   ]
-                                                ),
-                                                _vm._v(" "),
-                                                _vm._m(8)
+                                                )
                                               ]
+                                            )
+                                          : _vm._e(),
+                                        _vm._v(" "),
+                                        _c(
+                                          "label",
+                                          { attrs: { for: "password" } },
+                                          [_vm._v("Contrasenya actual")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.$data.form2.password,
+                                              expression: "$data.form2.password"
+                                            }
+                                          ],
+                                          staticClass: "form-control",
+                                          attrs: {
+                                            type: "password",
+                                            id: "password",
+                                            name: "password",
+                                            required: ""
+                                          },
+                                          domProps: {
+                                            value: _vm.$data.form2.password
+                                          },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.$data.form2,
+                                                "password",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        })
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "form-group" }, [
+                                        _vm.errors2.nova_contrasenya
+                                          ? _c(
+                                              "div",
+                                              {
+                                                staticClass: "input-group mb-3"
+                                              },
+                                              [
+                                                _c(
+                                                  "label",
+                                                  {
+                                                    staticClass:
+                                                      "col-form-label",
+                                                    attrs: { for: "number" }
+                                                  },
+                                                  [
+                                                    _c("i", {
+                                                      staticClass:
+                                                        "far fa-times-circle"
+                                                    }),
+                                                    _vm._v(
+                                                      "\n                                  " +
+                                                        _vm._s(
+                                                          _vm.errors2
+                                                            .nova_contrasenya[0]
+                                                        )
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          : _vm._e(),
+                                        _vm._v(" "),
+                                        _c(
+                                          "label",
+                                          {
+                                            attrs: { for: "nova_contrasenya" }
+                                          },
+                                          [_vm._v("Nova contrasenya")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.$data.form2
+                                                  .nova_contrasenya,
+                                              expression:
+                                                "$data.form2.nova_contrasenya"
+                                            }
+                                          ],
+                                          staticClass: "form-control",
+                                          attrs: {
+                                            type: "password",
+                                            id: "nova_contrasenya",
+                                            name: "nova_contrasenya",
+                                            required: ""
+                                          },
+                                          domProps: {
+                                            value:
+                                              _vm.$data.form2.nova_contrasenya
+                                          },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.$data.form2,
+                                                "nova_contrasenya",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        })
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "form-group" }, [
+                                        _c(
+                                          "label",
+                                          {
+                                            attrs: {
+                                              for:
+                                                "nova_contrasenya_confirmation"
+                                            }
+                                          },
+                                          [
+                                            _vm._v(
+                                              "Torna a escriure la nova contrasenya"
                                             )
                                           ]
                                         ),
                                         _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "form-group" },
-                                          [
-                                            _c(
-                                              "label",
-                                              { attrs: { for: "nom" } },
-                                              [_vm._v("Nom")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c("input", {
-                                              directives: [
-                                                {
-                                                  name: "model",
-                                                  rawName: "v-model",
-                                                  value: _vm.$data.form3.nom,
-                                                  expression: "$data.form3.nom"
-                                                }
-                                              ],
-                                              staticClass: "form-control",
-                                              attrs: {
-                                                type: "text",
-                                                id: "nom",
-                                                name: "nom",
-                                                required: ""
-                                              },
-                                              domProps: {
-                                                value: _vm.$data.form3.nom
-                                              },
-                                              on: {
-                                                input: function($event) {
-                                                  if ($event.target.composing) {
-                                                    return
-                                                  }
-                                                  _vm.$set(
-                                                    _vm.$data.form3,
-                                                    "nom",
-                                                    $event.target.value
-                                                  )
-                                                }
-                                              }
-                                            })
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "form-group" },
-                                          [
-                                            _c(
-                                              "label",
-                                              { attrs: { for: "cognoms" } },
-                                              [_vm._v("Cognoms")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c("input", {
-                                              directives: [
-                                                {
-                                                  name: "model",
-                                                  rawName: "v-model",
-                                                  value:
-                                                    _vm.$data.form3.cognoms,
-                                                  expression:
-                                                    "$data.form3.cognoms"
-                                                }
-                                              ],
-                                              staticClass: "form-control",
-                                              attrs: {
-                                                type: "text",
-                                                id: "cognoms",
-                                                required: ""
-                                              },
-                                              domProps: {
-                                                value: _vm.$data.form3.cognoms
-                                              },
-                                              on: {
-                                                input: function($event) {
-                                                  if ($event.target.composing) {
-                                                    return
-                                                  }
-                                                  _vm.$set(
-                                                    _vm.$data.form3,
-                                                    "cognoms",
-                                                    $event.target.value
-                                                  )
-                                                }
-                                              }
-                                            })
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _vm._m(9)
-                                      ]
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "col-lg-4 d-flex align-items-stretch"
-                            },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "card card-dark card-outline" },
-                                [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass:
-                                        "card-body d-flex flex-column"
-                                    },
-                                    [
-                                      _c(
-                                        "form",
-                                        {
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value:
+                                                _vm.$data.form2
+                                                  .nova_contrasenya_confirmation,
+                                              expression:
+                                                "$data.form2.nova_contrasenya_confirmation"
+                                            }
+                                          ],
+                                          staticClass: "form-control",
+                                          attrs: {
+                                            type: "password",
+                                            id: "nova_contrasenya_confirmation",
+                                            name:
+                                              "nova_contrasenya_confirmation",
+                                            required: ""
+                                          },
+                                          domProps: {
+                                            value:
+                                              _vm.$data.form2
+                                                .nova_contrasenya_confirmation
+                                          },
                                           on: {
-                                            submit: function($event) {
-                                              $event.preventDefault()
-                                              return _vm.modifyPassword($event)
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.$data.form2,
+                                                "nova_contrasenya_confirmation",
+                                                $event.target.value
+                                              )
                                             }
                                           }
-                                        },
-                                        [
-                                          _c(
-                                            "div",
-                                            { staticClass: "form-group" },
-                                            [
-                                              _vm.errors2.password
-                                                ? _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "input-group mb-3"
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "label",
-                                                        {
-                                                          staticClass:
-                                                            "col-form-label",
-                                                          attrs: {
-                                                            for: "number"
-                                                          }
-                                                        },
-                                                        [
-                                                          _c("i", {
-                                                            staticClass:
-                                                              "far fa-times-circle"
-                                                          }),
-                                                          _vm._v(
-                                                            "\n                                  " +
-                                                              _vm._s(
-                                                                _vm.errors2
-                                                                  .password[0]
-                                                              )
-                                                          )
-                                                        ]
-                                                      )
-                                                    ]
-                                                  )
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              _c(
-                                                "label",
-                                                { attrs: { for: "password" } },
-                                                [_vm._v("Contrasenya actual")]
-                                              ),
-                                              _vm._v(" "),
-                                              _c("input", {
-                                                directives: [
-                                                  {
-                                                    name: "model",
-                                                    rawName: "v-model",
-                                                    value:
-                                                      _vm.$data.form2.password,
-                                                    expression:
-                                                      "$data.form2.password"
-                                                  }
-                                                ],
-                                                staticClass: "form-control",
-                                                attrs: {
-                                                  type: "password",
-                                                  id: "password",
-                                                  name: "password",
-                                                  required: ""
-                                                },
-                                                domProps: {
-                                                  value:
-                                                    _vm.$data.form2.password
-                                                },
-                                                on: {
-                                                  input: function($event) {
-                                                    if (
-                                                      $event.target.composing
-                                                    ) {
-                                                      return
-                                                    }
-                                                    _vm.$set(
-                                                      _vm.$data.form2,
-                                                      "password",
-                                                      $event.target.value
-                                                    )
-                                                  }
-                                                }
-                                              })
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "form-group" },
-                                            [
-                                              _vm.errors2.nova_contrasenya
-                                                ? _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "input-group mb-3"
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "label",
-                                                        {
-                                                          staticClass:
-                                                            "col-form-label",
-                                                          attrs: {
-                                                            for: "number"
-                                                          }
-                                                        },
-                                                        [
-                                                          _c("i", {
-                                                            staticClass:
-                                                              "far fa-times-circle"
-                                                          }),
-                                                          _vm._v(
-                                                            "\n                                  " +
-                                                              _vm._s(
-                                                                _vm.errors2
-                                                                  .nova_contrasenya[0]
-                                                              )
-                                                          )
-                                                        ]
-                                                      )
-                                                    ]
-                                                  )
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              _c(
-                                                "label",
-                                                {
-                                                  attrs: {
-                                                    for: "nova_contrasenya"
-                                                  }
-                                                },
-                                                [_vm._v("Nova contrasenya")]
-                                              ),
-                                              _vm._v(" "),
-                                              _c("input", {
-                                                directives: [
-                                                  {
-                                                    name: "model",
-                                                    rawName: "v-model",
-                                                    value:
-                                                      _vm.$data.form2
-                                                        .nova_contrasenya,
-                                                    expression:
-                                                      "$data.form2.nova_contrasenya"
-                                                  }
-                                                ],
-                                                staticClass: "form-control",
-                                                attrs: {
-                                                  type: "password",
-                                                  id: "nova_contrasenya",
-                                                  name: "nova_contrasenya",
-                                                  required: ""
-                                                },
-                                                domProps: {
-                                                  value:
-                                                    _vm.$data.form2
-                                                      .nova_contrasenya
-                                                },
-                                                on: {
-                                                  input: function($event) {
-                                                    if (
-                                                      $event.target.composing
-                                                    ) {
-                                                      return
-                                                    }
-                                                    _vm.$set(
-                                                      _vm.$data.form2,
-                                                      "nova_contrasenya",
-                                                      $event.target.value
-                                                    )
-                                                  }
-                                                }
-                                              })
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "div",
-                                            { staticClass: "form-group" },
-                                            [
-                                              _c(
-                                                "label",
-                                                {
-                                                  attrs: {
-                                                    for:
-                                                      "nova_contrasenya_confirmation"
-                                                  }
-                                                },
-                                                [
-                                                  _vm._v(
-                                                    "Torna a escriure la nova contrasenya"
-                                                  )
-                                                ]
-                                              ),
-                                              _vm._v(" "),
-                                              _c("input", {
-                                                directives: [
-                                                  {
-                                                    name: "model",
-                                                    rawName: "v-model",
-                                                    value:
-                                                      _vm.$data.form2
-                                                        .nova_contrasenya_confirmation,
-                                                    expression:
-                                                      "$data.form2.nova_contrasenya_confirmation"
-                                                  }
-                                                ],
-                                                staticClass: "form-control",
-                                                attrs: {
-                                                  type: "password",
-                                                  id:
-                                                    "nova_contrasenya_confirmation",
-                                                  name:
-                                                    "nova_contrasenya_confirmation",
-                                                  required: ""
-                                                },
-                                                domProps: {
-                                                  value:
-                                                    _vm.$data.form2
-                                                      .nova_contrasenya_confirmation
-                                                },
-                                                on: {
-                                                  input: function($event) {
-                                                    if (
-                                                      $event.target.composing
-                                                    ) {
-                                                      return
-                                                    }
-                                                    _vm.$set(
-                                                      _vm.$data.form2,
-                                                      "nova_contrasenya_confirmation",
-                                                      $event.target.value
-                                                    )
-                                                  }
-                                                }
-                                              })
-                                            ]
-                                          ),
-                                          _vm._v(" "),
-                                          _vm._m(10)
-                                        ]
-                                      )
+                                        })
+                                      ]),
+                                      _vm._v(" "),
+                                      _vm._m(10)
                                     ]
                                   )
-                                ]
-                              )
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            {
-                              staticClass: "col-lg-4 d-flex align-items-stretch"
-                            },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "card card-dark card-outline" },
-                                [
-                                  _c("div", { staticClass: "card-body" }, [
-                                    _c(
-                                      "form",
-                                      {
-                                        on: {
-                                          submit: function($event) {
-                                            $event.preventDefault()
-                                            return _vm.modifyUser($event)
-                                          }
+                                ])
+                              ]
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "col-lg-4 d-flex align-items-stretch"
+                          },
+                          [
+                            _c(
+                              "div",
+                              { staticClass: "card card-dark card-outline" },
+                              [
+                                _c("div", { staticClass: "card-body" }, [
+                                  _c(
+                                    "form",
+                                    {
+                                      on: {
+                                        submit: function($event) {
+                                          $event.preventDefault()
+                                          return _vm.modifyUser($event)
                                         }
-                                      },
-                                      [
+                                      }
+                                    },
+                                    [
+                                      _c("div", { staticClass: "form-group" }, [
                                         _c(
-                                          "div",
-                                          { staticClass: "form-group" },
-                                          [
-                                            _c(
-                                              "label",
-                                              { attrs: { for: "provincia" } },
-                                              [_vm._v("Provincia")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c("input", {
-                                              directives: [
-                                                {
-                                                  name: "model",
-                                                  rawName: "v-model",
-                                                  value:
-                                                    _vm.$data.form.provincia,
-                                                  expression:
-                                                    "$data.form.provincia"
-                                                }
-                                              ],
-                                              staticClass: "form-control",
-                                              attrs: {
-                                                type: "text",
-                                                id: "provincia"
-                                              },
-                                              domProps: {
-                                                value: _vm.$data.form.provincia
-                                              },
-                                              on: {
-                                                input: function($event) {
-                                                  if ($event.target.composing) {
-                                                    return
-                                                  }
-                                                  _vm.$set(
-                                                    _vm.$data.form,
-                                                    "provincia",
-                                                    $event.target.value
-                                                  )
-                                                }
-                                              }
-                                            })
-                                          ]
+                                          "label",
+                                          { attrs: { for: "provincia" } },
+                                          [_vm._v("Provincia")]
                                         ),
                                         _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "form-group" },
-                                          [
-                                            _c(
-                                              "label",
-                                              { attrs: { for: "poblacio" } },
-                                              [_vm._v("Població")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c("input", {
-                                              directives: [
-                                                {
-                                                  name: "model",
-                                                  rawName: "v-model",
-                                                  value:
-                                                    _vm.$data.form.poblacio,
-                                                  expression:
-                                                    "$data.form.poblacio"
-                                                }
-                                              ],
-                                              staticClass: "form-control",
-                                              attrs: {
-                                                type: "text",
-                                                id: "poblacio"
-                                              },
-                                              domProps: {
-                                                value: _vm.$data.form.poblacio
-                                              },
-                                              on: {
-                                                input: function($event) {
-                                                  if ($event.target.composing) {
-                                                    return
-                                                  }
-                                                  _vm.$set(
-                                                    _vm.$data.form,
-                                                    "poblacio",
-                                                    $event.target.value
-                                                  )
-                                                }
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.$data.form.provincia,
+                                              expression: "$data.form.provincia"
+                                            }
+                                          ],
+                                          staticClass: "form-control",
+                                          attrs: {
+                                            type: "text",
+                                            id: "provincia"
+                                          },
+                                          domProps: {
+                                            value: _vm.$data.form.provincia
+                                          },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
                                               }
-                                            })
-                                          ]
+                                              _vm.$set(
+                                                _vm.$data.form,
+                                                "provincia",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        })
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "form-group" }, [
+                                        _c(
+                                          "label",
+                                          { attrs: { for: "poblacio" } },
+                                          [_vm._v("Població")]
                                         ),
                                         _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "form-group" },
-                                          [
-                                            _c(
-                                              "label",
-                                              { attrs: { for: "cp" } },
-                                              [_vm._v("Codi postal")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c("input", {
-                                              directives: [
-                                                {
-                                                  name: "model",
-                                                  rawName: "v-model",
-                                                  value: _vm.$data.form.cp,
-                                                  expression: "$data.form.cp"
-                                                }
-                                              ],
-                                              staticClass: "form-control",
-                                              attrs: { type: "text", id: "cp" },
-                                              domProps: {
-                                                value: _vm.$data.form.cp
-                                              },
-                                              on: {
-                                                input: function($event) {
-                                                  if ($event.target.composing) {
-                                                    return
-                                                  }
-                                                  _vm.$set(
-                                                    _vm.$data.form,
-                                                    "cp",
-                                                    $event.target.value
-                                                  )
-                                                }
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.$data.form.poblacio,
+                                              expression: "$data.form.poblacio"
+                                            }
+                                          ],
+                                          staticClass: "form-control",
+                                          attrs: {
+                                            type: "text",
+                                            id: "poblacio"
+                                          },
+                                          domProps: {
+                                            value: _vm.$data.form.poblacio
+                                          },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
                                               }
-                                            })
-                                          ]
+                                              _vm.$set(
+                                                _vm.$data.form,
+                                                "poblacio",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        })
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "form-group" }, [
+                                        _c("label", { attrs: { for: "cp" } }, [
+                                          _vm._v("Codi postal")
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.$data.form.cp,
+                                              expression: "$data.form.cp"
+                                            }
+                                          ],
+                                          staticClass: "form-control",
+                                          attrs: { type: "text", id: "cp" },
+                                          domProps: {
+                                            value: _vm.$data.form.cp
+                                          },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.$set(
+                                                _vm.$data.form,
+                                                "cp",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        })
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("div", { staticClass: "form-group" }, [
+                                        _c(
+                                          "label",
+                                          { attrs: { for: "direccio" } },
+                                          [_vm._v("Direcció")]
                                         ),
                                         _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "form-group" },
-                                          [
-                                            _c(
-                                              "label",
-                                              { attrs: { for: "direccio" } },
-                                              [_vm._v("Direcció")]
-                                            ),
-                                            _vm._v(" "),
-                                            _c("input", {
-                                              directives: [
-                                                {
-                                                  name: "model",
-                                                  rawName: "v-model",
-                                                  value:
-                                                    _vm.$data.form.direccio,
-                                                  expression:
-                                                    "$data.form.direccio"
-                                                }
-                                              ],
-                                              staticClass: "form-control",
-                                              attrs: {
-                                                type: "text",
-                                                id: "direccio",
-                                                required: ""
-                                              },
-                                              domProps: {
-                                                value: _vm.$data.form.direccio
-                                              },
-                                              on: {
-                                                input: function($event) {
-                                                  if ($event.target.composing) {
-                                                    return
-                                                  }
-                                                  _vm.$set(
-                                                    _vm.$data.form,
-                                                    "direccio",
-                                                    $event.target.value
-                                                  )
-                                                }
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.$data.form.direccio,
+                                              expression: "$data.form.direccio"
+                                            }
+                                          ],
+                                          staticClass: "form-control",
+                                          attrs: {
+                                            type: "text",
+                                            id: "direccio",
+                                            required: ""
+                                          },
+                                          domProps: {
+                                            value: _vm.$data.form.direccio
+                                          },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
                                               }
-                                            })
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _vm._m(11)
-                                      ]
-                                    )
-                                  ])
-                                ]
-                              )
-                            ]
-                          )
-                        ]
-                      )
+                                              _vm.$set(
+                                                _vm.$data.form,
+                                                "direccio",
+                                                $event.target.value
+                                              )
+                                            }
+                                          }
+                                        })
+                                      ]),
+                                      _vm._v(" "),
+                                      _vm._m(11)
+                                    ]
+                                  )
+                                ])
+                              ]
+                            )
+                          ]
+                        )
+                      ])
                     ]
                   )
                 ])
@@ -53436,28 +53345,41 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "col text-center",
-        staticStyle: { "margin-bottom": "0%" }
-      },
-      [
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-secondary zoom",
-            staticStyle: { "background-color": "#ff6565", border: "none" },
-            attrs: { type: "submit" }
-          },
-          [
-            _vm._v(
-              "\n                                Modifica perfil\n                              "
-            )
-          ]
-        )
-      ]
-    )
+    return _c("div", { staticClass: "col text-center" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-secondary zoom",
+          staticStyle: { "background-color": "#ff6565", border: "none" },
+          attrs: { type: "submit" }
+        },
+        [
+          _vm._v(
+            "\n                                Modifica perfil\n                              "
+          )
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group text-center mt-auto pt-5" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-xs btn-secondary zoom",
+          staticStyle: { "background-color": "#ff6565", border: "none" },
+          attrs: { type: "submit" }
+        },
+        [
+          _vm._v(
+            "\n                                Modifica contrasenya\n                              "
+          )
+        ]
+      )
+    ])
   },
   function() {
     var _vm = this
@@ -53465,31 +53387,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "text-center", staticStyle: { "margin-top": "63%" } },
-      [
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-xs btn-secondary zoom",
-            staticStyle: { "background-color": "#ff6565", border: "none" },
-            attrs: { type: "submit" }
-          },
-          [
-            _vm._v(
-              "\n                                Modifica contrasenya\n                              "
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "col text-center", staticStyle: { "margin-top": "30%" } },
+      { staticClass: "col text-center align-self-end align-bottom" },
       [
         _c(
           "button",
@@ -72045,7 +71943,14 @@ __webpack_require__.r(__webpack_exports__);
       name: "Botiga",
       beforeEnter: function beforeEnter(to, form, next) {
         axios.get("/api/athenticated").then(function () {
-          next();
+          axios.get("/api/comprovaBotiga").then(function (res) {
+            console.log(res);
+            next();
+          })["catch"](function () {
+            return next({
+              name: "CrearBotiga"
+            });
+          });
         })["catch"](function () {
           return next({
             name: "Login"
