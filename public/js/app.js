@@ -55095,7 +55095,12 @@ var staticRenderFns = [
       "button",
       {
         staticClass: "btn btn-lg btn-secondary",
-        staticStyle: { "background-color": "#ff6565" },
+        staticStyle: {
+          "background-color": "#ff6565",
+          border: "none",
+          cursor: "context-menu",
+          "pointer-events": "none"
+        },
         attrs: { type: "button" }
       },
       [_c("i", { staticClass: "fa fa-search" })]
