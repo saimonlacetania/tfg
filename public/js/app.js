@@ -57292,12 +57292,15 @@ var render = function() {
                         _c(
                           "div",
                           {
-                            staticClass: "col-lg-4 d-flex align-items-stretch"
+                            staticClass:
+                              "col-lg-4 d-lg-flex align-items-stretch"
                           },
                           [
                             _c(
                               "div",
-                              { staticClass: "card card-dark card-outline" },
+                              {
+                                staticClass: "card card-dark card-outline w-100"
+                              },
                               [
                                 _c(
                                   "div",
@@ -57518,12 +57521,15 @@ var render = function() {
                         _c(
                           "div",
                           {
-                            staticClass: "col-lg-4 d-flex align-items-stretch"
+                            staticClass:
+                              "col-lg-4 d-lg-flex align-items-stretch"
                           },
                           [
                             _c(
                               "div",
-                              { staticClass: "card card-dark card-outline" },
+                              {
+                                staticClass: "card card-dark card-outline w-100"
+                              },
                               [
                                 _c(
                                   "div",
@@ -57782,12 +57788,15 @@ var render = function() {
                         _c(
                           "div",
                           {
-                            staticClass: "col-lg-4 d-flex align-items-stretch"
+                            staticClass:
+                              "col-lg-4 d-lg-flex align-items-stretch"
                           },
                           [
                             _c(
                               "div",
-                              { staticClass: "card card-dark card-outline" },
+                              {
+                                staticClass: "card card-dark card-outline w-100"
+                              },
                               [
                                 _c(
                                   "div",
@@ -58843,7 +58852,12 @@ var staticRenderFns = [
       "button",
       {
         staticClass: "btn btn-lg btn-secondary",
-        staticStyle: { "background-color": "#ff6565" },
+        staticStyle: {
+          "background-color": "#ff6565",
+          border: "none",
+          cursor: "context-menu",
+          "pointer-events": "none"
+        },
         attrs: { type: "button" }
       },
       [_c("i", { staticClass: "fa fa-search" })]

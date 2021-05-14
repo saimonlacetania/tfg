@@ -15,7 +15,7 @@
                 <button
                   type="button"
                   class="btn btn-lg btn-secondary"
-                  style="background-color: #ff6565"
+                  style="background-color: #ff6565; border:none; cursor:context-menu; pointer-events: none;"
                 >
                   <i class="fa fa-search"></i>
                 </button>
