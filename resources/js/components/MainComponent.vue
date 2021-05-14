@@ -161,7 +161,7 @@ html {
               </router-link>
             </li>
 
-            <li class="nav-item fixed-bottom ml-2">
+            <li class="nav-item align-text-bottom">
               <a @click.prevent="logout" href="#" class="nav-link">
                 <i class="nav-icon fas fa-power-off text-dark"></i>
                 <p class="text-dark">Sortir</p>

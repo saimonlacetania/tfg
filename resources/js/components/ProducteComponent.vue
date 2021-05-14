@@ -71,15 +71,47 @@
             </div>
           </div>
           <div class="row mt-4">
-            <nav class="w-100">
-              <div class="nav nav-tabs" id="product-tab" role="tablist">
-                <a class="nav-item nav-link text-dark active" id="product-desc-tab" data-toggle="tab" href="#product-desc" role="tab" aria-controls="product-desc" aria-selected="true">Description</a>
-                <a class="nav-item nav-link text-dark" id="product-comments-tab" data-toggle="tab" href="#product-comments" role="tab" aria-controls="product-comments" aria-selected="false">Comments</a>
+            <nav class="w-30">
+              <div class="nav nav-tabs btn-group" id="product-tab" role="tablist">
+                <a class="btn btn-secondary active" style="background-color:#ff6565; border:none;" id="product-desc-tab" data-toggle="tab" href="#product-desc" role="tab" aria-controls="product-desc" aria-selected="true">Description</a>
+                <a class="btn btn-secondary" style="background-color:#ff6565; border:none;" id="product-comments-tab" data-toggle="tab" href="#product-comments" role="tab" aria-controls="product-comments" aria-selected="false">Comments</a>
               </div>
             </nav>
             <div class="tab-content p-3 w-100" id="nav-tabContent">
               <div class="tab-pane fade show active" id="product-desc" role="tabpanel" aria-labelledby="product-desc-tab"> {{$data.producte.descripcio}} </div>
               <div class="tab-pane fade" id="product-comments" role="tabpanel" aria-labelledby="product-comments-tab"> 
+                <!-- Comentaris -->
+                <div class="content w-100">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div
+                        :class="'col-md-12'"
+                        v-for="comentari in comentaris"
+                        :key="comentari.id"
+                      >
+                      <div class="row mb-3">
+                        <div class="user-panel d-flex">
+                          <img
+                            class="img-circle elevation-2"
+                            :src="'/images/avatars/' + comentari.user.profile_pic"
+                            alt="User profile picture"
+                          />
+                          <div class="info font-weight-bold">
+                            {{ comentari.user.nom }}
+                          </div>
+                        </div>
+                      </div>
+
+                          <div class="row">
+                            {{comentari.descripcio}}
+                          </div>
+                          <br>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /Comentaris -->
+                <!-- Escriure comentari -->
                 <form>    
                       <!-- textarea -->
                       <div class="form-group">
@@ -109,6 +141,7 @@
                       </div>
                     
                 </form>
+                <!-- /Escriure comentari -->
               </div>
             </div>
           </div>
@@ -123,6 +156,7 @@
   </div>
 </template>
 <style>
+
 .rating {
     display: flex;
     flex-direction: row-reverse;
@@ -180,7 +214,6 @@ export default {
   },
   mounted() {
     console.log("detall montat");
-
     axios.get("/api/producte/" + this.$route.params.id).then((res) => {
       console.log(res);
       this.producte = res.data;

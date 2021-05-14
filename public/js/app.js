@@ -5621,6 +5621,40 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -51816,7 +51850,7 @@ var render = function() {
                         _vm._v(" "),
                         _c(
                           "li",
-                          { staticClass: "nav-item fixed-bottom ml-2" },
+                          { staticClass: "nav-item align-text-bottom" },
                           [
                             _c(
                               "a",
@@ -53897,6 +53931,71 @@ var render = function() {
                             }
                           },
                           [
+                            _c("div", { staticClass: "content w-100" }, [
+                              _c("div", { staticClass: "container-fluid" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "row" },
+                                  _vm._l(_vm.comentaris, function(comentari) {
+                                    return _c(
+                                      "div",
+                                      { key: comentari.id, class: "col-md-12" },
+                                      [
+                                        _c("div", { staticClass: "row mb-3" }, [
+                                          _c(
+                                            "div",
+                                            {
+                                              staticClass: "user-panel d-flex"
+                                            },
+                                            [
+                                              _c("img", {
+                                                staticClass:
+                                                  "img-circle elevation-2",
+                                                attrs: {
+                                                  src:
+                                                    "/images/avatars/" +
+                                                    comentari.user.profile_pic,
+                                                  alt: "User profile picture"
+                                                }
+                                              }),
+                                              _vm._v(" "),
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "info font-weight-bold"
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "\n                          " +
+                                                      _vm._s(
+                                                        comentari.user.nom
+                                                      ) +
+                                                      "\n                        "
+                                                  )
+                                                ]
+                                              )
+                                            ]
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("div", { staticClass: "row" }, [
+                                          _vm._v(
+                                            "\n                          " +
+                                              _vm._s(comentari.descripcio) +
+                                              "\n                        "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("br")
+                                      ]
+                                    )
+                                  }),
+                                  0
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
                             _c("form", [
                               _c("div", { staticClass: "form-group" }, [
                                 _c("label", [_vm._v("Escriu un comentari")]),
@@ -54164,18 +54263,19 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", { staticClass: "w-100" }, [
+    return _c("nav", { staticClass: "w-30" }, [
       _c(
         "div",
         {
-          staticClass: "nav nav-tabs",
+          staticClass: "nav nav-tabs btn-group",
           attrs: { id: "product-tab", role: "tablist" }
         },
         [
           _c(
             "a",
             {
-              staticClass: "nav-item nav-link text-dark active",
+              staticClass: "btn btn-secondary active",
+              staticStyle: { "background-color": "#ff6565", border: "none" },
               attrs: {
                 id: "product-desc-tab",
                 "data-toggle": "tab",
@@ -54191,7 +54291,8 @@ var staticRenderFns = [
           _c(
             "a",
             {
-              staticClass: "nav-item nav-link text-dark",
+              staticClass: "btn btn-secondary",
+              staticStyle: { "background-color": "#ff6565", border: "none" },
               attrs: {
                 id: "product-comments-tab",
                 "data-toggle": "tab",
