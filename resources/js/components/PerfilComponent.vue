@@ -202,7 +202,7 @@
                     <!-- The timeline -->
                     <div class="row" >
                       <div class="col-lg-4 d-lg-flex align-items-stretch">
-                        <div class="card card-dark card-outline">
+                        <div class="card card-dark card-outline w-100">
                           <div class="card-body d-flex flex-column">
                             <form>                      
                               <div class="form-group">
@@ -271,7 +271,7 @@
                       </div>
 
                       <div class="col-lg-4 d-lg-flex align-items-stretch">
-                        <div class="card card-dark card-outline">
+                        <div class="card card-dark card-outline w-100">
                           <div class="card-body d-flex flex-column">
                             <form>
                               <div class="form-group">
@@ -336,7 +336,7 @@
                       </div>
 
                       <div class="col-lg-4 d-lg-flex align-items-stretch">
-                        <div class="card card-dark card-outline">
+                        <div class="card card-dark card-outline w-100">
                           <div class="card-body d-flex flex-column">
                             <form>
                               <div class="form-group">

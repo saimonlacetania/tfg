@@ -5838,6 +5838,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -53630,7 +53646,9 @@ var render = function() {
                           [
                             _c(
                               "div",
-                              { staticClass: "card card-dark card-outline" },
+                              {
+                                staticClass: "card card-dark card-outline w-100"
+                              },
                               [
                                 _c(
                                   "div",
@@ -53857,7 +53875,9 @@ var render = function() {
                           [
                             _c(
                               "div",
-                              { staticClass: "card card-dark card-outline" },
+                              {
+                                staticClass: "card card-dark card-outline w-100"
+                              },
                               [
                                 _c(
                                   "div",
@@ -54122,7 +54142,9 @@ var render = function() {
                           [
                             _c(
                               "div",
-                              { staticClass: "card card-dark card-outline" },
+                              {
+                                staticClass: "card card-dark card-outline w-100"
+                              },
                               [
                                 _c(
                                   "div",
@@ -54472,87 +54494,113 @@ var render = function() {
                     _c("div", { staticClass: "col-12 col-sm-6" }, [
                       _c("h3", { staticClass: "my-3" }, [
                         _vm._v(
-                          "\n              " +
+                          "\n                  " +
                             _vm._s(_vm.$data.producte.nom) +
-                            "\n            "
+                            "\n                "
                         )
                       ]),
                       _vm._v(" "),
-                      _c("p", [
-                        _vm._v("Referencia: " + _vm._s(_vm.$data.producte.ref))
-                      ]),
+                      _c("p", [_vm._v(_vm._s(_vm.$data.producte.descripcio))]),
                       _vm._v(" "),
                       _c("hr"),
                       _vm._v(" "),
-                      _c("div", { staticClass: "bg-gray py-2 px-3 mt-4" }, [
-                        _c("h2", { staticClass: "mb-0" }, [
-                          _vm._v(_vm._s(_vm.$data.producte.preu) + " €")
-                        ]),
-                        _vm._v(" "),
-                        _vm.$data.producte.stock == 1
-                          ? _c("h4", [
-                              _vm._v(
-                                "\n                Queda " +
-                                  _vm._s(_vm.$data.producte.stock) +
-                                  " unitat!\n              "
-                              )
-                            ])
-                          : _c("h4", [
-                              _vm._v(
-                                "Queden " +
-                                  _vm._s(_vm.$data.producte.stock) +
-                                  " unitats!"
-                              )
-                            ])
-                      ]),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "bg-light py-2 px-3 mt-4",
+                          staticStyle: { "border-radius": "7px" }
+                        },
+                        [
+                          _c("h2", { staticClass: "mb-0" }, [
+                            _vm._v(_vm._s(_vm.$data.producte.preu) + " €")
+                          ]),
+                          _vm._v(" "),
+                          _vm.$data.producte.stock == 1
+                            ? _c("h4", [
+                                _vm._v(
+                                  "\n                    Queda " +
+                                    _vm._s(_vm.$data.producte.stock) +
+                                    " unitat!\n                  "
+                                )
+                              ])
+                            : _c("h5", [
+                                _vm._v(
+                                  "Queden " +
+                                    _vm._s(_vm.$data.producte.stock) +
+                                    " unitats!"
+                                )
+                              ])
+                        ]
+                      ),
                       _vm._v(" "),
-                      _c("div", { staticClass: "mt-4" }, [
-                        this.producte.stock > 0
-                          ? _c(
-                              "div",
-                              {
-                                staticClass: "btn btn-primary btn-lg btn-flat",
-                                on: { click: _vm.afegirCistella }
+                      _c(
+                        "div",
+                        {
+                          staticClass: "mt-4",
+                          staticStyle: { color: "#ff6565" }
+                        },
+                        [
+                          this.producte.stock > 0
+                            ? _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "btn btn-primary btn-lg btn-flat btn-block zoom",
+                                  staticStyle: {
+                                    "background-color": "#ff6565",
+                                    border: "none",
+                                    "border-radius": "7px"
+                                  },
+                                  on: { click: _vm.afegirCistella }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "fas fa-gift fa-lg mr-2"
+                                  }),
+                                  _vm._v(
+                                    "\n                    Afegir a la cistella\n                  "
+                                  )
+                                ]
+                              )
+                            : _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "btn btn-secondary btn-lg btn-flat disabled btn-block bg-light"
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "fas fa-cart-plus fa-lg mr-2"
+                                  }),
+                                  _vm._v(
+                                    "\n                    Afegir a la cistella\n                  "
+                                  )
+                                ]
+                              ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "btn btn-default btn-lg btn-flat btn-block bg-light zoom",
+                              staticStyle: {
+                                color: "#ff6565 !important",
+                                "border-radius": "7px"
                               },
-                              [
-                                _c("i", {
-                                  staticClass: "fas fa-cart-plus fa-lg mr-2"
-                                }),
-                                _vm._v(
-                                  "\n                Afegir a la cistella\n              "
-                                )
-                              ]
-                            )
-                          : _c(
-                              "div",
-                              {
-                                staticClass:
-                                  "btn btn-secondary btn-lg btn-flat disabled"
-                              },
-                              [
-                                _c("i", {
-                                  staticClass: "fas fa-cart-plus fa-lg mr-2"
-                                }),
-                                _vm._v(
-                                  "\n                Afegir a la cistella\n              "
-                                )
-                              ]
-                            ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "btn btn-default btn-lg btn-flat",
-                            on: { click: _vm.afegirWishlist }
-                          },
-                          [
-                            _c("i", { staticClass: "fas fa-heart fa-lg mr-2" }),
-                            _vm._v(
-                              "\n                Afegir a la llista de desitjos\n              "
-                            )
-                          ]
-                        )
-                      ]),
+                              on: { click: _vm.afegirWishlist }
+                            },
+                            [
+                              _c("i", {
+                                staticClass: "fas fa-heart fa-lg mr-2",
+                                staticStyle: { color: "#ff6565" }
+                              }),
+                              _vm._v(
+                                "\n                    Afegir a la llista de desitjos\n                  "
+                              )
+                            ]
+                          )
+                        ]
+                      ),
                       _vm._v(" "),
                       _vm._m(0)
                     ])
@@ -54614,8 +54662,7 @@ var render = function() {
                                             },
                                             [
                                               _c("img", {
-                                                staticClass:
-                                                  "img-circle elevation-2",
+                                                staticClass: "img-circle ",
                                                 attrs: {
                                                   src:
                                                     "/images/avatars/" +
@@ -54632,23 +54679,52 @@ var render = function() {
                                                 },
                                                 [
                                                   _vm._v(
-                                                    "\n                          " +
+                                                    "\n                              " +
                                                       _vm._s(
                                                         comentari.user.nom
                                                       ) +
-                                                      "\n                        "
+                                                      "\n                            "
                                                   )
                                                 ]
-                                              )
-                                            ]
+                                              ),
+                                              _vm._v(" "),
+                                              _vm._l(5, function(index) {
+                                                return _c(
+                                                  "div",
+                                                  { key: index },
+                                                  [
+                                                    index <= comentari.valoracio
+                                                      ? _c("small", [
+                                                          _c("i", {
+                                                            staticClass:
+                                                              "fas fa-star mt-2",
+                                                            staticStyle: {
+                                                              color: "#ff6565"
+                                                            }
+                                                          })
+                                                        ])
+                                                      : _c("small", [
+                                                          _c("i", {
+                                                            staticClass:
+                                                              "far fa-star mt-2",
+                                                            staticStyle: {
+                                                              color: "#ff6565"
+                                                            }
+                                                          })
+                                                        ])
+                                                  ]
+                                                )
+                                              })
+                                            ],
+                                            2
                                           )
                                         ]),
                                         _vm._v(" "),
                                         _c("div", { staticClass: "row" }, [
                                           _vm._v(
-                                            "\n                          " +
+                                            "\n                              " +
                                               _vm._s(comentari.descripcio) +
-                                              "\n                        "
+                                              "\n                            "
                                           )
                                         ]),
                                         _vm._v(" "),
@@ -54880,7 +54956,7 @@ var render = function() {
                                     },
                                     [
                                       _vm._v(
-                                        "\n                          Enviar\n                        "
+                                        "\n                              Enviar\n                            "
                                       )
                                     ]
                                   )
@@ -54910,17 +54986,23 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mt-4 product-share" }, [
-      _c("a", { staticClass: "text-gray", attrs: { href: "#" } }, [
-        _c("i", { staticClass: "fab fa-facebook-square fa-2x" })
+    return _c("div", { staticClass: "row mt-4 product-share" }, [
+      _c("div", { staticClass: "col-md-4" }, [
+        _c("a", { staticClass: "text-secondary", attrs: { href: "#" } }, [
+          _c("i", { staticClass: "fab fa-facebook-square fa-2x" })
+        ])
       ]),
       _vm._v(" "),
-      _c("a", { staticClass: "text-gray", attrs: { href: "#" } }, [
-        _c("i", { staticClass: "fab fa-twitter-square fa-2x" })
+      _c("div", { staticClass: "col-md-4" }, [
+        _c("a", { staticClass: "text-gray", attrs: { href: "#" } }, [
+          _c("i", { staticClass: "fab fa-twitter-square fa-2x" })
+        ])
       ]),
       _vm._v(" "),
-      _c("a", { staticClass: "text-gray", attrs: { href: "#" } }, [
-        _c("i", { staticClass: "fab fa-instagram-square fa-2x" })
+      _c("div", { staticClass: "col-md-4" }, [
+        _c("a", { staticClass: "text-gray", attrs: { href: "#" } }, [
+          _c("i", { staticClass: "fab fa-instagram-square fa-2x" })
+        ])
       ])
     ])
   },
@@ -54928,7 +55010,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", { staticClass: "w-30" }, [
+    return _c("nav", { staticClass: "ml-4" }, [
       _c(
         "div",
         {
@@ -54950,7 +55032,7 @@ var staticRenderFns = [
                 "aria-selected": "true"
               }
             },
-            [_vm._v("Description")]
+            [_vm._v("Descripció")]
           ),
           _vm._v(" "),
           _c(
@@ -54967,7 +55049,7 @@ var staticRenderFns = [
                 "aria-selected": "false"
               }
             },
-            [_vm._v("Comments")]
+            [_vm._v("Comentaris")]
           )
         ]
       )
