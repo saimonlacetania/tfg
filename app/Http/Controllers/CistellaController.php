@@ -53,7 +53,11 @@ class CistellaController extends Controller
     public function eliminarCistella($id_cistella)
     {
         $cistella = Cistella::find($id_cistella);
+        $producte = Producte::find($cistella->id_productes);
+        $producte->stock = $producte->stock + $cistella->quantitat;
+        $producte->save();
         $cistella->delete();
+
         return true;
     }
 

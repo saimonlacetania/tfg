@@ -2983,8 +2983,9 @@ __webpack_require__.r(__webpack_exports__);
 
     axios.get("/api/user").then(function (res) {
       _this.user = res.data;
+
+      _this.actualitzarCistella();
     });
-    this.actualitzarCistella();
   },
   methods: {
     actualitzarCistella: function actualitzarCistella() {
@@ -3097,16 +3098,22 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     restarCistella: function restarCistella(id) {
+      var _this5 = this;
+
       axios.post("/api/restarCistella/" + id).then(function (res) {
         console.log(res);
+
+        _this5.actualitzarCistella();
       });
-      this.actualitzarCistella();
     },
     sumarCistella: function sumarCistella(id) {
+      var _this6 = this;
+
       axios.post("/api/sumarCistella/" + id).then(function (res) {
         console.log(res);
+
+        _this6.actualitzarCistella();
       });
-      this.actualitzarCistella();
     }
   }
 });
@@ -6608,8 +6615,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -6631,14 +6636,31 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
+    toastCorrecte: function toastCorrecte() {
+      // Use sweetalert2
+      Swal.fire({
+        toast: true,
+        position: "top-end",
+        icon: "success",
+        title: "Eliminat correctament",
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: function didOpen(toast) {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        }
+      });
+    },
     eliminarWishlist: function eliminarWishlist(id) {
       var _this2 = this;
 
       axios.post("/api/eliminarWishlist/" + id).then(function (res) {
         console.log(res);
-      });
-      axios.get("/api/veureWishlist").then(function (res) {
-        _this2.wishlist = res.data;
+        axios.get("/api/veureWishlist").then(function (res) {
+          _this2.wishlist = res.data;
+
+          _this2.toastCorrecte();
+        });
       });
     }
   }
@@ -59425,9 +59447,7 @@ var render = function() {
       _c("div", { staticClass: "content w-100" }, [
         _c("div", { staticClass: "container-fluid" }, [
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-md-2" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-md-8" }, [
+            _c("div", { staticClass: "col-md-12" }, [
               _c("div", { staticClass: "card" }, [
                 _c("div", { staticClass: "card-body table-responsive" }, [
                   _c("table", { staticClass: "table" }, [
@@ -59482,9 +59502,7 @@ var render = function() {
                 ])
               ])
             ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-2" })
+          ])
         ])
       ])
     ]

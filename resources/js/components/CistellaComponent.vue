@@ -125,8 +125,8 @@ export default {
   mounted() {
     axios.get("/api/user").then((res) => {
       this.user = res.data;
+      this.actualitzarCistella();
     });
-    this.actualitzarCistella();
   },
   methods: {
     actualitzarCistella() {
@@ -234,14 +234,14 @@ export default {
     restarCistella(id) {
       axios.post("/api/restarCistella/" + id).then((res) => {
         console.log(res);
+        this.actualitzarCistella();
       });
-      this.actualitzarCistella();
     },
     sumarCistella(id) {
       axios.post("/api/sumarCistella/" + id).then((res) => {
         console.log(res);
+        this.actualitzarCistella();
       });
-      this.actualitzarCistella();
     },
   },
 };
