@@ -2563,14 +2563,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2599,8 +2591,6 @@ __webpack_require__.r(__webpack_exports__);
         visites: "0"
       },
       files: null,
-      files2: null,
-      files3: null,
       form_botiga: {
         id: "",
         nom: "",
@@ -2750,8 +2740,8 @@ __webpack_require__.r(__webpack_exports__);
       console.log(that.form);
       var formData = new FormData();
 
-      if (document.getElementById("imatge").files[0]) {
-        that.form["imatge"] = document.getElementById("imatge").files[0];
+      if (document.getElementById("img_producte").files[0]) {
+        that.form["imatge"] = document.getElementById("img_producte").files[0];
         formData.append("imatge", that.form["imatge"]);
       }
 
@@ -5550,7 +5540,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         console.log(res);
 
         _this3.$router.push({
-          name: "Profile"
+          name: "Productes"
         });
 
         _this3.toastCorrecte();
@@ -5570,7 +5560,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         console.log(res);
 
         _this4.$router.push({
-          name: "Profile"
+          name: "Productes"
         });
 
         _this4.toastCorrecte();
@@ -5603,7 +5593,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         console.log(res);
 
         _this5.$router.push({
-          name: "Profile"
+          name: "Productes"
         });
 
         _this5.toastCorrecte();
@@ -5890,12 +5880,14 @@ __webpack_require__.r(__webpack_exports__);
           }
         });
 
-        _this2.toastCorrecte();
+        location.reload();
+
+        _this2.toastCorrecteComentari();
       })["catch"](function (error) {
         that.errors2 = error.response.data.errors;
         console.log(that.errors2);
 
-        _this2.toastIncorrecte();
+        _this2.toastIncorrecteComentari();
       });
     },
     toastCorrecte: function toastCorrecte() {
@@ -5925,6 +5917,36 @@ __webpack_require__.r(__webpack_exports__);
         didOpen: function didOpen(toast) {
           toast.addEventListener("mouseenter", Swal.stopTimer);
           toast.addEventListener("mouseleave", Swal.resumeTimer);
+        }
+      });
+    },
+    toastCorrecteComentari: function toastCorrecteComentari() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'success',
+        title: 'Comentari enviat correctament',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: function didOpen(toast) {
+          toast.addEventListener('mouseenter', Swal.stopTimer);
+          toast.addEventListener('mouseleave', Swal.resumeTimer);
+        }
+      });
+    },
+    toastIncorrecteComentari: function toastIncorrecteComentari() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'error',
+        title: 'Error al enviar comentari',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: function didOpen(toast) {
+          toast.addEventListener('mouseenter', Swal.stopTimer);
+          toast.addEventListener('mouseleave', Swal.resumeTimer);
         }
       });
     },
@@ -48554,22 +48576,22 @@ var render = function() {
                                         )
                                       : _c(
                                           "span",
-                                          _vm._l(_vm.files, function(file) {
+                                          _vm._l(_vm.files, function(file1) {
                                             return _c(
                                               "label",
                                               {
-                                                key: file,
+                                                key: file1.name,
                                                 staticClass:
                                                   "custom-file-label",
                                                 attrs: { for: "img_perfil" }
                                               },
                                               [
-                                                file.id == "img_perfil"
+                                                file1.id == "img_perfil"
                                                   ? _c("span", [
                                                       _vm._v(
                                                         "\n                                                            " +
                                                           _vm._s(
-                                                            file.file[0].name
+                                                            file1.file[0].name
                                                           ) +
                                                           "\n                                                        "
                                                       )
@@ -48617,22 +48639,22 @@ var render = function() {
                                         )
                                       : _c(
                                           "span",
-                                          _vm._l(_vm.files, function(file) {
+                                          _vm._l(_vm.files, function(file2) {
                                             return _c(
                                               "label",
                                               {
-                                                key: file,
+                                                key: file2.name,
                                                 staticClass:
                                                   "custom-file-label",
                                                 attrs: { for: "img_portada" }
                                               },
                                               [
-                                                file.id == "img_portada"
+                                                file2.id == "img_portada"
                                                   ? _c("span", [
                                                       _vm._v(
                                                         "\n                                                            " +
                                                           _vm._s(
-                                                            file.file[0].name
+                                                            file2.file[0].name
                                                           ) +
                                                           "\n                                                        "
                                                       )
@@ -48973,21 +48995,21 @@ var render = function() {
                                       )
                                     : _c(
                                         "span",
-                                        _vm._l(_vm.files, function(file) {
+                                        _vm._l(_vm.files, function(file3) {
                                           return _c(
                                             "label",
                                             {
-                                              key: file,
+                                              key: file3.name,
                                               staticClass: "custom-file-label",
                                               attrs: { for: "img_producte" }
                                             },
                                             [
-                                              file.id == "img_producte"
+                                              file3.id == "img_producte"
                                                 ? _c("span", [
                                                     _vm._v(
                                                       "\n                                            " +
                                                         _vm._s(
-                                                          file.file[0].name
+                                                          file3.file[0].name
                                                         ) +
                                                         "\n                                            "
                                                     )

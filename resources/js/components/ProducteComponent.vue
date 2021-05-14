@@ -236,12 +236,13 @@ export default {
         .then((res) => {
           console.log(res);
           this.$router.push({ name: "Producte", params: {id: this.producte.id} });
-          this.toastCorrecte();
+          location.reload();
+          this.toastCorrecteComentari();
         })
         .catch((error) => {
           that.errors2 = error.response.data.errors;
           console.log(that.errors2);
-          this.toastIncorrecte();
+          this.toastIncorrecteComentari();
         });
     },
     toastCorrecte() {
@@ -273,6 +274,36 @@ export default {
           toast.addEventListener("mouseleave", Swal.resumeTimer);
         },
       });
+    },
+    toastCorrecteComentari() {
+        // Use sweetalert2
+        this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'success',
+        title: 'Comentari enviat correctament',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      });
+    },
+    toastIncorrecteComentari() {
+    // Use sweetalert2
+    this.$swal({
+        toast: true,
+        position: 'top-end',
+        icon: 'error',
+        title: 'Error al enviar comentari',
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    });
     },
     afegirCistella() {
       axios
