@@ -196,6 +196,7 @@ export default {
   },
 
   mounted() {
+    this.loading();
     axios.get("/api/user").then((res) => {
       this.user = res.data;
     });
@@ -209,6 +210,36 @@ export default {
     });
   },
   methods: {
+    loading() {
+      let timerInterval
+      Swal.fire({
+        title: '<span style="color: #ff6565">Carregant...</span>',
+        customClass: 'swal-wide',
+        timerProgressBar: true,
+        timer: 1500,
+        showClass: {
+          popup: '',
+          icon: ''
+        },
+        hideClass: {
+          popup: '',
+        },
+        didOpen: () => {
+          Swal.showLoading()
+          timerInterval = setInterval(() => {
+            
+          }, 100)
+        },
+        willClose: () => {
+          clearInterval(timerInterval)
+        }
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+          console.log('I was closed by the timer')
+        }
+      })
+    },
     enviarOrdre(id) {
       axios.post("/api/enviarOrdre/" + id).then((res1) => {
         console.log(res1);

@@ -7,6 +7,7 @@ import routes from "./routes";
 import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import swal from 'sweetalert2';
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
 window.Swal = swal;
 
 const router = new VueRouter(routes);
@@ -18,6 +19,9 @@ const app = new Vue({
     el: "#app",
     mode: "history",
     router,
+    components: {
+        PulseLoader
+    },
     created: function() {
         axios.get("/api/user").then(res => {
             this.user = res.data;

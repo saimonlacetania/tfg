@@ -293,7 +293,7 @@
         </div>
       </div>
     </div>
-    
+    <pulse-loader :loading="loading" :color="color" :size="size"></pulse-loader>
   </div>
 
   <!-- /.contingut pagina -->
@@ -312,35 +312,40 @@
 .zoom:hover {
   transform: scale(1.05); /* (150% zoom)*/
 }
+
 </style>
 
 <script>
-import CercaComponent from "./CercaComponent.vue";
 
 export default {
-  components: { CercaComponent},
   mounted() {
     console.log("Productes mounted.");
-    this.loading();
+    
+  },
+  data () {
+    return {
+      loading : true
+    }
   },
   methods: {
     loading() {
       let timerInterval
       Swal.fire({
-        title: 'Auto close alert!',
-        html: 'I will close in <b></b> milliseconds.',
-        timer: 2000,
+        title: '<span style="color: #ff6565">Carregant...</span>',
+        customClass: 'swal-wide',
         timerProgressBar: true,
+        timer: 1500,
+        showClass: {
+          popup: '',
+          icon: ''
+        },
+        hideClass: {
+          popup: '',
+        },
         didOpen: () => {
           Swal.showLoading()
           timerInterval = setInterval(() => {
-            const content = Swal.getContent()
-            if (content) {
-              const b = content.querySelector('b')
-              if (b) {
-                b.textContent = Swal.getTimerLeft()
-              }
-            }
+            
           }, 100)
         },
         willClose: () => {

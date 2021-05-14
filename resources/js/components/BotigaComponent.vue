@@ -704,7 +704,9 @@ export default {
         };
     },
     mounted() {
+        
         this.files = new Array();
+        this.loading();
         axios.get("/api/categories").then((res) => {
                 this.categories = res.data;
             });
@@ -783,6 +785,36 @@ export default {
             }
             
         },
+        loading() {
+        let timerInterval
+        Swal.fire({
+            title: '<span style="color: #ff6565">Carregant...</span>',
+            
+            timerProgressBar: true,
+            timer: 1500,
+            showClass: {
+            popup: '',
+            icon: ''
+            },
+            hideClass: {
+            popup: '',
+            },
+            didOpen: () => {
+            Swal.showLoading()
+            timerInterval = setInterval(() => {
+                
+            }, 100)
+            },
+            willClose: () => {
+            clearInterval(timerInterval)
+            }
+        }).then((result) => {
+            /* Read more about handling dismissals below */
+            if (result.dismiss === Swal.DismissReason.timer) {
+            console.log('I was closed by the timer')
+            }
+        })
+        },
         
         toastCorrecte() {
         // Use sweetalert2
@@ -838,7 +870,7 @@ export default {
             }
             formData.append("categoria", that.form["categoria"]);
             formData.append("visites", that.form["visites"]);
-            
+            this.loading();
             axios
                 .post("/api/afegirProducte", formData, {
                 headers: {
@@ -887,7 +919,7 @@ export default {
             formData.append("twitter", that.form_botiga["twitter"]);
             formData.append("nif", that.form_botiga["nif"]);
             formData.append("cif", that.form_botiga["cif"]);
-
+            this.loading();
             axios
             .post("/api/modifyShop", formData, {               
                 headers: {
