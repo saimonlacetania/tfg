@@ -84,7 +84,7 @@ class BotigaController extends Controller
                 if ($request->file("img_portada") != null) {
                     Storage::disk('public')->put('botigues', $request->file('img_portada'));
                     $thumbnailpath = public_path('images/botigues/' . $request->file("img_portada")->hashName());
-                    $img = Image::make($thumbnailpath)->resize(150, 150);
+                    $img = Image::make($thumbnailpath);
                     $img->save($thumbnailpath);
                     $botiga->img_portada = $request->file("img_portada")->hashName();
                 }

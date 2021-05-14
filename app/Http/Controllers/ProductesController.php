@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Storage;
 use Image;
 
 use App\Models\Producte;
+use App\Models\Comentari;
+use App\User;
 
 class ProductesController extends Controller
 {
@@ -16,11 +18,40 @@ class ProductesController extends Controller
         return $productes;
     }
     
+    public function productesCerca($keyword)
+    {
+        if ($keyword=="" || $keyword==" ") {
+            $productesCerca = Producte::where('actiu', 1)->get();
+        }
+        else {
+            $productesCerca = Producte::where('nom', 'LIKE','%'.$keyword.'%')->where('actiu', 1)->get();  
+        }
+        
+        return $productesCerca;
+    }
+    
     public function producte($id)
     {
         $producte = Producte::find($id);
         return $producte;
     }
+
+    public function comentaris($id)
+    {
+        $comentaris = Comentari::with('user')->get();
+        return $comentaris;
+    }
+
+    public function pujarComentari(Request $request)
+    {
+        Comentari::create([
+            'id_usuari' => $request->id_usuari,
+            'id_producte' => $request->id_producte,
+            'descripcio' => $request->descripcio,
+            'valoracio' => $request->valoracio,
+        ]);
+    }
+
     public function eliminarProducte($id)
     {
         $producte = Producte::find($id);
@@ -69,7 +100,7 @@ class ProductesController extends Controller
     {
 
         $request->validate([
-            'imatge' => 'mimes:jpg,jpeg,png,svg',
+            'ima' => 'mimes:jpg,jpeg,png,svg',
             'ref' => ['required'],
             'nom' => ['required'],
             'desc' => ['required'],

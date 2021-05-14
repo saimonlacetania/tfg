@@ -41,7 +41,7 @@ html {
         </li>
         <li class="nav-item dropdown">
           <router-link
-            :to="'/profile'"
+            :to="'/wishlist'"
             class="nav-link"
             data-toggle="dropdown"
             aria-expanded="false"
@@ -122,24 +122,27 @@ html {
                 </p>
               </a>
               <ul class="nav nav-treeview nav-child-indent">
-                  <li class="nav-item">
-                      <router-link class="nav-link" :to="'/botiga'">
-                          <i class="fas fa-feather-alt nav-icon text-dark"></i>
-                          <p class="text-dark">Perfil</p>
-                      </router-link>
-                  </li>
-                  <li class="nav-item">
-                      <router-link class="nav-link" :to="{ name: 'PerfilBotiga', params: { id: user.id } }">
-                          <i class="fas fa-gem nav-icon text-dark"></i>
-                          <p class="text-dark">Perfil públic</p>
-                      </router-link>
-                  </li>
-                  <li class="nav-item">
-                      <a href="#" class="nav-link">
-                          <i class="fas fa-chart-line nav-icon text-dark"></i>
-                          <p class="text-dark">Estadístiques</p>
-                      </a>
-                  </li>
+                <li class="nav-item">
+                  <router-link class="nav-link" :to="'/botiga'">
+                    <i class="fas fa-feather-alt nav-icon text-dark"></i>
+                    <p class="text-dark">Perfil</p>
+                  </router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link
+                    class="nav-link"
+                    :to="{ name: 'PerfilBotiga', params: { id: user.id } }"
+                  >
+                    <i class="fas fa-feather-alt nav-icon text-dark"></i>
+                    <p class="text-dark">Perfil públic</p>
+                  </router-link>
+                </li>
+                <li class="nav-item">
+                  <router-link :to="'/comandes'" class="nav-link">
+                    <i class="fas fa-chart-line nav-icon text-dark"></i>
+                    <p class="text-dark">Comandes</p>
+                  </router-link>
+                </li>
               </ul>
             </li>
               <li v-else class="nav-item">
@@ -161,7 +164,7 @@ html {
               </router-link>
             </li>
 
-            <li class="nav-item fixed-bottom ml-2">
+            <li class="nav-item align-text-bottom">
               <a @click.prevent="logout" href="#" class="nav-link">
                 <i class="nav-icon fas fa-power-off text-dark"></i>
                 <p class="text-dark">Sortir</p>
@@ -219,6 +222,13 @@ html {
   </div>
 </template>
 <style>
+
+
+
+.main-sidebar, .main-sidebar::before {
+  @media (max-width: 767.98px);
+  background-color: white;
+}
   #cajacookies {
     position: fixed;
     bottom: 0;

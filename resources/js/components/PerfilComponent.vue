@@ -71,13 +71,8 @@
                   <li class="nav-item">
                     <a
                       class="nav-link active"
-                      href="#wishlist"
+                      href="#activity"
                       data-toggle="tab"
-                      >Llista de desitjos</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#activity" data-toggle="tab"
                       >Les meves comandes</a
                     >
                   </li>
@@ -98,7 +93,7 @@
               <!-- les meves comandes -->
               <div class="card-body register-card-body">
                 <div class="tab-content">
-                  <div class="tab-pane" id="activity">
+                  <div class="active tab-pane" id="activity">
                     <div class="card mb-3">
                       <div class="row g-0">
                         <div class="col-md-12">
@@ -141,141 +136,51 @@
                   </div>
                   <!-- /.les meves comandes -->
 
-                  <div class="active tab-pane" id="wishlist">
-                    <div class="card mb-3">
-                      <div class="row g-0">
-                        <div class="col-md-12">
-                          <div class="card-header">
-                            <h3 class="card-title">
-                              La meva llista de desitjos
-                            </h3>
-                          </div>
-                          <div class="card-body table-responsive">
-                            <table class="table">
-                              <thead class="">
-                                <tr>
-                                  <th>Nom</th>
-                                  <th>Referència</th>
-                                  <th>Preu</th>
-                                  <th class="text-right">Eliminar</th>
-                                </tr>
-                              </thead>
-                              <tbody class="">
-                                <tr
-                                  v-for="producte in wishlist"
-                                  :key="producte.id"
-                                >
-                                  <td>{{ producte.productes.nom }}</td>
-                                  <td>{{ producte.productes.ref }}</td>
-                                  <td>{{ producte.productes.preu }} €</td>
-                                  <td class="text-right">
-                                    <span
-                                      ><button
-                                        class="btn btn-danger"
-                                        @click="eliminarWishlist(producte.id)"
-                                      >
-                                        <i class="fas fa-trash"></i>
-                                      </button>
-                                    </span>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
                   <!-- TIMELINE tornar a comprar -->
                   <div class="tab-pane" id="timeline">
                     <!-- The timeline -->
-                    <div class="timeline timeline-inverse">
-                      <!-- timeline time label -->
-                      <div class="time-label">
-                        <span class="bg-secondary">
-                          <i class="far fa-calendar-alt"></i>
-                          26/04/2021
-                        </span>
-                      </div>
-                      <!-- /.timeline-label -->
-                      <!-- timeline item -->
-                      <div>
-                        <i class="fas fa-gift bg-maroon"></i>
-                        <div class="timeline-item">
-                          <span class="time"
-                            ><i class="fas fa-store-alt"></i
-                            ><a href="#"> Nom Botiga</a></span
-                          >
+                    <span v-for="order in ordersP" :key="order.index">
+                      <div class="timeline timeline-inverse border">
+                        <!-- timeline time label -->
 
-                          <h3 class="timeline-header">Nom del producte</h3>
-
-                          <small class="timeline-body"
-                            >Descripcio producte</small
-                          >
+                        <div class="time-label">
+                          <span class="">
+                            <i class="fas fa-shipping-fast"></i>
+                            {{ "Ordre nº" + order[0].id_ordre }}
+                          </span>
                         </div>
-                      </div>
-                      <!-- END timeline item -->
-                      <!-- timeline item -->
-                      <div>
-                        <i class="fas fa-gift bg-maroon"></i>
-                        <div class="timeline-item">
-                          <span class="time"
-                            ><i class="fas fa-store-alt"></i
-                            ><a href="#"> Nom Botiga</a></span
-                          >
-
-                          <h3 class="timeline-header">Nom del producte</h3>
-
-                          <small class="timeline-body"
-                            >Descripcio producte</small
-                          >
+                        <!-- /.timeline-label -->
+                        <!-- timeline item -->
+                        <div v-for="product in order" :key="product.index">
+                          <i
+                            class="fas fa-box-open text-white"
+                            style="background-color: #ff6565"
+                          ></i>
+                          <div class="timeline-item">
+                            <span class="time">
+                              <i class="fas fa-store-alt"></i
+                              ><router-link
+                                style="color: #ff6565; text-decoration: none"
+                                :to="{
+                                  name: 'PerfilBotiga',
+                                  params: { id: product.productes.botiga.id },
+                                }"
+                              >
+                                {{ product.productes.botiga.nom }}</router-link
+                              ></span
+                            >
+                            <h3 class="timeline-header">
+                              {{ product.productes.nom }}
+                            </h3>
+                            <small class="timeline-body">{{
+                              product.productes.descripcio
+                            }}</small>
+                          </div>
                         </div>
-                      </div>
-                      <!-- END timeline item -->
-                      <!-- timeline item -->
-                      <div>
-                        <i class="fas fa-gift bg-maroon"></i>
-                        <div class="timeline-item">
-                          <span class="time"
-                            ><i class="fas fa-store-alt"></i
-                            ><a href="#"> Nom Botiga</a></span
-                          >
 
-                          <h3 class="timeline-header">Nom del producte</h3>
-
-                          <small class="timeline-body"
-                            >Descripcio producte</small
-                          >
-                        </div>
+                        <!-- END timeline item -->
                       </div>
-                      <!-- END timeline item -->
-                      <!-- timeline time label -->
-                      <div class="time-label">
-                        <span class="bg-secondary">
-                          <i class="far fa-calendar-alt"></i>
-                          27/10/2020
-                        </span>
-                      </div>
-                      <!-- /.timeline-label -->
-                      <!-- timeline item -->
-                      <div>
-                        <i class="fas fa-gift bg-maroon"></i>
-                        <div class="timeline-item">
-                          <span class="time"
-                            ><i class="fas fa-store-alt"></i
-                            ><a href="#"> Nom Botiga</a></span
-                          >
-
-                          <h3 class="timeline-header">Nom del producte</h3>
-
-                          <small class="timeline-body"
-                            >Descripcio producte</small
-                          >
-                        </div>
-                      </div>
-                      <!-- END timeline item -->
-                    </div>
+                    </span>
                   </div>
                   <!-- /.tab-pane -->
 
@@ -490,6 +395,11 @@
     </section>
   </div>
 </template>
+<style>
+.timeline::before {
+  background-color: #ffffff;
+}
+</style>
 <script>
 export default {
   data() {
@@ -521,8 +431,10 @@ export default {
       errors: [],
       errors2: [],
       errors3: [],
+      ordersP: "",
     };
   },
+
   mounted() {
     axios.get("/api/user").then((res) => {
       this.user = res.data;
@@ -550,6 +462,7 @@ export default {
       this.ordersP = res4.data;
     });
   },
+
   methods: {
     loginCorrecte() {
       // Use sweetalert2

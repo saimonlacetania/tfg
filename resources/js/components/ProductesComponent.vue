@@ -5,41 +5,24 @@
       <div class="container-fluid">
         <!-- cerca -->
         <div class="col-md-12">
-          <form action="simple-results.html">
             <div class="input-group">
               <input
-                type="search"
+                v-model="keyword"
+                type="text"
                 class="form-control form-control-lg text-right"
                 placeholder="¿Què vols buscar?"
               />
-              <div class="input-group-append">
                 <button
-                  type="submit"
+                  type="button"
                   class="btn btn-lg btn-secondary"
                   style="background-color: #ff6565"
                 >
                   <i class="fa fa-search"></i>
                 </button>
-                <button
-                  type="button"
-                  class="btn btn-lg btn-secondary"
-                  aria-expanded="true"
-                  v-on:click="mostrarCerca"
-                  style="background-color: #ff6565"
-                >
-                  <i class="fa fa-arrow-down"></i>
-                </button>
-              </div>
             </div>
-          </form>
         </div>
+        <br>
         <!-- /.col -->
-
-        <!-- cerca avançada -->
-        <div id="cerca" style="display: none">
-          <cerca-component></cerca-component>
-        </div>
-
         <div class="content w-100">
           <div class="container-fluid">
             <div class="row">
@@ -113,30 +96,40 @@
 </style>
 
 <script>
-import CercaComponent from "./CercaComponent.vue";
+
 
 export default {
   data() {
     return {
       productes: "",
+      keyword: ""
     };
   },
-  components: { CercaComponent },
   mounted() {
     axios.get("/api/productes").then((res) => {
       console.log(res);
       this.productes = res.data;
     });
   },
-  methods: {
-    mostrarCerca: function (event) {
-      var cerca = document.getElementById("cerca");
-      if (cerca.style.display == "none") {
-        cerca.style.display = "block";
-      } else {
-        cerca.style.display = "none";
-      }
+  watch: {
+        keyword(after, before) {
+            this.cercaProductes();
+        }
     },
+  methods: {
+    cercaProductes() {
+      if (this.keyword=="" || this.keyword==" ") {
+        axios.get("/api/productes").then((res) => {
+          console.log(res);
+          this.productes = res.data;
+        });
+      } else {
+        axios.get('api/productesCerca/'+this.keyword).then((res) => {
+          console.log(res.data);
+          this.productes = res.data;
+        });
+      }
+    }
   },
 };
 </script>

@@ -11,7 +11,7 @@ class Botiga extends Model
     use Notifiable;
 
     protected $fillable = [
-        'nom','descripcio', 'telf_1', 'telf_2', 'id_usuari', 'direccio', 'cp', 'poblacio', 'provincia', 'email', 'instagram', 'facebook', 'twitter', 'nif', 'cif'
+        'nom','descripcio', 'telf_1', 'telf_2', 'id_usuari', 'direccio', 'cp', 'poblacio', 'provincia', 'email','img_perfil','img_portada', 'instagram', 'facebook', 'twitter', 'nif', 'cif'
     ];
 
     //taula

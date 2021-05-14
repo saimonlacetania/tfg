@@ -21,10 +21,14 @@ class CreateBotiguesTable extends Migration
             $table->string('telf_2')->nullable();
             $table->foreignId('id_usuari')->constrained('users');
             $table->string('direccio');
+            $table->string('img_perfil')->nullable();
+            $table->string('img_portada')->nullable();
             $table->string('cp');
             $table->string('poblacio');
             $table->string('provincia');
             $table->string('email')->unique();
+            $table->string('img_perfil');
+            $table->string('img_portada');
             $table->string('instagram')->nullable();
             $table->string('facebook')->nullable();
             $table->string('twitter')->nullable();

@@ -14,14 +14,14 @@ class Comentari extends Model
     protected $table = 'comentaris';
 
     protected $fillable = [
-        'descripcio', 'valoracio'
+        'descripcio', 'valoracio','id_usuari','id_producte'
     ];
 
     //mètodes
     //un comentari un usuari
     public function user()
     {
-        return $this->belongsTo("App\Models\User", "id_usuari");
+        return $this->belongsTo("App\User", "id_usuari");
     }
 
     //un comentari un producte
