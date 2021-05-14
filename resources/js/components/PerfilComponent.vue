@@ -96,15 +96,15 @@
                           </div>
                           <div class="card-body table-responsive">
                             <table class="table">
-                              <thead class="">
+                              <thead class="text-center">
                                 <tr>
                                   <th>Id</th>
                                   <th>Estat</th>
                                   <th>Direcció d'enviament</th>
-                                  <th class="text-right">Veure</th>
+                                  <th>Entregada?</th>
                                 </tr>
                               </thead>
-                              <tbody class="">
+                              <tbody class="text-center">
                                 <tr v-for="comanda in orders" :key="comanda.id">
                                   <td>{{ comanda.id }}</td>
                                   <td v-if="comanda.enviat == 1">Enviat</td>
@@ -113,10 +113,21 @@
                                     {{ comanda.direccio }},
                                     {{ comanda.poblacio }}
                                   </td>
-                                  <td class="text-right">
+                                  <td>
                                     <span
-                                      ><button class="btn btn-primary">
-                                        <i class="fas fa-eye"></i>
+                                      ><button
+                                        v-if="comanda.enviat == 1"
+                                        v-on:click="ordreRebuda(comanda.id)"
+                                        class="btn btn-success"
+                                      >
+                                        <i class="fas fa-check"></i>
+                                      </button>
+                                      <button
+                                        v-else
+                                        class="btn btn-secondary"
+                                        disabled
+                                      >
+                                        <i class="fas fa-check"></i>
                                       </button>
                                     </span>
                                   </td>
@@ -248,6 +259,19 @@ export default {
       });
       axios.get("/api/veureWishlist").then((res) => {
         this.wishlist = res.data;
+      });
+    },
+    ordreRebuda(id) {
+      axios.post("/api/ordreRebuda/" + id).then((res) => {
+        console.log(res);
+      });
+      axios.get("/api/veureOrdreUser").then((res3) => {
+        this.orders = res3.data;
+        console.log(this.orders);
+      });
+      axios.get("/api/veureOrdreProcessadaUser").then((res4) => {
+        this.ordersP = res4.data;
+        console.log(this.ordersP);
       });
     },
   },

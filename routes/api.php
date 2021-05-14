@@ -40,6 +40,7 @@ Route::post('crearOrdre', 'OrdersController@crearOrdre');
 Route::get('veureOrdreUser', 'OrdersController@veureOrdreUser');
 Route::get('veureOrdreBotiga', 'OrdersController@veureOrdreBotiga');
 Route::get('veureOrdreBotigaEnviat', 'OrdersController@veureOrdreBotigaEnviat');
+Route::post('ordreRebuda/{id}', 'OrdersController@ordreRebuda');
 Route::get('veureOrdreProcessadaUser', 'OrdersController@veureOrdreProcessadaUser');
 Route::post('register', 'RegisterController@register');
 Route::post('crearBotiga', 'CrearBotigaController@crearBotiga');
