@@ -10,7 +10,7 @@ class Producte extends Model
     use Notifiable;
 
     protected $fillable = [
-        'imatge', 'ref', 'nom', 'descripcio', 'preu', 'stock', 'actiu', 'id_categoria', 'visites', 'id_botiga',
+        'imatge','ref', 'nom', 'descripcio', 'preu', 'stock', 'actiu', 'id_categoria','visites','id_botiga','eliminat'
     ];
 
     //taula
@@ -22,6 +22,7 @@ class Producte extends Model
     {
         return $this->belongsTo("App\Models\Botiga", "id_botiga");
     }
+    
 
     public function categoria()
     {

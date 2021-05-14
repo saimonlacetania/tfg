@@ -27,6 +27,8 @@ class CreateBotiguesTable extends Migration
             $table->string('poblacio');
             $table->string('provincia');
             $table->string('email')->unique();
+            $table->string('img_perfil');
+            $table->string('img_portada');
             $table->string('instagram')->nullable();
             $table->string('facebook')->nullable();
             $table->string('twitter')->nullable();

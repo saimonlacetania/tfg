@@ -1,7 +1,7 @@
 import Register from "./components/Register";
 import Login from "./components/Login";
 import NotFound from "./components/NotFound";
-import Example from "./components/ExampleComponent";
+import Main from "./components/MainComponent";
 import Perfil from "./components/PerfilComponent";
 import Productes from "./components/ProductesComponent";
 import EditarPerfil from "./components/EditarPerfilComponent";
@@ -10,6 +10,7 @@ import Contacte from "./components/contacteComponent";
 import Producte from "./components/ProducteComponent";
 import Botiga from "./components/BotigaComponent";
 import CrearBotiga from "./components/CrearBotigaComponent";
+import EditarProducte from "./components/EditarProducteComponent";
 import Wishlist from "./components/WishlistComponent";
 import Comandes from "./components/ComandesComponent";
 
@@ -26,7 +27,7 @@ export default {
         },
         {
             path: "/",
-            component: Example,
+            component: Main,
             name: "Home",
             children: [
                 {
@@ -85,9 +86,42 @@ export default {
                     name: "Producte"
                 },
                 {
+                    path: "/editarProducte/:id",
+                    component: EditarProducte,
+                    name: "editarProducte",
+                    beforeEnter: (to, form, next) => {
+                        axios
+                            .get("/api/athenticated")
+                            .then(() => {
+                                next();
+                            })
+                            .catch(() => {
+                                return next({ name: "Login" });
+                            });
+                    }
+                },
+                {
                     path: "/botiga",
                     component: Botiga,
-                    name: "Botiga"
+                    name: "Botiga",
+                    beforeEnter: (to, form, next) => {
+                        axios
+                            .get("/api/athenticated")
+                            .then(() => {
+                                axios
+                                    .get("/api/comprovaBotiga")
+                                    .then((res) => {
+                                        console.log(res);
+                                        next();
+                                    })
+                                    .catch(() => {
+                                        return next({ name: "CrearBotiga" });
+                                    })
+                            })
+                            .catch(() => {
+                                return next({ name: "Login" });
+                            });
+                    }
                 },
                 {
                     path: "/register",
@@ -97,7 +131,17 @@ export default {
                 {
                     path: "/crearBotiga",
                     component: CrearBotiga,
-                    name: "CrearBotiga"
+                    name: "CrearBotiga",
+                    beforeEnter: (to, form, next) => {
+                        axios
+                            .get("/api/athenticated")
+                            .then(() => {
+                                next();
+                            })
+                            .catch(() => {
+                                return next({ name: "Login" });
+                            });
+                    }
                 },
                 {
                     path: "/login",
@@ -112,22 +156,62 @@ export default {
                 {
                     path: "/perfil/:id",
                     component: PerfilBotiga,
-                    name: "PerfilBotiga"
+                    name: "PerfilBotiga",
+                    beforeEnter: (to, form, next) => {
+                        axios
+                            .get("/api/athenticated")
+                            .then(() => {
+                                next();
+                            })
+                            .catch(() => {
+                                return next({ name: "Login" });
+                            });
+                    }
                 },
                 {
                     path: "/productesBotiga/:id",
                     component: PerfilBotiga,
-                    name: "ProductesBotiga"
+                    name: "ProductesBotiga",
+                    beforeEnter: (to, form, next) => {
+                        axios
+                            .get("/api/athenticated")
+                            .then(() => {
+                                next();
+                            })
+                            .catch(() => {
+                                return next({ name: "Login" });
+                            });
+                    }
                 },
                 {
                     path: "/user/:id",
                     component: PerfilBotiga,
-                    name: "User"
+                    name: "User",
+                    beforeEnter: (to, form, next) => {
+                        axios
+                            .get("/api/athenticated")
+                            .then(() => {
+                                next();
+                            })
+                            .catch(() => {
+                                return next({ name: "Login" });
+                            });
+                    }
                 },
                 {
                     path: "/cistella",
                     component: Cistella,
-                    name: "Cistella"
+                    name: "Cistella",
+                    beforeEnter: (to, form, next) => {
+                        axios
+                            .get("/api/athenticated")
+                            .then(() => {
+                                next();
+                            })
+                            .catch(() => {
+                                return next({ name: "Login" });
+                            });
+                    }
                 },
                 {
                     path: "/wishlist",

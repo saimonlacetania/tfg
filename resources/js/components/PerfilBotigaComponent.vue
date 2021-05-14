@@ -7,12 +7,25 @@
                         <!-- Widget: user widget style 1 -->
                         <div class="card card-widget widget-user">
                             <!-- Add the bg color to the header using any of the bg-* classes -->
-                            <div class="widget-user-header text-white" style="background: url('/images/photo1.png') center center; height:300px;">
+                            <div class="widget-user-header text-white" id="portada" :style="'background: url(/images/botigues/'+this.botiga.img_portada+');'">
                                 <h3 class="widget-user-username text-right">{{ this.botiga.nom }}</h3>
                                 <h5 class="widget-user-desc text-right">{{ this.user.nom }}</h5>
                             </div>
                             <div class="widget-user-image pt-5">
-                                <img class="img-circle border-4" :src="'/images/botigues/' + this.botiga.img_perfil" alt="User Avatar" style="height:200px; width:200px; margin-top:25%; margin-left:-30%;">
+                                <img 
+                                    v-if="this.botiga.img_perfil"
+                                    class="img-circle border-4" 
+                                    :src="'/images/botigues/' + this.botiga.img_perfil" 
+                                    alt="Shop profile picture" 
+                                    style="height:200px; width:200px; margin-top:25%; margin-left:-30%;"
+                                />
+                                <img 
+                                    v-else
+                                    class="img-circle border-4" 
+                                    :src="'/images/botigues/default.jpg'" 
+                                    alt="Shop profile picture" 
+                                    style="height:200px; width:200px; margin-top:25%; margin-left:-30%;"
+                                />
                             </div>
                             <div class="card-footer">
                                 <div class="row">
@@ -69,15 +82,6 @@
                                         <h5><li class="fab fa-twitter mr-1"></li> {{ this.botiga.twitter }}</h5>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-10"></div>
-                                    <div class="col-md-2">
-                                        <button type="submit" class="btn btn-block text-center mt-3 text-light zoom" style="background-color:#ff6565;">
-                                            <i class="fa fa-heart"></i>
-                                            Contacta!
-                                        </button>
-                                    </div>
-                                </div>
                                 <hr>
                             </div>
                                 
@@ -93,33 +97,46 @@
                 <div class="container-fluid">
                     <div class="row">
                     <div
-                        :class="'col-md-4 card-deck mb-4'"
+                        :class="'col-md-4 card-deck mb-4 ml-2'"
                         v-for="producte in productes"
                         :key="producte.id"
                     >
-                        <div :class="'card card-primary text-center zoom'">
+                        <div :class="'card card-primary text-center zoom bg-light'">
                         <img
                             :class="'card-img-top p-3'"
                             :src="'/images/productes/' + producte.imatge"
                         />
                         <div :class="'card-body'">
-                            <div :class="'card-title font-weight-bold'">
-                            {{ producte.nom }}
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div :class="'card-title font-weight-bold text-uppercase col-md-10 text-center align-middle'">
+                                    {{ producte.nom }}
+                                </div>
+                                <div class="col-md-1"></div>
                             </div>
-                            <br />
-                            <div :class="'badge badge-warning badge-sm text-uppercase'">
-                            {{ producte.ref }}
+                            <div class="row">
+                                <div class="col-md-4"></div>
+                                <div :class="'col-md-4 badge badge-sm align-middle text-center'" style="background-color: #ff6565; color:white;">
+                                    Queden:
+                                {{ producte.stock }}
+                                </div>
+                                <div class="col-md-4"></div>
                             </div>
-                            <p :class="'card-text'">
-                            {{ producte.descripcio }}
-                            </p>
+                            <br>
+                            <div class="row" style="margin-bottom:-10%;">
+                                <div class="col-md-1"></div>
+                                <div :class="'card-text col-md-10 text-justify'">
+                                    {{ producte.descripcio }}
+                                </div>
+                                <div class="col-md-1"></div>
+                            </div>
                         </div>
-                        <div :class="'card-footer'">
+                        <div :class="'card-footer bg-light'" style="border:none;">
                             <router-link
                             :to="{ name: 'Producte', params: { id: producte.id } }"
                             :class="'btn btn-outline-secondary btn-icon-right'"
                             >
-                            <span>Saber més</span>
+                                <span>Saber més</span>
                             </router-link>
                         </div>
                         </div>
@@ -138,6 +155,12 @@
 <style>
 .zoom {
   transition: transform 0.2s; /* Animation */
+}
+#portada {
+    background-size: cover !important; 
+    background-position: center !important; 
+    height: 300px; 
+    background-repeat: no-repeat !important;
 }
 
 </style>

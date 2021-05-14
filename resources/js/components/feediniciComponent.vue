@@ -11,7 +11,7 @@
             </div>
           </div>
         </div>
-
+        
         <br /><br />
 
         <div class="row">
@@ -291,6 +291,7 @@
         </div>
       </div>
     </div>
+    
   </div>
 
   <!-- /.contingut pagina -->
@@ -315,7 +316,7 @@
 import CercaComponent from "./CercaComponent.vue";
 
 export default {
-  components: { CercaComponent },
+  components: { CercaComponent},
   mounted() {
     console.log("Productes mounted.");
   },
