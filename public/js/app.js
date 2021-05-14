@@ -5405,6 +5405,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     var _ref;
@@ -5594,6 +5605,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         _this5.toastIncorrecte();
       });
       console.log(that.form3);
+    },
+    ordreRebuda: function ordreRebuda(id) {
+      var _this6 = this;
+
+      axios.post("/api/ordreRebuda/" + id).then(function (res) {
+        console.log(res);
+      });
+      axios.get("/api/veureOrdreUser").then(function (res3) {
+        _this6.orders = res3.data;
+        console.log(_this6.orders);
+      });
+      axios.get("/api/veureOrdreProcessadaUser").then(function (res4) {
+        _this6.ordersP = res4.data;
+        console.log(_this6.ordersP);
+      });
     }
   }
 });
@@ -53326,7 +53352,7 @@ var render = function() {
                                   _vm._v(" "),
                                   _c(
                                     "tbody",
-                                    {},
+                                    { staticClass: "text-center" },
                                     _vm._l(_vm.orders, function(comanda) {
                                       return _c("tr", { key: comanda.id }, [
                                         _c("td", [_vm._v(_vm._s(comanda.id))]),
@@ -53347,7 +53373,45 @@ var render = function() {
                                           )
                                         ]),
                                         _vm._v(" "),
-                                        _vm._m(4, true)
+                                        _c("td", [
+                                          _c("span", [
+                                            comanda.enviat == 1
+                                              ? _c(
+                                                  "button",
+                                                  {
+                                                    staticClass:
+                                                      "btn btn-success",
+                                                    on: {
+                                                      click: function($event) {
+                                                        return _vm.ordreRebuda(
+                                                          comanda.id
+                                                        )
+                                                      }
+                                                    }
+                                                  },
+                                                  [
+                                                    _c("i", {
+                                                      staticClass:
+                                                        "fas fa-check"
+                                                    })
+                                                  ]
+                                                )
+                                              : _c(
+                                                  "button",
+                                                  {
+                                                    staticClass:
+                                                      "btn btn-secondary",
+                                                    attrs: { disabled: "" }
+                                                  },
+                                                  [
+                                                    _c("i", {
+                                                      staticClass:
+                                                        "fas fa-check"
+                                                    })
+                                                  ]
+                                                )
+                                          ])
+                                        ])
                                       ])
                                     }),
                                     0
@@ -53587,7 +53651,7 @@ var render = function() {
                                                   ]
                                                 ),
                                                 _vm._v(" "),
-                                                _vm._m(5)
+                                                _vm._m(4)
                                               ]
                                             )
                                           ]
@@ -53684,7 +53748,7 @@ var render = function() {
                                           ]
                                         ),
                                         _vm._v(" "),
-                                        _vm._m(6)
+                                        _vm._m(5)
                                       ]
                                     )
                                   ])
@@ -53960,7 +54024,7 @@ var render = function() {
                                             ]
                                           ),
                                           _vm._v(" "),
-                                          _vm._m(7)
+                                          _vm._m(6)
                                         ]
                                       )
                                     ]
@@ -54168,7 +54232,7 @@ var render = function() {
                                           ]
                                         ),
                                         _vm._v(" "),
-                                        _vm._m(8)
+                                        _vm._m(7)
                                       ]
                                     )
                                   ])
@@ -54257,7 +54321,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", {}, [
+    return _c("thead", { staticClass: "text-center" }, [
       _c("tr", [
         _c("th", [_vm._v("Id")]),
         _vm._v(" "),
@@ -54265,19 +54329,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Direcció d'enviament")]),
         _vm._v(" "),
-        _c("th", { staticClass: "text-right" }, [_vm._v("Veure")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", { staticClass: "text-right" }, [
-      _c("span", [
-        _c("button", { staticClass: "btn btn-primary" }, [
-          _c("i", { staticClass: "fas fa-eye" })
-        ])
+        _c("th", [_vm._v("Entregada?")])
       ])
     ])
   },
