@@ -1,13 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Comentari;
+use App\Models\Producte;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Image;
-
-use App\Models\Producte;
-use App\Models\Comentari;
-use App\User;
 
 class ProductesController extends Controller
 {
@@ -17,28 +16,29 @@ class ProductesController extends Controller
         $productes = Producte::where('actiu', 1)->get();
         return $productes;
     }
-    
+
     public function productesCerca($keyword)
     {
-        if ($keyword=="" || $keyword==" ") {
+        if ($keyword == "" || $keyword == " ") {
             $productesCerca = Producte::where('actiu', 1)->get();
+        } else {
+            $productesCerca = Producte::where('nom', 'LIKE', '%' . $keyword . '%')->where('actiu', 1)->get();
         }
-        else {
-            $productesCerca = Producte::where('nom', 'LIKE','%'.$keyword.'%')->where('actiu', 1)->get();  
-        }
-        
+
         return $productesCerca;
     }
-    
+
     public function producte($id)
     {
         $producte = Producte::find($id);
+        $producte->visites = $producte->visites + 1;
+        $producte->save();
         return $producte;
     }
 
     public function comentaris($id)
     {
-        $comentaris = Comentari::with('user')->where("id_producte",$id)->get();
+        $comentaris = Comentari::with('user')->where("id_producte", $id)->get();
         return $comentaris;
     }
 
@@ -84,8 +84,7 @@ class ProductesController extends Controller
         $producte = Producte::find($id);
         if ($producte->actiu == 1) {
             $producte->actiu = 0;
-        }
-        else {
+        } else {
             $producte->actiu = 1;
         }
         $producte->save();
@@ -93,7 +92,7 @@ class ProductesController extends Controller
     }
     public function producteBotiga($id)
     {
-        $producte = Producte::where("id_botiga",$id)->get();
+        $producte = Producte::where("id_botiga", $id)->get();
         return $producte;
     }
     public function afegirProducte(Request $request)
@@ -142,10 +141,8 @@ class ProductesController extends Controller
                 'desc' => ['required'],
                 'preu' => ['required'],
                 'stock' => ['required'],
-            ])) 
-            
-            {
-      
+            ])) {
+
             if ($request->file("imatge") != null) {
                 $producte = Producte::find($request->id);
                 Storage::disk('public')->put('productes', $request->file('imatge'));
@@ -160,8 +157,8 @@ class ProductesController extends Controller
                 $producte->stock = $request->stock;
                 $producte->save();
                 return response()->json($producte, 200);
-                
-            } else { 
+
+            } else {
                 $producte = Producte::find($request->id);
                 $producte->ref = $request->ref;
                 $producte->nom = $request->nom;

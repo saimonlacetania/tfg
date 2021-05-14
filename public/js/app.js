@@ -5043,13 +5043,49 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       productes: "",
       botiga: "",
       id: "",
-      user: ""
+      user: "",
+      visites: 0
     };
   },
   mounted: function mounted() {
@@ -5061,6 +5097,13 @@ __webpack_require__.r(__webpack_exports__);
     });
     axios.get("/api/productesBotiga/" + this.$route.params.id).then(function (res) {
       _this.productes = res.data;
+      _this.visites = 0;
+
+      _this.productes.forEach(function (producte) {
+        _this.visites += parseInt(producte.visites);
+      });
+
+      console.log(_this.visites);
     });
     axios.get("/api/perfilBotiga/" + this.$route.params.id).then(function (res) {
       _this.botiga = res.data[0];
@@ -11678,7 +11721,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.zoom {\n  transition: transform 0.2s; /* Animation */\n}\n#portada {\n    background-size: cover !important; \n    background-position: center !important; \n    height: 300px; \n    background-repeat: no-repeat !important;\n}\n\n", ""]);
+exports.push([module.i, "\n.zoom {\n  transition: transform 0.2s; /* Animation */\n}\n#portada {\n  background-size: cover !important;\n  background-position: center !important;\n  height: 300px;\n  background-repeat: no-repeat !important;\n}\n", ""]);
 
 // exports
 
@@ -56753,7 +56796,11 @@ var render = function() {
                 },
                 [
                   _c("h3", { staticClass: "widget-user-username text-right" }, [
-                    _vm._v(_vm._s(this.botiga.nom))
+                    _vm._v(
+                      "\n                " +
+                        _vm._s(this.botiga.nom) +
+                        "\n              "
+                    )
                   ]),
                   _vm._v(" "),
                   _c("h5", { staticClass: "widget-user-desc text-right" }, [
@@ -56793,10 +56840,40 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "card-footer" }, [
-                _vm._m(0),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-sm-4" }, [
+                    _c("div", { staticClass: "description-block" }, [
+                      _c("h5", { staticClass: "description-header" }, [
+                        _vm._v(_vm._s(this.visites))
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "description-text" }, [
+                        _vm._v("VISITES")
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-sm-4" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-sm-4" }, [
+                    _c("div", { staticClass: "description-block" }, [
+                      _c("h5", { staticClass: "description-header" }, [
+                        _vm._v(
+                          "\n                      " +
+                            _vm._s(this.productes.length) +
+                            "\n                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "description-text" }, [
+                        _vm._v("PRODUCTES")
+                      ])
+                    ])
+                  ])
+                ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "row" }, [
-                  _vm._m(1),
+                  _vm._m(0),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-2" }, [
                     _c("h4", { staticClass: "text-center" }, [
@@ -56804,7 +56881,7 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _vm._m(2)
+                  _vm._m(1)
                 ]),
                 _vm._v(" "),
                 _c("br"),
@@ -56815,9 +56892,9 @@ var render = function() {
                   _c("div", { staticClass: "col-md-10" }, [
                     _c("h5", { staticClass: "text-center" }, [
                       _vm._v(
-                        "\n                                        " +
+                        "\n                    " +
                           _vm._s(this.botiga.descripcio) +
-                          "\n                                    "
+                          "\n                  "
                       )
                     ])
                   ]),
@@ -56830,22 +56907,34 @@ var render = function() {
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-md-4 text-center" }, [
                     _c("h5", [
-                      _c("li", { staticClass: "fab fa-instagram mr-1 " }),
-                      _vm._v(" " + _vm._s(this.botiga.instagram))
+                      _c("li", { staticClass: "fab fa-instagram mr-1" }),
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(this.botiga.instagram) +
+                          "\n                  "
+                      )
                     ])
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-4 text-center" }, [
                     _c("h5", [
                       _c("li", { staticClass: "fab fa-facebook mr-1" }),
-                      _vm._v(" " + _vm._s(this.botiga.facebook))
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(this.botiga.facebook) +
+                          "\n                  "
+                      )
                     ])
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-4 text-center" }, [
                     _c("h5", [
                       _c("li", { staticClass: "fab fa-twitter mr-1" }),
-                      _vm._v(" " + _vm._s(this.botiga.twitter))
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(this.botiga.twitter) +
+                          "\n                  "
+                      )
                     ])
                   ])
                 ]),
@@ -56890,9 +56979,9 @@ var render = function() {
                             },
                             [
                               _vm._v(
-                                "\n                                " +
+                                "\n                    " +
                                   _vm._s(producte.nom) +
-                                  "\n                            "
+                                  "\n                  "
                               )
                             ]
                           ),
@@ -56915,9 +57004,9 @@ var render = function() {
                             },
                             [
                               _vm._v(
-                                "\n                                Queden:\n                            " +
+                                "\n                    Queden:\n                    " +
                                   _vm._s(producte.stock) +
-                                  "\n                            "
+                                  "\n                  "
                               )
                             ]
                           ),
@@ -56941,9 +57030,9 @@ var render = function() {
                               { class: "card-text col-md-10 text-justify" },
                               [
                                 _vm._v(
-                                  "\n                                " +
+                                  "\n                    " +
                                     _vm._s(producte.descripcio) +
-                                    "\n                            "
+                                    "\n                  "
                                 )
                               ]
                             ),
@@ -56952,6 +57041,8 @@ var render = function() {
                           ]
                         )
                       ]),
+                      _vm._v(" "),
+                      _c("br"),
                       _vm._v(" "),
                       _c(
                         "div",
@@ -56989,30 +57080,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-sm-4" }, [
-        _c("div", { staticClass: "description-block" }, [
-          _c("h5", { staticClass: "description-header" }, [_vm._v("3,200")]),
-          _vm._v(" "),
-          _c("span", { staticClass: "description-text" }, [_vm._v("VISITES")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-sm-4" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-sm-4" }, [
-        _c("div", { staticClass: "description-block" }, [
-          _c("h5", { staticClass: "description-header" }, [_vm._v("35")]),
-          _vm._v(" "),
-          _c("span", { staticClass: "description-text" }, [_vm._v("PRODUCTES")])
-        ])
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
