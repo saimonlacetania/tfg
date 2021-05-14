@@ -200,11 +200,11 @@
                   <!-- CONFIGURACIO tornar a comprar -->
                   <div class="tab-pane" id="configuracio">
                     <!-- The timeline -->
-                    <div class="row" style="height:100% !important;">
+                    <div class="row" >
                       <div class="col-lg-4 d-flex align-items-stretch">
                         <div class="card card-dark card-outline">
-                          <div class="card-body">
-                            <form @submit.prevent="modifyProfile">                      
+                          <div class="card-body d-flex flex-column">
+                            <form>                      
                               <div class="form-group">
                                 
                                 <div class="text-center">
@@ -260,12 +260,12 @@
                                   required
                                 />
                               </div>
-                              <div class="col text-center" style="margin-bottom:0%;">
-                                <button type="submit" class="btn btn-secondary zoom" style="background-color:#ff6565; border:none;">
+                            </form>
+                              <div class="col text-center mt-auto">
+                                <button @click.prevent="modifyProfile" type="submit" class="btn btn-secondary zoom" style="background-color:#ff6565; border:none;">
                                   Modifica perfil
                                 </button>
                               </div>
-                            </form>
                           </div>
                         </div>
                       </div>
@@ -273,7 +273,7 @@
                       <div class="col-lg-4 d-flex align-items-stretch">
                         <div class="card card-dark card-outline">
                           <div class="card-body d-flex flex-column">
-                            <form @submit.prevent="modifyPassword">
+                            <form>
                               <div class="form-group">
                                 <div class="input-group mb-3" v-if="errors2.password">
                                   <label class="col-form-label" for="number"
@@ -324,19 +324,21 @@
                                   required
                                 />
                               </div>
-                              <div class="text-center" style="margin-top:63%;">
-                                <button type="submit" class="btn btn-xs btn-secondary zoom" style="background-color:#ff6565; border:none;">
+                              </form>
+                              <div class="text-center mt-auto">
+                                <button @click.prevent="modifyPassword" type="submit" class="btn btn-xs btn-secondary zoom" style="background-color:#ff6565; border:none;">
                                   Modifica contrasenya
                                 </button>
                               </div>
-                            </form>
+                            
                           </div>
                         </div>
                       </div>
+
                       <div class="col-lg-4 d-flex align-items-stretch">
                         <div class="card card-dark card-outline">
-                          <div class="card-body">
-                            <form @submit.prevent="modifyUser">
+                          <div class="card-body d-flex flex-column">
+                            <form>
                               <div class="form-group">
                                 <label for="provincia">Provincia</label>
                                 <input
@@ -374,12 +376,12 @@
                                   required
                                 />
                               </div>
-                              <div class="col text-center" style="margin-top:30%;">
-                                <button type="submit" class="btn btn-secondary zoom" style="background-color:#ff6565; border:none;">
+                            </form>
+                              <div class="text-center mt-auto" >
+                                <button @click.prevent="modifyUser" type="submit" class="btn btn-secondary zoom" style="background-color:#ff6565; border:none;">
                                   Modifica direcció
                                 </button>
                               </div>
-                            </form>
                           </div>
                         </div>
                       </div>
@@ -537,7 +539,6 @@ export default {
         .post("/api/modifyUser", that.form)
         .then((res) => {
           console.log(res);
-          this.$router.push({ name: "Productes" });
           this.toastCorrecte();
         })
         .catch((error) => {
@@ -553,7 +554,6 @@ export default {
         .post("/api/modifyPassword", that.form2)
         .then((res) => {
           console.log(res);
-          this.$router.push({ name: "Productes" });
           this.toastCorrecte();
         })
         .catch((error) => {

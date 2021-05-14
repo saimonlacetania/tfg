@@ -108,7 +108,15 @@ export default {
                         axios
                             .get("/api/athenticated")
                             .then(() => {
-                                next();
+                                axios
+                                    .get("/api/comprovaBotiga")
+                                    .then((res) => {
+                                        console.log(res);
+                                        next();
+                                    })
+                                    .catch(() => {
+                                        return next({ name: "CrearBotiga" });
+                                    })
                             })
                             .catch(() => {
                                 return next({ name: "Login" });

@@ -426,197 +426,208 @@
                             </div>
                             <!-- /.card-body -->
                             </div>
-
                     </div>
-
 
                     <!-- Pujar producte -->
                     <div class="tab-pane" id="puja_producte">
-                        <form>
-                            <div class="card-body register-card-body">
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-10">
 
-                                <div class="form-group mb-3">
-                                    <label for="imatge">Imatge del Producte</label>
-                                    <div class="input-group">
-                                    <div class="custom-file">
-                                        <input 
-                                            @change="fileSelected"
-                                            type="file" 
-                                            class="custom-file-input" 
-                                            id="img_producte"
-                                        >
-                                        <label v-if="!files || !files.length" class="custom-file-label" for="img_producte">Tria un fitxer</label>
-                                        <span v-else>
-                                            <label v-for="file3 in files" :key="file3.name" class="custom-file-label" for="img_producte">
-                                                <span v-if="file3.id=='img_producte'">
-                                                {{file3.file[0].name}}
-                                                </span>
+                                <form>                                    
+                                    <div class="card-body register-card-body">
+
+                                        <div class="form-group mb-3">
+                                            <label for="imatge">Imatge del Producte</label>
+                                            <div class="input-group">
+                                            <div class="custom-file">
+                                                <input 
+                                                    @change="fileSelected"
+                                                    type="file" 
+                                                    class="custom-file-input" 
+                                                    id="img_producte"
+                                                >
+                                                <label v-if="!files || !files.length" class="custom-file-label" for="img_producte">Tria un fitxer</label>
                                                 <span v-else>
-                                                    Tria un fitxer
+                                                    <label v-for="file3 in files" :key="file3.name" class="custom-file-label" for="img_producte">
+                                                        <span v-if="file3.id=='img_producte'">
+                                                        {{file3.file[0].name}}
+                                                        </span>
+                                                        <span v-else>
+                                                            Tria un fitxer
+                                                        </span>
+                                                    </label>
                                                 </span>
-                                            </label>
-                                        </span>
-                                    </div>
-                                    
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">
-                                            <i class="fas fa-image"></i>
-                                        </span>
-                                    </div>
-                                    </div>
-                                </div>
+                                            </div>
+                                            
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    <i class="fas fa-image"></i>
+                                                </span>
+                                            </div>
+                                            </div>
+                                        </div>
 
-                                <div class="input-group mb-3">
-                                    <div class="input-group mb-3" v-if="errors.ref">
-                                        <label class="col-form-label" for="number"
-                                            ><i class="far fa-times-circle"></i>
-                                            {{ errors.ref[0] }}</label
-                                        >
-                                        <br />
-                                    </div>
-                                    <input
-                                        name="ref"
-                                        type="text"
-                                        class="form-control"
-                                        placeholder="Ref"
-                                        v-model="form.ref"
-                                    />
-                                    <div class="input-group-append">
-                                        <div class="input-group-text">
-                                            <span class="fas fa-asterisk"></span>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group mb-3" v-if="errors.ref">
+                                                <label class="col-form-label" for="number"
+                                                    ><i class="far fa-times-circle" style="color:#ff6565;"></i>
+                                                    {{ errors.ref[0] }}</label
+                                                >
+                                                <br />
+                                            </div>
+                                            <input
+                                                name="ref"
+                                                type="text"
+                                                class="form-control"
+                                                placeholder="Referència"
+                                                v-model="form.ref"
+                                            />
+                                            <div class="input-group-append">
+                                                <div class="input-group-text">
+                                                    <span class="fas fa-asterisk" style="color:#ff6565;"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="input-group mb-3">
+                                            <div class="input-group mb-3" v-if="errors.nom">
+                                                <label class="col-form-label" for="number"
+                                                    ><i class="far fa-times-circle" style="color:#ff6565;"></i>
+                                                    {{ errors.nom[0] }}</label
+                                                >
+                                                <br />
+                                            </div>
+                                            <input
+                                                name="nom"
+                                                type="text"
+                                                class="form-control"
+                                                placeholder="Nom"
+                                                v-model="form.nom"
+                                            />
+                                            <div class="input-group-append">
+                                                <div class="input-group-text">
+                                                    <span class=""></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="categoria">Categoria</label>
+                                            <select 
+                                                class="form-control" 
+                                                id="categoria"
+                                                v-model="form.categoria">
+                                                    <option v-for="categoria in categories" :key="categoria.id" :value="categoria.id">
+                                                        {{categoria.nom}}
+                                                    </option>
+                                            </select>
+                                        </div>
+
+                                        <label for="desc">Descripcio del producte</label><br />
+                                        <div class="form-group mb-3">
+                                            <div class="input-group mb-3" v-if="errors.desc">
+                                                <label class="col-form-label" for="number"
+                                                    ><i class="far fa-times-circle" style="color:#ff6565;"></i>
+                                                    {{ errors.desc[0] }}</label
+                                                >
+                                                <br />
+                                            </div>
+                                            
+                                            <textarea 
+                                                class="form-control" 
+                                                type="text"
+                                                id="desc" 
+                                                name="desc"
+                                                v-model="form.desc"
+                                                rows="3">
+                                            </textarea>
+                                            
+                                        </div>
+
+                                        <div class="input-group mb-3">
+                                            <div class="input-group mb-3" v-if="errors.preu">
+                                                <label class="col-form-label" for="number"
+                                                    ><i class="far fa-times-circle" style="color:#ff6565;"></i>
+                                                    {{ errors.preu[0] }}</label
+                                                >
+                                                <br />
+                                            </div>
+                                            <input
+                                                type="number"
+                                                class="form-control"
+                                                placeholder="Preu"
+                                                name="preu"
+                                                v-model="form.preu"
+                                            />
+                                            <div class="input-group-append">
+                                                <div class="input-group-text">
+                                                    <span class="fas fa-euro-sign" style="color:#ff6565;"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="input-group mb-3">
+                                            <div class="input-group mb-3" v-if="errors.stock">
+                                                <label class="col-form-label" for="number"
+                                                    ><i class="far fa-times-circle" style="color:#ff6565;"></i>
+                                                    {{ errors.stock[0] }}</label
+                                                >
+                                                <br />
+                                            </div>
+                                            <input
+                                                type="number"
+                                                class="form-control"
+                                                placeholder="Stock"
+                                                name="stock"
+                                                v-model="form.stock"
+                                            />
+                                            <div class="input-group-append">
+                                                <div class="input-group-text">
+                                                    <span class="fas fa-layer-group" style="color:#ff6565;"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-9"></div>
+                                            <div class="col-md-3">
+                                                <div class="form-check">
+                                                    <input 
+                                                        class="form-check-input"   
+                                                        type="checkbox" 
+                                                        value="0" 
+                                                        id="actiu"
+                                                        v-model="form.actiu">
+                                                    <label class="form-check-label" for="actiu">
+                                                        Producte actiu
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <br>
+                                        <div class="row">
+                                            <!-- /.col -->
+                                            <div class="col text-center">
+                                                <button
+                                                    @click.prevent="saveForm"
+                                                    type="submit"
+                                                    class="btn btn-secondary zoom"
+                                                    style="background-color:#ff6565; border:none;"
+                                                >
+                                                    Puja producte
+                                                </button>
+                                            </div>
+                                            <!-- /.col -->
+                                            <br />
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="input-group mb-3">
-                                    <div class="input-group mb-3" v-if="errors.nom">
-                                        <label class="col-form-label" for="number"
-                                            ><i class="far fa-times-circle"></i>
-                                            {{ errors.nom[0] }}</label
-                                        >
-                                        <br />
-                                    </div>
-                                    <input
-                                        name="nom"
-                                        type="text"
-                                        class="form-control"
-                                        placeholder="Nom"
-                                        v-model="form.nom"
-                                    />
-                                    <div class="input-group-append">
-                                        <div class="input-group-text">
-                                            <span class=""></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="categoria">Categoria</label>
-                                    <select 
-                                        class="form-control" 
-                                        id="categoria"
-                                        v-model="form.categoria">
-                                            <option v-for="categoria in categories" :key="categoria.id" :value="categoria.id">
-                                                {{categoria.nom}}
-                                            </option>
-                                    </select>
-                                </div>
-
-                                <label for="desc">Descripcio del producte</label><br />
-                                <div class="form-group mb-3">
-                                    <div class="input-group mb-3" v-if="errors.desc">
-                                        <label class="col-form-label" for="number"
-                                            ><i class="far fa-times-circle"></i>
-                                            {{ errors.desc[0] }}</label
-                                        >
-                                        <br />
-                                    </div>
-                                    
-                                    <textarea 
-                                        class="form-control" 
-                                        type="text"
-                                        id="desc" 
-                                        name="desc"
-                                        v-model="form.desc"
-                                        rows="3">
-                                    </textarea>
-                                    
-                                </div>
-
-                                <div class="input-group mb-3">
-                                    <div class="input-group mb-3" v-if="errors.preu">
-                                        <label class="col-form-label" for="number"
-                                            ><i class="far fa-times-circle"></i>
-                                            {{ errors.preu[0] }}</label
-                                        >
-                                        <br />
-                                    </div>
-                                    <input
-                                        type="number"
-                                        class="form-control"
-                                        placeholder="Preu"
-                                        name="preu"
-                                        v-model="form.preu"
-                                    />
-                                    <div class="input-group-append">
-                                        <div class="input-group-text">
-                                            <span class="fas fa-euro-sign"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="input-group mb-3">
-                                    <div class="input-group mb-3" v-if="errors.stock">
-                                        <label class="col-form-label" for="number"
-                                            ><i class="far fa-times-circle"></i>
-                                            {{ errors.stock[0] }}</label
-                                        >
-                                        <br />
-                                    </div>
-                                    <input
-                                        type="number"
-                                        class="form-control"
-                                        placeholder="Stock"
-                                        name="stock"
-                                        v-model="form.stock"
-                                    />
-                                    <div class="input-group-append">
-                                        <div class="input-group-text">
-                                            <span class="fas fa-layer-group"></span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-check">
-                                    <input 
-                                        class="form-check-input"   
-                                        type="checkbox" 
-                                        value="0" 
-                                        id="actiu"
-                                        v-model="form.actiu">
-                                    <label class="form-check-label" for="actiu">
-                                        Producte actiu
-                                    </label>
-                                </div>
-
-                                <br>
-                                <div class="row">
-                                    <!-- /.col -->
-                                    <div class="col text-center">
-                                        <button
-                                            @click.prevent="saveForm"
-                                            type="submit"
-                                            class="btn btn-secondary"
-                                        >
-                                            Puja producte
-                                        </button>
-                                    </div>
-                                    <!-- /.col -->
-                                    <br />
-                                </div>
+                                    <!-- /.form-box -->
+                                </form>
                             </div>
-                            <!-- /.form-box -->
-                            </form>
+                            <div class="col-md-1"></div>
+                        </div>
                     </div>
                     <!-- /.tab-pane -->
 
