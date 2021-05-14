@@ -53529,7 +53529,8 @@ var render = function() {
                         _c(
                           "div",
                           {
-                            staticClass: "col-lg-4 d-flex align-items-stretch"
+                            staticClass:
+                              "col-lg-4 d-lg-flex align-items-stretch"
                           },
                           [
                             _c(
@@ -53755,7 +53756,8 @@ var render = function() {
                         _c(
                           "div",
                           {
-                            staticClass: "col-lg-4 d-flex align-items-stretch"
+                            staticClass:
+                              "col-lg-4 d-lg-flex align-items-stretch"
                           },
                           [
                             _c(
@@ -54019,7 +54021,8 @@ var render = function() {
                         _c(
                           "div",
                           {
-                            staticClass: "col-lg-4 d-flex align-items-stretch"
+                            staticClass:
+                              "col-lg-4 d-lg-flex align-items-stretch"
                           },
                           [
                             _c(
