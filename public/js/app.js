@@ -2996,16 +2996,87 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
+    toastCorrecte: function toastCorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: "top-end",
+        icon: "success",
+        title: "Comanda realitzada correctament",
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: function didOpen(toast) {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        }
+      });
+    },
+    elminatCorrectament: function elminatCorrectament() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: "top-end",
+        icon: "success",
+        title: "Eliminat correctament",
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: function didOpen(toast) {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        }
+      });
+    },
+    toastIncorrecte: function toastIncorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: "top-end",
+        icon: "error",
+        title: "La direcció de compra no és correcte!",
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: function didOpen(toast) {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        }
+      });
+    },
+    toastIncorrecte2: function toastIncorrecte2() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: "top-end",
+        icon: "error",
+        title: "La cistella no pot ser buida!",
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: function didOpen(toast) {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        }
+      });
+    },
     crearOrdre: function crearOrdre() {
       var _this2 = this;
 
       axios.post("/api/crearOrdre").then(function (res) {
         console.log(res);
+
+        _this2.toastCorrecte();
+
         axios.get("/api/veureCistella").then(function (res) {
           _this2.cistella = res.data;
           console.log(_this2.cistella);
           _this2.total = 0.0;
         });
+      })["catch"](function (error) {
+        console.log(error.response.data);
+
+        if (error.response.data == "Buida") {
+          _this2.toastIncorrecte2();
+        } else {
+          _this2.toastIncorrecte();
+        }
       });
     },
     eliminarCistella: function eliminarCistella(id) {
@@ -3013,6 +3084,8 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.post("/api/eliminarCistella/" + id).then(function (res) {
         console.log(res);
+
+        _this3.elminatCorrectament();
       });
       axios.get("/api/veureCistella").then(function (res) {
         _this3.cistella = res.data;

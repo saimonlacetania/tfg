@@ -139,20 +139,92 @@ export default {
     });
   },
   methods: {
-    crearOrdre() {
-      axios.post("/api/crearOrdre").then((res) => {
-        console.log(res);
-        axios.get("/api/veureCistella").then((res) => {
-          this.cistella = res.data;
-          console.log(this.cistella);
-
-          this.total = 0.0;
-        });
+    toastCorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: "top-end",
+        icon: "success",
+        title: "Comanda realitzada correctament",
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
       });
+    },
+    elminatCorrectament() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: "top-end",
+        icon: "success",
+        title: "Eliminat correctament",
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+      });
+    },
+    toastIncorrecte() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: "top-end",
+        icon: "error",
+        title: "La direcció de compra no és correcte!",
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+      });
+    },
+    toastIncorrecte2() {
+      // Use sweetalert2
+      this.$swal({
+        toast: true,
+        position: "top-end",
+        icon: "error",
+        title: "La cistella no pot ser buida!",
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+      });
+    },
+    crearOrdre() {
+      axios
+        .post("/api/crearOrdre")
+        .then((res) => {
+          console.log(res);
+          this.toastCorrecte();
+          axios.get("/api/veureCistella").then((res) => {
+            this.cistella = res.data;
+            console.log(this.cistella);
+
+            this.total = 0.0;
+          });
+        })
+        .catch((error) => {
+          console.log(error.response.data);
+          if (error.response.data == "Buida") {
+            this.toastIncorrecte2();
+          } else {
+            this.toastIncorrecte();
+          }
+        });
     },
     eliminarCistella(id) {
       axios.post("/api/eliminarCistella/" + id).then((res) => {
         console.log(res);
+        this.elminatCorrectament();
       });
       axios.get("/api/veureCistella").then((res) => {
         this.cistella = res.data;
