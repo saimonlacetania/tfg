@@ -20,29 +20,34 @@ class OrdersController extends Controller
             ->where('pagat', 0)
             ->get();
         $usuari = User::find($id);
-        $ordre = Order::create([
-            'id_usuari' => $id,
-            'direccio' => $usuari->direccio,
-            'cp' => $usuari->cp,
-            'poblacio' => $usuari->poblacio,
-            'provincia' => $usuari->provincia,
-            'pagat' => 1,
-            'enviat' => 0,
-            'rebut' => 0,
-        ]);
-        $ordre_id = $ordre->id;
-        foreach ($cistella as $prod) {
-            $prod->pagat = 1;
-            $botiga = Botiga::where("id_usuari", $prod->productes->id_botiga)->get();
-            OrderLin::create([
-                'id_ordre' => $ordre_id,
-                'id_producte' => $prod->productes->id,
-                'id_botiga' => $botiga[0]->id,
-                'quantitat' => $prod->quantitat,
+
+        if (count($cistella) > 0) {
+            $ordre = Order::create([
+                'id_usuari' => $id,
+                'direccio' => $usuari->direccio,
+                'cp' => $usuari->cp,
+                'poblacio' => $usuari->poblacio,
+                'provincia' => $usuari->provincia,
+                'pagat' => 1,
+                'enviat' => 0,
+                'rebut' => 0,
             ]);
-            $prod->save();
+            $ordre_id = $ordre->id;
+            foreach ($cistella as $prod) {
+                $prod->pagat = 1;
+                $botiga = Botiga::where("id_usuari", $prod->productes->id_botiga)->get();
+                OrderLin::create([
+                    'id_ordre' => $ordre_id,
+                    'id_producte' => $prod->productes->id,
+                    'id_botiga' => $botiga[0]->id,
+                    'quantitat' => $prod->quantitat,
+                ]);
+                $prod->save();
+            }
+            return $cistella;
+        } else {
+            return response()->json("Buida", 405);
         }
-        return $cistella;
     }
     public function veureOrdreUser()
     {
@@ -111,5 +116,12 @@ class OrdersController extends Controller
             $ordreEnviada->save();
         }
         return true;
+    }
+    public function ordreRebuda($id)
+    {
+        $ordre = Order::find($id);
+        $ordre->rebut = 1;
+        $ordre->save();
+
     }
 }

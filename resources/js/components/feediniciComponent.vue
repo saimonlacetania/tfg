@@ -15,9 +15,11 @@
         <br /><br />
 
         <div class="row">
-          <div class="col-md-11 mt-4">
+          <div class="col-md-4"></div>
+          <div class="col-md-4 mt-4">
             <h1 class="text-center">¿Perquè Mercat Virtual?</h1>
           </div>
+          <div class="col-md-4"></div>
 
           <br /><br />
 
@@ -91,9 +93,9 @@
             <h4 class="text-center">productes únics de professionals locals</h4>
           </div>
         </div>
-      
+
         <br /><br />
-      
+
         <div class="row">
           <div class="card-deck col-md-12">
             <div class="card">
@@ -312,21 +314,40 @@
 </style>
 
 <script>
-import CercaComponent from "./CercaComponent.vue";
-
 export default {
-  components: { CercaComponent },
   mounted() {
     console.log("Productes mounted.");
+    this.loading();
   },
   methods: {
-    mostrarCerca: function (event) {
-      var cerca = document.getElementById("cerca");
-      if (cerca.style.display == "none") {
-        cerca.style.display = "block";
-      } else {
-        cerca.style.display = "none";
-      }
+    loading() {
+      let timerInterval;
+      Swal.fire({
+        title: "Auto close alert!",
+        html: "I will close in <b></b> milliseconds.",
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: () => {
+          Swal.showLoading();
+          timerInterval = setInterval(() => {
+            const content = Swal.getContent();
+            if (content) {
+              const b = content.querySelector("b");
+              if (b) {
+                b.textContent = Swal.getTimerLeft();
+              }
+            }
+          }, 100);
+        },
+        willClose: () => {
+          clearInterval(timerInterval);
+        },
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+          console.log("I was closed by the timer");
+        }
+      });
     },
   },
 };

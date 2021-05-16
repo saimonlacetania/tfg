@@ -3,73 +3,65 @@
     <!-- cerca -->
     <div class="content-header">
       <div class="container-fluid">
-      
-        <br /><br />
-
-        <br />
         <!-- cerca -->
         <div class="col-md-12">
-          <form action="simple-results.html">
             <div class="input-group">
               <input
-                type="search"
+                v-model="keyword"
+                type="text"
                 class="form-control form-control-lg text-right"
                 placeholder="¿Què vols buscar?"
               />
-              <div class="input-group-append">
-                <button
-                  type="submit"
-                  class="btn btn-lg btn-secondary"
-                  style="background-color: #ff6565"
-                >
-                  <i class="fa fa-search"></i>
-                </button>
                 <button
                   type="button"
                   class="btn btn-lg btn-secondary"
-                  aria-expanded="true"
-                  v-on:click="mostrarCerca"
-                  style="background-color: #ff6565"
+                  style="background-color: #ff6565; border:none; cursor:context-menu; pointer-events: none;"
                 >
-                  <i class="fa fa-arrow-down"></i>
+                  <i class="fa fa-search"></i>
                 </button>
-              </div>
             </div>
-          </form>
         </div>
+        <br>
         <!-- /.col -->
-
-        <!-- cerca avançada -->
-        <div id="cerca" style="display: none">
-          <cerca-component></cerca-component>
-        </div>
-
         <div class="content w-100">
           <div class="container-fluid">
             <div class="row">
               <div
-                :class="'col-md-4 card-deck mb-4'"
+                :class="'col-md-4 card-deck mb-4 ml-2'"
                 v-for="producte in productes"
                 :key="producte.id"
               >
-                <div :class="'card card-primary text-center zoom'">
+                <div :class="'card card-primary text-center zoom bg-light'">
                   <img
                     :class="'card-img-top p-3'"
                     :src="'/images/productes/' + producte.imatge"
                   />
                   <div :class="'card-body'">
-                    <div :class="'card-title font-weight-bold'">
-                      {{ producte.nom }}
+                    <div class="row">
+                      <div class="col-md-1"></div>
+                      <div :class="'card-title font-weight-bold text-uppercase col-md-10 text-center align-middle'">
+                        {{ producte.nom }}
+                      </div>
+                      <div class="col-md-1"></div>
                     </div>
-                    <br />
-                    <div :class="'badge badge-warning badge-sm text-uppercase'">
-                      {{ producte.ref }}
+                    <div class="row">
+                      <div class="col-md-4"></div>
+                      <div :class="'col-md-4 badge badge-sm align-middle text-center'" style="background-color: #ff6565; color:white;">
+                        Queden:
+                        {{ producte.stock }}
+                      </div>
+                      <div class="col-md-4"></div>
                     </div>
-                    <p :class="'card-text'">
-                      {{ producte.descripcio }}
-                    </p>
+                    <br>
+                    <div class="row" style="margin-bottom:-10%;">
+                      <div class="col-md-1"></div>
+                      <div :class="'card-text col-md-10 text-justify'">
+                        {{ producte.descripcio }}
+                      </div>
+                      <div class="col-md-1"></div>
                   </div>
-                  <div :class="'card-footer'">
+                </div>
+                  <div :class="'card-footer bg-light'" style="border:none;">
                     <router-link
                       :to="{ name: 'Producte', params: { id: producte.id } }"
                       :class="'btn btn-outline-secondary btn-icon-right'"
@@ -104,30 +96,40 @@
 </style>
 
 <script>
-import CercaComponent from "./CercaComponent.vue";
+
 
 export default {
   data() {
     return {
       productes: "",
+      keyword: ""
     };
   },
-  components: { CercaComponent },
   mounted() {
     axios.get("/api/productes").then((res) => {
       console.log(res);
       this.productes = res.data;
     });
   },
-  methods: {
-    mostrarCerca: function (event) {
-      var cerca = document.getElementById("cerca");
-      if (cerca.style.display == "none") {
-        cerca.style.display = "block";
-      } else {
-        cerca.style.display = "none";
-      }
+  watch: {
+        keyword(after, before) {
+            this.cercaProductes();
+        }
     },
+  methods: {
+    cercaProductes() {
+      if (this.keyword=="" || this.keyword==" ") {
+        axios.get("/api/productes").then((res) => {
+          console.log(res);
+          this.productes = res.data;
+        });
+      } else {
+        axios.get('api/productesCerca/'+this.keyword).then((res) => {
+          console.log(res.data);
+          this.productes = res.data;
+        });
+      }
+    }
   },
 };
 </script>

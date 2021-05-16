@@ -27,7 +27,7 @@ class BotigaController extends Controller
         return $botiga;
     }
 
-    public function productes()
+    public function productesB()
     {
         $id = Auth::id();
 
@@ -40,6 +40,17 @@ class BotigaController extends Controller
     {
         $id= Botiga::find($id);
         return $id;
+    }
+
+    public function comprovaBotiga()
+    {
+        $id = Auth::id();
+        $user = User::find($id);
+        if ($user->botiga == 1){
+            return "si que te botiga";
+        } else {
+            return response()->json(false,400);
+        }
     }
 
     public function perfilBotiga($id)
@@ -73,7 +84,7 @@ class BotigaController extends Controller
                 if ($request->file("img_portada") != null) {
                     Storage::disk('public')->put('botigues', $request->file('img_portada'));
                     $thumbnailpath = public_path('images/botigues/' . $request->file("img_portada")->hashName());
-                    $img = Image::make($thumbnailpath)->resize(150, 150);
+                    $img = Image::make($thumbnailpath);
                     $img->save($thumbnailpath);
                     $botiga->img_portada = $request->file("img_portada")->hashName();
                 }

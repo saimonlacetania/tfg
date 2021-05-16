@@ -13,8 +13,7 @@
     <div class="content w-100">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-8">
+          <div class="col-md-12">
             <div class="card">
               <div class="card-body table-responsive">
                 <table class="table">
@@ -52,7 +51,6 @@
             </div>
           </div>
         </div>
-        <div class="col-md-2"></div>
       </div>
       <!-- /.card-body -->
     </div>
@@ -70,6 +68,7 @@ export default {
       total: 0,
     };
   },
+
   mounted() {
     axios.get("/api/user").then((res) => {
       this.user = res.data;
@@ -80,12 +79,28 @@ export default {
     });
   },
   methods: {
+    toastCorrecte() {
+      // Use sweetalert2
+      Swal.fire({
+        toast: true,
+        position: "top-end",
+        icon: "success",
+        title: "Eliminat correctament",
+        showConfirmButton: false,
+        timer: 3000,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+      });
+    },
     eliminarWishlist(id) {
       axios.post("/api/eliminarWishlist/" + id).then((res) => {
         console.log(res);
-      });
-      axios.get("/api/veureWishlist").then((res) => {
-        this.wishlist = res.data;
+        axios.get("/api/veureWishlist").then((res) => {
+          this.wishlist = res.data;
+          this.toastCorrecte();
+        });
       });
     },
   },

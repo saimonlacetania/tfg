@@ -107,31 +107,14 @@ html {
             <!-- Add icons to the links using the .nav-icon class
                                   with font-awesome or any other icon font library -->
             <li class="nav-header text-dark">MENÚ PRINCIPAL</li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-user text-dark"></i>
-                <p class="text-dark">
-                  El meu perfil
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <router-link class="nav-link" :to="'/profile'">
-                    <i class="nav-icon far fa-user-circle text-dark"></i>
+                    <i class="nav-icon fas fa-user text-dark"></i>
                     <p class="text-dark">Veure perfil</p>
                   </router-link>
                 </li>
-                <li class="nav-item">
-                  <router-link class="nav-link" :to="'/editarPerfil'">
-                    <i class="fas fa-cogs nav-icon text-dark"></i>
-                    <p class="text-dark">Configuració</p>
-                  </router-link>
-                </li>
-              </ul>
-            </li>
             <li class="nav-item" v-if="this.user.botiga">
-              <a href="#" class="nav-link">
+              <a class="nav-link" href="#">
                 <i class="nav-icon fas fa-store-alt text-dark"></i>
                 <p class="text-dark">
                   La meva botiga
@@ -150,7 +133,7 @@ html {
                     class="nav-link"
                     :to="{ name: 'PerfilBotiga', params: { id: user.id } }"
                   >
-                    <i class="fas fa-feather-alt nav-icon text-dark"></i>
+                    <i class="fas fa-gem nav-icon text-dark"></i>
                     <p class="text-dark">Perfil públic</p>
                   </router-link>
                 </li>
@@ -182,7 +165,7 @@ html {
               </router-link>
             </li>
 
-            <li class="nav-item fixed-bottom ml-2">
+            <li class="nav-item align-text-bottom">
               <a @click.prevent="logout" href="#" class="nav-link">
                 <i class="nav-icon fas fa-power-off text-dark"></i>
                 <p class="text-dark">Sortir</p>
@@ -224,14 +207,39 @@ html {
 
       <!-- /.sidebar -->
     </aside>
-
     <!-- PAGINA PRODUCTES -->
     <router-view></router-view>
+      <div id="cajacookies" class="shadow p-3 mb-5 bg-white rounded align-middle text-center" style="margin-left:37% !important;">
+          Aquesta web utilitza cookies per garantir la millor experiencia per l'usuari.
+          <a href="https://www.cookiesandyou.com/"><span style="color:#ff6565;">Més info</span></a>.
+          <div class="row">
+            <div class="col-md-4"></div>            
+            <div class="col-md-4">
+              <button v-on:click="aceptarCookies" class="pull-right btn btn-sm text-white zoom" style="background-color:#ff6565"><i class="fa fa-check-circle"></i> Acceptar i tancar</button>
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+      </div>
   </div>
 </template>
+<style>
 
+
+
+.main-sidebar, .main-sidebar::before {
+  @media (max-width: 767.98px);
+  background-color: white;
+}
+  #cajacookies {
+    position: fixed;
+    bottom: 0;
+  }
+</style>
 <script>
+import PerfilBotigaComponent from './PerfilBotigaComponent.vue';
 export default {
+  components: { PerfilBotigaComponent },
+  
   data() {
     return {
       user: "",
@@ -241,6 +249,11 @@ export default {
     axios.get("/api/user").then((res) => {
       this.user = res.data;
     });
+    /* ésto comprueba la localStorage si ya tiene la variable guardada */
+    if(localStorage.aceptaCookies == 'true'){
+        cajacookies.style.visibility = 'hidden';
+    }
+    
   },
   methods: {
     logout() {
@@ -251,6 +264,11 @@ export default {
         location.reload();
         return false;
       });
+    },
+    aceptarCookies() {
+      console.log("click")
+      localStorage.aceptaCookies = 'true';
+      cajacookies.style.visibility = 'hidden';
     },
   },
 };
