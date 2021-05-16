@@ -4398,8 +4398,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -50926,32 +50924,30 @@ var render = function() {
                                 ]
                               )
                             ])
-                          : _c("span", [
-                              _c(
-                                "li",
-                                { staticClass: "nav-item" },
-                                [
-                                  _c(
-                                    "router-link",
-                                    {
-                                      staticClass: "nav-link",
-                                      attrs: { to: "/crearBotiga" }
-                                    },
-                                    [
-                                      _c("i", {
-                                        staticClass:
-                                          "fas fa-feather-alt nav-icon text-dark"
-                                      }),
-                                      _vm._v(" "),
-                                      _c("p", { staticClass: "text-dark" }, [
-                                        _vm._v("Crear Botiga")
-                                      ])
-                                    ]
-                                  )
-                                ],
-                                1
-                              )
-                            ]),
+                          : _c(
+                              "li",
+                              { staticClass: "nav-item" },
+                              [
+                                _c(
+                                  "router-link",
+                                  {
+                                    staticClass: "nav-link",
+                                    attrs: { to: "/crearBotiga" }
+                                  },
+                                  [
+                                    _c("i", {
+                                      staticClass:
+                                        "fas fa-feather-alt nav-icon text-dark"
+                                    }),
+                                    _vm._v(" "),
+                                    _c("p", { staticClass: "text-dark" }, [
+                                      _vm._v("Crear Botiga")
+                                    ])
+                                  ]
+                                )
+                              ],
+                              1
+                            ),
                         _vm._v(" "),
                         _c(
                           "li",
@@ -70763,8 +70759,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/tfg/tfg/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/ian/Escritorio/DAW/Assignatures 2n/tfg/tfg/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/ianff03/Escritorio/DAW/Assignatures 2n/tfg/tfg/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/ianff03/Escritorio/DAW/Assignatures 2n/tfg/tfg/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
