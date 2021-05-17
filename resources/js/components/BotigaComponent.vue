@@ -55,7 +55,7 @@
                                 <div class="text-muted">{{this.botiga.email}}</div>  
                                 <small><p class="text-muted">{{this.botiga.telf_1}}</p></small>  
                             </li>
-                            <li class="list-group-item">
+                            <li v-if="this.botiga.instagram != null || this.botiga.twitter != null || this.botiga.facebook != null " class="list-group-item">
                                 <i v-if="this.botiga.instagram" class="fab fa-instagram mr-1"></i> {{this.botiga.instagram}}<br>
                                 <i v-if="this.botiga.facebook" class="fab fa-facebook mr-1"></i> {{this.botiga.facebook}}<br>
                                 <i v-if="this.botiga.twitter" class="fab fa-twitter mr-1"></i> {{this.botiga.twitter}}

@@ -71,8 +71,6 @@ class BotigaController extends Controller
             'cp' => ['required'],
             'poblacio' => ['required'],
             'provincia' => ['required'],
-            'nif' => ['alpha_num'],
-            'cif' => ['alpha_num'],
         ])) {
                 if ($request->file("img_perfil") != null) {
                     Storage::disk('public')->put('botigues', $request->file('img_perfil'));
@@ -109,8 +107,12 @@ class BotigaController extends Controller
                 if ($request->twitter != "null") {
                     $botiga->twitter = $request->twitter;
                 }
-                $botiga->nif = $request->nif; 
-                $botiga->cif = $request->cif;  
+                if ($request->nif != "null") {
+                    $botiga->nif = $request->nif; 
+                }
+                if ($request->cif != "null") {
+                    $botiga->cif = $request->cif;  
+                }
                 
                 $botiga->save();
 

@@ -6728,6 +6728,166 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/contacteComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/contacteComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/feediniciComponent.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/feediniciComponent.vue?vue&type=script&lang=js& ***!
@@ -51549,28 +51709,32 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _c("li", { staticClass: "list-group-item" }, [
-                      this.botiga.instagram
-                        ? _c("i", { staticClass: "fab fa-instagram mr-1" })
-                        : _vm._e(),
-                      _vm._v(" " + _vm._s(this.botiga.instagram)),
-                      _c("br"),
-                      _vm._v(" "),
-                      this.botiga.facebook
-                        ? _c("i", { staticClass: "fab fa-facebook mr-1" })
-                        : _vm._e(),
-                      _vm._v(" " + _vm._s(this.botiga.facebook)),
-                      _c("br"),
-                      _vm._v(" "),
-                      this.botiga.twitter
-                        ? _c("i", { staticClass: "fab fa-twitter mr-1" })
-                        : _vm._e(),
-                      _vm._v(
-                        " " +
-                          _vm._s(this.botiga.twitter) +
-                          "\n                        "
-                      )
-                    ])
+                    this.botiga.instagram != null ||
+                    this.botiga.twitter != null ||
+                    this.botiga.facebook != null
+                      ? _c("li", { staticClass: "list-group-item" }, [
+                          this.botiga.instagram
+                            ? _c("i", { staticClass: "fab fa-instagram mr-1" })
+                            : _vm._e(),
+                          _vm._v(" " + _vm._s(this.botiga.instagram)),
+                          _c("br"),
+                          _vm._v(" "),
+                          this.botiga.facebook
+                            ? _c("i", { staticClass: "fab fa-facebook mr-1" })
+                            : _vm._e(),
+                          _vm._v(" " + _vm._s(this.botiga.facebook)),
+                          _c("br"),
+                          _vm._v(" "),
+                          this.botiga.twitter
+                            ? _c("i", { staticClass: "fab fa-twitter mr-1" })
+                            : _vm._e(),
+                          _vm._v(
+                            " " +
+                              _vm._s(this.botiga.twitter) +
+                              "\n                        "
+                          )
+                        ])
+                      : _vm._e()
                   ]
                 )
               ])
@@ -59719,176 +59883,177 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "content-wrapper" }, [
+    _c("div", { staticClass: "content-header" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("section", { staticClass: "mb-4" }, [
+          _c(
+            "h2",
+            {
+              staticClass: "h1-responsive font-weight-bold text-center my-4",
+              staticStyle: { color: "#ff6565" }
+            },
+            [_vm._v("\n          Contacta'ns\n        ")]
+          ),
+          _vm._v(" "),
+          _c("p", { staticClass: "text-center w-responsive mx-auto mb-5" }, [
+            _vm._v(
+              "\n          Tens alguna pregunta? No dubtis en contactar-nos directament! El\n          nostre equip es posarà en contacte amb tu per ajudar-te\n        "
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-9 mb-md-0 mb-5" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-4" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-4" }, [
+                  _c("div", { staticClass: "text-center" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-primary btn-block zoom",
+                        staticStyle: {
+                          "background-color": "#ff6565",
+                          border: "none"
+                        },
+                        attrs: { type: "submit" },
+                        on: { click: _vm.formOk }
+                      },
+                      [
+                        _c("i", { staticClass: "fas fa-paper-plane" }),
+                        _vm._v(" Envia!\n                  ")
+                      ]
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-4" })
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(1)
+          ])
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "content-wrapper" }, [
-      _c("div", { staticClass: "content-header" }, [
-        _c("div", { staticClass: "container-fluid" }, [
-          _c("section", { staticClass: "mb-4" }, [
-            _c(
-              "h2",
-              {
-                staticClass: "h1-responsive font-weight-bold text-center my-4",
-                staticStyle: { color: "#ff6565" }
-              },
-              [_vm._v("Contacta'ns")]
-            ),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-center w-responsive mx-auto mb-5" }, [
-              _vm._v(
-                "Tens alguna pregunta? No dubtis en contactar-nos directament! El nostre equip es posarà en contacte amb tu per ajudar-te"
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-9 mb-md-0 mb-5" }, [
-                _c(
-                  "form",
-                  {
-                    attrs: {
-                      id: "contact-form",
-                      name: "contact-form",
-                      action: "",
-                      method: "POST"
-                    }
-                  },
-                  [
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-6" }, [
-                        _c("div", { staticClass: "md-form mb-0" }, [
-                          _c("input", {
-                            staticClass: "form-control",
-                            attrs: {
-                              type: "text",
-                              id: "name",
-                              name: "name",
-                              placeholder: "Nom"
-                            }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-6" }, [
-                        _c("div", { staticClass: "md-form mb-0" }, [
-                          _c("input", {
-                            staticClass: "form-control",
-                            attrs: {
-                              type: "text",
-                              id: "email",
-                              name: "email",
-                              placeholder: "Email"
-                            }
-                          })
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-12" }, [
-                        _c("div", { staticClass: "md-form mb-0" }, [
-                          _c("input", {
-                            staticClass: "form-control",
-                            attrs: {
-                              type: "text",
-                              id: "subject",
-                              name: "subject",
-                              placeholder: "Subjecte"
-                            }
-                          })
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "col-md-12" }, [
-                        _c("div", { staticClass: "md-form" }, [
-                          _c("textarea", {
-                            staticClass: "form-control md-textarea",
-                            attrs: {
-                              type: "text",
-                              id: "message",
-                              name: "message",
-                              rows: "2",
-                              placeholder: "El teu missatge"
-                            }
-                          })
-                        ])
-                      ])
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-4" }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-4" }, [
-                    _c("div", { staticClass: "text-center" }, [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "btn btn-primary btn-block zoom",
-                          staticStyle: {
-                            "background-color": "#ff6565",
-                            border: "none"
-                          },
-                          attrs: {
-                            onclick:
-                              "document.getElementById('contact-form').submit();"
-                          }
-                        },
-                        [
-                          _c("i", { staticClass: "fas fa-paper-plane" }),
-                          _vm._v(" Envia!")
-                        ]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-4" })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-3 text-center" }, [
-                _c("ul", { staticClass: "list-unstyled mb-0" }, [
-                  _c("li", [
-                    _c("i", {
-                      staticClass: "fas fa-map-marker-alt fa-2x",
-                      staticStyle: { color: "#ff6565" }
-                    }),
-                    _vm._v(" "),
-                    _c("p", [_vm._v("Manresa, BCN 94126, CAT")])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("i", {
-                      staticClass: "fas fa-phone mt-4 fa-2x",
-                      staticStyle: { color: "#ff6565" }
-                    }),
-                    _vm._v(" "),
-                    _c("p", [_vm._v("+ 01 234 567 89")])
-                  ]),
-                  _vm._v(" "),
-                  _c("li", [
-                    _c("i", {
-                      staticClass: "fas fa-envelope mt-4 fa-2x",
-                      staticStyle: { color: "#ff6565" }
-                    }),
-                    _vm._v(" "),
-                    _c("p", [_vm._v("hola@mercatvirual.com")])
-                  ])
-                ])
-              ])
+    return _c(
+      "form",
+      { attrs: { id: "contact-form", name: "contact-form", action: "" } },
+      [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "md-form mb-0" }, [
+              _c("input", {
+                staticClass: "form-control",
+                attrs: {
+                  type: "text",
+                  id: "name",
+                  name: "name",
+                  placeholder: "Nom",
+                  required: ""
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "md-form mb-0" }, [
+              _c("input", {
+                staticClass: "form-control",
+                attrs: {
+                  type: "text",
+                  id: "email",
+                  name: "email",
+                  placeholder: "Email",
+                  required: ""
+                }
+              })
             ])
           ])
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "md-form mb-0" }, [
+              _c("input", {
+                staticClass: "form-control",
+                attrs: {
+                  type: "text",
+                  id: "subject",
+                  name: "subject",
+                  placeholder: "Subjecte",
+                  required: ""
+                }
+              })
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "md-form" }, [
+              _c("textarea", {
+                staticClass: "form-control md-textarea",
+                attrs: {
+                  type: "text",
+                  id: "message",
+                  name: "message",
+                  rows: "2",
+                  placeholder: "El teu missatge",
+                  required: ""
+                }
+              })
+            ])
+          ])
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-3 text-center" }, [
+      _c("ul", { staticClass: "list-unstyled mb-0" }, [
+        _c("li", [
+          _c("i", {
+            staticClass: "fas fa-map-marker-alt fa-2x",
+            staticStyle: { color: "#ff6565" }
+          }),
+          _vm._v(" "),
+          _c("p", [_vm._v("Manresa, BCN 94126, CAT")])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("i", {
+            staticClass: "fas fa-phone mt-4 fa-2x",
+            staticStyle: { color: "#ff6565" }
+          }),
+          _vm._v(" "),
+          _c("p", [_vm._v("+ 01 234 567 89")])
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("i", {
+            staticClass: "fas fa-envelope mt-4 fa-2x",
+            staticStyle: { color: "#ff6565" }
+          }),
+          _vm._v(" "),
+          _c("p", [_vm._v("hola@mercatvirual.com")])
         ])
       ])
     ])
@@ -77175,21 +77340,24 @@ __webpack_require__.r(__webpack_exports__);
 /*!*******************************************************!*\
   !*** ./resources/js/components/contacteComponent.vue ***!
   \*******************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _contacteComponent_vue_vue_type_template_id_6b4efb7d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./contacteComponent.vue?vue&type=template&id=6b4efb7d& */ "./resources/js/components/contacteComponent.vue?vue&type=template&id=6b4efb7d&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _contacteComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./contacteComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/contacteComponent.vue?vue&type=script&lang=js&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _contacteComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _contacteComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _contacteComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _contacteComponent_vue_vue_type_template_id_6b4efb7d___WEBPACK_IMPORTED_MODULE_0__["render"],
   _contacteComponent_vue_vue_type_template_id_6b4efb7d___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -77203,6 +77371,22 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/components/contacteComponent.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/contacteComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/contacteComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_contacteComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./contacteComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/contacteComponent.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_contacteComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_contacteComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_contacteComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_contacteComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_contacteComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
