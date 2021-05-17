@@ -709,13 +709,12 @@ export default {
         this.loading();
         axios.get("/api/categories").then((res) => {
                 this.categories = res.data;
-            });
-
+        }).then(() => {
         axios.get("/api/productesB").then((res1) => {
                 this.productes=res1.data;
-            });
-        
-        axios.get("/api/botiga").then(res2 => {
+            })
+        }).then(()=> {
+          axios.get("/api/botiga").then(res2 => {
             
             this.botiga = res2.data[0];
             this.user = this.botiga.user;
@@ -741,7 +740,25 @@ export default {
             this.form_botiga["cif"] = this.botiga.cif;
             this.form_botiga["img_perfil"] = this.botiga.img_perfil;
             this.form_botiga["img_portada"] = this.botiga.img_portada;
-        });
+        });  
+        }).then(()=> {
+            Swal.fire({
+            title:'<span style="color: #ff6565">Carregant...</span>', 
+            timer:1000 ,
+            showConfirmButton: false,
+            showClass: {
+            backdrop: 'swal2-noanimation', // disable backdrop animation
+            popup: '',                     // disable popup animation
+            icon: ''                       // disable icon animation
+            },
+            hideClass: {
+            popup: '',                     // disable popup fade-out animation
+            },
+            didOpen: () => {
+            Swal.showLoading()
+            },});
+        })
+        
     },
 
     methods: {
@@ -750,7 +767,21 @@ export default {
             });
             axios.get("/api/productesB").then((res) => {
                 this.productes = res.data;
-            });
+            }).then(()=> {
+               Swal.fire({
+                toast: true,
+                position: 'top-end',
+                icon: 'success',
+                title: 'Eliminat correctament',
+                showConfirmButton: false,
+                timer: 3000,
+                didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            }); 
+            })
+            
         },
         restarStock(id) {
             axios.post("/api/restarStock/" + id).then((res) => {
@@ -786,34 +817,21 @@ export default {
             
         },
         loading() {
-        let timerInterval
-        Swal.fire({
-            title: '<span style="color: #ff6565">Carregant...</span>',
-            
-            timerProgressBar: true,
-            timer: 1500,
-            showClass: {
-            popup: '',
-            icon: ''
-            },
-            hideClass: {
-            popup: '',
-            },
-            didOpen: () => {
-            Swal.showLoading()
-            timerInterval = setInterval(() => {
-                
-            }, 100)
-            },
-            willClose: () => {
-            clearInterval(timerInterval)
-            }
-        }).then((result) => {
-            /* Read more about handling dismissals below */
-            if (result.dismiss === Swal.DismissReason.timer) {
-            console.log('I was closed by the timer')
-            }
-        })
+            Swal.fire({
+                title: '<span style="color: #ff6565">Carregant...</span>',
+                customClass: 'swal-wide',
+                showConfirmButton: false,
+                showClass: {
+                popup: '',
+                icon: ''
+                },
+                hideClass: {
+                popup: '',
+                },
+                didOpen: () => {
+                Swal.showLoading()
+                }
+            })
         },
         
         toastCorrecte() {
@@ -880,7 +898,7 @@ export default {
                 .then((res) => {
                 this.toastCorrecte();
                 console.log(that.form);
-                location.reload();
+                this.resetForm();
                 })
                 .catch((error) => {
                 that.errors = error.response.data.errors;
@@ -890,6 +908,21 @@ export default {
 
             console.log(that.form);
             
+        },
+        resetForm() {
+            console.log('Reseting the form')
+            this.files = new Array();
+            var self = this; //you need this because this will refer to Object.keys below
+
+            //Iterate through each object field, key is name of the object field
+            Object.keys(this.form).forEach(function(key,index) {
+            self.form[key] = '';
+            });
+            this.form["id_botiga"] = this.botiga.id_usuari;
+            this.form["visites"] = "0";
+            axios.get("/api/productesB").then((res1) => {
+                this.productes=res1.data;
+            });
         },
         saveBotiga() {
             let that = this;

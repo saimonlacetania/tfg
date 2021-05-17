@@ -123,10 +123,11 @@ export default {
     };
   },
   mounted() {
+    this.loading();
     axios.get("/api/user").then((res) => {
       this.user = res.data;
-    });
-    axios.get("/api/veureCistella").then((res) => {
+    }).then(()=>{
+      axios.get("/api/veureCistella").then((res) => {
       this.cistella = res.data;
       console.log(this.cistella);
       for (let i = 0; i < this.cistella.length; i++) {
@@ -137,6 +138,24 @@ export default {
       }
       this.total = parseFloat(this.total).toFixed(2);
     });
+    }).then(()=> {
+            Swal.fire({
+            title:'<span style="color: #ff6565">Carregant...</span>', 
+            timer:1000 ,
+            showConfirmButton: false,
+            showClass: {
+            backdrop: 'swal2-noanimation', // disable backdrop animation
+            popup: '',                     // disable popup animation
+            icon: ''                       // disable icon animation
+            },
+            hideClass: {
+            popup: '',                     // disable popup fade-out animation
+            },
+            didOpen: () => {
+            Swal.showLoading()
+            },});
+        })
+    
   },
   methods: {
     crearOrdre() {
@@ -197,6 +216,23 @@ export default {
         }
         this.total = parseFloat(this.total).toFixed(2);
       });
+    },
+    loading() {
+      Swal.fire({
+          title: '<span style="color: #ff6565">Carregant...</span>',
+          customClass: 'swal-wide',
+          showConfirmButton: false,
+          showClass: {
+          popup: '',
+          icon: ''
+          },
+          hideClass: {
+          popup: '',
+          },
+          didOpen: () => {
+          Swal.showLoading()
+          }
+      })
     },
   },
 };

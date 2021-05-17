@@ -293,7 +293,6 @@
         </div>
       </div>
     </div>
-    <pulse-loader :loading="loading" :color="color" :size="size"></pulse-loader>
   </div>
 
   <!-- /.contingut pagina -->
@@ -319,21 +318,13 @@
 
 export default {
   mounted() {
-    console.log("Productes mounted.");
-    
-  },
-  data () {
-    return {
-      loading : true
-    }
+    this.loading();
   },
   methods: {
     loading() {
-      let timerInterval
       Swal.fire({
         title: '<span style="color: #ff6565">Carregant...</span>',
         customClass: 'swal-wide',
-        timerProgressBar: true,
         timer: 1500,
         showClass: {
           popup: '',
@@ -344,20 +335,9 @@ export default {
         },
         didOpen: () => {
           Swal.showLoading()
-          timerInterval = setInterval(() => {
-            
-          }, 100)
         },
-        willClose: () => {
-          clearInterval(timerInterval)
-        }
-      }).then((result) => {
-        /* Read more about handling dismissals below */
-        if (result.dismiss === Swal.DismissReason.timer) {
-          console.log('I was closed by the timer')
-        }
       })
     },
-  },
+  }
 };
 </script>

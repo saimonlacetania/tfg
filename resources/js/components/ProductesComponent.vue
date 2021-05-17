@@ -106,9 +106,26 @@ export default {
     };
   },
   mounted() {
+    this.loading();
     axios.get("/api/productes").then((res) => {
       console.log(res);
       this.productes = res.data;
+    }).then(()=> {
+      Swal.fire({
+        title:'<span style="color: #ff6565">Carregant...</span>', 
+        timer:1000 ,
+        showConfirmButton: false,
+        showClass: {
+        backdrop: 'swal2-noanimation', // disable backdrop animation
+        popup: '',                     // disable popup animation
+        icon: ''                       // disable icon animation
+        },
+        hideClass: {
+          popup: '',                     // disable popup fade-out animation
+        },
+        didOpen: () => {
+          Swal.showLoading()
+        },});
     });
   },
   watch: {
@@ -117,6 +134,23 @@ export default {
         }
     },
   methods: {
+    loading() {
+      Swal.fire({
+        title: '<span style="color: #ff6565">Carregant...</span>',
+        customClass: 'swal-wide',
+        showConfirmButton: false,
+        showClass: {
+          popup: '',
+          icon: ''
+        },
+        hideClass: {
+          popup: '',
+        },
+        didOpen: () => {
+          Swal.showLoading()
+        }
+      })
+    },
     cercaProductes() {
       if (this.keyword=="" || this.keyword==" ") {
         axios.get("/api/productes").then((res) => {

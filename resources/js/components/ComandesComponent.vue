@@ -199,45 +199,52 @@ export default {
     this.loading();
     axios.get("/api/user").then((res) => {
       this.user = res.data;
-    });
-    axios.get("/api/veureOrdreBotiga").then((res) => {
+    }).then(()=>{
+      axios.get("/api/veureOrdreBotiga").then((res) => {
       this.orders = res.data;
       console.log(this.orders);
     });
-    axios.get("/api/veureOrdreBotigaEnviat").then((res) => {
+    }).then(()=>{
+      axios.get("/api/veureOrdreBotigaEnviat").then((res) => {
       this.ordersEnviats = res.data;
       console.log(this.ordersEnviats);
     });
+    }).then(()=> {
+      Swal.fire({
+      title:'<span style="color: #ff6565">Carregant...</span>', 
+      timer:1000 ,
+      showConfirmButton: false,
+      showClass: {
+      backdrop: 'swal2-noanimation', // disable backdrop animation
+      popup: '',                     // disable popup animation
+      icon: ''                       // disable icon animation
+      },
+      hideClass: {
+      popup: '',                     // disable popup fade-out animation
+      },
+      didOpen: () => {
+      Swal.showLoading()
+      },});
+    })
+    
+    
   },
   methods: {
     loading() {
-      let timerInterval
       Swal.fire({
-        title: '<span style="color: #ff6565">Carregant...</span>',
-        customClass: 'swal-wide',
-        timerProgressBar: true,
-        timer: 1500,
-        showClass: {
+          title: '<span style="color: #ff6565">Carregant...</span>',
+          customClass: 'swal-wide',
+          showConfirmButton: false,
+          showClass: {
           popup: '',
           icon: ''
-        },
-        hideClass: {
+          },
+          hideClass: {
           popup: '',
-        },
-        didOpen: () => {
+          },
+          didOpen: () => {
           Swal.showLoading()
-          timerInterval = setInterval(() => {
-            
-          }, 100)
-        },
-        willClose: () => {
-          clearInterval(timerInterval)
-        }
-      }).then((result) => {
-        /* Read more about handling dismissals below */
-        if (result.dismiss === Swal.DismissReason.timer) {
-          console.log('I was closed by the timer')
-        }
+          }
       })
     },
     enviarOrdre(id) {

@@ -190,7 +190,23 @@ export default {
             this.form["preu"]=this.producte.preu;
             this.form["stock"]=this.producte.stock;
                 
-    });
+    }).then(()=> {
+      Swal.fire({
+        title:'<span style="color: #ff6565">Carregant...</span>', 
+        timer:1000 ,
+        showConfirmButton: false,
+        showClass: {
+        backdrop: 'swal2-noanimation', // disable backdrop animation
+        popup: '',                     // disable popup animation
+        icon: ''                       // disable icon animation
+        },
+        hideClass: {
+          popup: '',                     // disable popup fade-out animation
+        },
+        didOpen: () => {
+          Swal.showLoading()
+        },});
+    })
   },
   
   data() {
@@ -211,6 +227,23 @@ export default {
     };
     },
     methods: {
+        loading() {
+            Swal.fire({
+                title: '<span style="color: #ff6565">Carregant...</span>',
+                customClass: 'swal-wide',
+                showConfirmButton: false,
+                showClass: {
+                popup: '',
+                icon: ''
+                },
+                hideClass: {
+                popup: '',
+                },
+                didOpen: () => {
+                Swal.showLoading()
+                }
+            })
+        },
         fileSelected(e) {
         this.files = e.target.files
         console.log(this.files);

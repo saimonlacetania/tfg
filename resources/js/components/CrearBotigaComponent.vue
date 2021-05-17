@@ -235,12 +235,46 @@ export default {
     };
   },
   mounted() {
+    then.loading();
     axios.get("/api/user").then((res) => {
       this.user = res.data;
-    });
+    }).then(()=> {
+      Swal.fire({
+      title:'<span style="color: #ff6565">Carregant...</span>', 
+      timer:1000 ,
+      showConfirmButton: false,
+      showClass: {
+      backdrop: 'swal2-noanimation', // disable backdrop animation
+      popup: '',                     // disable popup animation
+      icon: ''                       // disable icon animation
+      },
+      hideClass: {
+      popup: '',                     // disable popup fade-out animation
+      },
+      didOpen: () => {
+      Swal.showLoading()
+      },});
+    })
   },
 
   methods: {
+    loading() {
+      Swal.fire({
+          title: '<span style="color: #ff6565">Carregant...</span>',
+          customClass: 'swal-wide',
+          showConfirmButton: false,
+          showClass: {
+          popup: '',
+          icon: ''
+          },
+          hideClass: {
+          popup: '',
+          },
+          didOpen: () => {
+          Swal.showLoading()
+          }
+      })
+    },
     toastCorrecte() {
       // Use sweetalert2
       this.$swal({

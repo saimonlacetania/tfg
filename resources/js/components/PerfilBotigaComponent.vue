@@ -181,51 +181,54 @@ export default {
 
         axios.get("/api/perfil/" + this.$route.params.id).then((res) => {
             this.id = res.data.id;
-        });
-
-        axios.get("/api/productesBotiga/"+this.$route.params.id).then((res) => {
-        this.productes = res.data;
-        });
-
-        axios.get("/api/perfilBotiga/"+this.$route.params.id).then((res) => {
-        this.botiga = res.data[0];
-        });
-
-        axios.get("/api/user/" + this.$route.params.id).then((res) => {
+        }).then(()=>{
+            axios.get("/api/productesBotiga/"+this.$route.params.id).then((res) => {
+            this.productes = res.data;
+            });
+        }).then(()=>{
+            axios.get("/api/perfilBotiga/"+this.$route.params.id).then((res) => {
+            this.botiga = res.data[0];
+            });
+        }).then(()=>{
+            axios.get("/api/user/" + this.$route.params.id).then((res) => {
             this.user = res.data[0];
-        });
-
+            });
+        }).then(()=> {
+            Swal.fire({
+                title:'<span style="color: #ff6565">Carregant...</span>', 
+                timer:1000 ,
+                showConfirmButton: false,
+                showClass: {
+                backdrop: 'swal2-noanimation', // disable backdrop animation
+                popup: '',                     // disable popup animation
+                icon: ''                       // disable icon animation
+                },
+                hideClass: {
+                popup: '',                     // disable popup fade-out animation
+                },
+                didOpen: () => {
+                Swal.showLoading()
+                },
+            });
+        })
     },
   methods: {
       loading() {
-      let timerInterval
-      Swal.fire({
-        title: '<span style="color: #ff6565">Carregant...</span>',
-        customClass: 'swal-wide',
-        timerProgressBar: true,
-        timer: 1500,
-        showClass: {
-          popup: '',
-          icon: ''
-        },
-        hideClass: {
-          popup: '',
-        },
-        didOpen: () => {
-          Swal.showLoading()
-          timerInterval = setInterval(() => {
-            
-          }, 100)
-        },
-        willClose: () => {
-          clearInterval(timerInterval)
-        }
-      }).then((result) => {
-        /* Read more about handling dismissals below */
-        if (result.dismiss === Swal.DismissReason.timer) {
-          console.log('I was closed by the timer')
-        }
-      })
+        Swal.fire({
+            title: '<span style="color: #ff6565">Carregant...</span>',
+            customClass: 'swal-wide',
+            showConfirmButton: false,
+            showClass: {
+            popup: '',
+            icon: ''
+            },
+            hideClass: {
+            popup: '',
+            },
+            didOpen: () => {
+            Swal.showLoading()
+            }
+        })
     },
   },
 };

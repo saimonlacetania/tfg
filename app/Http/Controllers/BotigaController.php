@@ -31,7 +31,7 @@ class BotigaController extends Controller
     {
         $id = Auth::id();
 
-        $productes = Producte::where('id_botiga', $id)
+        $productes = Producte::where('id_botiga', $id)->where('eliminat',0)
             ->get();
         
         return $productes;

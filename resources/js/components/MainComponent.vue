@@ -114,7 +114,7 @@ html {
                   </router-link>
                 </li>
             <li class="nav-item" v-if="this.user.botiga">
-              <a class="nav-link" href="#">
+              <a class="nav-link" href="javascript:void(null);">
                 <i class="nav-icon fas fa-store-alt text-dark"></i>
                 <p class="text-dark">
                   La meva botiga
@@ -165,7 +165,7 @@ html {
             </li>
 
             <li class="nav-item align-text-bottom">
-              <a @click.prevent="logout" href="#" class="nav-link">
+              <a @click.prevent="logout" href="javascript:void(null);" class="nav-link">
                 <i class="nav-icon fas fa-power-off text-dark"></i>
                 <p class="text-dark">Sortir</p>
               </a>
