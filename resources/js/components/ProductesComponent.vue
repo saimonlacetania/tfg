@@ -64,7 +64,7 @@
                   <div :class="'card-footer bg-light'" style="border:none;">
                     <router-link
                       :to="{ name: 'Producte', params: { id: producte.id } }"
-                      :class="'btn btn-outline-secondary btn-icon-right'"
+                      :class="'btn btn-outline-secondary'"
                     >
                       <span>Saber més</span>
                     </router-link>

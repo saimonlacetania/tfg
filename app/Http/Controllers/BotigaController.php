@@ -21,6 +21,16 @@ class BotigaController extends Controller
     {
         $id = Auth::id();
 
+        $botigues = Botiga::find()
+            ->get();
+        
+        return $botigues;
+    }
+
+    public function botigues()
+    {
+        $id = Auth::id();
+
         $botiga = Botiga::with('user')->where('id_usuari', $id)
             ->get();
         
