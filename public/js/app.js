@@ -51534,15 +51534,21 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("li", { staticClass: "list-group-item" }, [
-                      _c("i", { staticClass: "fab fa-instagram mr-1" }),
+                      this.botiga.instagram
+                        ? _c("i", { staticClass: "fab fa-instagram mr-1" })
+                        : _vm._e(),
                       _vm._v(" " + _vm._s(this.botiga.instagram)),
                       _c("br"),
                       _vm._v(" "),
-                      _c("i", { staticClass: "fab fa-facebook mr-1" }),
+                      this.botiga.facebook
+                        ? _c("i", { staticClass: "fab fa-facebook mr-1" })
+                        : _vm._e(),
                       _vm._v(" " + _vm._s(this.botiga.facebook)),
                       _c("br"),
                       _vm._v(" "),
-                      _c("i", { staticClass: "fab fa-twitter mr-1" }),
+                      this.botiga.twitter
+                        ? _c("i", { staticClass: "fab fa-twitter mr-1" })
+                        : _vm._e(),
                       _vm._v(
                         " " +
                           _vm._s(this.botiga.twitter) +
@@ -56459,7 +56465,7 @@ var render = function() {
                               "a",
                               {
                                 staticClass: "nav-link",
-                                attrs: { href: "#" },
+                                attrs: { href: "javascript:void(null);" },
                                 on: {
                                   click: function($event) {
                                     $event.preventDefault()
@@ -56615,7 +56621,11 @@ var staticRenderFns = [
           "a",
           {
             staticClass: "nav-link",
-            attrs: { "data-widget": "pushmenu", href: "#", role: "button" }
+            attrs: {
+              "data-widget": "pushmenu",
+              href: "javascript:void(null);",
+              role: "button"
+            }
           },
           [
             _c("i", {
@@ -56631,14 +56641,18 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-      _c("i", { staticClass: "nav-icon fas fa-store-alt text-dark" }),
-      _vm._v(" "),
-      _c("p", { staticClass: "text-dark" }, [
-        _vm._v("\n                La meva botiga\n                "),
-        _c("i", { staticClass: "right fas fa-angle-left" })
-      ])
-    ])
+    return _c(
+      "a",
+      { staticClass: "nav-link", attrs: { href: "javascript:void(null);" } },
+      [
+        _c("i", { staticClass: "nav-icon fas fa-store-alt text-dark" }),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-dark" }, [
+          _vm._v("\n                La meva botiga\n                "),
+          _c("i", { staticClass: "right fas fa-angle-left" })
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this

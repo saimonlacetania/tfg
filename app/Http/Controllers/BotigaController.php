@@ -92,15 +92,23 @@ class BotigaController extends Controller
                 $botiga->nom = $request->nom;   
                 $botiga->descripcio = $request->descripcio;      
                 $botiga->telf_1 = $request->telf_1;
-                $botiga->telf_2 = $request->telf_2;   
+                if ($request->telf_2 != "null") {
+                    $botiga->telf_2 = $request->telf_2; 
+                }
                 $botiga->direccio = $request->direccio; 
                 $botiga->cp = $request->cp; 
                 $botiga->poblacio = $request->poblacio;  
                 $botiga->provincia = $request->provincia; 
                 $botiga->email = $request->email;
-                $botiga->instagram = $request->instagram;  
-                $botiga->facebook = $request->facebook; 
-                $botiga->twitter = $request->twitter;
+                if ($request->instagram != "null") {
+                    $botiga->instagram = $request->instagram;  
+                }
+                if ($request->facebook != "null") {
+                    $botiga->facebook = $request->facebook; 
+                }
+                if ($request->twitter != "null") {
+                    $botiga->twitter = $request->twitter;
+                }
                 $botiga->nif = $request->nif; 
                 $botiga->cif = $request->cif;  
                 

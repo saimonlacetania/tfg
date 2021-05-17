@@ -56,9 +56,9 @@
                                 <small><p class="text-muted">{{this.botiga.telf_1}}</p></small>  
                             </li>
                             <li class="list-group-item">
-                                <i class="fab fa-instagram mr-1"></i> {{this.botiga.instagram}}<br>
-                                <i class="fab fa-facebook mr-1"></i> {{this.botiga.facebook}}<br>
-                                <i class="fab fa-twitter mr-1"></i> {{this.botiga.twitter}}
+                                <i v-if="this.botiga.instagram" class="fab fa-instagram mr-1"></i> {{this.botiga.instagram}}<br>
+                                <i v-if="this.botiga.facebook" class="fab fa-facebook mr-1"></i> {{this.botiga.facebook}}<br>
+                                <i v-if="this.botiga.twitter" class="fab fa-twitter mr-1"></i> {{this.botiga.twitter}}
                             </li>
                         </ul>
                     </div>
