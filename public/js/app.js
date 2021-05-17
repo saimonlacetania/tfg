@@ -6437,12 +6437,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -59309,24 +59303,11 @@ var render = function() {
                       _c("div", { staticClass: "card-footer" }, [
                         _vm._m(1, true),
                         _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "row",
-                            staticStyle: { "margin-bottom": "-10%" }
-                          },
-                          [
-                            _vm._m(2, true),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "col-md-10" }, [
-                              _c("h5", { staticClass: "text-center" }, [
-                                _vm._v(_vm._s(botiga.nom))
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _vm._m(3, true)
-                          ]
-                        ),
+                        _c("div", { staticClass: "row" }, [
+                          _c("div", { staticClass: "col-md-12 text-center" }, [
+                            _c("h5", {}, [_vm._v(_vm._s(botiga.nom))])
+                          ])
+                        ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "row" }, [
                           _c("div", { staticClass: "col-md-1" }),
@@ -59345,11 +59326,11 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "row" }, [
-                          _c("div", { staticClass: "col-md-2" }),
+                          _c("div", { staticClass: "col-md-1" }),
                           _vm._v(" "),
                           _c(
                             "div",
-                            { staticClass: "col-md-8 text-center" },
+                            { staticClass: "col-md-10 text-center" },
                             [
                               _c(
                                 "router-link",
@@ -59369,7 +59350,7 @@ var render = function() {
                             1
                           ),
                           _vm._v(" "),
-                          _c("div", { staticClass: "col-md-2" })
+                          _c("div", { staticClass: "col-md-1" })
                         ])
                       ])
                     ]
@@ -59431,18 +59412,6 @@ var staticRenderFns = [
         ])
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-1" }, [_c("hr")])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-1" }, [_c("hr")])
   }
 ]
 render._withStripped = true

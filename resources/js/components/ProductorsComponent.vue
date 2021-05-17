@@ -64,15 +64,9 @@
                             </div>
                             <!-- /.row -->
 
-                            <div class="row" style="margin-bottom:-10%;">
-                                <div class="col-md-1">
-                                    <hr>
-                                </div>
-                                <div class="col-md-10">
-                                    <h5 class="text-center">{{ botiga.nom }}</h5>
-                                </div>
-                                <div class="col-md-1">
-                                    <hr>
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <h5 class="">{{ botiga.nom }}</h5>
                                 </div>
                             </div>
                             <div class="row">
@@ -85,8 +79,8 @@
                                 <div class="col-md-1"></div>
                             </div>
                             <div class="row">
-                                <div class="col-md-2"></div>
-                                <div class="col-md-8 text-center">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-10 text-center">
                                     <router-link
                                         :to="{ name: 'PerfilBotiga', params: { id: botiga.id } }"
                                         :class="'btn text-white'"
@@ -94,7 +88,7 @@
                                         <span>Visita!</span>
                                     </router-link>
                                 </div>
-                                <div class="col-md-2"></div>
+                                <div class="col-md-1"></div>
                             </div>
                         </div>
                     </div>
