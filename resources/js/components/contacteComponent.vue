@@ -152,22 +152,23 @@
 export default {
   data() {
     return {
-      user: "",
-      cistella: "",
-      total: 0,
+      
     };
   },
+  mounted() {
+    console.log("muntat");
+  },
   methods: {
-    formOk:function (event) { 
+    formOk: async function (event) { 
       this.toastCorrecte();
     },
-    toastCorrecte() {
+    toastCorrecte: async function () {
       // Use sweetalert2
       Swal.fire({
         toast: true,
         position: "top-end",
         icon: "success",
-        title: "Comanda realitzada correctament",
+        title: "Enviat correctament",
         showConfirmButton: false,
         timer: 3000,
         didOpen: (toast) => {
@@ -178,3 +179,4 @@ export default {
     },
   },
 };
+</script>
