@@ -311,44 +311,32 @@
 .zoom:hover {
   transform: scale(1.05); /* (150% zoom)*/
 }
+
 </style>
 
 <script>
 export default {
   mounted() {
-    console.log("Productes mounted.");
     this.loading();
   },
   methods: {
     loading() {
-      let timerInterval;
       Swal.fire({
-        title: "Auto close alert!",
-        html: "I will close in <b></b> milliseconds.",
-        timer: 2000,
-        timerProgressBar: true,
+        title: '<span style="color: #ff6565">Carregant...</span>',
+        customClass: 'swal-wide',
+        timer: 1500,
+        showClass: {
+          popup: '',
+          icon: ''
+        },
+        hideClass: {
+          popup: '',
+        },
         didOpen: () => {
-          Swal.showLoading();
-          timerInterval = setInterval(() => {
-            const content = Swal.getContent();
-            if (content) {
-              const b = content.querySelector("b");
-              if (b) {
-                b.textContent = Swal.getTimerLeft();
-              }
-            }
-          }, 100);
+          Swal.showLoading()
         },
-        willClose: () => {
-          clearInterval(timerInterval);
-        },
-      }).then((result) => {
-        /* Read more about handling dismissals below */
-        if (result.dismiss === Swal.DismissReason.timer) {
-          console.log("I was closed by the timer");
-        }
-      });
+      })
     },
-  },
+  }
 };
 </script>

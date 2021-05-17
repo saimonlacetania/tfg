@@ -4,7 +4,7 @@ import NotFound from "./components/NotFound";
 import Main from "./components/MainComponent";
 import Perfil from "./components/PerfilComponent";
 import Productes from "./components/ProductesComponent";
-import EditarPerfil from "./components/EditarPerfilComponent";
+
 import FeedInici from "./components/feediniciComponent";
 import Contacte from "./components/contacteComponent";
 import Producte from "./components/ProducteComponent";
@@ -47,23 +47,7 @@ export default {
                             });
                     }
                 },
-                {
-                    // UserPosts will be rendered inside User's <router-view>
-                    // when /user/:id/posts is matched
-                    path: "/editarPerfil",
-                    component: EditarPerfil,
-                    name: "EditarPerfil",
-                    beforeEnter: (to, form, next) => {
-                        axios
-                            .get("/api/athenticated")
-                            .then(() => {
-                                next();
-                            })
-                            .catch(() => {
-                                return next({ name: "Login" });
-                            });
-                    }
-                },
+                
                 {
                     // UserPosts will be rendered inside User's <router-view>
                     // when /user/:id/posts is matched
