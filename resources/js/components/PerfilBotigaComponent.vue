@@ -24,7 +24,7 @@
               <div class="widget-user-image pt-5">
                 <img
                   v-if="this.botiga.img_perfil"
-                  class="img-circle border-4"
+                  class="img-circle border-4 elevation-2"
                   :src="'/images/botigues/' + this.botiga.img_perfil"
                   alt="Shop profile picture"
                   style="

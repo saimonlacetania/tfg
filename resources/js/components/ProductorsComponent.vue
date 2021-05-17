@@ -80,7 +80,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-1"></div>
-                                <div class="col-md-10 text-center">
+                                <div class="col-md-10 text-center zoom">
                                     <router-link
                                         :to="{ name: 'PerfilBotiga', params: { id: botiga.id } }"
                                         :class="'btn text-white'"

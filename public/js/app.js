@@ -56991,7 +56991,7 @@ var render = function() {
               _c("div", { staticClass: "widget-user-image pt-5" }, [
                 this.botiga.img_perfil
                   ? _c("img", {
-                      staticClass: "img-circle border-4",
+                      staticClass: "img-circle border-4 elevation-2",
                       staticStyle: {
                         height: "200px",
                         width: "200px",
@@ -59330,7 +59330,7 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "div",
-                            { staticClass: "col-md-10 text-center" },
+                            { staticClass: "col-md-10 text-center zoom" },
                             [
                               _c(
                                 "router-link",
