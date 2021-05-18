@@ -21,10 +21,25 @@ class BotigaController extends Controller
     {
         $id = Auth::id();
 
-        $botiga = Botiga::with('user')->where('id_usuari', $id)
+        $botigues = Botiga::find()
             ->get();
         
-        return $botiga;
+        return $botigues;
+    }
+
+    public function productors()
+    {
+        $botigues = Botiga::with('productes')->get();
+        
+        foreach($botigues as $botiga) {
+            $botiga->visites_total = 0;
+            if($botiga->productes) {
+                foreach($botiga->productes as $producte) {
+                    $botiga->visites_total += $producte->visites;
+                }   
+            }          
+        }
+        return $botigues;
     }
 
     public function productesB()

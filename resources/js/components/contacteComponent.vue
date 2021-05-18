@@ -31,6 +31,7 @@
                         type="text"
                         id="name"
                         name="name"
+                        v-model="form.name"
                         class="form-control"
                         placeholder="Nom"
                         required
@@ -46,6 +47,7 @@
                         type="text"
                         id="email"
                         name="email"
+                        v-model="form.email"
                         class="form-control"
                         placeholder="Email"
                         required
@@ -66,6 +68,7 @@
                         type="text"
                         id="subject"
                         name="subject"
+                        v-model="form.subject"
                         class="form-control"
                         placeholder="Subjecte"
                         required
@@ -86,6 +89,7 @@
                         type="text"
                         id="message"
                         name="message"
+                        v-model="form.message"
                         rows="2"
                         class="form-control md-textarea"
                         placeholder="El teu missatge"
@@ -101,10 +105,10 @@
                 <div class="col-md-4">
                   <div class="text-center">
                     <button
-                      type="submit"
                       class="btn btn-primary btn-block zoom"
                       style="background-color: #ff6565; border: none"
-                      v-on:click="formOk">
+                      v-on:click="toastCorrecte"
+                    >
                       <i class="fas fa-paper-plane"></i>&nbsp;Envia!
                     </button>
                   </div>
@@ -152,30 +156,53 @@
 export default {
   data() {
     return {
-      
+      form: {
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      },
     };
   },
   mounted() {
     console.log("muntat");
   },
   methods: {
-    formOk: async function (event) { 
-      this.toastCorrecte();
-    },
-    toastCorrecte: async function () {
-      // Use sweetalert2
-      Swal.fire({
-        toast: true,
-        position: "top-end",
-        icon: "success",
-        title: "Enviat correctament",
-        showConfirmButton: false,
-        timer: 3000,
-        didOpen: (toast) => {
-          toast.addEventListener("mouseenter", Swal.stopTimer);
-          toast.addEventListener("mouseleave", Swal.resumeTimer);
-        },
-      });
+    toastCorrecte() {
+      let that = this;
+      if (
+        that.form.name != "" &&
+        that.form.email != "" &&
+        that.form.subject != "" &&
+        that.form.message != ""
+      ) {
+        // Use sweetalert2
+        Swal.fire({
+          toast: true,
+          position: "top-end",
+          icon: "success",
+          title: "Mail enviat correctament",
+          showConfirmButton: false,
+          timer: 3000,
+          didOpen: (toast) => {
+            toast.addEventListener("mouseenter", Swal.stopTimer);
+            toast.addEventListener("mouseleave", Swal.resumeTimer);
+          },
+        });
+      } else {
+        Swal.fire({
+          toast: true,
+          position: "top-end",
+          icon: "error",
+          title: "El formulari de contacte no pot ser buit!",
+          showConfirmButton: false,
+          timer: 3000,
+          didOpen: (toast) => {
+            toast.addEventListener("mouseenter", Swal.stopTimer);
+            toast.addEventListener("mouseleave", Swal.resumeTimer);
+          },
+        });
+      }
     },
   },
 };

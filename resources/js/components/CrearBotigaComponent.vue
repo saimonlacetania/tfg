@@ -235,7 +235,7 @@ export default {
     };
   },
   mounted() {
-    then.loading();
+    this.loading();
     axios.get("/api/user").then((res) => {
       this.user = res.data;
     }).then(()=> {
@@ -307,8 +307,8 @@ export default {
     },
     saveForm() {
       let that = this;
-      console.log(that.form);
       that.form.id_usuari = this.user.id;
+        console.log(that.form);
       axios
         .post("/api/crearBotiga", that.form)
         .then(() => {

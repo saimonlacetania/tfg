@@ -16,12 +16,12 @@ import Comandes from "./components/ComandesComponent";
 
 import PerfilBotiga from "./components/PerfilBotigaComponent";
 import Cistella from "./components/CistellaComponent";
+import Productors from "./components/ProductorsComponent";
 
 export default {
     mode: "history",
     linkActiveClass: "font-semibold",
-    routes: [
-        {
+    routes: [{
             path: "*",
             component: NotFound
         },
@@ -29,8 +29,7 @@ export default {
             path: "/",
             component: Main,
             name: "Home",
-            children: [
-                {
+            children: [{
                     // UserProfile will be rendered inside User's <router-view>
                     // when /user/:id/profile is matched
                     path: "/profile",
@@ -61,6 +60,13 @@ export default {
                     path: "/productes",
                     component: Productes,
                     name: "Productes"
+                },
+                {
+                    // UserPosts will be rendered inside User's <router-view>
+                    // when /user/:id/posts is matched
+                    path: "/productors",
+                    component: Productors,
+                    name: "Productors"
                 },
                 {
                     // UserPosts will be rendered inside User's <router-view>

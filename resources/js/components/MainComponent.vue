@@ -159,6 +159,12 @@ html {
               </router-link>
             </li>
             <li class="nav-item">
+              <router-link class="nav-link" :to="'/productors'">
+                <i class="nav-icon fas fa-store text-dark"></i>
+                <p class="text-dark">Productors</p>
+              </router-link>
+            </li>
+            <li class="nav-item">
               <router-link class="nav-link" :to="'/contacte'">
                 <i class="nav-icon fas fa-comments text-dark"></i>
                 <p class="text-dark">Contacte</p>
@@ -197,6 +203,12 @@ html {
                 <router-link class="nav-link" :to="'/productes'">
                   <i class="nav-icon fas fa-shopping-cart text-dark"></i>
                   <p class="text-dark">Comprar</p>
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link class="nav-link" :to="'/productors'">
+                  <i class="nav-icon fas fa-store text-dark"></i>
+                  <p class="text-dark">Productors</p>
                 </router-link>
               </li>
             </ul>
