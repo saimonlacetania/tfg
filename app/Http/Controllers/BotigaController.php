@@ -39,7 +39,7 @@ class BotigaController extends Controller
     {
         $id = Auth::id();
 
-        $productes = Producte::where('id_botiga', $id)
+        $productes = Producte::where('id_botiga', $id)->where('eliminat',0)
             ->get();
         
         return $productes;
@@ -79,8 +79,6 @@ class BotigaController extends Controller
             'cp' => ['required'],
             'poblacio' => ['required'],
             'provincia' => ['required'],
-            'nif' => ['alpha_num'],
-            'cif' => ['alpha_num'],
         ])) {
                 if ($request->file("img_perfil") != null) {
                     Storage::disk('public')->put('botigues', $request->file('img_perfil'));
@@ -100,17 +98,29 @@ class BotigaController extends Controller
                 $botiga->nom = $request->nom;   
                 $botiga->descripcio = $request->descripcio;      
                 $botiga->telf_1 = $request->telf_1;
-                $botiga->telf_2 = $request->telf_2;   
+                if ($request->telf_2 != "null") {
+                    $botiga->telf_2 = $request->telf_2; 
+                }
                 $botiga->direccio = $request->direccio; 
                 $botiga->cp = $request->cp; 
                 $botiga->poblacio = $request->poblacio;  
                 $botiga->provincia = $request->provincia; 
                 $botiga->email = $request->email;
-                $botiga->instagram = $request->instagram;  
-                $botiga->facebook = $request->facebook; 
-                $botiga->twitter = $request->twitter;
-                $botiga->nif = $request->nif; 
-                $botiga->cif = $request->cif;  
+                if ($request->instagram != "null") {
+                    $botiga->instagram = $request->instagram;  
+                }
+                if ($request->facebook != "null") {
+                    $botiga->facebook = $request->facebook; 
+                }
+                if ($request->twitter != "null") {
+                    $botiga->twitter = $request->twitter;
+                }
+                if ($request->nif != "null") {
+                    $botiga->nif = $request->nif; 
+                }
+                if ($request->cif != "null") {
+                    $botiga->cif = $request->cif;  
+                }
                 
                 $botiga->save();
 

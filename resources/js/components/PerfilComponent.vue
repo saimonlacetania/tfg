@@ -474,6 +474,7 @@ export default {
   },
 
   mounted() {
+    this.loading();
     axios.get("/api/user").then((res) => {
       this.user = res.data;
       this.form["id"] = this.user.id;
@@ -486,22 +487,63 @@ export default {
       this.form["poblacio"] = this.user.poblacio;
       this.form["cp"] = this.user.cp;
       this.form["direccio"] = this.user.direccio;
-    });
-    axios.get("/api/user").then((res) => {
+    }).then(() => {
+      axios.get("/api/user").then((res) => {
       this.user = res.data;
     });
-    axios.get("/api/veureWishlist").then((res2) => {
+    }).then(() => {
+      axios.get("/api/veureWishlist").then((res2) => {
       this.wishlist = res2.data;
     });
-    axios.get("/api/veureOrdreUser").then((res3) => {
+    }).then(()=> {
+      axios.get("/api/veureOrdreUser").then((res3) => {
       this.orders = res3.data;
     });
-    axios.get("/api/veureOrdreProcessadaUser").then((res4) => {
+    }).then(()=> {
+      axios.get("/api/veureOrdreProcessadaUser").then((res4) => {
       this.ordersP = res4.data;
     });
+    }).then(()=> {
+      Swal.fire({
+        title:'<span style="color: #ff6565">Carregant...</span>', 
+        timer:1000 ,
+        showConfirmButton: false,
+        showClass: {
+        backdrop: 'swal2-noanimation', // disable backdrop animation
+        popup: '',                     // disable popup animation
+        icon: ''                       // disable icon animation
+        },
+        hideClass: {
+          popup: '',                     // disable popup fade-out animation
+        },
+        didOpen: () => {
+          Swal.showLoading()
+        },});
+    })
+    
+    
+    
+    
   },
 
   methods: {
+    loading() {
+      Swal.fire({
+        title: '<span style="color: #ff6565">Carregant...</span>',
+        customClass: 'swal-wide',
+        showConfirmButton: false,
+        showClass: {
+          popup: '',
+          icon: ''
+        },
+        hideClass: {
+          popup: '',
+        },
+        didOpen: () => {
+          Swal.showLoading()
+        }
+      })
+    },
     loginCorrecte() {
       // Use sweetalert2
       this.$swal({
