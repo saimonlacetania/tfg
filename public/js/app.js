@@ -4641,6 +4641,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -6498,7 +6504,6 @@ __webpack_require__.r(__webpack_exports__);
     return {
       botigues: "",
       keyword: "",
-      productes: "",
       visites: 0
     };
   },
@@ -12003,7 +12008,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.nav-link.active {\n    background-color: #ff6565 !important;\n    color: white !important;\n}\n.nav-link {\n    text-decoration: none !important;\n    color: white !important;\n}\n", ""]);
+exports.push([module.i, "\n.nav-link.active {\r\n    background-color: #ff6565 !important;\r\n    color: white !important;\n}\n.nav-link {\r\n    text-decoration: none !important;\r\n    color: white !important;\n}\r\n", ""]);
 
 // exports
 
@@ -12041,7 +12046,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.nav-link.active {\n  background-color: #ff6565 !important;\n  color: white !important;\n}\n.nav-link {\n  text-decoration: none !important;\n  color: white !important;\n}\n", ""]);
+exports.push([module.i, "\n.nav-link.active {\r\n  background-color: #ff6565 !important;\r\n  color: white !important;\n}\n.nav-link {\r\n  text-decoration: none !important;\r\n  color: white !important;\n}\r\n", ""]);
 
 // exports
 
@@ -12060,7 +12065,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.timeline::before {\n  background-color: #ffffff;\n}\n", ""]);
+exports.push([module.i, "\n.timeline::before {\r\n  background-color: #ffffff;\n}\r\n", ""]);
 
 // exports
 
@@ -12079,7 +12084,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#registre {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\ninput[type=\"date\"]::-webkit-inner-spin-button {\n  display: none;\n}\n", ""]);
+exports.push([module.i, "\n#registre {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  height: 100vh;\n}\ninput[type=\"date\"]::-webkit-calendar-picker-indicator,\r\ninput[type=\"date\"]::-webkit-inner-spin-button {\r\n  display: none;\n}\r\n", ""]);
 
 // exports
 
@@ -12136,7 +12141,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.main-sidebar, .main-sidebar::before {\n@media (max-width: 767.98px);\n  background-color: white;\n}\n#cajacookies {\n    position: fixed;\n    bottom: 0;\n}\n", ""]);
+exports.push([module.i, "\n.main-sidebar, .main-sidebar::before {\n@media (max-width: 767.98px);\r\n  background-color: white;\n}\n#cajacookies {\r\n    position: fixed;\r\n    bottom: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -12155,7 +12160,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.zoom {\n  transition: transform 0.2s; /* Animation */\n}\n#portada {\n  background-size: cover !important;\n  background-position: center !important;\n  height: 300px;\n  background-repeat: no-repeat !important;\n}\n", ""]);
+exports.push([module.i, "\n.zoom {\r\n  transition: transform 0.2s; /* Animation */\n}\n#portada {\r\n  background-size: cover !important;\r\n  background-position: center !important;\r\n  height: 300px;\r\n  background-repeat: no-repeat !important;\n}\r\n", ""]);
 
 // exports
 
@@ -12174,7 +12179,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.nav-link.active {\n  background-color: #ff6565 !important;\n  color: white !important;\n}\n.nav-link {\n  text-decoration: none !important;\n  color: white !important;\n}\n", ""]);
+exports.push([module.i, "\n.nav-link.active {\r\n  background-color: #ff6565 !important;\r\n  color: white !important;\n}\n.nav-link {\r\n  text-decoration: none !important;\r\n  color: white !important;\n}\r\n", ""]);
 
 // exports
 
@@ -12193,7 +12198,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.timeline::before {\n  background-color: #ffffff;\n}\n", ""]);
+exports.push([module.i, "\n.timeline::before {\r\n  background-color: #ffffff;\n}\r\n", ""]);
 
 // exports
 
@@ -12212,7 +12217,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.custom-file-input:lang(en) ~ .custom-file-label::after {\n  content: \"Busca\";\n  visibility: hidden;\n}\n.custom-file-label::after {\n  content: \"Busca\";\n  visibility: hidden;\n}\n.footer {\n  align-self: flex-end !important;\n  flex: 1 1 auto;\n}\n", ""]);
+exports.push([module.i, "\n.custom-file-input:lang(en) ~ .custom-file-label::after {\r\n  content: \"Busca\";\r\n  visibility: hidden;\n}\n.custom-file-label::after {\r\n  content: \"Busca\";\r\n  visibility: hidden;\n}\n.footer {\r\n  align-self: flex-end !important;\r\n  flex: 1 1 auto;\n}\r\n", ""]);
 
 // exports
 
@@ -12231,7 +12236,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.rating {\n    display: flex;\n    flex-direction: row-reverse;\n    justify-content: center\n}\n.rating>input {\n    display: none\n}\n.rating>label {\n    position: relative;\n    width: 1em;\n    font-size: 4vw;\n    color: #FF6565;\n    cursor: pointer\n}\n.rating>label::before {\n    content: \"\\2605\";\n    position: absolute;\n    opacity: 0\n}\n.rating>label:hover:before,\n.rating>label:hover~label:before {\n    opacity: 1 !important\n}\n.rating>input:checked~label:before {\n    opacity: 1\n}\n.rating:hover>input:checked~label:before {\n    opacity: 0.4\n}\n\n", ""]);
+exports.push([module.i, "\n.rating {\r\n    display: flex;\r\n    flex-direction: row-reverse;\r\n    justify-content: center\n}\n.rating>input {\r\n    display: none\n}\n.rating>label {\r\n    position: relative;\r\n    width: 1em;\r\n    font-size: 4vw;\r\n    color: #FF6565;\r\n    cursor: pointer\n}\n.rating>label::before {\r\n    content: \"\\2605\";\r\n    position: absolute;\r\n    opacity: 0\n}\n.rating>label:hover:before,\r\n.rating>label:hover~label:before {\r\n    opacity: 1 !important\n}\n.rating>input:checked~label:before {\r\n    opacity: 1\n}\n.rating:hover>input:checked~label:before {\r\n    opacity: 0.4\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -12250,7 +12255,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.zoom {\n  transition: transform 0.2s; /* Animation */\n}\n\n", ""]);
+exports.push([module.i, "\n.zoom {\r\n  transition: transform 0.2s; /* Animation */\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -12269,7 +12274,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card-img-top {\n  height: 15rem;\n  -o-object-fit: contain;\n     object-fit: contain;\n}\n.zoom {\n  transition: transform 0.2s; /* Animation */\n}\n.zoom:hover {\n  transform: scale(1.05); /* (150% zoom)*/\n}\n\n", ""]);
+exports.push([module.i, "\n.card-img-top {\r\n  height: 15rem;\r\n  -o-object-fit: contain;\r\n     object-fit: contain;\n}\n.zoom {\r\n  transition: transform 0.2s; /* Animation */\n}\n.zoom:hover {\r\n  transform: scale(1.05); /* (150% zoom)*/\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -55311,7 +55316,7 @@ var render = function() {
                               staticStyle: { color: "#ff6565" }
                             }),
                             _vm._v(
-                              "\n                                    " +
+                              "\r\n                                    " +
                                 _vm._s(_vm.errors.ref[0])
                             )
                           ]
@@ -55365,7 +55370,7 @@ var render = function() {
                               staticStyle: { color: "#ff6565" }
                             }),
                             _vm._v(
-                              "\n                                    " +
+                              "\r\n                                    " +
                                 _vm._s(_vm.errors.nom[0])
                             )
                           ]
@@ -55420,7 +55425,7 @@ var render = function() {
                               staticStyle: { color: "#ff6565" }
                             }),
                             _vm._v(
-                              "\n                                    " +
+                              "\r\n                                    " +
                                 _vm._s(_vm.errors.desc[0])
                             )
                           ]
@@ -55473,7 +55478,7 @@ var render = function() {
                               staticStyle: { color: "#ff6565" }
                             }),
                             _vm._v(
-                              "\n                                    " +
+                              "\r\n                                    " +
                                 _vm._s(_vm.errors.preu[0])
                             )
                           ]
@@ -55527,7 +55532,7 @@ var render = function() {
                               staticStyle: { color: "#ff6565" }
                             }),
                             _vm._v(
-                              "\n                                    " +
+                              "\r\n                                    " +
                                 _vm._s(_vm.errors.stock[0])
                             )
                           ]
@@ -55586,7 +55591,7 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\n                                    Edita producte\n                                "
+                          "\r\n                                    Edita producte\r\n                                "
                         )
                       ]
                     )
@@ -55961,65 +55966,71 @@ var render = function() {
         [
           _vm._m(0),
           _vm._v(" "),
-          _c("ul", { staticClass: "navbar-nav ml-auto" }, [
-            _c(
-              "li",
-              { staticClass: "nav-item dropdown" },
-              [
+          this.user.nom
+            ? _c("ul", { staticClass: "navbar-nav ml-auto" }, [
                 _c(
-                  "router-link",
-                  {
-                    staticClass: "nav-link",
-                    attrs: {
-                      to: "/cistella",
-                      "data-toggle": "dropdown",
-                      "aria-expanded": "false"
-                    }
-                  },
+                  "li",
+                  { staticClass: "nav-item dropdown" },
                   [
-                    _c("i", {
-                      staticClass: "fas fa-shopping-cart",
-                      staticStyle: { color: "#ff6565" }
-                    }),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "font-weight-light text-dark" }, [
-                      _vm._v("Cistella")
-                    ])
-                  ]
-                )
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "nav-item dropdown" },
-              [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "nav-link",
+                        attrs: {
+                          to: "/cistella",
+                          "data-toggle": "dropdown",
+                          "aria-expanded": "false"
+                        }
+                      },
+                      [
+                        _c("i", {
+                          staticClass: "fas fa-shopping-cart",
+                          staticStyle: { color: "#ff6565" }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          { staticClass: "font-weight-light text-dark" },
+                          [_vm._v("Cistella")]
+                        )
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
                 _c(
-                  "router-link",
-                  {
-                    staticClass: "nav-link",
-                    attrs: {
-                      to: "/wishlist",
-                      "data-toggle": "dropdown",
-                      "aria-expanded": "false"
-                    }
-                  },
+                  "li",
+                  { staticClass: "nav-item dropdown" },
                   [
-                    _c("i", {
-                      staticClass: "fas fa-heart",
-                      staticStyle: { color: "#ff6565" }
-                    }),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "font-weight-light text-dark" }, [
-                      _vm._v("Llista de desitjos")
-                    ])
-                  ]
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "nav-link",
+                        attrs: {
+                          to: "/wishlist",
+                          "data-toggle": "dropdown",
+                          "aria-expanded": "false"
+                        }
+                      },
+                      [
+                        _c("i", {
+                          staticClass: "fas fa-heart",
+                          staticStyle: { color: "#ff6565" }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          { staticClass: "font-weight-light text-dark" },
+                          [_vm._v("Llista de desitjos")]
+                        )
+                      ]
+                    )
+                  ],
+                  1
                 )
-              ],
-              1
-            )
-          ])
+              ])
+            : _vm._e()
         ]
       ),
       _vm._v(" "),
@@ -56444,6 +56455,31 @@ var render = function() {
                             )
                           ],
                           1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "li",
+                          { staticClass: "nav-item" },
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                staticClass: "nav-link",
+                                attrs: { to: "/contacte" }
+                              },
+                              [
+                                _c("i", {
+                                  staticClass:
+                                    "nav-icon fas fa-comments text-dark"
+                                }),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "text-dark" }, [
+                                  _vm._v("Contacte")
+                                ])
+                              ]
+                            )
+                          ],
+                          1
                         )
                       ]
                     )
@@ -56837,36 +56873,42 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-md-4 text-center" }, [
-                    _c("h5", [
-                      _c("li", { staticClass: "fab fa-instagram mr-1" }),
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(this.botiga.instagram) +
-                          "\n                  "
-                      )
-                    ])
+                    this.botiga.instagram
+                      ? _c("h5", [
+                          _c("li", { staticClass: "fab fa-instagram mr-1" }),
+                          _vm._v(
+                            "\n                    " +
+                              _vm._s(this.botiga.instagram) +
+                              "\n                  "
+                          )
+                        ])
+                      : _vm._e()
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-4 text-center" }, [
-                    _c("h5", [
-                      _c("li", { staticClass: "fab fa-facebook mr-1" }),
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(this.botiga.facebook) +
-                          "\n                  "
-                      )
-                    ])
+                    this.botiga.facebook
+                      ? _c("h5", [
+                          _c("li", { staticClass: "fab fa-facebook mr-1" }),
+                          _vm._v(
+                            "\n                    " +
+                              _vm._s(this.botiga.facebook) +
+                              "\n                  "
+                          )
+                        ])
+                      : _vm._e()
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-4 text-center" }, [
-                    _c("h5", [
-                      _c("li", { staticClass: "fab fa-twitter mr-1" }),
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(this.botiga.twitter) +
-                          "\n                  "
-                      )
-                    ])
+                    this.botiga.twitter
+                      ? _c("h5", [
+                          _c("li", { staticClass: "fab fa-twitter mr-1" }),
+                          _vm._v(
+                            "\n                    " +
+                              _vm._s(this.botiga.twitter) +
+                              "\n                  "
+                          )
+                        ])
+                      : _vm._e()
                   ])
                 ]),
                 _vm._v(" "),
@@ -59117,7 +59159,7 @@ var render = function() {
                           _c("div", { staticClass: "col-sm-5" }, [
                             _c("div", { staticClass: "description-block" }, [
                               _c("h5", { staticClass: "description-header" }, [
-                                _vm._v(_vm._s(botiga.productes.length))
+                                _vm._v(_vm._s(botiga.productes_total))
                               ]),
                               _vm._v(" "),
                               _c("small", { staticClass: "description-text" }, [
@@ -76076,8 +76118,9 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
  */
 
 try {
-  window.Popper = __webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js")["default"];
-  window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+  __webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js");
+
+  __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
   __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
 

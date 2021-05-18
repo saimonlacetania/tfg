@@ -109,19 +109,19 @@
                 <br />
                 <div class="row">
                   <div class="col-md-4 text-center">
-                    <h5>
+                    <h5 v-if="this.botiga.instagram">
                       <li class="fab fa-instagram mr-1"></li>
                       {{ this.botiga.instagram }}
                     </h5>
                   </div>
                   <div class="col-md-4 text-center">
-                    <h5>
+                    <h5 v-if="this.botiga.facebook">
                       <li class="fab fa-facebook mr-1"></li>
                       {{ this.botiga.facebook }}
                     </h5>
                   </div>
                   <div class="col-md-4 text-center">
-                    <h5>
+                    <h5 v-if="this.botiga.twitter">
                       <li class="fab fa-twitter mr-1"></li>
                       {{ this.botiga.twitter }}
                     </h5>

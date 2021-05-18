@@ -35,6 +35,9 @@ class BotigaController extends Controller
             $botiga->visites_total = 0;
             if($botiga->productes) {
                 foreach($botiga->productes as $producte) {
+                    if($producte->eliminat==0){
+                        $botiga->productes_total += 1;
+                    }
                     $botiga->visites_total += $producte->visites;
                 }   
             }          

@@ -92,7 +92,7 @@ class ProductesController extends Controller
     }
     public function producteBotiga($id)
     {
-        $producte = Producte::where("id_botiga", $id)->get();
+        $producte = Producte::where("id_botiga", $id)->where('actiu',1)->where('eliminat',0)->get();
         return $producte;
     }
     public function afegirProducte(Request $request)

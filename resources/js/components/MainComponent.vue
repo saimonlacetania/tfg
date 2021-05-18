@@ -26,7 +26,7 @@ html {
         </li>
       </ul>
       <!-- Right navbar links -->
-      <ul class="navbar-nav ml-auto">
+      <ul v-if="this.user.nom" class="navbar-nav ml-auto">
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
           <router-link
@@ -209,6 +209,12 @@ html {
                 <router-link class="nav-link" :to="'/productors'">
                   <i class="nav-icon fas fa-store text-dark"></i>
                   <p class="text-dark">Productors</p>
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link class="nav-link" :to="'/contacte'">
+                  <i class="nav-icon fas fa-comments text-dark"></i>
+                  <p class="text-dark">Contacte</p>
                 </router-link>
               </li>
             </ul>

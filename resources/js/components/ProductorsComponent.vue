@@ -64,7 +64,7 @@
                                 <!-- /.col -->
                                 <div class="col-sm-5">
                                     <div class="description-block">
-                                        <h5 class="description-header">{{ botiga.productes.length }}</h5>
+                                        <h5 class="description-header">{{ botiga.productes_total}}</h5>
                                         <small class="description-text">productes</small>
                                     </div>
                                     <!-- /.description-block -->
@@ -119,7 +119,7 @@ export default {
     return {
       botigues: "",
       keyword: "",      
-      productes: "",      
+     
       visites: 0,
     };
   },
