@@ -21,10 +21,10 @@ class BotigaController extends Controller
     {
         $id = Auth::id();
 
-        $botigues = Botiga::find($id)->with('user')
+        $botiga = Botiga::where('id_usuari', $id)->with('user')
             ->get();
         
-        return $botigues;
+        return $botiga;
     }
 
     public function productors()
