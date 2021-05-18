@@ -38,7 +38,7 @@
                   />
                   <img
                     v-else
-                    :src="'/images/avatars/default.jpg'"
+                    :src="'/images/botigues/default.jpg'"
                     class="profile-user-img img-fluid img-circle"
                     alt="User profile picture"
                   />
@@ -205,11 +205,17 @@
                             <form>
                               <div class="form-group">
                                 <div class="text-center">
-                                  <img
+                                  <img v-if="$data.form3.arxiu"
                                     class="profile-user-img img-fluid img-circle"
                                     :src="
                                       '/images/avatars/' + $data.form3.arxiu
                                     "
+                                    alt="User profile picture"
+                                  />
+                                  <img v-else
+                                    class="profile-user-img img-fluid img-circle"
+                                    :src="
+                                      '/images/botigues/default.jpg'"
                                     alt="User profile picture"
                                   />
                                 </div>
