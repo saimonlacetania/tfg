@@ -714,9 +714,10 @@ export default {
                 this.productes=res1.data;
             })
         }).then(()=> {
-          axios.get("/api/botiga").then(res2 => {
+          axios.get("/api/botiga").then((res2) => {
             
             this.botiga = res2.data[0];
+            console.log(this.botiga);
             this.user = this.botiga.user;
             
             this.form["id_botiga"] = this.botiga.id_usuari;
@@ -740,6 +741,7 @@ export default {
             this.form_botiga["cif"] = this.botiga.cif;
             this.form_botiga["img_perfil"] = this.botiga.img_perfil;
             this.form_botiga["img_portada"] = this.botiga.img_portada;
+            console.log(this.form_botiga);
         });  
         }).then(()=> {
             Swal.fire({

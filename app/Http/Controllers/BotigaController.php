@@ -21,7 +21,7 @@ class BotigaController extends Controller
     {
         $id = Auth::id();
 
-        $botigues = Botiga::find()
+        $botigues = Botiga::find($id)->with('user')
             ->get();
         
         return $botigues;
