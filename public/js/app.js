@@ -5109,7 +5109,6 @@ __webpack_require__.r(__webpack_exports__);
     });
     axios.get("/api/productesBotiga/" + this.$route.params.id).then(function (res) {
       _this.productes = res.data;
-      _this.visites = 0;
 
       _this.productes.forEach(function (producte) {
         _this.visites += parseInt(producte.visites);

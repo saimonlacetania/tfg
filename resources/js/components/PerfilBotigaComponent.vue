@@ -220,7 +220,6 @@ export default {
 
     axios.get("/api/productesBotiga/" + this.$route.params.id).then((res) => {
       this.productes = res.data;
-      this.visites = 0;
       this.productes.forEach((producte) => {
         this.visites += parseInt(producte.visites);
       });
