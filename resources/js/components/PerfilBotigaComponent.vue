@@ -7,7 +7,7 @@
             <!-- Widget: user widget style 1 -->
             <div class="card card-widget widget-user">
               <!-- Add the bg color to the header using any of the bg-* classes -->
-              <div
+              <div v-if="this.botiga.img_portada"
                 class="widget-user-header text-white"
                 id="portada"
                 :style="
@@ -21,6 +21,20 @@
                 </h3>
                 <h5 class="widget-user-desc text-right">{{ this.user.nom }}</h5>
               </div>
+
+              <div v-else
+                class="widget-user-header text-white"
+                id="portada"
+                :style="
+                  'background: url(/images/botigues/unnamed.jpg);'"
+              >
+                <h3 class="widget-user-username text-right">
+                  {{ this.botiga.nom }}
+                </h3>
+                <h5 class="widget-user-desc text-right">{{ this.user.nom }}</h5>
+              </div>
+
+
               <div class="widget-user-image pt-5">
                 <img
                   v-if="this.botiga.img_perfil"

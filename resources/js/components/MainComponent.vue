@@ -9,7 +9,7 @@ html {
 }
 
 .main-header {
-  color: #c22847 !important;
+  color: #ff6565 !important;
 }
 </style>
 
@@ -59,7 +59,7 @@ html {
       <!-- Logo -->
       <router-link :to="'/'" class="brand-link">
         <img
-          src="/images/logo_mercat.png"
+          src="/images/botigues/default.jpg"
           alt=""
           class="brand-image img-circle elevation-3"
           style="opacity: 0.8; background: #ff6565"
@@ -84,7 +84,7 @@ html {
             />
             <img
               v-else
-              :src="'/images/avatars/default.jpg'"
+              :src="'/images/botigues/default.jpg'"
               class="img-circle elevation-2"
               alt="User Image"
             />

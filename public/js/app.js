@@ -4946,6 +4946,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5037,6 +5051,12 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6358,6 +6378,12 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -12086,7 +12112,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.wrapper {\r\n  height: 100%;\n}\nbody,\r\nhtml {\r\n  height: 100%;\n}\n.main-header {\r\n  color: #c22847 !important;\n}\r\n", ""]);
+exports.push([module.i, "\n.wrapper {\r\n  height: 100%;\n}\nbody,\r\nhtml {\r\n  height: 100%;\n}\n.main-header {\r\n  color: #ff6565 !important;\n}\r\n", ""]);
 
 // exports
 
@@ -56001,7 +56027,7 @@ var render = function() {
             _c("img", {
               staticClass: "brand-image img-circle elevation-3",
               staticStyle: { opacity: "0.8", background: "#ff6565" },
-              attrs: { src: "/images/logo_mercat.png", alt: "" }
+              attrs: { src: "/images/botigues/default.jpg", alt: "" }
             }),
             _vm._v(" "),
             _c("span", { staticClass: "brand-text font-weight-light" }, [
@@ -56033,7 +56059,7 @@ var render = function() {
                           : _c("img", {
                               staticClass: "img-circle elevation-2",
                               attrs: {
-                                src: "/images/avatars/default.jpg",
+                                src: "/images/botigues/default.jpg",
                                 alt: "User Image"
                               }
                             })
@@ -56652,30 +56678,60 @@ var render = function() {
         _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-12" }, [
             _c("div", { staticClass: "card card-widget widget-user" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "widget-user-header text-white",
-                  style:
-                    "background: url(/images/botigues/" +
-                    this.botiga.img_portada +
-                    ");",
-                  attrs: { id: "portada" }
-                },
-                [
-                  _c("h3", { staticClass: "widget-user-username text-right" }, [
-                    _vm._v(
-                      "\n                " +
-                        _vm._s(this.botiga.nom) +
-                        "\n              "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("h5", { staticClass: "widget-user-desc text-right" }, [
-                    _vm._v(_vm._s(this.user.nom))
-                  ])
-                ]
-              ),
+              this.botiga.img_portada
+                ? _c(
+                    "div",
+                    {
+                      staticClass: "widget-user-header text-white",
+                      style:
+                        "background: url(/images/botigues/" +
+                        this.botiga.img_portada +
+                        ");",
+                      attrs: { id: "portada" }
+                    },
+                    [
+                      _c(
+                        "h3",
+                        { staticClass: "widget-user-username text-right" },
+                        [
+                          _vm._v(
+                            "\n                " +
+                              _vm._s(this.botiga.nom) +
+                              "\n              "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("h5", { staticClass: "widget-user-desc text-right" }, [
+                        _vm._v(_vm._s(this.user.nom))
+                      ])
+                    ]
+                  )
+                : _c(
+                    "div",
+                    {
+                      staticClass: "widget-user-header text-white",
+                      style: "background: url(/images/botigues/unnamed.jpg);",
+                      attrs: { id: "portada" }
+                    },
+                    [
+                      _c(
+                        "h3",
+                        { staticClass: "widget-user-username text-right" },
+                        [
+                          _vm._v(
+                            "\n                " +
+                              _vm._s(this.botiga.nom) +
+                              "\n              "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("h5", { staticClass: "widget-user-desc text-right" }, [
+                        _vm._v(_vm._s(this.user.nom))
+                      ])
+                    ]
+                  ),
               _vm._v(" "),
               _c("div", { staticClass: "widget-user-image pt-5" }, [
                 this.botiga.img_perfil
@@ -57003,7 +57059,7 @@ var render = function() {
                     : _c("img", {
                         staticClass: "profile-user-img img-fluid img-circle",
                         attrs: {
-                          src: "/images/avatars/default.jpg",
+                          src: "/images/botigues/default.jpg",
                           alt: "User profile picture"
                         }
                       })
@@ -57271,16 +57327,26 @@ var render = function() {
                                           "div",
                                           { staticClass: "text-center" },
                                           [
-                                            _c("img", {
-                                              staticClass:
-                                                "profile-user-img img-fluid img-circle",
-                                              attrs: {
-                                                src:
-                                                  "/images/avatars/" +
-                                                  _vm.$data.form3.arxiu,
-                                                alt: "User profile picture"
-                                              }
-                                            })
+                                            _vm.$data.form3.arxiu
+                                              ? _c("img", {
+                                                  staticClass:
+                                                    "profile-user-img img-fluid img-circle",
+                                                  attrs: {
+                                                    src:
+                                                      "/images/avatars/" +
+                                                      _vm.$data.form3.arxiu,
+                                                    alt: "User profile picture"
+                                                  }
+                                                })
+                                              : _c("img", {
+                                                  staticClass:
+                                                    "profile-user-img img-fluid img-circle",
+                                                  attrs: {
+                                                    src:
+                                                      "/images/botigues/default.jpg",
+                                                    alt: "User profile picture"
+                                                  }
+                                                })
                                           ]
                                         ),
                                         _vm._v(" "),
@@ -58949,35 +59015,63 @@ var render = function() {
                     "div",
                     { staticClass: "card card-widget widget-user zoom" },
                     [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "widget-user-header text-white",
-                          style:
-                            "background: url(/images/botigues/" +
-                            botiga.img_portada +
-                            "); background-size: cover;"
-                        },
-                        [
-                          _c(
-                            "h3",
+                      botiga.img_portada
+                        ? _c(
+                            "div",
                             {
-                              staticClass:
-                                "widget-user-username text-right text-navy"
+                              staticClass: "widget-user-header text-white",
+                              style:
+                                "background: url(/images/botigues/" +
+                                botiga.img_portada +
+                                "); background-size: cover;"
                             },
-                            [_vm._v(_vm._s(botiga.nom))]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "h5",
-                            {
-                              staticClass:
-                                "widget-user-desc text-right text-navy"
-                            },
-                            [_vm._v(_vm._s(botiga.poblacio))]
+                            [
+                              _c(
+                                "h3",
+                                {
+                                  staticClass:
+                                    "widget-user-username text-right text-navy"
+                                },
+                                [_vm._v(_vm._s(botiga.nom))]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "h5",
+                                {
+                                  staticClass:
+                                    "widget-user-desc text-right text-navy"
+                                },
+                                [_vm._v(_vm._s(botiga.poblacio))]
+                              )
+                            ]
                           )
-                        ]
-                      ),
+                        : _c(
+                            "div",
+                            {
+                              staticClass: "widget-user-header text-white",
+                              style:
+                                "background: url(/images/botigues/unnamed.jpg); background-size: cover;"
+                            },
+                            [
+                              _c(
+                                "h3",
+                                {
+                                  staticClass:
+                                    "widget-user-username text-right text-white"
+                                },
+                                [_vm._v(_vm._s(botiga.nom))]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "h5",
+                                {
+                                  staticClass:
+                                    "widget-user-desc text-right text-white"
+                                },
+                                [_vm._v(_vm._s(botiga.poblacio))]
+                              )
+                            ]
+                          ),
                       _vm._v(" "),
                       _c("div", { staticClass: "widget-user-image" }, [
                         botiga.img_perfil

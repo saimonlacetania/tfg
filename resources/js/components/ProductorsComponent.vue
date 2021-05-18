@@ -29,11 +29,17 @@
                     <!-- Widget: user widget style 1 -->
                     <div class="card card-widget widget-user zoom">
                     <!-- Add the bg color to the header using any of the bg-* classes -->
-                        <div class="widget-user-header text-white"
+                        <div v-if="botiga.img_portada" class="widget-user-header text-white"
                             :style="'background: url(/images/botigues/' + botiga.img_portada +'); background-size: cover;'
                             ">
                             <h3 class="widget-user-username text-right text-navy">{{ botiga.nom }}</h3>
                             <h5 class="widget-user-desc text-right text-navy">{{ botiga.poblacio }}</h5>
+                        </div>
+                        <div v-else class="widget-user-header text-white"
+                            :style="'background: url(/images/botigues/unnamed.jpg); background-size: cover;'
+                            ">
+                            <h3 class="widget-user-username text-right text-white">{{ botiga.nom }}</h3>
+                            <h5 class="widget-user-desc text-right text-white">{{ botiga.poblacio }}</h5>
                         </div>
 
                         <div class="widget-user-image">
