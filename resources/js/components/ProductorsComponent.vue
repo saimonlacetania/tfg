@@ -35,14 +35,17 @@
                             <h3 class="widget-user-username text-right text-navy">{{ botiga.nom }}</h3>
                             <h5 class="widget-user-desc text-right text-navy">{{ botiga.poblacio }}</h5>
                         </div>
+
                         <div class="widget-user-image">
-                            <img class="img-circle elevation-2" :src="'/images/botigues/' + botiga.img_perfil" alt="User Avatar">
+                            <img v-if="botiga.img_perfil" class="img-circle elevation-2" :src="'/images/botigues/' + botiga.img_perfil" alt="User Avatar">
+                            <img v-else class="img-circle elevation-2" :src="'/images/botigues/default.jpg'" alt="User Avatar">
                         </div>
+
                         <div class="card-footer">
                             <div class="row">
                                 <div class="col-sm-5">
                                     <div class="description-block">
-                                        <h6 class="description-header">3,200</h6>
+                                        <h6 class="description-header">{{ botiga.visites_total }}</h6>
                                         <small class="description-text">visites</small>
                                     </div>
                                     <!-- /.description-block -->
@@ -55,7 +58,7 @@
                                 <!-- /.col -->
                                 <div class="col-sm-5">
                                     <div class="description-block">
-                                        <h5 class="description-header">35</h5>
+                                        <h5 class="description-header">{{ botiga.productes.length }}</h5>
                                         <small class="description-text">productes</small>
                                     </div>
                                     <!-- /.description-block -->
@@ -115,8 +118,9 @@ export default {
     };
   },
   mounted() {
-    axios.get("/api/botigues").then((res) => {
-      console.log(res);
+
+    axios.get("/api/productors").then((res) => {
+      console.log(res.data);
       this.botigues = res.data;
     });
   },

@@ -160,7 +160,7 @@ html {
             </li>
             <li class="nav-item">
               <router-link class="nav-link" :to="'/productors'">
-                <i class="nav-icon fas fa-carrot text-dark"></i>
+                <i class="nav-icon fas fa-store text-dark"></i>
                 <p class="text-dark">Productors</p>
               </router-link>
             </li>
@@ -207,7 +207,7 @@ html {
               </li>
               <li class="nav-item">
                 <router-link class="nav-link" :to="'/productors'">
-                  <i class="nav-icon fas fa-carrot text-dark"></i>
+                  <i class="nav-icon fas fa-store text-dark"></i>
                   <p class="text-dark">Productors</p>
                 </router-link>
               </li>

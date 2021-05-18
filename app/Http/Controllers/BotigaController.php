@@ -27,12 +27,19 @@ class BotigaController extends Controller
         return $botigues;
     }
 
-    public function botigues()
+    public function productors()
     {
-
-        $botiga = Botiga::all();
+        $botigues = Botiga::with('productes')->get();
         
-        return $botiga;
+        foreach($botigues as $botiga) {
+            $botiga->visites_total = 0;
+            if($botiga->productes) {
+                foreach($botiga->productes as $producte) {
+                    $botiga->visites_total += $producte->visites;
+                }   
+            }          
+        }
+        return $botigues;
     }
 
     public function productesB()

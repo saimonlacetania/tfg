@@ -4744,8 +4744,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 //
 //
 //
@@ -4948,40 +4946,31 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = (_defineProperty({
+/* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      visites: 0,
       productes: "",
       botiga: "",
       id: "",
-      user: "",
-      visites: 0
+      user: ""
     };
   },
   mounted: function mounted() {
     var _this = this;
 
-    console.log("Perfil botiga mounted");
-    axios.get("/api/perfil/" + this.$route.params.id).then(function (res) {
-      _this.id = res.data.id;
-    });
-    axios.get("/api/productesBotiga/" + this.$route.params.id).then(function (res) {
-      _this.productes = res.data;
-
-      _this.productes.forEach(function (producte) {
-        _this.visites += parseInt(producte.visites);
-      });
-
-      console.log(_this.visites);
-    });
-    axios.get("/api/perfilBotiga/" + this.$route.params.id).then(function (res) {
-      _this.botiga = res.data[0];
-    });
+    this.loading();
     axios.get("/api/perfil/" + this.$route.params.id).then(function (res) {
       _this.id = res.data.id;
     }).then(function () {
       axios.get("/api/productesBotiga/" + _this.$route.params.id).then(function (res) {
         _this.productes = res.data;
+
+        _this.productes.forEach(function (producte) {
+          _this.visites += parseInt(producte.visites);
+        });
+
+        console.log(_this.visites);
       });
     }).then(function () {
       axios.get("/api/perfilBotiga/" + _this.$route.params.id).then(function (res) {
@@ -4997,15 +4986,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         timer: 1000,
         showConfirmButton: false,
         showClass: {
-          backdrop: 'swal2-noanimation',
+          backdrop: "swal2-noanimation",
           // disable backdrop animation
-          popup: '',
+          popup: "",
           // disable popup animation
-          icon: '' // disable icon animation
+          icon: "" // disable icon animation
 
         },
         hideClass: {
-          popup: '' // disable popup fade-out animation
+          popup: "" // disable popup fade-out animation
 
         },
         didOpen: function didOpen() {
@@ -5018,14 +5007,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     loading: function loading() {
       Swal.fire({
         title: '<span style="color: #ff6565">Carregant...</span>',
-        customClass: 'swal-wide',
+        customClass: "swal-wide",
         showConfirmButton: false,
         showClass: {
-          popup: '',
-          icon: ''
+          popup: "",
+          icon: ""
         },
         hideClass: {
-          popup: ''
+          popup: ""
         },
         didOpen: function didOpen() {
           Swal.showLoading();
@@ -5033,7 +5022,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     }
   }
-}, "methods", {}));
+});
 
 /***/ }),
 
@@ -6473,6 +6462,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -6485,8 +6477,8 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    axios.get("/api/botigues").then(function (res) {
-      console.log(res);
+    axios.get("/api/productors").then(function (res) {
+      console.log(res.data);
       _this.botigues = res.data;
     });
   }
@@ -56257,8 +56249,7 @@ var render = function() {
                               },
                               [
                                 _c("i", {
-                                  staticClass:
-                                    "nav-icon fas fa-carrot text-dark"
+                                  staticClass: "nav-icon fas fa-store text-dark"
                                 }),
                                 _vm._v(" "),
                                 _c("p", { staticClass: "text-dark" }, [
@@ -56410,8 +56401,7 @@ var render = function() {
                               },
                               [
                                 _c("i", {
-                                  staticClass:
-                                    "nav-icon fas fa-carrot text-dark"
+                                  staticClass: "nav-icon fas fa-store text-dark"
                                 }),
                                 _vm._v(" "),
                                 _c("p", { staticClass: "text-dark" }, [
@@ -58990,17 +58980,51 @@ var render = function() {
                       ),
                       _vm._v(" "),
                       _c("div", { staticClass: "widget-user-image" }, [
-                        _c("img", {
-                          staticClass: "img-circle elevation-2",
-                          attrs: {
-                            src: "/images/botigues/" + botiga.img_perfil,
-                            alt: "User Avatar"
-                          }
-                        })
+                        botiga.img_perfil
+                          ? _c("img", {
+                              staticClass: "img-circle elevation-2",
+                              attrs: {
+                                src: "/images/botigues/" + botiga.img_perfil,
+                                alt: "User Avatar"
+                              }
+                            })
+                          : _c("img", {
+                              staticClass: "img-circle elevation-2",
+                              attrs: {
+                                src: "/images/botigues/default.jpg",
+                                alt: "User Avatar"
+                              }
+                            })
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "card-footer" }, [
-                        _vm._m(1, true),
+                        _c("div", { staticClass: "row" }, [
+                          _c("div", { staticClass: "col-sm-5" }, [
+                            _c("div", { staticClass: "description-block" }, [
+                              _c("h6", { staticClass: "description-header" }, [
+                                _vm._v(_vm._s(botiga.visites_total))
+                              ]),
+                              _vm._v(" "),
+                              _c("small", { staticClass: "description-text" }, [
+                                _vm._v("visites")
+                              ])
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _vm._m(1, true),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-sm-5" }, [
+                            _c("div", { staticClass: "description-block" }, [
+                              _c("h5", { staticClass: "description-header" }, [
+                                _vm._v(_vm._s(botiga.productes.length))
+                              ]),
+                              _vm._v(" "),
+                              _c("small", { staticClass: "description-text" }, [
+                                _vm._v("productes")
+                              ])
+                            ])
+                          ])
+                        ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "row" }, [
                           _c("div", { staticClass: "col-md-12 text-center" }, [
@@ -59088,28 +59112,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-sm-5" }, [
-        _c("div", { staticClass: "description-block" }, [
-          _c("h6", { staticClass: "description-header" }, [_vm._v("3,200")]),
-          _vm._v(" "),
-          _c("small", { staticClass: "description-text" }, [_vm._v("visites")])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-sm-2" }, [
-        _c("div", { staticClass: "description-block" })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-sm-5" }, [
-        _c("div", { staticClass: "description-block" }, [
-          _c("h5", { staticClass: "description-header" }, [_vm._v("35")]),
-          _vm._v(" "),
-          _c("small", { staticClass: "description-text" }, [
-            _vm._v("productes")
-          ])
-        ])
-      ])
+    return _c("div", { staticClass: "col-sm-2" }, [
+      _c("div", { staticClass: "description-block" })
     ])
   }
 ]

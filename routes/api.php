@@ -69,7 +69,7 @@ Route::get('productesB', 'BotigaController@productesB');
 Route::get('categories', 'CategoriesController@categories');
 Route::post('afegirProducte', 'ProductesController@afegirProducte');
 Route::post('modifyShop', 'BotigaController@modifica_botiga');
-Route::get('botigues', 'BotigaController@botigues');
+Route::get('productors', 'BotigaController@productors');
 
 Route::get('perfil/{id}', 'BotigaController@botigaId');
 Route::get('productesBotiga/{id}', 'ProductesController@producteBotiga');
