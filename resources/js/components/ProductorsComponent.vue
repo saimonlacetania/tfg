@@ -30,7 +30,7 @@
                     <div class="card card-widget widget-user zoom">
                     <!-- Add the bg color to the header using any of the bg-* classes -->
                         <div class="widget-user-header text-white"
-                            :style="'background: url(/images/botigues/' + botiga.img_portada +');'
+                            :style="'background: url(/images/botigues/' + botiga.img_portada +'); background-size: cover;'
                             ">
                             <h3 class="widget-user-username text-right text-navy">{{ botiga.nom }}</h3>
                             <h5 class="widget-user-desc text-right text-navy">{{ botiga.poblacio }}</h5>
@@ -40,7 +40,7 @@
                         </div>
                         <div class="card-footer">
                             <div class="row">
-                                <div class="col-sm-4">
+                                <div class="col-sm-5">
                                     <div class="description-block">
                                         <h6 class="description-header">3,200</h6>
                                         <small class="description-text">visites</small>
@@ -48,12 +48,12 @@
                                     <!-- /.description-block -->
                                 </div>
                                 <!-- /.col -->
-                                <div class="col-sm-4">
+                                <div class="col-sm-2">
                                     <div class="description-block"></div>
                                     <!-- /.description-block -->
                                 </div>
                                 <!-- /.col -->
-                                <div class="col-sm-4">
+                                <div class="col-sm-5">
                                     <div class="description-block">
                                         <h5 class="description-header">35</h5>
                                         <small class="description-text">productes</small>

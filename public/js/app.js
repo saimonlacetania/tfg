@@ -4777,6 +4777,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -56730,6 +56736,31 @@ var render = function() {
                             )
                           ],
                           1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "li",
+                          { staticClass: "nav-item" },
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                staticClass: "nav-link",
+                                attrs: { to: "/productors" }
+                              },
+                              [
+                                _c("i", {
+                                  staticClass:
+                                    "nav-icon fas fa-carrot text-dark"
+                                }),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "text-dark" }, [
+                                  _vm._v("Productors")
+                                ])
+                              ]
+                            )
+                          ],
+                          1
                         )
                       ]
                     )
@@ -59267,7 +59298,7 @@ var render = function() {
                           style:
                             "background: url(/images/botigues/" +
                             botiga.img_portada +
-                            ");"
+                            "); background-size: cover;"
                         },
                         [
                           _c(
@@ -59390,7 +59421,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-sm-4" }, [
+      _c("div", { staticClass: "col-sm-5" }, [
         _c("div", { staticClass: "description-block" }, [
           _c("h6", { staticClass: "description-header" }, [_vm._v("3,200")]),
           _vm._v(" "),
@@ -59398,11 +59429,11 @@ var staticRenderFns = [
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-sm-4" }, [
+      _c("div", { staticClass: "col-sm-2" }, [
         _c("div", { staticClass: "description-block" })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-sm-4" }, [
+      _c("div", { staticClass: "col-sm-5" }, [
         _c("div", { staticClass: "description-block" }, [
           _c("h5", { staticClass: "description-header" }, [_vm._v("35")]),
           _vm._v(" "),
