@@ -70,12 +70,30 @@ export default {
   },
 
   mounted() {
+    this.loading();
     axios.get("/api/user").then((res) => {
       this.user = res.data;
-    });
-    axios.get("/api/veureWishlist").then((res2) => {
+    }).then(()=>{
+      axios.get("/api/veureWishlist").then((res2) => {
       this.wishlist = res2.data;
       console.log(this.wishlist);
+      });
+    }).then(()=> {
+      Swal.fire({
+        title:'<span style="color: #ff6565">Carregant...</span>', 
+        timer:1000 ,
+        showConfirmButton: false,
+        showClass: {
+        backdrop: 'swal2-noanimation', // disable backdrop animation
+        popup: '',                     // disable popup animation
+        icon: ''                       // disable icon animation
+        },
+        hideClass: {
+          popup: '',                     // disable popup fade-out animation
+        },
+        didOpen: () => {
+          Swal.showLoading()
+        },});
     });
   },
   methods: {
@@ -93,6 +111,23 @@ export default {
           toast.addEventListener("mouseleave", Swal.resumeTimer);
         },
       });
+    },
+    loading() {
+      Swal.fire({
+        title: '<span style="color: #ff6565">Carregant...</span>',
+        customClass: 'swal-wide',
+        showConfirmButton: false,
+        showClass: {
+          popup: '',
+          icon: ''
+        },
+        hideClass: {
+          popup: '',
+        },
+        didOpen: () => {
+          Swal.showLoading()
+        }
+      })
     },
     eliminarWishlist(id) {
       axios.post("/api/eliminarWishlist/" + id).then((res) => {

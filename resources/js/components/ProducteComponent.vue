@@ -229,18 +229,37 @@ export default {
     };
   },
   mounted() {
-    console.log("detall montat");
+    this.loading();
+
     axios.get("/api/producte/" + this.$route.params.id).then((res) => {
       console.log(res);
       this.producte = res.data;
-    });
-    axios.get("/api/comentaris/" + this.$route.params.id).then((res) => {
+    }).then(()=>{
+      axios.get("/api/comentaris/" + this.$route.params.id).then((res) => {
       console.log(res);
       this.comentaris = res.data;
-    });
-    axios.get("/api/user").then((res) => {
+      });
+    }).then(()=>{
+      axios.get("/api/user").then((res) => {
         this.user = res.data;
       });
+    }).then(()=> {
+      Swal.fire({
+        title:'<span style="color: #ff6565">Carregant...</span>', 
+        timer:1000 ,
+        showConfirmButton: false,
+        showClass: {
+        backdrop: 'swal2-noanimation', // disable backdrop animation
+        popup: '',                     // disable popup animation
+        icon: ''                       // disable icon animation
+        },
+        hideClass: {
+          popup: '',                     // disable popup fade-out animation
+        },
+        didOpen: () => {
+          Swal.showLoading()
+        },});
+    })
   },
   methods: {
     pujarComentari() {
@@ -352,6 +371,23 @@ export default {
           this.toastIncorrecte();
           return false;
         });
+    },
+    loading() {
+      Swal.fire({
+          title: '<span style="color: #ff6565">Carregant...</span>',
+          customClass: 'swal-wide',
+          showConfirmButton: false,
+          showClass: {
+          popup: '',
+          icon: ''
+          },
+          hideClass: {
+          popup: '',
+          },
+          didOpen: () => {
+          Swal.showLoading()
+          }
+      })
     },
   },
 };

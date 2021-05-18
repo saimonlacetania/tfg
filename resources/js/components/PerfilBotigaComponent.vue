@@ -202,38 +202,68 @@
 
 <script>
 export default {
-  data() {
-    return {
-      productes: "",
-      botiga: "",
-      id: "",
-      user: "",
-      visites: 0,
-    };
-  },
-  mounted() {
-    console.log("Perfil botiga mounted");
+    data() {
+        return {
+            productes: "",
+            botiga:"",
+            id:"",
+            user:""
+        };
+    },
+    mounted() {
+        this.loading();
 
-    axios.get("/api/perfil/" + this.$route.params.id).then((res) => {
-      this.id = res.data.id;
-    });
-
-    axios.get("/api/productesBotiga/" + this.$route.params.id).then((res) => {
-      this.productes = res.data;
-      this.visites = 0;
-      this.productes.forEach((producte) => {
-        this.visites += parseInt(producte.visites);
-      });
-      console.log(this.visites);
-    });
-
-    axios.get("/api/perfilBotiga/" + this.$route.params.id).then((res) => {
-      this.botiga = res.data[0];
-    });
-
-    axios.get("/api/user/" + this.$route.params.id).then((res) => {
-      this.user = res.data[0];
-    });
+        axios.get("/api/perfil/" + this.$route.params.id).then((res) => {
+            this.id = res.data.id;
+        }).then(()=>{
+            axios.get("/api/productesBotiga/"+this.$route.params.id).then((res) => {
+            this.productes = res.data;
+            });
+        }).then(()=>{
+            axios.get("/api/perfilBotiga/"+this.$route.params.id).then((res) => {
+            this.botiga = res.data[0];
+            });
+        }).then(()=>{
+            axios.get("/api/user/" + this.$route.params.id).then((res) => {
+            this.user = res.data[0];
+            });
+        }).then(()=> {
+            Swal.fire({
+                title:'<span style="color: #ff6565">Carregant...</span>', 
+                timer:1000 ,
+                showConfirmButton: false,
+                showClass: {
+                backdrop: 'swal2-noanimation', // disable backdrop animation
+                popup: '',                     // disable popup animation
+                icon: ''                       // disable icon animation
+                },
+                hideClass: {
+                popup: '',                     // disable popup fade-out animation
+                },
+                didOpen: () => {
+                Swal.showLoading()
+                },
+            });
+        })
+    },
+  methods: {
+      loading() {
+        Swal.fire({
+            title: '<span style="color: #ff6565">Carregant...</span>',
+            customClass: 'swal-wide',
+            showConfirmButton: false,
+            showClass: {
+            popup: '',
+            icon: ''
+            },
+            hideClass: {
+            popup: '',
+            },
+            didOpen: () => {
+            Swal.showLoading()
+            }
+        })
+    },
   },
   methods: {},
 };
