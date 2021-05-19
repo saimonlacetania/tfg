@@ -6507,12 +6507,73 @@ __webpack_require__.r(__webpack_exports__);
       visites: 0
     };
   },
-  mounted: function mounted() {
-    var _this = this;
+  methods: {
+    loading: function loading() {
+      Swal.fire({
+        title: '<span style="color: #ff6565">Carregant...</span>',
+        customClass: 'swal-wide',
+        showConfirmButton: false,
+        showClass: {
+          popup: '',
+          icon: ''
+        },
+        hideClass: {
+          popup: ''
+        },
+        didOpen: function didOpen() {
+          Swal.showLoading();
+        }
+      });
+    },
+    cercaProductors: function cercaProductors() {
+      var _this = this;
 
+      if (this.keyword == "" || this.keyword == " ") {
+        axios.get("/api/productors").then(function (res) {
+          console.log(res);
+          _this.botigues = res.data;
+        });
+      } else {
+        axios.get('api/productorsCerca/' + this.keyword).then(function (res) {
+          console.log(res.data);
+          _this.botigues = res.data;
+        });
+      }
+    }
+  },
+  watch: {
+    keyword: function keyword(after, before) {
+      this.cercaProductors();
+    }
+  },
+  mounted: function mounted() {
+    var _this2 = this;
+
+    this.loading();
     axios.get("/api/productors").then(function (res) {
       console.log(res.data);
-      _this.botigues = res.data;
+      _this2.botigues = res.data;
+    }).then(function () {
+      Swal.fire({
+        title: '<span style="color: #ff6565">Carregant...</span>',
+        timer: 1000,
+        showConfirmButton: false,
+        showClass: {
+          backdrop: 'swal2-noanimation',
+          // disable backdrop animation
+          popup: '',
+          // disable popup animation
+          icon: '' // disable icon animation
+
+        },
+        hideClass: {
+          popup: '' // disable popup fade-out animation
+
+        },
+        didOpen: function didOpen() {
+          Swal.showLoading();
+        }
+      });
     });
   }
 });
@@ -56036,16 +56097,13 @@ var render = function() {
       _vm._v(" "),
       _c(
         "aside",
-        {
-          staticClass:
-            "main-sidebar sidebar-light elevation-4 sidebar-no-expand"
-        },
+        { staticClass: "main-sidebar sidebar-light elevation-4" },
         [
           _c("router-link", { staticClass: "brand-link", attrs: { to: "/" } }, [
             _c("img", {
               staticClass: "brand-image img-circle elevation-3",
               staticStyle: { opacity: "0.8", background: "#ff6565" },
-              attrs: { src: "/images/botigues/default.jpg", alt: "" }
+              attrs: { src: "/images/logo.jpg", alt: "" }
             }),
             _vm._v(" "),
             _c("span", { staticClass: "brand-text font-weight-light" }, [
@@ -58461,234 +58519,238 @@ var render = function() {
                               ])
                             ]),
                             _vm._v(" "),
-                            _c("form", [
-                              _c("div", { staticClass: "form-group" }, [
-                                _c("label", [_vm._v("Escriu un comentari")]),
-                                _vm._v(" "),
-                                _c("textarea", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.form.descripcio,
-                                      expression: "form.descripcio"
-                                    }
-                                  ],
-                                  staticClass: "form-control",
-                                  staticStyle: { "min-width": "100%" },
-                                  attrs: {
-                                    rows: "3",
-                                    placeholder: "Escriu aqui..."
-                                  },
-                                  domProps: { value: _vm.form.descripcio },
-                                  on: {
-                                    input: function($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.$set(
-                                        _vm.form,
-                                        "descripcio",
-                                        $event.target.value
-                                      )
-                                    }
-                                  }
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "rating" }, [
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.form.valoracio,
-                                      expression: "form.valoracio"
-                                    }
-                                  ],
-                                  attrs: {
-                                    type: "radio",
-                                    name: "rating",
-                                    value: "5",
-                                    id: "5"
-                                  },
-                                  domProps: {
-                                    checked: _vm._q(_vm.form.valoracio, "5")
-                                  },
-                                  on: {
-                                    change: function($event) {
-                                      return _vm.$set(
-                                        _vm.form,
-                                        "valoracio",
-                                        "5"
-                                      )
-                                    }
-                                  }
-                                }),
-                                _c("label", { attrs: { for: "5" } }, [
-                                  _vm._v("☆")
-                                ]),
-                                _vm._v(" "),
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.form.valoracio,
-                                      expression: "form.valoracio"
-                                    }
-                                  ],
-                                  attrs: {
-                                    type: "radio",
-                                    name: "rating",
-                                    value: "4",
-                                    id: "4"
-                                  },
-                                  domProps: {
-                                    checked: _vm._q(_vm.form.valoracio, "4")
-                                  },
-                                  on: {
-                                    change: function($event) {
-                                      return _vm.$set(
-                                        _vm.form,
-                                        "valoracio",
-                                        "4"
-                                      )
-                                    }
-                                  }
-                                }),
-                                _c("label", { attrs: { for: "4" } }, [
-                                  _vm._v("☆")
-                                ]),
-                                _vm._v(" "),
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.form.valoracio,
-                                      expression: "form.valoracio"
-                                    }
-                                  ],
-                                  attrs: {
-                                    type: "radio",
-                                    name: "rating",
-                                    value: "3",
-                                    id: "3"
-                                  },
-                                  domProps: {
-                                    checked: _vm._q(_vm.form.valoracio, "3")
-                                  },
-                                  on: {
-                                    change: function($event) {
-                                      return _vm.$set(
-                                        _vm.form,
-                                        "valoracio",
-                                        "3"
-                                      )
-                                    }
-                                  }
-                                }),
-                                _c("label", { attrs: { for: "3" } }, [
-                                  _vm._v("☆")
-                                ]),
-                                _vm._v(" "),
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.form.valoracio,
-                                      expression: "form.valoracio"
-                                    }
-                                  ],
-                                  attrs: {
-                                    type: "radio",
-                                    name: "rating",
-                                    value: "2",
-                                    id: "2"
-                                  },
-                                  domProps: {
-                                    checked: _vm._q(_vm.form.valoracio, "2")
-                                  },
-                                  on: {
-                                    change: function($event) {
-                                      return _vm.$set(
-                                        _vm.form,
-                                        "valoracio",
-                                        "2"
-                                      )
-                                    }
-                                  }
-                                }),
-                                _c("label", { attrs: { for: "2" } }, [
-                                  _vm._v("☆")
-                                ]),
-                                _vm._v(" "),
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.form.valoracio,
-                                      expression: "form.valoracio"
-                                    }
-                                  ],
-                                  attrs: {
-                                    type: "radio",
-                                    name: "rating",
-                                    value: "1",
-                                    id: "1"
-                                  },
-                                  domProps: {
-                                    checked: _vm._q(_vm.form.valoracio, "1")
-                                  },
-                                  on: {
-                                    change: function($event) {
-                                      return _vm.$set(
-                                        _vm.form,
-                                        "valoracio",
-                                        "1"
-                                      )
-                                    }
-                                  }
-                                }),
-                                _c("label", { attrs: { for: "1" } }, [
-                                  _vm._v("☆")
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "row" }, [
-                                _c("div", { staticClass: "col-md-4" }),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-md-4" }, [
-                                  _c(
-                                    "button",
-                                    {
-                                      staticClass:
-                                        "btn btn-block text-center text-light zoom",
-                                      staticStyle: {
-                                        "background-color": "#ff6565"
+                            _vm.user.nom
+                              ? _c("form", [
+                                  _c("div", { staticClass: "form-group" }, [
+                                    _c("label", [
+                                      _vm._v("Escriu un comentari")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("textarea", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.form.descripcio,
+                                          expression: "form.descripcio"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      staticStyle: { "min-width": "100%" },
+                                      attrs: {
+                                        rows: "3",
+                                        placeholder: "Escriu aqui..."
                                       },
-                                      attrs: { type: "submit" },
+                                      domProps: { value: _vm.form.descripcio },
                                       on: {
-                                        click: function($event) {
-                                          $event.preventDefault()
-                                          return _vm.pujarComentari($event)
+                                        input: function($event) {
+                                          if ($event.target.composing) {
+                                            return
+                                          }
+                                          _vm.$set(
+                                            _vm.form,
+                                            "descripcio",
+                                            $event.target.value
+                                          )
                                         }
                                       }
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n                              Enviar\n                            "
+                                    })
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "rating" }, [
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.form.valoracio,
+                                          expression: "form.valoracio"
+                                        }
+                                      ],
+                                      attrs: {
+                                        type: "radio",
+                                        name: "rating",
+                                        value: "5",
+                                        id: "5"
+                                      },
+                                      domProps: {
+                                        checked: _vm._q(_vm.form.valoracio, "5")
+                                      },
+                                      on: {
+                                        change: function($event) {
+                                          return _vm.$set(
+                                            _vm.form,
+                                            "valoracio",
+                                            "5"
+                                          )
+                                        }
+                                      }
+                                    }),
+                                    _c("label", { attrs: { for: "5" } }, [
+                                      _vm._v("☆")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.form.valoracio,
+                                          expression: "form.valoracio"
+                                        }
+                                      ],
+                                      attrs: {
+                                        type: "radio",
+                                        name: "rating",
+                                        value: "4",
+                                        id: "4"
+                                      },
+                                      domProps: {
+                                        checked: _vm._q(_vm.form.valoracio, "4")
+                                      },
+                                      on: {
+                                        change: function($event) {
+                                          return _vm.$set(
+                                            _vm.form,
+                                            "valoracio",
+                                            "4"
+                                          )
+                                        }
+                                      }
+                                    }),
+                                    _c("label", { attrs: { for: "4" } }, [
+                                      _vm._v("☆")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.form.valoracio,
+                                          expression: "form.valoracio"
+                                        }
+                                      ],
+                                      attrs: {
+                                        type: "radio",
+                                        name: "rating",
+                                        value: "3",
+                                        id: "3"
+                                      },
+                                      domProps: {
+                                        checked: _vm._q(_vm.form.valoracio, "3")
+                                      },
+                                      on: {
+                                        change: function($event) {
+                                          return _vm.$set(
+                                            _vm.form,
+                                            "valoracio",
+                                            "3"
+                                          )
+                                        }
+                                      }
+                                    }),
+                                    _c("label", { attrs: { for: "3" } }, [
+                                      _vm._v("☆")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.form.valoracio,
+                                          expression: "form.valoracio"
+                                        }
+                                      ],
+                                      attrs: {
+                                        type: "radio",
+                                        name: "rating",
+                                        value: "2",
+                                        id: "2"
+                                      },
+                                      domProps: {
+                                        checked: _vm._q(_vm.form.valoracio, "2")
+                                      },
+                                      on: {
+                                        change: function($event) {
+                                          return _vm.$set(
+                                            _vm.form,
+                                            "valoracio",
+                                            "2"
+                                          )
+                                        }
+                                      }
+                                    }),
+                                    _c("label", { attrs: { for: "2" } }, [
+                                      _vm._v("☆")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("input", {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.form.valoracio,
+                                          expression: "form.valoracio"
+                                        }
+                                      ],
+                                      attrs: {
+                                        type: "radio",
+                                        name: "rating",
+                                        value: "1",
+                                        id: "1"
+                                      },
+                                      domProps: {
+                                        checked: _vm._q(_vm.form.valoracio, "1")
+                                      },
+                                      on: {
+                                        change: function($event) {
+                                          return _vm.$set(
+                                            _vm.form,
+                                            "valoracio",
+                                            "1"
+                                          )
+                                        }
+                                      }
+                                    }),
+                                    _c("label", { attrs: { for: "1" } }, [
+                                      _vm._v("☆")
+                                    ])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "row" }, [
+                                    _c("div", { staticClass: "col-md-4" }),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-md-4" }, [
+                                      _c(
+                                        "button",
+                                        {
+                                          staticClass:
+                                            "btn btn-block text-center text-light zoom",
+                                          staticStyle: {
+                                            "background-color": "#ff6565"
+                                          },
+                                          attrs: { type: "submit" },
+                                          on: {
+                                            click: function($event) {
+                                              $event.preventDefault()
+                                              return _vm.pujarComentari($event)
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                              Enviar\n                            "
+                                          )
+                                        ]
                                       )
-                                    ]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-md-4" })
-                              ])
-                            ])
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-md-4" })
+                                  ])
+                                ])
+                              : _vm._e()
                           ]
                         )
                       ]

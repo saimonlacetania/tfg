@@ -128,7 +128,7 @@
                     </div>
                     <!-- /Comentaris -->
                     <!-- Escriure comentari -->
-                    <form>    
+                    <form v-if="user.nom">    
                           <!-- textarea -->
                           <div class="form-group">
                             <label>Escriu un comentari</label>

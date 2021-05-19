@@ -45,6 +45,17 @@ class BotigaController extends Controller
         return $botigues;
     }
 
+    public function productorsCerca($keyword)
+    {
+        if ($keyword == "" || $keyword == " ") {
+            $productorsCerca = Botiga::with('productes')->get();
+        } else {
+            $productorsCerca = Botiga::with('productes')->where('nom', 'LIKE', '%' . $keyword . '%')->get();
+        }
+
+        return $productorsCerca;
+    }
+
     public function productesB()
     {
         $id = Auth::id();

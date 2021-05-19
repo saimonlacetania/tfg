@@ -123,12 +123,65 @@ export default {
       visites: 0,
     };
   },
+  methods: {
+    loading() {
+      Swal.fire({
+          title: '<span style="color: #ff6565">Carregant...</span>',
+          customClass: 'swal-wide',
+          showConfirmButton: false,
+          showClass: {
+          popup: '',
+          icon: ''
+          },
+          hideClass: {
+          popup: '',
+          },
+          didOpen: () => {
+          Swal.showLoading()
+          }
+      })
+    },
+    cercaProductors() {
+      if (this.keyword=="" || this.keyword==" ") {
+        axios.get("/api/productors").then((res) => {
+          console.log(res);
+          this.botigues = res.data;
+        });
+      } else {
+        axios.get('api/productorsCerca/'+this.keyword).then((res) => {
+          console.log(res.data);
+          this.botigues = res.data;
+        });
+      }
+    }
+  },
+  watch: {
+        keyword(after, before) {
+            this.cercaProductors();
+        }
+    },
   mounted() {
-
+    this.loading();
     axios.get("/api/productors").then((res) => {
       console.log(res.data);
       this.botigues = res.data;
-    });
+    }).then(()=> {
+      Swal.fire({
+        title:'<span style="color: #ff6565">Carregant...</span>', 
+        timer:1000 ,
+        showConfirmButton: false,
+        showClass: {
+        backdrop: 'swal2-noanimation', // disable backdrop animation
+        popup: '',                     // disable popup animation
+        icon: ''                       // disable icon animation
+        },
+        hideClass: {
+          popup: '',                     // disable popup fade-out animation
+        },
+        didOpen: () => {
+          Swal.showLoading()
+        },});
+    })
   },
 };
 </script>

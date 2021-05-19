@@ -55,11 +55,11 @@ html {
     <!-- /.navbar -->
 
     <!-- MENÚ ESQUERRA -->
-    <aside class="main-sidebar sidebar-light elevation-4 sidebar-no-expand">
+    <aside class="main-sidebar sidebar-light elevation-4">
       <!-- Logo -->
       <router-link :to="'/'" class="brand-link">
         <img
-          src="/images/botigues/default.jpg"
+          src="/images/logo.jpg"
           alt=""
           class="brand-image img-circle elevation-3"
           style="opacity: 0.8; background: #ff6565"
