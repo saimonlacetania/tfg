@@ -23,7 +23,8 @@
         </div>
         <br>
         <!-- /.col -->
-        <div class="content w-100">
+
+        <div v-if="productes.length>0" class="content w-100">
           <div class="container-fluid">
             <div class="row">
               <div
@@ -78,6 +79,14 @@
           </div>
           <!-- /.container-fluid -->
         </div>
+        <div v-else class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4 mt-3">
+              <hr>
+              <h3><i class="fas fa-heart-broken" style="color:#ff6565;"></i> Oops! <br><small>No hi ha resultats per el que busques.</small></h3>
+          </div>
+          <div class="col-md-4"></div>         
+        </div>
       </div>
       <!-- /.container-fluid -->
     </div>
@@ -101,15 +110,15 @@
 export default {
   data() {
     return {
-      productes: "",
+      productes: "a",
       keyword: ""
     };
   },
   mounted() {
     this.loading();
     axios.get("/api/productes").then((res) => {
-      console.log(res);
       this.productes = res.data;
+      console.log(res);
     }).then(()=> {
       Swal.fire({
         title:'<span style="color: #ff6565">Carregant...</span>', 

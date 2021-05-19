@@ -113,7 +113,7 @@ html {
                     <p class="text-dark">Veure perfil</p>
                   </router-link>
                 </li>
-            <li class="nav-item" v-if="this.user.botiga">
+            <li class="nav-item" style="display: block;" v-if="this.user.botiga">
               <a class="nav-link" href="javascript:void(null);">
                 <i class="nav-icon fas fa-store-alt text-dark"></i>
                 <p class="text-dark">
@@ -255,6 +255,8 @@ html {
 </style>
 <script>
 import PerfilBotigaComponent from './PerfilBotigaComponent.vue';
+import '../bootstrap.js';
+import '../app.js';
 export default {
   components: { PerfilBotigaComponent },
   

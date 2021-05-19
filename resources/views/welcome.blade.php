@@ -24,6 +24,7 @@
         @yield('content')
         <router-view :key="$route.fullPath"></router-view>
     </div>
+    <script src="{{ asset('/js/app.js') }}" defer></script>
 </body>
 
 </html>

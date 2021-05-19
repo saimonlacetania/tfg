@@ -4392,6 +4392,9 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _PerfilBotigaComponent_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PerfilBotigaComponent.vue */ "./resources/js/components/PerfilBotigaComponent.vue");
+/* harmony import */ var _bootstrap_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../bootstrap.js */ "./resources/js/bootstrap.js");
+/* harmony import */ var _bootstrap_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_bootstrap_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _app_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../app.js */ "./resources/js/app.js");
 //
 //
 //
@@ -4647,6 +4650,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -6297,10 +6302,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      productes: "",
+      productes: "a",
       keyword: ""
     };
   },
@@ -6309,8 +6323,8 @@ __webpack_require__.r(__webpack_exports__);
 
     this.loading();
     axios.get("/api/productes").then(function (res) {
-      console.log(res);
       _this.productes = res.data;
+      console.log(res);
     }).then(function () {
       Swal.fire({
         title: '<span style="color: #ff6565">Carregant...</span>',
@@ -6499,10 +6513,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      botigues: "",
+      botigues: "a",
       keyword: "",
       visites: 0
     };
@@ -56191,104 +56213,111 @@ var render = function() {
                         ),
                         _vm._v(" "),
                         this.user.botiga
-                          ? _c("li", { staticClass: "nav-item" }, [
-                              _vm._m(1),
-                              _vm._v(" "),
-                              _c(
-                                "ul",
-                                {
-                                  staticClass:
-                                    "nav nav-treeview nav-child-indent"
-                                },
-                                [
-                                  _c(
-                                    "li",
-                                    { staticClass: "nav-item" },
-                                    [
-                                      _c(
-                                        "router-link",
-                                        {
-                                          staticClass: "nav-link",
-                                          attrs: { to: "/botiga" }
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass:
-                                              "fas fa-feather-alt nav-icon text-dark"
-                                          }),
-                                          _vm._v(" "),
-                                          _c(
-                                            "p",
-                                            { staticClass: "text-dark" },
-                                            [_vm._v("Perfil")]
-                                          )
-                                        ]
-                                      )
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "li",
-                                    { staticClass: "nav-item" },
-                                    [
-                                      _c(
-                                        "router-link",
-                                        {
-                                          staticClass: "nav-link",
-                                          attrs: {
-                                            to: {
-                                              name: "PerfilBotiga",
-                                              params: { id: _vm.user.id }
+                          ? _c(
+                              "li",
+                              {
+                                staticClass: "nav-item",
+                                staticStyle: { display: "block" }
+                              },
+                              [
+                                _vm._m(1),
+                                _vm._v(" "),
+                                _c(
+                                  "ul",
+                                  {
+                                    staticClass:
+                                      "nav nav-treeview nav-child-indent"
+                                  },
+                                  [
+                                    _c(
+                                      "li",
+                                      { staticClass: "nav-item" },
+                                      [
+                                        _c(
+                                          "router-link",
+                                          {
+                                            staticClass: "nav-link",
+                                            attrs: { to: "/botiga" }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass:
+                                                "fas fa-feather-alt nav-icon text-dark"
+                                            }),
+                                            _vm._v(" "),
+                                            _c(
+                                              "p",
+                                              { staticClass: "text-dark" },
+                                              [_vm._v("Perfil")]
+                                            )
+                                          ]
+                                        )
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "li",
+                                      { staticClass: "nav-item" },
+                                      [
+                                        _c(
+                                          "router-link",
+                                          {
+                                            staticClass: "nav-link",
+                                            attrs: {
+                                              to: {
+                                                name: "PerfilBotiga",
+                                                params: { id: _vm.user.id }
+                                              }
                                             }
-                                          }
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass:
-                                              "fas fa-gem nav-icon text-dark"
-                                          }),
-                                          _vm._v(" "),
-                                          _c(
-                                            "p",
-                                            { staticClass: "text-dark" },
-                                            [_vm._v("Perfil públic")]
-                                          )
-                                        ]
-                                      )
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "li",
-                                    { staticClass: "nav-item" },
-                                    [
-                                      _c(
-                                        "router-link",
-                                        {
-                                          staticClass: "nav-link",
-                                          attrs: { to: "/comandes" }
-                                        },
-                                        [
-                                          _c("i", {
-                                            staticClass:
-                                              "fas fa-chart-line nav-icon text-dark"
-                                          }),
-                                          _vm._v(" "),
-                                          _c(
-                                            "p",
-                                            { staticClass: "text-dark" },
-                                            [_vm._v("Comandes")]
-                                          )
-                                        ]
-                                      )
-                                    ],
-                                    1
-                                  )
-                                ]
-                              )
-                            ])
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass:
+                                                "fas fa-gem nav-icon text-dark"
+                                            }),
+                                            _vm._v(" "),
+                                            _c(
+                                              "p",
+                                              { staticClass: "text-dark" },
+                                              [_vm._v("Perfil públic")]
+                                            )
+                                          ]
+                                        )
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "li",
+                                      { staticClass: "nav-item" },
+                                      [
+                                        _c(
+                                          "router-link",
+                                          {
+                                            staticClass: "nav-link",
+                                            attrs: { to: "/comandes" }
+                                          },
+                                          [
+                                            _c("i", {
+                                              staticClass:
+                                                "fas fa-chart-line nav-icon text-dark"
+                                            }),
+                                            _vm._v(" "),
+                                            _c(
+                                              "p",
+                                              { staticClass: "text-dark" },
+                                              [_vm._v("Comandes")]
+                                            )
+                                          ]
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
                           : _c(
                               "li",
                               { staticClass: "nav-item" },
@@ -58899,136 +58928,151 @@ var render = function() {
           _vm._v(" "),
           _c("br"),
           _vm._v(" "),
-          _c("div", { staticClass: "content w-100" }, [
-            _c("div", { staticClass: "container-fluid" }, [
-              _c(
-                "div",
-                { staticClass: "row" },
-                _vm._l(_vm.productes, function(producte) {
-                  return _c(
+          _vm.productes.length > 0
+            ? _c("div", { staticClass: "content w-100" }, [
+                _c("div", { staticClass: "container-fluid" }, [
+                  _c(
                     "div",
-                    { key: producte.id, class: "col-md-4 card-deck mb-4 ml-2" },
-                    [
-                      _c(
+                    { staticClass: "row" },
+                    _vm._l(_vm.productes, function(producte) {
+                      return _c(
                         "div",
                         {
-                          class: "card card-primary text-center zoom bg-light"
+                          key: producte.id,
+                          class: "col-md-4 card-deck mb-4 ml-2"
                         },
                         [
-                          _c("img", {
-                            class: "card-img-top p-3",
-                            attrs: {
-                              src: "/images/productes/" + producte.imatge
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("div", { class: "card-body" }, [
-                            _c("div", { staticClass: "row" }, [
-                              _c("div", { staticClass: "col-md-1" }),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  class:
-                                    "card-title font-weight-bold text-uppercase col-md-10 text-center align-middle"
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                      " +
-                                      _vm._s(producte.nom) +
-                                      "\n                    "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-md-1" })
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "row" }, [
-                              _c("div", { staticClass: "col-md-4" }),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  class:
-                                    "col-md-4 badge badge-sm align-middle text-center",
-                                  staticStyle: {
-                                    "background-color": "#ff6565",
-                                    color: "white"
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                      Queden:\n                      " +
-                                      _vm._s(producte.stock) +
-                                      "\n                    "
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("div", { staticClass: "col-md-4" })
-                            ]),
-                            _vm._v(" "),
-                            _c("br"),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass: "row",
-                                staticStyle: { "margin-bottom": "-10%" }
-                              },
-                              [
-                                _c("div", { staticClass: "col-md-1" }),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  { class: "card-text col-md-10 text-justify" },
-                                  [
-                                    _vm._v(
-                                      "\n                      " +
-                                        _vm._s(producte.descripcio) +
-                                        "\n                    "
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-md-1" })
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
                           _c(
                             "div",
                             {
-                              class: "card-footer bg-light",
-                              staticStyle: { border: "none" }
+                              class:
+                                "card card-primary text-center zoom bg-light"
                             },
                             [
+                              _c("img", {
+                                class: "card-img-top p-3",
+                                attrs: {
+                                  src: "/images/productes/" + producte.imatge
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("div", { class: "card-body" }, [
+                                _c("div", { staticClass: "row" }, [
+                                  _c("div", { staticClass: "col-md-1" }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      class:
+                                        "card-title font-weight-bold text-uppercase col-md-10 text-center align-middle"
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                      " +
+                                          _vm._s(producte.nom) +
+                                          "\n                    "
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "col-md-1" })
+                                ]),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "row" }, [
+                                  _c("div", { staticClass: "col-md-4" }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      class:
+                                        "col-md-4 badge badge-sm align-middle text-center",
+                                      staticStyle: {
+                                        "background-color": "#ff6565",
+                                        color: "white"
+                                      }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                      Queden:\n                      " +
+                                          _vm._s(producte.stock) +
+                                          "\n                    "
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticClass: "col-md-4" })
+                                ]),
+                                _vm._v(" "),
+                                _c("br"),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "row",
+                                    staticStyle: { "margin-bottom": "-10%" }
+                                  },
+                                  [
+                                    _c("div", { staticClass: "col-md-1" }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        class:
+                                          "card-text col-md-10 text-justify"
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\n                      " +
+                                            _vm._s(producte.descripcio) +
+                                            "\n                    "
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "col-md-1" })
+                                  ]
+                                )
+                              ]),
+                              _vm._v(" "),
                               _c(
-                                "router-link",
+                                "div",
                                 {
-                                  class: "btn btn-outline-secondary",
-                                  attrs: {
-                                    to: {
-                                      name: "Producte",
-                                      params: { id: producte.id }
-                                    }
-                                  }
+                                  class: "card-footer bg-light",
+                                  staticStyle: { border: "none" }
                                 },
-                                [_c("span", [_vm._v("Saber més")])]
+                                [
+                                  _c(
+                                    "router-link",
+                                    {
+                                      class: "btn btn-outline-secondary",
+                                      attrs: {
+                                        to: {
+                                          name: "Producte",
+                                          params: { id: producte.id }
+                                        }
+                                      }
+                                    },
+                                    [_c("span", [_vm._v("Saber més")])]
+                                  )
+                                ],
+                                1
                               )
-                            ],
-                            1
+                            ]
                           )
                         ]
                       )
-                    ]
+                    }),
+                    0
                   )
-                }),
-                0
-              )
-            ])
-          ])
+                ])
+              ])
+            : _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-4" }),
+                _vm._v(" "),
+                _vm._m(1),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-4" })
+              ])
         ])
       ]),
       _vm._v(" "),
@@ -59055,6 +59099,24 @@ var staticRenderFns = [
       },
       [_c("i", { staticClass: "fa fa-search" })]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4 mt-3" }, [
+      _c("hr"),
+      _vm._v(" "),
+      _c("h3", [
+        _c("i", {
+          staticClass: "fas fa-heart-broken",
+          staticStyle: { color: "#ff6565" }
+        }),
+        _vm._v(" Oops! "),
+        _c("br"),
+        _c("small", [_vm._v("No hi ha resultats per el que busques.")])
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -59114,180 +59176,207 @@ var render = function() {
           _vm._v(" "),
           _c("br"),
           _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "row" },
-            _vm._l(_vm.botigues, function(botiga) {
-              return _c(
+          _vm.botigues.length > 0
+            ? _c(
                 "div",
-                { key: botiga.id, class: "col-md-4 card-deck mb-4 ml-2" },
-                [
-                  _c(
+                { staticClass: "row" },
+                _vm._l(_vm.botigues, function(botiga) {
+                  return _c(
                     "div",
-                    { staticClass: "card card-widget widget-user zoom" },
+                    { key: botiga.id, class: "col-md-4 card-deck mb-4 ml-2" },
                     [
-                      botiga.img_portada
-                        ? _c(
-                            "div",
-                            {
-                              staticClass: "widget-user-header text-white",
-                              style:
-                                "background: url(/images/botigues/" +
-                                botiga.img_portada +
-                                "); background-size: cover;"
-                            },
-                            [
-                              _c(
-                                "h3",
+                      _c(
+                        "div",
+                        { staticClass: "card card-widget widget-user zoom" },
+                        [
+                          botiga.img_portada
+                            ? _c(
+                                "div",
                                 {
-                                  staticClass:
-                                    "widget-user-username text-right text-navy"
+                                  staticClass: "widget-user-header text-white",
+                                  style:
+                                    "background: url(/images/botigues/" +
+                                    botiga.img_portada +
+                                    "); background-size: cover;"
                                 },
-                                [_vm._v(_vm._s(botiga.nom))]
+                                [
+                                  _c(
+                                    "h3",
+                                    {
+                                      staticClass:
+                                        "widget-user-username text-right text-navy"
+                                    },
+                                    [_vm._v(_vm._s(botiga.nom))]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "h5",
+                                    {
+                                      staticClass:
+                                        "widget-user-desc text-right text-navy"
+                                    },
+                                    [_vm._v(_vm._s(botiga.poblacio))]
+                                  )
+                                ]
+                              )
+                            : _c(
+                                "div",
+                                {
+                                  staticClass: "widget-user-header text-white",
+                                  style:
+                                    "background: url(/images/botigues/unnamed.jpg); background-size: cover;"
+                                },
+                                [
+                                  _c(
+                                    "h3",
+                                    {
+                                      staticClass:
+                                        "widget-user-username text-right text-white"
+                                    },
+                                    [_vm._v(_vm._s(botiga.nom))]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "h5",
+                                    {
+                                      staticClass:
+                                        "widget-user-desc text-right text-white"
+                                    },
+                                    [_vm._v(_vm._s(botiga.poblacio))]
+                                  )
+                                ]
                               ),
-                              _vm._v(" "),
-                              _c(
-                                "h5",
-                                {
-                                  staticClass:
-                                    "widget-user-desc text-right text-navy"
-                                },
-                                [_vm._v(_vm._s(botiga.poblacio))]
-                              )
-                            ]
-                          )
-                        : _c(
-                            "div",
-                            {
-                              staticClass: "widget-user-header text-white",
-                              style:
-                                "background: url(/images/botigues/unnamed.jpg); background-size: cover;"
-                            },
-                            [
-                              _c(
-                                "h3",
-                                {
-                                  staticClass:
-                                    "widget-user-username text-right text-white"
-                                },
-                                [_vm._v(_vm._s(botiga.nom))]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "h5",
-                                {
-                                  staticClass:
-                                    "widget-user-desc text-right text-white"
-                                },
-                                [_vm._v(_vm._s(botiga.poblacio))]
-                              )
-                            ]
-                          ),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "widget-user-image" }, [
-                        botiga.img_perfil
-                          ? _c("img", {
-                              staticClass: "img-circle elevation-2",
-                              attrs: {
-                                src: "/images/botigues/" + botiga.img_perfil,
-                                alt: "User Avatar"
-                              }
-                            })
-                          : _c("img", {
-                              staticClass: "img-circle elevation-2",
-                              attrs: {
-                                src: "/images/botigues/default.jpg",
-                                alt: "User Avatar"
-                              }
-                            })
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "card-footer" }, [
-                        _c("div", { staticClass: "row" }, [
-                          _c("div", { staticClass: "col-sm-5" }, [
-                            _c("div", { staticClass: "description-block" }, [
-                              _c("h6", { staticClass: "description-header" }, [
-                                _vm._v(_vm._s(botiga.visites_total))
-                              ]),
-                              _vm._v(" "),
-                              _c("small", { staticClass: "description-text" }, [
-                                _vm._v("visites")
-                              ])
-                            ])
-                          ]),
                           _vm._v(" "),
-                          _vm._m(1, true),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-sm-5" }, [
-                            _c("div", { staticClass: "description-block" }, [
-                              _c("h5", { staticClass: "description-header" }, [
-                                _vm._v(_vm._s(botiga.productes_total))
-                              ]),
-                              _vm._v(" "),
-                              _c("small", { staticClass: "description-text" }, [
-                                _vm._v("productes")
-                              ])
-                            ])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "row" }, [
-                          _c("div", { staticClass: "col-md-12 text-center" }, [
-                            _c("h5", {}, [_vm._v(_vm._s(botiga.nom))])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "row" }, [
-                          _c("div", { staticClass: "col-md-1" }),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-md-10" }, [
-                            _c("h6", { staticClass: "text-center" }, [
-                              _vm._v(
-                                "\n                                  " +
-                                  _vm._s(botiga.descripcio) +
-                                  "\n                                  "
-                              )
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-md-1" })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "row" }, [
-                          _c("div", { staticClass: "col-md-1" }),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "col-md-10 text-center zoom" },
-                            [
-                              _c(
-                                "router-link",
-                                {
-                                  class: "btn text-white",
-                                  staticStyle: { background: "#ff6565" },
+                          _c("div", { staticClass: "widget-user-image" }, [
+                            botiga.img_perfil
+                              ? _c("img", {
+                                  staticClass: "img-circle elevation-2",
                                   attrs: {
-                                    to: {
-                                      name: "PerfilBotiga",
-                                      params: { id: botiga.id }
-                                    }
+                                    src:
+                                      "/images/botigues/" + botiga.img_perfil,
+                                    alt: "User Avatar"
                                   }
-                                },
-                                [_c("span", [_vm._v("Visita!")])]
-                              )
-                            ],
-                            1
-                          ),
+                                })
+                              : _c("img", {
+                                  staticClass: "img-circle elevation-2",
+                                  attrs: {
+                                    src: "/images/botigues/default.jpg",
+                                    alt: "User Avatar"
+                                  }
+                                })
+                          ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "col-md-1" })
-                        ])
-                      ])
+                          _c("div", { staticClass: "card-footer" }, [
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-sm-5" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "description-block" },
+                                  [
+                                    _c(
+                                      "h6",
+                                      { staticClass: "description-header" },
+                                      [_vm._v(_vm._s(botiga.visites_total))]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "small",
+                                      { staticClass: "description-text" },
+                                      [_vm._v("visites")]
+                                    )
+                                  ]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _vm._m(1, true),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-sm-5" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "description-block" },
+                                  [
+                                    _c(
+                                      "h5",
+                                      { staticClass: "description-header" },
+                                      [_vm._v(_vm._s(botiga.productes_total))]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "small",
+                                      { staticClass: "description-text" },
+                                      [_vm._v("productes")]
+                                    )
+                                  ]
+                                )
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "row" }, [
+                              _c(
+                                "div",
+                                { staticClass: "col-md-12 text-center" },
+                                [_c("h5", {}, [_vm._v(_vm._s(botiga.nom))])]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-1" }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-10" }, [
+                                _c("h6", { staticClass: "text-center" }, [
+                                  _vm._v(
+                                    "\n                                  " +
+                                      _vm._s(botiga.descripcio) +
+                                      "\n                                  "
+                                  )
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-1" })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "row" }, [
+                              _c("div", { staticClass: "col-md-1" }),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "col-md-10 text-center zoom" },
+                                [
+                                  _c(
+                                    "router-link",
+                                    {
+                                      class: "btn text-white",
+                                      staticStyle: { background: "#ff6565" },
+                                      attrs: {
+                                        to: {
+                                          name: "PerfilBotiga",
+                                          params: { id: botiga.id }
+                                        }
+                                      }
+                                    },
+                                    [_c("span", [_vm._v("Visita!")])]
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-1" })
+                            ])
+                          ])
+                        ]
+                      )
                     ]
                   )
-                ]
+                }),
+                0
               )
-            }),
-            0
-          )
+            : _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-4" }),
+                _vm._v(" "),
+                _vm._m(2),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-4" })
+              ])
         ])
       ])
     ]
@@ -59319,6 +59408,24 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-sm-2" }, [
       _c("div", { staticClass: "description-block" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-4 mt-3" }, [
+      _c("hr"),
+      _vm._v(" "),
+      _c("h3", [
+        _c("i", {
+          staticClass: "fas fa-heart-broken",
+          staticStyle: { color: "#ff6565" }
+        }),
+        _vm._v(" Oops! "),
+        _c("br"),
+        _c("small", [_vm._v("No hi ha resultats per el que busques.")])
+      ])
     ])
   }
 ]
@@ -77809,16 +77916,7 @@ __webpack_require__.r(__webpack_exports__);
     }, {
       path: "/perfil/:id",
       component: _components_PerfilBotigaComponent__WEBPACK_IMPORTED_MODULE_14__["default"],
-      name: "PerfilBotiga",
-      beforeEnter: function beforeEnter(to, form, next) {
-        axios.get("/api/athenticated").then(function () {
-          next();
-        })["catch"](function () {
-          return next({
-            name: "Login"
-          });
-        });
-      }
+      name: "PerfilBotiga"
     }, {
       path: "/productesBotiga/:id",
       component: _components_PerfilBotigaComponent__WEBPACK_IMPORTED_MODULE_14__["default"],

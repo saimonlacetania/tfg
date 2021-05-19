@@ -20,7 +20,7 @@
             </div>
         </div>
         <br>
-            <div class="row">
+            <div v-if="botigues.length>0" class="row">
                 <div
                     :class="'col-md-4 card-deck mb-4 ml-2'"
                     v-for="botiga in botigues"
@@ -106,6 +106,14 @@
                 <!-- /.col-md-6 card-deck-->
             </div>
             <!-- /.row -->
+            <div v-else class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4 mt-3">
+                  <hr>
+                  <h3><i class="fas fa-heart-broken" style="color:#ff6565;"></i> Oops! <br><small>No hi ha resultats per el que busques.</small></h3>
+              </div>
+              <div class="col-md-4"></div>         
+            </div>
       </div>
     </section>
   </div>
@@ -117,7 +125,7 @@
 export default {
   data() {
     return {
-      botigues: "",
+      botigues: "a",
       keyword: "",      
      
       visites: 0,
