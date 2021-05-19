@@ -266,6 +266,9 @@ export default {
       this.form.id_usuari = this.user.id;
       this.form.id_producte = this.producte.id;
       let that = this;
+      if(this.form.descripcio==null) {
+        this.form.descripcio="";
+      }
       axios
         .post("/api/pujarComentari", that.form)
         .then((res) => {

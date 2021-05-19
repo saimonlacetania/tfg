@@ -44,6 +44,9 @@ class ProductesController extends Controller
 
     public function pujarComentari(Request $request)
     {
+        $request->validate([
+            'valoracio' => ['required'],
+        ]);
         Comentari::create([
             'id_usuari' => $request->id_usuari,
             'id_producte' => $request->id_producte,

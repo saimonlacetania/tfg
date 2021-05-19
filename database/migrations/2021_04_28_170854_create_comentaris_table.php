@@ -17,7 +17,7 @@ class CreateComentarisTable extends Migration
             $table->id();
             $table->foreignId('id_usuari')->constrained('users');
             $table->foreignId('id_producte')->constrained('productes');
-            $table->string('descripcio');
+            $table->string('descripcio')->nullable();
             $table->string('valoracio');
             $table->timestamps();
         });

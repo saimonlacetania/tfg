@@ -6056,6 +6056,11 @@ __webpack_require__.r(__webpack_exports__);
       this.form.id_usuari = this.user.id;
       this.form.id_producte = this.producte.id;
       var that = this;
+
+      if (this.form.descripcio == null) {
+        this.form.descripcio = "";
+      }
+
       axios.post("/api/pujarComentari", that.form).then(function (res) {
         console.log(res);
 
