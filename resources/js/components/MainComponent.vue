@@ -9,12 +9,12 @@ html {
 }
 
 .main-header {
-  color: #c22847 !important;
+  color: #ff6565 !important;
 }
 </style>
 
 <template>
-  <div class="wrapper">
+  <div class="wrapper" style="overflow-x: hidden;">
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-light border-bottom-0">
       <!-- Left navbar links -->
@@ -26,7 +26,7 @@ html {
         </li>
       </ul>
       <!-- Right navbar links -->
-      <ul class="navbar-nav ml-auto">
+      <ul v-if="this.user.nom" class="navbar-nav ml-auto">
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
           <router-link
@@ -55,11 +55,11 @@ html {
     <!-- /.navbar -->
 
     <!-- MENÚ ESQUERRA -->
-    <aside class="main-sidebar sidebar-light elevation-4 sidebar-no-expand">
+    <aside class="main-sidebar sidebar-light elevation-4">
       <!-- Logo -->
       <router-link :to="'/'" class="brand-link">
         <img
-          src="/images/logo_mercat.png"
+          src="/images/logo.jpg"
           alt=""
           class="brand-image img-circle elevation-3"
           style="opacity: 0.8; background: #ff6565"
@@ -84,7 +84,7 @@ html {
             />
             <img
               v-else
-              :src="'/images/avatars/default.jpg'"
+              :src="'/images/botigues/default.jpg'"
               class="img-circle elevation-2"
               alt="User Image"
             />
@@ -113,15 +113,14 @@ html {
                     <p class="text-dark">Veure perfil</p>
                   </router-link>
                 </li>
-            <li class="nav-item" v-if="this.user.botiga">
+            <li class="nav-item" style="display: block;" v-if="this.user.botiga">
               <a class="nav-link" href="javascript:void(null);">
                 <i class="nav-icon fas fa-store-alt text-dark"></i>
                 <p class="text-dark">
                   La meva botiga
-                  <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
-              <ul class="nav nav-treeview nav-child-indent">
+              <ul class="nav-child-indent" style="list-style-type: none;">
                 <li class="nav-item">
                   <router-link class="nav-link" :to="'/botiga'">
                     <i class="fas fa-feather-alt nav-icon text-dark"></i>
@@ -160,7 +159,7 @@ html {
             </li>
             <li class="nav-item">
               <router-link class="nav-link" :to="'/productors'">
-                <i class="nav-icon fas fa-carrot text-dark"></i>
+                <i class="nav-icon fas fa-store text-dark"></i>
                 <p class="text-dark">Productors</p>
               </router-link>
             </li>
@@ -207,8 +206,14 @@ html {
               </li>
               <li class="nav-item">
                 <router-link class="nav-link" :to="'/productors'">
-                  <i class="nav-icon fas fa-carrot text-dark"></i>
+                  <i class="nav-icon fas fa-store text-dark"></i>
                   <p class="text-dark">Productors</p>
+                </router-link>
+              </li>
+              <li class="nav-item">
+                <router-link class="nav-link" :to="'/contacte'">
+                  <i class="nav-icon fas fa-comments text-dark"></i>
+                  <p class="text-dark">Contacte</p>
                 </router-link>
               </li>
             </ul>
@@ -249,6 +254,8 @@ html {
 </style>
 <script>
 import PerfilBotigaComponent from './PerfilBotigaComponent.vue';
+import '../bootstrap.js';
+import '../app.js';
 export default {
   components: { PerfilBotigaComponent },
   

@@ -21,18 +21,39 @@ class BotigaController extends Controller
     {
         $id = Auth::id();
 
-        $botigues = Botiga::find()
+        $botiga = Botiga::where('id_usuari', $id)->with('user')
             ->get();
         
+        return $botiga;
+    }
+
+    public function productors()
+    {
+        $botigues = Botiga::with('productes')->get();
+        
+        foreach($botigues as $botiga) {
+            $botiga->visites_total = 0;
+            if($botiga->productes) {
+                foreach($botiga->productes as $producte) {
+                    if($producte->eliminat==0){
+                        $botiga->productes_total += 1;
+                    }
+                    $botiga->visites_total += $producte->visites;
+                }   
+            }          
+        }
         return $botigues;
     }
 
-    public function botigues()
+    public function productorsCerca($keyword)
     {
+        if ($keyword == "" || $keyword == " ") {
+            $productorsCerca = Botiga::with('productes')->get();
+        } else {
+            $productorsCerca = Botiga::with('productes')->where('nom', 'LIKE', '%' . $keyword . '%')->get();
+        }
 
-        $botiga = Botiga::all();
-        
-        return $botiga;
+        return $productorsCerca;
     }
 
     public function productesB()

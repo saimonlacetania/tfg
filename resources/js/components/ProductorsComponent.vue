@@ -20,7 +20,7 @@
             </div>
         </div>
         <br>
-            <div class="row">
+            <div v-if="botigues.length>0" class="row">
                 <div
                     :class="'col-md-4 card-deck mb-4 ml-2'"
                     v-for="botiga in botigues"
@@ -29,20 +29,31 @@
                     <!-- Widget: user widget style 1 -->
                     <div class="card card-widget widget-user zoom">
                     <!-- Add the bg color to the header using any of the bg-* classes -->
-                        <div class="widget-user-header text-white"
+                        <div v-if="botiga.img_portada" class="widget-user-header text-white"
                             :style="'background: url(/images/botigues/' + botiga.img_portada +'); background-size: cover;'
                             ">
-                            <h3 class="widget-user-username text-right text-navy">{{ botiga.nom }}</h3>
-                            <h5 class="widget-user-desc text-right text-navy">{{ botiga.poblacio }}</h5>
+                            <h3 class="titol text-right">{{ botiga.nom }}</h3>
+                            <h5 class="titol text-right">{{ botiga.poblacio }}</h5>
+                            
                         </div>
+                        <div v-else class="widget-user-header text-white"
+                            :style="'background: url(/images/botigues/unnamed.jpg); background-size: cover;'
+                            ">
+                            <h3 class="titol text-right">{{ botiga.nom }}</h3>
+                            <h5 class="titol text-right">{{ botiga.poblacio }}</h5>
+                            
+                        </div>
+
                         <div class="widget-user-image">
-                            <img class="img-circle elevation-2" :src="'/images/botigues/' + botiga.img_perfil" alt="User Avatar">
+                            <img v-if="botiga.img_perfil" class="img-circle elevation-2" :src="'/images/botigues/' + botiga.img_perfil" alt="User Avatar">
+                            <img v-else class="img-circle elevation-2" :src="'/images/botigues/default.jpg'" alt="User Avatar">
                         </div>
+
                         <div class="card-footer">
                             <div class="row">
                                 <div class="col-sm-5">
                                     <div class="description-block">
-                                        <h6 class="description-header">3,200</h6>
+                                        <h6 class="description-header">{{ botiga.visites_total }}</h6>
                                         <small class="description-text">visites</small>
                                     </div>
                                     <!-- /.description-block -->
@@ -55,7 +66,7 @@
                                 <!-- /.col -->
                                 <div class="col-sm-5">
                                     <div class="description-block">
-                                        <h5 class="description-header">35</h5>
+                                        <h5 class="description-header">{{ botiga.productes_total}}</h5>
                                         <small class="description-text">productes</small>
                                     </div>
                                     <!-- /.description-block -->
@@ -97,28 +108,98 @@
                 <!-- /.col-md-6 card-deck-->
             </div>
             <!-- /.row -->
+            <div v-else class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4 mt-3">
+                  <hr>
+                  <h3><i class="fas fa-heart-broken" style="color:#ff6565;"></i> Oops! <br><small>No hi ha resultats per el que busques.</small></h3>
+              </div>
+              <div class="col-md-4"></div>         
+            </div>
       </div>
     </section>
   </div>
 </template>
 
-<script>
+<style>
+.titol {
+   color: #ff6565;
+   text-shadow: 2px 2px 2px rgb(34, 34, 34);
+   white-space: nowrap;
+   font-size: 1.7vw;
+}
+</style>
 
+<script>
 
 export default {
   data() {
     return {
-      botigues: "",
+      botigues: "a",
       keyword: "",      
-      productes: "",      
+     
       visites: 0,
     };
   },
+  methods: {
+    loading() {
+      Swal.fire({
+          title: '<span style="color: #ff6565">Carregant...</span>',
+          customClass: 'swal-wide',
+          showConfirmButton: false,
+          showClass: {
+          popup: '',
+          icon: ''
+          },
+          hideClass: {
+          popup: '',
+          },
+          didOpen: () => {
+          Swal.showLoading()
+          }
+      })
+    },
+    cercaProductors() {
+      if (this.keyword=="" || this.keyword==" ") {
+        axios.get("/api/productors").then((res) => {
+          console.log(res);
+          this.botigues = res.data;
+        });
+      } else {
+        axios.get('api/productorsCerca/'+this.keyword).then((res) => {
+          console.log(res.data);
+          this.botigues = res.data;
+        });
+      }
+    }
+  },
+  watch: {
+        keyword(after, before) {
+            this.cercaProductors();
+        }
+    },
   mounted() {
-    axios.get("/api/botigues").then((res) => {
-      console.log(res);
+    this.loading();
+    axios.get("/api/productors").then((res) => {
+      console.log(res.data);
       this.botigues = res.data;
-    });
+    }).then(()=> {
+      Swal.fire({
+        title:'<span style="color: #ff6565">Carregant...</span>', 
+        timer:1000 ,
+        showConfirmButton: false,
+        showClass: {
+        backdrop: 'swal2-noanimation', // disable backdrop animation
+        popup: '',                     // disable popup animation
+        icon: ''                       // disable icon animation
+        },
+        hideClass: {
+          popup: '',                     // disable popup fade-out animation
+        },
+        didOpen: () => {
+          Swal.showLoading()
+        },});
+    })
   },
 };
 </script>

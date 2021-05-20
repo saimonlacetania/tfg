@@ -164,6 +164,9 @@ export default {
       },
     };
   },
+  mounted() {
+    console.log("muntat");
+  },
   methods: {
     toastCorrecte() {
       let that = this;

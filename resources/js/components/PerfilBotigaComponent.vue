@@ -7,7 +7,7 @@
             <!-- Widget: user widget style 1 -->
             <div class="card card-widget widget-user">
               <!-- Add the bg color to the header using any of the bg-* classes -->
-              <div
+              <div v-if="this.botiga.img_portada"
                 class="widget-user-header text-white"
                 id="portada"
                 :style="
@@ -16,11 +16,25 @@
                   ');'
                 "
               >
+                <h3 class="titol text-right">
+                  {{ this.botiga.nom }}
+                </h3>
+                <h5 class="titol text-right">{{ this.user.nom }}</h5>
+              </div>
+
+              <div v-else
+                class="widget-user-header text-white"
+                id="portada"
+                :style="
+                  'background: url(/images/botigues/unnamed.jpg);'"
+              >
                 <h3 class="widget-user-username text-right">
                   {{ this.botiga.nom }}
                 </h3>
                 <h5 class="widget-user-desc text-right">{{ this.user.nom }}</h5>
               </div>
+
+
               <div class="widget-user-image pt-5">
                 <img
                   v-if="this.botiga.img_perfil"
@@ -95,19 +109,19 @@
                 <br />
                 <div class="row">
                   <div class="col-md-4 text-center">
-                    <h5>
+                    <h5 v-if="this.botiga.instagram">
                       <li class="fab fa-instagram mr-1"></li>
                       {{ this.botiga.instagram }}
                     </h5>
                   </div>
                   <div class="col-md-4 text-center">
-                    <h5>
+                    <h5 v-if="this.botiga.facebook">
                       <li class="fab fa-facebook mr-1"></li>
                       {{ this.botiga.facebook }}
                     </h5>
                   </div>
                   <div class="col-md-4 text-center">
-                    <h5>
+                    <h5 v-if="this.botiga.twitter">
                       <li class="fab fa-twitter mr-1"></li>
                       {{ this.botiga.twitter }}
                     </h5>
@@ -197,6 +211,10 @@
   background-position: center !important;
   height: 300px;
   background-repeat: no-repeat !important;
+}
+.titol {
+   color: #ff6565;
+   text-shadow: 2px 2px 2px rgb(34, 34, 34);
 }
 </style>
 

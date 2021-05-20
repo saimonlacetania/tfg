@@ -38,7 +38,7 @@
                   />
                   <img
                     v-else
-                    :src="'/images/avatars/default.jpg'"
+                    :src="'/images/botigues/default.jpg'"
                     class="profile-user-img img-fluid img-circle"
                     alt="User profile picture"
                   />
@@ -100,7 +100,7 @@
                           <div class="card-header">
                             <h3 class="card-title">Les meves comandes</h3>
                           </div>
-                          <div class="card-body table-responsive">
+                          <div v-if="this.orders.length>0" class="card-body table-responsive">
                             <table class="table">
                               <thead class="text-center">
                                 <tr>
@@ -141,6 +141,9 @@
                               </tbody>
                             </table>
                           </div>
+                          <div v-else class="card-body table-responsive">
+                            <h4>No hi ha comandes.</h4>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -150,48 +153,52 @@
                   <!-- TIMELINE tornar a comprar -->
                   <div class="tab-pane" id="timeline">
                     <!-- The timeline -->
-                    <span v-for="order in ordersP" :key="order.index">
-                      <div class="timeline timeline-inverse border">
-                        <!-- timeline time label -->
+                    <span v-if="this.ordersP.length>0">
+                      <span v-for="order in ordersP" :key="order.index">
+                        <div class="timeline timeline-inverse border">
+                          <!-- timeline time label -->
 
-                        <div class="time-label">
-                          <span class="">
-                            <i class="fas fa-shipping-fast"></i>
-                            {{ "Ordre nº" + order[0].id_ordre }}
-                          </span>
-                        </div>
-                        <!-- /.timeline-label -->
-                        <!-- timeline item -->
-                        <div v-for="product in order" :key="product.index">
-                          <i
-                            class="fas fa-box-open text-white"
-                            style="background-color: #ff6565"
-                          ></i>
-                          <div class="timeline-item">
-                            <span class="time">
-                              <i class="fas fa-store-alt"></i
-                              ><router-link
-                                style="color: #ff6565; text-decoration: none"
-                                :to="{
-                                  name: 'PerfilBotiga',
-                                  params: { id: product.productes.botiga.id },
-                                }"
-                              >
-                                {{ product.productes.botiga.nom }}</router-link
-                              ></span
-                            >
-                            <h3 class="timeline-header">
-                              {{ product.productes.nom }}
-                            </h3>
-                            <small class="timeline-body">{{
-                              product.productes.descripcio
-                            }}</small>
+                          <div class="time-label">
+                            <span class="">
+                              <i class="fas fa-shipping-fast"></i>
+                              {{ "Ordre nº" + order[0].id_ordre }}
+                            </span>
                           </div>
+                          <!-- /.timeline-label -->
+                          <!-- timeline item -->
+                          <div v-for="product in order" :key="product.index">
+                            <i
+                              class="fas fa-box-open text-white"
+                              style="background-color: #ff6565"
+                            ></i>
+                            <div class="timeline-item">
+                              <span class="time">
+                                <i class="fas fa-store-alt"></i
+                                ><router-link
+                                  style="color: #ff6565; text-decoration: none"
+                                  :to="{
+                                    name: 'PerfilBotiga',
+                                    params: { id: product.productes.botiga.id },
+                                  }"
+                                >
+                                  {{ product.productes.botiga.nom }}</router-link
+                                ></span
+                              >
+                              <h3 class="timeline-header">
+                                {{ product.productes.nom }}
+                              </h3>
+                              <small class="timeline-body">{{
+                                product.productes.descripcio
+                              }}</small>
+                            </div>
+                          </div>
+                          <!-- END timeline item -->
                         </div>
-
-                        <!-- END timeline item -->
-                      </div>
+                      </span>
                     </span>
+                    <div v-else class="card-body table-responsive">
+                      <h4>No hi ha comandes.</h4>
+                    </div>
                   </div>
                   <!-- /.tab-pane -->
 
@@ -205,11 +212,17 @@
                             <form>
                               <div class="form-group">
                                 <div class="text-center">
-                                  <img
+                                  <img v-if="$data.form3.arxiu"
                                     class="profile-user-img img-fluid img-circle"
                                     :src="
                                       '/images/avatars/' + $data.form3.arxiu
                                     "
+                                    alt="User profile picture"
+                                  />
+                                  <img v-else
+                                    class="profile-user-img img-fluid img-circle"
+                                    :src="
+                                      '/images/botigues/default.jpg'"
                                     alt="User profile picture"
                                   />
                                 </div>
@@ -561,7 +574,6 @@ export default {
     },
     eliminarWishlist(id) {
       axios.post("/api/eliminarWishlist/" + id).then((res) => {
-        console.log(res);
       });
       axios.get("/api/veureWishlist").then((res) => {
         this.wishlist = res.data;
@@ -569,21 +581,17 @@ export default {
     },
     ordreRebuda(id) {
       axios.post("/api/ordreRebuda/" + id).then((res) => {
-        console.log(res);
         this.rebut();
       });
       axios.get("/api/veureOrdreUser").then((res3) => {
         this.orders = res3.data;
-        console.log(this.orders);
       });
       axios.get("/api/veureOrdreProcessadaUser").then((res4) => {
         this.ordersP = res4.data;
-        console.log(this.ordersP);
       });
     },
     fileSelected(e) {
       this.files = e.target.files;
-      console.log(this.files);
     },
     rebut() {
       // Use sweetalert2
@@ -632,7 +640,6 @@ export default {
     },
     modifyUser() {
       let that = this;
-      console.log(that.form);
       axios
         .post("/api/modifyUser", that.form)
         .then((res) => {
@@ -647,16 +654,13 @@ export default {
     },
     modifyPassword() {
       let that = this;
-      console.log(that.form2);
       axios
         .post("/api/modifyPassword", that.form2)
         .then((res) => {
-          console.log(res);
           this.toastCorrecte();
         })
         .catch((error) => {
           that.errors2 = error.response.data.errors;
-          console.log(that.errors2);
           this.toastIncorrecte();
         });
     },
@@ -678,17 +682,13 @@ export default {
           },
         })
         .then((res) => {
-          console.log(res);
           this.$router.push({ name: "Productes" });
           this.toastCorrecte();
         })
         .catch((error) => {
           that.errors3 = error.response.data.errors;
-          console.log(that.errors3);
           this.toastIncorrecte();
         });
-
-      console.log(that.form3);
     },
   },
 };
