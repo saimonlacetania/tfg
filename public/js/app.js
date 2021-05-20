@@ -78047,32 +78047,6 @@ __webpack_require__.r(__webpack_exports__);
       component: _components_PerfilBotigaComponent__WEBPACK_IMPORTED_MODULE_14__["default"],
       name: "PerfilBotiga"
     }, {
-      path: "/productesBotiga/:id",
-      component: _components_PerfilBotigaComponent__WEBPACK_IMPORTED_MODULE_14__["default"],
-      name: "ProductesBotiga",
-      beforeEnter: function beforeEnter(to, form, next) {
-        axios.get("/api/athenticated").then(function () {
-          next();
-        })["catch"](function () {
-          return next({
-            name: "Login"
-          });
-        });
-      }
-    }, {
-      path: "/user/:id",
-      component: _components_PerfilBotigaComponent__WEBPACK_IMPORTED_MODULE_14__["default"],
-      name: "User",
-      beforeEnter: function beforeEnter(to, form, next) {
-        axios.get("/api/athenticated").then(function () {
-          next();
-        })["catch"](function () {
-          return next({
-            name: "Login"
-          });
-        });
-      }
-    }, {
       path: "/cistella",
       component: _components_CistellaComponent__WEBPACK_IMPORTED_MODULE_15__["default"],
       name: "Cistella",
