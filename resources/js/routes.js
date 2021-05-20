@@ -5,8 +5,8 @@ import Main from "./components/MainComponent";
 import Perfil from "./components/PerfilComponent";
 import Productes from "./components/ProductesComponent";
 
-import FeedInici from "./components/feediniciComponent";
-import Contacte from "./components/contacteComponent";
+import FeedInici from "./components/FeediniciComponent";
+import Contacte from "./components/ContacteComponent";
 import Producte from "./components/ProducteComponent";
 import Botiga from "./components/BotigaComponent";
 import CrearBotiga from "./components/CrearBotigaComponent";
@@ -147,21 +147,6 @@ export default {
                     path: "/perfil/:id",
                     component: PerfilBotiga,
                     name: "PerfilBotiga",
-                    beforeEnter: (to, form, next) => {
-                        axios
-                            .get("/api/athenticated")
-                            .then(() => {
-                                next();
-                            })
-                            .catch(() => {
-                                return next({ name: "Login" });
-                            });
-                    }
-                },
-                {
-                    path: "/productesBotiga/:id",
-                    component: PerfilBotiga,
-                    name: "ProductesBotiga",
                     beforeEnter: (to, form, next) => {
                         axios
                             .get("/api/athenticated")
