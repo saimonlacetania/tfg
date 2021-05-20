@@ -33,6 +33,7 @@ class BotigaController extends Controller
         
         foreach($botigues as $botiga) {
             $botiga->visites_total = 0;
+            $botiga->productes_total = 0;
             if($botiga->productes) {
                 foreach($botiga->productes as $producte) {
                     if($producte->eliminat==0){
@@ -51,6 +52,18 @@ class BotigaController extends Controller
             $productorsCerca = Botiga::with('productes')->get();
         } else {
             $productorsCerca = Botiga::with('productes')->where('nom', 'LIKE', '%' . $keyword . '%')->get();
+        }
+        foreach($productorsCerca as $botiga) {
+            $botiga->visites_total = 0;
+            $botiga->productes_total = 0;
+            if($botiga->productes) {
+                foreach($botiga->productes as $producte) {
+                    if($producte->eliminat==0){
+                        $botiga->productes_total += 1;
+                    }
+                    $botiga->visites_total += $producte->visites;
+                }   
+            }          
         }
 
         return $productorsCerca;

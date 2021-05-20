@@ -16,9 +16,9 @@
                   ');'
                 "
               >
-                <h3 class="titol text-right">
+                <h1 class="titol text-right">
                   {{ this.botiga.nom }}
-                </h3>
+                </h1>
                 <h5 class="titol text-right">{{ this.user.nom }}</h5>
               </div>
 
@@ -139,7 +139,7 @@
     <section>
       <div class="content w-100">
         <div class="container-fluid">
-          <div class="row">
+          <div v-if="productes.length>0" class="row">
             <div
               :class="'col-md-4 card-deck mb-4 ml-2'"
               v-for="producte in productes"
@@ -195,6 +195,15 @@
             <!-- /.col-md-6 card-deck-->
           </div>
           <!-- /.row -->
+
+          <div v-else class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 p-4 text-center">
+              <h3>Encara no hi ha productes.</h3>
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+
         </div>
         <!-- /.container-fluid -->
       </div>

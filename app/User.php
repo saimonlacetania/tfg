@@ -36,9 +36,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected function botiga()
-    {
-        return $this->hasOne('App\Models\Botiga', 'id_usuari');
-    }
-
 }

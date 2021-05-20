@@ -60,7 +60,7 @@
                               Productes per preparar...
                             </h3>
                           </div>
-                          <div class="card-body table-responsive">
+                          <div v-if="orders.length>0" class="card-body table-responsive">
                             <table class="table">
                               <thead class="">
                                 <tr>
@@ -104,6 +104,11 @@
                               </tbody>
                             </table>
                           </div>
+
+                          <div v-else class="card-body table-responsive">
+                            <h4>No hi ha comandes.</h4>
+                          </div>
+
                         </div>
                       </div>
                     </div>
@@ -118,7 +123,7 @@
                           <div class="card-header">
                             <h3 class="card-title">Productes ja enviats</h3>
                           </div>
-                          <div class="card-body table-responsive">
+                          <div v-if="ordersEnviats.length>0" class="card-body table-responsive">
                             <table class="table">
                               <thead class="">
                                 <tr>
@@ -158,6 +163,11 @@
                               </tbody>
                             </table>
                           </div>
+
+                          <div v-else class="card-body table-responsive">
+                            <h4>No hi ha comandes.</h4>
+                          </div>
+
                         </div>
                       </div>
                     </div>

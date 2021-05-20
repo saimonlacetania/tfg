@@ -14,9 +14,9 @@
     </section>
     <div class="content w-100">
       <div class="container-fluid">
-        <div class="row">
+        <div v-if="cistella.length>0" class="row">
           <div class="col-md-8">
-            <div class="card">
+            <div class="card card-dark card-outline">
               <div class="card-header">
                 <h3 class="card-title">La meva cistella</h3>
               </div>
@@ -68,7 +68,7 @@
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card">
+            <div class="card card-dark card-outline">
               <div class="card-header">
                 <h3 class="card-title">Processar la meva cistella</h3>
               </div>
@@ -97,7 +97,7 @@
                   </tbody>
                 </table>
                 <div class="text-right">
-                  <button class="btn btn-success" v-on:click="crearOrdre">
+                  <button id="botoComanda" class="btn btn-success" v-on:click="crearOrdre">
                     Processar la comanda
                   </button>
                 </div>
@@ -106,13 +106,38 @@
             </div>
           </div>
         </div>
+
+        <div v-else  class="row">
+          <div class="col-md-2"></div>
+            <div class="col-md-8">
+              <div class="card card-dark card-outline">
+                <div class="card-header">
+                  <h3 class="card-title">La meva cistella</h3>
+                </div>
+                <div class="card-body table-responsive">
+                  <h2>La cistella esta buida.</h2>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+        
+        </div>
       </div>
       <!-- /.card-body -->
     </div>
-  </div>
   <!-- /.container-fluid -->
 </template>
-
+<style>
+#botoComanda {
+  background-color: #ff6565;
+  border-color: #ff9090;
+}
+#botoComanda:focus, #botoComanda.focus {
+    color: #fff;
+    box-shadow: 0 0 0 0.2rem #ff9090e1;;
+}
+</style>
 <script>
 export default {
   data() {

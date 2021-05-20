@@ -35,9 +35,11 @@ html {
             data-toggle="dropdown"
             aria-expanded="false"
           >
-            <i class="fas fa-shopping-cart" style="color: #ff6565"></i>
-            <span class="font-weight-light text-dark">Cistella</span>
+            <span class="badge badge-cistella elevation-2">{{this.cistella}}</span>
+            <i class="fas fa-shopping-cart" style="color: #ff6565; line-height: 1.5;"></i>
+            <span class="font-weight-light ml-2 text-dark">Cistella</span>
           </router-link>
+          
         </li>
         <li class="nav-item dropdown">
           <router-link
@@ -113,14 +115,14 @@ html {
                     <p class="text-dark">Veure perfil</p>
                   </router-link>
                 </li>
-            <li class="nav-item" style="display: block;" v-if="this.user.botiga">
-              <a class="nav-link" href="javascript:void(null);">
+            <li class="nav-item menu-open" v-if="this.user.botiga">
+              <a class="nav-link" id="noclick" href="javascript:void(null);">
                 <i class="nav-icon fas fa-store-alt text-dark"></i>
                 <p class="text-dark">
                   La meva botiga
                 </p>
               </a>
-              <ul class="nav-child-indent" style="list-style-type: none;">
+              <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <router-link class="nav-link" :to="'/botiga'">
                     <i class="fas fa-feather-alt nav-icon text-dark"></i>
@@ -241,16 +243,29 @@ html {
 </template>
 <style>
 
-
+.badge-cistella {
+  color: #fff;
+  background-color: #ff6565;
+  font-size: .5rem;
+  font-weight: 250;
+  padding: 2px 4px;
+  position: absolute;
+  left: 18px;
+  top: 2px;
+}
 
 .main-sidebar, .main-sidebar::before {
   @media (max-width: 767.98px);
   background-color: white;
 }
-  #cajacookies {
-    position: fixed;
-    bottom: 0;
-  }
+#cajacookies {
+  position: fixed;
+  bottom: 0;
+}
+#noclick {
+  pointer-events: none;
+  cursor: default;
+}
 </style>
 <script>
 import PerfilBotigaComponent from './PerfilBotigaComponent.vue';
@@ -262,11 +277,15 @@ export default {
   data() {
     return {
       user: "",
+      cistella: 0
     };
   },
   mounted() {
     axios.get("/api/user").then((res) => {
       this.user = res.data;
+    });
+    axios.get("/api/veureCistella").then((res) => {
+        this.cistella = res.data.length;
     });
     /* ésto comprueba la localStorage si ya tiene la variable guardada */
     if(localStorage.aceptaCookies == 'true'){

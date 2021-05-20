@@ -20,7 +20,8 @@
 
           <div class="row">
             <!--Grid column-->
-            <div class="col-md-9 mb-md-0 mb-5">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 mb-md-0 mb-5">
               <form id="contact-form" name="contact-form" action="">
                 <!--Grid row-->
                 <div class="row">
@@ -116,35 +117,34 @@
                 <div class="col-md-4"></div>
               </div>
             </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-md-3 text-center">
-              <ul class="list-unstyled mb-0">
-                <li>
-                  <i
-                    class="fas fa-map-marker-alt fa-2x"
-                    style="color: #ff6565"
-                  ></i>
-                  <p>Manresa, BCN 94126, CAT</p>
-                </li>
-
-                <li>
-                  <i class="fas fa-phone mt-4 fa-2x" style="color: #ff6565"></i>
-                  <p>+ 01 234 567 89</p>
-                </li>
-
-                <li>
-                  <i
-                    class="fas fa-envelope mt-4 fa-2x"
-                    style="color: #ff6565"
-                  ></i>
-                  <p>hola@mercatvirual.com</p>
-                </li>
-              </ul>
-            </div>
+            <div class="col-md-2"></div>
             <!--Grid column-->
           </div>
+          <!--Grid column-->
+            <div class="row mt-5">
+              <div class="col-md-3"></div>
+              <div class="col-md-2 text-center">
+                <i
+                  class="fas fa-map-marker-alt m-3 fa-2x"
+                  style="color: #ff6565"
+                ></i>
+                <p>Manresa, BCN 94126, CAT</p>
+              </div>
+              <div class="col-md-2 text-center">
+                <i class="fas fa-phone m-3 fa-2x" style="color: #ff6565"></i>
+                <p>+ 01 234 567 89</p>
+              </div>
+              <div class="col-md-2 text-center">
+                <i
+                  class="fas fa-envelope m-3 fa-2x"
+                  style="color: #ff6565"
+                ></i>
+                <p>hola@mercatvirual.com</p>
+              </div>
+              <div class="col-md-3"></div>
+            </div>
+              <!--Grid column-->
+            
         </section>
         <!--Section: Contact v.2-->
       </div>

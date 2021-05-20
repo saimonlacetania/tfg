@@ -32,15 +32,15 @@
                         <div v-if="botiga.img_portada" class="widget-user-header text-white"
                             :style="'background: url(/images/botigues/' + botiga.img_portada +'); background-size: cover;'
                             ">
-                            <h3 class="titol text-right">{{ botiga.nom }}</h3>
-                            <h5 class="titol text-right">{{ botiga.poblacio }}</h5>
+                            <h3 class="titolP text-right">{{ botiga.nom }}</h3>
+                            <h5 class="titolP text-right">{{ botiga.poblacio }}</h5>
                             
                         </div>
                         <div v-else class="widget-user-header text-white"
                             :style="'background: url(/images/botigues/unnamed.jpg); background-size: cover;'
                             ">
-                            <h3 class="titol text-right">{{ botiga.nom }}</h3>
-                            <h5 class="titol text-right">{{ botiga.poblacio }}</h5>
+                            <h3 class="titolP text-right">{{ botiga.nom }}</h3>
+                            <h5 class="titolP text-right">{{ botiga.poblacio }}</h5>
                             
                         </div>
 
@@ -122,12 +122,25 @@
 </template>
 
 <style>
-.titol {
-   color: #ff6565;
-   text-shadow: 2px 2px 2px rgb(34, 34, 34);
-   white-space: nowrap;
-   font-size: 1.7vw;
+@media (min-width:790px){
+  .titolP {
+    color: #ff6565;
+    text-shadow: 2px 2px 2px rgb(34, 34, 34);
+    white-space: nowrap;
+    width: 100%;
+    font-size: 1.5vw;
+    object-fit: cover;
+  }
 }
+@media (max-width:790px){
+  .titolP {
+  color: #ff6565;
+  text-shadow: 2px 2px 2px rgb(34, 34, 34);
+  width: 100%;
+  object-fit: cover;
+  }
+}
+
 </style>
 
 <script>
@@ -167,7 +180,6 @@ export default {
         });
       } else {
         axios.get('api/productorsCerca/'+this.keyword).then((res) => {
-          console.log(res.data);
           this.botigues = res.data;
         });
       }
@@ -181,7 +193,6 @@ export default {
   mounted() {
     this.loading();
     axios.get("/api/productors").then((res) => {
-      console.log(res.data);
       this.botigues = res.data;
     }).then(()=> {
       Swal.fire({

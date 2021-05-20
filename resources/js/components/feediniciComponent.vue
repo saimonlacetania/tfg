@@ -39,8 +39,8 @@
                     Empoderem el petit productor
                   </h5>
                   <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    Empoderem el petit productor, amb eines innovadores i senzilles, 
+                    per posar-los en contacte directe amb el públic i vendre el seu producte a un preu just.
                   </p>
                 </div>
               </div>
@@ -58,8 +58,8 @@
                   <img src="images/market.png" class="card-img-top" />
                   <h5 class="card-title-center">Recuperem el mercat</h5>
                   <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    Recuperem la llibertat de triar el que comprem, de viure al ritme de la natura, 
+                    de dur a casa el millor producte de la nostra terra amb la màxima comoditat.
                   </p>
                 </div>
               </div>
@@ -77,8 +77,8 @@
                   <img src="images/hands.png" class="card-img-top" />
                   <h5 class="card-title-center">Creem sinergia</h5>
                   <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    Creem un espai viu, amb la vitalitat dels mercats de tota la vida, 
+                    una comunitat activa que comparteix, que opina i que creix dia a dia.
                   </p>
                 </div>
               </div>
@@ -107,9 +107,7 @@
               <div class="card-body">
                 <h5 class="card-title">Fresc</h5>
                 <p class="card-text">
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
+                  Tria els productes que vulguis. Sempre de proximitat i de temporada.
                 </p>
               </div>
             </div>
@@ -122,8 +120,7 @@
               <div class="card-body">
                 <h5 class="card-title">Ecològic</h5>
                 <p class="card-text">
-                  This card has supporting text below as a natural lead-in to
-                  additional content.
+                  Ajudem a fomentar el comers de proximitat sense moure't de casa teva.
                 </p>
               </div>
             </div>
@@ -136,9 +133,7 @@
               <div class="card-body">
                 <h5 class="card-title">Sostenible</h5>
                 <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This card has even longer
-                  content than the first to show that equal height action.
+                  Menys contaminació fent arribar els productes a mes gent.
                 </p>
               </div>
             </div>

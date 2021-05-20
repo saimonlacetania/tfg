@@ -13,9 +13,10 @@
     <div class="content w-100">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-12">
-            <div class="card">
-              <div class="card-body table-responsive">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <div class="card card-dark card-outline">
+              <div v-if="wishlist.length>0" class="card-body table-responsive">
                 <table class="table">
                   <thead class="">
                     <tr>
@@ -48,8 +49,12 @@
                   </tbody>
                 </table>
               </div>
+              <div v-else class="card-body">
+                <h4>No hi ha productes.</h4>
+              </div>
             </div>
           </div>
+          <div class="col-md-2"></div>
         </div>
       </div>
       <!-- /.card-body -->

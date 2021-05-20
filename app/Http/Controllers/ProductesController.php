@@ -31,9 +31,13 @@ class ProductesController extends Controller
     public function producte($id)
     {
         $producte = Producte::find($id);
-        $producte->visites = $producte->visites + 1;
+        if ($producte) {
+          $producte->visites = $producte->visites + 1;
         $producte->save();
-        return $producte;
+        } else {
+            $producte = false;
+        }
+        return $producte; 
     }
 
     public function comentaris($id)
