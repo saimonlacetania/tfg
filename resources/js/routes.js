@@ -5,8 +5,8 @@ import Main from "./components/MainComponent";
 import Perfil from "./components/PerfilComponent";
 import Productes from "./components/ProductesComponent";
 
-import FeedInici from "./components/feediniciComponent";
-import Contacte from "./components/contacteComponent";
+import FeedInici from "./components/FeedIniciComponent";
+import Contacte from "./components/ContacteComponent";
 import Producte from "./components/ProducteComponent";
 import Botiga from "./components/BotigaComponent";
 import CrearBotiga from "./components/CrearBotigaComponent";
