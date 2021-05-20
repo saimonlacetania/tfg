@@ -325,7 +325,7 @@ export default {
           icon: ''
         },
         hideClass: {
-          popup: '',
+          popup: ''
         },
         didOpen: () => {
           Swal.showLoading()

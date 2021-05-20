@@ -160,7 +160,7 @@ export default {
         name: "",
         email: "",
         subject: "",
-        message: "",
+        message: ""
       },
     };
   },
