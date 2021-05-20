@@ -14,7 +14,7 @@ html {
 </style>
 
 <template>
-  <div class="wrapper">
+  <div class="wrapper" style="overflow-x: hidden;">
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-light border-bottom-0">
       <!-- Left navbar links -->
@@ -118,10 +118,9 @@ html {
                 <i class="nav-icon fas fa-store-alt text-dark"></i>
                 <p class="text-dark">
                   La meva botiga
-                  <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
-              <ul class="nav nav-treeview nav-child-indent">
+              <ul class="nav-child-indent" style="list-style-type: none;">
                 <li class="nav-item">
                   <router-link class="nav-link" :to="'/botiga'">
                     <i class="fas fa-feather-alt nav-icon text-dark"></i>

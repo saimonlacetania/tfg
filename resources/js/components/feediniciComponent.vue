@@ -1,6 +1,6 @@
 
 <template>
-  <div class="content-wrapper" id="contingut">
+  <div class="content-wrapper"  id="contingut">
     <!-- cerca -->
     <div class="content-header">
       <div class="container-fluid">

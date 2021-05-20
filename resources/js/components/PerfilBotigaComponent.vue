@@ -16,10 +16,10 @@
                   ');'
                 "
               >
-                <h3 class="widget-user-username text-right">
+                <h3 class="titol text-right">
                   {{ this.botiga.nom }}
                 </h3>
-                <h5 class="widget-user-desc text-right">{{ this.user.nom }}</h5>
+                <h5 class="titol text-right">{{ this.user.nom }}</h5>
               </div>
 
               <div v-else
@@ -211,6 +211,10 @@
   background-position: center !important;
   height: 300px;
   background-repeat: no-repeat !important;
+}
+.titol {
+   color: #ff6565;
+   text-shadow: 2px 2px 2px rgb(34, 34, 34);
 }
 </style>
 

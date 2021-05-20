@@ -2574,6 +2574,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2642,7 +2645,6 @@ __webpack_require__.r(__webpack_exports__);
     }).then(function () {
       axios.get("/api/botiga").then(function (res2) {
         _this.botiga = res2.data[0];
-        console.log(_this.botiga);
         _this.user = _this.botiga.user;
         _this.form["id_botiga"] = _this.botiga.id_usuari;
         _this.form2["id_botiga"] = _this.botiga.id_usuari;
@@ -2663,7 +2665,6 @@ __webpack_require__.r(__webpack_exports__);
         _this.form_botiga["cif"] = _this.botiga.cif;
         _this.form_botiga["img_perfil"] = _this.botiga.img_perfil;
         _this.form_botiga["img_portada"] = _this.botiga.img_portada;
-        console.log(_this.form_botiga);
       });
     }).then(function () {
       Swal.fire({
@@ -2747,11 +2748,6 @@ __webpack_require__.r(__webpack_exports__);
         id: e.target.id,
         file: e.target.files
       });
-      console.log(this.files);
-
-      for (var f in this.files) {
-        console.log(this.files[f].id);
-      }
     },
     loading: function loading() {
       Swal.fire({
@@ -2820,7 +2816,6 @@ __webpack_require__.r(__webpack_exports__);
       formData.append("stock", that.form["stock"]);
 
       if (that.form["actiu"] == true) {
-        console.log("true");
         that.form["actiu"] = 1;
         formData.append("actiu", that.form["actiu"]);
       } else {
@@ -2838,17 +2833,12 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (res) {
         _this6.toastCorrecte();
 
-        console.log(that.form);
-
         _this6.resetForm();
       })["catch"](function (error) {
         that.errors = error.response.data.errors;
 
         _this6.toastIncorrecte();
-
-        console.log(that.errors);
       });
-      console.log(that.form);
     },
     resetForm: function resetForm() {
       var _this7 = this;
@@ -2871,7 +2861,6 @@ __webpack_require__.r(__webpack_exports__);
       var _this8 = this;
 
       var that = this;
-      console.log(that.form_botiga);
       var formData = new FormData();
 
       if (document.getElementById("img_perfil").files[0]) {
@@ -2905,14 +2894,18 @@ __webpack_require__.r(__webpack_exports__);
           "Content-Type": "multipart/form-data"
         }
       }).then(function (res) {
-        console.log(res);
+        var id_b = _this8.botiga.id;
 
         _this8.toastCorrecte();
 
-        location.reload();
+        _this8.$router.push({
+          name: "PerfilBotiga",
+          params: {
+            id: id_b
+          }
+        });
       })["catch"](function (error) {
         that.errors = error.response.data.errors;
-        console.log(that.errors);
 
         _this8.toastIncorrecte();
       });
@@ -4649,7 +4642,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -4757,6 +4749,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
 //
 //
 //
@@ -5510,6 +5506,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     var _ref;
@@ -5628,9 +5631,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     eliminarWishlist: function eliminarWishlist(id) {
       var _this2 = this;
 
-      axios.post("/api/eliminarWishlist/" + id).then(function (res) {
-        console.log(res);
-      });
+      axios.post("/api/eliminarWishlist/" + id).then(function (res) {});
       axios.get("/api/veureWishlist").then(function (res) {
         _this2.wishlist = res.data;
       });
@@ -5639,22 +5640,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this3 = this;
 
       axios.post("/api/ordreRebuda/" + id).then(function (res) {
-        console.log(res);
-
         _this3.rebut();
       });
       axios.get("/api/veureOrdreUser").then(function (res3) {
         _this3.orders = res3.data;
-        console.log(_this3.orders);
       });
       axios.get("/api/veureOrdreProcessadaUser").then(function (res4) {
         _this3.ordersP = res4.data;
-        console.log(_this3.ordersP);
       });
     },
     fileSelected: function fileSelected(e) {
       this.files = e.target.files;
-      console.log(this.files);
     },
     rebut: function rebut() {
       // Use sweetalert2
@@ -5705,7 +5701,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this4 = this;
 
       var that = this;
-      console.log(that.form);
       axios.post("/api/modifyUser", that.form).then(function (res) {
         console.log(res);
 
@@ -5721,14 +5716,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this5 = this;
 
       var that = this;
-      console.log(that.form2);
       axios.post("/api/modifyPassword", that.form2).then(function (res) {
-        console.log(res);
-
         _this5.toastCorrecte();
       })["catch"](function (error) {
         that.errors2 = error.response.data.errors;
-        console.log(that.errors2);
 
         _this5.toastIncorrecte();
       });
@@ -5752,8 +5743,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           "Content-Type": "multipart/form-data"
         }
       }).then(function (res) {
-        console.log(res);
-
         _this6.$router.push({
           name: "Productes"
         });
@@ -5761,11 +5750,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         _this6.toastCorrecte();
       })["catch"](function (error) {
         that.errors3 = error.response.data.errors;
-        console.log(that.errors3);
 
         _this6.toastIncorrecte();
       });
-      console.log(that.form3);
     }
   }
 });
@@ -6405,6 +6392,17 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -12248,7 +12246,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.zoom {\r\n  transition: transform 0.2s; /* Animation */\n}\n#portada {\r\n  background-size: cover !important;\r\n  background-position: center !important;\r\n  height: 300px;\r\n  background-repeat: no-repeat !important;\n}\r\n", ""]);
+exports.push([module.i, "\n.zoom {\r\n  transition: transform 0.2s; /* Animation */\n}\n#portada {\r\n  background-size: cover !important;\r\n  background-position: center !important;\r\n  height: 300px;\r\n  background-repeat: no-repeat !important;\n}\n.titol {\r\n   color: #ff6565;\r\n   text-shadow: 2px 2px 2px rgb(34, 34, 34);\n}\r\n", ""]);
 
 // exports
 
@@ -12344,6 +12342,25 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, "\n.zoom {\r\n  transition: transform 0.2s; /* Animation */\n}\r\n\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProductorsComponent.vue?vue&type=style&index=0&lang=css&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ProductorsComponent.vue?vue&type=style&index=0&lang=css& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.titol {\r\n   color: #ff6565;\r\n   text-shadow: 2px 2px 2px rgb(34, 34, 34);\r\n   white-space: nowrap;\r\n   font-size: 1.7vw;\n}\r\n", ""]);
 
 // exports
 
@@ -44005,6 +44022,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProductorsComponent.vue?vue&type=style&index=0&lang=css&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ProductorsComponent.vue?vue&type=style&index=0&lang=css& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./ProductorsComponent.vue?vue&type=style&index=0&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProductorsComponent.vue?vue&type=style&index=0&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/feediniciComponent.vue?vue&type=style&index=0&lang=css&":
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/feediniciComponent.vue?vue&type=style&index=0&lang=css& ***!
@@ -53079,232 +53126,259 @@ var render = function() {
                               _c("div", { staticClass: "card" }, [
                                 _vm._m(11),
                                 _vm._v(" "),
-                                _c(
-                                  "div",
-                                  { staticClass: "card-body table-responsive" },
-                                  [
-                                    _c("table", { staticClass: "table" }, [
-                                      _vm._m(12),
-                                      _vm._v(" "),
-                                      _c(
-                                        "tbody",
-                                        {},
-                                        _vm._l(_vm.productes, function(
-                                          producte
-                                        ) {
-                                          return _c(
-                                            "tr",
-                                            { key: producte.id },
-                                            [
-                                              _c("td", [
-                                                _vm._v(_vm._s(producte.ref))
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(_vm._s(producte.nom))
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _c(
-                                                  "button",
-                                                  {
-                                                    staticClass: "btn pl-0",
-                                                    staticStyle: {
-                                                      "background-color":
-                                                        "transparent"
-                                                    },
-                                                    on: {
-                                                      click: function($event) {
-                                                        return _vm.restarStock(
-                                                          producte.id
-                                                        )
-                                                      }
-                                                    }
-                                                  },
-                                                  [
-                                                    _c("i", {
-                                                      staticClass:
-                                                        "fas fa-minus"
-                                                    })
-                                                  ]
-                                                ),
-                                                _vm._v(
-                                                  "\n                                                " +
-                                                    _vm._s(producte.stock) +
-                                                    "\n                                                "
-                                                ),
-                                                _c(
-                                                  "button",
-                                                  {
-                                                    staticClass: "btn pr-0",
-                                                    staticStyle: {
-                                                      "background-color":
-                                                        "transparent"
-                                                    },
-                                                    on: {
-                                                      click: function($event) {
-                                                        return _vm.sumarStock(
-                                                          producte.id
-                                                        )
-                                                      }
-                                                    }
-                                                  },
-                                                  [
-                                                    _c("i", {
-                                                      staticClass: "fas fa-plus"
-                                                    })
-                                                  ]
-                                                )
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(
-                                                  _vm._s(producte.preu) + " €"
-                                                )
-                                              ]),
-                                              _vm._v(" "),
-                                              producte.actiu == 1
-                                                ? _c(
-                                                    "td",
-                                                    {
-                                                      staticClass: "text-right"
-                                                    },
-                                                    [
-                                                      _c("input", {
-                                                        staticClass:
-                                                          "form-check-input",
-                                                        attrs: {
-                                                          type: "checkbox",
-                                                          value: "true",
-                                                          id: "actiu",
-                                                          checked: ""
-                                                        },
-                                                        on: {
-                                                          change: function(
-                                                            $event
-                                                          ) {
-                                                            return _vm.canviEstat(
-                                                              producte.id
-                                                            )
-                                                          }
-                                                        }
-                                                      })
-                                                    ]
-                                                  )
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              producte.actiu == 0
-                                                ? _c(
-                                                    "td",
-                                                    {
-                                                      staticClass: "text-right"
-                                                    },
-                                                    [
-                                                      _c("input", {
-                                                        staticClass:
-                                                          "form-check-input",
-                                                        attrs: {
-                                                          type: "checkbox",
-                                                          value: "false",
-                                                          id: "actiu"
-                                                        },
-                                                        on: {
-                                                          change: function(
-                                                            $event
-                                                          ) {
-                                                            return _vm.canviEstat(
-                                                              producte.id
-                                                            )
-                                                          }
-                                                        }
-                                                      })
-                                                    ]
-                                                  )
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              _c(
-                                                "td",
-                                                { staticClass: "text-right" },
+                                _vm.productes.length > 0
+                                  ? _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "card-body table-responsive"
+                                      },
+                                      [
+                                        _c("table", { staticClass: "table" }, [
+                                          _vm._m(12),
+                                          _vm._v(" "),
+                                          _c(
+                                            "tbody",
+                                            {},
+                                            _vm._l(_vm.productes, function(
+                                              producte
+                                            ) {
+                                              return _c(
+                                                "tr",
+                                                { key: producte.id },
                                                 [
-                                                  _c(
-                                                    "div",
-                                                    {
-                                                      staticClass: "btn-group"
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "button",
+                                                  _c("td", [
+                                                    _vm._v(_vm._s(producte.ref))
+                                                  ]),
+                                                  _vm._v(" "),
+                                                  _c("td", [
+                                                    _vm._v(_vm._s(producte.nom))
+                                                  ]),
+                                                  _vm._v(" "),
+                                                  _c("td", [
+                                                    _c(
+                                                      "button",
+                                                      {
+                                                        staticClass: "btn pl-0",
+                                                        staticStyle: {
+                                                          "background-color":
+                                                            "transparent"
+                                                        },
+                                                        on: {
+                                                          click: function(
+                                                            $event
+                                                          ) {
+                                                            return _vm.restarStock(
+                                                              producte.id
+                                                            )
+                                                          }
+                                                        }
+                                                      },
+                                                      [
+                                                        _c("i", {
+                                                          staticClass:
+                                                            "fas fa-minus"
+                                                        })
+                                                      ]
+                                                    ),
+                                                    _vm._v(
+                                                      "\n                                                " +
+                                                        _vm._s(producte.stock) +
+                                                        "\n                                                "
+                                                    ),
+                                                    _c(
+                                                      "button",
+                                                      {
+                                                        staticClass: "btn pr-0",
+                                                        staticStyle: {
+                                                          "background-color":
+                                                            "transparent"
+                                                        },
+                                                        on: {
+                                                          click: function(
+                                                            $event
+                                                          ) {
+                                                            return _vm.sumarStock(
+                                                              producte.id
+                                                            )
+                                                          }
+                                                        }
+                                                      },
+                                                      [
+                                                        _c("i", {
+                                                          staticClass:
+                                                            "fas fa-plus"
+                                                        })
+                                                      ]
+                                                    )
+                                                  ]),
+                                                  _vm._v(" "),
+                                                  _c("td", [
+                                                    _vm._v(
+                                                      _vm._s(producte.preu) +
+                                                        " €"
+                                                    )
+                                                  ]),
+                                                  _vm._v(" "),
+                                                  producte.actiu == 1
+                                                    ? _c(
+                                                        "td",
                                                         {
                                                           staticClass:
-                                                            "btn btn-info",
-                                                          attrs: {
-                                                            "data-bs-toggle":
-                                                              "tooltip",
-                                                            "data-bs-placement":
-                                                              "top",
-                                                            title:
-                                                              "Editar producte"
-                                                          },
-                                                          on: {
-                                                            click: function(
-                                                              $event
-                                                            ) {
-                                                              return _vm.editarProducte(
-                                                                producte.id
-                                                              )
-                                                            }
-                                                          }
+                                                            "text-right"
                                                         },
                                                         [
-                                                          _c("i", {
+                                                          _c("input", {
                                                             staticClass:
-                                                              "fas fa-pen"
+                                                              "form-check-input",
+                                                            attrs: {
+                                                              type: "checkbox",
+                                                              value: "true",
+                                                              id: "actiu",
+                                                              checked: ""
+                                                            },
+                                                            on: {
+                                                              change: function(
+                                                                $event
+                                                              ) {
+                                                                return _vm.canviEstat(
+                                                                  producte.id
+                                                                )
+                                                              }
+                                                            }
                                                           })
                                                         ]
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "button",
+                                                      )
+                                                    : _vm._e(),
+                                                  _vm._v(" "),
+                                                  producte.actiu == 0
+                                                    ? _c(
+                                                        "td",
                                                         {
                                                           staticClass:
-                                                            "btn btn-danger",
-                                                          attrs: {
-                                                            "data-bs-toggle":
-                                                              "tooltip",
-                                                            "data-bs-placement":
-                                                              "top",
-                                                            title:
-                                                              "Eliminar producte"
-                                                          },
-                                                          on: {
-                                                            click: function(
-                                                              $event
-                                                            ) {
-                                                              return _vm.eliminarProducte(
-                                                                producte.id
-                                                              )
-                                                            }
-                                                          }
+                                                            "text-right"
                                                         },
                                                         [
-                                                          _c("i", {
+                                                          _c("input", {
                                                             staticClass:
-                                                              "fas fa-trash"
+                                                              "form-check-input",
+                                                            attrs: {
+                                                              type: "checkbox",
+                                                              value: "false",
+                                                              id: "actiu"
+                                                            },
+                                                            on: {
+                                                              change: function(
+                                                                $event
+                                                              ) {
+                                                                return _vm.canviEstat(
+                                                                  producte.id
+                                                                )
+                                                              }
+                                                            }
                                                           })
+                                                        ]
+                                                      )
+                                                    : _vm._e(),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "td",
+                                                    {
+                                                      staticClass: "text-right"
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "div",
+                                                        {
+                                                          staticClass:
+                                                            "btn-group"
+                                                        },
+                                                        [
+                                                          _c(
+                                                            "button",
+                                                            {
+                                                              staticClass:
+                                                                "btn btn-info",
+                                                              attrs: {
+                                                                "data-bs-toggle":
+                                                                  "tooltip",
+                                                                "data-bs-placement":
+                                                                  "top",
+                                                                title:
+                                                                  "Editar producte"
+                                                              },
+                                                              on: {
+                                                                click: function(
+                                                                  $event
+                                                                ) {
+                                                                  return _vm.editarProducte(
+                                                                    producte.id
+                                                                  )
+                                                                }
+                                                              }
+                                                            },
+                                                            [
+                                                              _c("i", {
+                                                                staticClass:
+                                                                  "fas fa-pen"
+                                                              })
+                                                            ]
+                                                          ),
+                                                          _vm._v(" "),
+                                                          _c(
+                                                            "button",
+                                                            {
+                                                              staticClass:
+                                                                "btn btn-danger",
+                                                              attrs: {
+                                                                "data-bs-toggle":
+                                                                  "tooltip",
+                                                                "data-bs-placement":
+                                                                  "top",
+                                                                title:
+                                                                  "Eliminar producte"
+                                                              },
+                                                              on: {
+                                                                click: function(
+                                                                  $event
+                                                                ) {
+                                                                  return _vm.eliminarProducte(
+                                                                    producte.id
+                                                                  )
+                                                                }
+                                                              }
+                                                            },
+                                                            [
+                                                              _c("i", {
+                                                                staticClass:
+                                                                  "fas fa-trash"
+                                                              })
+                                                            ]
+                                                          )
                                                         ]
                                                       )
                                                     ]
                                                   )
                                                 ]
                                               )
-                                            ]
+                                            }),
+                                            0
                                           )
-                                        }),
-                                        0
-                                      )
-                                    ])
-                                  ]
-                                )
+                                        ])
+                                      ]
+                                    )
+                                  : _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "card-body table-responsive"
+                                      },
+                                      [
+                                        _c("h4", [
+                                          _vm._v("No hi ha productes.")
+                                        ])
+                                      ]
+                                    )
                               ])
                             ])
                           ])
@@ -56043,7 +56117,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "wrapper" },
+    { staticClass: "wrapper", staticStyle: { "overflow-x": "hidden" } },
     [
       _c(
         "nav",
@@ -56230,8 +56304,8 @@ var render = function() {
                                 _c(
                                   "ul",
                                   {
-                                    staticClass:
-                                      "nav nav-treeview nav-child-indent"
+                                    staticClass: "nav-child-indent",
+                                    staticStyle: { "list-style-type": "none" }
                                   },
                                   [
                                     _c(
@@ -56662,8 +56736,7 @@ var staticRenderFns = [
         _c("i", { staticClass: "nav-icon fas fa-store-alt text-dark" }),
         _vm._v(" "),
         _c("p", { staticClass: "text-dark" }, [
-          _vm._v("\n                La meva botiga\n                "),
-          _c("i", { staticClass: "right fas fa-angle-left" })
+          _vm._v("\n                La meva botiga\n              ")
         ])
       ]
     )
@@ -56825,19 +56898,15 @@ var render = function() {
                       attrs: { id: "portada" }
                     },
                     [
-                      _c(
-                        "h3",
-                        { staticClass: "widget-user-username text-right" },
-                        [
-                          _vm._v(
-                            "\n                " +
-                              _vm._s(this.botiga.nom) +
-                              "\n              "
-                          )
-                        ]
-                      ),
+                      _c("h3", { staticClass: "titol text-right" }, [
+                        _vm._v(
+                          "\n                " +
+                            _vm._s(this.botiga.nom) +
+                            "\n              "
+                        )
+                      ]),
                       _vm._v(" "),
-                      _c("h5", { staticClass: "widget-user-desc text-right" }, [
+                      _c("h5", { staticClass: "titol text-right" }, [
                         _vm._v(_vm._s(this.user.nom))
                       ])
                     ]
@@ -57262,82 +57331,94 @@ var render = function() {
                           _c("div", { staticClass: "col-md-12" }, [
                             _vm._m(2),
                             _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "card-body table-responsive" },
-                              [
-                                _c("table", { staticClass: "table" }, [
-                                  _vm._m(3),
-                                  _vm._v(" "),
-                                  _c(
-                                    "tbody",
-                                    { staticClass: "text-center" },
-                                    _vm._l(_vm.orders, function(comanda) {
-                                      return _c("tr", { key: comanda.id }, [
-                                        _c("td", [_vm._v(_vm._s(comanda.id))]),
-                                        _vm._v(" "),
-                                        comanda.enviat == 1
-                                          ? _c("td", [_vm._v("Enviat")])
-                                          : _c("td", [
-                                              _vm._v("Preparant l'enviament...")
+                            this.orders.length > 0
+                              ? _c(
+                                  "div",
+                                  { staticClass: "card-body table-responsive" },
+                                  [
+                                    _c("table", { staticClass: "table" }, [
+                                      _vm._m(3),
+                                      _vm._v(" "),
+                                      _c(
+                                        "tbody",
+                                        { staticClass: "text-center" },
+                                        _vm._l(_vm.orders, function(comanda) {
+                                          return _c("tr", { key: comanda.id }, [
+                                            _c("td", [
+                                              _vm._v(_vm._s(comanda.id))
                                             ]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _vm._v(
-                                            "\n                                  " +
-                                              _vm._s(comanda.direccio) +
-                                              ",\n                                  " +
-                                              _vm._s(comanda.poblacio) +
-                                              "\n                                "
-                                          )
-                                        ]),
-                                        _vm._v(" "),
-                                        _c("td", [
-                                          _c("span", [
+                                            _vm._v(" "),
                                             comanda.enviat == 1
-                                              ? _c(
-                                                  "button",
-                                                  {
-                                                    staticClass:
-                                                      "btn btn-success",
-                                                    on: {
-                                                      click: function($event) {
-                                                        return _vm.ordreRebuda(
-                                                          comanda.id
-                                                        )
-                                                      }
-                                                    }
-                                                  },
-                                                  [
-                                                    _c("i", {
-                                                      staticClass:
-                                                        "fas fa-check"
-                                                    })
-                                                  ]
-                                                )
-                                              : _c(
-                                                  "button",
-                                                  {
-                                                    staticClass:
-                                                      "btn btn-secondary",
-                                                    attrs: { disabled: "" }
-                                                  },
-                                                  [
-                                                    _c("i", {
-                                                      staticClass:
-                                                        "fas fa-check"
-                                                    })
-                                                  ]
-                                                )
+                                              ? _c("td", [_vm._v("Enviat")])
+                                              : _c("td", [
+                                                  _vm._v(
+                                                    "Preparant l'enviament..."
+                                                  )
+                                                ]),
+                                            _vm._v(" "),
+                                            _c("td", [
+                                              _vm._v(
+                                                "\n                                  " +
+                                                  _vm._s(comanda.direccio) +
+                                                  ",\n                                  " +
+                                                  _vm._s(comanda.poblacio) +
+                                                  "\n                                "
+                                              )
+                                            ]),
+                                            _vm._v(" "),
+                                            _c("td", [
+                                              _c("span", [
+                                                comanda.enviat == 1
+                                                  ? _c(
+                                                      "button",
+                                                      {
+                                                        staticClass:
+                                                          "btn btn-success",
+                                                        on: {
+                                                          click: function(
+                                                            $event
+                                                          ) {
+                                                            return _vm.ordreRebuda(
+                                                              comanda.id
+                                                            )
+                                                          }
+                                                        }
+                                                      },
+                                                      [
+                                                        _c("i", {
+                                                          staticClass:
+                                                            "fas fa-check"
+                                                        })
+                                                      ]
+                                                    )
+                                                  : _c(
+                                                      "button",
+                                                      {
+                                                        staticClass:
+                                                          "btn btn-secondary",
+                                                        attrs: { disabled: "" }
+                                                      },
+                                                      [
+                                                        _c("i", {
+                                                          staticClass:
+                                                            "fas fa-check"
+                                                        })
+                                                      ]
+                                                    )
+                                              ])
+                                            ])
                                           ])
-                                        ])
-                                      ])
-                                    }),
-                                    0
-                                  )
-                                ])
-                              ]
-                            )
+                                        }),
+                                        0
+                                      )
+                                    ])
+                                  ]
+                                )
+                              : _c(
+                                  "div",
+                                  { staticClass: "card-body table-responsive" },
+                                  [_c("h4", [_vm._v("No hi ha comandes.")])]
+                                )
                           ])
                         ])
                       ])
@@ -57347,95 +57428,132 @@ var render = function() {
                   _c(
                     "div",
                     { staticClass: "tab-pane", attrs: { id: "timeline" } },
-                    _vm._l(_vm.ordersP, function(order) {
-                      return _c("span", { key: order.index }, [
-                        _c(
-                          "div",
-                          { staticClass: "timeline timeline-inverse border" },
-                          [
-                            _c("div", { staticClass: "time-label" }, [
-                              _c("span", {}, [
-                                _c("i", {
-                                  staticClass: "fas fa-shipping-fast"
-                                }),
-                                _vm._v(
-                                  "\n                          " +
-                                    _vm._s("Ordre nº" + order[0].id_ordre) +
-                                    "\n                        "
+                    [
+                      this.ordersP.length > 0
+                        ? _c(
+                            "span",
+                            _vm._l(_vm.ordersP, function(order) {
+                              return _c("span", { key: order.index }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "timeline timeline-inverse border"
+                                  },
+                                  [
+                                    _c("div", { staticClass: "time-label" }, [
+                                      _c("span", {}, [
+                                        _c("i", {
+                                          staticClass: "fas fa-shipping-fast"
+                                        }),
+                                        _vm._v(
+                                          "\n                            " +
+                                            _vm._s(
+                                              "Ordre nº" + order[0].id_ordre
+                                            ) +
+                                            "\n                          "
+                                        )
+                                      ])
+                                    ]),
+                                    _vm._v(" "),
+                                    _vm._l(order, function(product) {
+                                      return _c("div", { key: product.index }, [
+                                        _c("i", {
+                                          staticClass:
+                                            "fas fa-box-open text-white",
+                                          staticStyle: {
+                                            "background-color": "#ff6565"
+                                          }
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "timeline-item" },
+                                          [
+                                            _c(
+                                              "span",
+                                              { staticClass: "time" },
+                                              [
+                                                _c("i", {
+                                                  staticClass:
+                                                    "fas fa-store-alt"
+                                                }),
+                                                _c(
+                                                  "router-link",
+                                                  {
+                                                    staticStyle: {
+                                                      color: "#ff6565",
+                                                      "text-decoration": "none"
+                                                    },
+                                                    attrs: {
+                                                      to: {
+                                                        name: "PerfilBotiga",
+                                                        params: {
+                                                          id:
+                                                            product.productes
+                                                              .botiga.id
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      "\n                                " +
+                                                        _vm._s(
+                                                          product.productes
+                                                            .botiga.nom
+                                                        )
+                                                    )
+                                                  ]
+                                                )
+                                              ],
+                                              1
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "h3",
+                                              {
+                                                staticClass: "timeline-header"
+                                              },
+                                              [
+                                                _vm._v(
+                                                  "\n                              " +
+                                                    _vm._s(
+                                                      product.productes.nom
+                                                    ) +
+                                                    "\n                            "
+                                                )
+                                              ]
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "small",
+                                              { staticClass: "timeline-body" },
+                                              [
+                                                _vm._v(
+                                                  _vm._s(
+                                                    product.productes.descripcio
+                                                  )
+                                                )
+                                              ]
+                                            )
+                                          ]
+                                        )
+                                      ])
+                                    })
+                                  ],
+                                  2
                                 )
                               ])
-                            ]),
-                            _vm._v(" "),
-                            _vm._l(order, function(product) {
-                              return _c("div", { key: product.index }, [
-                                _c("i", {
-                                  staticClass: "fas fa-box-open text-white",
-                                  staticStyle: { "background-color": "#ff6565" }
-                                }),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "timeline-item" }, [
-                                  _c(
-                                    "span",
-                                    { staticClass: "time" },
-                                    [
-                                      _c("i", {
-                                        staticClass: "fas fa-store-alt"
-                                      }),
-                                      _c(
-                                        "router-link",
-                                        {
-                                          staticStyle: {
-                                            color: "#ff6565",
-                                            "text-decoration": "none"
-                                          },
-                                          attrs: {
-                                            to: {
-                                              name: "PerfilBotiga",
-                                              params: {
-                                                id: product.productes.botiga.id
-                                              }
-                                            }
-                                          }
-                                        },
-                                        [
-                                          _vm._v(
-                                            "\n                              " +
-                                              _vm._s(
-                                                product.productes.botiga.nom
-                                              )
-                                          )
-                                        ]
-                                      )
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c("h3", { staticClass: "timeline-header" }, [
-                                    _vm._v(
-                                      "\n                            " +
-                                        _vm._s(product.productes.nom) +
-                                        "\n                          "
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "small",
-                                    { staticClass: "timeline-body" },
-                                    [
-                                      _vm._v(
-                                        _vm._s(product.productes.descripcio)
-                                      )
-                                    ]
-                                  )
-                                ])
-                              ])
-                            })
-                          ],
-                          2
-                        )
-                      ])
-                    }),
-                    0
+                            }),
+                            0
+                          )
+                        : _c(
+                            "div",
+                            { staticClass: "card-body table-responsive" },
+                            [_c("h4", [_vm._v("No hi ha comandes.")])]
+                          )
+                    ]
                   ),
                   _vm._v(" "),
                   _c(
@@ -59207,19 +59325,13 @@ var render = function() {
                                 [
                                   _c(
                                     "h3",
-                                    {
-                                      staticClass:
-                                        "widget-user-username text-right text-navy"
-                                    },
+                                    { staticClass: "titol text-right" },
                                     [_vm._v(_vm._s(botiga.nom))]
                                   ),
                                   _vm._v(" "),
                                   _c(
                                     "h5",
-                                    {
-                                      staticClass:
-                                        "widget-user-desc text-right text-navy"
-                                    },
+                                    { staticClass: "titol text-right" },
                                     [_vm._v(_vm._s(botiga.poblacio))]
                                   )
                                 ]
@@ -59234,19 +59346,13 @@ var render = function() {
                                 [
                                   _c(
                                     "h3",
-                                    {
-                                      staticClass:
-                                        "widget-user-username text-right text-white"
-                                    },
+                                    { staticClass: "titol text-right" },
                                     [_vm._v(_vm._s(botiga.nom))]
                                   ),
                                   _vm._v(" "),
                                   _c(
                                     "h5",
-                                    {
-                                      staticClass:
-                                        "widget-user-desc text-right text-white"
-                                    },
+                                    { staticClass: "titol text-right" },
                                     [_vm._v(_vm._s(botiga.poblacio))]
                                   )
                                 ]
@@ -77416,7 +77522,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ProductorsComponent_vue_vue_type_template_id_13600a41___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProductorsComponent.vue?vue&type=template&id=13600a41& */ "./resources/js/components/ProductorsComponent.vue?vue&type=template&id=13600a41&");
 /* harmony import */ var _ProductorsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProductorsComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/ProductorsComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _ProductorsComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ProductorsComponent.vue?vue&type=style&index=0&lang=css& */ "./resources/js/components/ProductorsComponent.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -77424,7 +77532,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _ProductorsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _ProductorsComponent_vue_vue_type_template_id_13600a41___WEBPACK_IMPORTED_MODULE_0__["render"],
   _ProductorsComponent_vue_vue_type_template_id_13600a41___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -77453,6 +77561,22 @@ component.options.__file = "resources/js/components/ProductorsComponent.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductorsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ProductorsComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProductorsComponent.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductorsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/ProductorsComponent.vue?vue&type=style&index=0&lang=css&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/ProductorsComponent.vue?vue&type=style&index=0&lang=css& ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductorsComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./ProductorsComponent.vue?vue&type=style&index=0&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ProductorsComponent.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductorsComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductorsComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductorsComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_ProductorsComponent_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
 
 /***/ }),
 

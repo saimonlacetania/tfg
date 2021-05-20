@@ -32,14 +32,16 @@
                         <div v-if="botiga.img_portada" class="widget-user-header text-white"
                             :style="'background: url(/images/botigues/' + botiga.img_portada +'); background-size: cover;'
                             ">
-                            <h3 class="widget-user-username text-right text-navy">{{ botiga.nom }}</h3>
-                            <h5 class="widget-user-desc text-right text-navy">{{ botiga.poblacio }}</h5>
+                            <h3 class="titol text-right">{{ botiga.nom }}</h3>
+                            <h5 class="titol text-right">{{ botiga.poblacio }}</h5>
+                            
                         </div>
                         <div v-else class="widget-user-header text-white"
                             :style="'background: url(/images/botigues/unnamed.jpg); background-size: cover;'
                             ">
-                            <h3 class="widget-user-username text-right text-white">{{ botiga.nom }}</h3>
-                            <h5 class="widget-user-desc text-right text-white">{{ botiga.poblacio }}</h5>
+                            <h3 class="titol text-right">{{ botiga.nom }}</h3>
+                            <h5 class="titol text-right">{{ botiga.poblacio }}</h5>
+                            
                         </div>
 
                         <div class="widget-user-image">
@@ -119,8 +121,16 @@
   </div>
 </template>
 
-<script>
+<style>
+.titol {
+   color: #ff6565;
+   text-shadow: 2px 2px 2px rgb(34, 34, 34);
+   white-space: nowrap;
+   font-size: 1.7vw;
+}
+</style>
 
+<script>
 
 export default {
   data() {

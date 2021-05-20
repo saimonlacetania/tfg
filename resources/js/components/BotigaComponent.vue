@@ -343,7 +343,7 @@
                                     <div class="card-header">
                                         <h3 class="card-title">Llistat de productes</h3>
                                     </div>
-                                    <div class="card-body table-responsive">
+                                    <div v-if="productes.length>0" class="card-body table-responsive">
                                         <table class="table">
                                         <thead class="">
                                             <tr>
@@ -419,6 +419,9 @@
                                             </tr>
                                         </tbody>
                                         </table>
+                                    </div>
+                                    <div v-else class="card-body table-responsive">
+                                        <h4>No hi ha productes.</h4>
                                     </div>
                                     </div>
                                 </div>
@@ -717,7 +720,6 @@ export default {
           axios.get("/api/botiga").then((res2) => {
             
             this.botiga = res2.data[0];
-            console.log(this.botiga);
             this.user = this.botiga.user;
             
             this.form["id_botiga"] = this.botiga.id_usuari;
@@ -741,7 +743,6 @@ export default {
             this.form_botiga["cif"] = this.botiga.cif;
             this.form_botiga["img_perfil"] = this.botiga.img_perfil;
             this.form_botiga["img_portada"] = this.botiga.img_portada;
-            console.log(this.form_botiga);
         });  
         }).then(()=> {
             Swal.fire({
@@ -811,12 +812,7 @@ export default {
         },
 
         fileSelected(e) {
-            this.files.push({ id: e.target.id, file: e.target.files });
-            console.log(this.files);
-            for (let f in this.files) {
-                console.log(this.files[f].id);
-            }
-            
+            this.files.push({ id: e.target.id, file: e.target.files }); 
         },
         loading() {
             Swal.fire({
@@ -881,7 +877,6 @@ export default {
             formData.append("preu", that.form["preu"]);
             formData.append("stock", that.form["stock"]);
             if (that.form["actiu"]==true) {
-                console.log("true");
                 that.form["actiu"]=1;
                 formData.append("actiu", that.form["actiu"]);    
             } else {
@@ -899,16 +894,13 @@ export default {
                 })
                 .then((res) => {
                 this.toastCorrecte();
-                console.log(that.form);
                 this.resetForm();
                 })
                 .catch((error) => {
                 that.errors = error.response.data.errors;
                 this.toastIncorrecte();
-                console.log(that.errors);
                 });
 
-            console.log(that.form);
             
         },
         resetForm() {
@@ -928,7 +920,6 @@ export default {
         },
         saveBotiga() {
             let that = this;
-            console.log(that.form_botiga);
             let formData = new FormData();
 
             if (document.getElementById("img_perfil").files[0]) {
@@ -962,14 +953,13 @@ export default {
                 },
             }) 
             .then((res) => {
-                console.log(res);
+                let id_b = this.botiga.id;
                 this.toastCorrecte();
-                location.reload();
+                this.$router.push({ name: "PerfilBotiga", params: { id: id_b } });
                 
             })
             .catch((error) => {
                 that.errors = error.response.data.errors;
-                console.log(that.errors);
                 this.toastIncorrecte();
             });
         }
