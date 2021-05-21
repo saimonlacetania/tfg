@@ -252,7 +252,6 @@ export default {
           this.toastCorrecte();
           axios.get("/api/veureCistella").then((res) => {
             this.cistella = res.data;
-
             this.total = 0.0;
           });
         })
