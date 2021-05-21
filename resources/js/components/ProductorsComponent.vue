@@ -175,7 +175,6 @@ export default {
     cercaProductors() {
       if (this.keyword=="" || this.keyword==" ") {
         axios.get("/api/productors").then((res) => {
-          console.log(res);
           this.botigues = res.data;
         });
       } else {

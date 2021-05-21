@@ -162,6 +162,7 @@ class ProductesController extends Controller
                 $producte->descripcio = $request->desc;
                 $producte->preu = $request->preu;
                 $producte->stock = $request->stock;
+                $producte->imatge = $request->file("imatge")->hashName();
                 $producte->save();
                 return response()->json($producte, 200);
 

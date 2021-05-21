@@ -118,7 +118,6 @@ export default {
     this.loading();
     axios.get("/api/productes").then((res) => {
       this.productes = res.data;
-      console.log(res);
     }).then(()=> {
       Swal.fire({
         title:'<span style="color: #ff6565">Carregant...</span>', 
@@ -163,12 +162,10 @@ export default {
     cercaProductes() {
       if (this.keyword=="" || this.keyword==" ") {
         axios.get("/api/productes").then((res) => {
-          console.log(res);
           this.productes = res.data;
         });
       } else {
         axios.get('api/productesCerca/'+this.keyword).then((res) => {
-          console.log(res.data);
           this.productes = res.data;
         });
       }

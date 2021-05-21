@@ -81,7 +81,6 @@ export default {
     }).then(()=>{
       axios.get("/api/veureWishlist").then((res2) => {
       this.wishlist = res2.data;
-      console.log(this.wishlist);
       });
     }).then(()=> {
       Swal.fire({
@@ -136,7 +135,6 @@ export default {
     },
     eliminarWishlist(id) {
       axios.post("/api/eliminarWishlist/" + id).then((res) => {
-        console.log(res);
         axios.get("/api/veureWishlist").then((res) => {
           this.wishlist = res.data;
           this.toastCorrecte();

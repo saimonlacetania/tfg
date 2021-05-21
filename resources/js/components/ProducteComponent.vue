@@ -236,9 +236,6 @@ export default {
     this.loading();
 
     axios.get("/api/producte/" + this.$route.params.id).then((res) => {
-      console.log("beep");
-      console.log(res.data);
-      console.log("boop");
       if (res.data == false) {
         this.$router.push({ name: "Productes" });
       } else {
@@ -246,7 +243,6 @@ export default {
       }
     }).then(()=>{
       axios.get("/api/comentaris/" + this.$route.params.id).then((res) => {
-      console.log(res);
       this.comentaris = res.data;
       });
     }).then(()=>{
@@ -282,14 +278,12 @@ export default {
       axios
         .post("/api/pujarComentari", that.form)
         .then((res) => {
-          console.log(res);
           this.$router.push({ name: "Producte", params: {id: this.producte.id} });
           location.reload();
           this.toastCorrecteComentari();
         })
         .catch((error) => {
           that.errors2 = error.response.data.errors;
-          console.log(that.errors2);
           this.toastIncorrecteComentari();
         });
     },
@@ -371,7 +365,6 @@ export default {
       axios
         .post("/api/afegirWishlist/" + this.producte.id)
         .then((res) => {
-          console.log(res);
           this.toastCorrecte();
           return false;
         })

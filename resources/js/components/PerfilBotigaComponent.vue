@@ -254,7 +254,6 @@ export default {
             this.productes.forEach((producte) => {
               this.visites += parseInt(producte.visites);
             });
-            console.log(this.visites);
           });
       })
       .then(() => {

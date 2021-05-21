@@ -253,18 +253,15 @@ export default {
         },
         saveForm() {
             let that = this;
-            console.log(that.form);
             axios
                 .post("/api/register", that.form)
                 .then(() => {
-                    console.log("saved");
                     this.$router.push({ name: "Login" });
                     this.registreCorrecte();
                     return false
                 })
                 .catch(error => {
                     that.errors = error.response.data.errors;
-                    console.log(that.errors);
                     this.registreIncorrecte();
                     return false;
                 });

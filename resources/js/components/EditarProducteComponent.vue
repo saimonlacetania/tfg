@@ -246,7 +246,6 @@ export default {
         },
         fileSelected(e) {
         this.files = e.target.files
-        console.log(this.files);
         },
         toastCorrecte() {
         // Use sweetalert2
@@ -299,17 +298,13 @@ export default {
                 },
                 })
                 .then((res) => {
-                console.log(res);
                 this.$router.push({ name: "Botiga" });
                 this.toastCorrecte();
                 })
                 .catch((error) => {
                 that.errors = error.response.data.errors;
-                console.log(that.errors);
                 this.toastIncorrecte();
                 });
-
-            console.log(that.form);
         }, 
     },
 };

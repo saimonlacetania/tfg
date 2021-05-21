@@ -304,7 +304,6 @@ export default {
       });
     },
     aceptarCookies() {
-      console.log("click")
       localStorage.aceptaCookies = 'true';
       cajacookies.style.visibility = 'hidden';
     },

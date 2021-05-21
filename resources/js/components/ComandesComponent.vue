@@ -212,12 +212,10 @@ export default {
     }).then(()=>{
       axios.get("/api/veureOrdreBotiga").then((res) => {
       this.orders = res.data;
-      console.log(this.orders);
     });
     }).then(()=>{
       axios.get("/api/veureOrdreBotigaEnviat").then((res) => {
       this.ordersEnviats = res.data;
-      console.log(this.ordersEnviats);
     });
     }).then(()=> {
       Swal.fire({
@@ -274,15 +272,12 @@ export default {
     },
     enviarOrdre(id) {
       axios.post("/api/enviarOrdre/" + id).then((res1) => {
-        console.log(res1);
         this.toastCorrecte();
         axios.get("/api/veureOrdreBotiga").then((res2) => {
           this.orders = res2.data;
-          console.log(this.orders);
         });
         axios.get("/api/veureOrdreBotigaEnviat").then((res) => {
           this.ordersEnviats = res.data;
-          console.log(this.ordersEnviats);
         });
       });
     },

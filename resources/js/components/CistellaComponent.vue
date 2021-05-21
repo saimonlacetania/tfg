@@ -249,17 +249,14 @@ export default {
       axios
         .post("/api/crearOrdre")
         .then((res) => {
-          console.log(res);
           this.toastCorrecte();
           axios.get("/api/veureCistella").then((res) => {
             this.cistella = res.data;
-            console.log(this.cistella);
 
             this.total = 0.0;
           });
         })
         .catch((error) => {
-          console.log(error.response.data);
           if (error.response.data == "Buida") {
             this.toastIncorrecte2();
           } else {
@@ -269,20 +266,17 @@ export default {
     },
     eliminarCistella(id) {
       axios.post("/api/eliminarCistella/" + id).then((res) => {
-        console.log(res);
         this.elminatCorrectament();
         this.actualitzarCistella();
       });
     },
     restarCistella(id) {
       axios.post("/api/restarCistella/" + id).then((res) => {
-        console.log(res);
         this.actualitzarCistella();
       });
     },
     sumarCistella(id) {
       axios.post("/api/sumarCistella/" + id).then((res) => {
-        console.log(res);
         this.actualitzarCistella();
       });
     },

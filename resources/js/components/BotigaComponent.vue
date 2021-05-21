@@ -864,7 +864,6 @@ export default {
         },
         saveForm() {
             let that = this;
-            console.log(that.form);
             let formData = new FormData();
             if (document.getElementById("img_producte").files[0]) {
                 that.form["imatge"] = document.getElementById("img_producte").files[0];
@@ -904,7 +903,6 @@ export default {
             
         },
         resetForm() {
-            console.log('Reseting the form')
             this.files = new Array();
             var self = this; //you need this because this will refer to Object.keys below
 

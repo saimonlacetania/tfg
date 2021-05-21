@@ -643,12 +643,10 @@ export default {
       axios
         .post("/api/modifyUser", that.form)
         .then((res) => {
-          console.log(res);
           this.toastCorrecte();
         })
         .catch((error) => {
           that.errors = error.response.data.errors;
-          console.log(that.errors);
           this.toastIncorrecte();
         });
     },
