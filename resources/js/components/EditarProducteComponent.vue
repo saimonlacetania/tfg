@@ -32,7 +32,7 @@
                                 >
                                 <label v-if="!files || !files.length" class="custom-file-label" for="imatge">Tria un fitxer</label>
                                 <span v-else>
-                                    <label v-for="file in files3" :key="file.name" class="custom-file-label" for="imatge">{{file.name}}</label>
+                                    <label v-for="file in files" :key="file.name" class="custom-file-label" for="imatge">{{file.name}}</label>
                                 </span>
                             </div>
                             <div class="input-group-append">
